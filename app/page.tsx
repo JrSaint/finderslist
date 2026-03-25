@@ -63,7 +63,7 @@ export default function HubPage() {
             <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">List</span>
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-            Curated directories for everything you&apos;re looking for. Hand-picked resources across AI, crafts, dev tools, and more.
+            Curated directories for everything you&apos;re looking for. Hand-picked resources across AI tools, dev tools, and more.
           </p>
 
           {/* Stats */}
