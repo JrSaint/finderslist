@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tool = getToolBySlug(slug);
   if (!tool) return {};
   return {
-    title: `${tool.name} — AI Tool`,
-    description: tool.tagline,
+    title: `${tool.name} Review — Is It Worth It? | FindersList`,
+    description: `${tool.tagline}. See pros, cons, use cases, and pricing for ${tool.name}.`,
     openGraph: {
       title: `${tool.name} | FindersList`,
       description: tool.tagline,
@@ -63,7 +63,7 @@ export default async function ToolPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8 flex-wrap">
+      <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
         <span>/</span>
         <Link href="/ai-tools" className="hover:text-slate-300 transition-colors">AI Tools</Link>
@@ -78,49 +78,72 @@ export default async function ToolPage({ params }: Props) {
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Main content */}
         <div className="flex-1 min-w-0">
-          {/* Tool header */}
-          <div className="flex flex-col sm:flex-row sm:items-start gap-5 mb-8">
-            <div className="w-20 h-20 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center text-4xl flex-shrink-0 overflow-hidden">
-              {tool.domain ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=64`}
-                  alt={tool.name}
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                />
-              ) : (
-                <span>{tool.logo}</span>
-              )}
-            </div>
-            <div className="flex-1">
-              <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h1 className="text-3xl font-bold text-white">{tool.name}</h1>
-                {tool.featured && (
-                  <span className="text-xs bg-violet-500/20 text-violet-300 border border-violet-500/30 rounded-full px-2 py-0.5">
-                    Featured
-                  </span>
-                )}
-                <span className={`text-xs border rounded-full px-2 py-0.5 ${PRICING_COLORS[tool.pricing]}`}>
-                  {PRICING_LABELS[tool.pricing]}
-                </span>
-              </div>
-              <p className="text-lg text-slate-300 mb-3">{tool.tagline}</p>
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  href={`/ai-tools/category/${tool.category}`}
-                  className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-violet-300 transition-colors"
-                >
-                  <span>{category.emoji}</span>
-                  <span>{category.label}</span>
-                </Link>
+
+          {/* Hero Banner */}
+          <div className={`rounded-2xl overflow-hidden mb-8 bg-gradient-to-br ${category.gradient} border border-white/10`}>
+            <div className="relative p-8">
+              <div className="absolute inset-0 bg-slate-950/50" />
+              <div className="relative flex flex-col sm:flex-row sm:items-center gap-6">
+                {/* Logo */}
+                <div className="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 overflow-hidden backdrop-blur-sm shadow-xl">
+                  {tool.domain ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`}
+                      alt={tool.name}
+                      width={56}
+                      height={56}
+                      className="object-contain"
+                    />
+                  ) : (
+                    <span className="text-4xl">{tool.logo}</span>
+                  )}
+                </div>
+                {/* Title area */}
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                    <h1 className="text-3xl font-bold text-white">{tool.name}</h1>
+                    {tool.featured && (
+                      <span className="text-xs bg-violet-500/30 text-violet-200 border border-violet-400/30 rounded-full px-2.5 py-0.5">
+                        Featured
+                      </span>
+                    )}
+                    <span className={`text-xs border rounded-full px-2.5 py-0.5 ${PRICING_COLORS[tool.pricing]}`}>
+                      {PRICING_LABELS[tool.pricing]}
+                    </span>
+                  </div>
+                  <p className="text-lg text-white/80 mb-3 leading-snug">{tool.tagline}</p>
+                  <Link
+                    href={`/ai-tools/category/${tool.category}`}
+                    className="inline-flex items-center gap-1.5 text-sm text-white/60 hover:text-white/90 transition-colors"
+                  >
+                    <span>{category.emoji}</span>
+                    <span>{category.label}</span>
+                  </Link>
+                </div>
+                {/* CTA on desktop */}
+                <div className="hidden sm:flex flex-col gap-2 flex-shrink-0">
+                  <a
+                    href={visitUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 px-5 py-2.5 font-semibold text-slate-900 transition-colors text-sm whitespace-nowrap"
+                  >
+                    Visit {tool.name}
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  {tool.affiliateUrl && (
+                    <p className="text-xs text-white/30 text-center">* Affiliate link</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
+          {/* Mobile CTA */}
+          <div className="sm:hidden mb-6">
             <a
               href={visitUrl}
               target="_blank"
@@ -132,11 +155,6 @@ export default async function ToolPage({ params }: Props) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-            {tool.affiliateUrl && (
-              <p className="text-xs text-slate-600 self-center">
-                * Affiliate link — we may earn a commission
-              </p>
-            )}
           </div>
 
           {/* About */}
@@ -144,6 +162,65 @@ export default async function ToolPage({ params }: Props) {
             <h2 className="text-base font-semibold text-white mb-3">About {tool.name}</h2>
             <p className="text-slate-400 leading-relaxed">{tool.description}</p>
           </div>
+
+          {/* Pros & Cons */}
+          {(tool.pros || tool.cons) && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+              {tool.pros && tool.pros.length > 0 && (
+                <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+                  <h2 className="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    What&apos;s Great
+                  </h2>
+                  <ul className="space-y-2">
+                    {tool.pros.map((pro, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                        <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+                        {pro}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {tool.cons && tool.cons.length > 0 && (
+                <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5">
+                  <h2 className="text-sm font-semibold text-amber-400 mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Watch Out For
+                  </h2>
+                  <ul className="space-y-2">
+                    {tool.cons.map((con, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                        <span className="text-amber-500 mt-0.5 flex-shrink-0">!</span>
+                        {con}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Use Cases */}
+          {tool.useCases && tool.useCases.length > 0 && (
+            <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-6 mb-5">
+              <h2 className="text-base font-semibold text-white mb-4">Common Use Cases</h2>
+              <div className="space-y-3">
+                {tool.useCases.map((useCase, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0 text-xs font-bold text-violet-400 mt-0.5">
+                      {i + 1}
+                    </div>
+                    <p className="text-sm text-slate-300 leading-relaxed">{useCase}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Best for */}
           {bestForRoles.length > 0 && (
@@ -182,7 +259,7 @@ export default async function ToolPage({ params }: Props) {
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Tags</p>
               <div className="flex flex-wrap gap-1 mt-1">
-                {tool.tags.slice(0, 4).map((tag) => (
+                {tool.tags.slice(0, 5).map((tag) => (
                   <span
                     key={tag}
                     className="text-xs text-slate-500 bg-slate-800 border border-white/8 rounded-full px-2 py-0.5"
@@ -246,6 +323,21 @@ export default async function ToolPage({ params }: Props) {
               </span>
               <p className="text-xs text-slate-500 leading-relaxed">{pricingDetail}</p>
             </div>
+
+            {/* Quick pros summary */}
+            {tool.pros && tool.pros.length > 0 && (
+              <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
+                <p className="text-sm font-medium text-white mb-3">Top Strengths</p>
+                <ul className="space-y-2">
+                  {tool.pros.slice(0, 3).map((pro, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-slate-400">
+                      <span className="text-emerald-500 flex-shrink-0 mt-0.5">✓</span>
+                      {pro}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <AdBanner slot="6677889900" format="rectangle" className="h-64 w-full" />
 
