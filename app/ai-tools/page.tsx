@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "AI Tools Directory",
   description:
-    "Discover the best AI tools for writing, coding, image generation, video, productivity, and more. Browse 25+ curated AI tools.",
+    "Discover the best AI tools for writing, coding, image generation, video, productivity, and more. Browse 70+ curated AI tools.",
 };
 
 export default function AIToolsPage() {
@@ -20,35 +20,45 @@ export default function AIToolsPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-950/40 via-slate-950 to-slate-950 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-transparent to-transparent pointer-events-none" />
+        {/* Background layers */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,40,200,0.25),transparent)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(180,40,220,0.08),transparent)] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-sm text-violet-300">
+          {/* Badge */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-sm text-violet-300 backdrop-blur-sm">
             <span className="inline-block w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-            {allTools.length}+ AI tools and growing
+            {allTools.length}+ curated AI tools
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-5">
             <span className="text-white">Find the Right </span>
-            <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
               AI Tool
             </span>
           </h1>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
             The most comprehensive directory of AI tools. Discover, compare, and find exactly the right AI for any task.
           </p>
-          <div className="max-w-2xl mx-auto">
+
+          {/* Search */}
+          <div className="max-w-2xl mx-auto mb-8">
             <SearchBar large />
           </div>
-          <div className="mt-4 flex items-center justify-center gap-4 text-sm text-slate-500 flex-wrap">
-            <span>Writing</span>
-            <span>·</span>
-            <span>Coding</span>
-            <span>·</span>
-            <span>Image Gen</span>
-            <span>·</span>
-            <span>Video & Audio</span>
-            <span>·</span>
-            <span>Productivity</span>
+
+          {/* Stats row */}
+          <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
+            {[
+              { value: `${allTools.length}+`, label: "Tools" },
+              { value: `${categories.length}`, label: "Categories" },
+              { value: "Free", label: "to Browse" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-xl font-bold text-white">{stat.value}</div>
+                <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -60,8 +70,11 @@ export default function AIToolsPage() {
         </div>
 
         {/* Categories */}
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold text-white mb-5">Browse by Category</h2>
+        <section className="mt-14">
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-lg font-semibold text-white">Browse by Category</h2>
+            <span className="text-xs text-slate-600">{categories.length} categories</span>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {categories.map((cat) => {
               const info = CATEGORIES[cat];
@@ -70,13 +83,13 @@ export default function AIToolsPage() {
                 <Link
                   key={cat}
                   href={`/ai-tools/category/${cat}`}
-                  className="flex flex-col gap-1 p-4 rounded-xl border border-white/10 bg-slate-900/50 hover:bg-slate-800/70 hover:border-violet-500/30 transition-all group"
+                  className="flex flex-col gap-1.5 p-4 rounded-xl border border-white/8 bg-slate-900/40 hover:bg-slate-800/60 hover:border-violet-500/30 transition-all group"
                 >
                   <span className="text-2xl">{info.emoji}</span>
-                  <span className="text-sm font-medium text-white group-hover:text-violet-300 transition-colors">
+                  <span className="text-sm font-medium text-white group-hover:text-violet-300 transition-colors leading-tight">
                     {info.label}
                   </span>
-                  <span className="text-xs text-slate-500">{count} tools</span>
+                  <span className="text-xs text-slate-600">{count} tools</span>
                 </Link>
               );
             })}
@@ -86,8 +99,11 @@ export default function AIToolsPage() {
         {/* Featured Tools */}
         <section className="mt-14">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-xl font-semibold text-white">Featured Tools</h2>
-            <span className="text-sm text-slate-500">{featured.length} tools</span>
+            <div>
+              <h2 className="text-lg font-semibold text-white">Featured Tools</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Hand-picked by our team</p>
+            </div>
+            <span className="text-xs text-slate-600">{featured.length} tools</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {featured.map((tool) => (
@@ -104,8 +120,11 @@ export default function AIToolsPage() {
         {/* All Tools */}
         <section className="mt-12 mb-16">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-xl font-semibold text-white">All Tools</h2>
-            <span className="text-sm text-slate-500">{allTools.length} tools</span>
+            <div>
+              <h2 className="text-lg font-semibold text-white">All Tools</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Complete directory</p>
+            </div>
+            <span className="text-xs text-slate-600">{allTools.length} tools</span>
           </div>
           <div className="flex flex-col gap-2">
             {allTools.map((tool) => (
