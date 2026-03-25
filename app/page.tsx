@@ -4,7 +4,7 @@ import { getAllTools, getAllCategories } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Directories",
-  description: "FindersList hosts curated directories for AI tools, crafts, and more. Find exactly what you're looking for.",
+  description: "FindersList hosts curated directories for AI tools, dev tools, and more. Find exactly what you're looking for.",
 };
 
 const directories = [
@@ -18,17 +18,6 @@ const directories = [
     accentColor: "text-violet-400",
     badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
     live: true,
-  },
-  {
-    slug: "crafts",
-    emoji: "🧶",
-    name: "Craft Patterns",
-    description: "Browse curated knitting, crochet, sewing, and craft patterns from around the web.",
-    gradient: "from-pink-500/15 via-rose-500/8 to-transparent",
-    border: "border-pink-500/20",
-    accentColor: "text-pink-400",
-    badgeColor: "bg-slate-700/50 text-slate-400 border-white/10",
-    live: false,
   },
   {
     slug: "dev-tools",
