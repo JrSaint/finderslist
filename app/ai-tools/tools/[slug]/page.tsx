@@ -17,12 +17,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) return {};
+  const category = CATEGORIES[tool.category];
   return {
-    title: `${tool.name} Review — Is It Worth It? | FindersList`,
-    description: `${tool.tagline}. See pros, cons, use cases, and pricing for ${tool.name}.`,
+    title: `${tool.name} Review (2025) — Pricing, Pros & Cons`,
+    description: `${tool.tagline}. Honest review of ${tool.name}: pros, cons, pricing, and real-world use cases. Is it worth it in 2025?`,
+    keywords: [tool.name, ...tool.tags, category.label, "AI tool review", "AI tools 2025"],
     openGraph: {
-      title: `${tool.name} | FindersList`,
-      description: tool.tagline,
+      title: `${tool.name} Review 2025 | FindersList`,
+      description: `${tool.tagline}. See honest pros, cons, pricing, and use cases.`,
+    },
+    alternates: {
+      canonical: `https://finderslist.com/ai-tools/tools/${tool.slug}`,
     },
   };
 }
@@ -54,6 +59,23 @@ export default async function ToolPage({ params }: Props) {
   const visitUrl = tool.affiliateUrl || tool.url;
   const bestForRoles = getBestForRoles(tool);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: tool.name,
+    description: tool.description,
+    url: tool.url,
+    applicationCategory: "AIApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: tool.pricing === "free" ? "0" : undefined,
+      priceCurrency: "USD",
+      availability: "https://schema.org/OnlineOnly",
+    },
+    keywords: tool.tags.join(", "),
+  };
+
   const pricingDetail = {
     free: "100% free to use — no credit card required.",
     freemium: "Free plan available. Paid plans unlock advanced features.",
@@ -62,6 +84,10 @@ export default async function ToolPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

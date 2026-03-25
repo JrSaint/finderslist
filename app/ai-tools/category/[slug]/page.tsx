@@ -18,9 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const category = CATEGORIES[slug as Category];
   if (!category) return {};
+  const tools = getToolsByCategory(slug as Category);
   return {
-    title: `${category.label} AI Tools`,
-    description: category.description,
+    title: `Best ${category.label} AI Tools (2025) — ${tools.length} Options Compared`,
+    description: `Discover the best ${category.label.toLowerCase()} AI tools in 2025. We've curated ${tools.length} top tools with honest reviews, pricing breakdowns, and real-world use cases.`,
+    keywords: [`${category.label} AI tools`, `best ${category.label} tools`, `AI tools 2025`, category.label],
+    alternates: {
+      canonical: `https://finderslist.com/ai-tools/category/${slug}`,
+    },
   };
 }
 
@@ -34,8 +39,27 @@ export default async function CategoryPage({ params }: Props) {
   const allCategories = getAllCategories();
   const totalTools = getAllTools().length;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Best ${category.label} AI Tools`,
+    description: category.description,
+    numberOfItems: tools.length,
+    itemListElement: tools.map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      description: tool.tagline,
+      url: `https://finderslist.com/ai-tools/tools/${tool.slug}`,
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8">
         <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

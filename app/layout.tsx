@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     template: "%s | FindersList",
   },
   description:
-    "FindersList hosts curated directories for AI tools, crafts, and more. Find exactly what you're looking for.",
-  keywords: ["directory", "AI tools", "curated lists", "resource directory", "FindersList"],
+    "FindersList is a curated directory of the best AI tools for writing, coding, image generation, productivity, and more. Browse 100+ hand-picked AI tools with honest pros, cons, and use cases.",
+  keywords: ["AI tools directory", "best AI tools", "AI tools list", "AI software", "AI writing tools", "AI coding tools", "FindersList"],
   metadataBase: new URL("https://finderslist.com"),
   openGraph: {
     type: "website",

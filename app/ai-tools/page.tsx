@@ -7,14 +7,27 @@ import FilterBar from "@/components/FilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "AI Tools Directory",
-  description:
-    "Discover the best AI tools for writing, coding, image generation, video, productivity, and more. Browse 70+ curated AI tools.",
-};
-
 interface Props {
   searchParams: Promise<{ q?: string; pricing?: string; role?: string }>;
+}
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const { q, pricing, role } = await searchParams;
+  const isFiltering = !!(q || pricing || role);
+  if (isFiltering) {
+    return {
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "Best AI Tools Directory (2025) — 100+ Tools Reviewed",
+    description:
+      "Discover the best AI tools for writing, coding, image generation, video, productivity, and more. Browse 100+ curated AI tools with honest pros, cons, and pricing.",
+    keywords: ["AI tools", "best AI tools 2025", "AI tools directory", "AI software list"],
+    alternates: {
+      canonical: "https://finderslist.com/ai-tools",
+    },
+  };
 }
 
 export default async function AIToolsPage({ searchParams }: Props) {
