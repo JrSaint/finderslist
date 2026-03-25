@@ -1659,7 +1659,7 @@ export const TOOLS: Tool[] = [
     category: "marketing",
     tags: ["newsletter", "email marketing", "audience growth", "creator monetization"],
     url: "https://beehiiv.com",
-    affiliateUrl: "https://beehiiv.com",
+    affiliateUrl: "https://www.beehiiv.com?via=Welbr-DosSantos",
     pricing: "freemium",
     featured: false,
     logo: "🐝",
