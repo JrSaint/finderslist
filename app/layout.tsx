@@ -4,8 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 
-// TODO: Replace with your actual AdSense publisher ID
-const ADSENSE_CLIENT = "ca-pub-XXXXXXXXXXXXXXXXX";
+const ADSENSE_CLIENT = "ca-pub-5534047032969220";
 
 export const metadata: Metadata = {
   title: {
