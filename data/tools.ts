@@ -880,7 +880,7 @@ export const TOOLS: Tool[] = [
     category: "video-audio",
     tags: ["text-to-speech", "voice cloning", "audio", "podcast"],
     url: "https://elevenlabs.io",
-    affiliateUrl: "https://elevenlabs.io",
+    affiliateUrl: "https://try.elevenlabs.io/wc05uwt3758d",
     pricing: "freemium",
     featured: true,
     logo: "🎙️",
