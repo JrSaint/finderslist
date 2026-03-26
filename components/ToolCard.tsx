@@ -7,6 +7,7 @@ import { Tool, CATEGORIES, PRICING_LABELS, PRICING_COLORS } from "@/lib/tools";
 interface ToolCardProps {
   tool: Tool;
   variant?: "default" | "compact";
+  basePath?: string;
 }
 
 function ToolLogo({ tool, size = "md" }: { tool: Tool; size?: "sm" | "md" | "lg" }) {
@@ -31,13 +32,13 @@ function ToolLogo({ tool, size = "md" }: { tool: Tool; size?: "sm" | "md" | "lg"
   return <span className={sizeClass}>{tool.logo}</span>;
 }
 
-export default function ToolCard({ tool, variant = "default" }: ToolCardProps) {
-  const category = CATEGORIES[tool.category];
+export default function ToolCard({ tool, variant = "default", basePath = "/ai-tools" }: ToolCardProps) {
+  const category = CATEGORIES[tool.category] ?? { emoji: "🔧", label: tool.category };
 
   if (variant === "compact") {
     return (
       <Link
-        href={`/ai-tools/tools/${tool.slug}`}
+        href={`${basePath}/tools/${tool.slug}`}
         className="flex items-center gap-4 p-3.5 rounded-xl border border-white/8 bg-slate-900/40 hover:bg-slate-800/60 hover:border-violet-500/25 transition-all group"
       >
         <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-slate-800/80 border border-white/10 flex items-center justify-center overflow-hidden">
@@ -70,7 +71,7 @@ export default function ToolCard({ tool, variant = "default" }: ToolCardProps) {
 
   return (
     <Link
-      href={`/ai-tools/tools/${tool.slug}`}
+      href={`${basePath}/tools/${tool.slug}`}
       className="relative flex flex-col p-5 rounded-2xl border border-white/8 bg-slate-900/40 hover:bg-slate-800/50 hover:border-violet-500/30 transition-all group overflow-hidden"
     >
       {/* subtle gradient on hover */}

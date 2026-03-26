@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllTools, getAllCategories } from "@/lib/tools";
+import { getAllMarketingTools } from "@/lib/marketing-tools";
 
 export const metadata: Metadata = {
-  title: "FindersList — Curated Directories",
-  description: "FindersList hosts curated directories for AI tools, dev tools, and more. Find exactly what you're looking for.",
+  title: "FindersList — Curated Software Directories",
+  description: "FindersList hosts curated directories for AI tools, marketing tools, dev tools, and more. Find exactly what you're looking for.",
+  alternates: { canonical: "https://finderslist.com" },
 };
 
 const directories = [
@@ -18,6 +20,19 @@ const directories = [
     accentColor: "text-violet-400",
     badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
     live: true,
+    countKey: "ai" as const,
+  },
+  {
+    slug: "marketing-tools",
+    emoji: "📈",
+    name: "Marketing Tools",
+    description: "The best SEO, email marketing, social media, CRM, and advertising tools in one place.",
+    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+    live: true,
+    countKey: "marketing" as const,
   },
   {
     slug: "dev-tools",
@@ -29,6 +44,7 @@ const directories = [
     accentColor: "text-cyan-400",
     badgeColor: "bg-slate-700/50 text-slate-400 border-white/10",
     live: false,
+    countKey: null,
   },
   {
     slug: "more",
@@ -40,18 +56,24 @@ const directories = [
     accentColor: "text-slate-500",
     badgeColor: "bg-slate-700/50 text-slate-500 border-white/5",
     live: false,
+    countKey: null,
   },
 ];
 
 export default function HubPage() {
-  const toolCount = getAllTools().length;
+  const aiToolCount = getAllTools().length;
+  const marketingToolCount = getAllMarketingTools().length;
+  const totalListings = aiToolCount + marketingToolCount;
   const categoryCount = getAllCategories().length;
+
+  const countMap = { ai: aiToolCount, marketing: marketingToolCount };
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,40,200,0.2),transparent)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,40,200,0.15),transparent)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_80%,rgba(16,185,129,0.08),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
 
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-24 text-center">
@@ -63,15 +85,15 @@ export default function HubPage() {
             <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">List</span>
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-            Curated directories for everything you&apos;re looking for. Hand-picked resources across AI tools, dev tools, and more.
+            Curated directories for the software tools that actually matter. Hand-picked, honestly reviewed, free to browse.
           </p>
 
           {/* Stats */}
           <div className="flex items-center justify-center gap-8 flex-wrap">
             {[
-              { value: `${toolCount}+`, label: "Listings" },
-              { value: `${categoryCount}`, label: "Categories" },
-              { value: "1", label: "Live Directory" },
+              { value: `${totalListings}+`, label: "Listings" },
+              { value: `${categoryCount + 8}`, label: "Categories" },
+              { value: "2", label: "Live Directories" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl font-bold text-white">{stat.value}</div>
@@ -86,8 +108,9 @@ export default function HubPage() {
       <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-6">Browse Directories</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {directories.map((dir) => (
-            dir.live ? (
+          {directories.map((dir) => {
+            const listingCount = dir.countKey ? countMap[dir.countKey] : 0;
+            return dir.live ? (
               <Link
                 key={dir.slug}
                 href={`/${dir.slug}`}
@@ -99,7 +122,7 @@ export default function HubPage() {
                     {dir.emoji}
                   </div>
                   <span className={`text-xs border rounded-full px-2.5 py-1 ${dir.badgeColor}`}>
-                    Live · {toolCount}+ listings
+                    Live · {listingCount}+ listings
                   </span>
                 </div>
                 <div className="relative">
@@ -133,8 +156,8 @@ export default function HubPage() {
                   <p className="text-sm text-slate-500 leading-relaxed">{dir.description}</p>
                 </div>
               </div>
-            )
-          ))}
+            );
+          })}
         </div>
       </section>
 

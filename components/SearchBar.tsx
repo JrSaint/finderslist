@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { searchTools, CATEGORIES } from "@/lib/tools";
 import Link from "next/link";
 
-export default function SearchBar({ large = false }: { large?: boolean }) {
+export default function SearchBar({ large = false, basePath = "/ai-tools" }: { large?: boolean; basePath?: string }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ReturnType<typeof searchTools>>([]);
   const [open, setOpen] = useState(false);
@@ -42,12 +42,12 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search AI tools..."
+          placeholder={basePath.includes("marketing") ? "Search marketing tools..." : "Search AI tools..."}
           className={`flex-1 bg-transparent text-white placeholder-slate-500 outline-none ${large ? "text-lg" : "text-sm"}`}
           onKeyDown={(e) => {
             if (e.key === "Enter" && query.trim()) {
               setOpen(false);
-              router.push(`/ai-tools?q=${encodeURIComponent(query.trim())}`);
+              router.push(`${basePath}?q=${encodeURIComponent(query.trim())}`);
             }
           }}
         />
@@ -65,7 +65,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
           {results.map((tool) => (
             <Link
               key={tool.slug}
-              href={`/ai-tools/tools/${tool.slug}`}
+              href={`${basePath}/tools/${tool.slug}`}
               onClick={() => { setQuery(""); setOpen(false); }}
               className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors"
             >
