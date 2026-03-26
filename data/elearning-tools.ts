@@ -1,0 +1,592 @@
+export type ElearningCategory =
+  | "lms"
+  | "course-creation"
+  | "cohort-learning"
+  | "employee-training"
+  | "microlearning";
+
+export interface ElearningTool {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: ElearningCategory;
+  tags: string[];
+  url: string;
+  affiliateUrl?: string;
+  pricing: "free" | "freemium" | "paid";
+  featured: boolean;
+  logo: string;
+  domain?: string;
+  pros?: string[];
+  cons?: string[];
+  useCases?: string[];
+}
+
+export const ELEARNING_CATEGORIES: Record<
+  ElearningCategory,
+  { label: string; emoji: string; description: string; gradient: string }
+> = {
+  lms: {
+    label: "Learning Management Systems",
+    emoji: "🎓",
+    description: "Platforms for hosting, delivering, and tracking online learning at scale.",
+    gradient: "from-blue-500 to-indigo-500",
+  },
+  "course-creation": {
+    label: "Course Creation Platforms",
+    emoji: "📹",
+    description: "Tools to create, host, and sell online courses to any audience.",
+    gradient: "from-purple-500 to-violet-500",
+  },
+  "cohort-learning": {
+    label: "Cohort & Community Learning",
+    emoji: "👥",
+    description: "Platforms for live, cohort-based courses with community and interaction.",
+    gradient: "from-green-500 to-teal-500",
+  },
+  "employee-training": {
+    label: "Employee Training & Onboarding",
+    emoji: "🏢",
+    description: "Corporate L&D tools for employee development and compliance training.",
+    gradient: "from-amber-500 to-orange-500",
+  },
+  microlearning: {
+    label: "Microlearning & Just-in-Time Learning",
+    emoji: "⚡",
+    description: "Short-form learning tools for quick skill building and knowledge reinforcement.",
+    gradient: "from-pink-500 to-rose-500",
+  },
+};
+
+export const ELEARNING_TOOLS: ElearningTool[] = [
+  {
+    slug: "teachable",
+    name: "Teachable",
+    tagline: "Create and sell online courses and coaching",
+    description:
+      "Teachable is one of the most popular course creation platforms, used by over 100,000 creators to build and sell online courses, coaching programs, and digital downloads. It handles payments, student management, and delivery so creators can focus on content. Especially popular in the personal development, fitness, and professional skills niches.",
+    category: "course-creation",
+    tags: ["online courses", "coaching", "digital products", "creator", "payments", "certificates"],
+    url: "https://teachable.com",
+    affiliateUrl: "https://teachable.com?ref=finderslist",
+    pricing: "freemium",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=teachable.com&sz=128",
+    domain: "teachable.com",
+    pros: [
+      "Easy to use for non-technical creators",
+      "Built-in payment processing",
+      "Good student management tools",
+      "Free plan available",
+    ],
+    cons: [
+      "Transaction fees on lower plans",
+      "Limited community features",
+      "Less customizable than Kajabi",
+    ],
+    useCases: ["Online course creators", "Life coaches", "Fitness instructors", "Professional skill trainers"],
+  },
+  {
+    slug: "kajabi",
+    name: "Kajabi",
+    tagline: "The all-in-one platform for knowledge entrepreneurs",
+    description:
+      "Kajabi is the premium all-in-one platform for creators who want to run their entire knowledge business — courses, memberships, coaching, email marketing, website, and community — from one place. Beloved by top creators for its comprehensive feature set and beautiful product delivery, though it comes at a higher price point.",
+    category: "course-creation",
+    tags: ["all-in-one", "courses", "membership", "email marketing", "website", "coaching", "community"],
+    url: "https://kajabi.com",
+    affiliateUrl: "https://kajabi.com?ref=finderslist",
+    pricing: "paid",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=kajabi.com&sz=128",
+    domain: "kajabi.com",
+    pros: [
+      "All-in-one — no need for extra tools",
+      "Beautiful product delivery",
+      "Built-in email marketing",
+      "No transaction fees",
+    ],
+    cons: [
+      "Expensive ($149+/mo)",
+      "Overkill for beginners",
+      "Community features lag behind Circle",
+    ],
+    useCases: ["Established course creators", "Membership site owners", "Coaches running full businesses"],
+  },
+  {
+    slug: "thinkific",
+    name: "Thinkific",
+    tagline: "Build and sell online courses with confidence",
+    description:
+      "Thinkific is a popular course creation platform known for its strong free plan, flexible course builder, and no transaction fees. It's used by over 50,000 creators worldwide for courses, memberships, and communities. A good middle-ground between Teachable's simplicity and Kajabi's power.",
+    category: "course-creation",
+    tags: ["online courses", "membership", "community", "no transaction fees", "free plan", "flexible"],
+    url: "https://thinkific.com",
+    affiliateUrl: "https://thinkific.com?ref=finderslist",
+    pricing: "freemium",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=thinkific.com&sz=128",
+    domain: "thinkific.com",
+    pros: [
+      "No transaction fees on any plan",
+      "Strong free plan",
+      "Flexible course builder",
+      "Good community features (Thinkific Communities)",
+    ],
+    cons: [
+      "Less all-in-one than Kajabi",
+      "Email marketing requires integration",
+      "Design customization is limited",
+    ],
+    useCases: ["Independent course creators", "Community-based learning", "Professional certification programs"],
+  },
+  {
+    slug: "podia",
+    name: "Podia",
+    tagline: "One place to sell courses, webinars, and memberships",
+    description:
+      "Podia is an all-in-one platform for creators to sell online courses, digital downloads, webinars, and memberships with zero transaction fees. It also includes email marketing and community tools. Known for its clean, simple interface and affordable pricing, it's popular with beginners and solo creators.",
+    category: "course-creation",
+    tags: ["courses", "digital downloads", "webinars", "memberships", "email marketing", "affordable", "simple"],
+    url: "https://podia.com",
+    affiliateUrl: "https://podia.com?ref=finderslist",
+    pricing: "freemium",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=podia.com&sz=128",
+    domain: "podia.com",
+    pros: [
+      "Simple and beginner-friendly",
+      "No transaction fees",
+      "Includes email marketing",
+      "Affordable pricing",
+    ],
+    cons: [
+      "Less powerful than Kajabi",
+      "Community features are basic",
+      "Limited course design customization",
+    ],
+    useCases: ["Beginner creators", "Digital product sellers", "Simple webinar businesses"],
+  },
+  {
+    slug: "moodle",
+    name: "Moodle",
+    tagline: "The world's most widely used open-source LMS",
+    description:
+      "Moodle is the most popular open-source Learning Management System in the world, used by thousands of universities, schools, and companies for online education. It's self-hosted, free to use, and highly customizable with a vast plugin ecosystem. Requires technical knowledge to set up but offers unmatched flexibility.",
+    category: "lms",
+    tags: ["open source", "LMS", "universities", "self-hosted", "SCORM", "education", "enterprise"],
+    url: "https://moodle.org",
+    pricing: "free",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=moodle.org&sz=128",
+    domain: "moodle.org",
+    pros: [
+      "Free and open source",
+      "Used by millions worldwide — well-tested",
+      "Massive plugin ecosystem",
+      "Complete control and ownership",
+    ],
+    cons: [
+      "Requires server and technical setup",
+      "UI is outdated and less intuitive",
+      "Maintenance is your responsibility",
+    ],
+    useCases: ["Universities and schools", "Corporate L&D on a budget", "Non-profits and governments"],
+  },
+  {
+    slug: "canvas-lms",
+    name: "Canvas LMS",
+    tagline: "The leading LMS for higher education and K-12",
+    description:
+      "Canvas is the leading cloud-based LMS adopted by thousands of schools, universities, and corporate training programs. It offers a clean, modern interface, mobile apps, video tools, rich assessments, and deep integrations with educational tools. It's the standard LMS at many US universities.",
+    category: "lms",
+    tags: ["LMS", "higher education", "K-12", "cloud", "video", "assessments", "grading"],
+    url: "https://instructure.com/canvas",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=instructure.com&sz=128",
+    domain: "instructure.com",
+    pros: [
+      "Clean, modern interface",
+      "Excellent for structured courses and grading",
+      "Strong mobile apps",
+      "Large ecosystem of integrations",
+    ],
+    cons: [
+      "Expensive for corporate use",
+      "Overkill for informal learning",
+      "Requires institutional pricing",
+    ],
+    useCases: ["University courses", "K-12 online learning", "Structured corporate training"],
+  },
+  {
+    slug: "docebo",
+    name: "Docebo",
+    tagline: "AI-powered learning suite for enterprise training",
+    description:
+      "Docebo is an AI-powered enterprise LMS designed for corporate learning, partner training, and customer education. It uses AI to personalize learning paths, automate content curation, and deliver learning at scale across the entire enterprise ecosystem. Trusted by Fortune 500 companies worldwide.",
+    category: "lms",
+    tags: ["enterprise LMS", "AI", "corporate training", "partner training", "customer education", "personalization"],
+    url: "https://docebo.com",
+    pricing: "paid",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=docebo.com&sz=128",
+    domain: "docebo.com",
+    pros: [
+      "AI-powered personalization",
+      "Scales across enterprise ecosystems",
+      "Multi-audience: employees, partners, customers",
+      "Strong analytics and reporting",
+    ],
+    cons: [
+      "Expensive enterprise pricing",
+      "Complex implementation",
+      "UI can be overwhelming",
+    ],
+    useCases: ["Enterprise employee training", "Customer education programs", "Partner enablement"],
+  },
+  {
+    slug: "learnworlds",
+    name: "LearnWorlds",
+    tagline: "Create, sell, and market your online school",
+    description:
+      "LearnWorlds is a premium course creation and online school platform known for its interactive video tools, powerful assessments, and white-label capabilities. It's popular with professional training academies, bootcamps, and anyone who wants to build a fully branded online education platform.",
+    category: "course-creation",
+    tags: ["online school", "white-label", "interactive video", "assessments", "certifications", "branded academy"],
+    url: "https://learnworlds.com",
+    affiliateUrl: "https://learnworlds.com?ref=finderslist",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=learnworlds.com&sz=128",
+    domain: "learnworlds.com",
+    pros: [
+      "Excellent interactive video tools",
+      "Strong white-label branding",
+      "Advanced assessments and certifications",
+      "Good mobile app",
+    ],
+    cons: [
+      "More expensive than Teachable/Thinkific",
+      "Learning curve for setup",
+      "Community features are limited",
+    ],
+    useCases: ["Professional training academies", "Branded online schools", "Certification programs"],
+  },
+  {
+    slug: "mighty-networks",
+    name: "Mighty Networks",
+    tagline: "Build a thriving community with courses and memberships",
+    description:
+      "Mighty Networks is a platform for creators and brands to build courses, memberships, and communities all in one place. Unlike pure course platforms, Mighty Networks emphasizes community as the core — where members connect around shared interests, live events, and cohort programs.",
+    category: "cohort-learning",
+    tags: ["community", "membership", "cohort courses", "live events", "creator economy", "social learning"],
+    url: "https://mightynetworks.com",
+    affiliateUrl: "https://mightynetworks.com?ref=finderslist",
+    pricing: "paid",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=mightynetworks.com&sz=128",
+    domain: "mightynetworks.com",
+    pros: [
+      "Strong community + course combination",
+      "Native mobile apps for members",
+      "Live streaming and events",
+      "AI matching for community connections",
+    ],
+    cons: [
+      "Transaction fees on lower plans",
+      "Not as polished as Kajabi for course delivery",
+      "Expensive for larger communities",
+    ],
+    useCases: ["Creator communities", "Cohort-based courses", "Membership clubs", "Online schools with community"],
+  },
+  {
+    slug: "circle",
+    name: "Circle",
+    tagline: "The community platform for creators and brands",
+    description:
+      "Circle is the leading community platform for creators, coaches, and brands who want to run a paid community alongside courses and live events. It offers spaces for discussion, courses, events, and live streams. Beloved for its clean UX and depth of community features, it's become the default for creator communities.",
+    category: "cohort-learning",
+    tags: ["community", "courses", "live events", "membership", "creator", "spaces", "live streams"],
+    url: "https://circle.so",
+    affiliateUrl: "https://circle.so?ref=finderslist",
+    pricing: "paid",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=circle.so&sz=128",
+    domain: "circle.so",
+    pros: [
+      "Best-in-class community UX",
+      "Strong course and event tools",
+      "White-label options",
+      "Excellent mobile app",
+    ],
+    cons: [
+      "Transaction fees on starter plan",
+      "Email marketing requires integration",
+      "Expensive at higher tiers",
+    ],
+    useCases: ["Creator membership communities", "Cohort-based courses", "Brand communities", "Paid newsletters + community"],
+  },
+  {
+    slug: "maven",
+    name: "Maven",
+    tagline: "The platform for cohort-based courses",
+    description:
+      "Maven is the leading platform for live, cohort-based courses — where students progress through a curriculum together over weeks, with live sessions and community interaction. Founded by the creators of cohort-based learning, it attracts top creators and educators building premium learning experiences.",
+    category: "cohort-learning",
+    tags: ["cohort-based", "live courses", "community", "interactive learning", "premium", "creator economy"],
+    url: "https://maven.com",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=maven.com&sz=128",
+    domain: "maven.com",
+    pros: [
+      "Best platform for cohort-based courses",
+      "Live session tooling built in",
+      "Revenue sharing model (no monthly fee)",
+      "Strong creator network",
+    ],
+    cons: [
+      "Maven takes a revenue cut",
+      "Not suited for self-paced courses",
+      "Less control over community branding",
+    ],
+    useCases: ["Live cohort courses", "Workshop series", "Premium educational programs"],
+  },
+  {
+    slug: "360learning",
+    name: "360Learning",
+    tagline: "Collaborative learning for teams and enterprises",
+    description:
+      "360Learning is a collaborative learning platform where subject matter experts can easily create courses from existing knowledge and employees learn from each other. Its unique collaborative approach lets teams build training faster than traditional L&D while increasing engagement through peer interaction.",
+    category: "employee-training",
+    tags: ["collaborative learning", "L&D", "employee training", "internal experts", "upskilling", "enterprise"],
+    url: "https://360learning.com",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=360learning.com&sz=128",
+    domain: "360learning.com",
+    pros: [
+      "Unique collaborative creation model",
+      "Fast course creation from internal experts",
+      "High engagement through peer learning",
+      "Good analytics",
+    ],
+    cons: [
+      "Best suited for collaborative culture teams",
+      "Less structured for compliance training",
+      "Pricing not transparent",
+    ],
+    useCases: ["Internal expert-led training", "Fast-scaling companies", "Team skill sharing"],
+  },
+  {
+    slug: "lessonly",
+    name: "Lessonly (Seismic Learning)",
+    tagline: "Work better training software for teams",
+    description:
+      "Lessonly (now part of Seismic) is a training and enablement platform designed for customer-facing teams — sales, support, and customer success. It offers simple lesson creation, practice scenarios, and coaching tools. Widely used by sales and support organizations for onboarding and skills development.",
+    category: "employee-training",
+    tags: ["sales training", "support training", "onboarding", "coaching", "Seismic", "enablement"],
+    url: "https://seismic.com/lessonly",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=seismic.com&sz=128",
+    domain: "seismic.com",
+    pros: [
+      "Purpose-built for customer-facing teams",
+      "Practice scenarios and role-play",
+      "Easy lesson creation",
+      "Good manager coaching tools",
+    ],
+    cons: [
+      "Expensive",
+      "Less suited for technical or compliance training",
+      "Best value only with full Seismic suite",
+    ],
+    useCases: ["Sales team onboarding", "Support agent training", "Customer success enablement"],
+  },
+  {
+    slug: "absorb-lms",
+    name: "Absorb LMS",
+    tagline: "A powerful, flexible LMS for modern enterprises",
+    description:
+      "Absorb LMS is a cloud-based enterprise learning management system designed for corporate training, compliance, and customer education. It features an intuitive admin interface, built-in course library, e-commerce, and AI-powered learning recommendations. Popular with mid-enterprise companies across industries.",
+    category: "employee-training",
+    tags: ["enterprise LMS", "compliance", "corporate training", "e-commerce", "AI recommendations", "cloud"],
+    url: "https://absorblms.com",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=absorblms.com&sz=128",
+    domain: "absorblms.com",
+    pros: [
+      "Strong compliance training features",
+      "Built-in course library",
+      "Good e-commerce for paid training",
+      "AI recommendations",
+    ],
+    cons: [
+      "Expensive enterprise pricing",
+      "Implementation can be slow",
+      "Support quality varies",
+    ],
+    useCases: ["Corporate compliance training", "Customer education programs", "Partner training portals"],
+  },
+  {
+    slug: "talent-lms",
+    name: "TalentLMS",
+    tagline: "The LMS your employees will love",
+    description:
+      "TalentLMS is a cloud-based LMS built for ease of use, offering companies a fast way to deploy employee training, compliance courses, and onboarding programs. It has a clean interface, gamification, and mobile apps. More affordable than enterprise LMS options, it's popular with SMBs and mid-size companies.",
+    category: "employee-training",
+    tags: ["LMS", "employee training", "onboarding", "gamification", "SMB", "affordable", "cloud"],
+    url: "https://talentlms.com",
+    affiliateUrl: "https://talentlms.com?ref=finderslist",
+    pricing: "freemium",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=talentlms.com&sz=128",
+    domain: "talentlms.com",
+    pros: [
+      "Fast to set up and use",
+      "Affordable for SMBs",
+      "Built-in gamification",
+      "Free plan available",
+    ],
+    cons: [
+      "Less powerful than enterprise LMS",
+      "Limited advanced reporting",
+      "Customization is restricted",
+    ],
+    useCases: ["SMB employee training", "Quick compliance programs", "Remote team onboarding"],
+  },
+  {
+    slug: "edapp",
+    name: "EdApp",
+    tagline: "The free microlearning platform for frontline teams",
+    description:
+      "EdApp is a mobile-first microlearning platform designed for frontline and deskless workers. Its award-winning authoring tool, spaced repetition algorithms, gamification, and push notifications make it ideal for retail, hospitality, manufacturing, and other industries with non-desk employees.",
+    category: "microlearning",
+    tags: ["microlearning", "mobile-first", "frontline workers", "gamification", "spaced repetition", "free"],
+    url: "https://edapp.com",
+    pricing: "freemium",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=edapp.com&sz=128",
+    domain: "edapp.com",
+    pros: [
+      "Free for unlimited users",
+      "Mobile-first, ideal for frontline workers",
+      "Beautiful interactive lessons",
+      "Spaced repetition for retention",
+    ],
+    cons: [
+      "Less suitable for complex, long-form training",
+      "Limited reporting on free plan",
+      "Some advanced features require paid plan",
+    ],
+    useCases: ["Retail staff training", "Restaurant and hospitality", "Manufacturing safety training", "Field teams"],
+  },
+  {
+    slug: "grovo",
+    name: "Grovo",
+    tagline: "Microlearning for modern teams (now part of Cornerstone)",
+    description:
+      "Grovo pioneered microlearning for corporate teams with short, focused lessons that fit into the flow of work. Now integrated into Cornerstone OnDemand, its microlearning approach is used by enterprise teams for compliance, soft skills, and management training.",
+    category: "microlearning",
+    tags: ["microlearning", "compliance", "soft skills", "corporate", "Cornerstone", "management training"],
+    url: "https://cornerstone.com",
+    pricing: "paid",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=cornerstone.com&sz=128",
+    domain: "cornerstone.com",
+    pros: [
+      "High-quality pre-built microlearning content",
+      "Part of Cornerstone's larger platform",
+      "Good for compliance and soft skills",
+    ],
+    cons: [
+      "Only available through Cornerstone",
+      "Expensive",
+      "Less flexibility for custom content",
+    ],
+    useCases: ["Enterprise soft skills training", "Compliance microlearning", "Management development"],
+  },
+  {
+    slug: "articulate-360",
+    name: "Articulate 360",
+    tagline: "The industry standard for e-learning authoring",
+    description:
+      "Articulate 360 is the most widely used e-learning authoring suite in corporate L&D, featuring Storyline 360 for interactive course creation and Rise 360 for responsive, beautiful courses that work on any device. Used by instructional designers at companies worldwide to create SCORM-compliant training.",
+    category: "employee-training",
+    tags: ["authoring tool", "SCORM", "Storyline", "Rise 360", "instructional design", "interactive", "L&D"],
+    url: "https://articulate.com",
+    affiliateUrl: "https://articulate.com?ref=finderslist",
+    pricing: "paid",
+    featured: true,
+    logo: "https://www.google.com/s2/favicons?domain=articulate.com&sz=128",
+    domain: "articulate.com",
+    pros: [
+      "Industry standard — every ID knows Storyline",
+      "Rise 360 for fast, beautiful responsive courses",
+      "SCORM and xAPI export",
+      "Huge community and template library",
+    ],
+    cons: [
+      "$1,399+/year subscription",
+      "Storyline has a steep learning curve",
+      "Windows-only for Storyline (Rise is web-based)",
+    ],
+    useCases: ["Corporate e-learning development", "Compliance courses", "Interactive simulations", "L&D teams"],
+  },
+  {
+    slug: "skillshare",
+    name: "Skillshare",
+    tagline: "Explore your creativity with thousands of classes",
+    description:
+      "Skillshare is a subscription-based online learning community with over 35,000 classes focused on creative and business skills. Unlike course-selling platforms, instructors earn royalties based on minutes watched. Popular for design, illustration, photography, marketing, and entrepreneurship content.",
+    category: "course-creation",
+    tags: ["creative skills", "subscription", "royalties", "design", "photography", "business", "illustration"],
+    url: "https://skillshare.com",
+    affiliateUrl: "https://skillshare.com?ref=finderslist",
+    pricing: "freemium",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=skillshare.com&sz=128",
+    domain: "skillshare.com",
+    pros: [
+      "Large built-in audience of learners",
+      "No selling or marketing required",
+      "Good for creative skill content",
+      "Passive royalty income potential",
+    ],
+    cons: [
+      "No direct student relationship",
+      "Royalties can be low",
+      "Limited pricing control",
+    ],
+    useCases: ["Creative skill instructors", "Passive income via content", "Design and art educators"],
+  },
+  {
+    slug: "udemy",
+    name: "Udemy",
+    tagline: "Teach the world online — reach 60M+ students",
+    description:
+      "Udemy is the world's largest online learning marketplace with 60+ million students and 200,000+ courses. Instructors create and publish courses to Udemy's massive built-in audience. Revenue sharing applies (instructors keep 37-97% depending on the channel). Best for technical, business, and certification prep content.",
+    category: "course-creation",
+    tags: ["marketplace", "large audience", "technical courses", "certifications", "business skills", "passive income"],
+    url: "https://udemy.com",
+    pricing: "freemium",
+    featured: false,
+    logo: "https://www.google.com/s2/favicons?domain=udemy.com&sz=128",
+    domain: "udemy.com",
+    pros: [
+      "Access to 60M+ students",
+      "No marketing needed",
+      "Good for tech and certification content",
+      "Free to publish",
+    ],
+    cons: [
+      "Udemy controls discounting and pricing",
+      "Crowded and competitive marketplace",
+      "Revenue share reduces earnings",
+    ],
+    useCases: ["Technical skill instructors", "Certification prep courses", "Business skill trainers"],
+  },
+];

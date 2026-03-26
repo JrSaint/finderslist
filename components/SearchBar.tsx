@@ -48,6 +48,20 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
             basePath.includes("ecommerce") ? "Search e-commerce tools..." :
             basePath.includes("productivity") ? "Search productivity tools..." :
             basePath.includes("hr") ? "Search HR tools..." :
+            basePath.includes("crm") ? "Search CRM & sales tools..." :
+            basePath.includes("security") ? "Search security tools..." :
+            basePath.includes("website-builders") ? "Search website builders..." :
+            basePath.includes("creator") ? "Search creator tools..." :
+            basePath.includes("developer") ? "Search developer tools..." :
+            basePath.includes("design") ? "Search design tools..." :
+            basePath.includes("support") ? "Search support tools..." :
+            basePath.includes("elearning") ? "Search e-learning tools..." :
+            basePath.includes("analytics") ? "Search analytics tools..." :
+            basePath.includes("legal") ? "Search legal tools..." :
+            basePath.includes("hosting") ? "Search hosting tools..." :
+            basePath.includes("social-media") ? "Search social media tools..." :
+            basePath.includes("email") ? "Search email tools..." :
+            basePath.includes("no-code") ? "Search no-code tools..." :
             "Search AI tools..."
           }
           className={`flex-1 bg-transparent text-white placeholder-slate-500 outline-none ${large ? "text-lg" : "text-sm"}`}
