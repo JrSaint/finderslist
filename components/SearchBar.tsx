@@ -42,7 +42,14 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={basePath.includes("marketing") ? "Search marketing tools..." : "Search AI tools..."}
+          placeholder={
+            basePath.includes("marketing") ? "Search marketing tools..." :
+            basePath.includes("finance") ? "Search finance tools..." :
+            basePath.includes("ecommerce") ? "Search e-commerce tools..." :
+            basePath.includes("productivity") ? "Search productivity tools..." :
+            basePath.includes("hr") ? "Search HR tools..." :
+            "Search AI tools..."
+          }
           className={`flex-1 bg-transparent text-white placeholder-slate-500 outline-none ${large ? "text-lg" : "text-sm"}`}
           onKeyDown={(e) => {
             if (e.key === "Enter" && query.trim()) {
