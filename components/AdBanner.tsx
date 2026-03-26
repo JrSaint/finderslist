@@ -8,16 +8,18 @@ interface AdBannerProps {
   className?: string;
 }
 
-// Replace with your actual AdSense publisher ID: ca-pub-XXXXXXXXXXXXXXXXX
-const ADSENSE_CLIENT = "ca-pub-XXXXXXXXXXXXXXXXX";
+const ADSENSE_CLIENT = "ca-pub-5534047032969220";
 
 export default function AdBanner({ slot, format = "auto", className = "" }: AdBannerProps) {
   useEffect(() => {
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-    } catch {
-      // AdSense not loaded yet
+    // Only push in production — no <ins> elements exist in dev mode
+    if (process.env.NODE_ENV === "production") {
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      } catch {
+        // AdSense not yet loaded
+      }
     }
   }, []);
 

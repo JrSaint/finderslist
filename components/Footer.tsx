@@ -46,16 +46,18 @@ export default function Footer() {
               <Link href="/" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Home</Link>
               <Link href="/ai-tools" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">AI Tools</Link>
               <Link href="/ai-tools/submit" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Submit a Tool</Link>
+              <Link href="/privacy" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Privacy Policy</Link>
             </div>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-600">
-            © {new Date().getFullYear()} FindersList. Some links are affiliate links — we may earn a commission at no extra cost to you.
+            © {new Date().getFullYear()} FindersList. Some links are affiliate links — we may earn a small commission at no extra cost to you.{" "}
+            <Link href="/privacy" className="underline hover:text-slate-400 transition-colors">Privacy Policy</Link>
           </p>
           <p className="text-xs text-slate-600">
-            Built to help you navigate the AI landscape.
+            Curated directories for the tools that matter.
           </p>
         </div>
       </div>
