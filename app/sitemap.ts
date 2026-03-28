@@ -87,6 +87,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1,
     },
+    // Site pages
+    { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     // Directory index pages
     { url: `${BASE_URL}/ai-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
     { url: `${BASE_URL}/marketing-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },

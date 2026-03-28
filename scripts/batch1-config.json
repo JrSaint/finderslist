@@ -1,0 +1,124 @@
+{
+  "directories": [
+    {
+      "slug": "auto-insurance",
+      "typePrefix": "AutoInsurance",
+      "upperPrefix": "AUTO_INSURANCE",
+      "accentColor": "blue",
+      "gradient": "from-blue-600/20 to-indigo-800/30",
+      "displayName": "Auto Insurance",
+      "shortName": "Auto Insurance",
+      "seoTitle": "Best Auto Insurance Companies (2026) — 15+ Providers Compared",
+      "seoDescription": "Compare the best auto insurance companies for coverage, rates, and discounts. Reviews of GEICO, State Farm, Progressive, USAA, and more.",
+      "seoKeywords": ["auto insurance", "best car insurance 2026", "cheap auto insurance", "car insurance quotes", "auto insurance comparison"]
+    },
+    {
+      "slug": "credit-cards",
+      "typePrefix": "CreditCard",
+      "upperPrefix": "CREDIT_CARD",
+      "accentColor": "green",
+      "gradient": "from-green-600/20 to-emerald-800/30",
+      "displayName": "Credit Cards",
+      "shortName": "Credit Card",
+      "seoTitle": "Best Credit Cards (2026) — 15+ Cards Reviewed & Compared",
+      "seoDescription": "Compare the best credit cards for cash back, travel rewards, balance transfers, and business. Reviews of Chase, Amex, Capital One, and more.",
+      "seoKeywords": ["best credit cards", "credit card comparison 2026", "cash back credit cards", "travel rewards cards", "business credit cards"]
+    },
+    {
+      "slug": "personal-loans",
+      "typePrefix": "PersonalLoan",
+      "upperPrefix": "PERSONAL_LOAN",
+      "accentColor": "amber",
+      "gradient": "from-amber-600/20 to-orange-800/30",
+      "displayName": "Personal Loans",
+      "shortName": "Personal Loan",
+      "seoTitle": "Best Personal Loans (2026) — 15+ Lenders Compared",
+      "seoDescription": "Compare the best personal loan lenders for debt consolidation, home improvement, and more. Reviews of SoFi, LightStream, Marcus, Prosper, and more.",
+      "seoKeywords": ["personal loans", "best personal loans 2026", "debt consolidation loans", "online personal loans", "low interest personal loans"]
+    },
+    {
+      "slug": "student-loans",
+      "typePrefix": "StudentLoan",
+      "upperPrefix": "STUDENT_LOAN",
+      "accentColor": "indigo",
+      "gradient": "from-indigo-600/20 to-violet-800/30",
+      "displayName": "Student Loans",
+      "shortName": "Student Loan",
+      "seoTitle": "Best Student Loans & Refinancing (2026) — 15+ Lenders Compared",
+      "seoDescription": "Compare the best student loan lenders and refinancing options. Reviews of SoFi, Earnest, College Ave, Sallie Mae, and more.",
+      "seoKeywords": ["student loans", "student loan refinancing 2026", "private student loans", "best student loan rates", "college loans"]
+    },
+    {
+      "slug": "life-insurance",
+      "typePrefix": "LifeInsurance",
+      "upperPrefix": "LIFE_INSURANCE",
+      "accentColor": "emerald",
+      "gradient": "from-emerald-600/20 to-green-800/30",
+      "displayName": "Life Insurance",
+      "shortName": "Life Insurance",
+      "seoTitle": "Best Life Insurance Companies (2026) — 15+ Providers Reviewed",
+      "seoDescription": "Compare the best life insurance companies for term, whole, and universal life policies. Reviews of Haven Life, Bestow, Northwestern Mutual, and more.",
+      "seoKeywords": ["life insurance", "best life insurance 2026", "term life insurance", "whole life insurance", "life insurance quotes"]
+    },
+    {
+      "slug": "health-insurance",
+      "typePrefix": "HealthInsurance",
+      "upperPrefix": "HEALTH_INSURANCE",
+      "accentColor": "red",
+      "gradient": "from-red-600/20 to-rose-800/30",
+      "displayName": "Health Insurance",
+      "shortName": "Health Insurance",
+      "seoTitle": "Best Health Insurance Plans (2026) — 15+ Options Compared",
+      "seoDescription": "Compare the best health insurance plans and marketplaces. Reviews of Blue Cross Blue Shield, UnitedHealthcare, Kaiser Permanente, Oscar, and more.",
+      "seoKeywords": ["health insurance", "best health insurance 2026", "health insurance marketplace", "affordable health plans", "health insurance comparison"]
+    },
+    {
+      "slug": "home-insurance",
+      "typePrefix": "HomeInsurance",
+      "upperPrefix": "HOME_INSURANCE",
+      "accentColor": "sky",
+      "gradient": "from-sky-600/20 to-blue-800/30",
+      "displayName": "Home Insurance",
+      "shortName": "Home Insurance",
+      "seoTitle": "Best Home Insurance Companies (2026) — 15+ Providers Compared",
+      "seoDescription": "Compare the best homeowners insurance companies for coverage, rates, and claims service. Reviews of State Farm, Allstate, Lemonade, USAA, and more.",
+      "seoKeywords": ["home insurance", "best homeowners insurance 2026", "home insurance quotes", "homeowners insurance comparison", "cheap home insurance"]
+    },
+    {
+      "slug": "business-insurance",
+      "typePrefix": "BusinessInsurance",
+      "upperPrefix": "BUSINESS_INSURANCE",
+      "accentColor": "violet",
+      "gradient": "from-violet-600/20 to-purple-800/30",
+      "displayName": "Business Insurance",
+      "shortName": "Business Insurance",
+      "seoTitle": "Best Business Insurance Companies (2026) — 15+ Providers Compared",
+      "seoDescription": "Compare the best business insurance providers for general liability, workers comp, and commercial policies. Reviews of The Hartford, Hiscox, Next Insurance, and more.",
+      "seoKeywords": ["business insurance", "best business insurance 2026", "general liability insurance", "workers compensation", "commercial insurance"]
+    },
+    {
+      "slug": "investment-platforms",
+      "typePrefix": "InvestmentPlatform",
+      "upperPrefix": "INVESTMENT_PLATFORM",
+      "accentColor": "cyan",
+      "gradient": "from-cyan-600/20 to-teal-800/30",
+      "displayName": "Investment Platforms",
+      "shortName": "Investment Platform",
+      "seoTitle": "Best Investment Platforms (2026) — 15+ Brokerages Compared",
+      "seoDescription": "Compare the best investment platforms and online brokerages. Reviews of Fidelity, Charles Schwab, Vanguard, Robinhood, E*TRADE, and more.",
+      "seoKeywords": ["investment platforms", "best online brokerages 2026", "stock trading apps", "investment apps", "online investing"]
+    },
+    {
+      "slug": "cryptocurrency-exchanges",
+      "typePrefix": "CryptoExchange",
+      "upperPrefix": "CRYPTO_EXCHANGE",
+      "accentColor": "orange",
+      "gradient": "from-orange-600/20 to-amber-800/30",
+      "displayName": "Cryptocurrency Exchanges",
+      "shortName": "Crypto Exchange",
+      "seoTitle": "Best Cryptocurrency Exchanges (2026) — 15+ Platforms Compared",
+      "seoDescription": "Compare the best cryptocurrency exchanges for trading Bitcoin, Ethereum, and altcoins. Reviews of Coinbase, Kraken, Binance, Gemini, and more.",
+      "seoKeywords": ["cryptocurrency exchanges", "best crypto exchanges 2026", "bitcoin trading", "crypto trading platforms", "buy cryptocurrency"]
+    }
+  ]
+}

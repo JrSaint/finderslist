@@ -1,0 +1,331 @@
+export type VideoConferencingCategory =
+  | "all-purpose"
+  | "webinar"
+  | "team-meetings"
+  | "healthcare"
+  | "virtual-events";
+
+export interface VideoConferencingTool {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: VideoConferencingCategory;
+  tags: string[];
+  url: string;
+  affiliateUrl?: string;
+  pricing: "free" | "freemium" | "paid";
+  featured: boolean;
+  logo: string;
+  domain?: string;
+  pros?: string[];
+  cons?: string[];
+  useCases?: string[];
+}
+
+export const VIDEO_CONFERENCING_CATEGORIES: Record<VideoConferencingCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+  "all-purpose": { label: "All-Purpose", emoji: "🎥", description: "Versatile video conferencing platforms suitable for any meeting type, from one-on-ones to large company all-hands.", gradient: "from-blue-600/30 to-indigo-800/40" },
+  "webinar": { label: "Webinar", emoji: "📡", description: "Purpose-built platforms for hosting webinars, product demos, and large-audience presentations with engagement tools.", gradient: "from-purple-600/30 to-violet-800/40" },
+  "team-meetings": { label: "Team Meetings", emoji: "👥", description: "Lightweight tools designed for quick daily standups, team check-ins, and collaborative working sessions.", gradient: "from-green-600/30 to-emerald-800/40" },
+  "healthcare": { label: "Healthcare", emoji: "🏥", description: "HIPAA-compliant telehealth video platforms built for virtual patient consultations and medical appointments.", gradient: "from-red-600/30 to-rose-800/40" },
+  "virtual-events": { label: "Virtual Events", emoji: "🎪", description: "Full-featured event platforms for conferences, expos, and networking experiences with stages, booths, and breakout rooms.", gradient: "from-orange-600/30 to-amber-800/40" },
+};
+
+export const VIDEO_CONFERENCING_TOOLS: VideoConferencingTool[] = [
+  // ── ALL-PURPOSE ───────────────────────────────────────────────────────
+  {
+    slug: "zoom",
+    name: "Zoom",
+    tagline: "The video conferencing platform that became synonymous with virtual meetings",
+    description: "Zoom is the most widely adopted video conferencing platform in the world, offering reliable HD video and audio for meetings of all sizes. Its intuitive interface, breakout rooms, virtual backgrounds, and robust recording features make it a go-to for businesses, educators, and individuals alike. Zoom also provides a marketplace of integrations that extend its functionality into scheduling, transcription, and project management workflows.",
+    category: "all-purpose",
+    tags: ["video meetings", "screen sharing", "breakout rooms", "recording", "webinars", "virtual backgrounds"],
+    url: "https://zoom.us",
+    pricing: "freemium",
+    featured: true,
+    logo: "📹",
+    domain: "zoom.us",
+    pros: [
+      "Industry-leading reliability with consistently high video and audio quality",
+      "Generous free tier allows 40-minute meetings with up to 100 participants",
+      "Breakout rooms and polling make workshops and training sessions interactive",
+      "Massive ecosystem of third-party integrations and apps",
+      "Cross-platform support including desktop, mobile, and browser clients",
+    ],
+    cons: [
+      "Free plan limits group meetings to 40 minutes, pushing users toward paid tiers",
+      "History of security and privacy concerns has required ongoing patches",
+      "Meeting fatigue is a real issue given how ubiquitous the platform has become",
+      "Advanced features like cloud recording and analytics require Business plan or higher",
+    ],
+    useCases: [
+      "Host a company all-hands meeting with 500 employees using webinar mode and live Q&A",
+      "Run a virtual classroom with breakout rooms for small-group exercises and whiteboard collaboration",
+      "Record client discovery calls with automatic cloud transcription for team review",
+    ],
+  },
+  {
+    slug: "microsoft-teams",
+    name: "Microsoft Teams",
+    tagline: "Unified communication hub deeply integrated with the Microsoft 365 ecosystem",
+    description: "Microsoft Teams combines video conferencing, persistent chat, file sharing, and app integrations into a single workspace that lives inside the Microsoft 365 suite. Teams excels for organizations already using Outlook, SharePoint, and OneDrive, providing seamless document collaboration during and between meetings. With Together Mode, live captions, and AI-powered Copilot features, Teams continues to evolve beyond basic video calls.",
+    category: "team-meetings",
+    tags: ["Microsoft 365", "team collaboration", "chat", "file sharing", "channels", "enterprise"],
+    url: "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+    pricing: "freemium",
+    featured: true,
+    logo: "🟦",
+    domain: "microsoft.com",
+    pros: [
+      "Deep integration with Microsoft 365 apps eliminates context switching for Office users",
+      "Persistent chat channels keep conversations organized by project or team",
+      "Together Mode and custom backgrounds reduce virtual meeting fatigue",
+      "Enterprise-grade security, compliance, and admin controls out of the box",
+      "Free tier includes unlimited chat, 60-minute group meetings, and 5 GB storage",
+    ],
+    cons: [
+      "Interface can feel heavy and overwhelming for users outside the Microsoft ecosystem",
+      "Notification management across channels and chats requires careful tuning",
+      "Performance on lower-end hardware can be sluggish compared to lighter alternatives",
+      "Guest access and cross-organization collaboration setup can be confusing",
+    ],
+    useCases: [
+      "Collaborate on a Word document in real time during a Teams meeting without leaving the app",
+      "Set up project channels with tabs for Planner boards, shared files, and pinned meeting notes",
+      "Use Copilot to generate meeting summaries and action items automatically after each standup",
+    ],
+  },
+  {
+    slug: "google-meet",
+    name: "Google Meet",
+    tagline: "Simple, reliable video meetings built into Google Workspace",
+    description: "Google Meet provides a streamlined video conferencing experience that works directly from the browser with no downloads required. Tightly integrated with Google Calendar, Gmail, and Google Docs, it makes scheduling and joining meetings frictionless for Workspace users. Meet offers real-time captions, noise cancellation, and adaptive layouts that adjust to the number of participants automatically.",
+    category: "all-purpose",
+    tags: ["Google Workspace", "browser-based", "live captions", "noise cancellation", "calendar integration", "screen sharing"],
+    url: "https://meet.google.com",
+    pricing: "freemium",
+    featured: true,
+    logo: "🟢",
+    domain: "meet.google.com",
+    pros: [
+      "No downloads needed — runs entirely in the browser for instant access",
+      "Seamless integration with Google Calendar for one-click meeting joins",
+      "AI-powered noise cancellation works remarkably well in noisy environments",
+      "Live captions with automatic translation support over 60 languages",
+      "Free tier allows 60-minute meetings with up to 100 participants",
+    ],
+    cons: [
+      "Breakout rooms and advanced features are limited to paid Workspace plans",
+      "Recording is only available on Business Standard tier and above",
+      "Fewer third-party integrations compared to Zoom or Teams",
+      "Virtual background options are more limited than competing platforms",
+    ],
+    useCases: [
+      "Schedule a recurring team standup directly from Google Calendar with auto-generated Meet links",
+      "Use live translated captions to hold multilingual client meetings without a human interpreter",
+      "Share a Google Slides presentation with real-time co-editing during a brainstorming session",
+    ],
+  },
+  {
+    slug: "cisco-webex",
+    name: "Cisco Webex",
+    tagline: "Enterprise-grade video conferencing with AI-powered meeting intelligence",
+    description: "Cisco Webex is a veteran video conferencing platform trusted by large enterprises and government agencies for its security, reliability, and advanced meeting features. Webex offers end-to-end encryption, real-time translation in over 100 languages, and AI-driven noise removal that adapts to your environment. Its tight integration with Cisco networking hardware makes it a natural fit for organizations already invested in the Cisco ecosystem.",
+    category: "all-purpose",
+    tags: ["enterprise", "end-to-end encryption", "AI translation", "hardware integration", "compliance", "noise removal"],
+    url: "https://www.webex.com",
+    pricing: "freemium",
+    featured: true,
+    logo: "🔵",
+    domain: "webex.com",
+    pros: [
+      "Enterprise-grade end-to-end encryption meets the strictest compliance requirements",
+      "AI-powered real-time translation supports over 100 languages natively",
+      "Webex Devices ecosystem provides premium hardware for conference rooms",
+      "Noise removal and speech enhancement are among the best in the industry",
+      "FedRAMP authorized for government and public sector use",
+    ],
+    cons: [
+      "Interface feels dated and less intuitive compared to Zoom or Google Meet",
+      "Pricing structure is complex and can be expensive for smaller teams",
+      "Free plan is more limited than competitors with only 40-minute meetings",
+      "Mobile app experience lags behind the desktop client in features",
+    ],
+    useCases: [
+      "Host a secure board meeting with end-to-end encryption and compliance-grade recording",
+      "Enable real-time translation for a multinational town hall with employees across 15 countries",
+      "Equip conference rooms with Webex Board devices for seamless hybrid meeting experiences",
+    ],
+  },
+  {
+    slug: "goto-meeting",
+    name: "GoTo Meeting",
+    tagline: "Dependable video conferencing built for professional business meetings",
+    description: "GoTo Meeting is a long-standing video conferencing solution focused on delivering reliable, no-fuss meetings for business professionals. Part of the broader GoTo suite that includes webinar and contact center products, it offers one-click joining, drawing tools for screen sharing, and commuter mode for audio-only mobile participation. GoTo Meeting prioritizes stability and simplicity over feature bloat.",
+    category: "all-purpose",
+    tags: ["business meetings", "screen sharing", "drawing tools", "commuter mode", "reliable", "professional"],
+    url: "https://www.goto.com/meeting",
+    pricing: "paid",
+    featured: true,
+    logo: "🟠",
+    domain: "goto.com",
+    pros: [
+      "Rock-solid reliability with consistently clear audio even on poor connections",
+      "Drawing tools on shared screens make collaborative review sessions productive",
+      "Commuter mode optimizes the experience for mobile audio-only participants",
+      "Personal meeting rooms with static URLs simplify recurring meeting access",
+      "Smart assistant generates meeting notes and action items automatically",
+    ],
+    cons: [
+      "No free tier — all plans require a paid subscription starting at $14/month",
+      "Interface feels less modern than Zoom or Google Meet",
+      "Maximum participant count of 250 is lower than many competitors",
+      "Fewer integrations and marketplace options compared to larger platforms",
+    ],
+    useCases: [
+      "Run weekly client status meetings with drawing tools to annotate shared project timelines",
+      "Use commuter mode to join the morning standup hands-free while driving to the office",
+      "Set up a personal meeting room with a permanent link for ad-hoc vendor check-ins",
+    ],
+  },
+
+  // ── TEAM MEETINGS ─────────────────────────────────────────────────────
+  {
+    slug: "whereby",
+    name: "Whereby",
+    tagline: "Browser-based video meetings with no downloads or logins required",
+    description: "Whereby offers frictionless video meetings that work entirely in the browser, making it ideal for freelancers, consultants, and small teams who value simplicity. Guests join via a permanent room link with zero downloads, and embedded meeting rooms can be added directly into your own product or website.",
+    category: "team-meetings",
+    tags: ["browser-based", "no downloads", "embedded meetings", "simple", "API", "small teams"],
+    url: "https://whereby.com",
+    pricing: "freemium",
+    featured: false,
+    logo: "🪟",
+    domain: "whereby.com",
+  },
+  {
+    slug: "around",
+    name: "Around",
+    tagline: "Lightweight floating video calls designed to reduce meeting fatigue",
+    description: "Around is a minimalist video conferencing tool that uses small floating video bubbles instead of full-screen grids, allowing participants to keep working while staying visually connected. Its AI-powered audio features eliminate echo and background noise, making it ideal for teams that prefer camera-on culture without the heaviness of traditional video calls.",
+    category: "team-meetings",
+    tags: ["floating video", "lightweight", "noise cancellation", "always-on", "minimal UI", "remote teams"],
+    url: "https://www.around.co",
+    pricing: "freemium",
+    featured: false,
+    logo: "⭕",
+    domain: "around.co",
+  },
+
+  // ── WEBINAR ───────────────────────────────────────────────────────────
+  {
+    slug: "livestorm",
+    name: "Livestorm",
+    tagline: "Browser-based webinar and video engagement platform for marketing teams",
+    description: "Livestorm is a browser-based webinar platform built for marketing and sales teams to host product demos, onboarding sessions, and lead-generation webinars. It features automated email sequences, registration pages, engagement analytics, and CRM integrations that turn webinars into a scalable acquisition channel.",
+    category: "webinar",
+    tags: ["webinars", "lead generation", "marketing automation", "analytics", "browser-based", "engagement"],
+    url: "https://livestorm.co",
+    pricing: "freemium",
+    featured: false,
+    logo: "⚡",
+    domain: "livestorm.co",
+  },
+  {
+    slug: "demio",
+    name: "Demio",
+    tagline: "No-download webinar platform focused on attendee engagement and conversions",
+    description: "Demio is a webinar platform purpose-built for marketers who want high attendance rates and real-time engagement. With no downloads required, branded registration pages, and built-in calls to action, Demio turns webinars into conversion machines. Automated and on-demand webinar options let teams scale without going live every time.",
+    category: "webinar",
+    tags: ["webinars", "no downloads", "marketing", "automated webinars", "CTAs", "conversions"],
+    url: "https://demio.com",
+    pricing: "paid",
+    featured: false,
+    logo: "🎯",
+    domain: "demio.com",
+  },
+  {
+    slug: "loom",
+    name: "Loom",
+    tagline: "Async video messaging that replaces meetings with quick screen recordings",
+    description: "Loom lets you record your screen, camera, or both and instantly share an async video message with a link. Instead of scheduling a meeting, teams use Loom to give feedback, walk through code, explain decisions, and onboard new hires on their own time. AI-powered summaries and chapters make longer recordings easy to skim.",
+    category: "team-meetings",
+    tags: ["async video", "screen recording", "video messaging", "AI summaries", "remote work", "onboarding"],
+    url: "https://www.loom.com",
+    pricing: "freemium",
+    featured: false,
+    logo: "🔴",
+    domain: "loom.com",
+  },
+
+  // ── HEALTHCARE ────────────────────────────────────────────────────────
+  {
+    slug: "doxy-me",
+    name: "Doxy.me",
+    tagline: "Free HIPAA-compliant telemedicine platform for healthcare providers",
+    description: "Doxy.me is a simple, browser-based telehealth platform designed specifically for healthcare providers who need HIPAA-compliant video visits. Patients join via a personalized waiting room link with no downloads or accounts required, making virtual care accessible for all demographics including elderly and less tech-savvy patients.",
+    category: "healthcare",
+    tags: ["telehealth", "HIPAA-compliant", "telemedicine", "patient portal", "no downloads", "healthcare"],
+    url: "https://doxy.me",
+    pricing: "freemium",
+    featured: false,
+    logo: "🩺",
+    domain: "doxy.me",
+  },
+
+  // ── VIRTUAL EVENTS ────────────────────────────────────────────────────
+  {
+    slug: "hopin",
+    name: "Hopin",
+    tagline: "All-in-one virtual events platform for conferences, expos, and networking",
+    description: "Hopin provides a complete virtual events platform with multiple stages, expo booths, networking areas, and breakout sessions that replicate the in-person event experience online. Organizers can host hybrid events with both virtual and physical attendees, making it a popular choice for large-scale conferences and trade shows.",
+    category: "virtual-events",
+    tags: ["virtual events", "conferences", "expo booths", "networking", "hybrid events", "multi-stage"],
+    url: "https://hopin.com",
+    pricing: "paid",
+    featured: false,
+    logo: "🎪",
+    domain: "hopin.com",
+  },
+
+  // ── ALL-PURPOSE (continued) ───────────────────────────────────────────
+  {
+    slug: "zoho-meeting",
+    name: "Zoho Meeting",
+    tagline: "Affordable video conferencing tightly integrated with the Zoho suite",
+    description: "Zoho Meeting is a budget-friendly video conferencing tool that shines for businesses already using Zoho CRM, Projects, or other Zoho apps. It offers screen sharing, recording, virtual backgrounds, and webinar capabilities at a fraction of the cost of larger platforms.",
+    category: "all-purpose",
+    tags: ["Zoho suite", "affordable", "screen sharing", "recording", "webinars", "small business"],
+    url: "https://www.zoho.com/meeting/",
+    pricing: "freemium",
+    featured: false,
+    logo: "🟡",
+    domain: "zoho.com",
+  },
+  {
+    slug: "bluejeans",
+    name: "BlueJeans",
+    tagline: "Verizon-backed video meetings with Dolby Voice audio clarity",
+    description: "BlueJeans by Verizon delivers premium video meetings with Dolby Voice spatial audio that makes conversations feel natural and immersive. Smart Meeting features provide AI-generated highlights, action items, and chaptered recordings that help teams stay aligned after every call.",
+    category: "all-purpose",
+    tags: ["Dolby Voice", "smart meetings", "AI highlights", "spatial audio", "enterprise", "Verizon"],
+    url: "https://www.bluejeans.com",
+    pricing: "paid",
+    featured: false,
+    logo: "👖",
+    domain: "bluejeans.com",
+  },
+  {
+    slug: "ringcentral-video",
+    name: "RingCentral Video",
+    tagline: "Unified communications platform combining video, phone, and messaging",
+    description: "RingCentral Video is part of the RingCentral MVP platform, offering video meetings alongside cloud phone and team messaging in a single subscription. Its AI-powered meeting insights, live transcription, and whiteboarding make it a strong choice for businesses that want to consolidate their communication stack.",
+    category: "all-purpose",
+    tags: ["unified communications", "cloud phone", "team messaging", "AI insights", "whiteboarding", "UCaaS"],
+    url: "https://www.ringcentral.com/video.html",
+    pricing: "freemium",
+    featured: false,
+    logo: "💍",
+    domain: "ringcentral.com",
+  },
+];
