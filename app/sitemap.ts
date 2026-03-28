@@ -63,6 +63,17 @@ const CATEGORIES = [
   { path: "travel-insurance", libName: "travel-insurance" },
   { path: "vacation-rental-platforms", libName: "vacation-rental-platforms" },
   { path: "warehouse-management-software", libName: "warehouse-management-software" },
+  // High-CPC niche directories
+  { path: "mortgage-lenders", libName: "mortgage-lenders" },
+  { path: "llc-formation-services", libName: "llc-formation-services" },
+  { path: "background-check-services", libName: "background-check-services" },
+  { path: "payment-processing", libName: "payment-processing" },
+  { path: "gold-ira-companies", libName: "gold-ira-companies" },
+  { path: "debt-relief-services", libName: "debt-relief-services" },
+  { path: "medical-billing-software", libName: "medical-billing-software" },
+  { path: "erp-software", libName: "erp-software" },
+  { path: "workers-comp-insurance", libName: "workers-comp-insurance" },
+  { path: "structured-settlement-companies", libName: "structured-settlement-companies" },
 ];
 
 function camelCase(str: string): string {

@@ -59,10 +59,21 @@ import { getAllTestPrepTools } from "@/lib/test-prep-services";
 import { getAllTravelInsuranceTools } from "@/lib/travel-insurance";
 import { getAllVacationRentalTools } from "@/lib/vacation-rental-platforms";
 import { getAllWarehouseManagementTools } from "@/lib/warehouse-management-software";
+// High-CPC niche directories
+import { getAllMortgageLenderTools } from "@/lib/mortgage-lenders";
+import { getAllLLCFormationTools } from "@/lib/llc-formation-services";
+import { getAllBackgroundCheckTools } from "@/lib/background-check-services";
+import { getAllPaymentProcessingTools } from "@/lib/payment-processing";
+import { getAllGoldIRATools } from "@/lib/gold-ira-companies";
+import { getAllDebtReliefTools } from "@/lib/debt-relief-services";
+import { getAllMedicalBillingTools } from "@/lib/medical-billing-software";
+import { getAllERPTools } from "@/lib/erp-software";
+import { getAllWorkersCompTools } from "@/lib/workers-comp-insurance";
+import { getAllStructuredSettlementTools } from "@/lib/structured-settlement-companies";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
-  description: "FindersList hosts 55+ curated directories for AI tools, marketing, finance, insurance, health, education, real estate, and more. Find exactly what you're looking for.",
+  description: "FindersList hosts 65+ curated directories for AI tools, marketing, finance, insurance, health, education, real estate, and more. Find exactly what you're looking for.",
   alternates: { canonical: "https://finderslist.com" },
 };
 
@@ -706,6 +717,117 @@ const directories = [
     badgeColor: "bg-rose-500/15 text-rose-300 border-rose-500/25",
     countKey: "fieldService" as const,
   },
+  // — High-CPC niche directories —
+  {
+    slug: "mortgage-lenders",
+    emoji: "🏠",
+    name: "Mortgage Lenders",
+    description: "Compare top mortgage lenders, rates, loan types, and find the best home financing options.",
+    gradient: "from-emerald-500/20 via-green-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+    countKey: "mortgageLenders" as const,
+  },
+  {
+    slug: "llc-formation-services",
+    emoji: "🏛️",
+    name: "LLC Formation",
+    description: "Start your business with the best LLC formation services, registered agents, and compliance tools.",
+    gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
+    border: "border-violet-500/30 hover:border-violet-400/50",
+    accentColor: "text-violet-400",
+    badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
+    countKey: "llcFormation" as const,
+  },
+  {
+    slug: "background-check-services",
+    emoji: "🔍",
+    name: "Background Checks",
+    description: "Employment screening, tenant checks, and identity verification services for businesses.",
+    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+    countKey: "backgroundChecks" as const,
+  },
+  {
+    slug: "payment-processing",
+    emoji: "💳",
+    name: "Payment Processing",
+    description: "Accept payments online and in-store with the best merchant services and payment gateways.",
+    gradient: "from-sky-500/20 via-cyan-500/10 to-transparent",
+    border: "border-sky-500/30 hover:border-sky-400/50",
+    accentColor: "text-sky-400",
+    badgeColor: "bg-sky-500/15 text-sky-300 border-sky-500/25",
+    countKey: "paymentProcessing" as const,
+  },
+  {
+    slug: "gold-ira-companies",
+    emoji: "🥇",
+    name: "Gold IRA Companies",
+    description: "Invest in precious metals with top-rated gold IRA companies and rollover specialists.",
+    gradient: "from-yellow-500/20 via-amber-500/10 to-transparent",
+    border: "border-yellow-500/30 hover:border-yellow-400/50",
+    accentColor: "text-yellow-400",
+    badgeColor: "bg-yellow-500/15 text-yellow-300 border-yellow-500/25",
+    countKey: "goldIRA" as const,
+  },
+  {
+    slug: "debt-relief-services",
+    emoji: "💸",
+    name: "Debt Relief",
+    description: "Debt settlement, credit counseling, and consolidation services to get out of debt faster.",
+    gradient: "from-teal-500/20 via-emerald-500/10 to-transparent",
+    border: "border-teal-500/30 hover:border-teal-400/50",
+    accentColor: "text-teal-400",
+    badgeColor: "bg-teal-500/15 text-teal-300 border-teal-500/25",
+    countKey: "debtRelief" as const,
+  },
+  {
+    slug: "medical-billing-software",
+    emoji: "🏥",
+    name: "Medical Billing",
+    description: "Practice management, claims processing, and revenue cycle software for healthcare providers.",
+    gradient: "from-rose-500/20 via-pink-500/10 to-transparent",
+    border: "border-rose-500/30 hover:border-rose-400/50",
+    accentColor: "text-rose-400",
+    badgeColor: "bg-rose-500/15 text-rose-300 border-rose-500/25",
+    countKey: "medicalBilling" as const,
+  },
+  {
+    slug: "erp-software",
+    emoji: "🏗️",
+    name: "ERP Software",
+    description: "Enterprise resource planning solutions for manufacturing, finance, HR, and supply chain.",
+    gradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+    countKey: "erpSoftware" as const,
+  },
+  {
+    slug: "workers-comp-insurance",
+    emoji: "⚠️",
+    name: "Workers Comp",
+    description: "Workers compensation insurance for small businesses, construction, healthcare, and more.",
+    gradient: "from-orange-500/20 via-red-500/10 to-transparent",
+    border: "border-orange-500/30 hover:border-orange-400/50",
+    accentColor: "text-orange-400",
+    badgeColor: "bg-orange-500/15 text-orange-300 border-orange-500/25",
+    countKey: "workersComp" as const,
+  },
+  {
+    slug: "structured-settlement-companies",
+    emoji: "⚖️",
+    name: "Structured Settlements",
+    description: "Sell structured settlements and annuities for cash with trusted settlement companies.",
+    gradient: "from-fuchsia-500/20 via-pink-500/10 to-transparent",
+    border: "border-fuchsia-500/30 hover:border-fuchsia-400/50",
+    accentColor: "text-fuchsia-400",
+    badgeColor: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/25",
+    countKey: "structuredSettlements" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -768,6 +890,17 @@ export default function HubPage() {
   const travelInsuranceCount = getAllTravelInsuranceTools().length;
   const vacationRentalsCount = getAllVacationRentalTools().length;
   const warehouseManagementCount = getAllWarehouseManagementTools().length;
+  // High-CPC niche counts
+  const mortgageLendersCount = getAllMortgageLenderTools().length;
+  const llcFormationCount = getAllLLCFormationTools().length;
+  const backgroundChecksCount = getAllBackgroundCheckTools().length;
+  const paymentProcessingCount = getAllPaymentProcessingTools().length;
+  const goldIRACount = getAllGoldIRATools().length;
+  const debtReliefCount = getAllDebtReliefTools().length;
+  const medicalBillingCount = getAllMedicalBillingTools().length;
+  const erpSoftwareCount = getAllERPTools().length;
+  const workersCompCount = getAllWorkersCompTools().length;
+  const structuredSettlementsCount = getAllStructuredSettlementTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -787,7 +920,11 @@ export default function HubPage() {
     posSystemsCount + roboAdvisorsCount + solarPanelsCount +
     studentLoansCount + supplyChainCount + taxPrepCount +
     telehealthCount + testPrepCount + travelInsuranceCount +
-    vacationRentalsCount + warehouseManagementCount;
+    vacationRentalsCount + warehouseManagementCount +
+    mortgageLendersCount + llcFormationCount + backgroundChecksCount +
+    paymentProcessingCount + goldIRACount + debtReliefCount +
+    medicalBillingCount + erpSoftwareCount + workersCompCount +
+    structuredSettlementsCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -850,6 +987,17 @@ export default function HubPage() {
     travelInsurance: travelInsuranceCount,
     vacationRentals: vacationRentalsCount,
     warehouseManagement: warehouseManagementCount,
+    // High-CPC niches
+    mortgageLenders: mortgageLendersCount,
+    llcFormation: llcFormationCount,
+    backgroundChecks: backgroundChecksCount,
+    paymentProcessing: paymentProcessingCount,
+    goldIRA: goldIRACount,
+    debtRelief: debtReliefCount,
+    medicalBilling: medicalBillingCount,
+    erpSoftware: erpSoftwareCount,
+    workersComp: workersCompCount,
+    structuredSettlements: structuredSettlementsCount,
   };
 
   return (
