@@ -70,10 +70,12 @@ import { getAllMedicalBillingTools } from "@/lib/medical-billing-software";
 import { getAllERPTools } from "@/lib/erp-software";
 import { getAllWorkersCompTools } from "@/lib/workers-comp-insurance";
 import { getAllStructuredSettlementTools } from "@/lib/structured-settlement-companies";
+import { getAllBusinessLoanTools } from "@/lib/business-loans";
+import { getAllCreditRepairTools } from "@/lib/credit-repair-services";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
-  description: "FindersList hosts 65+ curated directories for AI tools, marketing, finance, insurance, health, education, real estate, and more. Find exactly what you're looking for.",
+  description: "FindersList hosts 70+ curated directories for AI tools, marketing, finance, insurance, health, education, real estate, and more. Find exactly what you're looking for.",
   alternates: { canonical: "https://finderslist.com" },
 };
 
@@ -828,6 +830,28 @@ const directories = [
     badgeColor: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/25",
     countKey: "structuredSettlements" as const,
   },
+  {
+    slug: "business-loans",
+    emoji: "🏦",
+    name: "Business Loans",
+    description: "Compare small business loans, SBA loans, lines of credit, and equipment financing from top lenders.",
+    gradient: "from-green-500/20 via-emerald-500/10 to-transparent",
+    border: "border-green-500/30 hover:border-green-400/50",
+    accentColor: "text-green-400",
+    badgeColor: "bg-green-500/15 text-green-300 border-green-500/25",
+    countKey: "businessLoans" as const,
+  },
+  {
+    slug: "credit-repair-services",
+    emoji: "📈",
+    name: "Credit Repair",
+    description: "Dispute errors, improve your credit score, and rebuild credit with the best repair services.",
+    gradient: "from-purple-500/20 via-violet-500/10 to-transparent",
+    border: "border-purple-500/30 hover:border-purple-400/50",
+    accentColor: "text-purple-400",
+    badgeColor: "bg-purple-500/15 text-purple-300 border-purple-500/25",
+    countKey: "creditRepair" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -901,6 +925,8 @@ export default function HubPage() {
   const erpSoftwareCount = getAllERPTools().length;
   const workersCompCount = getAllWorkersCompTools().length;
   const structuredSettlementsCount = getAllStructuredSettlementTools().length;
+  const businessLoansCount = getAllBusinessLoanTools().length;
+  const creditRepairCount = getAllCreditRepairTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -924,7 +950,7 @@ export default function HubPage() {
     mortgageLendersCount + llcFormationCount + backgroundChecksCount +
     paymentProcessingCount + goldIRACount + debtReliefCount +
     medicalBillingCount + erpSoftwareCount + workersCompCount +
-    structuredSettlementsCount;
+    structuredSettlementsCount + businessLoansCount + creditRepairCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -998,6 +1024,8 @@ export default function HubPage() {
     erpSoftware: erpSoftwareCount,
     workersComp: workersCompCount,
     structuredSettlements: structuredSettlementsCount,
+    businessLoans: businessLoansCount,
+    creditRepair: creditRepairCount,
   };
 
   return (
