@@ -49,6 +49,7 @@ export default function Footer() {
               <Link href="/about" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">About Us</Link>
               <Link href="/contact" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Contact Us</Link>
               <Link href="/privacy" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Privacy Policy</Link>
+              <Link href="/terms" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Terms of Service</Link>
             </div>
           </div>
         </div>
