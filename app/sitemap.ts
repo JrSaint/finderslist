@@ -1,179 +1,159 @@
 import { MetadataRoute } from "next";
-import { getAllTools, getAllCategories } from "@/lib/tools";
-import { getAllMarketingTools, getAllMarketingCategories } from "@/lib/marketing-tools";
-import { getAllFinanceTools, getAllFinanceCategories } from "@/lib/finance-tools";
-import { getAllEcommerceTools, getAllEcommerceCategories } from "@/lib/ecommerce-tools";
-import { getAllProductivityTools, getAllProductivityCategories } from "@/lib/productivity-tools";
-import { getAllHRTools, getAllHRCategories } from "@/lib/hr-tools";
-import { getAllCRMTools, getAllCRMCategories } from "@/lib/crm-tools";
-import { getAllSecurityTools, getAllSecurityCategories } from "@/lib/security-tools";
-import { getAllWebsiteBuilderTools, getAllWebsiteBuilderCategories } from "@/lib/website-builders";
-import { getAllCreatorTools, getAllCreatorCategories } from "@/lib/creator-tools";
-import { getAllDeveloperTools, getAllDeveloperCategories } from "@/lib/developer-tools";
-import { getAllDesignTools, getAllDesignCategories } from "@/lib/design-tools";
-import { getAllSupportTools, getAllSupportCategories } from "@/lib/support-tools";
-import { getAllElearningTools, getAllElearningCategories } from "@/lib/elearning-tools";
-import { getAllAnalyticsTools, getAllAnalyticsCategories } from "@/lib/analytics-tools";
-import { getAllLegalTools, getAllLegalCategories } from "@/lib/legal-tools";
-import { getAllHostingTools, getAllHostingCategories } from "@/lib/hosting-tools";
-import { getAllSocialMediaTools, getAllSocialMediaCategories } from "@/lib/social-media-tools";
-import { getAllEmailTools, getAllEmailCategories } from "@/lib/email-tools";
-import { getAllNoCodeTools, getAllNoCodeCategories } from "@/lib/no-code-tools";
 
 const BASE_URL = "https://finderslist.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const aiTools = getAllTools();
-  const aiCategories = getAllCategories();
-  const marketingTools = getAllMarketingTools();
-  const marketingCategories = getAllMarketingCategories();
-  const financeTools = getAllFinanceTools();
-  const financeCategories = getAllFinanceCategories();
-  const ecommerceTools = getAllEcommerceTools();
-  const ecommerceCategories = getAllEcommerceCategories();
-  const productivityTools = getAllProductivityTools();
-  const productivityCategories = getAllProductivityCategories();
-  const hrTools = getAllHRTools();
-  const hrCategories = getAllHRCategories();
-  const crmTools = getAllCRMTools();
-  const crmCategories = getAllCRMCategories();
-  const securityTools = getAllSecurityTools();
-  const securityCategories = getAllSecurityCategories();
-  const websiteBuilderTools = getAllWebsiteBuilderTools();
-  const websiteBuilderCategories = getAllWebsiteBuilderCategories();
-  const creatorTools = getAllCreatorTools();
-  const creatorCategories = getAllCreatorCategories();
-  const developerTools = getAllDeveloperTools();
-  const developerCategories = getAllDeveloperCategories();
-  const designTools = getAllDesignTools();
-  const designCategories = getAllDesignCategories();
-  const supportTools = getAllSupportTools();
-  const supportCategories = getAllSupportCategories();
-  const elearningTools = getAllElearningTools();
-  const elearningCategories = getAllElearningCategories();
-  const analyticsTools = getAllAnalyticsTools();
-  const analyticsCategories = getAllAnalyticsCategories();
-  const legalTools = getAllLegalTools();
-  const legalCategories = getAllLegalCategories();
-  const hostingTools = getAllHostingTools();
-  const hostingCategories = getAllHostingCategories();
-  const socialMediaTools = getAllSocialMediaTools();
-  const socialMediaCategories = getAllSocialMediaCategories();
-  const emailTools = getAllEmailTools();
-  const emailCategories = getAllEmailCategories();
-  const noCodeTools = getAllNoCodeTools();
-  const noCodeCategories = getAllNoCodeCategories();
+// Map of all category routes to their lib import paths and function names
+const CATEGORIES = [
+  { path: "ai-tools", libName: "tools" },
+  { path: "marketing-tools", libName: "marketing-tools" },
+  { path: "finance-tools", libName: "finance-tools" },
+  { path: "ecommerce-tools", libName: "ecommerce-tools" },
+  { path: "productivity-tools", libName: "productivity-tools" },
+  { path: "hr-tools", libName: "hr-tools" },
+  { path: "crm-tools", libName: "crm-tools" },
+  { path: "security-tools", libName: "security-tools" },
+  { path: "website-builders", libName: "website-builders" },
+  { path: "creator-tools", libName: "creator-tools" },
+  { path: "developer-tools", libName: "developer-tools" },
+  { path: "design-tools", libName: "design-tools" },
+  { path: "support-tools", libName: "support-tools" },
+  { path: "elearning-tools", libName: "elearning-tools" },
+  { path: "analytics-tools", libName: "analytics-tools" },
+  { path: "legal-tools", libName: "legal-tools" },
+  { path: "hosting-tools", libName: "hosting-tools" },
+  { path: "social-media-tools", libName: "social-media-tools" },
+  { path: "email-tools", libName: "email-tools" },
+  { path: "no-code-tools", libName: "no-code-tools" },
+  // New categories
+  { path: "appointment-scheduling-software", libName: "appointment-scheduling-software" },
+  { path: "auto-insurance", libName: "auto-insurance" },
+  { path: "budgeting-apps", libName: "budgeting-apps" },
+  { path: "business-insurance", libName: "business-insurance" },
+  { path: "business-phone-systems", libName: "business-phone-systems" },
+  { path: "contract-management-software", libName: "contract-management-software" },
+  { path: "credit-cards", libName: "credit-cards" },
+  { path: "cryptocurrency-exchanges", libName: "cryptocurrency-exchanges" },
+  { path: "document-management-software", libName: "document-management-software" },
+  { path: "estate-planning-services", libName: "estate-planning-services" },
+  { path: "field-service-management", libName: "field-service-management" },
+  { path: "fitness-apps", libName: "fitness-apps" },
+  { path: "fleet-management-software", libName: "fleet-management-software" },
+  { path: "health-insurance", libName: "health-insurance" },
+  { path: "home-insurance", libName: "home-insurance" },
+  { path: "home-security-systems", libName: "home-security-systems" },
+  { path: "home-warranty-companies", libName: "home-warranty-companies" },
+  { path: "hotel-booking-platforms", libName: "hotel-booking-platforms" },
+  { path: "inventory-management-software", libName: "inventory-management-software" },
+  { path: "investment-platforms", libName: "investment-platforms" },
+  { path: "life-insurance", libName: "life-insurance" },
+  { path: "mental-health-apps", libName: "mental-health-apps" },
+  { path: "moving-companies", libName: "moving-companies" },
+  { path: "online-degree-programs", libName: "online-degree-programs" },
+  { path: "online-tutoring-platforms", libName: "online-tutoring-platforms" },
+  { path: "personal-loans", libName: "personal-loans" },
+  { path: "pest-control-services", libName: "pest-control-services" },
+  { path: "pos-systems", libName: "pos-systems" },
+  { path: "robo-advisors", libName: "robo-advisors" },
+  { path: "solar-panel-companies", libName: "solar-panel-companies" },
+  { path: "student-loans", libName: "student-loans" },
+  { path: "supply-chain-software", libName: "supply-chain-software" },
+  { path: "tax-preparation-software", libName: "tax-preparation-software" },
+  { path: "telehealth-platforms", libName: "telehealth-platforms" },
+  { path: "test-prep-services", libName: "test-prep-services" },
+  { path: "travel-insurance", libName: "travel-insurance" },
+  { path: "vacation-rental-platforms", libName: "vacation-rental-platforms" },
+  { path: "warehouse-management-software", libName: "warehouse-management-software" },
+];
 
-  const makeToolPages = (tools: { slug: string }[], base: string) =>
-    tools.map((tool) => ({
-      url: `${BASE_URL}/${base}/tools/${tool.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    }));
+function camelCase(str: string): string {
+  return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+}
 
-  const makeCategoryPages = (categories: string[], base: string) =>
-    categories.map((cat) => ({
-      url: `${BASE_URL}/${base}/category/${cat}`,
-      lastModified: new Date(),
-      changeFrequency: "daily" as const,
-      priority: 0.9,
-    }));
+async function getAllCategoryData() {
+  const categoryData: Record<string, { tools: any[]; categories: string[] }> = {};
 
-  return [
+  for (const cat of CATEGORIES) {
+    try {
+      const lib = await import(`@/lib/${cat.libName}`);
+      const camelName = camelCase(cat.libName);
+      const toolsFn = lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1).replace(/s$/, "")}Tools`] ||
+        lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1)}Tools`];
+
+      const categoriesFn = lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1).replace(/s$/, "")}Categories`] ||
+        lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1)}Categories`];
+
+      const tools = toolsFn?.() || [];
+      const categories = categoriesFn?.() || [];
+
+      categoryData[cat.path] = { tools, categories };
+    } catch (e) {
+      // Silently skip if import fails
+      categoryData[cat.path] = { tools: [], categories: [] };
+    }
+  }
+
+  return categoryData;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const categoryData = await getAllCategoryData();
+
+  const entries: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1,
     },
-    // Site pages
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    // Directory index pages
-    { url: `${BASE_URL}/ai-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/marketing-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/finance-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/ecommerce-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/productivity-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/hr-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/crm-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/security-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/website-builders`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/creator-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/developer-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/design-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/support-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/elearning-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/analytics-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/legal-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/hosting-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/social-media-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/email-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    { url: `${BASE_URL}/no-code-tools`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
-    // Submit pages
-    { url: `${BASE_URL}/ai-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/marketing-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/finance-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/ecommerce-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/productivity-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/hr-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/crm-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/security-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/website-builders/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/creator-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/developer-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/design-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/support-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/elearning-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/analytics-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/legal-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/hosting-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/social-media-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/email-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${BASE_URL}/no-code-tools/submit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    // Category pages
-    ...makeCategoryPages(aiCategories, "ai-tools"),
-    ...makeCategoryPages(marketingCategories, "marketing-tools"),
-    ...makeCategoryPages(financeCategories, "finance-tools"),
-    ...makeCategoryPages(ecommerceCategories, "ecommerce-tools"),
-    ...makeCategoryPages(productivityCategories, "productivity-tools"),
-    ...makeCategoryPages(hrCategories, "hr-tools"),
-    ...makeCategoryPages(crmCategories, "crm-tools"),
-    ...makeCategoryPages(securityCategories, "security-tools"),
-    ...makeCategoryPages(websiteBuilderCategories, "website-builders"),
-    ...makeCategoryPages(creatorCategories, "creator-tools"),
-    ...makeCategoryPages(developerCategories, "developer-tools"),
-    ...makeCategoryPages(designCategories, "design-tools"),
-    ...makeCategoryPages(supportCategories, "support-tools"),
-    ...makeCategoryPages(elearningCategories, "elearning-tools"),
-    ...makeCategoryPages(analyticsCategories, "analytics-tools"),
-    ...makeCategoryPages(legalCategories, "legal-tools"),
-    ...makeCategoryPages(hostingCategories, "hosting-tools"),
-    ...makeCategoryPages(socialMediaCategories, "social-media-tools"),
-    ...makeCategoryPages(emailCategories, "email-tools"),
-    ...makeCategoryPages(noCodeCategories, "no-code-tools"),
-    // Tool pages
-    ...makeToolPages(aiTools, "ai-tools"),
-    ...makeToolPages(marketingTools, "marketing-tools"),
-    ...makeToolPages(financeTools, "finance-tools"),
-    ...makeToolPages(ecommerceTools, "ecommerce-tools"),
-    ...makeToolPages(productivityTools, "productivity-tools"),
-    ...makeToolPages(hrTools, "hr-tools"),
-    ...makeToolPages(crmTools, "crm-tools"),
-    ...makeToolPages(securityTools, "security-tools"),
-    ...makeToolPages(websiteBuilderTools, "website-builders"),
-    ...makeToolPages(creatorTools, "creator-tools"),
-    ...makeToolPages(developerTools, "developer-tools"),
-    ...makeToolPages(designTools, "design-tools"),
-    ...makeToolPages(supportTools, "support-tools"),
-    ...makeToolPages(elearningTools, "elearning-tools"),
-    ...makeToolPages(analyticsTools, "analytics-tools"),
-    ...makeToolPages(legalTools, "legal-tools"),
-    ...makeToolPages(hostingTools, "hosting-tools"),
-    ...makeToolPages(socialMediaTools, "social-media-tools"),
-    ...makeToolPages(emailTools, "email-tools"),
-    ...makeToolPages(noCodeTools, "no-code-tools"),
   ];
+
+  // Add category index pages, submit pages, and tool/category pages dynamically
+  for (const cat of CATEGORIES) {
+    const { tools, categories } = categoryData[cat.path];
+
+    // Index page
+    entries.push({
+      url: `${BASE_URL}/${cat.path}`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.95,
+    });
+
+    // Submit page
+    entries.push({
+      url: `${BASE_URL}/${cat.path}/submit`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    });
+
+    // Category pages
+    if (Array.isArray(categories)) {
+      for (const category of categories) {
+        entries.push({
+          url: `${BASE_URL}/${cat.path}/category/${category}`,
+          lastModified: new Date(),
+          changeFrequency: "daily",
+          priority: 0.9,
+        });
+      }
+    }
+
+    // Tool pages
+    if (Array.isArray(tools)) {
+      for (const tool of tools) {
+        entries.push({
+          url: `${BASE_URL}/${cat.path}/tools/${tool.slug}`,
+          lastModified: new Date(),
+          changeFrequency: "weekly",
+          priority: 0.8,
+        });
+      }
+    }
+  }
+
+  return entries;
 }
