@@ -105,7 +105,7 @@ export const TOOLS: Tool[] = [
     category: "writing",
     tags: ["grammar", "writing", "editing", "browser extension"],
     url: "https://grammarly.com",
-    affiliateUrl: "https://grammarly.com",
+    affiliateUrl: "https://grammarly.pxf.io/KBB41a",
     pricing: "freemium",
     featured: false,
     logo: "✅",
