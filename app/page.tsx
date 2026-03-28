@@ -20,10 +20,49 @@ import { getAllHostingTools } from "@/lib/hosting-tools";
 import { getAllSocialMediaTools } from "@/lib/social-media-tools";
 import { getAllEmailTools } from "@/lib/email-tools";
 import { getAllNoCodeTools } from "@/lib/no-code-tools";
+// New categories
+import { getAllAppointmentSchedulingTools } from "@/lib/appointment-scheduling-software";
+import { getAllAutoInsuranceTools } from "@/lib/auto-insurance";
+import { getAllBudgetingAppTools } from "@/lib/budgeting-apps";
+import { getAllBusinessInsuranceTools } from "@/lib/business-insurance";
+import { getAllBusinessPhoneTools } from "@/lib/business-phone-systems";
+import { getAllContractManagementTools } from "@/lib/contract-management-software";
+import { getAllCreditCardTools } from "@/lib/credit-cards";
+import { getAllCryptoExchangeTools } from "@/lib/cryptocurrency-exchanges";
+import { getAllDocumentManagementTools } from "@/lib/document-management-software";
+import { getAllEstatePlanningTools } from "@/lib/estate-planning-services";
+import { getAllFieldServiceTools } from "@/lib/field-service-management";
+import { getAllFitnessAppTools } from "@/lib/fitness-apps";
+import { getAllFleetManagementTools } from "@/lib/fleet-management-software";
+import { getAllHealthInsuranceTools } from "@/lib/health-insurance";
+import { getAllHomeInsuranceTools } from "@/lib/home-insurance";
+import { getAllHomeSecurityTools } from "@/lib/home-security-systems";
+import { getAllHomeWarrantyTools } from "@/lib/home-warranty-companies";
+import { getAllHotelBookingTools } from "@/lib/hotel-booking-platforms";
+import { getAllInventoryManagementTools } from "@/lib/inventory-management-software";
+import { getAllInvestmentPlatformTools } from "@/lib/investment-platforms";
+import { getAllLifeInsuranceTools } from "@/lib/life-insurance";
+import { getAllMentalHealthTools } from "@/lib/mental-health-apps";
+import { getAllMovingCompanyTools } from "@/lib/moving-companies";
+import { getAllOnlineDegreeTools } from "@/lib/online-degree-programs";
+import { getAllOnlineTutoringTools } from "@/lib/online-tutoring-platforms";
+import { getAllPersonalLoanTools } from "@/lib/personal-loans";
+import { getAllPestControlTools } from "@/lib/pest-control-services";
+import { getAllPOSSystemTools } from "@/lib/pos-systems";
+import { getAllRoboAdvisorTools } from "@/lib/robo-advisors";
+import { getAllSolarPanelTools } from "@/lib/solar-panel-companies";
+import { getAllStudentLoanTools } from "@/lib/student-loans";
+import { getAllSupplyChainTools } from "@/lib/supply-chain-software";
+import { getAllTaxPrepTools } from "@/lib/tax-preparation-software";
+import { getAllTelehealthTools } from "@/lib/telehealth-platforms";
+import { getAllTestPrepTools } from "@/lib/test-prep-services";
+import { getAllTravelInsuranceTools } from "@/lib/travel-insurance";
+import { getAllVacationRentalTools } from "@/lib/vacation-rental-platforms";
+import { getAllWarehouseManagementTools } from "@/lib/warehouse-management-software";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
-  description: "FindersList hosts 20+ curated directories for AI tools, marketing, finance, ecommerce, productivity, HR, CRM, security, design, developer tools, and more. Find exactly what you're looking for.",
+  description: "FindersList hosts 55+ curated directories for AI tools, marketing, finance, insurance, health, education, real estate, and more. Find exactly what you're looking for.",
   alternates: { canonical: "https://finderslist.com" },
 };
 
@@ -248,6 +287,425 @@ const directories = [
     badgeColor: "bg-lime-500/15 text-lime-300 border-lime-500/25",
     countKey: "noCode" as const,
   },
+  // — New directories —
+  {
+    slug: "auto-insurance",
+    emoji: "🚗",
+    name: "Auto Insurance",
+    description: "Compare top car insurance providers, coverage options, discounts, and get the best rates.",
+    gradient: "from-blue-500/20 via-sky-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "autoInsurance" as const,
+  },
+  {
+    slug: "health-insurance",
+    emoji: "🏥",
+    name: "Health Insurance",
+    description: "Find the best health insurance plans, compare premiums, coverage, and provider networks.",
+    gradient: "from-teal-500/20 via-emerald-500/10 to-transparent",
+    border: "border-teal-500/30 hover:border-teal-400/50",
+    accentColor: "text-teal-400",
+    badgeColor: "bg-teal-500/15 text-teal-300 border-teal-500/25",
+    countKey: "healthInsurance" as const,
+  },
+  {
+    slug: "life-insurance",
+    emoji: "🛡️",
+    name: "Life Insurance",
+    description: "Compare term life, whole life, and universal life insurance policies from top providers.",
+    gradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+    countKey: "lifeInsurance" as const,
+  },
+  {
+    slug: "home-insurance",
+    emoji: "🏠",
+    name: "Home Insurance",
+    description: "Protect your home with the best homeowners insurance providers and coverage options.",
+    gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+    countKey: "homeInsurance" as const,
+  },
+  {
+    slug: "business-insurance",
+    emoji: "🏢",
+    name: "Business Insurance",
+    description: "Commercial insurance, liability coverage, workers comp, and business protection plans.",
+    gradient: "from-slate-500/20 via-gray-500/10 to-transparent",
+    border: "border-slate-500/30 hover:border-slate-400/50",
+    accentColor: "text-slate-400",
+    badgeColor: "bg-slate-500/15 text-slate-300 border-slate-500/25",
+    countKey: "businessInsurance" as const,
+  },
+  {
+    slug: "travel-insurance",
+    emoji: "✈️",
+    name: "Travel Insurance",
+    description: "Trip cancellation, medical evacuation, and comprehensive travel protection plans.",
+    gradient: "from-cyan-500/20 via-sky-500/10 to-transparent",
+    border: "border-cyan-500/30 hover:border-cyan-400/50",
+    accentColor: "text-cyan-400",
+    badgeColor: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25",
+    countKey: "travelInsurance" as const,
+  },
+  {
+    slug: "credit-cards",
+    emoji: "💳",
+    name: "Credit Cards",
+    description: "Compare rewards, cashback, travel, and business credit cards from top issuers.",
+    gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
+    border: "border-violet-500/30 hover:border-violet-400/50",
+    accentColor: "text-violet-400",
+    badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
+    countKey: "creditCards" as const,
+  },
+  {
+    slug: "personal-loans",
+    emoji: "💵",
+    name: "Personal Loans",
+    description: "Compare personal loan rates, terms, and lenders for debt consolidation, home improvement, and more.",
+    gradient: "from-green-500/20 via-emerald-500/10 to-transparent",
+    border: "border-green-500/30 hover:border-green-400/50",
+    accentColor: "text-green-400",
+    badgeColor: "bg-green-500/15 text-green-300 border-green-500/25",
+    countKey: "personalLoans" as const,
+  },
+  {
+    slug: "student-loans",
+    emoji: "🎒",
+    name: "Student Loans",
+    description: "Student loan refinancing, repayment plans, and the best lenders for education financing.",
+    gradient: "from-yellow-500/20 via-amber-500/10 to-transparent",
+    border: "border-yellow-500/30 hover:border-yellow-400/50",
+    accentColor: "text-yellow-400",
+    badgeColor: "bg-yellow-500/15 text-yellow-300 border-yellow-500/25",
+    countKey: "studentLoans" as const,
+  },
+  {
+    slug: "investment-platforms",
+    emoji: "📈",
+    name: "Investment Platforms",
+    description: "Stock trading, ETFs, robo-advisors, and investment platforms for every experience level.",
+    gradient: "from-emerald-500/20 via-green-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+    countKey: "investmentPlatforms" as const,
+  },
+  {
+    slug: "cryptocurrency-exchanges",
+    emoji: "₿",
+    name: "Crypto Exchanges",
+    description: "Buy, sell, and trade cryptocurrency on the most trusted and secure exchanges.",
+    gradient: "from-orange-500/20 via-yellow-500/10 to-transparent",
+    border: "border-orange-500/30 hover:border-orange-400/50",
+    accentColor: "text-orange-400",
+    badgeColor: "bg-orange-500/15 text-orange-300 border-orange-500/25",
+    countKey: "cryptoExchanges" as const,
+  },
+  {
+    slug: "robo-advisors",
+    emoji: "🤖",
+    name: "Robo-Advisors",
+    description: "Automated investment management platforms that build and manage portfolios for you.",
+    gradient: "from-purple-500/20 via-indigo-500/10 to-transparent",
+    border: "border-purple-500/30 hover:border-purple-400/50",
+    accentColor: "text-purple-400",
+    badgeColor: "bg-purple-500/15 text-purple-300 border-purple-500/25",
+    countKey: "roboAdvisors" as const,
+  },
+  {
+    slug: "budgeting-apps",
+    emoji: "💰",
+    name: "Budgeting Apps",
+    description: "Track spending, manage budgets, and reach your financial goals with the best budgeting apps.",
+    gradient: "from-lime-500/20 via-green-500/10 to-transparent",
+    border: "border-lime-500/30 hover:border-lime-400/50",
+    accentColor: "text-lime-400",
+    badgeColor: "bg-lime-500/15 text-lime-300 border-lime-500/25",
+    countKey: "budgetingApps" as const,
+  },
+  {
+    slug: "tax-preparation-software",
+    emoji: "🧾",
+    name: "Tax Preparation",
+    description: "File taxes online with the best tax prep software for individuals and businesses.",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "taxPrep" as const,
+  },
+  {
+    slug: "estate-planning-services",
+    emoji: "📜",
+    name: "Estate Planning",
+    description: "Online wills, trusts, and estate planning services to protect your family and assets.",
+    gradient: "from-stone-500/20 via-amber-500/10 to-transparent",
+    border: "border-stone-500/30 hover:border-stone-400/50",
+    accentColor: "text-stone-400",
+    badgeColor: "bg-stone-500/15 text-stone-300 border-stone-500/25",
+    countKey: "estatePlanning" as const,
+  },
+  {
+    slug: "telehealth-platforms",
+    emoji: "👨‍⚕️",
+    name: "Telehealth",
+    description: "Virtual doctor visits, online therapy, and telemedicine platforms for remote healthcare.",
+    gradient: "from-teal-500/20 via-cyan-500/10 to-transparent",
+    border: "border-teal-500/30 hover:border-teal-400/50",
+    accentColor: "text-teal-400",
+    badgeColor: "bg-teal-500/15 text-teal-300 border-teal-500/25",
+    countKey: "telehealth" as const,
+  },
+  {
+    slug: "mental-health-apps",
+    emoji: "🧠",
+    name: "Mental Health Apps",
+    description: "Therapy apps, meditation tools, and mental wellness platforms for better mental health.",
+    gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
+    border: "border-violet-500/30 hover:border-violet-400/50",
+    accentColor: "text-violet-400",
+    badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
+    countKey: "mentalHealth" as const,
+  },
+  {
+    slug: "fitness-apps",
+    emoji: "💪",
+    name: "Fitness Apps",
+    description: "Workout trackers, nutrition planners, and fitness coaching apps to stay in shape.",
+    gradient: "from-red-500/20 via-rose-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "fitnessApps" as const,
+  },
+  {
+    slug: "online-degree-programs",
+    emoji: "🎓",
+    name: "Online Degrees",
+    description: "Accredited online degree programs from top universities for career advancement.",
+    gradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+    countKey: "onlineDegrees" as const,
+  },
+  {
+    slug: "online-tutoring-platforms",
+    emoji: "📚",
+    name: "Online Tutoring",
+    description: "One-on-one tutoring, homework help, and test prep from expert online tutors.",
+    gradient: "from-sky-500/20 via-blue-500/10 to-transparent",
+    border: "border-sky-500/30 hover:border-sky-400/50",
+    accentColor: "text-sky-400",
+    badgeColor: "bg-sky-500/15 text-sky-300 border-sky-500/25",
+    countKey: "onlineTutoring" as const,
+  },
+  {
+    slug: "test-prep-services",
+    emoji: "✏️",
+    name: "Test Prep",
+    description: "SAT, GRE, GMAT, LSAT, and MCAT prep courses and study materials from top providers.",
+    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+    countKey: "testPrep" as const,
+  },
+  {
+    slug: "home-security-systems",
+    emoji: "🔐",
+    name: "Home Security",
+    description: "Smart home security systems, cameras, alarms, and professional monitoring services.",
+    gradient: "from-red-500/20 via-orange-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "homeSecurity" as const,
+  },
+  {
+    slug: "home-warranty-companies",
+    emoji: "🏡",
+    name: "Home Warranties",
+    description: "Protect your home appliances and systems with the best home warranty plans.",
+    gradient: "from-green-500/20 via-teal-500/10 to-transparent",
+    border: "border-green-500/30 hover:border-green-400/50",
+    accentColor: "text-green-400",
+    badgeColor: "bg-green-500/15 text-green-300 border-green-500/25",
+    countKey: "homeWarranty" as const,
+  },
+  {
+    slug: "solar-panel-companies",
+    emoji: "☀️",
+    name: "Solar Panels",
+    description: "Top solar panel installers, financing options, and clean energy solutions for your home.",
+    gradient: "from-yellow-500/20 via-orange-500/10 to-transparent",
+    border: "border-yellow-500/30 hover:border-yellow-400/50",
+    accentColor: "text-yellow-400",
+    badgeColor: "bg-yellow-500/15 text-yellow-300 border-yellow-500/25",
+    countKey: "solarPanels" as const,
+  },
+  {
+    slug: "pest-control-services",
+    emoji: "🐛",
+    name: "Pest Control",
+    description: "Professional pest control services for termites, bed bugs, rodents, and more.",
+    gradient: "from-lime-500/20 via-emerald-500/10 to-transparent",
+    border: "border-lime-500/30 hover:border-lime-400/50",
+    accentColor: "text-lime-400",
+    badgeColor: "bg-lime-500/15 text-lime-300 border-lime-500/25",
+    countKey: "pestControl" as const,
+  },
+  {
+    slug: "moving-companies",
+    emoji: "🚚",
+    name: "Moving Companies",
+    description: "Local and long-distance movers, moving containers, and relocation services.",
+    gradient: "from-orange-500/20 via-amber-500/10 to-transparent",
+    border: "border-orange-500/30 hover:border-orange-400/50",
+    accentColor: "text-orange-400",
+    badgeColor: "bg-orange-500/15 text-orange-300 border-orange-500/25",
+    countKey: "movingCompanies" as const,
+  },
+  {
+    slug: "hotel-booking-platforms",
+    emoji: "🏨",
+    name: "Hotel Booking",
+    description: "Compare hotel prices, read reviews, and book accommodations worldwide.",
+    gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
+    border: "border-cyan-500/30 hover:border-cyan-400/50",
+    accentColor: "text-cyan-400",
+    badgeColor: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25",
+    countKey: "hotelBooking" as const,
+  },
+  {
+    slug: "vacation-rental-platforms",
+    emoji: "🏖️",
+    name: "Vacation Rentals",
+    description: "Find houses, cabins, and unique vacation stays from the best rental platforms.",
+    gradient: "from-pink-500/20 via-rose-500/10 to-transparent",
+    border: "border-pink-500/30 hover:border-pink-400/50",
+    accentColor: "text-pink-400",
+    badgeColor: "bg-pink-500/15 text-pink-300 border-pink-500/25",
+    countKey: "vacationRentals" as const,
+  },
+  {
+    slug: "appointment-scheduling-software",
+    emoji: "📅",
+    name: "Appointment Scheduling",
+    description: "Online booking and scheduling software for healthcare, salons, and professional services.",
+    gradient: "from-fuchsia-500/20 via-pink-500/10 to-transparent",
+    border: "border-fuchsia-500/30 hover:border-fuchsia-400/50",
+    accentColor: "text-fuchsia-400",
+    badgeColor: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/25",
+    countKey: "appointmentScheduling" as const,
+  },
+  {
+    slug: "pos-systems",
+    emoji: "🛒",
+    name: "POS Systems",
+    description: "Point-of-sale systems for retail, restaurants, and small businesses.",
+    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+    countKey: "posSystems" as const,
+  },
+  {
+    slug: "business-phone-systems",
+    emoji: "📞",
+    name: "Business Phone",
+    description: "VoIP, cloud PBX, and business phone systems for teams of all sizes.",
+    gradient: "from-sky-500/20 via-indigo-500/10 to-transparent",
+    border: "border-sky-500/30 hover:border-sky-400/50",
+    accentColor: "text-sky-400",
+    badgeColor: "bg-sky-500/15 text-sky-300 border-sky-500/25",
+    countKey: "businessPhone" as const,
+  },
+  {
+    slug: "inventory-management-software",
+    emoji: "📦",
+    name: "Inventory Management",
+    description: "Track stock, manage warehouses, and optimize supply chain with inventory software.",
+    gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+    countKey: "inventoryManagement" as const,
+  },
+  {
+    slug: "fleet-management-software",
+    emoji: "🚛",
+    name: "Fleet Management",
+    description: "GPS tracking, route optimization, and fleet maintenance software for logistics.",
+    gradient: "from-slate-500/20 via-blue-500/10 to-transparent",
+    border: "border-slate-500/30 hover:border-slate-400/50",
+    accentColor: "text-slate-400",
+    badgeColor: "bg-slate-500/15 text-slate-300 border-slate-500/25",
+    countKey: "fleetManagement" as const,
+  },
+  {
+    slug: "warehouse-management-software",
+    emoji: "🏭",
+    name: "Warehouse Management",
+    description: "WMS software for warehouse operations, picking, packing, and shipping optimization.",
+    gradient: "from-stone-500/20 via-gray-500/10 to-transparent",
+    border: "border-stone-500/30 hover:border-stone-400/50",
+    accentColor: "text-stone-400",
+    badgeColor: "bg-stone-500/15 text-stone-300 border-stone-500/25",
+    countKey: "warehouseManagement" as const,
+  },
+  {
+    slug: "supply-chain-software",
+    emoji: "🔗",
+    name: "Supply Chain",
+    description: "End-to-end supply chain management, procurement, and logistics optimization software.",
+    gradient: "from-blue-500/20 via-cyan-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "supplyChain" as const,
+  },
+  {
+    slug: "contract-management-software",
+    emoji: "📋",
+    name: "Contract Management",
+    description: "Create, negotiate, sign, and manage contracts with contract lifecycle management software.",
+    gradient: "from-purple-500/20 via-violet-500/10 to-transparent",
+    border: "border-purple-500/30 hover:border-purple-400/50",
+    accentColor: "text-purple-400",
+    badgeColor: "bg-purple-500/15 text-purple-300 border-purple-500/25",
+    countKey: "contractManagement" as const,
+  },
+  {
+    slug: "document-management-software",
+    emoji: "📁",
+    name: "Document Management",
+    description: "Store, organize, share, and manage documents with enterprise DMS solutions.",
+    gradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+    countKey: "documentManagement" as const,
+  },
+  {
+    slug: "field-service-management",
+    emoji: "🔧",
+    name: "Field Service",
+    description: "Dispatch, scheduling, and work order management for field service teams.",
+    gradient: "from-rose-500/20 via-pink-500/10 to-transparent",
+    border: "border-rose-500/30 hover:border-rose-400/50",
+    accentColor: "text-rose-400",
+    badgeColor: "bg-rose-500/15 text-rose-300 border-rose-500/25",
+    countKey: "fieldService" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -271,17 +729,69 @@ export default function HubPage() {
   const socialMediaToolCount = getAllSocialMediaTools().length;
   const emailToolCount = getAllEmailTools().length;
   const noCodeToolCount = getAllNoCodeTools().length;
+  // New category counts
+  const appointmentSchedulingCount = getAllAppointmentSchedulingTools().length;
+  const autoInsuranceCount = getAllAutoInsuranceTools().length;
+  const budgetingAppsCount = getAllBudgetingAppTools().length;
+  const businessInsuranceCount = getAllBusinessInsuranceTools().length;
+  const businessPhoneCount = getAllBusinessPhoneTools().length;
+  const contractManagementCount = getAllContractManagementTools().length;
+  const creditCardsCount = getAllCreditCardTools().length;
+  const cryptoExchangesCount = getAllCryptoExchangeTools().length;
+  const documentManagementCount = getAllDocumentManagementTools().length;
+  const estatePlanningCount = getAllEstatePlanningTools().length;
+  const fieldServiceCount = getAllFieldServiceTools().length;
+  const fitnessAppsCount = getAllFitnessAppTools().length;
+  const fleetManagementCount = getAllFleetManagementTools().length;
+  const healthInsuranceCount = getAllHealthInsuranceTools().length;
+  const homeInsuranceCount = getAllHomeInsuranceTools().length;
+  const homeSecurityCount = getAllHomeSecurityTools().length;
+  const homeWarrantyCount = getAllHomeWarrantyTools().length;
+  const hotelBookingCount = getAllHotelBookingTools().length;
+  const inventoryManagementCount = getAllInventoryManagementTools().length;
+  const investmentPlatformsCount = getAllInvestmentPlatformTools().length;
+  const lifeInsuranceCount = getAllLifeInsuranceTools().length;
+  const mentalHealthCount = getAllMentalHealthTools().length;
+  const movingCompaniesCount = getAllMovingCompanyTools().length;
+  const onlineDegreesCount = getAllOnlineDegreeTools().length;
+  const onlineTutoringCount = getAllOnlineTutoringTools().length;
+  const personalLoansCount = getAllPersonalLoanTools().length;
+  const pestControlCount = getAllPestControlTools().length;
+  const posSystemsCount = getAllPOSSystemTools().length;
+  const roboAdvisorsCount = getAllRoboAdvisorTools().length;
+  const solarPanelsCount = getAllSolarPanelTools().length;
+  const studentLoansCount = getAllStudentLoanTools().length;
+  const supplyChainCount = getAllSupplyChainTools().length;
+  const taxPrepCount = getAllTaxPrepTools().length;
+  const telehealthCount = getAllTelehealthTools().length;
+  const testPrepCount = getAllTestPrepTools().length;
+  const travelInsuranceCount = getAllTravelInsuranceTools().length;
+  const vacationRentalsCount = getAllVacationRentalTools().length;
+  const warehouseManagementCount = getAllWarehouseManagementTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
     productivityToolCount + hrToolCount + crmToolCount + securityToolCount +
     websiteBuilderCount + creatorToolCount + developerToolCount + designToolCount +
     supportToolCount + elearningToolCount + analyticsToolCount + legalToolCount +
-    hostingToolCount + socialMediaToolCount + emailToolCount + noCodeToolCount;
+    hostingToolCount + socialMediaToolCount + emailToolCount + noCodeToolCount +
+    appointmentSchedulingCount + autoInsuranceCount + budgetingAppsCount +
+    businessInsuranceCount + businessPhoneCount + contractManagementCount +
+    creditCardsCount + cryptoExchangesCount + documentManagementCount +
+    estatePlanningCount + fieldServiceCount + fitnessAppsCount +
+    fleetManagementCount + healthInsuranceCount + homeInsuranceCount +
+    homeSecurityCount + homeWarrantyCount + hotelBookingCount +
+    inventoryManagementCount + investmentPlatformsCount + lifeInsuranceCount +
+    mentalHealthCount + movingCompaniesCount + onlineDegreesCount +
+    onlineTutoringCount + personalLoansCount + pestControlCount +
+    posSystemsCount + roboAdvisorsCount + solarPanelsCount +
+    studentLoansCount + supplyChainCount + taxPrepCount +
+    telehealthCount + testPrepCount + travelInsuranceCount +
+    vacationRentalsCount + warehouseManagementCount;
 
   const categoryCount = getAllCategories().length;
 
-  const countMap = {
+  const countMap: Record<string, number> = {
     ai: aiToolCount,
     marketing: marketingToolCount,
     finance: financeToolCount,
@@ -302,6 +812,44 @@ export default function HubPage() {
     socialMedia: socialMediaToolCount,
     email: emailToolCount,
     noCode: noCodeToolCount,
+    appointmentScheduling: appointmentSchedulingCount,
+    autoInsurance: autoInsuranceCount,
+    budgetingApps: budgetingAppsCount,
+    businessInsurance: businessInsuranceCount,
+    businessPhone: businessPhoneCount,
+    contractManagement: contractManagementCount,
+    creditCards: creditCardsCount,
+    cryptoExchanges: cryptoExchangesCount,
+    documentManagement: documentManagementCount,
+    estatePlanning: estatePlanningCount,
+    fieldService: fieldServiceCount,
+    fitnessApps: fitnessAppsCount,
+    fleetManagement: fleetManagementCount,
+    healthInsurance: healthInsuranceCount,
+    homeInsurance: homeInsuranceCount,
+    homeSecurity: homeSecurityCount,
+    homeWarranty: homeWarrantyCount,
+    hotelBooking: hotelBookingCount,
+    inventoryManagement: inventoryManagementCount,
+    investmentPlatforms: investmentPlatformsCount,
+    lifeInsurance: lifeInsuranceCount,
+    mentalHealth: mentalHealthCount,
+    movingCompanies: movingCompaniesCount,
+    onlineDegrees: onlineDegreesCount,
+    onlineTutoring: onlineTutoringCount,
+    personalLoans: personalLoansCount,
+    pestControl: pestControlCount,
+    posSystems: posSystemsCount,
+    roboAdvisors: roboAdvisorsCount,
+    solarPanels: solarPanelsCount,
+    studentLoans: studentLoansCount,
+    supplyChain: supplyChainCount,
+    taxPrep: taxPrepCount,
+    telehealth: telehealthCount,
+    testPrep: testPrepCount,
+    travelInsurance: travelInsuranceCount,
+    vacationRentals: vacationRentalsCount,
+    warehouseManagement: warehouseManagementCount,
   };
 
   return (
