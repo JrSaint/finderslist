@@ -73,6 +73,7 @@ import { getAllStructuredSettlementTools } from "@/lib/structured-settlement-com
 import { getAllBusinessLoanTools } from "@/lib/business-loans";
 import { getAllCreditRepairTools } from "@/lib/credit-repair-services";
 import { getAllTaxReliefTools } from "@/lib/tax-relief-services";
+import { getAllVirtualDataRoomTools } from "@/lib/virtual-data-rooms";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -864,6 +865,17 @@ const directories = [
     badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
     countKey: "taxRelief" as const,
   },
+  {
+    slug: "virtual-data-rooms",
+    emoji: "🔐",
+    name: "Virtual Data Rooms",
+    description: "Compare secure VDR platforms for M&A due diligence, fundraising, IPOs, and confidential document sharing.",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "virtualDataRooms" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -940,6 +952,7 @@ export default function HubPage() {
   const businessLoansCount = getAllBusinessLoanTools().length;
   const creditRepairCount = getAllCreditRepairTools().length;
   const taxReliefCount = getAllTaxReliefTools().length;
+  const virtualDataRoomsCount = getAllVirtualDataRoomTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -964,7 +977,8 @@ export default function HubPage() {
     paymentProcessingCount + goldIRACount + debtReliefCount +
     medicalBillingCount + erpSoftwareCount + workersCompCount +
     structuredSettlementsCount + businessLoansCount + creditRepairCount +
-    taxReliefCount;
+    taxReliefCount +
+    virtualDataRoomsCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1041,6 +1055,7 @@ export default function HubPage() {
     businessLoans: businessLoansCount,
     creditRepair: creditRepairCount,
     taxRelief: taxReliefCount,
+    virtualDataRooms: virtualDataRoomsCount,
   };
 
   return (
