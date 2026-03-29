@@ -74,6 +74,7 @@ import { getAllBusinessLoanTools } from "@/lib/business-loans";
 import { getAllCreditRepairTools } from "@/lib/credit-repair-services";
 import { getAllTaxReliefTools } from "@/lib/tax-relief-services";
 import { getAllVirtualDataRoomTools } from "@/lib/virtual-data-rooms";
+import { getAllIdentityTheftProtectionTools } from "@/lib/identity-theft-protection";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -876,6 +877,17 @@ const directories = [
     badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
     countKey: "virtualDataRooms" as const,
   },
+  {
+    slug: "identity-theft-protection",
+    emoji: "🛡️",
+    name: "Identity Theft Protection",
+    description: "Compare identity theft protection services for credit monitoring, dark web surveillance, and identity restoration.",
+    gradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+    countKey: "identityTheftProtection" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -953,6 +965,7 @@ export default function HubPage() {
   const creditRepairCount = getAllCreditRepairTools().length;
   const taxReliefCount = getAllTaxReliefTools().length;
   const virtualDataRoomsCount = getAllVirtualDataRoomTools().length;
+  const identityTheftProtectionCount = getAllIdentityTheftProtectionTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -978,7 +991,8 @@ export default function HubPage() {
     medicalBillingCount + erpSoftwareCount + workersCompCount +
     structuredSettlementsCount + businessLoansCount + creditRepairCount +
     taxReliefCount +
-    virtualDataRoomsCount;
+    virtualDataRoomsCount +
+    identityTheftProtectionCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1056,6 +1070,7 @@ export default function HubPage() {
     creditRepair: creditRepairCount,
     taxRelief: taxReliefCount,
     virtualDataRooms: virtualDataRoomsCount,
+    identityTheftProtection: identityTheftProtectionCount,
   };
 
   return (
