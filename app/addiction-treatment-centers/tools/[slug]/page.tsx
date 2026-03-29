@@ -159,6 +159,26 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
             </div>
           )}
 
+
+          {!tool.pros && !tool.useCases && (
+            <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-6 mb-5">
+              <h2 className="text-base font-semibold text-white mb-4">Quick Facts</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Best For</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {tool.tags.slice(0, 5).map((tag) => (
+                      <span key={tag} className="text-xs text-slate-300 bg-slate-800/80 border border-white/10 rounded-full px-2.5 py-1">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Pricing</p>
+                  <p className="text-sm text-slate-300 leading-relaxed">{pricingDetail}</p>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Cost</p>

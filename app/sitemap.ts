@@ -2,6 +2,12 @@ import { MetadataRoute } from "next";
 
 const BASE_URL = "https://finderslist.com";
 
+// Static dates — prevents every build from marking all pages as "freshly modified"
+// which wastes Google crawl budget. Update these when content actually changes.
+const DATE_STATIC_PAGES = new Date("2026-01-15");
+const DATE_DIRECTORIES = new Date("2026-03-28");
+const DATE_TOOLS = new Date("2026-03-28");
+
 // Map of all category routes to their lib import paths and function names
 const CATEGORIES = [
   { path: "ai-tools", libName: "tools" },
@@ -118,25 +124,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: "daily",
+      lastModified: DATE_DIRECTORIES,
+      changeFrequency: "weekly",
       priority: 1,
     },
-    { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/about`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/contact`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/privacy`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${BASE_URL}/terms`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.4 },
   ];
 
-  // Add category index pages, submit pages, and tool/category pages dynamically
+  // Add category index pages and tool/category pages dynamically
   for (const cat of CATEGORIES) {
     const { tools, categories } = categoryData[cat.path];
 
     // Index page
     entries.push({
       url: `${BASE_URL}/${cat.path}`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.95,
+      lastModified: DATE_DIRECTORIES,
+      changeFrequency: "weekly",
+      priority: 0.9,
     });
 
     // Category pages
@@ -144,9 +151,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (const category of categories) {
         entries.push({
           url: `${BASE_URL}/${cat.path}/category/${category}`,
-          lastModified: new Date(),
-          changeFrequency: "daily",
-          priority: 0.9,
+          lastModified: DATE_DIRECTORIES,
+          changeFrequency: "weekly",
+          priority: 0.8,
         });
       }
     }
@@ -156,8 +163,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (const tool of tools) {
         entries.push({
           url: `${BASE_URL}/${cat.path}/tools/${tool.slug}`,
-          lastModified: new Date(),
-          changeFrequency: "weekly",
+          lastModified: DATE_TOOLS,
+          changeFrequency: "monthly",
           priority: 0.8,
         });
       }
