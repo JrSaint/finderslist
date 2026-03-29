@@ -23,7 +23,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/hosting-tools" } };
   }
   return {
     title: "Best Cloud & Web Hosting Directory (2026) — 30+ Tools Reviewed",

@@ -22,7 +22,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/warehouse-management-software" } };
   }
   return {
     title: "Best Warehouse Management Software (2026) — 15+ WMS Compared",

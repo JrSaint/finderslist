@@ -76,6 +76,7 @@ import { getAllTaxReliefTools } from "@/lib/tax-relief-services";
 import { getAllVirtualDataRoomTools } from "@/lib/virtual-data-rooms";
 import { getAllIdentityTheftProtectionTools } from "@/lib/identity-theft-protection";
 import { getAllPersonalInjuryTools } from "@/lib/personal-injury-lawyers";
+import { getAllMesotheliomaLawyerTools } from "@/lib/mesothelioma-lawyers";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -900,6 +901,17 @@ const directories = [
     badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
     countKey: "personalInjury" as const,
   },
+  {
+    slug: "mesothelioma-lawyers",
+    emoji: "⚖️",
+    name: "Mesothelioma Lawyers",
+    description: "Top-rated mesothelioma and asbestos attorneys helping victims get maximum compensation.",
+    gradient: "from-slate-500/20 via-zinc-500/10 to-transparent",
+    border: "border-slate-500/30 hover:border-slate-400/50",
+    accentColor: "text-slate-400",
+    badgeColor: "bg-slate-500/15 text-slate-300 border-slate-500/25",
+    countKey: "mesotheliomaLawyers" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -979,6 +991,7 @@ export default function HubPage() {
   const virtualDataRoomsCount = getAllVirtualDataRoomTools().length;
   const identityTheftProtectionCount = getAllIdentityTheftProtectionTools().length;
   const personalInjuryCount = getAllPersonalInjuryTools().length;
+  const mesotheliomaLawyersCount = getAllMesotheliomaLawyerTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -1006,7 +1019,7 @@ export default function HubPage() {
     taxReliefCount +
     virtualDataRoomsCount +
     identityTheftProtectionCount +
-    personalInjuryCount;
+    personalInjuryCount + mesotheliomaLawyersCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1086,6 +1099,7 @@ export default function HubPage() {
     virtualDataRooms: virtualDataRoomsCount,
     identityTheftProtection: identityTheftProtectionCount,
     personalInjury: personalInjuryCount,
+    mesotheliomaLawyers: mesotheliomaLawyersCount,
   };
 
   return (

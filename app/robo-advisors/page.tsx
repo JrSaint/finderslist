@@ -22,7 +22,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/robo-advisors" } };
   }
   return {
     title: "Best Robo-Advisors (2026) — 15+ Automated Investing Platforms Compared",

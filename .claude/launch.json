@@ -2,10 +2,11 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "finderslist",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000
+      "name": "dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/welbrdossantosjr/Desktop/Claude\\ Projects\\ iMac/finderslist && node ./node_modules/.bin/next dev"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }

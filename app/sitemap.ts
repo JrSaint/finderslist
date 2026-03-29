@@ -139,14 +139,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.95,
     });
 
-    // Submit page
-    entries.push({
-      url: `${BASE_URL}/${cat.path}/submit`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    });
-
     // Category pages
     if (Array.isArray(categories)) {
       for (const category of categories) {
