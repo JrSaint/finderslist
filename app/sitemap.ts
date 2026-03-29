@@ -5,8 +5,8 @@ const BASE_URL = "https://finderslist.com";
 // Static dates — prevents every build from marking all pages as "freshly modified"
 // which wastes Google crawl budget. Update these when content actually changes.
 const DATE_STATIC_PAGES = new Date("2026-01-15");
-const DATE_DIRECTORIES = new Date("2026-03-28");
-const DATE_TOOLS = new Date("2026-03-28");
+const DATE_DIRECTORIES = new Date("2026-03-29");
+const DATE_TOOLS = new Date("2026-03-29");
 
 // Map of all category routes to their lib import paths and function names
 const CATEGORIES = [
@@ -86,6 +86,7 @@ const CATEGORIES = [
   { path: "identity-theft-protection", libName: "identity-theft-protection" },
   { path: "personal-injury-lawyers", libName: "personal-injury-lawyers" },
   { path: "mesothelioma-lawyers", libName: "mesothelioma-lawyers" },
+  { path: "bankruptcy-lawyers", libName: "bankruptcy-lawyers" },
 ];
 
 function camelCase(str: string): string {
