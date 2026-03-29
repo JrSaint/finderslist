@@ -72,6 +72,7 @@ import { getAllWorkersCompTools } from "@/lib/workers-comp-insurance";
 import { getAllStructuredSettlementTools } from "@/lib/structured-settlement-companies";
 import { getAllBusinessLoanTools } from "@/lib/business-loans";
 import { getAllCreditRepairTools } from "@/lib/credit-repair-services";
+import { getAllTaxReliefTools } from "@/lib/tax-relief-services";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -852,6 +853,17 @@ const directories = [
     badgeColor: "bg-purple-500/15 text-purple-300 border-purple-500/25",
     countKey: "creditRepair" as const,
   },
+  {
+    slug: "tax-relief-services",
+    emoji: "🏛️",
+    name: "Tax Relief",
+    description: "Resolve IRS tax debt with the best tax relief companies, enrolled agents, and tax attorneys.",
+    gradient: "from-red-500/20 via-rose-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "taxRelief" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -927,6 +939,7 @@ export default function HubPage() {
   const structuredSettlementsCount = getAllStructuredSettlementTools().length;
   const businessLoansCount = getAllBusinessLoanTools().length;
   const creditRepairCount = getAllCreditRepairTools().length;
+  const taxReliefCount = getAllTaxReliefTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -950,7 +963,8 @@ export default function HubPage() {
     mortgageLendersCount + llcFormationCount + backgroundChecksCount +
     paymentProcessingCount + goldIRACount + debtReliefCount +
     medicalBillingCount + erpSoftwareCount + workersCompCount +
-    structuredSettlementsCount + businessLoansCount + creditRepairCount;
+    structuredSettlementsCount + businessLoansCount + creditRepairCount +
+    taxReliefCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1026,6 +1040,7 @@ export default function HubPage() {
     structuredSettlements: structuredSettlementsCount,
     businessLoans: businessLoansCount,
     creditRepair: creditRepairCount,
+    taxRelief: taxReliefCount,
   };
 
   return (

@@ -76,6 +76,7 @@ const CATEGORIES = [
   { path: "structured-settlement-companies", libName: "structured-settlement-companies" },
   { path: "business-loans", libName: "business-loans" },
   { path: "credit-repair-services", libName: "credit-repair-services" },
+  { path: "tax-relief-services", libName: "tax-relief-services" },
 ];
 
 function camelCase(str: string): string {
