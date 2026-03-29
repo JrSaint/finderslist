@@ -75,6 +75,7 @@ import { getAllCreditRepairTools } from "@/lib/credit-repair-services";
 import { getAllTaxReliefTools } from "@/lib/tax-relief-services";
 import { getAllVirtualDataRoomTools } from "@/lib/virtual-data-rooms";
 import { getAllIdentityTheftProtectionTools } from "@/lib/identity-theft-protection";
+import { getAllPersonalInjuryTools } from "@/lib/personal-injury-lawyers";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -888,6 +889,17 @@ const directories = [
     badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
     countKey: "identityTheftProtection" as const,
   },
+  {
+    slug: "personal-injury-lawyers",
+    emoji: "⚖️",
+    name: "Personal Injury Lawyers",
+    description: "Find top personal injury attorneys for auto accidents, medical malpractice, workplace injuries, and product liability.",
+    gradient: "from-red-500/20 via-orange-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "personalInjury" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -966,6 +978,7 @@ export default function HubPage() {
   const taxReliefCount = getAllTaxReliefTools().length;
   const virtualDataRoomsCount = getAllVirtualDataRoomTools().length;
   const identityTheftProtectionCount = getAllIdentityTheftProtectionTools().length;
+  const personalInjuryCount = getAllPersonalInjuryTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -992,7 +1005,8 @@ export default function HubPage() {
     structuredSettlementsCount + businessLoansCount + creditRepairCount +
     taxReliefCount +
     virtualDataRoomsCount +
-    identityTheftProtectionCount;
+    identityTheftProtectionCount +
+    personalInjuryCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1071,6 +1085,7 @@ export default function HubPage() {
     taxRelief: taxReliefCount,
     virtualDataRooms: virtualDataRoomsCount,
     identityTheftProtection: identityTheftProtectionCount,
+    personalInjury: personalInjuryCount,
   };
 
   return (

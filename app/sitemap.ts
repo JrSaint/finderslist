@@ -79,7 +79,6 @@ const CATEGORIES = [
   { path: "tax-relief-services", libName: "tax-relief-services" },
   { path: "identity-theft-protection", libName: "identity-theft-protection" },
   { path: "personal-injury-lawyers", libName: "personal-injury-lawyers" },
-  { path: "addiction-treatment-centers", libName: "addiction-treatment-centers" },
 ];
 
 function camelCase(str: string): string {
