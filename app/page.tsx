@@ -77,6 +77,8 @@ import { getAllVirtualDataRoomTools } from "@/lib/virtual-data-rooms";
 import { getAllIdentityTheftProtectionTools } from "@/lib/identity-theft-protection";
 import { getAllPersonalInjuryTools } from "@/lib/personal-injury-lawyers";
 import { getAllMesotheliomaLawyerTools } from "@/lib/mesothelioma-lawyers";
+import { getAllBankruptcyLawyerTools } from "@/lib/bankruptcy-lawyers";
+import { getAllDUILawyerTools } from "@/lib/dui-lawyers";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -912,6 +914,28 @@ const directories = [
     badgeColor: "bg-slate-500/15 text-slate-300 border-slate-500/25",
     countKey: "mesotheliomaLawyers" as const,
   },
+  {
+    slug: "bankruptcy-lawyers",
+    emoji: "📋",
+    name: "Bankruptcy Lawyers",
+    description: "Find top bankruptcy attorneys for Chapter 7, Chapter 13, Chapter 11, debt negotiation, and asset protection.",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "bankruptcyLawyers" as const,
+  },
+  {
+    slug: "dui-lawyers",
+    emoji: "🚔",
+    name: "DUI Lawyers",
+    description: "Top DUI and DWI defense attorneys for first offense, felony DUI, underage DUI, and CDL defense.",
+    gradient: "from-red-500/20 via-orange-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "duiLawyers" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -992,6 +1016,8 @@ export default function HubPage() {
   const identityTheftProtectionCount = getAllIdentityTheftProtectionTools().length;
   const personalInjuryCount = getAllPersonalInjuryTools().length;
   const mesotheliomaLawyersCount = getAllMesotheliomaLawyerTools().length;
+  const bankruptcyLawyersCount = getAllBankruptcyLawyerTools().length;
+  const duiLawyersCount = getAllDUILawyerTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -1019,7 +1045,8 @@ export default function HubPage() {
     taxReliefCount +
     virtualDataRoomsCount +
     identityTheftProtectionCount +
-    personalInjuryCount + mesotheliomaLawyersCount;
+    personalInjuryCount + mesotheliomaLawyersCount +
+    bankruptcyLawyersCount + duiLawyersCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1100,6 +1127,8 @@ export default function HubPage() {
     identityTheftProtection: identityTheftProtectionCount,
     personalInjury: personalInjuryCount,
     mesotheliomaLawyers: mesotheliomaLawyersCount,
+    bankruptcyLawyers: bankruptcyLawyersCount,
+    duiLawyers: duiLawyersCount,
   };
 
   return (
