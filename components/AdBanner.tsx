@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 interface AdBannerProps {
-  slot: string;
+  slot?: string;
   format?: "auto" | "rectangle" | "horizontal";
   className?: string;
 }
@@ -12,7 +12,6 @@ const ADSENSE_CLIENT = "ca-pub-5534047032969220";
 
 export default function AdBanner({ slot, format = "auto", className = "" }: AdBannerProps) {
   useEffect(() => {
-    // Only push in production — no <ins> elements exist in dev mode
     if (process.env.NODE_ENV === "production") {
       try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -27,7 +26,7 @@ export default function AdBanner({ slot, format = "auto", className = "" }: AdBa
   if (process.env.NODE_ENV === "development") {
     return (
       <div className={`flex items-center justify-center rounded-xl border border-dashed border-white/10 bg-slate-900/30 text-slate-600 text-xs ${className}`}>
-        <span>📢 Ad Slot: {slot}</span>
+        <span>📢 Ad</span>
       </div>
     );
   }
@@ -38,7 +37,7 @@ export default function AdBanner({ slot, format = "auto", className = "" }: AdBa
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client={ADSENSE_CLIENT}
-        data-ad-slot={slot}
+        {...(slot ? { "data-ad-slot": slot } : {})}
         data-ad-format={format}
         data-full-width-responsive="true"
       />

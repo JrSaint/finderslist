@@ -1,0 +1,16 @@
+{
+  "directories": [
+    {
+      "slug": "car-accident-lawyers",
+      "typePrefix": "CarAccidentLawyer",
+      "upperPrefix": "CAR_ACCIDENT_LAWYER",
+      "accentColor": "red",
+      "gradient": "from-red-600/30 to-rose-800/40",
+      "displayName": "Car Accident Lawyers",
+      "shortName": "Car Accident Lawyer",
+      "seoTitle": "Best Car Accident Lawyers (2026) — 15+ Top Attorneys Compared | FindersList",
+      "seoDescription": "Compare the best car accident lawyers and auto injury attorneys in 2026. Find top-rated firms with free consultations, no-win-no-fee guarantees, and proven track records in car crash injury claims.",
+      "seoKeywords": ["car accident lawyer", "best car accident attorney", "auto accident lawyer near me", "car crash injury lawyer", "car accident attorney 2026", "auto injury attorney", "car wreck lawyer", "vehicle accident lawyer", "car collision attorney", "best auto accident lawyers"]
+    }
+  ]
+}

@@ -79,6 +79,28 @@ import { getAllPersonalInjuryTools } from "@/lib/personal-injury-lawyers";
 import { getAllMesotheliomaLawyerTools } from "@/lib/mesothelioma-lawyers";
 import { getAllBankruptcyLawyerTools } from "@/lib/bankruptcy-lawyers";
 import { getAllDUILawyerTools } from "@/lib/dui-lawyers";
+// Previously created directories missing from homepage
+import { getAllAccountingTools } from "@/lib/accounting-software";
+import { getAllAddictionTreatmentCenterTools } from "@/lib/addiction-treatment-centers";
+import { getAllAIAgentsTools } from "@/lib/ai-agent-platforms";
+import { getAllAICodingTools } from "@/lib/ai-coding-assistants";
+import { getAllAIVideoTools } from "@/lib/ai-video-generators";
+import { getAllATSTools } from "@/lib/applicant-tracking-systems";
+import { getAllPasswordManagerTools } from "@/lib/business-password-managers";
+import { getAllBusinessTaxTools } from "@/lib/business-tax-software";
+import { getAllBusinessVPNTools } from "@/lib/business-vpn-software";
+import { getAllEcommerceInventoryTools } from "@/lib/ecommerce-inventory-software";
+import { getAllEcommercePlatformTools } from "@/lib/ecommerce-platforms";
+import { getAllEndpointSecurityTools } from "@/lib/endpoint-security-software";
+import { getAllExpenseManagementTools } from "@/lib/expense-management-software";
+import { getAllHRISTools } from "@/lib/hris-software";
+import { getAllInvoicingTools } from "@/lib/invoicing-billing-software";
+import { getAllMortgageLendingTools } from "@/lib/mortgage-lending-software";
+import { getAllPayrollTools } from "@/lib/payroll-software";
+import { getAllProjectManagementTools } from "@/lib/project-management-software";
+import { getAllRealEstateTools } from "@/lib/real-estate-software";
+import { getAllSubscriptionBillingTools } from "@/lib/subscription-billing-platforms";
+import { getAllTimeTrackingTools } from "@/lib/time-tracking-software";
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -936,6 +958,238 @@ const directories = [
     badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
     countKey: "duiLawyers" as const,
   },
+  // — Previously created directories (restored to homepage) —
+  {
+    slug: "accounting-software",
+    emoji: "📒",
+    name: "Accounting Software",
+    description: "Compare accounting software for small businesses, freelancers, and enterprises.",
+    gradient: "from-emerald-500/20 via-green-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+    countKey: "accountingSoftware" as const,
+  },
+  {
+    slug: "addiction-treatment-centers",
+    emoji: "💊",
+    name: "Addiction Treatment",
+    description: "Find accredited addiction treatment centers for substance abuse recovery and rehab.",
+    gradient: "from-teal-500/20 via-cyan-500/10 to-transparent",
+    border: "border-teal-500/30 hover:border-teal-400/50",
+    accentColor: "text-teal-400",
+    badgeColor: "bg-teal-500/15 text-teal-300 border-teal-500/25",
+    countKey: "addictionTreatment" as const,
+  },
+  {
+    slug: "ai-agent-platforms",
+    emoji: "🤖",
+    name: "AI Agent Platforms",
+    description: "Build and deploy autonomous AI agents for automation, research, and business workflows.",
+    gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
+    border: "border-violet-500/30 hover:border-violet-400/50",
+    accentColor: "text-violet-400",
+    badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
+    countKey: "aiAgentPlatforms" as const,
+  },
+  {
+    slug: "ai-coding-assistants",
+    emoji: "💻",
+    name: "AI Coding Assistants",
+    description: "AI-powered code completion, review, and generation tools for developers.",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "aiCodingAssistants" as const,
+  },
+  {
+    slug: "ai-video-generators",
+    emoji: "🎬",
+    name: "AI Video Generators",
+    description: "Create, edit, and generate videos with AI — from text-to-video to AI avatars.",
+    gradient: "from-pink-500/20 via-rose-500/10 to-transparent",
+    border: "border-pink-500/30 hover:border-pink-400/50",
+    accentColor: "text-pink-400",
+    badgeColor: "bg-pink-500/15 text-pink-300 border-pink-500/25",
+    countKey: "aiVideoGenerators" as const,
+  },
+  {
+    slug: "applicant-tracking-systems",
+    emoji: "📝",
+    name: "Applicant Tracking",
+    description: "ATS software to streamline hiring, track candidates, and manage recruiting pipelines.",
+    gradient: "from-sky-500/20 via-blue-500/10 to-transparent",
+    border: "border-sky-500/30 hover:border-sky-400/50",
+    accentColor: "text-sky-400",
+    badgeColor: "bg-sky-500/15 text-sky-300 border-sky-500/25",
+    countKey: "applicantTracking" as const,
+  },
+  {
+    slug: "business-password-managers",
+    emoji: "🔑",
+    name: "Password Managers",
+    description: "Secure business password managers for teams, enterprises, and single users.",
+    gradient: "from-red-500/20 via-orange-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "passwordManagers" as const,
+  },
+  {
+    slug: "business-tax-software",
+    emoji: "🧾",
+    name: "Business Tax Software",
+    description: "Tax preparation and filing software built for small businesses, LLCs, and corporations.",
+    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+    countKey: "businessTaxSoftware" as const,
+  },
+  {
+    slug: "business-vpn-software",
+    emoji: "🛡️",
+    name: "Business VPN",
+    description: "Secure remote access and business VPN solutions for teams and enterprises.",
+    gradient: "from-slate-500/20 via-gray-500/10 to-transparent",
+    border: "border-slate-500/30 hover:border-slate-400/50",
+    accentColor: "text-slate-400",
+    badgeColor: "bg-slate-500/15 text-slate-300 border-slate-500/25",
+    countKey: "businessVPN" as const,
+  },
+  {
+    slug: "ecommerce-inventory-software",
+    emoji: "📦",
+    name: "Ecommerce Inventory",
+    description: "Inventory management software built for online sellers, multi-channel retailers, and 3PL.",
+    gradient: "from-orange-500/20 via-amber-500/10 to-transparent",
+    border: "border-orange-500/30 hover:border-orange-400/50",
+    accentColor: "text-orange-400",
+    badgeColor: "bg-orange-500/15 text-orange-300 border-orange-500/25",
+    countKey: "ecommerceInventory" as const,
+  },
+  {
+    slug: "ecommerce-platforms",
+    emoji: "🛍️",
+    name: "Ecommerce Platforms",
+    description: "Full-featured ecommerce platforms to build, manage, and scale your online store.",
+    gradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+    countKey: "ecommercePlatforms" as const,
+  },
+  {
+    slug: "endpoint-security-software",
+    emoji: "🖥️",
+    name: "Endpoint Security",
+    description: "Protect devices with endpoint detection, response, and antivirus software.",
+    gradient: "from-red-500/20 via-rose-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "endpointSecurity" as const,
+  },
+  {
+    slug: "expense-management-software",
+    emoji: "💰",
+    name: "Expense Management",
+    description: "Automate expense reporting, approvals, and reimbursements for businesses.",
+    gradient: "from-green-500/20 via-emerald-500/10 to-transparent",
+    border: "border-green-500/30 hover:border-green-400/50",
+    accentColor: "text-green-400",
+    badgeColor: "bg-green-500/15 text-green-300 border-green-500/25",
+    countKey: "expenseManagement" as const,
+  },
+  {
+    slug: "hris-software",
+    emoji: "👥",
+    name: "HRIS Software",
+    description: "Human resource information systems for employee data, benefits, and HR workflows.",
+    gradient: "from-purple-500/20 via-violet-500/10 to-transparent",
+    border: "border-purple-500/30 hover:border-purple-400/50",
+    accentColor: "text-purple-400",
+    badgeColor: "bg-purple-500/15 text-purple-300 border-purple-500/25",
+    countKey: "hrisSoftware" as const,
+  },
+  {
+    slug: "invoicing-billing-software",
+    emoji: "🧾",
+    name: "Invoicing Software",
+    description: "Create invoices, track payments, and automate billing for freelancers and businesses.",
+    gradient: "from-cyan-500/20 via-sky-500/10 to-transparent",
+    border: "border-cyan-500/30 hover:border-cyan-400/50",
+    accentColor: "text-cyan-400",
+    badgeColor: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25",
+    countKey: "invoicingSoftware" as const,
+  },
+  {
+    slug: "mortgage-lending-software",
+    emoji: "🏦",
+    name: "Mortgage Software",
+    description: "Loan origination, processing, and mortgage lending software for lenders and brokers.",
+    gradient: "from-lime-500/20 via-green-500/10 to-transparent",
+    border: "border-lime-500/30 hover:border-lime-400/50",
+    accentColor: "text-lime-400",
+    badgeColor: "bg-lime-500/15 text-lime-300 border-lime-500/25",
+    countKey: "mortgageSoftware" as const,
+  },
+  {
+    slug: "payroll-software",
+    emoji: "💵",
+    name: "Payroll Software",
+    description: "Automate payroll processing, tax filing, and direct deposits for any business size.",
+    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+    countKey: "payrollSoftware" as const,
+  },
+  {
+    slug: "project-management-software",
+    emoji: "📊",
+    name: "Project Management",
+    description: "Plan, track, and deliver projects on time with the best project management tools.",
+    gradient: "from-blue-500/20 via-sky-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+    countKey: "projectManagement" as const,
+  },
+  {
+    slug: "real-estate-software",
+    emoji: "🏠",
+    name: "Real Estate Software",
+    description: "CRM, MLS, and property management software for agents, brokers, and investors.",
+    gradient: "from-rose-500/20 via-pink-500/10 to-transparent",
+    border: "border-rose-500/30 hover:border-rose-400/50",
+    accentColor: "text-rose-400",
+    badgeColor: "bg-rose-500/15 text-rose-300 border-rose-500/25",
+    countKey: "realEstateSoftware" as const,
+  },
+  {
+    slug: "subscription-billing-platforms",
+    emoji: "🔄",
+    name: "Subscription Billing",
+    description: "Recurring billing, subscription management, and revenue recognition platforms.",
+    gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
+    border: "border-violet-500/30 hover:border-violet-400/50",
+    accentColor: "text-violet-400",
+    badgeColor: "bg-violet-500/15 text-violet-300 border-violet-500/25",
+    countKey: "subscriptionBilling" as const,
+  },
+  {
+    slug: "time-tracking-software",
+    emoji: "⏱️",
+    name: "Time Tracking",
+    description: "Track employee hours, billable time, and project costs with time tracking software.",
+    gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+    countKey: "timeTracking" as const,
+  },
 ];
 
 export default function HubPage() {
@@ -1018,6 +1272,27 @@ export default function HubPage() {
   const mesotheliomaLawyersCount = getAllMesotheliomaLawyerTools().length;
   const bankruptcyLawyersCount = getAllBankruptcyLawyerTools().length;
   const duiLawyersCount = getAllDUILawyerTools().length;
+  const accountingSoftwareCount = getAllAccountingTools().length;
+  const addictionTreatmentCount = getAllAddictionTreatmentCenterTools().length;
+  const aiAgentPlatformsCount = getAllAIAgentsTools().length;
+  const aiCodingAssistantsCount = getAllAICodingTools().length;
+  const aiVideoGeneratorsCount = getAllAIVideoTools().length;
+  const applicantTrackingCount = getAllATSTools().length;
+  const passwordManagersCount = getAllPasswordManagerTools().length;
+  const businessTaxSoftwareCount = getAllBusinessTaxTools().length;
+  const businessVPNCount = getAllBusinessVPNTools().length;
+  const ecommerceInventoryCount = getAllEcommerceInventoryTools().length;
+  const ecommercePlatformsCount = getAllEcommercePlatformTools().length;
+  const endpointSecurityCount = getAllEndpointSecurityTools().length;
+  const expenseManagementCount = getAllExpenseManagementTools().length;
+  const hrisSoftwareCount = getAllHRISTools().length;
+  const invoicingSoftwareCount = getAllInvoicingTools().length;
+  const mortgageSoftwareCount = getAllMortgageLendingTools().length;
+  const payrollSoftwareCount = getAllPayrollTools().length;
+  const projectManagementCount = getAllProjectManagementTools().length;
+  const realEstateSoftwareCount = getAllRealEstateTools().length;
+  const subscriptionBillingCount = getAllSubscriptionBillingTools().length;
+  const timeTrackingCount = getAllTimeTrackingTools().length;
 
   const totalListings =
     aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
@@ -1046,7 +1321,14 @@ export default function HubPage() {
     virtualDataRoomsCount +
     identityTheftProtectionCount +
     personalInjuryCount + mesotheliomaLawyersCount +
-    bankruptcyLawyersCount + duiLawyersCount;
+    bankruptcyLawyersCount + duiLawyersCount +
+    accountingSoftwareCount + addictionTreatmentCount + aiAgentPlatformsCount +
+    aiCodingAssistantsCount + aiVideoGeneratorsCount + applicantTrackingCount +
+    passwordManagersCount + businessTaxSoftwareCount + businessVPNCount +
+    ecommerceInventoryCount + ecommercePlatformsCount + endpointSecurityCount +
+    expenseManagementCount + hrisSoftwareCount + invoicingSoftwareCount +
+    mortgageSoftwareCount + payrollSoftwareCount + projectManagementCount +
+    realEstateSoftwareCount + subscriptionBillingCount + timeTrackingCount;
 
   const categoryCount = getAllCategories().length;
 
@@ -1129,6 +1411,27 @@ export default function HubPage() {
     mesotheliomaLawyers: mesotheliomaLawyersCount,
     bankruptcyLawyers: bankruptcyLawyersCount,
     duiLawyers: duiLawyersCount,
+    accountingSoftware: accountingSoftwareCount,
+    addictionTreatment: addictionTreatmentCount,
+    aiAgentPlatforms: aiAgentPlatformsCount,
+    aiCodingAssistants: aiCodingAssistantsCount,
+    aiVideoGenerators: aiVideoGeneratorsCount,
+    applicantTracking: applicantTrackingCount,
+    passwordManagers: passwordManagersCount,
+    businessTaxSoftware: businessTaxSoftwareCount,
+    businessVPN: businessVPNCount,
+    ecommerceInventory: ecommerceInventoryCount,
+    ecommercePlatforms: ecommercePlatformsCount,
+    endpointSecurity: endpointSecurityCount,
+    expenseManagement: expenseManagementCount,
+    hrisSoftware: hrisSoftwareCount,
+    invoicingSoftware: invoicingSoftwareCount,
+    mortgageSoftware: mortgageSoftwareCount,
+    payrollSoftware: payrollSoftwareCount,
+    projectManagement: projectManagementCount,
+    realEstateSoftware: realEstateSoftwareCount,
+    subscriptionBilling: subscriptionBillingCount,
+    timeTracking: timeTrackingCount,
   };
 
   return (
