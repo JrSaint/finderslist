@@ -79,6 +79,7 @@ import { getAllPersonalInjuryTools } from "@/lib/personal-injury-lawyers";
 import { getAllMesotheliomaLawyerTools } from "@/lib/mesothelioma-lawyers";
 import { getAllBankruptcyLawyerTools } from "@/lib/bankruptcy-lawyers";
 import { getAllDUILawyerTools } from "@/lib/dui-lawyers";
+import { getAllCriminalDefenseLawyerTools } from "@/lib/criminal-defense-lawyers";
 // Previously created directories missing from homepage
 import { getAllAccountingTools } from "@/lib/accounting-software";
 import { getAllAddictionTreatmentCenterTools } from "@/lib/addiction-treatment-centers";
@@ -958,6 +959,17 @@ const directories = [
     badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
     countKey: "duiLawyers" as const,
   },
+  {
+    slug: "criminal-defense-lawyers",
+    emoji: "🛡️",
+    name: "Criminal Defense Lawyers",
+    description: "Top criminal defense attorneys for drug crimes, violent felonies, white-collar fraud, federal cases, and juvenile defense.",
+    gradient: "from-red-500/20 via-rose-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+    countKey: "criminalDefenseLawyers" as const,
+  },
   // — Previously created directories (restored to homepage) —
   {
     slug: "accounting-software",
@@ -1272,6 +1284,7 @@ export default function HubPage() {
   const mesotheliomaLawyersCount = getAllMesotheliomaLawyerTools().length;
   const bankruptcyLawyersCount = getAllBankruptcyLawyerTools().length;
   const duiLawyersCount = getAllDUILawyerTools().length;
+  const criminalDefenseLawyersCount = getAllCriminalDefenseLawyerTools().length;
   const accountingSoftwareCount = getAllAccountingTools().length;
   const addictionTreatmentCount = getAllAddictionTreatmentCenterTools().length;
   const aiAgentPlatformsCount = getAllAIAgentsTools().length;
@@ -1322,6 +1335,7 @@ export default function HubPage() {
     identityTheftProtectionCount +
     personalInjuryCount + mesotheliomaLawyersCount +
     bankruptcyLawyersCount + duiLawyersCount +
+    criminalDefenseLawyersCount +
     accountingSoftwareCount + addictionTreatmentCount + aiAgentPlatformsCount +
     aiCodingAssistantsCount + aiVideoGeneratorsCount + applicantTrackingCount +
     passwordManagersCount + businessTaxSoftwareCount + businessVPNCount +
@@ -1411,6 +1425,7 @@ export default function HubPage() {
     mesotheliomaLawyers: mesotheliomaLawyersCount,
     bankruptcyLawyers: bankruptcyLawyersCount,
     duiLawyers: duiLawyersCount,
+    criminalDefenseLawyers: criminalDefenseLawyersCount,
     accountingSoftware: accountingSoftwareCount,
     addictionTreatment: addictionTreatmentCount,
     aiAgentPlatforms: aiAgentPlatformsCount,
