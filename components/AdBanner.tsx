@@ -12,24 +12,28 @@ const ADSENSE_CLIENT = "ca-pub-5534047032969220";
 
 export default function AdBanner({ slot, format = "auto", className = "" }: AdBannerProps) {
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
+    // Only push when we have a valid slot — pushing without a slot causes
+    // silent errors in the adsbygoogle queue that block all ads on the page
+    if (process.env.NODE_ENV === "production" && slot) {
       try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
       } catch {
-        // AdSense not yet loaded
+        // Ignore if AdSense not yet loaded
       }
     }
-  }, []);
+  }, [slot]);
 
-  // Show placeholder in development
   if (process.env.NODE_ENV === "development") {
     return (
       <div className={`flex items-center justify-center rounded-xl border border-dashed border-white/10 bg-slate-900/30 text-slate-600 text-xs ${className}`}>
-        <span>📢 Ad</span>
+        <span>📢 Ad {slot ? `#${slot}` : "(Auto)"}</span>
       </div>
     );
   }
+
+  // Without a slot, skip the <ins> — Auto Ads handles placement via the script
+  if (!slot) return null;
 
   return (
     <div className={className}>
@@ -37,7 +41,7 @@ export default function AdBanner({ slot, format = "auto", className = "" }: AdBa
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client={ADSENSE_CLIENT}
-        {...(slot ? { "data-ad-slot": slot } : {})}
+        data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive="true"
       />
