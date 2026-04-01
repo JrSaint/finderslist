@@ -198,7 +198,7 @@ export default async function EmailToolPage({ params }: Props) {
             </div>
           </div>
 
-          <AdBanner slot="2233445570" format="horizontal" className="h-24 w-full mb-8" />
+          <AdBanner format="horizontal" className="h-24 w-full mb-8" />
 
           {relatedTools.length > 0 && (
             <section>
@@ -233,7 +233,7 @@ export default async function EmailToolPage({ params }: Props) {
                 </ul>
               </div>
             )}
-            <AdBanner slot="6677889904" format="rectangle" className="h-64 w-full" />
+            <AdBanner format="rectangle" className="h-64 w-full" />
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-sm font-medium text-white mb-3">{category.emoji} Browse {category.label}</p>
               <Link href={`/email-tools/category/${tool.category}`} className="block w-full rounded-lg border border-white/10 hover:border-red-500/30 hover:bg-slate-800 px-4 py-2.5 text-sm text-slate-400 hover:text-white transition-all text-center">See all tools →</Link>

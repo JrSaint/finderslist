@@ -87,7 +87,7 @@ export default async function CreditRepairCategoryPage({ params }: Props) {
               ))}
             </div>
           )}
-          <div className="mt-10"><AdBanner slot="1122334471" format="horizontal" className="h-24 w-full" /></div>
+          <div className="mt-10"><AdBanner format="horizontal" className="h-24 w-full" /></div>
         </div>
 
         <aside className="lg:w-64 flex-shrink-0">
@@ -107,7 +107,7 @@ export default async function CreditRepairCategoryPage({ params }: Props) {
                 );
               })}
             </div>
-            <div className="mt-6"><AdBanner slot="5544332271" format="rectangle" className="h-64 w-full" /></div>
+            <div className="mt-6"><AdBanner format="rectangle" className="h-64 w-full" /></div>
             <div className="mt-6 rounded-xl border border-white/10 bg-slate-900/50 p-4 text-center">
               <p className="text-sm text-slate-400 mb-3">Know a great service?</p>
               <Link href="/credit-repair-services" className="block w-full rounded-lg bg-purple-600 hover:bg-purple-500 px-4 py-2 text-sm font-medium text-white transition-colors text-center">Browse All</Link>

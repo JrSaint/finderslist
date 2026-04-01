@@ -58,7 +58,7 @@ export default async function AnalyticsCategoryPage({ params }: Props) {
               {tools.map((tool) => (<ToolCard key={tool.slug} tool={tool as never} basePath="/analytics-tools" />))}
             </div>
           )}
-          <div className="mt-10"><AdBanner slot="1122334459" format="horizontal" className="h-24 w-full" /></div>
+          <div className="mt-10"><AdBanner format="horizontal" className="h-24 w-full" /></div>
         </div>
         <aside className="lg:w-64 flex-shrink-0">
           <div className="sticky top-24">
@@ -75,7 +75,7 @@ export default async function AnalyticsCategoryPage({ params }: Props) {
                 );
               })}
             </div>
-            <div className="mt-6"><AdBanner slot="5544332215" format="rectangle" className="h-64 w-full" /></div>
+            <div className="mt-6"><AdBanner format="rectangle" className="h-64 w-full" /></div>
             <div className="mt-6 rounded-xl border border-white/10 bg-slate-900/50 p-4 text-center">
               <p className="text-sm text-slate-400 mb-3">Know a great tool?</p>
               <Link href="/analytics-tools/submit" className="block w-full rounded-lg bg-cyan-600 hover:bg-cyan-500 px-4 py-2 text-sm font-medium text-white transition-colors text-center">Submit a Tool</Link>

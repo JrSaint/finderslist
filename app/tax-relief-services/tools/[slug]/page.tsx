@@ -200,7 +200,7 @@ export default async function TaxReliefToolPage({ params }: Props) {
             </div>
           </div>
 
-          <AdBanner slot="2233445572" format="horizontal" className="h-24 w-full mb-8" />
+          <AdBanner format="horizontal" className="h-24 w-full mb-8" />
 
           {relatedTools.length > 0 && (
             <section>
@@ -233,7 +233,7 @@ export default async function TaxReliefToolPage({ params }: Props) {
                 <ul className="space-y-2">{tool.pros.slice(0, 3).map((pro, i) => (<li key={i} className="flex items-start gap-2 text-xs text-slate-400"><span className="text-emerald-500 flex-shrink-0 mt-0.5">✓</span>{pro}</li>))}</ul>
               </div>
             )}
-            <AdBanner slot="6677889906" format="rectangle" className="h-64 w-full" />
+            <AdBanner format="rectangle" className="h-64 w-full" />
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-sm font-medium text-white mb-3">{category.emoji} Browse {category.label}</p>
               <Link href={`/tax-relief-services/category/${tool.category}`} className="block w-full rounded-lg border border-white/10 hover:border-red-500/30 hover:bg-slate-800 px-4 py-2.5 text-sm text-slate-400 hover:text-white transition-all text-center">See all tools →</Link>

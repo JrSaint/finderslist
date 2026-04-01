@@ -138,7 +138,7 @@ export default async function ToolPage({ params }: Props) {
             </div>
           </div>
 
-          <AdBanner slot="2233445566" format="horizontal" className="h-24 w-full mb-8" />
+          <AdBanner format="horizontal" className="h-24 w-full mb-8" />
 
           {/* Related tools */}
           {relatedTools.length > 0 && (
@@ -174,7 +174,7 @@ export default async function ToolPage({ params }: Props) {
               </p>
             </div>
 
-            <AdBanner slot="6677889900" format="rectangle" className="h-64 w-full" />
+            <AdBanner format="rectangle" className="h-64 w-full" />
 
             {/* Browse category */}
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">

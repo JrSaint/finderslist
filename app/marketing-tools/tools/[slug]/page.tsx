@@ -319,7 +319,7 @@ export default async function MarketingToolPage({ params }: Props) {
             </div>
           </div>
 
-          <AdBanner slot="2233445567" format="horizontal" className="h-24 w-full mb-8" />
+          <AdBanner format="horizontal" className="h-24 w-full mb-8" />
 
           {/* Related tools */}
           {relatedTools.length > 0 && (
@@ -384,7 +384,7 @@ export default async function MarketingToolPage({ params }: Props) {
               </div>
             )}
 
-            <AdBanner slot="6677889901" format="rectangle" className="h-64 w-full" />
+            <AdBanner format="rectangle" className="h-64 w-full" />
 
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-sm font-medium text-white mb-3">

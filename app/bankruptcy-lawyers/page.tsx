@@ -81,7 +81,7 @@ export default async function BankruptcyLawyersPage({ searchParams }: Props) {
       </section>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <AdBanner slot="1234567898" format="horizontal" className="mt-8 h-24 w-full" />
+        <AdBanner format="horizontal" className="mt-8 h-24 w-full" />
 
         <section className="mt-10 p-5 rounded-2xl border border-white/8 bg-slate-900/30">
           <Suspense fallback={null}>
@@ -163,7 +163,7 @@ export default async function BankruptcyLawyersPage({ searchParams }: Props) {
             </section>
 
             <div className="mt-12">
-              <AdBanner slot="0987654329" format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
+              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
             </div>
 
             <section className="mt-12 mb-16">

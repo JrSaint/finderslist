@@ -87,7 +87,7 @@ export default async function BusinessPhoneCategoryPage({ params }: Props) {
               ))}
             </div>
           )}
-          <div className="mt-10"><AdBanner slot="1122334458" format="horizontal" className="h-24 w-full" /></div>
+          <div className="mt-10"><AdBanner format="horizontal" className="h-24 w-full" /></div>
         </div>
 
         <aside className="lg:w-64 flex-shrink-0">
@@ -107,7 +107,7 @@ export default async function BusinessPhoneCategoryPage({ params }: Props) {
                 );
               })}
             </div>
-            <div className="mt-6"><AdBanner slot="5544332214" format="rectangle" className="h-64 w-full" /></div>
+            <div className="mt-6"><AdBanner format="rectangle" className="h-64 w-full" /></div>
             <div className="mt-6 rounded-xl border border-white/10 bg-slate-900/50 p-4 text-center">
               <p className="text-sm text-slate-400 mb-3">Know a great tool?</p>
               <Link href="/business-phone-systems" className="block w-full rounded-lg bg-blue-600 hover:bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors text-center">Browse All</Link>

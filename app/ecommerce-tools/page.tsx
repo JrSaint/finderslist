@@ -98,7 +98,7 @@ export default async function EcommerceToolsPage({ searchParams }: Props) {
       </section>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <AdBanner slot="1234567893" format="horizontal" className="mt-8 h-24 w-full" />
+        <AdBanner format="horizontal" className="mt-8 h-24 w-full" />
 
         {/* Filters */}
         <section className="mt-10 p-5 rounded-2xl border border-white/8 bg-slate-900/30">
@@ -193,7 +193,7 @@ export default async function EcommerceToolsPage({ searchParams }: Props) {
             </section>
 
             <div className="mt-12">
-              <AdBanner slot="0987654324" format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
+              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
             </div>
 
             {/* All Tools */}

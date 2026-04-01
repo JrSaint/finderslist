@@ -105,7 +105,7 @@ export default async function FinanceCategoryPage({ params }: Props) {
           )}
 
           <div className="mt-10">
-            <AdBanner slot="1122334457" format="horizontal" className="h-24 w-full" />
+            <AdBanner format="horizontal" className="h-24 w-full" />
           </div>
         </div>
 
@@ -137,7 +137,7 @@ export default async function FinanceCategoryPage({ params }: Props) {
             </div>
 
             <div className="mt-6">
-              <AdBanner slot="5544332213" format="rectangle" className="h-64 w-full" />
+              <AdBanner format="rectangle" className="h-64 w-full" />
             </div>
 
             <div className="mt-6 rounded-xl border border-white/10 bg-slate-900/50 p-4 text-center">

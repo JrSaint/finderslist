@@ -85,7 +85,7 @@ export default async function DUILawyerCategoryPage({ params }: Props) {
             ))}
           </div>
 
-          <AdBanner slot="1234567898" format="horizontal" className="mt-10 h-24 w-full" />
+          <AdBanner format="horizontal" className="mt-10 h-24 w-full" />
         </div>
 
         <div className="lg:w-72 flex-shrink-0">
@@ -115,7 +115,7 @@ export default async function DUILawyerCategoryPage({ params }: Props) {
             </Link>
           </div>
 
-          <AdBanner slot="0987654329" format="rectangle" className="mt-6 h-64 w-full" />
+          <AdBanner format="rectangle" className="mt-6 h-64 w-full" />
         </div>
       </div>
     </div>

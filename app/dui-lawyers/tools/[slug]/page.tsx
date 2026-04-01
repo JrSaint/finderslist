@@ -102,7 +102,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
             <p className="text-slate-400 leading-relaxed whitespace-pre-line">{tool.description}</p>
           </div>
 
-          <AdBanner slot="1234567898" format="horizontal" className="mb-8 h-24 w-full" />
+          <AdBanner format="horizontal" className="mb-8 h-24 w-full" />
 
           {tool.pros && tool.pros.length > 0 && (
             <div className="mb-8">
@@ -180,7 +180,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
             </div>
           </div>
 
-          <AdBanner slot="0987654329" format="rectangle" className="h-64 w-full" />
+          <AdBanner format="rectangle" className="h-64 w-full" />
 
           {relatedTools.length > 0 && (
             <div>
