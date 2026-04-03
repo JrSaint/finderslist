@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">🔍</span>
+              <img src="/FindersListLogo.png" alt="FindersList" width={28} height={28} className="rounded-md" />
               <span className="text-lg font-bold">
                 <span className="text-white">Finders</span>
                 <span className="text-violet-400">List</span>
