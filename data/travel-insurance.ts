@@ -18,36 +18,41 @@ export interface TravelInsuranceTool {
   useCases?: string[];
 }
 
-export const TRAVEL_INSURANCE_CATEGORIES: Record<TravelInsuranceCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const TRAVEL_INSURANCE_CATEGORIES: Record<TravelInsuranceCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "trip-cancellation": {
     label: "Trip Cancellation",
     emoji: "✈️",
     description: "Protect your investment if you need to cancel or interrupt your trip",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Trip cancellation insurance reimburses your non-refundable travel costs if you need to cancel or cut short your trip due to covered reasons like illness, injury, or severe weather. It is best for travelers with significant prepaid expenses such as international flights, cruise bookings, or resort deposits. Look for policies that cover a broad list of cancellation reasons and consider adding a Cancel for Any Reason upgrade if you want maximum flexibility.",
   },
   "medical-evacuation": {
     label: "Medical & Evacuation",
     emoji: "🏥",
     description: "Emergency medical coverage and evacuation services abroad",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Medical and evacuation insurance covers emergency medical treatment and transportation costs when you are injured or become seriously ill while traveling abroad. It is essential for international travelers since most domestic health insurance plans provide limited or no coverage overseas. Prioritize policies with at least $100,000 in medical coverage and $250,000 in evacuation benefits, and verify that the policy provides primary rather than secondary coverage.",
   },
   "adventure-sports": {
     label: "Adventure Sports",
     emoji: "🏔️",
     description: "Coverage for extreme sports, adventure activities, and hazardous pursuits",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Adventure sports travel insurance extends coverage to activities that standard policies typically exclude, such as skiing, scuba diving, rock climbing, bungee jumping, and motorized sports. It is designed for active travelers who plan to participate in higher-risk recreational activities during their trip. Carefully review the specific activities list, as coverage varies widely between providers and some extreme sports may require an additional rider or specialized policy.",
   },
   "annual-multi-trip": {
     label: "Annual & Multi-Trip",
     emoji: "🔄",
     description: "Year-round coverage for frequent travelers taking multiple trips",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Annual and multi-trip policies provide continuous travel insurance coverage for an entire year, covering every trip you take without needing to purchase a separate policy each time. They are best for frequent travelers who take three or more trips per year and want the convenience and cost savings of a single annual premium. Check the maximum trip duration limit per trip, as most annual plans cap individual trips at 30 to 45 days.",
   },
   "group-travel": {
     label: "Group Travel",
     emoji: "👥",
     description: "Plans for families, tour groups, and corporate travel teams",
     gradient: "from-violet-600/30 to-violet-800/40",
+    guide: "Group travel insurance covers multiple travelers under a single policy, offering discounted per-person rates for families, tour groups, school trips, and corporate travel teams. It is ideal for trip organizers who need to insure a group of travelers efficiently while keeping administrative overhead low. Look for policies that allow individual members to file claims independently and verify whether the policy covers trip cancellation if a key group member cannot travel.",
   },
 };
 

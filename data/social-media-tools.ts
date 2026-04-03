@@ -25,37 +25,42 @@ export interface SocialMediaTool {
 
 export const SOCIAL_MEDIA_CATEGORIES: Record<
   SocialMediaCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "scheduling-publishing": {
     label: "Scheduling & Publishing",
     emoji: "📅",
     description: "Plan, schedule, and auto-publish content across all social media platforms.",
     gradient: "from-blue-500 to-indigo-500",
+    guide: "Scheduling and publishing tools let you plan content calendars weeks in advance and auto-post to multiple networks simultaneously. They are best for social media managers and marketing teams juggling several brand accounts. Look for platforms with bulk scheduling, optimal send-time suggestions, and approval workflows.",
   },
   "analytics-reporting": {
     label: "Analytics & Reporting",
     emoji: "📊",
     description: "Measure social media performance, track growth, and report on results.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Analytics and reporting tools aggregate engagement data across all your social channels into unified dashboards. They are ideal for marketers who need to prove ROI and identify top-performing content. Prioritize tools offering custom report templates, competitor benchmarking, and automated report delivery to stakeholders.",
   },
   "content-creation": {
     label: "Content Creation & Design",
     emoji: "🎨",
     description: "Create stunning visuals, videos, and content for social media.",
     gradient: "from-pink-500 to-rose-500",
+    guide: "Content creation tools help you design platform-optimized graphics, short-form videos, and carousels without needing professional design skills. They are perfect for small teams and creators who need to produce high-volume visual content quickly. Look for built-in templates sized for each platform, brand kit support, and AI-assisted copy generation.",
   },
   "social-listening": {
     label: "Social Listening & Monitoring",
     emoji: "👂",
     description: "Monitor brand mentions, track competitors, and listen to social conversations.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Social listening tools scan public conversations across social networks, forums, and news sites to surface brand mentions and sentiment trends. They are essential for PR teams, brand managers, and anyone needing real-time awareness of public perception. Focus on tools with sentiment analysis, alert thresholds, and competitive share-of-voice tracking.",
   },
   "influencer-marketing": {
     label: "Influencer Marketing",
     emoji: "⭐",
     description: "Find, manage, and measure influencer partnerships and campaigns.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Influencer marketing platforms help you discover relevant creators, manage outreach and contracts, and track campaign performance in one place. They are best for brands running ambassador programs or paid partnership campaigns at scale. Evaluate platforms based on influencer database size, audience authenticity scoring, and attribution tracking capabilities.",
   },
 };
 

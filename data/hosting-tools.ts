@@ -25,37 +25,42 @@ export interface HostingTool {
 
 export const HOSTING_CATEGORIES: Record<
   HostingCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "cloud-hosting": {
     label: "Cloud & PaaS Hosting",
     emoji: "☁️",
     description: "Platform-as-a-service and cloud hosting for modern web applications.",
     gradient: "from-blue-500 to-cyan-500",
+    guide: "Cloud and PaaS hosting platforms handle server infrastructure so developers can focus on deploying and scaling applications. They are best for modern web apps, APIs, and microservices that need auto-scaling and global distribution. Look for git-based deployment workflows, managed databases, and transparent pricing based on actual resource usage.",
   },
   "managed-wordpress": {
     label: "Managed WordPress Hosting",
     emoji: "📝",
     description: "Optimized hosting built specifically for WordPress performance and security.",
     gradient: "from-indigo-500 to-purple-500",
+    guide: "Managed WordPress hosting provides servers optimized specifically for WordPress performance, security, and automatic updates. It is ideal for businesses and publishers running WordPress sites that need fast load times and hands-off server management. Look for built-in caching, staging environments, automatic backups, and WordPress-specific support expertise.",
   },
   "static-jamstack": {
     label: "Static & JAMstack Hosting",
     emoji: "⚡",
     description: "Fast, global CDN hosting for static sites and JAMstack applications.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Static and JAMstack hosting delivers pre-built HTML, CSS, and JavaScript files from a global CDN for blazing-fast page loads. It is best for marketing sites, documentation, blogs, and any site that can be pre-rendered at build time. Look for seamless CI/CD integration with GitHub or GitLab, instant cache invalidation, and generous free tiers for small projects.",
   },
   "vps-dedicated": {
     label: "VPS & Dedicated Servers",
     emoji: "🖥️",
     description: "Virtual private servers and dedicated hardware for full control.",
     gradient: "from-slate-500 to-gray-600",
+    guide: "VPS and dedicated servers give you full root access and dedicated resources for maximum control over your hosting environment. They are best for high-traffic applications, custom server configurations, and workloads that need guaranteed CPU and memory allocation. Look for SSD storage, flexible operating system choices, snapshot backups, and responsive technical support.",
   },
   "domain-registrar": {
     label: "Domain Registrars",
     emoji: "🌐",
     description: "Register, manage, and transfer domain names for your websites.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Domain registrars let you search, register, and manage domain names for your websites and email. They are essential for any online presence and best used alongside your hosting provider or as a standalone service. Look for competitive renewal pricing (not just first-year discounts), free WHOIS privacy, easy DNS management, and straightforward domain transfer policies.",
   },
 };
 

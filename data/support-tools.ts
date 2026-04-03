@@ -25,37 +25,42 @@ export interface SupportTool {
 
 export const SUPPORT_CATEGORIES: Record<
   SupportCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "help-desk": {
     label: "Help Desk & Ticketing",
     emoji: "🎫",
     description: "Manage, track, and resolve customer support requests at scale.",
     gradient: "from-blue-500 to-indigo-500",
+    guide: "Help desk and ticketing systems centralize customer support requests from email, chat, phone, and social media into a single queue with tracking, prioritization, and SLA management. They are best for growing support teams that need to organize incoming volume and measure response times. Look for platforms with smart routing, collision detection, and robust reporting on agent performance and ticket trends.",
   },
   "live-chat": {
     label: "Live Chat & Messaging",
     emoji: "💬",
     description: "Engage customers in real-time through live chat and messaging platforms.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Live chat and messaging platforms enable real-time conversations with website visitors and customers through chat widgets, SMS, and messaging apps. They are ideal for businesses where fast response times directly impact conversion rates and customer satisfaction. Evaluate platforms based on chatbot capabilities, proactive messaging triggers, and whether conversations can seamlessly escalate to human agents when needed.",
   },
   "knowledge-base": {
     label: "Knowledge Base & Self-Service",
     emoji: "📚",
     description: "Build help centers and documentation to reduce support volume.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Knowledge base and self-service tools help you create searchable help centers, FAQ pages, and documentation portals that let customers find answers without contacting support. They are essential for any support team looking to deflect repetitive tickets and scale without adding headcount. Prioritize tools with AI-powered search, analytics on article effectiveness, and easy content management workflows for keeping documentation current.",
   },
   "customer-success": {
     label: "Customer Success Platforms",
     emoji: "🚀",
     description: "Proactively manage customer health, onboarding, and retention.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Customer success platforms help teams proactively monitor account health, manage onboarding workflows, and identify at-risk customers before they churn. They are best for B2B SaaS companies and subscription businesses where retaining existing customers is critical to revenue growth. Look for platforms with health scoring, automated playbook triggers, and integration with your CRM and product analytics tools.",
   },
   feedback: {
     label: "Feedback & Survey Tools",
     emoji: "⭐",
     description: "Collect, analyze, and act on customer feedback and satisfaction scores.",
     gradient: "from-pink-500 to-rose-500",
+    guide: "Feedback and survey tools help you collect NPS, CSAT, and CES scores along with qualitative feedback through in-app surveys, email campaigns, and website widgets. They are ideal for product and support teams that want to measure customer sentiment and prioritize improvements based on real user input. Focus on tools with strong segmentation, trend analysis, and the ability to close the feedback loop by notifying customers when their suggestions are implemented.",
   },
 };
 

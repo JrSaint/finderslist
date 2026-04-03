@@ -8,6 +8,7 @@ import {
 import type { DUILawyerCategory } from "@/lib/dui-lawyers";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import CategoryGuide from "@/components/CategoryGuide";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -78,6 +79,7 @@ export default async function DUILawyerCategoryPage({ params }: Props) {
             </div>
           </div>
           <div className="mb-6 text-sm text-slate-500">Showing {tools.length} firm{tools.length !== 1 ? "s" : ""}</div>
+          <CategoryGuide guide={(category as { guide?: string }).guide} />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {tools.map((tool) => (

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getAnalyticsToolBySlug, getAllAnalyticsTools, getAnalyticsToolsByCategory, ANALYTICS_CATEGORIES, ANALYTICS_PRICING_LABELS, ANALYTICS_PRICING_COLORS, ANALYTICS_ROLES, type AnalyticsRoleKey } from "@/lib/analytics-tools";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import AuthorBadge from "@/components/AuthorBadge";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -104,6 +105,8 @@ export default async function AnalyticsToolPage({ params }: Props) {
             <h2 className="text-base font-semibold text-white mb-3">About {tool.name}</h2>
             <p className="text-slate-400 leading-relaxed">{tool.description}</p>
           </div>
+
+          <AuthorBadge />
 
           {(tool.pros || tool.cons) && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">

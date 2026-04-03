@@ -8,6 +8,7 @@ import {
 import type { TaxReliefCategory } from "@/lib/tax-relief-services";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import CategoryGuide from "@/components/CategoryGuide";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -78,6 +79,7 @@ export default async function TaxReliefCategoryPage({ params }: Props) {
             </div>
           </div>
           <div className="mb-6 text-sm text-slate-500">Showing {tools.length} service{tools.length !== 1 ? "s" : ""}</div>
+          <CategoryGuide guide={(category as { guide?: string }).guide} />
           {tools.length === 0 ? (
             <div className="text-center py-16 text-slate-500">No services in this category yet.</div>
           ) : (

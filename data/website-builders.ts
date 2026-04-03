@@ -25,37 +25,42 @@ export interface WebsiteBuilderTool {
 
 export const WEBSITE_BUILDER_CATEGORIES: Record<
   WebsiteBuilderCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "general-builders": {
     label: "General Website Builders",
     emoji: "🌐",
     description: "All-in-one platforms to build any type of website visually.",
     gradient: "from-blue-500 to-cyan-500",
+    guide: "General website builders provide drag-and-drop editors, pre-designed templates, and built-in hosting to create any type of website without writing code. They are best for small business owners, freelancers, and anyone who needs a professional web presence quickly and affordably. Compare builders based on template design quality, SEO capabilities, mobile responsiveness, and whether the pricing includes hosting and a custom domain.",
   },
   "ecommerce-builders": {
     label: "eCommerce Builders",
     emoji: "🛒",
     description: "Platforms purpose-built for selling products and running online stores.",
     gradient: "from-green-500 to-emerald-500",
+    guide: "eCommerce builders are specifically designed for creating online stores with product catalogs, shopping carts, payment processing, and order management built in from the start. They are ideal for entrepreneurs and retail businesses that need robust selling features rather than a general-purpose website with commerce bolted on. Evaluate platforms based on transaction fees, payment gateway options, inventory management depth, and the availability of apps for shipping, taxes, and marketing.",
   },
   "landing-pages": {
     label: "Landing Page Builders",
     emoji: "🎯",
     description: "Focused tools for building high-converting landing pages and funnels.",
     gradient: "from-orange-500 to-amber-500",
+    guide: "Landing page builders are specialized tools for creating high-converting standalone pages and sales funnels optimized for specific campaigns, product launches, or lead generation. They are best for marketers and growth teams running paid ad campaigns who need to build and A/B test pages quickly without involving developers. Look for builders with built-in A/B testing, conversion analytics, form builders, and seamless integration with your email marketing and CRM platforms.",
   },
   cms: {
     label: "CMS Platforms",
     emoji: "📝",
     description: "Content management systems for blogs, editorial, and content-heavy sites.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "CMS platforms are content management systems designed for publishing and organizing large volumes of articles, blog posts, and editorial content with structured workflows. They are ideal for media companies, corporate blogs, documentation sites, and any organization where content publishing is a core activity. Prioritize platforms with strong editorial workflow support, content scheduling, SEO tools, and the flexibility to scale as your content library grows.",
   },
   "static-site-generators": {
     label: "Static Site Generators",
     emoji: "⚡",
     description: "Developer-focused tools for building fast, static websites from code.",
     gradient: "from-slate-500 to-gray-500",
+    guide: "Static site generators produce fast, secure, pre-rendered websites from code and markdown files, deployed through CDNs for maximum performance. They are best for developers and technical teams who want complete control over their site architecture and are comfortable working with code, Git, and deployment pipelines. Compare generators based on build speed, framework ecosystem, plugin availability, and the quality of documentation and community support.",
   },
 };
 

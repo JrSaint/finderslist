@@ -18,36 +18,41 @@ export interface FieldServiceTool {
   useCases?: string[];
 }
 
-export const FIELD_SERVICE_CATEGORIES: Record<FieldServiceCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const FIELD_SERVICE_CATEGORIES: Record<FieldServiceCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "scheduling-dispatch": {
     label: "Scheduling & Dispatch",
     emoji: "📋",
     description: "Intelligent scheduling and dispatching tools that optimize technician routes and job assignments.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Scheduling and dispatch tools help field service companies assign the right technician to the right job at the right time. Look for features like drag-and-drop scheduling, GPS-based route optimization, and real-time availability tracking. These platforms are best for businesses managing multiple technicians across a service area.",
   },
   "work-order": {
     label: "Work Order Management",
     emoji: "📝",
     description: "Platforms for creating, tracking, and completing work orders from request to resolution.",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Work order management platforms digitize the entire job lifecycle from initial service request through completion and invoicing. They are ideal for maintenance-heavy organizations that need audit trails, status tracking, and automated workflows. Prioritize solutions with customizable forms, photo documentation, and customer approval signatures.",
   },
   "mobile-workforce": {
     label: "Mobile Workforce",
     emoji: "📱",
     description: "Mobile-first solutions enabling field technicians to manage jobs from their phones or tablets.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Mobile workforce solutions put full job management capabilities in the hands of field technicians via smartphones and tablets. They are best for companies whose crews spend most of their day on-site away from a central office. Look for offline functionality, in-app navigation, and the ability to capture signatures and photos on the go.",
   },
   "asset-management": {
     label: "Asset Management",
     emoji: "🏗️",
     description: "Field service platforms focused on managing and maintaining physical assets and equipment.",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Asset management platforms help organizations track the location, condition, and maintenance history of physical equipment in the field. They are best suited for utilities, facilities management, and industrial operations with large inventories of assets. Look for features like QR/barcode scanning, preventive maintenance scheduling, and depreciation tracking.",
   },
   "hvac-plumbing": {
     label: "HVAC & Plumbing",
     emoji: "🔧",
     description: "Specialized field service software for HVAC, plumbing, electrical, and home service trades.",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "HVAC and plumbing software is purpose-built for home service trades that need flat-rate pricing books, equipment tracking, and service agreement management. These platforms are ideal for residential and commercial contractors in heating, cooling, plumbing, and electrical trades. Look for integrations with supplier catalogs, permit tracking, and membership plan billing.",
   },
 };
 

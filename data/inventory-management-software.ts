@@ -18,36 +18,41 @@ export interface InventoryManagementTool {
   useCases?: string[];
 }
 
-export const INVENTORY_MANAGEMENT_CATEGORIES: Record<InventoryManagementCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const INVENTORY_MANAGEMENT_CATEGORIES: Record<InventoryManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   multichannel: {
     label: "Multichannel Inventory",
     emoji: "🔄",
     description: "Inventory platforms that sync stock across multiple sales channels, marketplaces, and warehouses.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Multichannel inventory platforms synchronize stock levels across online stores, marketplaces, and physical locations to prevent overselling and stockouts. They are best for e-commerce businesses selling on multiple platforms like Amazon, Shopify, eBay, and Walmart simultaneously. Look for real-time sync speed, automatic reorder points, and native integrations with your specific sales channels.",
   },
   manufacturing: {
     label: "Manufacturing & MRP",
     emoji: "🏭",
     description: "Inventory management with bill of materials, production planning, and manufacturing resource planning.",
     gradient: "from-gray-600/30 to-gray-800/40",
+    guide: "Manufacturing and MRP inventory systems manage raw materials, bills of materials, production schedules, and finished goods in an integrated workflow. They are ideal for manufacturers and assemblers who need to track components through the production process and plan materials requirements. Look for multi-level BOM support, production order management, and integration with shop floor systems.",
   },
   "small-business": {
     label: "Small Business",
     emoji: "🏪",
     description: "Simple, affordable inventory tools designed for small businesses and solo entrepreneurs.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Small business inventory tools provide simple, affordable stock tracking without the complexity of enterprise systems. They are best for retail shops, small warehouses, and solo entrepreneurs who need basic inventory visibility without a steep learning curve. Look for easy setup, mobile app access, low-cost or free tiers, and integration with popular POS and accounting software.",
   },
   "barcode-rfid": {
     label: "Barcode & RFID",
     emoji: "📊",
     description: "Inventory systems with advanced barcode scanning, RFID tracking, and asset identification.",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Barcode and RFID inventory systems use scanning technology to track items with precision, reducing manual counting errors and speeding up receiving and shipping. They are ideal for warehouses, retailers, and asset-heavy businesses that need accurate real-time counts. Look for compatibility with your existing hardware, batch scanning capabilities, and support for both 1D and 2D barcode formats.",
   },
   dropshipping: {
     label: "Dropshipping & 3PL",
     emoji: "📦",
     description: "Inventory management solutions optimized for dropshipping, 3PL, and outsourced fulfillment models.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Dropshipping and 3PL inventory platforms manage stock held by third-party suppliers or fulfillment centers, syncing orders and tracking shipments across external partners. They are best for e-commerce businesses that do not hold their own inventory or use outsourced fulfillment services. Look for supplier inventory feeds, automated order routing, and real-time shipment tracking across multiple fulfillment partners.",
   },
 };
 

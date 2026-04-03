@@ -18,36 +18,41 @@ export interface HotelBookingTool {
   useCases?: string[];
 }
 
-export const HOTEL_BOOKING_CATEGORIES: Record<HotelBookingCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const HOTEL_BOOKING_CATEGORIES: Record<HotelBookingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "major-chains": {
     label: "Major Chains",
     emoji: "🏨",
     description: "Book directly with the world's largest hotel brands and loyalty programs",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Major hotel chains offer direct booking through their websites and apps, with loyalty programs that reward frequent stays with free nights and upgrades. They are best for regular travelers who can accumulate points with a preferred brand. Look for best-rate guarantees, flexible cancellation policies, and elite status benefits like late checkout and room upgrades.",
   },
   "vacation-rentals": {
     label: "Vacation Rentals",
     emoji: "🏡",
     description: "Alternative accommodations including apartments, homes, and unique stays",
     gradient: "from-rose-600/30 to-rose-800/40",
+    guide: "Vacation rental platforms list apartments, houses, villas, and unique properties as alternatives to traditional hotels. They are ideal for families, groups, and longer stays where having a kitchen and extra space makes a meaningful difference. Compare cleaning fees, host ratings, cancellation policies, and total cost including all fees before booking.",
   },
   luxury: {
     label: "Luxury Hotels",
     emoji: "✨",
     description: "Premium booking platforms for luxury resorts and boutique hotels",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Luxury hotel booking platforms curate premium resorts, boutique hotels, and five-star properties with exclusive perks and VIP treatment. They are best for travelers who prioritize exceptional service, unique experiences, and upgraded amenities. Look for platforms that offer complimentary upgrades, resort credits, early check-in, and dedicated travel advisors.",
   },
   budget: {
     label: "Budget & Deals",
     emoji: "💰",
     description: "Find the best hotel deals, discounts, and last-minute rates",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Budget hotel booking platforms help travelers find the lowest rates through price comparison, flash sales, last-minute deals, and opaque bookings. They are best for flexible travelers who prioritize savings over brand loyalty or specific property preferences. Look for price-match guarantees, free cancellation options, and member-only discount programs.",
   },
   "business-travel": {
     label: "Business Travel",
     emoji: "💼",
     description: "Platforms optimized for corporate booking and business travel management",
     gradient: "from-slate-600/30 to-slate-800/40",
+    guide: "Business travel platforms streamline corporate hotel booking with negotiated rates, policy compliance, expense integration, and centralized reporting. They are best for companies that need to manage travel spending across teams while giving travelers a smooth booking experience. Look for travel policy enforcement, receipt automation, duty-of-care features, and integrations with your expense management software.",
   },
 };
 

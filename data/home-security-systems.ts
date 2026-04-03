@@ -18,36 +18,41 @@ export interface HomeSecurityTool {
   useCases?: string[];
 }
 
-export const HOME_SECURITY_CATEGORIES: Record<HomeSecurityCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const HOME_SECURITY_CATEGORIES: Record<HomeSecurityCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "professional-monitoring": {
     label: "Professional Monitoring",
     emoji: "🛡️",
     description: "24/7 professionally monitored security systems with emergency dispatch",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Professionally monitored security systems connect to a 24/7 monitoring center that dispatches police, fire, or medical responders when an alarm is triggered. They are best for homeowners who want the highest level of protection and peace of mind. Look for cellular backup connections, battery backup during power outages, and fast average response times.",
   },
   "diy-systems": {
     label: "DIY Systems",
     emoji: "🔧",
     description: "Self-installed security systems you can set up without professional help",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "DIY security systems let you install and configure your own home security without professional installation fees or long-term contracts. They are ideal for renters, tech-savvy homeowners, and anyone who wants flexible, affordable security on their own terms. Look for easy wireless setup, app-based control, and the option to add professional monitoring later if desired.",
   },
   "smart-cameras": {
     label: "Smart Cameras",
     emoji: "📹",
     description: "Indoor and outdoor security cameras with smart detection and cloud storage",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Smart security cameras provide indoor and outdoor video surveillance with features like motion detection, night vision, and cloud or local storage. They are best for homeowners who want visual verification of activity around their property accessible from their phone. Look for high resolution (at least 1080p), wide viewing angles, person and vehicle detection, and flexible storage options.",
   },
   "video-doorbells": {
     label: "Video Doorbells",
     emoji: "🔔",
     description: "Smart doorbells with video, two-way audio, and motion detection",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Video doorbells combine a doorbell with a camera, two-way audio, and motion alerts so you can see and speak with visitors from anywhere via your phone. They are ideal for package theft prevention, monitoring deliveries, and screening visitors remotely. Prioritize models with clear HD video, wide-angle lenses, reliable motion zones, and compatibility with your existing smart home ecosystem.",
   },
   "smart-locks": {
     label: "Smart Locks",
     emoji: "🔒",
     description: "Keyless entry systems with remote access and smart home integration",
     gradient: "from-slate-600/30 to-slate-800/40",
+    guide: "Smart locks replace or augment traditional deadbolts with keyless entry via PIN codes, fingerprints, smartphone apps, or voice assistants. They are best for homeowners who want to grant and revoke access remotely, track who enters, and eliminate the need for physical keys. Look for auto-lock features, tamper alerts, and compatibility with your preferred smart home platform like Alexa, Google Home, or Apple HomeKit.",
   },
 };
 

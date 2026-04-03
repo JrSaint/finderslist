@@ -18,36 +18,41 @@ export interface VacationRentalTool {
   useCases?: string[];
 }
 
-export const VACATION_RENTAL_CATEGORIES: Record<VacationRentalCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const VACATION_RENTAL_CATEGORIES: Record<VacationRentalCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "home-sharing": {
     label: "Home Sharing",
     emoji: "🏠",
     description: "Peer-to-peer platforms connecting travelers with local hosts and homeowners",
     gradient: "from-rose-600/30 to-rose-800/40",
+    guide: "Home sharing platforms connect travelers directly with local hosts who rent out their homes, apartments, or spare rooms for short-term stays. They are best for budget-conscious travelers and those seeking an authentic local experience in residential neighborhoods. Compare total costs including service fees and cleaning fees across platforms, read recent reviews carefully, and check the host's response rate and cancellation policy before booking.",
   },
   "luxury-villas": {
     label: "Luxury Villas",
     emoji: "🏰",
     description: "High-end vacation homes, estates, and premium curated properties",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Luxury villa platforms curate high-end vacation homes, private estates, and premium properties with amenities like private pools, concierge services, and chef arrangements. They are ideal for travelers seeking upscale accommodations for special occasions, family reunions, or executive retreats. Look for platforms with property verification processes, on-the-ground local managers, and responsive guest services teams available throughout your stay.",
   },
   "cabin-mountain": {
     label: "Cabins & Mountain",
     emoji: "🏔️",
     description: "Cabins, lodges, and mountain retreats in nature destinations",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Cabin and mountain rental platforms specialize in rustic retreats, ski lodges, lakefront cabins, and nature-immersed properties in mountain and woodland destinations. They are perfect for travelers seeking outdoor adventures, scenic getaways, or a quiet escape from urban life. Check road access conditions during winter months, verify amenities like heating and hot tubs, and confirm whether the property has reliable cell service or Wi-Fi if connectivity matters to you.",
   },
   "beach-coastal": {
     label: "Beach & Coastal",
     emoji: "🏖️",
     description: "Beachfront rentals, coastal homes, and seaside vacation properties",
     gradient: "from-cyan-600/30 to-cyan-800/40",
+    guide: "Beach and coastal rental platforms focus on oceanfront homes, beachside condos, and seaside vacation properties in popular coastal destinations. They are ideal for families, couples, and groups planning beach vacations who want more space and kitchen access than a hotel offers. Verify actual walking distance to the beach versus marketing claims, check whether beach chairs and equipment are provided, and read reviews about noise levels during peak season.",
   },
   "urban-apartments": {
     label: "Urban Apartments",
     emoji: "🏙️",
     description: "City apartments and serviced residences for urban stays",
     gradient: "from-violet-600/30 to-violet-800/40",
+    guide: "Urban apartment platforms list city apartments, serviced residences, and furnished short-term rentals in major metropolitan areas worldwide. They are best for business travelers, digital nomads, and city-break vacationers who want a home base with a kitchen and more space than a hotel room. Prioritize listings with verified locations, check neighborhood walkability scores, and confirm check-in logistics since urban rentals often have keypad or lockbox entry rather than a front desk.",
   },
 };
 

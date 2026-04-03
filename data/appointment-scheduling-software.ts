@@ -18,36 +18,41 @@ export interface AppointmentSchedulingTool {
   useCases?: string[];
 }
 
-export const APPOINTMENT_SCHEDULING_CATEGORIES: Record<AppointmentSchedulingCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const APPOINTMENT_SCHEDULING_CATEGORIES: Record<AppointmentSchedulingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   healthcare: {
     label: "Healthcare Scheduling",
     emoji: "🏥",
     description: "HIPAA-compliant scheduling platforms built for medical practices, clinics, and healthcare providers.",
     gradient: "from-teal-600/30 to-teal-800/40",
+    guide: "Healthcare scheduling platforms are built specifically for medical practices, clinics, and hospitals with HIPAA-compliant data handling, patient intake forms, insurance verification, and EHR integration. They serve practices that need to manage complex provider schedules, multi-location booking, and automated patient reminders that reduce no-shows. Verify HIPAA compliance with a signed BAA, check integration depth with your EHR system, and evaluate whether the patient-facing booking experience is intuitive enough that your front desk staff can rely on self-service scheduling.",
   },
   "beauty-wellness": {
     label: "Beauty & Wellness",
     emoji: "💆",
     description: "Booking software tailored for salons, spas, fitness studios, and wellness practitioners.",
     gradient: "from-pink-600/30 to-pink-800/40",
+    guide: "Beauty and wellness scheduling tools are designed for salons, spas, barbershops, fitness studios, and independent practitioners who need online booking, service menus, staff calendars, and point-of-sale functionality in one platform. They are ideal for appointment-based businesses where clients expect to book online 24/7 and receive automated confirmations and reminders. Look for built-in payment processing, product and retail management, client history tracking, and integrations with social media booking buttons on Instagram and Google.",
   },
   "professional-services": {
     label: "Professional Services",
     emoji: "💼",
     description: "Scheduling tools for consultants, lawyers, accountants, and other professional service providers.",
     gradient: "from-indigo-600/30 to-indigo-800/40",
+    guide: "Professional services scheduling tools help consultants, lawyers, financial advisors, and other service providers manage client appointments with features like intake forms, calendar syncing, buffer times, and payment collection at booking. They work best for knowledge workers who need to control their availability precisely while giving clients a polished self-service booking experience. Evaluate calendar integration quality with Google and Outlook, time zone handling for remote clients, and whether the tool supports group scheduling and round-robin assignment across team members.",
   },
   "field-service": {
     label: "Field Service",
     emoji: "🔧",
     description: "Appointment and dispatch scheduling for home services, repairs, and on-site work.",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Field service scheduling tools manage appointments, dispatching, and route optimization for businesses that send technicians or workers to customer locations, such as plumbers, HVAC companies, and cleaning services. They are essential for any service business with mobile workers who need real-time scheduling updates and optimized travel routes. Check for GPS tracking, mobile app quality for field workers, automated customer notifications with arrival windows, and integration with your invoicing or accounting system.",
   },
   "general-purpose": {
     label: "General Purpose",
     emoji: "📅",
     description: "Versatile scheduling platforms suitable for any industry or meeting type.",
     gradient: "from-violet-600/30 to-violet-800/40",
+    guide: "General-purpose scheduling platforms provide flexible booking pages, calendar syncing, and automated reminders that work across virtually any industry or meeting type. They are best for individuals and teams who need a straightforward way to let clients or colleagues book time without lengthy email chains. Compare the customization options for booking pages, support for different appointment types and durations, team scheduling features, and whether the free tier covers your needs or if premium features like payment collection and CRM integration are worth the upgrade.",
   },
 };
 

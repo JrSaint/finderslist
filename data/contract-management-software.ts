@@ -18,36 +18,41 @@ export interface ContractManagementTool {
   useCases?: string[];
 }
 
-export const CONTRACT_MANAGEMENT_CATEGORIES: Record<ContractManagementCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const CONTRACT_MANAGEMENT_CATEGORIES: Record<ContractManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "clm-platforms": {
     label: "CLM Platforms",
     emoji: "📑",
     description: "Full contract lifecycle management platforms covering creation, negotiation, execution, and renewal.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "CLM platforms manage the entire contract lifecycle from template creation through renewal tracking. They are best suited for legal and procurement teams handling high volumes of agreements who need automated workflows, version control, and centralized repositories to reduce bottlenecks and missed deadlines.",
   },
   "e-signature": {
     label: "E-Signature & Execution",
     emoji: "✍️",
     description: "Contract execution tools focused on electronic signatures and seamless signing workflows.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "E-signature tools focus on the execution step of the contract process, enabling legally binding electronic signatures with audit trails. They are ideal for sales teams, HR departments, and any organization that needs fast, compliant document signing without the overhead of a full CLM platform. Look for compliance with eIDAS and ESIGN standards.",
   },
   "ai-review": {
     label: "AI Contract Review",
     emoji: "🤖",
     description: "AI-powered platforms that analyze, review, and extract data from contracts automatically.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "AI contract review tools use machine learning to extract key terms, flag risky clauses, and compare agreements against your standard playbook in seconds. They are best for legal teams drowning in contract volume who need a reliable first-pass reviewer to prioritize human attention on genuinely complex issues rather than routine extraction work.",
   },
   procurement: {
     label: "Procurement Contracts",
     emoji: "🛒",
     description: "Contract management focused on vendor agreements, procurement workflows, and supplier compliance.",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Procurement contract tools specialize in vendor agreements, supplier onboarding, and purchase order management with compliance tracking. They serve procurement and supply chain teams that need to manage hundreds of supplier relationships, enforce spending policies, and maintain audit-ready records of all vendor commitments.",
   },
   "legal-ops": {
     label: "Legal Operations",
     emoji: "⚖️",
     description: "Tools that streamline legal department operations including matter management and contract workflows.",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Legal operations tools streamline in-house legal department workflows including matter management, spend tracking, and outside counsel coordination. They are designed for corporate legal teams looking to operate more like a business unit with data-driven decision making, workload visibility, and measurable efficiency gains.",
   },
 };
 

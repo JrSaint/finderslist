@@ -18,36 +18,41 @@ export interface POSSystemTool {
   useCases?: string[];
 }
 
-export const POS_SYSTEM_CATEGORIES: Record<POSSystemCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const POS_SYSTEM_CATEGORIES: Record<POSSystemCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   retail: {
     label: "Retail POS",
     emoji: "🏪",
     description: "Point-of-sale systems designed for brick-and-mortar retail stores with inventory tracking and customer management.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Retail POS systems combine payment processing with inventory management, customer tracking, and sales reporting for brick-and-mortar stores. They are best for boutiques, specialty shops, and retail chains that need real-time stock visibility and customer purchase history at the register. Look for systems with barcode scanning, multi-location inventory sync, and e-commerce integration for omnichannel selling.",
   },
   restaurant: {
     label: "Restaurant POS",
     emoji: "🍽️",
     description: "Specialized POS solutions for restaurants, cafes, and food service businesses with table and menu management.",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Restaurant POS systems are purpose-built for food service with features like table mapping, menu customization, kitchen display integration, and tip management. They are essential for restaurants, cafes, bars, and quick-service operations that need efficient order flow from front-of-house to kitchen. Prioritize systems with online ordering integration, split check capabilities, and reporting that tracks food costs and labor alongside sales.",
   },
   mobile: {
     label: "Mobile POS",
     emoji: "📱",
     description: "Portable payment processing solutions for on-the-go sales, pop-up shops, and mobile vendors.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Mobile POS solutions turn smartphones and tablets into portable payment terminals for on-the-go sales at markets, events, and pop-up shops. They are ideal for vendors, food trucks, and service providers who need to accept payments outside a traditional storefront. Look for systems with reliable cellular connectivity, compact card readers that support tap and chip, and offline mode for areas with poor signal.",
   },
   "self-service": {
     label: "Self-Service Kiosks",
     emoji: "🖥️",
     description: "Self-checkout and ordering kiosk systems that reduce wait times and labor costs.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Self-service kiosk POS systems let customers place orders, check out, and pay without staff assistance, reducing wait times and labor costs. They are best for quick-service restaurants, convenience stores, and high-traffic retail environments where speed and throughput matter. Evaluate hardware durability, touchscreen responsiveness, upselling prompt capabilities, and integration with your existing POS and kitchen systems.",
   },
   enterprise: {
     label: "Enterprise POS",
     emoji: "🏢",
     description: "Scalable POS platforms built for multi-location businesses with advanced analytics and integrations.",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Enterprise POS platforms are built for multi-location businesses that need centralized management, advanced analytics, and deep integrations with ERP and accounting systems. They are ideal for retail chains, franchise operations, and large hospitality groups managing dozens or hundreds of locations. Prioritize platforms with real-time cross-location reporting, role-based access controls, and an open API ecosystem for connecting with your existing business tools.",
   },
 };
 

@@ -18,36 +18,41 @@ export interface OnlineDegreeTool {
   useCases?: string[];
 }
 
-export const ONLINE_DEGREE_CATEGORIES: Record<OnlineDegreeCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const ONLINE_DEGREE_CATEGORIES: Record<OnlineDegreeCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   bachelors: {
     label: "Bachelor's Degrees",
     emoji: "🎓",
     description: "Accredited undergraduate programs you can complete entirely online",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Online bachelor's degree programs let you earn an accredited undergraduate degree on a flexible schedule while working or managing other commitments. They are best for working adults, career changers, and students who need the flexibility of asynchronous learning. Verify regional accreditation, compare total program costs including fees, and check whether the school accepts transfer credits to reduce time to completion.",
   },
   masters: {
     label: "Master's Degrees",
     emoji: "📚",
     description: "Graduate-level programs for career advancement and specialization",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Online master's degree programs provide graduate-level education for career advancement, specialization, or a career pivot without requiring campus attendance. They are ideal for working professionals who want to deepen expertise or qualify for senior roles while maintaining their income. Look for programs with strong alumni networks, relevant programmatic accreditation, and faculty with real-world industry experience.",
   },
   mba: {
     label: "MBA Programs",
     emoji: "💼",
     description: "Online Master of Business Administration programs from top schools",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Online MBA programs develop business leadership and management skills through coursework in strategy, finance, marketing, and operations. They are best for professionals aiming for executive roles, entrepreneurship, or a transition into business leadership. Prioritize AACSB-accredited programs, evaluate networking opportunities and residency requirements, and calculate ROI based on average salary increases for graduates.",
   },
   "computer-science": {
     label: "Computer Science",
     emoji: "💻",
     description: "Online CS degrees and tech-focused programs for the digital economy",
     gradient: "from-cyan-600/30 to-cyan-800/40",
+    guide: "Online computer science degrees cover programming, algorithms, data structures, and specializations like AI, cybersecurity, and software engineering. They are ideal for aspiring developers, career switchers into tech, and IT professionals seeking formal credentials. Look for programs with hands-on projects, ABET accreditation, and strong employer recognition in the tech industry.",
   },
   healthcare: {
     label: "Healthcare Degrees",
     emoji: "🏥",
     description: "Nursing, public health, and healthcare administration programs online",
     gradient: "from-rose-600/30 to-rose-800/40",
+    guide: "Online healthcare degrees span nursing, public health, health informatics, and healthcare administration, preparing students for one of the fastest-growing employment sectors. They are best for current healthcare workers seeking advancement and career changers entering the health field. Verify programmatic accreditation (CCNE for nursing, CAHME for health administration) and confirm whether clinical placement support is included.",
   },
 };
 

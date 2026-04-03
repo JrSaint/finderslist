@@ -18,36 +18,41 @@ export interface TestPrepTool {
   useCases?: string[];
 }
 
-export const TEST_PREP_CATEGORIES: Record<TestPrepCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const TEST_PREP_CATEGORIES: Record<TestPrepCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "sat-act": {
     label: "SAT & ACT Prep",
     emoji: "📝",
     description: "Preparation courses and practice for college admissions exams",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "SAT and ACT prep services offer structured study plans, practice tests, and instructional content to help high school students maximize their college admissions exam scores. They are best for students aiming for competitive universities where standardized test scores still play a significant role in admissions decisions. Look for programs with adaptive learning technology that focuses on your weakest areas, full-length timed practice tests, and a score improvement guarantee.",
   },
   "gre-gmat": {
     label: "GRE & GMAT Prep",
     emoji: "🎯",
     description: "Graduate and business school entrance exam preparation",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "GRE and GMAT prep programs help aspiring graduate and business school students master the quantitative reasoning, verbal reasoning, and analytical writing sections required for admissions. They are ideal for working professionals who need flexible study schedules that fit around their jobs. Evaluate programs based on the quality of their adaptive practice tests, availability of live instruction, and whether they offer section-specific courses for targeted improvement.",
   },
   lsat: {
     label: "LSAT Prep",
     emoji: "⚖️",
     description: "Law School Admission Test study materials and courses",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "LSAT prep services provide intensive training in logical reasoning, analytical reasoning, and reading comprehension, the three skill areas tested on the Law School Admission Test. They are essential for aspiring law students since the LSAT is the single most important factor in law school admissions. Prioritize programs with extensive libraries of real past LSAT questions, detailed answer explanations, and timed practice test simulations that mimic actual exam conditions.",
   },
   mcat: {
     label: "MCAT Prep",
     emoji: "🩺",
     description: "Medical College Admission Test review courses and practice",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "MCAT prep courses cover the biological sciences, physical sciences, psychology, sociology, and critical analysis sections needed for medical school admissions. They are best for pre-med students who need a comprehensive review of two or more years of undergraduate science coursework condensed into an efficient study plan. Look for programs offering extensive passage-based practice, full-length scored practice exams from AAMC, and detailed performance analytics by topic area.",
   },
   "professional-certifications": {
     label: "Professional Certifications",
     emoji: "🏆",
     description: "Prep for CPA, PMP, IT certifications, and other professional exams",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Professional certification prep services help working adults prepare for career-advancing exams like the CPA, PMP, CFA, AWS, and CompTIA certifications. They are ideal for professionals looking to advance their careers or meet employer requirements for specific credentials. Compare programs based on pass rate guarantees, alignment with the latest exam blueprint, and whether they offer flexible self-paced or live instructor-led formats.",
   },
 };
 

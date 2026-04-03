@@ -18,36 +18,41 @@ export interface MovingCompanyTool {
   useCases?: string[];
 }
 
-export const MOVING_COMPANY_CATEGORIES: Record<MovingCompanyCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const MOVING_COMPANY_CATEGORIES: Record<MovingCompanyCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "full-service": {
     label: "Full-Service Movers",
     emoji: "📦",
     description: "Companies that handle packing, loading, transport, and unloading",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Full-service movers handle every aspect of your relocation including packing, loading, transport, unloading, and unpacking. They are best for families, busy professionals, and anyone who wants a hands-off moving experience. Look for companies with binding estimates, adequate cargo insurance, and strong reviews specifically mentioning careful handling of belongings.",
   },
   "long-distance": {
     label: "Long-Distance",
     emoji: "🛣️",
     description: "Interstate and cross-country moving services for long-distance relocations",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Long-distance movers specialize in interstate and cross-country relocations, coordinating logistics across state lines with proper federal licensing. They are essential for anyone moving more than 100 miles or across state boundaries where FMCSA registration is required. Verify the company's USDOT number, get binding not-to-exceed estimates, and confirm delivery window guarantees before booking.",
   },
   local: {
     label: "Local Moving",
     emoji: "🏘️",
     description: "Same-city and short-distance moving services",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Local movers handle same-city and short-distance relocations, typically charging by the hour with a crew and truck. They are ideal for apartment moves, in-town relocations, and small moves that can be completed in a single day. Compare hourly rates, minimum hour requirements, and travel time charges, and confirm the company carries liability and cargo insurance.",
   },
   "container-pods": {
     label: "Containers & Pods",
     emoji: "🚛",
     description: "Portable storage containers for flexible DIY or hybrid moving",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Container and pod services deliver a portable storage unit to your door that you load at your own pace, and the company transports it to your new location. They are best for flexible movers who want to save money by handling the packing and loading themselves. Compare container sizes, delivery timelines, storage options, and per-mile transport pricing between providers.",
   },
   specialty: {
     label: "Specialty Moving",
     emoji: "🎹",
     description: "Specialized movers for pianos, antiques, vehicles, and fragile items",
     gradient: "from-rose-600/30 to-rose-800/40",
+    guide: "Specialty movers have the equipment and expertise to safely relocate high-value or unusually shaped items like pianos, fine art, antiques, and vehicles. They are essential when your move includes items that general movers may decline or handle improperly. Look for specialty certifications, item-specific insurance coverage, and references from customers who moved similar items.",
   },
 };
 

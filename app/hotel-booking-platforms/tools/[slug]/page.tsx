@@ -9,6 +9,7 @@ import {
 } from "@/lib/hotel-booking-platforms";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import AuthorBadge from "@/components/AuthorBadge";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -56,6 +57,7 @@ export default async function HotelBookingToolPage({ params }: Props) {
     operatingSystem: "Web",
     offers: { "@type": "Offer", price: tool.pricing === "free" ? "0" : undefined, priceCurrency: "USD", availability: "https://schema.org/OnlineOnly" },
     keywords: tool.tags.join(", "),
+    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
   };
 
   const pricingDetail = {
@@ -123,6 +125,8 @@ export default async function HotelBookingToolPage({ params }: Props) {
             <h2 className="text-base font-semibold text-white mb-3">About {tool.name}</h2>
             <p className="text-slate-400 leading-relaxed">{tool.description}</p>
           </div>
+
+          <AuthorBadge />
 
           {(tool.pros || tool.cons) && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">

@@ -18,36 +18,41 @@ export interface SolarPanelTool {
   useCases?: string[];
 }
 
-export const SOLAR_PANEL_CATEGORIES: Record<SolarPanelCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const SOLAR_PANEL_CATEGORIES: Record<SolarPanelCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "residential-install": {
     label: "Residential Installation",
     emoji: "🏠",
     description: "Full-service solar panel installation companies for homeowners",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Residential solar installers handle the entire process from site assessment and system design to permitting, installation, and grid interconnection. They are best for homeowners looking to reduce electricity bills and increase property value. Look for NABCEP-certified installers with strong workmanship warranties and local experience with your utility company.",
   },
   commercial: {
     label: "Commercial Solar",
     emoji: "🏢",
     description: "Solar solutions for businesses, warehouses, and commercial properties",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Commercial solar providers design and install larger-scale systems for businesses, office buildings, and industrial facilities. They are ideal for companies seeking to lower operating costs and meet sustainability targets. Evaluate providers based on their experience with commercial roof types, ability to handle permitting complexities, and available financing structures like PPAs.",
   },
   "community-solar": {
     label: "Community Solar",
     emoji: "🌱",
     description: "Shared solar programs for renters and those who cannot install panels",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Community solar programs let you subscribe to a share of a local solar farm and receive credits on your electric bill without installing panels on your own property. They are perfect for renters, condo owners, and anyone with a roof unsuitable for panels. Check for contract terms, cancellation policies, and whether savings are guaranteed or estimated.",
   },
   "solar-financing": {
     label: "Solar Financing",
     emoji: "💰",
     description: "Solar loans, leases, PPAs, and marketplaces to compare quotes",
     gradient: "from-violet-600/30 to-violet-800/40",
+    guide: "Solar financing options include loans, leases, power purchase agreements, and comparison marketplaces that help you go solar with little or no money down. They are best for homeowners who want solar savings but prefer not to pay the full upfront cost. Compare interest rates, ownership terms, and whether you retain eligibility for federal and state tax credits.",
   },
   "solar-equipment": {
     label: "Solar Equipment",
     emoji: "🔋",
     description: "Solar panels, inverters, batteries, and equipment manufacturers",
     gradient: "from-cyan-600/30 to-cyan-800/40",
+    guide: "Solar equipment manufacturers produce the panels, inverters, batteries, and mounting hardware that make up a complete solar energy system. This category is best for DIY installers, contractors, and informed buyers who want to specify their own components. Compare panel efficiency ratings, degradation warranties, and whether the manufacturer offers integrated battery storage options.",
   },
 };
 

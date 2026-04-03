@@ -11,6 +11,7 @@ import {
 } from "@/lib/marketing-tools";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import AuthorBadge from "@/components/AuthorBadge";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -80,6 +81,7 @@ export default async function MarketingToolPage({ params }: Props) {
       availability: "https://schema.org/OnlineOnly",
     },
     keywords: tool.tags.join(", "),
+    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
   };
 
   const pricingDetail = {
@@ -190,6 +192,8 @@ export default async function MarketingToolPage({ params }: Props) {
             <h2 className="text-base font-semibold text-white mb-3">About {tool.name}</h2>
             <p className="text-slate-400 leading-relaxed">{tool.description}</p>
           </div>
+
+          <AuthorBadge />
 
           {/* Pros & Cons */}
           {(tool.pros || tool.cons) && (

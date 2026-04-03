@@ -3,6 +3,7 @@ import { getNoCodeToolsByCategory, NO_CODE_CATEGORIES, getAllNoCodeCategories, g
 import type { NoCodeCategory } from "@/lib/no-code-tools";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import CategoryGuide from "@/components/CategoryGuide";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -51,6 +52,7 @@ export default async function NoCodeCategoryPage({ params }: Props) {
             </div>
           </div>
           <div className="mb-6 text-sm text-slate-500">Showing {tools.length} tool{tools.length !== 1 ? "s" : ""}</div>
+          <CategoryGuide guide={(category as { guide?: string }).guide} />
           {tools.length === 0 ? (
             <div className="text-center py-16 text-slate-500">No tools in this category yet. <Link href="/no-code-tools/submit" className="text-yellow-400 hover:text-yellow-300">Submit one!</Link></div>
           ) : (

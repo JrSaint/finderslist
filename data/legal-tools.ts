@@ -25,37 +25,42 @@ export interface LegalTool {
 
 export const LEGAL_CATEGORIES: Record<
   LegalCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "contract-management": {
     label: "Contract Management",
     emoji: "📋",
     description: "Create, send, sign, and manage contracts and legal agreements.",
     gradient: "from-blue-500 to-indigo-500",
+    guide: "Contract management platforms centralize the creation, negotiation, signing, and storage of legal agreements with version control and audit trails. They are best for businesses that handle a high volume of contracts and need to reduce turnaround times and minimize risk. Look for e-signature integration, clause libraries, automated renewal alerts, and approval workflow customization.",
   },
   "legal-research": {
     label: "Legal Research & AI",
     emoji: "⚖️",
     description: "AI-powered legal research, case law lookup, and legal analysis tools.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Legal research and AI tools use natural language processing to search case law, statutes, and legal precedents faster than traditional manual research. They are ideal for law firms, in-house legal teams, and legal professionals who need to find relevant authorities quickly. Look for AI-powered search that understands legal context, citation verification, and integration with your existing legal workflow tools.",
   },
   compliance: {
     label: "Compliance & Privacy",
     emoji: "🔒",
     description: "Tools to manage regulatory compliance, GDPR, and privacy requirements.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Compliance and privacy tools help organizations manage regulatory requirements including GDPR, CCPA, HIPAA, and industry-specific regulations. They are essential for companies handling sensitive data or operating in heavily regulated industries. Look for automated data mapping, consent management, breach notification workflows, and continuous compliance monitoring dashboards.",
   },
   "ip-trademark": {
     label: "IP & Trademark",
     emoji: "™️",
     description: "Tools for trademark search, IP management, and patent research.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "IP and trademark tools help businesses search existing trademarks, file applications, and manage intellectual property portfolios. They are best for startups launching new brands, inventors seeking patent protection, and legal teams managing IP assets. Look for comprehensive trademark database searches, filing assistance, monitoring for potential infringements, and portfolio management dashboards.",
   },
   "document-automation": {
     label: "Legal Document Automation",
     emoji: "📄",
     description: "Automate the creation of legal documents and policy generators.",
     gradient: "from-rose-500 to-pink-500",
+    guide: "Legal document automation tools generate contracts, NDAs, privacy policies, and other legal documents from templates with conditional logic and variable fields. They are ideal for legal teams and businesses that produce repetitive legal documents and want to reduce drafting time while maintaining consistency. Look for a robust template library, conditional clause insertion, and integration with e-signature and document management systems.",
   },
 };
 

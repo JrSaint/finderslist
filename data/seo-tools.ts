@@ -25,37 +25,42 @@ export interface SeoToolTool {
 
 export const SEO_TOOL_CATEGORIES: Record<
   SeoToolCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "all-in-one": {
     label: "All-in-One SEO",
     emoji: "🧰",
     description: "Comprehensive SEO platforms covering keyword research, rank tracking, site audits, and backlink analysis in a single tool.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "All-in-one SEO platforms combine keyword research, rank tracking, backlink analysis, and site auditing into a single subscription, covering the majority of SEO workflows. They are best for agencies, in-house SEO teams, and content marketers who need a comprehensive toolkit without managing multiple subscriptions. Compare the accuracy of keyword volume data, backlink index size, and crawl limits to find the platform that best matches your site's scale and your workflow needs.",
   },
   "keyword-research": {
     label: "Keyword Research",
     emoji: "🔑",
     description: "Discover high-value keywords, search volume data, and content opportunities to drive organic traffic.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Keyword research tools help you discover what your audience is searching for, estimate traffic potential, and identify content gaps and opportunities. They are essential for content strategists and SEO professionals planning new content or optimizing existing pages. Look for tools with accurate search volume estimates, keyword difficulty scoring, SERP feature analysis, and content gap reports that reveal what competitors rank for that you do not.",
   },
   "rank-tracking": {
     label: "Rank Tracking",
     emoji: "📈",
     description: "Monitor your search engine rankings over time across keywords, locations, and devices.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Rank tracking tools monitor your search engine positions across keywords, locations, and devices over time, alerting you to gains, drops, and SERP feature changes. They are ideal for SEO professionals and business owners who need to measure the impact of their optimization efforts and detect algorithm update effects. Prioritize tools with daily tracking frequency, local rank tracking by city or zip code, competitor comparison, and SERP feature monitoring.",
   },
   "backlink-analysis": {
     label: "Backlink Analysis",
     emoji: "🔗",
     description: "Analyze backlink profiles, discover link-building opportunities, and monitor your domain authority.",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Backlink analysis tools help you examine your site's link profile, discover new link-building opportunities, and monitor competitors' backlink strategies. They are best for link builders, SEO agencies, and site owners who understand that quality backlinks remain one of the strongest ranking signals. Look for tools with a large and frequently updated link index, toxic link identification, and outreach features that streamline the link-building process.",
   },
   "technical-seo": {
     label: "Technical SEO",
     emoji: "🛠️",
     description: "Crawl and audit websites to identify technical issues that impact search engine visibility and performance.",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Technical SEO tools crawl your website to identify issues like broken links, duplicate content, slow page speeds, and crawlability problems that prevent search engines from properly indexing your site. They are essential for developers, technical SEOs, and site owners managing large websites with complex architectures. Prioritize tools with JavaScript rendering support, scheduled crawl monitoring, and actionable issue prioritization that tells you which fixes will have the most impact.",
   },
 };
 

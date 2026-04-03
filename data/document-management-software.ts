@@ -18,36 +18,41 @@ export interface DocumentManagementTool {
   useCases?: string[];
 }
 
-export const DOCUMENT_MANAGEMENT_CATEGORIES: Record<DocumentManagementCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const DOCUMENT_MANAGEMENT_CATEGORIES: Record<DocumentManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "enterprise-ecm": {
     label: "Enterprise ECM",
     emoji: "🏛️",
     description: "Enterprise content management systems for large organizations with complex document governance needs.",
     gradient: "from-slate-600/30 to-slate-800/40",
+    guide: "Enterprise content management systems provide centralized document governance with advanced features like records retention policies, legal holds, and automated classification for regulated industries. They serve large organizations in healthcare, finance, government, and legal sectors where compliance requirements dictate how documents are stored, accessed, and destroyed. Evaluate the platform's compliance certifications and whether it supports your specific regulatory frameworks.",
   },
   "cloud-storage": {
     label: "Cloud Storage & Collaboration",
     emoji: "☁️",
     description: "Cloud-based platforms for storing, sharing, and collaborating on documents across teams.",
     gradient: "from-sky-600/30 to-sky-800/40",
+    guide: "Cloud storage and collaboration platforms provide a shared space for teams to store, organize, and co-edit documents in real time from any device. They are the right starting point for most teams that need basic document management without complex governance requirements. Compare storage limits, real-time co-authoring capabilities, and how well the platform integrates with your existing productivity suite like Google Workspace or Microsoft 365.",
   },
   "document-signing": {
     label: "Document Signing",
     emoji: "✍️",
     description: "Electronic signature and document execution platforms for contracts, agreements, and approvals.",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Document signing platforms enable legally binding electronic signatures with identity verification, audit trails, and tamper-evident seals. They are essential for any organization that processes contracts, agreements, or approvals and wants to eliminate paper-based bottlenecks. Look for compliance with eIDAS, ESIGN, and UETA standards, and evaluate how the signing experience works for external recipients who do not have an account on the platform.",
   },
   compliance: {
     label: "Compliance & Records",
     emoji: "🔒",
     description: "Document management focused on regulatory compliance, records retention, and audit trails.",
     gradient: "from-rose-600/30 to-rose-800/40",
+    guide: "Compliance and records management tools enforce document retention schedules, maintain audit trails, and support legal hold and eDiscovery requirements. They are mandatory for organizations in regulated industries like healthcare, financial services, and government that face audit scrutiny and regulatory penalties for improper document handling. Verify the platform meets your specific compliance standards such as HIPAA, SOX, GDPR, or FedRAMP.",
   },
   "workflow-automation": {
     label: "Workflow Automation",
     emoji: "⚙️",
     description: "Document workflow tools that automate routing, approvals, and business processes.",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Document workflow automation tools route documents through approval chains, review cycles, and business processes without manual handoffs or email-based tracking. They are best for teams that process high volumes of invoices, purchase orders, or approval requests and want to eliminate bottlenecks caused by documents sitting in someone's inbox. Evaluate the visual workflow builder, conditional routing logic, and integration with your existing document storage and ERP systems.",
   },
 };
 

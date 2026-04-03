@@ -18,36 +18,41 @@ export interface SupplyChainTool {
   useCases?: string[];
 }
 
-export const SUPPLY_CHAIN_CATEGORIES: Record<SupplyChainCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const SUPPLY_CHAIN_CATEGORIES: Record<SupplyChainCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   procurement: {
     label: "Procurement",
     emoji: "🛒",
     description: "Source-to-pay platforms covering requisitioning, sourcing, purchasing, and invoice management.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Procurement platforms streamline the entire source-to-pay process from requisitioning and supplier sourcing to purchase orders and invoice management. They are best for mid-size and enterprise organizations looking to reduce maverick spending and improve supplier negotiation leverage. Evaluate platforms based on their approval workflow flexibility, spend analytics depth, and integration with your ERP and accounting systems.",
   },
   "demand-planning": {
     label: "Demand Planning",
     emoji: "📈",
     description: "Forecasting and planning tools that use AI and analytics to predict demand and optimize inventory.",
     gradient: "from-indigo-600/30 to-indigo-800/40",
+    guide: "Demand planning tools use AI, machine learning, and historical data to forecast product demand and optimize inventory levels across your supply chain. They are ideal for manufacturers, distributors, and retailers dealing with seasonal fluctuations or complex product portfolios. Look for platforms with scenario modeling, collaborative planning features, and the ability to incorporate external demand signals like weather and economic data.",
   },
   logistics: {
     label: "Logistics & Freight",
     emoji: "🚚",
     description: "Transportation management, freight forwarding, and logistics optimization platforms.",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Logistics and freight platforms optimize transportation planning, carrier selection, route optimization, and shipment tracking across all modes of transport. They are essential for businesses shipping significant volumes that need to reduce freight costs and improve delivery reliability. Compare platforms based on carrier network size, real-time tracking capabilities, and automated freight audit and payment features.",
   },
   "supplier-management": {
     label: "Supplier Management",
     emoji: "🤝",
     description: "Platforms for onboarding, evaluating, and managing supplier relationships and compliance.",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Supplier management platforms centralize the process of onboarding, qualifying, monitoring, and evaluating your supplier base for performance and compliance. They are best for organizations managing dozens or hundreds of suppliers who need consistent risk assessment and performance tracking. Focus on platforms offering automated compliance document collection, supplier scorecards, and risk alerting based on financial and geopolitical signals.",
   },
   visibility: {
     label: "Supply Chain Visibility",
     emoji: "👁️",
     description: "Real-time tracking and monitoring platforms providing end-to-end supply chain transparency.",
     gradient: "from-violet-600/30 to-violet-800/40",
+    guide: "Supply chain visibility platforms provide real-time tracking and monitoring of goods, shipments, and inventory across your entire supply network from raw materials to final delivery. They are critical for businesses that need to proactively identify disruptions and communicate accurate ETAs to customers. Prioritize platforms with multi-carrier tracking, predictive delay alerts, and the ability to map sub-tier supplier locations for comprehensive risk visibility.",
   },
 };
 
