@@ -25,37 +25,42 @@ export interface AnalyticsTool {
 
 export const ANALYTICS_CATEGORIES: Record<
   AnalyticsCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "web-analytics": {
     label: "Web Analytics",
     emoji: "🌐",
     description: "Track website traffic, user behavior, and conversion metrics.",
     gradient: "from-blue-500 to-cyan-500",
+    guide: "Web analytics tools track how visitors find, navigate, and convert on your website, giving you the data to optimize marketing spend and user experience. They are essential for any business with an online presence, from small blogs to large e-commerce stores. Decide whether you need full user-level tracking with cookies or if privacy-friendly aggregate analytics will meet your needs, since cookie consent requirements can block a significant portion of traditional tracking.",
   },
   "product-analytics": {
     label: "Product Analytics",
     emoji: "📱",
     description: "Understand how users engage with your product features and flows.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Product analytics platforms track how users interact with your app or software at the feature level, revealing which flows drive retention, where users drop off, and what behaviors correlate with conversion. They are built for product managers, growth teams, and UX designers who need to make data-driven decisions about what to build and improve. Look for tools with strong event tracking, cohort analysis, funnel visualization, and the ability to segment users by behavior rather than just demographics.",
   },
   "bi-dashboards": {
     label: "BI & Dashboards",
     emoji: "📊",
     description: "Connect data sources and build visualizations and business dashboards.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Business intelligence and dashboard tools connect to your databases, spreadsheets, and SaaS platforms to create interactive visualizations and reports that anyone in your organization can use. They serve analysts, executives, and operations teams who need a unified view of business performance across departments. Evaluate how easily the tool connects to your data stack, whether non-technical users can build their own reports, and how well it handles large datasets without performance degradation.",
   },
   "customer-data": {
     label: "Customer Data Platforms",
     emoji: "🗄️",
     description: "Unify customer data from all sources for targeting and personalization.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Customer data platforms (CDPs) unify user data from your website, app, CRM, email, ads, and support tools into a single customer profile that powers personalization and targeting across all channels. They are most valuable for marketing and growth teams at companies with multiple data sources that create fragmented customer views. Assess the platform's integration breadth, identity resolution accuracy, real-time processing speed, and whether it supports the activation destinations your marketing stack requires.",
   },
   "seo-analytics": {
     label: "SEO Analytics",
     emoji: "🔍",
     description: "Track search rankings, keyword performance, and backlink profiles.",
     gradient: "from-rose-500 to-pink-500",
+    guide: "SEO analytics tools monitor your search engine rankings, analyze keyword opportunities, audit technical site health, and track your backlink profile relative to competitors. They are indispensable for content marketers, SEO specialists, and agencies managing organic search strategies for multiple domains. Compare the size and freshness of the keyword database, crawl frequency, competitor analysis depth, and whether the tool provides actionable recommendations rather than just raw data.",
   },
 };
 

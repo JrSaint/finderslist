@@ -18,36 +18,41 @@ export interface ProjectManagementTool {
   useCases?: string[];
 }
 
-export const PROJECT_MANAGEMENT_CATEGORIES: Record<ProjectManagementCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const PROJECT_MANAGEMENT_CATEGORIES: Record<ProjectManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "all-in-one": {
     label: "All-in-One",
     emoji: "🎯",
     description: "Comprehensive project management platforms that combine task tracking, collaboration, reporting, and workflow automation in a single workspace.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "All-in-one project management platforms combine task tracking, team collaboration, reporting, and workflow automation into a single workspace. They are best for teams that want to consolidate multiple tools into one platform and avoid context switching between apps. Look for platforms with flexible views (list, board, Gantt, calendar), customizable workflows, and strong integration ecosystems.",
   },
   "agile-scrum": {
     label: "Agile & Scrum",
     emoji: "🔄",
     description: "Purpose-built tools for agile development teams with sprint planning, backlog management, and velocity tracking capabilities.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Agile and Scrum tools are purpose-built for software development teams practicing iterative delivery with sprint planning, backlog grooming, and velocity tracking. They are ideal for engineering teams and product organizations that follow Scrum, Kanban, or SAFe methodologies. Prioritize tools with native sprint boards, backlog prioritization, burndown charts, and integration with your development and CI/CD tools.",
   },
   kanban: {
     label: "Kanban",
     emoji: "📋",
     description: "Visual board-based tools focused on workflow visualization, work-in-progress limits, and continuous delivery processes.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Kanban tools use visual boards with columns and cards to help teams visualize work, limit work-in-progress, and optimize flow through their processes. They are best for teams that prefer continuous delivery over fixed sprints and want a simple, visual way to manage work. Look for tools with customizable columns, WIP limits, swimlanes, and cycle time analytics that help you identify and eliminate bottlenecks.",
   },
   "resource-planning": {
     label: "Resource Planning",
     emoji: "📊",
     description: "Tools specializing in resource allocation, capacity planning, workload balancing, and team utilization tracking across projects.",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Resource planning tools help managers allocate team members across projects, balance workloads, and forecast capacity to avoid burnout and missed deadlines. They are essential for agencies, consultancies, and organizations running multiple concurrent projects with shared resources. Prioritize tools with visual workload heatmaps, skills-based resource matching, and integration with your existing project management platform.",
   },
   "enterprise-ppm": {
     label: "Enterprise PPM",
     emoji: "🏢",
     description: "Enterprise-grade project portfolio management solutions with advanced governance, financial tracking, and strategic alignment features.",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Enterprise project portfolio management solutions provide executive-level visibility across all projects with financial tracking, strategic alignment scoring, and governance workflows. They are designed for large organizations that need to prioritize investments, track budgets, and align project portfolios with business strategy. Look for platforms with portfolio dashboards, demand management, resource capacity planning, and integration with your ERP and financial systems.",
   },
 };
 

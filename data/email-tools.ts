@@ -25,37 +25,42 @@ export interface EmailTool {
 
 export const EMAIL_CATEGORIES: Record<
   EmailCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "email-marketing": {
     label: "Email Marketing Platforms",
     emoji: "📧",
     description: "Send newsletters, automated campaigns, and manage subscriber lists at scale.",
     gradient: "from-blue-500 to-indigo-500",
+    guide: "Email marketing platforms manage subscriber lists, design campaigns, and automate email sequences for newsletters, promotions, and lifecycle marketing. They serve marketing teams and small businesses that need to nurture leads, drive repeat purchases, and communicate with their audience at scale. Compare automation workflow complexity, deliverability reputation, and pricing models since costs can escalate rapidly as your subscriber list grows.",
   },
   "transactional-email": {
     label: "Transactional Email",
     emoji: "⚡",
     description: "Reliable API-driven email for password resets, receipts, and notifications.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Transactional email services deliver time-sensitive, triggered messages like password resets, order confirmations, and account notifications with high reliability and speed. They are built for developers and product teams that need API-driven email delivery with guaranteed inbox placement for critical application communications. Evaluate delivery speed, API documentation quality, and whether the service provides detailed delivery analytics and webhook notifications.",
   },
   "cold-email": {
     label: "Cold Email & Outreach",
     emoji: "📨",
     description: "Automate cold email sequences and outreach campaigns for sales and growth.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Cold email and outreach tools automate personalized email sequences for sales prospecting, link building, and business development with features like mail merge, follow-up scheduling, and reply detection. They serve sales teams and growth marketers running outbound campaigns that require sending hundreds or thousands of personalized emails. Focus on deliverability features like email warming, sending limits per account, and domain reputation monitoring to avoid ending up in spam folders.",
   },
   newsletter: {
     label: "Newsletter Platforms",
     emoji: "📰",
     description: "Publish, grow, and monetize email newsletters with dedicated creator tools.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Newsletter platforms are designed specifically for writers and creators who publish recurring email content and want to grow a subscriber base they own. They combine simple publishing interfaces with audience growth tools, paid subscription options, and analytics tailored to newsletter creators. Evaluate whether the platform supports paid subscriptions for monetization, offers custom domain support, and provides the editorial tools that match your publishing workflow.",
   },
   "email-testing": {
     label: "Email Testing & Deliverability",
     emoji: "🔬",
     description: "Test, preview, and optimize email deliverability and inbox placement.",
     gradient: "from-rose-500 to-pink-500",
+    guide: "Email testing and deliverability tools preview how your emails render across different clients, check for spam trigger words, and monitor your sender reputation and inbox placement rates. They are essential for teams sending high-volume campaigns where a drop in deliverability directly impacts revenue. Use these tools to test every campaign before sending and to diagnose deliverability issues like SPF, DKIM, and DMARC configuration problems.",
   },
 };
 

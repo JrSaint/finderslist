@@ -18,36 +18,41 @@ export interface PestControlTool {
   useCases?: string[];
 }
 
-export const PEST_CONTROL_CATEGORIES: Record<PestControlCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const PEST_CONTROL_CATEGORIES: Record<PestControlCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "general-pest": {
     label: "General Pest Control",
     emoji: "🐜",
     description: "All-purpose pest control for ants, roaches, spiders, and common household pests",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "General pest control services handle common household invaders like ants, roaches, spiders, and rodents through recurring treatment plans or one-time visits. They are best for homeowners and renters dealing with everyday pest problems that need professional-grade solutions. Look for licensed companies with satisfaction guarantees, transparent pricing, and quarterly or monthly treatment plans that prevent re-infestation.",
   },
   termite: {
     label: "Termite Treatment",
     emoji: "🪵",
     description: "Specialized termite inspection, treatment, and prevention services",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Termite treatment services specialize in detecting, eliminating, and preventing termite infestations that can cause thousands of dollars in structural damage to homes. They are essential for homeowners in termite-prone regions and anyone buying or selling a home that requires a termite inspection. Look for companies offering both liquid barrier treatments and bait monitoring systems, along with damage repair warranties and annual inspection plans.",
   },
   wildlife: {
     label: "Wildlife Removal",
     emoji: "🦝",
     description: "Humane removal and exclusion of wildlife like raccoons, squirrels, and bats",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Wildlife removal services humanely capture and relocate animals like raccoons, squirrels, bats, and birds that have entered your home or property. They are best for homeowners dealing with attic invaders, chimney dwellers, or yard-damaging wildlife that standard pest control does not cover. Prioritize companies that use humane exclusion methods, seal entry points to prevent re-entry, and hold the proper state wildlife handling permits.",
   },
   "mosquito-tick": {
     label: "Mosquito & Tick Control",
     emoji: "🦟",
     description: "Yard treatment services for mosquitoes, ticks, and outdoor pests",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Mosquito and tick control services treat your yard and outdoor spaces to reduce populations of disease-carrying insects throughout the warmer months. They are ideal for families with children, pet owners, and anyone who wants to enjoy their outdoor spaces without the health risks of mosquito and tick bites. Look for companies offering seasonal treatment packages, barrier spray programs, and options for both synthetic and natural treatment formulations.",
   },
   "green-organic": {
     label: "Green & Organic",
     emoji: "🌿",
     description: "Eco-friendly and organic pest control using natural and low-toxicity methods",
     gradient: "from-lime-600/30 to-lime-800/40",
+    guide: "Green and organic pest control services use natural, low-toxicity, and environmentally responsible methods to manage pests without harsh chemicals. They are best for families with young children, pet owners, and environmentally conscious homeowners who want effective pest management with minimal chemical exposure. Look for companies using EPA-registered botanical products, integrated pest management strategies, and certifications from green pest control organizations.",
   },
 };
 

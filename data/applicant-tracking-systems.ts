@@ -25,7 +25,7 @@ export interface ATSTool {
 
 export const ATS_CATEGORIES: Record<
   ATSCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "ats-platform": {
     label: "ATS Platforms",
@@ -33,6 +33,7 @@ export const ATS_CATEGORIES: Record<
     description:
       "Full-featured applicant tracking systems that manage the entire recruiting pipeline from job posting through offer acceptance.",
     gradient: "from-sky-500 to-sky-700",
+    guide: "Full-featured ATS platforms manage every stage of recruiting from job requisition and posting through candidate screening, interview scheduling, and offer management. They are essential for HR teams and recruiters hiring more than a handful of roles at a time who need structured workflows and compliance tracking. Compare how intuitive the interface is for hiring managers who log in infrequently, the quality of built-in reporting, and whether the platform integrates with your HRIS for seamless onboarding handoff.",
   },
   "sourcing-tools": {
     label: "Candidate Sourcing",
@@ -40,6 +41,7 @@ export const ATS_CATEGORIES: Record<
     description:
       "Tools and platforms for proactively finding and engaging qualified candidates through databases, AI matching, and outreach automation.",
     gradient: "from-sky-600 to-sky-800",
+    guide: "Candidate sourcing tools help recruiters proactively find and engage qualified talent through resume databases, AI-powered matching, LinkedIn automation, and multi-channel outreach sequences. They are most valuable for companies hiring for hard-to-fill roles or competing in tight labor markets where inbound applicants alone are not enough. Evaluate the size and freshness of the candidate database, the accuracy of AI matching, and whether the tool integrates with your ATS to avoid duplicate data entry.",
   },
   "video-interviewing": {
     label: "Video Interviewing",
@@ -47,6 +49,7 @@ export const ATS_CATEGORIES: Record<
     description:
       "Platforms for conducting live and asynchronous video interviews with features like structured scoring, recording, and AI-assisted evaluation.",
     gradient: "from-sky-400 to-sky-600",
+    guide: "Video interviewing platforms enable live and on-demand recorded interviews with features like structured scorecards, time-stamped notes, and AI-assisted candidate evaluation. They are ideal for distributed hiring teams, high-volume recruiting, and early-stage screening where scheduling live interviews with every candidate is impractical. Look for tools with reliable video quality, easy candidate experience that does not require app downloads, and bias-reduction features like structured scoring rubrics.",
   },
   "job-distribution": {
     label: "Job Distribution & Boards",
@@ -54,6 +57,7 @@ export const ATS_CATEGORIES: Record<
     description:
       "Services that distribute job postings across multiple job boards, aggregators, and social platforms to maximize candidate reach.",
     gradient: "from-sky-500 to-sky-600",
+    guide: "Job distribution services push your open positions to dozens or hundreds of job boards, aggregators, and social platforms from a single dashboard, maximizing candidate reach without manual posting on each site. They benefit companies that post frequently across multiple channels and want to track which sources deliver the best applicants. Compare the number of supported boards, cost per posting versus unlimited plans, analytics on source effectiveness, and whether the tool can programmatically optimize your budget across channels.",
   },
   "offer-management": {
     label: "Offer & Onboarding",
@@ -61,6 +65,7 @@ export const ATS_CATEGORIES: Record<
     description:
       "Tools for creating, sending, and tracking job offers with e-signature capabilities and seamless handoff to employee onboarding.",
     gradient: "from-sky-300 to-sky-500",
+    guide: "Offer management and onboarding tools streamline the final stages of hiring by automating offer letter generation, e-signatures, background check initiation, and new-hire paperwork collection. They are critical for companies that lose candidates to slow offer processes or spend excessive HR time on manual onboarding tasks. Evaluate how customizable offer templates are, whether the tool supports conditional offers and approval workflows, and how smoothly it transitions new hires from recruiting into your HRIS or payroll system.",
   },
 };
 

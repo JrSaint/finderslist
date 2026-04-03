@@ -25,37 +25,42 @@ export interface NoCodeTool {
 
 export const NO_CODE_CATEGORIES: Record<
   NoCodeCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "app-builders": {
     label: "No-Code App Builders",
     emoji: "📱",
     description: "Build web and mobile applications without writing a line of code.",
     gradient: "from-blue-500 to-indigo-500",
+    guide: "No-code app builders let you create web and mobile applications using visual drag-and-drop interfaces instead of traditional programming. They are ideal for entrepreneurs, product teams, and business users who want to prototype and launch apps quickly without hiring developers. Look for platforms with robust data modeling, responsive design capabilities, and the ability to export or self-host your app to avoid vendor lock-in.",
   },
   automation: {
     label: "Workflow Automation",
     emoji: "⚡",
     description: "Connect apps and automate repetitive tasks across your business.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Workflow automation tools connect your apps and trigger multi-step processes that eliminate manual, repetitive work across your business. They are best for operations teams, marketers, and anyone spending hours on tasks like data entry, notifications, and file management. Prioritize platforms with a large library of app integrations, conditional logic, error handling, and the ability to build complex multi-step workflows.",
   },
   database: {
     label: "No-Code Databases",
     emoji: "🗄️",
     description: "Flexible databases and spreadsheet-powered data management tools.",
     gradient: "from-green-500 to-teal-500",
+    guide: "No-code databases combine the familiarity of spreadsheets with the power of relational databases, letting you organize and manage structured data without SQL knowledge. They are ideal for teams tracking projects, inventory, CRM contacts, or any structured information that outgrows a simple spreadsheet. Look for tools with flexible views, linked records, API access, and collaboration features that let multiple team members work simultaneously.",
   },
   forms: {
     label: "Form & Survey Builders",
     emoji: "📋",
     description: "Create forms, surveys, and data collection workflows without code.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Form and survey builders let you create data collection workflows, feedback forms, and questionnaires with conditional logic and integrations -- all without writing code. They are best for marketers, HR teams, researchers, and anyone collecting structured information from users or customers. Prioritize builders with branching logic, file upload support, and integrations that automatically route submissions to your CRM, database, or notification channels.",
   },
   "workflow-ai": {
     label: "AI Workflow Tools",
     emoji: "🤖",
     description: "Build AI-powered workflows, agents, and automations with no code.",
     gradient: "from-rose-500 to-pink-500",
+    guide: "AI workflow tools let you build intelligent automations that leverage large language models and machine learning without writing code. They are ideal for teams that want to add AI capabilities like content generation, data extraction, classification, and chatbots to their existing processes. Look for platforms with flexible model selection, prompt management, and the ability to chain AI steps with traditional automation triggers and actions.",
   },
 };
 

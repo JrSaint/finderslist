@@ -18,36 +18,41 @@ export interface FleetManagementTool {
   useCases?: string[];
 }
 
-export const FLEET_MANAGEMENT_CATEGORIES: Record<FleetManagementCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const FLEET_MANAGEMENT_CATEGORIES: Record<FleetManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "gps-tracking": {
     label: "GPS Tracking",
     emoji: "📍",
     description: "Real-time vehicle tracking and telematics platforms for fleet visibility and driver monitoring.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "GPS tracking platforms provide real-time vehicle location, speed monitoring, and driver behavior analytics for fleet operators. They are best for delivery companies, service fleets, and transportation businesses that need full visibility into vehicle movements. Look for live map views, geofencing alerts, and historical route replay capabilities.",
   },
   maintenance: {
     label: "Maintenance Management",
     emoji: "🔧",
     description: "Fleet maintenance scheduling, work order management, and vehicle health monitoring solutions.",
     gradient: "from-orange-600/30 to-orange-800/40",
+    guide: "Fleet maintenance management tools automate service scheduling, track repair histories, and monitor vehicle health to prevent costly breakdowns. They are ideal for fleets that need to maximize uptime and extend vehicle lifespan through preventive maintenance programs. Prioritize platforms with automated service reminders based on mileage or engine hours, parts inventory tracking, and vendor management.",
   },
   "fuel-management": {
     label: "Fuel Management",
     emoji: "⛽",
     description: "Fuel tracking, reporting, and optimization tools to reduce fleet fuel costs.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Fuel management tools track fuel purchases, consumption rates, and costs across your entire fleet to identify waste and reduce expenses. They are best for operations where fuel represents a significant portion of operating costs, such as trucking and delivery fleets. Look for fuel card integrations, consumption anomaly alerts, and detailed cost-per-mile reporting.",
   },
   compliance: {
     label: "Compliance & ELD",
     emoji: "📋",
     description: "Electronic logging devices and compliance solutions for DOT regulations and driver safety.",
     gradient: "from-red-600/30 to-red-800/40",
+    guide: "Compliance and ELD solutions help fleets meet DOT regulations including hours-of-service rules, DVIR requirements, and IFTA fuel tax reporting. They are essential for commercial motor carriers subject to FMCSA mandates. Look for FMCSA-registered ELD devices, automated HOS violation alerts, and streamlined roadside inspection workflows.",
   },
   "electric-fleet": {
     label: "Electric Fleet",
     emoji: "⚡",
     description: "Management platforms designed for electric and hybrid vehicle fleets with charging optimization.",
     gradient: "from-teal-600/30 to-teal-800/40",
+    guide: "Electric fleet management platforms are designed for organizations transitioning to electric and hybrid vehicles, with features for charging optimization and range planning. They are best for fleets committed to electrification that need to manage charging infrastructure alongside traditional fleet operations. Look for smart charging scheduling, battery health monitoring, and route planning that accounts for range limitations and charging station locations.",
   },
 };
 

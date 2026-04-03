@@ -18,36 +18,41 @@ export interface BusinessPhoneTool {
   useCases?: string[];
 }
 
-export const BUSINESS_PHONE_CATEGORIES: Record<BusinessPhoneCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const BUSINESS_PHONE_CATEGORIES: Record<BusinessPhoneCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   voip: {
     label: "VoIP Phone Systems",
     emoji: "📞",
     description: "Cloud-based voice over IP phone systems for businesses of all sizes.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "VoIP phone systems route business calls over the internet instead of traditional phone lines, offering lower costs, easy scaling, and features like call recording, auto-attendants, and mobile apps. They are the standard choice for most small and mid-sized businesses that want professional phone capabilities without the expense of on-premise hardware. Evaluate call quality and uptime guarantees, check whether the provider offers number porting from your current service, and confirm that your internet bandwidth can handle the expected call volume without degradation.",
   },
   ucaas: {
     label: "UCaaS Platforms",
     emoji: "💬",
     description: "Unified communications as a service platforms combining voice, video, messaging, and collaboration.",
     gradient: "from-indigo-600/30 to-indigo-800/40",
+    guide: "UCaaS platforms combine phone calls, video conferencing, team messaging, and file sharing into a single cloud-based subscription, replacing multiple disjointed communication tools. They are ideal for hybrid and remote-first teams that need seamless switching between communication modes within one interface. Compare video meeting quality and participant limits, integration depth with your productivity suite, and whether the platform can replace your existing video conferencing and team chat tools to consolidate costs.",
   },
   "call-center": {
     label: "Call Center & CCaaS",
     emoji: "🎧",
     description: "Contact center platforms with advanced call routing, IVR, and agent management tools.",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "CCaaS platforms provide advanced call routing, interactive voice response, skills-based agent assignment, real-time monitoring, and analytics designed for teams that handle high volumes of customer interactions. They serve support and sales teams with five or more agents who need structured call handling and quality assurance beyond what a basic phone system offers. Assess the platform's omnichannel capabilities if you handle inquiries across phone, chat, email, and social, and evaluate the reporting depth to ensure you can track the KPIs that matter to your operation.",
   },
   "virtual-phone": {
     label: "Virtual Phone Numbers",
     emoji: "📱",
     description: "Lightweight virtual phone services for entrepreneurs, startups, and remote teams.",
     gradient: "from-green-600/30 to-green-800/40",
+    guide: "Virtual phone number services give you a professional business phone number that works through a mobile or desktop app without any hardware, keeping your personal number private. They are perfect for solopreneurs, freelancers, and early-stage startups that need a business phone presence without the cost or complexity of a full phone system. Look for features like business hours routing, voicemail transcription, auto-reply texting, and the ability to add team members as you grow without migrating to a different platform.",
   },
   "on-premise": {
     label: "On-Premise & Hybrid",
     emoji: "🏢",
     description: "Traditional and hybrid PBX systems for organizations requiring on-site telephony infrastructure.",
     gradient: "from-gray-600/30 to-gray-800/40",
+    guide: "On-premise and hybrid PBX systems keep telephony infrastructure physically at your location, offering maximum control over call quality, security, and customization for organizations with specific compliance or reliability requirements. They are best for businesses with unreliable internet connectivity, strict data sovereignty mandates, or complex legacy integrations that cloud systems cannot replicate. Factor in the total cost of ownership including hardware, maintenance, and IT staff time, and consider hybrid models that keep core PBX on-site while adding cloud-based features for remote workers.",
   },
 };
 

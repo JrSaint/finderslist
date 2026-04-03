@@ -28,55 +28,63 @@ export interface MarketingTool {
 
 export const MARKETING_CATEGORIES: Record<
   MarketingCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   seo: {
     label: "SEO & Search",
     emoji: "🔍",
     description: "Keyword research, rank tracking, backlink analysis, and technical SEO tools.",
     gradient: "from-violet-600/30 to-purple-800/40",
+    guide: "SEO and search marketing tools help you discover what your audience is searching for, track your rankings, and identify technical issues holding your site back. They are essential for content marketers, agencies, and any business that relies on organic traffic. Look for tools with accurate keyword data, competitive analysis, and actionable site audit recommendations.",
   },
   email: {
     label: "Email Marketing",
     emoji: "📧",
     description: "Build, automate, and grow your email list with powerful sending platforms.",
     gradient: "from-sky-600/30 to-blue-800/40",
+    guide: "Email marketing platforms let you build subscriber lists, design campaigns, and set up automated sequences that nurture leads and drive sales. They are ideal for e-commerce brands, SaaS companies, and creators who want to own their audience relationship. Prioritize platforms with strong deliverability, segmentation capabilities, and automation workflows that match your complexity needs.",
   },
   social: {
     label: "Social Media",
     emoji: "📱",
     description: "Schedule, publish, and analyze content across every social platform.",
     gradient: "from-pink-600/30 to-rose-800/40",
+    guide: "Social media marketing tools centralize content scheduling, publishing, and analytics across platforms like Instagram, LinkedIn, TikTok, and X. They are best for marketing teams, agencies, and creators managing multiple accounts who need consistent posting and performance insights. Look for tools with a unified content calendar, approval workflows, and analytics that track engagement and conversions rather than just vanity metrics.",
   },
   analytics: {
     label: "Analytics & Data",
     emoji: "📊",
     description: "Track performance, understand your audience, and make data-driven decisions.",
     gradient: "from-emerald-600/30 to-teal-800/40",
+    guide: "Marketing analytics platforms aggregate data from your website, ads, email, and social channels to reveal what is driving results and what is not. They are essential for data-driven marketers who need to attribute revenue to campaigns and optimize spend. Look for tools that offer cross-channel dashboards, conversion tracking, and the ability to connect to your existing data sources without heavy engineering.",
   },
   crm: {
     label: "CRM & Sales",
     emoji: "🤝",
     description: "Manage leads, automate follow-ups, and close more deals with powerful CRMs.",
     gradient: "from-amber-600/30 to-orange-800/40",
+    guide: "CRM and sales tools help you manage your pipeline, track every interaction with prospects, and automate follow-ups so no lead falls through the cracks. They are best for sales teams, agencies, and service businesses that need structured deal management. Prioritize CRMs with intuitive pipeline views, email integration, and automation that adapts to your sales process rather than forcing a rigid workflow.",
   },
   content: {
     label: "Content Marketing",
     emoji: "✍️",
     description: "Plan, create, optimize, and distribute content that ranks and converts.",
     gradient: "from-fuchsia-600/30 to-purple-800/40",
+    guide: "Content marketing tools help you plan editorial calendars, optimize articles for search, and distribute content across channels to build authority and generate leads. They are ideal for content teams, bloggers, and brands investing in organic growth through high-quality content. Look for platforms that combine content planning with SEO recommendations and performance analytics in a single workflow.",
   },
   advertising: {
     label: "Advertising & PPC",
     emoji: "📣",
     description: "Run, optimize, and scale paid ads on Google, Meta, and beyond.",
     gradient: "from-red-600/30 to-orange-800/40",
+    guide: "Advertising and PPC tools help you create, manage, and optimize paid campaigns across search engines, social platforms, and display networks to drive targeted traffic and conversions. They are essential for businesses that need measurable, scalable customer acquisition beyond organic reach. Look for platforms with strong bid management, audience targeting, A/B testing, and cross-channel reporting to maximize your return on ad spend.",
   },
   "landing-pages": {
     label: "Landing Pages",
     emoji: "🚀",
     description: "Build high-converting landing pages and sales funnels without code.",
     gradient: "from-cyan-600/30 to-indigo-800/40",
+    guide: "Landing page builders let marketers create focused, high-converting pages for ad campaigns, product launches, and lead generation without needing a developer. They are best for teams running paid traffic who need to test multiple variations quickly and optimize conversion rates. Prioritize builders with drag-and-drop editors, built-in A/B testing, fast page load speeds, and integrations with your email and CRM tools.",
   },
 };
 

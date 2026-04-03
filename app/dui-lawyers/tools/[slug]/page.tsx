@@ -9,6 +9,7 @@ import {
 } from "@/lib/dui-lawyers";
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
+import AuthorBadge from "@/components/AuthorBadge";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -54,6 +55,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
     url: tool.url,
     serviceType: "DUI & DWI Defense Law",
     keywords: tool.tags.join(", "),
+    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
   };
 
   const pricingDetail = {
@@ -101,6 +103,8 @@ export default async function DUILawyerToolPage({ params }: Props) {
             <h2 className="text-lg font-semibold text-white mb-3">Overview</h2>
             <p className="text-slate-400 leading-relaxed whitespace-pre-line">{tool.description}</p>
           </div>
+
+          <AuthorBadge />
 
           <AdBanner format="horizontal" className="mb-8 h-24 w-full" />
 

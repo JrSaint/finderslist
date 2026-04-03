@@ -18,36 +18,41 @@ export interface HomeWarrantyTool {
   useCases?: string[];
 }
 
-export const HOME_WARRANTY_CATEGORIES: Record<HomeWarrantyCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const HOME_WARRANTY_CATEGORIES: Record<HomeWarrantyCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "systems-only": {
     label: "Systems Coverage",
     emoji: "⚡",
     description: "Plans covering home systems like HVAC, plumbing, and electrical",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Systems-only coverage protects major home systems like HVAC, plumbing, electrical, and water heaters against breakdowns from normal wear and tear. This plan is best for homeowners with newer appliances but aging infrastructure systems. Look for coverage caps per item, service call fees, and whether the plan covers both parts and labor.",
   },
   "appliances-only": {
     label: "Appliances Coverage",
     emoji: "🧊",
     description: "Plans covering household appliances like refrigerators, washers, and ovens",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "Appliances-only coverage protects household appliances like refrigerators, dishwashers, washers, dryers, and ovens against mechanical failure. It is best for homeowners with newer home systems but aging kitchen and laundry appliances. Compare which specific appliances are included in the base plan versus requiring add-on coverage, and check per-item payout limits.",
   },
   "combo-plans": {
     label: "Combo Plans",
     emoji: "🏠",
     description: "Comprehensive plans covering both home systems and major appliances",
     gradient: "from-purple-600/30 to-purple-800/40",
+    guide: "Combo plans bundle both home systems and major appliances into a single warranty for comprehensive protection against unexpected repair costs. They are the most popular choice and best for homeowners who want broad coverage without managing separate plans. Compare the total annual cost against buying systems and appliances coverage separately, and check for any exclusions on specific items.",
   },
   "luxury-premium": {
     label: "Luxury & Premium",
     emoji: "💎",
     description: "High-end warranty plans with enhanced coverage limits and add-ons",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Luxury and premium warranty plans offer higher coverage limits, lower service fees, and add-on options for items like pools, spas, and wine coolers. They are best for owners of high-end homes with premium appliances and systems that would be expensive to repair or replace. Look for unlimited coverage caps, priority service scheduling, and the ability to choose your own contractor.",
   },
   "builder-new-home": {
     label: "Builder & New Home",
     emoji: "🔨",
     description: "Warranties for new construction and builder structural guarantees",
     gradient: "from-rose-600/30 to-rose-800/40",
+    guide: "Builder and new home warranties cover structural defects and workmanship issues in newly constructed homes, typically for periods of one to ten years. They are essential for new construction buyers who want protection against foundation, roofing, and structural failures. Verify whether the warranty is backed by a third-party insurer, what the claims process looks like, and whether coverage is transferable if you sell the home.",
   },
 };
 

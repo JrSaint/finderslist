@@ -25,37 +25,42 @@ export interface ElearningTool {
 
 export const ELEARNING_CATEGORIES: Record<
   ElearningCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   lms: {
     label: "Learning Management Systems",
     emoji: "🎓",
     description: "Platforms for hosting, delivering, and tracking online learning at scale.",
     gradient: "from-blue-500 to-indigo-500",
+    guide: "Learning management systems host, deliver, and track online learning programs at scale with features like progress tracking, assessments, and completion certificates. They serve educational institutions and corporate training departments that need to manage hundreds or thousands of learners across structured curricula. Evaluate SCORM and xAPI compliance, reporting depth, and whether the platform supports both self-paced and instructor-led formats.",
   },
   "course-creation": {
     label: "Course Creation Platforms",
     emoji: "📹",
     description: "Tools to create, host, and sell online courses to any audience.",
     gradient: "from-purple-500 to-violet-500",
+    guide: "Course creation platforms let educators and entrepreneurs build, host, and sell online courses with video lessons, quizzes, and downloadable resources. They are ideal for subject-matter experts, coaches, and creators who want to monetize their knowledge without building custom technology. Compare transaction fees, built-in marketing tools like landing pages and email sequences, and whether the platform lets you own your student data.",
   },
   "cohort-learning": {
     label: "Cohort & Community Learning",
     emoji: "👥",
     description: "Platforms for live, cohort-based courses with community and interaction.",
     gradient: "from-green-500 to-teal-500",
+    guide: "Cohort and community learning platforms facilitate live, time-bound courses where students progress together with peer interaction, discussion, and accountability. They serve educators and bootcamp operators who believe learning outcomes improve when students engage with each other in real time rather than consuming content alone. Look for built-in community features, live session hosting, and tools that foster peer accountability and group collaboration.",
   },
   "employee-training": {
     label: "Employee Training & Onboarding",
     emoji: "🏢",
     description: "Corporate L&D tools for employee development and compliance training.",
     gradient: "from-amber-500 to-orange-500",
+    guide: "Employee training and onboarding tools deliver structured learning paths for new hires, compliance requirements, and ongoing professional development within organizations. They serve HR and L&D teams that need to ensure consistent onboarding experiences, track mandatory training completion, and demonstrate compliance to auditors. Prioritize platforms with automated assignment rules, manager dashboards, and integrations with your HRIS for seamless employee lifecycle management.",
   },
   microlearning: {
     label: "Microlearning & Just-in-Time Learning",
     emoji: "⚡",
     description: "Short-form learning tools for quick skill building and knowledge reinforcement.",
     gradient: "from-pink-500 to-rose-500",
+    guide: "Microlearning tools deliver short, focused lessons of 5-10 minutes that reinforce specific skills or knowledge through spaced repetition and just-in-time delivery. They are effective for sales enablement, product training, and any context where employees need quick knowledge refreshers without sitting through lengthy courses. Evaluate mobile accessibility, push notification capabilities, and whether the platform supports gamification elements that drive engagement with bite-sized content.",
   },
 };
 

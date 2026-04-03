@@ -18,36 +18,41 @@ export interface WarehouseManagementTool {
   useCases?: string[];
 }
 
-export const WAREHOUSE_MANAGEMENT_CATEGORIES: Record<WarehouseManagementCategory, { label: string; emoji: string; description: string; gradient: string }> = {
+export const WAREHOUSE_MANAGEMENT_CATEGORIES: Record<WarehouseManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {
   "standalone-wms": {
     label: "Standalone WMS",
     emoji: "🏭",
     description: "Dedicated warehouse management systems with deep fulfillment and inventory tracking features.",
     gradient: "from-blue-600/30 to-blue-800/40",
+    guide: "Standalone warehouse management systems are dedicated platforms focused exclusively on warehouse operations including receiving, putaway, picking, packing, shipping, and inventory tracking. They are best for operations that need deep warehouse functionality without being tied to a specific ERP vendor. Look for systems with configurable pick strategies, wave planning, cycle count management, and native barcode scanning support.",
   },
   "erp-integrated": {
     label: "ERP-Integrated WMS",
     emoji: "🔗",
     description: "Warehouse management modules built into or tightly coupled with enterprise resource planning systems.",
     gradient: "from-indigo-600/30 to-indigo-800/40",
+    guide: "ERP-integrated WMS modules are warehouse management capabilities built directly into enterprise resource planning systems like SAP, Oracle, or NetSuite. They are ideal for organizations already running an ERP who want unified data flow between warehouse operations, procurement, finance, and sales without managing separate integrations. Evaluate whether the ERP's built-in WMS meets your warehouse complexity needs, as some are less feature-rich than dedicated standalone systems.",
   },
   "3pl": {
     label: "3PL & Fulfillment",
     emoji: "📦",
     description: "Platforms designed for third-party logistics providers managing multiple clients and warehouses.",
     gradient: "from-emerald-600/30 to-emerald-800/40",
+    guide: "3PL and fulfillment WMS platforms are designed for third-party logistics providers who manage inventory and shipping for multiple clients across one or more warehouse locations. They are essential for fulfillment companies that need multi-tenant architecture, client-specific billing, and branded packing slip customization. Prioritize platforms with robust client portal access, automated billing based on storage and activity, and the ability to handle diverse product types and shipping requirements across clients.",
   },
   "small-business": {
     label: "Small Business WMS",
     emoji: "🏪",
     description: "Affordable warehouse solutions tailored for small to mid-size ecommerce and retail operations.",
     gradient: "from-amber-600/30 to-amber-800/40",
+    guide: "Small business WMS platforms offer affordable, easy-to-implement warehouse management for growing ecommerce sellers and small retailers who have outgrown spreadsheet-based inventory tracking. They are best for operations processing up to a few thousand orders per day that need basic warehouse organization without enterprise complexity. Look for cloud-based systems with quick setup, ecommerce platform integrations, and straightforward per-user or per-order pricing.",
   },
   "robotics-automation": {
     label: "Robotics & Automation",
     emoji: "🤖",
     description: "Advanced warehouse systems with robotics integration, automation, and AI-driven optimization.",
     gradient: "from-violet-600/30 to-violet-800/40",
+    guide: "Robotics and automation WMS platforms integrate with autonomous mobile robots, conveyor systems, automated storage and retrieval systems, and AI-driven optimization engines. They are designed for high-volume operations looking to dramatically increase throughput while reducing labor costs and error rates. Evaluate platforms based on their robot fleet management capabilities, compatibility with your existing automation hardware, and the quality of AI-driven slotting and pick path optimization algorithms.",
   },
 };
 

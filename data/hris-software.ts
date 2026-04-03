@@ -25,7 +25,7 @@ export interface HRISTool {
 
 export const HRIS_CATEGORIES: Record<
   HRISCategory,
-  { label: string; emoji: string; description: string; gradient: string }
+  { label: string; emoji: string; description: string; gradient: string; guide?: string }
 > = {
   "hris-platform": {
     label: "HRIS Platforms",
@@ -33,6 +33,7 @@ export const HRIS_CATEGORIES: Record<
     description:
       "Core human resource information systems that serve as the central employee database for managing people data, org charts, PTO, and HR workflows.",
     gradient: "from-violet-500 to-violet-700",
+    guide: "HRIS platforms serve as the central system of record for all employee data, including personal information, job history, compensation, and organizational structure. They are best for mid-size and larger companies that need a single source of truth for people data across departments. Look for self-service portals, customizable workflows, and robust reporting and analytics capabilities.",
   },
   "workforce-management": {
     label: "Workforce Management",
@@ -40,6 +41,7 @@ export const HRIS_CATEGORIES: Record<
     description:
       "Tools for managing workforce planning, scheduling, time tracking, and labor optimization across teams and locations.",
     gradient: "from-violet-600 to-violet-800",
+    guide: "Workforce management tools handle scheduling, time and attendance tracking, shift planning, and labor cost optimization across teams and locations. They are ideal for businesses with hourly workers, multiple shifts, or distributed teams that need precise labor planning. Look for automated scheduling, mobile clock-in/out, overtime alerts, and integrations with payroll systems.",
   },
   "people-analytics": {
     label: "People Analytics",
@@ -47,6 +49,7 @@ export const HRIS_CATEGORIES: Record<
     description:
       "Platforms focused on employee engagement, performance management, and organizational analytics to help leaders make data-driven people decisions.",
     gradient: "from-violet-400 to-violet-600",
+    guide: "People analytics platforms turn HR data into actionable insights on engagement, retention, performance trends, and organizational health. They are best for HR leaders and executives who want data-driven decision-making about their workforce strategy. Look for customizable dashboards, benchmarking against industry data, predictive analytics for turnover risk, and pulse survey capabilities.",
   },
   onboarding: {
     label: "Employee Onboarding",
@@ -54,6 +57,7 @@ export const HRIS_CATEGORIES: Record<
     description:
       "Solutions designed to streamline the new hire experience from offer acceptance through the first months, including document collection, training, and cultural immersion.",
     gradient: "from-violet-500 to-violet-600",
+    guide: "Employee onboarding solutions streamline the new hire experience from offer acceptance through the first months, automating paperwork, training assignments, and task checklists. They are best for companies with frequent hiring who want to reduce time-to-productivity and improve new hire retention. Look for customizable onboarding workflows, e-signature for documents, and integration with your HRIS and payroll systems.",
   },
   "compliance-hr": {
     label: "HR Compliance",
@@ -61,6 +65,7 @@ export const HRIS_CATEGORIES: Record<
     description:
       "Tools and platforms that help organizations maintain compliance with employment laws, regulations, and workplace safety requirements.",
     gradient: "from-violet-300 to-violet-500",
+    guide: "HR compliance tools help organizations stay current with employment laws, workplace safety regulations, and required documentation across all jurisdictions where they operate. They are essential for companies in regulated industries or those operating across multiple states with varying labor laws. Look for automated compliance alerts, audit-ready record keeping, and built-in training modules for harassment prevention and workplace safety.",
   },
 };
 

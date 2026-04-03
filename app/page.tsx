@@ -1485,6 +1485,45 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* Why FindersList */}
+      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-xl font-semibold text-white text-center mb-10">Why People Use FindersList</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { icon: "🔍", title: "100+ Directories", desc: "From AI tools and business software to insurance, legal services, and home improvement — we cover it all." },
+            { icon: "✅", title: "Honest Reviews", desc: "Every listing includes real pros, cons, and use cases. No paid rankings, no sponsored placements." },
+            { icon: "💰", title: "Pricing Transparency", desc: "Every tool is labeled Free, Freemium, or Paid so you know what to expect before you click." },
+            { icon: "📊", title: "Side-by-Side Comparison", desc: "Compare featured tools at a glance with our comparison tables and detailed buyer guides." },
+          ].map((item) => (
+            <div key={item.title} className="text-center p-5 rounded-xl border border-white/8 bg-slate-900/30">
+              <div className="text-2xl mb-3">{item.icon}</div>
+              <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="border-t border-white/8 bg-slate-900/20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-14 text-center">
+          <h2 className="text-xl font-semibold text-white mb-10">How It Works</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {[
+              { step: "1", title: "Browse", desc: "Pick a directory and explore tools organized by category, pricing, and audience." },
+              { step: "2", title: "Compare", desc: "Read honest pros and cons, check pricing, and use comparison tables to narrow your options." },
+              { step: "3", title: "Decide", desc: "Visit the tool that fits your needs. No sign-up required — FindersList is free to use." },
+            ].map((item) => (
+              <div key={item.step} className="flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center text-sm font-bold text-violet-300 mb-4">{item.step}</div>
+                <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Directories */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-6">Browse Directories</h2>
@@ -1521,6 +1560,41 @@ export default function HubPage() {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-xl font-semibold text-white text-center mb-8">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            {
+              q: "Is FindersList free to use?",
+              a: "Yes, completely. Browsing our directories, reading reviews, and comparing tools costs nothing. We earn revenue through ads and affiliate links, which never influence our reviews.",
+            },
+            {
+              q: "How do you choose which tools to list?",
+              a: "We research each category thoroughly, covering both market leaders and promising alternatives. Every tool goes through our evaluation process covering features, pricing, ease of use, and customer support. Read our full methodology for details.",
+            },
+            {
+              q: "Do affiliate links affect your rankings?",
+              a: "Never. Many of our listings have no affiliate relationship at all. Placement is determined by editorial judgment — not commercial agreements. We disclose all affiliate relationships transparently.",
+            },
+            {
+              q: "How often is the information updated?",
+              a: "We regularly revisit our directories to update descriptions, pricing, pros and cons, and add new tools. If you notice something outdated, let us know through our contact page.",
+            },
+          ].map((item) => (
+            <details key={item.q} className="group rounded-xl border border-white/8 bg-slate-900/40">
+              <summary className="flex items-center justify-between cursor-pointer p-4 text-sm font-medium text-white hover:text-slate-200 transition-colors">
+                {item.q}
+                <span className="text-slate-600 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+              </summary>
+              <div className="px-4 pb-4 text-sm text-slate-400 leading-relaxed">
+                {item.a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 
