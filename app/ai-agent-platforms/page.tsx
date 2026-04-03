@@ -7,9 +7,13 @@ import {
   getAIAgentsCategoryCount,
   filterAIAgentsTools,
 } from "@/lib/ai-agent-platforms";
+import { AI_AGENTS_EDITORIAL } from "@/data/ai-agent-platforms";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function AIAgentsPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={AI_AGENTS_EDITORIAL.title}
+            intro={AI_AGENTS_EDITORIAL.intro}
+            buyerGuide={AI_AGENTS_EDITORIAL.buyerGuide}
+            faq={AI_AGENTS_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={AI_AGENTS_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/ai-agent-platforms"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function AIAgentsPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

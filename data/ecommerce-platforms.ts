@@ -26,6 +26,32 @@ export const ECOMMERCE_PLATFORM_CATEGORIES: Record<EcommercePlatformCategory, { 
   "b2b": { label: "B2B Commerce", emoji: "🏢", description: "Enterprise-grade platforms built for business-to-business sales with complex pricing and account management.", gradient: "from-teal-600/30 to-cyan-800/40" },
 };
 
+export const ECOMMERCE_PLATFORM_EDITORIAL = {
+  title: "How to Choose the Right Ecommerce Platform in 2026",
+  intro: `Your ecommerce platform is the foundation of your online business -- it determines your storefront design, checkout experience, payment processing, and how easily you can scale. Choosing the wrong platform can mean costly migrations later, while the right choice provides a stable base that grows with your business from first sale to millions in revenue.\n\nThe ecommerce platform market divides into several distinct categories. Hosted SaaS platforms like Shopify and BigCommerce handle all the technical infrastructure so you can focus on selling. Open-source platforms like WooCommerce and Magento give you full control over your code but require you to manage hosting and security. Headless commerce platforms like Commercetools and Medusa decouple the frontend from the backend, letting developers build custom storefronts with modern frameworks. B2B platforms serve the unique needs of wholesale and business-to-business selling.\n\nThe best platform for your business depends on your technical resources, budget, product catalog size, and growth plans. A solo entrepreneur launching their first store has very different needs than a mid-market brand selling across 10 countries with complex pricing rules. Start by honestly assessing your technical capabilities and your projected order volume over the next 2-3 years, then choose a platform that fits both your current reality and your realistic growth trajectory.`,
+  buyerGuide: [
+    "Assess your technical resources honestly -- hosted platforms like Shopify require zero coding knowledge, while open-source and headless options need developers for setup, customization, and ongoing maintenance.",
+    "Calculate total cost of ownership beyond the base subscription -- factor in payment processing fees, app/plugin costs, theme costs, and any transaction fees charged by the platform.",
+    "Evaluate the built-in feature set versus the app ecosystem -- platforms with strong native features reduce dependency on paid third-party apps that add monthly costs and potential compatibility issues.",
+    "Test the checkout experience from a customer perspective -- checkout conversion rates vary significantly between platforms, and even small friction points like requiring account creation can cost you sales.",
+    "Consider multi-channel capabilities -- if you plan to sell on Amazon, social media, or in physical locations, the platform should support omnichannel inventory and order management natively.",
+  ],
+  faq: [
+    {
+      question: "Is Shopify the best ecommerce platform for everyone?",
+      answer: "Shopify is the best choice for most small-to-mid-size merchants who want a reliable, easy-to-use platform without managing technical infrastructure. However, businesses needing deep customization may prefer WooCommerce or Magento, those wanting API-first architecture should consider headless platforms, and B2B sellers with complex pricing need specialized platforms.",
+    },
+    {
+      question: "What is headless commerce and when do I need it?",
+      answer: "Headless commerce separates the frontend (what customers see) from the backend (inventory, orders, payments). This lets developers build custom storefronts using any frontend framework while the commerce engine handles the business logic via API. You need headless commerce when your brand requires a highly custom shopping experience, or when you sell through multiple frontends like web, mobile app, and IoT devices.",
+    },
+    {
+      question: "How difficult is it to migrate from one ecommerce platform to another?",
+      answer: "Migration complexity depends on your catalog size, customizations, and data volume. Product and customer data can typically be exported and imported via CSV. However, URL structures, SEO rankings, integrations, and custom functionality require careful planning. Most migrations take 2-8 weeks and benefit from professional assistance to avoid losing search engine rankings.",
+    },
+  ],
+};
+
 export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
   {
     slug: "shopify",
@@ -119,6 +145,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🌐",
     domain: "wix.com",
+    pros: [
+      "Intuitive drag-and-drop editor with complete design freedom",
+      "Hundreds of customizable templates for various store types",
+      "Supports physical products, digital goods, subscriptions, and bookings",
+      "App market extends functionality with 300+ ecommerce add-ons",
+      "Affordable pricing for small businesses just starting out",
+    ],
+    cons: [
+      "Ecommerce features trail behind dedicated platforms like Shopify",
+      "Cannot switch templates after publishing without rebuilding the site",
+      "Site speed can suffer with heavy customization and multiple apps",
+      "Limited scalability for high-volume or complex operations",
+    ],
+    useCases: [
+      "Small business owner wanting a beautiful website with built-in store",
+      "Service provider selling bookings, classes, and digital products online",
+      "Entrepreneur needing maximum design flexibility without coding skills",
+    ],
   },
   {
     slug: "prestashop",
@@ -132,6 +176,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "💠",
     domain: "prestashop.com",
+    pros: [
+      "Completely free core software with no license fees",
+      "Strong multi-language and multi-currency support out of the box",
+      "Large marketplace of modules and themes for customization",
+      "Popular in Europe with strong community and localization",
+      "Advanced stock management features included natively",
+    ],
+    cons: [
+      "Requires self-managed hosting and technical administration",
+      "Many essential modules are paid add-ons that increase total cost",
+      "Smaller English-speaking community compared to WooCommerce",
+      "Performance optimization requires server expertise",
+    ],
+    useCases: [
+      "European merchant needing multi-language and multi-currency support natively",
+      "Developer wanting a free open-source platform with PHP customization",
+      "International seller building stores for multiple European markets",
+    ],
   },
   {
     slug: "medusa",
@@ -145,6 +207,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🟢",
     domain: "medusajs.com",
+    pros: [
+      "Fully open-source with no license fees or vendor lock-in",
+      "Modular architecture lets you use only the commerce blocks you need",
+      "Built with Node.js and TypeScript for modern developer workflows",
+      "Active open-source community with rapid feature development",
+      "Composable approach supports DTC, marketplace, and B2B models",
+    ],
+    cons: [
+      "Requires strong JavaScript/TypeScript development skills",
+      "Younger project with smaller ecosystem than established platforms",
+      "Self-hosted — you manage infrastructure, scaling, and security",
+      "No visual admin dashboard as polished as Shopify's",
+    ],
+    useCases: [
+      "Developer team building a custom headless storefront with full code control",
+      "Startup wanting an open-source Shopify alternative without vendor lock-in",
+      "Brand needing composable commerce that can evolve with changing requirements",
+    ],
   },
   {
     slug: "commercetools",
@@ -158,6 +238,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🔷",
     domain: "commercetools.com",
+    pros: [
+      "True MACH architecture (Microservices, API-first, Cloud-native, Headless)",
+      "300+ REST and GraphQL APIs for maximum composability",
+      "Enterprise-grade scalability handles Black Friday traffic spikes",
+      "Multi-site, multi-brand, and multi-region from a single platform",
+      "Gartner Magic Quadrant leader for digital commerce",
+    ],
+    cons: [
+      "Enterprise pricing puts it out of reach for small and mid-market businesses",
+      "Requires a development team to build and maintain the frontend",
+      "No out-of-the-box storefront — everything is built via API",
+      "Implementation projects take months and require SI partners",
+    ],
+    useCases: [
+      "Enterprise brand building custom commerce experiences across web, mobile, and IoT",
+      "Global retailer needing multi-region, multi-currency commerce at scale",
+      "Organization migrating from monolithic platforms to composable MACH architecture",
+    ],
   },
   {
     slug: "salesforce-commerce-cloud",
@@ -171,6 +269,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "☁️",
     domain: "salesforce.com",
+    pros: [
+      "Deep integration with Salesforce CRM, Marketing Cloud, and Service Cloud",
+      "Einstein AI powers personalized product recommendations and predictive sorting",
+      "Unified B2B and B2C commerce capabilities on one platform",
+      "Enterprise scalability for high-volume global operations",
+      "Omnichannel order management across web, store, and marketplaces",
+    ],
+    cons: [
+      "Very expensive — enterprise licensing and SI implementation costs are high",
+      "Significant Salesforce ecosystem dependency required",
+      "Implementation timelines are long (6-12+ months for full deployment)",
+      "Steep learning curve for administration and customization",
+    ],
+    useCases: [
+      "Enterprise already in the Salesforce ecosystem needing unified commerce",
+      "B2B manufacturer offering self-service ordering with account-specific pricing",
+      "Global brand needing AI-powered personalization across commerce channels",
+    ],
   },
   {
     slug: "shopware",
@@ -184,6 +300,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🔵",
     domain: "shopware.com",
+    pros: [
+      "Flexible open-source core with API-first headless capabilities",
+      "Powerful content management with Shopping Experiences page builder",
+      "Rule-based pricing and promotion engine handles complex scenarios",
+      "Strong in European markets with multi-language and VAT support",
+      "Growing international ecosystem of extensions and partners",
+    ],
+    cons: [
+      "Smaller community and ecosystem outside of Europe",
+      "Enterprise features require commercial licensing",
+      "Documentation is less extensive in English than German",
+      "Fewer third-party integrations than Shopify or WooCommerce",
+    ],
+    useCases: [
+      "European retailer needing headless commerce with strong content management",
+      "Brand wanting open-source flexibility with modern API-first architecture",
+      "Merchant needing complex rule-based pricing and promotions",
+    ],
   },
   {
     slug: "ecwid",
@@ -197,6 +331,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🛒",
     domain: "ecwid.com",
+    pros: [
+      "Embeds into any existing website without rebuilding your site",
+      "Free plan available to start selling with up to 10 products",
+      "Multi-channel selling across Facebook, Instagram, and marketplaces",
+      "Lightweight and fast-loading — does not slow down your existing site",
+      "Backed by Lightspeed with ongoing product development",
+    ],
+    cons: [
+      "Limited design customization for the embedded store widget",
+      "Advanced ecommerce features are fewer than Shopify or BigCommerce",
+      "SEO capabilities are limited compared to standalone platforms",
+      "Scalability constraints for large catalogs and high-volume stores",
+    ],
+    useCases: [
+      "Business owner adding a store to an existing WordPress or Wix website",
+      "Blogger or content creator selling merchandise alongside their content",
+      "Small business testing ecommerce without committing to a full platform migration",
+    ],
   },
   {
     slug: "big-cartel",
@@ -210,6 +362,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🎨",
     domain: "bigcartel.com",
+    pros: [
+      "Free plan supports up to 5 products with no transaction fees",
+      "Purpose-built for artists and makers with a creative-friendly design",
+      "Simple, distraction-free interface that anyone can use",
+      "No transaction fees on any plan — keep all your revenue",
+      "Affordable paid plans for growing collections",
+    ],
+    cons: [
+      "Very limited feature set compared to Shopify or even Squarespace",
+      "Maximum 500 products even on the highest plan",
+      "Minimal customization without editing code directly",
+      "No built-in marketing tools, analytics, or multi-channel selling",
+    ],
+    useCases: [
+      "Independent artist selling prints, stickers, or handmade goods online",
+      "Maker testing an online store with a few products before investing in a bigger platform",
+      "Creative professional wanting the simplest possible storefront with no fees",
+    ],
   },
   {
     slug: "saleor",
@@ -223,6 +393,24 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🟠",
     domain: "saleor.io",
+    pros: [
+      "GraphQL-first API provides efficient, typed data fetching for frontends",
+      "Open-source with active community development on GitHub",
+      "Built with Python/Django — familiar stack for many backend developers",
+      "Modern admin dashboard for managing products, orders, and customers",
+      "Cloud hosting option available alongside self-hosted deployment",
+    ],
+    cons: [
+      "Requires Python developers for backend customization and maintenance",
+      "Smaller ecosystem and fewer plugins than WooCommerce or Magento",
+      "Self-hosted option requires managing infrastructure and security",
+      "Less mature than established headless platforms for enterprise needs",
+    ],
+    useCases: [
+      "Python developer team building a custom headless commerce experience",
+      "Startup wanting GraphQL-first headless commerce with open-source flexibility",
+      "Brand building a modern storefront with Next.js or Remix connected to Saleor API",
+    ],
   },
   {
     slug: "volusion",
@@ -236,5 +424,23 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
     featured: false,
     logo: "🔸",
     domain: "volusion.com",
+    pros: [
+      "No transaction fees on any plan — all revenue goes to you",
+      "Built-in website builder, inventory, and payment processing",
+      "Straightforward pricing without hidden costs",
+      "Long track record as an established ecommerce platform",
+      "SEO-friendly features and built-in marketing tools",
+    ],
+    cons: [
+      "Smaller feature set and app ecosystem than Shopify or BigCommerce",
+      "Template designs feel dated compared to Squarespace or Shopify",
+      "No native blogging functionality — requires workarounds for content marketing",
+      "Limited third-party integrations and marketplace support",
+    ],
+    useCases: [
+      "Small retailer wanting a simple hosted store with no transaction fees",
+      "Business owner preferring an established platform over trendy newcomers",
+      "Merchant needing straightforward ecommerce without complex feature overload",
+    ],
   },
 ];

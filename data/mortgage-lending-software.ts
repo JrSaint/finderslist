@@ -26,6 +26,32 @@ export const MORTGAGE_LENDING_CATEGORIES: Record<MortgageLendingCategory, { labe
   "compliance": { label: "Compliance & Audit", emoji: "✅", description: "Tools that automate regulatory checks, disclosure tracking, and audit readiness for mortgage lenders.", gradient: "from-yellow-600/30 to-amber-800/40" },
 };
 
+export const MORTGAGE_LENDING_EDITORIAL = {
+  title: "How to Choose the Right Mortgage Lending Software in 2026",
+  intro: `Mortgage lending software powers the entire loan lifecycle from application intake through closing and post-closing servicing. For lenders, brokers, and credit unions, the right technology stack directly impacts how fast you can close loans, how accurately you comply with regulations, and how satisfied your borrowers are with the experience. In a market where margins are tight and compliance penalties are steep, your LOS and supporting tools are mission-critical infrastructure.\n\nThe mortgage technology landscape includes loan origination systems (LOS), borrower-facing point-of-sale portals, CRM platforms for loan officers, compliance engines, and servicing platforms. Many lenders use a best-of-breed approach, choosing specialized tools for each function and connecting them through integrations. Others prefer all-in-one platforms that minimize integration complexity at the cost of some flexibility.\n\nRegulatory compliance remains the biggest technology challenge for mortgage lenders. TRID, HMDA, state-specific disclosure requirements, and fair lending rules all demand automated audit trails and real-time compliance checks. The best platforms bake compliance into every workflow step rather than bolting it on as an afterthought.`,
+  buyerGuide: [
+    "Compliance automation depth -- the platform should auto-generate TRID disclosures, track HMDA data, enforce state-specific rules, and provide a complete audit trail without manual intervention to avoid costly violations.",
+    "Integration ecosystem -- evaluate the breadth of pre-built connections to credit bureaus, appraisal management companies, title providers, MI companies, and secondary market investors that the platform supports.",
+    "Borrower experience and POS portal -- a modern, mobile-friendly borrower portal that handles document upload, e-signatures, and real-time status updates reduces cycle times and improves pull-through rates.",
+    "Scalability and pricing model -- understand whether pricing is per-loan, per-seat, or flat-rate, and confirm the platform can handle your volume during peak periods without performance degradation.",
+    "Implementation timeline and support -- mortgage LOS implementations can take 3-12 months; evaluate the vendor's onboarding process, training resources, and ongoing support quality before committing.",
+  ],
+  faq: [
+    {
+      question: "What is the difference between a loan origination system and a point-of-sale platform?",
+      answer: "A loan origination system (LOS) is the back-end engine where loan officers and processors manage the complete loan file, run compliance checks, and move loans through underwriting to closing. A point-of-sale (POS) platform is the borrower-facing front end where applicants submit applications, upload documents, and track loan status. Most lenders use both, with the POS feeding data into the LOS.",
+    },
+    {
+      question: "How long does it take to implement new mortgage lending software?",
+      answer: "Implementation timelines vary widely. A standalone CRM or POS portal can be deployed in 2-4 weeks. A full LOS migration typically takes 3-6 months for mid-size lenders and up to 12 months for large organizations with complex workflows. Data migration, custom configuration, staff training, and parallel processing periods all contribute to the timeline.",
+    },
+    {
+      question: "Can smaller lenders and brokers afford enterprise mortgage software?",
+      answer: "Yes. Many vendors offer tiered pricing that scales with loan volume, making enterprise-grade technology accessible to smaller shops. Per-loan pricing models mean you only pay as you close, which aligns costs with revenue. Some platforms also offer broker-specific editions with lower base costs and simplified feature sets.",
+    },
+  ],
+};
+
 export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
   {
     slug: "encompass",
@@ -119,6 +145,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "🔧",
     domain: "calyxsoftware.com",
+    pros: [
+      "Among the most affordable LOS options for independent brokers and small lenders",
+      "Calyx Path offers a modern cloud-based alternative to the legacy desktop product",
+      "Straightforward workflow that requires minimal training to get productive",
+      "Integrations with major pricing engines and credit providers",
+    ],
+    cons: [
+      "Calyx Point desktop version has a dated interface and limited scalability",
+      "Smaller user base means fewer third-party integrations than Encompass",
+      "Cloud migration from Point to Path can be disruptive for existing users",
+      "Compliance automation is less sophisticated than enterprise competitors",
+    ],
+    useCases: [
+      "Independent mortgage broker seeking an affordable LOS to manage loan processing",
+      "Small lender transitioning from spreadsheets to a proper loan origination system",
+      "Broker shop needing a simple, reliable platform without enterprise complexity",
+    ],
   },
   {
     slug: "loanpro",
@@ -132,6 +175,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "⚙️",
     domain: "loanpro.io",
+    pros: [
+      "API-first architecture enables deep integration with custom fintech workflows",
+      "Supports multiple loan types including mortgage, consumer, and commercial",
+      "Flexible cloud-based platform that scales with lending volume",
+      "Programmable rules engine automates payment processing and collections",
+    ],
+    cons: [
+      "Requires technical resources to leverage the API-first approach effectively",
+      "Not a traditional mortgage-specific platform, so some workflows need configuration",
+      "Implementation can be complex for teams without developer support",
+      "Pricing can be higher than simpler servicing-only solutions",
+    ],
+    useCases: [
+      "Fintech company building a custom lending platform on top of LoanPro's infrastructure",
+      "Alternative lender needing programmable servicing for non-standard loan structures",
+      "Multi-product lender managing mortgage, personal, and commercial loans in one system",
+    ],
   },
   {
     slug: "mortgage-cadence",
@@ -145,6 +205,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "🏢",
     domain: "mortgagecadence.com",
+    pros: [
+      "Enterprise-grade platform built for high-volume lending operations",
+      "Configurable workflows and business rules support complex multi-channel origination",
+      "Backed by Accenture with strong consulting and implementation support",
+      "Robust compliance automation for federal, state, and local regulations",
+    ],
+    cons: [
+      "High cost and complexity make it impractical for small and mid-size lenders",
+      "Long implementation timelines typical of enterprise software deployments",
+      "User interface can feel heavy and less intuitive than modern alternatives",
+      "Vendor lock-in with Accenture ecosystem may limit future flexibility",
+    ],
+    useCases: [
+      "Large bank originating thousands of loans monthly through retail, wholesale, and correspondent channels",
+      "Credit union needing a highly configurable LOS to handle unique member lending programs",
+      "Enterprise lender requiring Accenture consulting support for digital transformation",
+    ],
   },
   {
     slug: "bntouch",
@@ -158,6 +235,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "💬",
     domain: "bntouch.com",
+    pros: [
+      "Pre-built marketing campaigns and drip sequences save loan officers significant time",
+      "Built-in video messaging feature helps personalize referral partner outreach",
+      "Co-branded marketing materials strengthen real estate agent partnerships",
+      "All-in-one platform covers CRM, marketing, and client communication",
+    ],
+    cons: [
+      "Interface can feel cluttered with the volume of features and campaign options",
+      "Learning curve is steeper than simpler CRM tools",
+      "Integration with some LOS platforms requires additional configuration",
+      "Reporting and analytics are not as advanced as larger CRM platforms",
+    ],
+    useCases: [
+      "Loan officer automating drip email campaigns to nurture past client referrals",
+      "Mortgage team creating co-branded marketing materials with real estate agent partners",
+      "Branch manager tracking lead sources and conversion rates across loan officers",
+    ],
   },
   {
     slug: "jungo",
@@ -171,6 +265,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "☁️",
     domain: "jungo.com",
+    pros: [
+      "Built on Salesforce providing access to the entire Salesforce app ecosystem",
+      "Powerful reporting and dashboard capabilities inherited from Salesforce",
+      "Mortgage-specific workflows and content layered on top of enterprise CRM infrastructure",
+      "Highly customizable through Salesforce configuration and AppExchange integrations",
+    ],
+    cons: [
+      "Requires a Salesforce license in addition to Jungo subscription fees",
+      "Combined cost can be prohibitive for individual loan officers or small teams",
+      "Salesforce complexity means steeper learning curve than mortgage-only CRMs",
+      "Over-customization can create maintenance challenges over time",
+    ],
+    useCases: [
+      "Mortgage company already using Salesforce wanting to add mortgage-specific CRM features",
+      "Large lending team needing advanced pipeline reporting and lead attribution analytics",
+      "Enterprise lender requiring deep CRM customization beyond what mortgage-only tools offer",
+    ],
   },
   {
     slug: "mortgage-automator",
@@ -184,6 +295,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "🤖",
     domain: "mortgageautomator.com",
+    pros: [
+      "Purpose-built for private lenders and alternative mortgage companies",
+      "Handles loan origination, servicing, and investor management in a single platform",
+      "Automates complex investor reporting and distribution calculations",
+      "Designed for non-bank lending workflows that traditional LOS platforms ignore",
+    ],
+    cons: [
+      "Niche focus means limited applicability for conventional mortgage lenders",
+      "Smaller company with less market presence than enterprise competitors",
+      "Integration options are more limited than mainstream LOS platforms",
+      "Feature depth for compliance may not match regulated lender requirements",
+    ],
+    useCases: [
+      "Private lender managing a portfolio of bridge loans and short-term mortgages",
+      "Mortgage investment corporation automating investor distributions and reporting",
+      "Alternative lender needing origination-to-servicing workflow in one platform",
+    ],
   },
   {
     slug: "lendingpad",
@@ -197,6 +325,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "📋",
     domain: "lendingpad.com",
+    pros: [
+      "Cloud-based architecture with fast onboarding and minimal training requirements",
+      "Intuitive interface designed for simplicity over feature complexity",
+      "Automated compliance checks reduce regulatory risk for small lenders",
+      "Affordable pricing attractive to brokers and small lending shops",
+    ],
+    cons: [
+      "Feature set is more limited than enterprise platforms like Encompass",
+      "Fewer third-party integrations available compared to market leaders",
+      "Advanced customization options are limited by the simplified design",
+      "Reporting capabilities are basic compared to full-featured LOS platforms",
+    ],
+    useCases: [
+      "New mortgage broker setting up their first LOS with minimal IT overhead",
+      "Small lender wanting a simple cloud-based system without lengthy implementation",
+      "Broker transitioning from Calyx Point to a modern cloud-native platform",
+    ],
   },
   {
     slug: "sagent",
@@ -210,6 +355,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "🏦",
     domain: "sagent.com",
+    pros: [
+      "Modern servicing platform with a strong focus on borrower self-service experience",
+      "Comprehensive loss mitigation tools for managing delinquent loans",
+      "Consumer-facing portal reduces call center volume through digital self-service",
+      "Built for compliance with federal and state servicing regulations",
+    ],
+    cons: [
+      "Implementation complexity is significant for large servicing portfolios",
+      "Premium pricing targets mid-to-large servicers rather than small shops",
+      "Platform is still maturing compared to legacy servicing systems with decades of use",
+      "Integration with older back-office systems may require custom development",
+    ],
+    useCases: [
+      "Mortgage servicer looking to modernize the borrower payment and self-service experience",
+      "Servicer needing automated loss mitigation workflows for regulatory compliance",
+      "Large servicing operation seeking to reduce call center costs through a digital portal",
+    ],
   },
   {
     slug: "fics",
@@ -223,6 +385,23 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "🖥️",
     domain: "fics.com",
+    pros: [
+      "Over 30 years of proven reliability in mortgage servicing for banks and credit unions",
+      "Comprehensive escrow analysis, tax, and insurance tracking capabilities",
+      "Stable, well-tested platform with minimal unexpected downtime",
+      "Strong regulatory reporting features for compliant loan servicing",
+    ],
+    cons: [
+      "Legacy interface lacks the modern UX of newer cloud-based competitors",
+      "Limited API and integration options for connecting with modern tech stacks",
+      "Smaller vendor with less frequent feature updates than larger competitors",
+      "May require manual processes where newer platforms offer automation",
+    ],
+    useCases: [
+      "Community bank servicing a portfolio of residential mortgages in-house",
+      "Credit union needing reliable escrow analysis and payment processing software",
+      "Small servicer requiring dependable regulatory reporting without enterprise costs",
+    ],
   },
   {
     slug: "encompass-compliance",
@@ -236,5 +415,22 @@ export const MORTGAGE_LENDING_TOOLS: MortgageLendingTool[] = [
     featured: false,
     logo: "✅",
     domain: "icemortgagetechnology.com",
+    pros: [
+      "Seamlessly integrated into the Encompass LOS workflow for real-time compliance checks",
+      "Audits loan files against federal, state, and local regulations automatically",
+      "Identifies compliance issues before closing to prevent costly post-closing remediation",
+      "Covers TRID, HMDA, RESPA, and fair lending rules in a single service",
+    ],
+    cons: [
+      "Only available to Encompass users, excluding lenders on other LOS platforms",
+      "Additional subscription cost on top of existing Encompass licensing fees",
+      "Rule update lag can occur when new regulations take effect",
+      "Limited standalone value as it requires the full Encompass ecosystem",
+    ],
+    useCases: [
+      "Encompass lender adding automated pre-closing compliance audits to reduce risk",
+      "Compliance team needing real-time HMDA data validation during loan processing",
+      "Quality control department running automated fair lending checks across the pipeline",
+    ],
   },
 ];

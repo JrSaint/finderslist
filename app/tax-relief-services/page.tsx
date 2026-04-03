@@ -7,9 +7,13 @@ import {
   getTaxReliefCategoryCount,
   filterTaxReliefTools,
 } from "@/lib/tax-relief-services";
+import { TAX_RELIEF_EDITORIAL } from "@/data/tax-relief-services";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function TaxReliefServicesPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={TAX_RELIEF_EDITORIAL.title}
+            intro={TAX_RELIEF_EDITORIAL.intro}
+            buyerGuide={TAX_RELIEF_EDITORIAL.buyerGuide}
+            faq={TAX_RELIEF_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={TAX_RELIEF_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/tax-relief-services"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function TaxReliefServicesPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

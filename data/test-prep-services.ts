@@ -51,6 +51,32 @@ export const TEST_PREP_CATEGORIES: Record<TestPrepCategory, { label: string; emo
   },
 };
 
+export const TEST_PREP_EDITORIAL = {
+  title: "How to Choose the Right Test Prep Service in 2026",
+  intro: `Test preparation services help students and professionals achieve higher scores on standardized exams including the SAT, ACT, GRE, GMAT, LSAT, MCAT, and various professional certification exams. A strong test score can mean the difference between admission to a top-choice school and rejection, or between a scholarship worth tens of thousands of dollars and paying full price. The test prep industry generates over $1 billion annually because the stakes are genuinely that high.\n\nModern test prep has evolved well beyond thick prep books. Today's leading platforms use adaptive learning algorithms that identify your specific weaknesses, adjust question difficulty in real time, and create personalized study plans that maximize score improvement per hour studied. Options range from self-paced online courses ($100 to $400) to live group classes ($500 to $1,500) to private tutoring ($100 to $300+ per hour), with each format suiting different learning styles and budgets.\n\nThe most important factor in choosing a test prep service is not the brand name but how well the format matches your learning style and schedule. Self-motivated students with consistent study habits often do just as well with affordable self-paced platforms as they would with expensive private tutoring. Meanwhile, students who need accountability and real-time Q&A tend to benefit more from live instruction or one-on-one tutoring, even at a higher price point.`,
+  buyerGuide: [
+    "Score improvement guarantees -- Many companies offer score improvement guarantees (e.g., increase by X points or get a refund). Read the fine print carefully, as these guarantees often require completing 100% of the coursework and may only apply to specific programs.",
+    "Adaptive learning technology -- The best platforms analyze your practice test results to create a personalized study plan that focuses on your weakest areas. This targeted approach is significantly more efficient than generic study guides that treat every student the same.",
+    "Practice test quality and quantity -- Official practice tests from the test maker (ETS, LSAC, AAMC) are the gold standard. Check how many real practice tests are included versus how many are third-party approximations, as test-taking strategy is built through realistic practice.",
+    "Study format flexibility -- Consider whether you learn better through video lectures, interactive practice, live instruction, or reading. The best services offer multiple formats so you can use what works and skip what does not.",
+    "Instructor credentials -- For live courses and tutoring, verify that instructors have scored in the 95th percentile or above on the exam they teach and have actual teaching experience, not just high test scores.",
+  ],
+  faq: [
+    {
+      question: "How long should I study for a standardized test?",
+      answer: "Most students need 2 to 4 months of consistent preparation for major exams like the SAT, GRE, or LSAT, studying 10 to 20 hours per week. The MCAT typically requires 3 to 6 months due to its breadth of content. Start with a diagnostic test to assess your baseline and determine how much improvement you need.",
+    },
+    {
+      question: "Are expensive test prep courses worth it?",
+      answer: "It depends on your learning style and starting point. Students who score well on diagnostic tests may only need a self-paced course and practice tests. Students who need significant improvement or struggle with self-motivation often see better results with structured courses or tutoring that provide accountability and personalized feedback.",
+    },
+    {
+      question: "Should I take the SAT or ACT?",
+      answer: "Take a practice test for both and compare your scores using a concordance table. Some students naturally perform better on one exam due to differences in timing, question style, and content emphasis. The ACT includes a science reasoning section while the SAT emphasizes data analysis. All colleges accept both tests equally.",
+    },
+  ],
+};
+
 export const TEST_PREP_TOOLS: TestPrepTool[] = [
   {
     slug: "kaplan",
@@ -216,6 +242,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "🏙️",
     domain: "manhattanprep.com",
+    pros: [
+      "All instructors have scored in the 99th percentile on the exams they teach",
+      "Deep focus on strategy and critical thinking rather than rote memorization",
+      "Comprehensive study materials including Strategy Guides widely used independently",
+      "Live classes, self-study, and private tutoring options available",
+    ],
+    cons: [
+      "Premium pricing puts it among the most expensive test prep options",
+      "Primarily focused on GMAT and GRE — limited offerings for other exams",
+      "Private tutoring rates can exceed $200 per hour",
+    ],
+    useCases: [
+      "Ambitious GMAT test-taker seeking 700+ score with elite instructor guidance",
+      "GRE student wanting strategy-based preparation from top-scoring instructors",
+      "Self-studier using Manhattan Prep Strategy Guides alongside practice exams",
+    ],
   },
   {
     slug: "blueprint-lsat",
@@ -229,6 +271,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "📐",
     domain: "blueprintprep.com",
+    pros: [
+      "Engaging video lessons make LSAT prep less tedious than traditional methods",
+      "Data-driven analytics track performance across question types",
+      "Adaptive recommendations focus study time on high-impact areas",
+      "Both self-paced and live course options available",
+    ],
+    cons: [
+      "Primarily focused on LSAT — not a multi-exam platform",
+      "Full course pricing is comparable to other premium LSAT providers",
+      "Self-paced students may miss the accountability of live instruction",
+    ],
+    useCases: [
+      "Law school applicant wanting engaging LSAT prep with performance analytics",
+      "Student who learns best through video instruction with adaptive practice",
+      "LSAT taker wanting data-driven insights into which question types to prioritize",
+    ],
   },
   {
     slug: "7sage",
@@ -242,6 +300,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "🧠",
     domain: "7sage.com",
+    pros: [
+      "Highly affordable compared to other comprehensive LSAT prep courses",
+      "Detailed video explanations for every official LSAT question",
+      "Blind review method helps students distinguish between knowledge and guessing",
+      "Active community forum provides peer support and discussion",
+    ],
+    cons: [
+      "Self-paced only — no live instruction option",
+      "Interface is functional but not as polished as larger competitors",
+      "Primarily focused on LSAT with limited coverage of other exams",
+    ],
+    useCases: [
+      "Budget-conscious law school applicant wanting comprehensive LSAT prep",
+      "Self-motivated student who benefits from community support and peer discussion",
+      "LSAT taker wanting the blind review methodology to improve accuracy",
+    ],
   },
   {
     slug: "uworld",
@@ -255,6 +329,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "🌐",
     domain: "uworld.com",
+    pros: [
+      "Exceptionally detailed question explanations widely considered best-in-class",
+      "High-fidelity practice exams closely simulate the real test experience",
+      "Strong reputation in medical board prep extending to MCAT, SAT, and ACT",
+      "Visual aids and illustrations enhance understanding of complex concepts",
+    ],
+    cons: [
+      "Primarily a question bank — does not offer structured courses or video lessons",
+      "No live instruction or tutoring component",
+      "Works best as a supplement to other study materials rather than standalone prep",
+    ],
+    useCases: [
+      "MCAT student wanting the highest-quality practice questions with detailed explanations",
+      "Pre-med student using UWorld to supplement content review from other sources",
+      "SAT or ACT student wanting realistic practice questions beyond official materials",
+    ],
   },
   {
     slug: "varsity-tutors-test-prep",
@@ -268,6 +358,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "👨‍🏫",
     domain: "varsitytutors.com",
+    pros: [
+      "One-on-one and small group tutoring with expert test prep instructors",
+      "Covers virtually every major standardized exam",
+      "Flexible scheduling accommodates busy student and professional calendars",
+      "Proprietary live learning platform for interactive sessions",
+    ],
+    cons: [
+      "Private tutoring rates are among the highest in the industry",
+      "Tutor quality can vary — not all tutors have 99th percentile scores",
+      "No self-paced course option — all instruction is live",
+    ],
+    useCases: [
+      "Student wanting personalized one-on-one tutoring for any major standardized exam",
+      "Parent seeking flexible scheduling for their child's SAT or ACT preparation",
+      "Professional needing evening or weekend tutoring sessions for the GRE or GMAT",
+    ],
   },
   {
     slug: "barrons",
@@ -281,6 +387,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "📕",
     domain: "barronseduc.com",
+    pros: [
+      "Decades of trusted test prep publishing with comprehensive study guides",
+      "Covers SAT, ACT, AP exams, and professional certifications",
+      "Print and online materials available for flexible study approaches",
+      "Affordable compared to course-based prep options",
+    ],
+    cons: [
+      "Book-based approach may feel less interactive than modern digital platforms",
+      "Online platform is newer and less mature than digital-first competitors",
+      "No live instruction or tutoring component",
+    ],
+    useCases: [
+      "Student who prefers traditional book-based study with comprehensive guides",
+      "AP exam taker wanting reliable review materials across multiple subjects",
+      "Professional certification candidate looking for affordable study resources",
+    ],
   },
   {
     slug: "testmasters",
@@ -294,6 +416,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "⚡",
     domain: "testmasters.net",
+    pros: [
+      "Intensive analytical training builds deep logical reasoning skills",
+      "Instructors have all scored 172 or above on the actual LSAT",
+      "Rigorous approach prepares students for the most difficult LSAT questions",
+      "Strong track record of significant score improvements",
+    ],
+    cons: [
+      "Intensive format may be overwhelming for students wanting a gentler approach",
+      "Limited to LSAT preparation only",
+      "Course schedule may not accommodate all student availability",
+    ],
+    useCases: [
+      "Serious law school applicant willing to commit to an intensive LSAT program",
+      "Student who needs to build deep analytical skills for logical reasoning sections",
+      "LSAT taker targeting a 170+ score who wants instruction from top scorers",
+    ],
   },
   {
     slug: "powerscore",
@@ -307,6 +445,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "💪",
     domain: "powerscore.com",
+    pros: [
+      "LSAT Bible trilogy is widely regarded as essential LSAT study material",
+      "Comprehensive coverage of Logic Games, Logical Reasoning, and Reading Comprehension",
+      "Full courses, private tutoring, and admissions consulting available",
+      "Strong community and instructor expertise in LSAT strategy",
+    ],
+    cons: [
+      "Books alone may not be sufficient without supplemental practice tests",
+      "Full courses are priced at premium levels",
+      "Primarily focused on LSAT — limited offerings for other exams",
+    ],
+    useCases: [
+      "Law school applicant using the LSAT Bible trilogy as a self-study foundation",
+      "Student seeking comprehensive LSAT preparation from books through tutoring and admissions help",
+      "LSAT taker struggling with Logic Games who needs specialized strategy instruction",
+    ],
   },
   {
     slug: "achievable",
@@ -320,6 +474,22 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "✅",
     domain: "achievable.me",
+    pros: [
+      "Spaced repetition algorithm optimizes retention of exam material",
+      "Adaptive learning focuses study time on weakest areas",
+      "Streamlined platform specifically designed for FINRA and financial exams",
+      "Modern interface with mobile-friendly study experience",
+    ],
+    cons: [
+      "Limited to financial certification exams — not a general test prep platform",
+      "Smaller catalog of exams compared to broader competitors",
+      "Less supplemental material like video lessons compared to larger platforms",
+    ],
+    useCases: [
+      "Finance professional studying for the SIE or Series 7 exam",
+      "Career changer needing to pass FINRA licensing exams efficiently",
+      "Candidate wanting adaptive learning to maximize study time before an exam deadline",
+    ],
   },
   {
     slug: "target-test-prep",
@@ -333,5 +503,21 @@ export const TEST_PREP_TOOLS: TestPrepTool[] = [
     featured: false,
     logo: "🎯",
     domain: "targettestprep.com",
+    pros: [
+      "Specialized in GMAT quantitative preparation with deep concept coverage",
+      "Structured chapter-by-chapter progression builds skills systematically",
+      "Analytics-driven approach identifies weak areas and guides study order",
+      "Strong track record of quant score improvements for dedicated students",
+    ],
+    cons: [
+      "Focused primarily on quantitative — does not cover verbal sections in the same depth",
+      "Self-paced format requires discipline and self-motivation",
+      "Less known than larger brands despite strong results",
+    ],
+    useCases: [
+      "GMAT test-taker wanting to maximize their quantitative score with structured prep",
+      "Student struggling with GMAT math who needs systematic concept building",
+      "GRE quant student seeking data-driven study progression through analytics",
+    ],
   },
 ];

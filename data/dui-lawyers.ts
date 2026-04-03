@@ -26,6 +26,32 @@ export const DUI_LAWYER_CATEGORIES: Record<DUILawyerCategory, { label: string; e
   "dui-defense-strategies": { label: "DUI Defense Strategies", emoji: "🛡️", description: "Firms specializing in challenging breathalyzer accuracy, field sobriety test procedures, blood test chain of custody, and unconstitutional traffic stops to get DUI charges reduced or dismissed.", gradient: "from-violet-600/30 to-purple-800/40" },
 };
 
+export const DUI_LAWYER_EDITORIAL = {
+  title: "How to Choose the Right DUI Lawyer in 2026",
+  intro: `A DUI arrest can result in license suspension, heavy fines, mandatory classes, ignition interlock requirements, and even jail time -- even for a first offense. The specific penalties vary significantly by state, but the consequences extend beyond the courtroom to affect your insurance rates, employment opportunities, and personal record for years. A specialized DUI defense attorney understands the science behind breathalyzer and blood tests, knows how to challenge field sobriety procedures, and can navigate the parallel DMV and criminal court processes that run simultaneously after an arrest.\n\nDUI defense is a highly specialized area of criminal law. Unlike general criminal defense, DUI cases involve technical evidence including blood alcohol content (BAC) testing, retrograde extrapolation calculations, and the calibration records of testing equipment. An experienced DUI attorney knows which challenges are most likely to succeed in your jurisdiction and can identify procedural errors by law enforcement that may lead to evidence being suppressed or charges being reduced.\n\nTiming is critical after a DUI arrest. Most states require you to request a DMV hearing within 7-10 days to contest your license suspension, and failing to act within this window results in an automatic suspension regardless of the criminal case outcome. Consulting with a DUI attorney within the first few days after your arrest gives you the best chance of preserving your driving privileges while building your defense.`,
+  buyerGuide: [
+    "Choose an attorney who focuses primarily on DUI defense rather than a general practice lawyer -- DUI law involves technical scientific and procedural knowledge that generalists typically lack.",
+    "Ask about their experience with cases similar to yours -- first-offense, felony DUI, commercial CDL, or underage cases each require different defense strategies and carry different penalties.",
+    "Verify they handle both the criminal case and the DMV administrative hearing, since these are separate proceedings with different deadlines and different standards of proof.",
+    "Request a clear fee estimate upfront -- DUI defense typically costs $2,000-$5,000 for a first-offense misdemeanor and $5,000-$15,000 or more for felony DUI or cases going to trial.",
+    "Evaluate their familiarity with local courts and prosecutors -- DUI attorneys who regularly practice in your jurisdiction know the tendencies of local judges and the plea bargaining patterns of the district attorney's office.",
+  ],
+  faq: [
+    {
+      question: "Can a DUI charge be dismissed or reduced?",
+      answer: "Yes, depending on the circumstances. Common grounds for dismissal or reduction include improper traffic stop procedures, faulty breathalyzer calibration, broken chain of custody for blood samples, and failure to observe the required 15-20 minute waiting period before breath testing. An experienced DUI attorney will review every aspect of your arrest for potential challenges.",
+    },
+    {
+      question: "What happens to my driver's license after a DUI arrest?",
+      answer: "In most states, your license faces administrative suspension by the DMV separate from the criminal case. You typically have 7-10 days to request a DMV hearing to contest the suspension. If you miss this deadline, your license is automatically suspended. Many states allow a restricted or hardship license for driving to work, and some require an ignition interlock device.",
+    },
+    {
+      question: "Should I refuse a breathalyzer test during a DUI stop?",
+      answer: "This is a complex decision with state-specific consequences. Most states have implied consent laws that impose automatic license suspension for refusal, sometimes longer than the suspension for a failed test. However, refusing eliminates a key piece of prosecution evidence. A DUI attorney in your state can explain the specific trade-offs, but in general, this decision must be made in the moment before legal counsel is available.",
+    },
+  ],
+};
+
 export const DUI_LAWYER_TOOLS: DUILawyerTool[] = [
   {
     slug: "dui-foundation",

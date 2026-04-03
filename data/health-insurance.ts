@@ -26,6 +26,32 @@ export const HEALTH_INSURANCE_CATEGORIES: Record<HealthInsuranceCategory, { labe
   "health-sharing": { label: "Health Sharing Ministries", emoji: "🤝", description: "Faith-based programs where members share medical expenses as an alternative to insurance.", gradient: "from-teal-600/30 to-cyan-800/40" },
 };
 
+export const HEALTH_INSURANCE_EDITORIAL = {
+  title: "How to Choose the Right Health Insurance in 2026",
+  intro: `Health insurance is one of the most important financial decisions you can make, protecting you from catastrophic medical costs while providing access to preventive care, prescriptions, and specialist treatment. The landscape includes employer-sponsored plans, ACA marketplace plans, short-term coverage, supplemental policies, and health sharing ministries — each with distinct tradeoffs in cost, coverage breadth, and provider access.\n\nFor most Americans, the choice comes down to employer-sponsored insurance or an ACA marketplace plan. Employer plans typically offer lower premiums because your employer covers a portion of the cost, while marketplace plans provide income-based subsidies that can make coverage surprisingly affordable for self-employed individuals and those without workplace benefits. Understanding plan tiers — Bronze, Silver, Gold, and Platinum — is essential because they determine how costs are split between premiums and out-of-pocket expenses.\n\nBeyond the basics, factors like provider network size, prescription drug coverage, and out-of-pocket maximums can dramatically affect your actual healthcare costs. A plan with low premiums but a narrow network may cost more overall if your preferred doctors are out of network. Taking the time to compare plans carefully during open enrollment can save thousands of dollars annually.`,
+  buyerGuide: [
+    "Provider network coverage — verify that your current doctors, specialists, and preferred hospitals are in-network before choosing a plan. Out-of-network care can cost two to five times more than in-network rates.",
+    "Total cost of care, not just premiums — compare the combined cost of monthly premiums, deductibles, copays, and coinsurance. A low-premium Bronze plan may cost more overall than a Silver plan if you use healthcare regularly.",
+    "Prescription drug formulary — check that your current medications are covered and at what tier. Moving from a Tier 1 generic to a Tier 3 brand-name drug can add hundreds of dollars per month in copays.",
+    "Out-of-pocket maximum — this is the most you will pay in a year before insurance covers 100% of costs. Lower out-of-pocket maximums provide better financial protection against serious illness or injury.",
+    "Subsidy eligibility for marketplace plans — if your household income is between 100% and 400% of the federal poverty level, premium tax credits and cost-sharing reductions can make Silver plans significantly cheaper than they appear at sticker price.",
+  ],
+  faq: [
+    {
+      question: "When can I enroll in or change my health insurance plan?",
+      answer: "ACA marketplace open enrollment typically runs from November through mid-January. Outside of that window, you can only enroll or switch plans if you experience a qualifying life event such as losing job-based coverage, getting married, having a baby, or moving to a new state.",
+    },
+    {
+      question: "What is the difference between an HMO and a PPO plan?",
+      answer: "An HMO requires you to choose a primary care physician and get referrals for specialists, but typically has lower premiums and copays. A PPO allows you to see any provider without referrals, including out-of-network doctors, but at higher premiums and cost-sharing. PPOs offer more flexibility while HMOs offer lower costs.",
+    },
+    {
+      question: "Is short-term health insurance a good alternative to ACA plans?",
+      answer: "Short-term plans have lower premiums but they are not ACA-compliant, meaning they can deny coverage for pre-existing conditions, exclude essential health benefits, and impose lifetime coverage limits. They are best used as temporary gap coverage between jobs or while waiting for open enrollment, not as a long-term solution.",
+    },
+  ],
+};
+
 export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
   {
     slug: "healthcare-gov",
@@ -119,6 +145,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "💚",
     domain: "humana.com",
+    pros: [
+      "Leading Medicare Advantage provider with extensive plan options for seniors",
+      "Strong wellness and preventive health programs included with plans",
+      "Competitive pricing on marketplace plans in available states",
+      "Dedicated senior health resources and support services",
+    ],
+    cons: [
+      "Individual and employer plan availability is limited compared to larger rivals",
+      "Provider network is narrower than UnitedHealthcare or BCBS in many areas",
+      "Customer service experiences vary by plan type and region",
+    ],
+    useCases: [
+      "Senior shopping for Medicare Advantage with comprehensive wellness benefits",
+      "Retiree wanting a single insurer for Medicare Advantage and supplemental coverage",
+      "Individual in a Humana-strong market looking for competitive ACA plan pricing",
+    ],
   },
   {
     slug: "kaiser-permanente",
@@ -132,6 +174,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "⚕️",
     domain: "kaiserpermanente.org",
+    pros: [
+      "Fully integrated care model with seamless coordination between providers",
+      "Electronic health records shared across all Kaiser doctors and facilities",
+      "Strong focus on preventive medicine often leads to better health outcomes",
+      "Competitive premiums due to efficiency of the integrated system",
+    ],
+    cons: [
+      "Only available in select states primarily on the West Coast and mid-Atlantic",
+      "HMO model requires using Kaiser doctors and hospitals for most care",
+      "Limited provider choice outside the Kaiser network",
+    ],
+    useCases: [
+      "Family in a Kaiser region wanting coordinated care under one system",
+      "Employee whose company offers Kaiser as a group health option",
+      "Health-conscious individual valuing preventive care and integrated services",
+    ],
   },
   {
     slug: "blue-cross-blue-shield",
@@ -145,6 +203,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "✝️",
     domain: "bcbs.com",
+    pros: [
+      "Largest combined provider network in the US covering virtually every area",
+      "Trusted brand recognized by doctors and hospitals nationwide",
+      "Available in all 50 states through independent regional affiliates",
+      "Wide range of plan types from HMO to PPO to high-deductible options",
+    ],
+    cons: [
+      "Each affiliate operates independently so quality and pricing vary by state",
+      "Can be confusing to navigate which BCBS company serves your area",
+      "Premium pricing tends toward the higher end in many markets",
+    ],
+    useCases: [
+      "Employee relocating frequently who needs a nationally recognized network",
+      "Family wanting maximum provider choice with in-network access anywhere",
+      "Employer seeking a nationally trusted brand for group health insurance",
+    ],
   },
   {
     slug: "molina-healthcare",
@@ -158,6 +232,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "❤️",
     domain: "molinahealthcare.com",
+    pros: [
+      "Specializes in affordable coverage for low-income individuals and families",
+      "Strong Medicaid and marketplace presence in multiple states",
+      "Low-premium plan options designed for cost-sensitive consumers",
+      "Focus on underserved communities with culturally responsive care",
+    ],
+    cons: [
+      "Provider networks tend to be narrower than major national insurers",
+      "Plan options and availability are limited to certain states",
+      "Digital tools and member experience lag behind insurtech competitors",
+    ],
+    useCases: [
+      "Low-income family qualifying for Medicaid managed care in a Molina state",
+      "Individual seeking the lowest-cost marketplace plan available",
+      "Community health center patient looking for compatible insurance coverage",
+    ],
   },
   {
     slug: "centene",
@@ -171,6 +261,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "🌎",
     domain: "centene.com",
+    pros: [
+      "Largest Medicaid managed care company providing extensive low-income coverage",
+      "Ambetter marketplace plans are among the most affordable in many states",
+      "Wellcare subsidiary offers strong Medicare Advantage options",
+      "Operates in all 50 states with massive scale and reach",
+    ],
+    cons: [
+      "Brand recognition is low among consumers despite enormous scale",
+      "Provider networks vary significantly by state and plan",
+      "Customer service quality can be inconsistent across subsidiaries",
+    ],
+    useCases: [
+      "Medicaid-eligible individual in a Centene managed care state",
+      "Budget-conscious shopper looking for affordable Ambetter marketplace plans",
+      "Medicare beneficiary considering Wellcare Advantage plan options",
+    ],
   },
   {
     slug: "oscar-health",
@@ -184,6 +290,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "🟡",
     domain: "hioscar.com",
+    pros: [
+      "Best-in-class mobile app and digital member experience",
+      "Free telemedicine visits included with all plans at no copay",
+      "Dedicated care team assigned to each member for personalized support",
+      "Simple plan designs that are easier to understand than traditional insurers",
+    ],
+    cons: [
+      "Available in limited markets — not offered in most states",
+      "Provider networks are smaller than major national carriers",
+      "As a newer company, long-term financial stability is less proven",
+    ],
+    useCases: [
+      "Tech-savvy individual wanting a modern, app-driven insurance experience",
+      "Self-employed professional needing affordable ACA coverage with telemedicine",
+      "Young adult seeking a simple health plan with easy-to-use digital tools",
+    ],
   },
   {
     slug: "ambetter",
@@ -197,6 +319,22 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "💛",
     domain: "ambetterhealth.com",
+    pros: [
+      "Often the lowest-premium option on state and federal exchanges",
+      "Available in over 27 states with broad geographic reach",
+      "ACA-compliant with all essential health benefits included",
+      "Telehealth services included with many plan options",
+    ],
+    cons: [
+      "Provider networks are often narrow to keep premiums low",
+      "Customer service ratings trail more established brands",
+      "Plan designs can be confusing with varying cost-sharing structures",
+    ],
+    useCases: [
+      "Price-sensitive shopper seeking the lowest-premium ACA marketplace plan",
+      "Individual in a state where Ambetter is the only or cheapest exchange option",
+      "Healthy adult wanting basic ACA coverage at minimum cost",
+    ],
   },
   {
     slug: "medi-share",
@@ -210,6 +348,23 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "✝️",
     domain: "medishare.com",
+    pros: [
+      "Monthly costs significantly lower than traditional health insurance premiums",
+      "Largest health sharing ministry with over 400,000 members",
+      "Members choose their own doctors without network restrictions",
+      "Faith-based community approach with shared values among members",
+    ],
+    cons: [
+      "Not technically insurance and not regulated as such",
+      "Pre-existing conditions may not be shared for an initial period",
+      "No guarantee of payment — sharing is voluntary among members",
+      "Does not qualify as minimum essential coverage under the ACA",
+    ],
+    useCases: [
+      "Christian family seeking affordable medical cost sharing aligned with their faith",
+      "Self-employed individual needing lower monthly healthcare costs than traditional insurance",
+      "Healthy person willing to accept risk in exchange for dramatically lower monthly costs",
+    ],
   },
   {
     slug: "liberty-healthshare",
@@ -223,6 +378,23 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "🗽",
     domain: "libertyhealthshare.org",
+    pros: [
+      "Monthly sharing amounts well below traditional insurance premiums",
+      "Multiple sharing levels let members choose their cost-sharing threshold",
+      "Freedom to visit any doctor or hospital without network restrictions",
+      "Community-based approach that appeals to faith-oriented families",
+    ],
+    cons: [
+      "Not regulated as insurance with no legal guarantee of payment",
+      "Has faced financial difficulties and member complaints in recent years",
+      "Pre-existing conditions are subject to waiting periods and limitations",
+      "Annual sharing limits may not cover catastrophic medical events",
+    ],
+    useCases: [
+      "Family of faith seeking an alternative to expensive traditional insurance",
+      "Freelancer needing basic medical cost sharing at a fraction of insurance premiums",
+      "Healthy individual comfortable with limited coverage in exchange for low costs",
+    ],
   },
   {
     slug: "sidecar-health",
@@ -236,5 +408,21 @@ export const HEALTH_INSURANCE_TOOLS: HealthInsuranceTool[] = [
     featured: false,
     logo: "🚗",
     domain: "sidecarhealth.com",
+    pros: [
+      "See any doctor without network restrictions or referral requirements",
+      "Transparent upfront pricing for procedures before you receive care",
+      "Sidecar Health Visa card simplifies payment at point of service",
+      "Modern digital experience with easy-to-understand benefit schedules",
+    ],
+    cons: [
+      "Not ACA-compliant and does not cover all essential health benefits",
+      "Benefit amounts may not cover the full cost of expensive procedures",
+      "Available in limited states compared to major national insurers",
+    ],
+    useCases: [
+      "Individual frustrated with network restrictions wanting to see any doctor",
+      "Consumer who values price transparency and wants to know costs upfront",
+      "Healthy person seeking flexible coverage as an alternative to traditional insurance",
+    ],
   },
 ];

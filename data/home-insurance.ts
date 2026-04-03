@@ -26,6 +26,32 @@ export const HOME_INSURANCE_CATEGORIES: Record<HomeInsuranceCategory, { label: s
   "umbrella": { label: "Umbrella Insurance", emoji: "☂️", description: "Extra liability coverage that extends beyond your home and auto policy limits.", gradient: "from-orange-600/30 to-red-800/40" },
 };
 
+export const HOME_INSURANCE_EDITORIAL = {
+  title: "How to Choose the Right Home Insurance in 2026",
+  intro: `Home insurance protects your most valuable asset against damage from fire, storms, theft, and liability claims. A standard homeowners policy covers your dwelling structure, personal belongings, liability if someone is injured on your property, and additional living expenses if your home becomes uninhabitable. Most mortgage lenders require homeowners insurance as a condition of the loan, but even homeowners without a mortgage need coverage to protect their investment.\n\nThe home insurance market includes traditional carriers with local agent networks, digital-first insurers offering instant quotes and app-based claims, and specialty providers for flood, earthquake, or high-value homes. Premiums vary dramatically based on your location, home age and construction, claims history, deductible choice, and the coverage limits you select. Bundling home and auto insurance with the same carrier typically saves 15-25% on premiums.\n\nUnderstanding what standard policies do and do not cover is critical. Most homeowners policies exclude flood damage, earthquake damage, and normal wear and tear. If you live in a flood zone or earthquake-prone area, you will need separate policies. Reviewing your coverage annually ensures your policy keeps pace with rising home values and replacement costs.`,
+  buyerGuide: [
+    "Dwelling coverage amount — make sure your policy covers the full cost to rebuild your home at current construction prices, not just the market value. Rebuilding costs have risen sharply and many homeowners are underinsured.",
+    "Deductible structure — higher deductibles lower your premium but increase your out-of-pocket cost when you file a claim. A $2,500 deductible versus $1,000 can save 15-20% on premiums if you rarely file claims.",
+    "Replacement cost vs. actual cash value — replacement cost policies pay to replace damaged items at current prices, while actual cash value deducts depreciation. Always choose replacement cost coverage for your dwelling and personal property.",
+    "Bundling discounts — most major insurers offer significant discounts when you bundle home and auto insurance. Get quotes both bundled and standalone to find the true lowest cost.",
+    "Claims process reputation — read reviews specifically about claims handling. A cheap policy from a company that delays or denies legitimate claims offers poor value. Financial strength ratings from AM Best indicate a carrier's ability to pay claims.",
+  ],
+  faq: [
+    {
+      question: "Does home insurance cover flood or earthquake damage?",
+      answer: "No, standard homeowners policies explicitly exclude flood and earthquake damage. You need a separate flood insurance policy, available through the National Flood Insurance Program or private insurers, and a separate earthquake policy if you live in a seismic zone. These are critical gaps that many homeowners overlook.",
+    },
+    {
+      question: "How much home insurance coverage do I need?",
+      answer: "Your dwelling coverage should equal the estimated cost to completely rebuild your home, not its market value or purchase price. Get a rebuild cost estimate from your insurer or a local contractor. For personal property, most policies cover 50-70% of your dwelling limit, but you should inventory your belongings to verify that amount is sufficient.",
+    },
+    {
+      question: "Will filing a claim increase my home insurance premiums?",
+      answer: "Often yes. Filing one claim typically raises premiums by 7-10%, and multiple claims within a few years can lead to much larger increases or even non-renewal. Many homeowners choose higher deductibles and avoid filing small claims to maintain a clean claims history and lower long-term costs.",
+    },
+  ],
+};
+
 export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
   {
     slug: "state-farm-home",
@@ -119,6 +145,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "🗽",
     domain: "libertymutual.com",
+    pros: [
+      "Inflation protection automatically adjusts dwelling coverage with rising costs",
+      "Highly customizable with an extensive range of optional endorsements",
+      "Available nationwide with both agent and direct online service",
+      "Strong bundling discounts when combined with auto insurance",
+    ],
+    cons: [
+      "Base premiums tend to be higher than average without discounts",
+      "Claims handling reviews are mixed compared to top-rated competitors",
+      "Online quote process can require a follow-up call for final pricing",
+    ],
+    useCases: [
+      "Homeowner wanting automatic inflation protection to avoid being underinsured",
+      "Customer looking to customize a policy with specific add-on coverages",
+      "Homeowner bundling with Liberty Mutual auto for maximum discount savings",
+    ],
   },
   {
     slug: "nationwide-home",
@@ -132,6 +174,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "nationwide.com",
+    pros: [
+      "Brand New Belongings coverage replaces items at full new-item cost",
+      "Strong multi-policy bundling discounts across home, auto, and life",
+      "Available through both independent agents and direct channels",
+      "Solid financial strength ratings from major rating agencies",
+    ],
+    cons: [
+      "Not available in every state for homeowners insurance",
+      "Online tools and digital experience trail insurtech competitors",
+      "Premium pricing can be above average in some markets",
+    ],
+    useCases: [
+      "Homeowner wanting full replacement cost coverage without depreciation deductions",
+      "Customer bundling home, auto, and life insurance for maximum savings",
+      "Homeowner preferring to work with a local independent agent",
+    ],
   },
   {
     slug: "amica-home",
@@ -145,6 +203,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "💰",
     domain: "amica.com",
+    pros: [
+      "Consistently earns top customer satisfaction ratings in the industry",
+      "Mutual company structure returns dividends to policyholders",
+      "Competitive premiums with excellent coverage quality",
+      "One of the oldest and most financially stable insurers in the US",
+    ],
+    cons: [
+      "No local agent network — service is primarily phone and online",
+      "Not as widely known as major national brands",
+      "Dividend policies require higher upfront premium payments",
+    ],
+    useCases: [
+      "Homeowner prioritizing customer satisfaction and service quality above all",
+      "Long-term policyholder wanting dividend returns that reduce effective costs",
+      "Customer comfortable managing insurance by phone without a local agent",
+    ],
   },
   {
     slug: "erie-insurance-home",
@@ -158,6 +232,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "🏔️",
     domain: "erieinsurance.com",
+    pros: [
+      "Outstanding customer satisfaction scores among the highest in the industry",
+      "Guaranteed replacement cost coverage rebuilds your home regardless of limit",
+      "Competitive rates that often beat larger national carriers",
+      "Excellent claims experience with highly rated adjusters",
+    ],
+    cons: [
+      "Only available in 12 states in the eastern US and Midwest",
+      "Limited brand recognition outside its operating territory",
+      "Fewer digital self-service tools than insurtech competitors",
+    ],
+    useCases: [
+      "Homeowner in Erie's 12-state territory wanting top-rated coverage at competitive prices",
+      "Family seeking guaranteed replacement cost to protect against total loss",
+      "Customer who values exceptional claims handling and personal service",
+    ],
   },
   {
     slug: "travelers-home",
@@ -171,6 +261,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "☂️",
     domain: "travelers.com",
+    pros: [
+      "Unique green home rebuilding option covers eco-friendly reconstruction",
+      "Cyber protection coverage guards against identity theft and cyber attacks",
+      "Over 160 years of experience and exceptional financial strength",
+      "Wide distribution through independent agents nationwide",
+    ],
+    cons: [
+      "Premiums can be higher than direct-to-consumer competitors",
+      "Agent-dependent model means limited direct online purchasing",
+      "Some specialty coverages require additional riders at extra cost",
+    ],
+    useCases: [
+      "Eco-conscious homeowner wanting green rebuilding coverage after a loss",
+      "Homeowner concerned about identity theft and cyber liability risks",
+      "Customer wanting an established carrier with strong financial stability ratings",
+    ],
   },
   {
     slug: "american-family-home",
@@ -184,6 +290,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "🏠",
     domain: "amfam.com",
+    pros: [
+      "Competitive rates especially strong in Midwest and western states",
+      "Dedicated local agent network with strong community involvement",
+      "Good range of optional endorsements for customized coverage",
+      "Solid bundling discounts when combining home and auto policies",
+    ],
+    cons: [
+      "Limited availability — not offered in all 50 states",
+      "Digital tools and online experience are less polished than competitors",
+      "Claims satisfaction scores are average compared to top-rated insurers",
+    ],
+    useCases: [
+      "Midwest homeowner seeking competitive pricing with local agent support",
+      "Family wanting to bundle home and auto with a community-focused insurer",
+      "Homeowner in American Family's territory looking for customizable endorsements",
+    ],
   },
   {
     slug: "progressive-home",
@@ -197,6 +319,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "📊",
     domain: "progressive.com",
+    pros: [
+      "Easy bundling with Progressive auto insurance for significant discounts",
+      "Comparison shopping through multiple partner carriers from one platform",
+      "Strong online quoting tools make it simple to compare options",
+      "Name Your Price tool helps find coverage within your budget",
+    ],
+    cons: [
+      "Does not underwrite home policies directly — relies on partner carriers",
+      "Claims experience depends on the partner carrier, not Progressive itself",
+      "Less control over policy features than going direct with a home insurer",
+    ],
+    useCases: [
+      "Progressive auto customer wanting to bundle home insurance for savings",
+      "Shopper who wants to compare multiple home insurance carriers in one place",
+      "Budget-conscious homeowner using Name Your Price to find affordable coverage",
+    ],
   },
   {
     slug: "farmers-home",
@@ -210,6 +348,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "🌾",
     domain: "farmers.com",
+    pros: [
+      "Smart Plan Discount rewards customers who bundle multiple Farmers products",
+      "Extensive agent network provides in-person guidance and claims support",
+      "Full range of homeowners, renters, and condo policies available",
+      "Claims process backed by decades of industry experience",
+    ],
+    cons: [
+      "Premiums are often above average compared to direct-to-consumer insurers",
+      "Online tools and digital self-service options lag behind competitors",
+      "Discount qualification can be complex with multiple requirements",
+    ],
+    useCases: [
+      "Homeowner wanting to bundle multiple Farmers products for Smart Plan savings",
+      "Customer preferring face-to-face service with a dedicated local agent",
+      "Renter or condo owner looking for specialized coverage from a major carrier",
+    ],
   },
   {
     slug: "chubb-home",
@@ -223,6 +377,22 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "💎",
     domain: "chubb.com",
+    pros: [
+      "Guaranteed replacement cost coverage with no cap on rebuilding expenses",
+      "White-glove claims service with access to master craftsmen and premium vendors",
+      "Cash settlement option lets you choose your own contractors",
+      "Coverage limits far exceed standard policies for high-value possessions",
+    ],
+    cons: [
+      "Premium pricing designed for high-net-worth clients — not budget-friendly",
+      "Minimum home value requirements exclude average-priced homes",
+      "Not widely available through standard insurance comparison sites",
+    ],
+    useCases: [
+      "Owner of a luxury home needing guaranteed replacement cost without caps",
+      "High-net-worth individual with valuable art, jewelry, and collections to insure",
+      "Homeowner wanting premium claims service with top-tier repair professionals",
+    ],
   },
   {
     slug: "geico-home",
@@ -236,5 +406,21 @@ export const HOME_INSURANCE_TOOLS: HomeInsuranceTool[] = [
     featured: false,
     logo: "🦎",
     domain: "geico.com",
+    pros: [
+      "Easy bundling with GEICO auto insurance for multi-policy discounts",
+      "Single point of contact for managing home and auto together",
+      "Partner carriers include well-known insurers with strong ratings",
+      "Simple online process to get home insurance quotes alongside auto",
+    ],
+    cons: [
+      "Does not underwrite home policies — relies entirely on partner carriers",
+      "Home insurance claims are handled by the partner, not GEICO directly",
+      "Limited ability to customize policy details through the GEICO platform",
+    ],
+    useCases: [
+      "GEICO auto customer wanting convenient home insurance bundling",
+      "Consumer who prefers managing multiple policies through one company",
+      "Homeowner looking for competitive rates through GEICO's partner network",
+    ],
   },
 ];

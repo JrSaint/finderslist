@@ -26,6 +26,32 @@ export const PERSONAL_INJURY_CATEGORIES: Record<PersonalInjuryCategory, { label:
   "premises-liability": { label: "Premises Liability", emoji: "🏢", description: "Lawyers handling slip-and-fall injuries, inadequate security, swimming pool accidents, and other property owner negligence claims.", gradient: "from-teal-600/30 to-cyan-800/40" },
 };
 
+export const PERSONAL_INJURY_EDITORIAL = {
+  title: "How to Choose the Right Personal Injury Lawyer in 2026",
+  intro: `A personal injury lawyer represents individuals who have been physically or psychologically injured due to another party's negligence. These cases span auto accidents, medical malpractice, workplace injuries, defective products, and slip-and-fall incidents. The stakes are high -- serious injuries can result in hundreds of thousands or millions of dollars in medical bills, lost wages, and pain and suffering, and insurance companies employ teams of adjusters and attorneys to minimize what they pay.\n\nMost personal injury attorneys work on a contingency fee basis, typically charging 33% of the settlement or 40% if the case goes to trial. This means you pay nothing upfront and the lawyer only gets paid if they win. While this aligns incentives, it also means the attorney is investing their own time and money in your case, so reputable firms are selective about the cases they accept.\n\nThe quality of your attorney directly impacts your outcome. Studies consistently show that injured individuals who hire lawyers receive significantly higher compensation than those who negotiate directly with insurance companies, even after accounting for attorney fees. Look for firms with specific experience in your type of injury, a track record of taking cases to trial (not just settling), and the financial resources to go up against large insurance companies.`,
+  buyerGuide: [
+    "Specialization in your injury type -- personal injury is a broad field; a lawyer who specializes in car accidents may not be the best choice for a medical malpractice case, which requires medical expert witnesses and different litigation strategies.",
+    "Trial experience and willingness to litigate -- insurance companies offer higher settlements to firms known for taking cases to verdict; ask what percentage of their cases go to trial versus settling.",
+    "Fee structure and expense handling -- understand the contingency percentage, whether it changes if the case goes to trial, and whether litigation expenses (expert witnesses, court fees) are deducted before or after the attorney's cut.",
+    "Resources and case load -- large cases against corporations or insurance companies require significant upfront investment in experts, depositions, and research; make sure the firm has the financial resources and is not handling too many cases to give yours proper attention.",
+    "Communication and client reviews -- read reviews from former clients about responsiveness and communication quality; a common complaint in personal injury is difficulty reaching your own attorney.",
+  ],
+  faq: [
+    {
+      question: "How long does a personal injury case typically take?",
+      answer: "Most personal injury cases settle within 6-18 months. Straightforward car accident claims with clear liability may resolve in a few months, while complex medical malpractice or product liability cases can take 2-4 years, especially if they go to trial. Your attorney should not rush to settle before you reach maximum medical improvement.",
+    },
+    {
+      question: "What is the average personal injury settlement?",
+      answer: "Settlement amounts vary enormously based on injury severity, liability clarity, insurance coverage, and jurisdiction. Minor soft-tissue injuries may settle for $10,000-$25,000, while serious injuries involving surgery or permanent disability routinely settle for $100,000 to over $1 million. Catastrophic injuries and wrongful death cases can result in multi-million dollar verdicts.",
+    },
+    {
+      question: "Should I accept the insurance company's first offer?",
+      answer: "Almost never. Initial offers from insurance adjusters are typically 2-5 times lower than the case's actual value. Adjusters are trained negotiators working to minimize the company's payout. A personal injury attorney can evaluate the true value of your claim based on medical costs, future treatment needs, lost income, and non-economic damages before responding to any offer.",
+    },
+  ],
+};
+
 export const PERSONAL_INJURY_TOOLS: PersonalInjuryTool[] = [
   {
     slug: "morgan-and-morgan",

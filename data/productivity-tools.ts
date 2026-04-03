@@ -33,6 +33,32 @@ export const PRODUCTIVITY_CATEGORIES: Record<ProductivityCategory, { label: stri
   "ai-productivity": { label: "AI Productivity", emoji: "🤖", description: "Use AI to plan your day, schedule meetings, and make smarter use of your time.", gradient: "from-cyan-600/30 to-teal-800/40" },
 };
 
+export const PRODUCTIVITY_EDITORIAL = {
+  title: "How to Choose the Right Productivity Tool in 2026",
+  intro: `Productivity tools help individuals and teams organize work, manage time, communicate effectively, and automate repetitive tasks. The category spans project management platforms, note-taking apps, time trackers, automation tools, team communication software, and AI-powered assistants. With remote and hybrid work now standard, the right productivity stack is no longer a nice-to-have -- it is core infrastructure that determines how efficiently your team operates.\n\nThe challenge is not finding productivity tools but choosing the right combination without creating tool overload. Every new app adds context switching, notification noise, and one more place where information might live. The best approach is to anchor your workflow around one or two primary platforms that cover your core needs and use integrations to connect specialized tools rather than adopting a separate app for every function.\n\nAI-powered productivity tools have emerged as a major category in 2026, with assistants that can schedule meetings, summarize documents, draft communications, and prioritize tasks based on deadlines and context. These tools work best as augmentation layers on top of your existing workflow rather than replacements for fundamental organizational systems.`,
+  buyerGuide: [
+    "Core workflow fit -- identify your primary pain point (task management, note organization, time visibility, or communication) and choose a tool that solves that specific problem exceptionally well rather than a jack-of-all-trades.",
+    "Team adoption and learning curve -- the best productivity tool is the one your team actually uses; prioritize intuitive interfaces and gradual complexity over feature-rich platforms that require weeks of training.",
+    "Integration depth -- evaluate how well the tool connects with your existing stack (email, calendar, file storage, development tools) through native integrations or automation platforms like Zapier.",
+    "Cross-platform availability -- confirm the tool works reliably across desktop, web, and mobile with real-time sync so you can capture ideas and manage tasks regardless of which device you are using.",
+    "Pricing at scale -- many productivity tools offer generous free tiers that become expensive as teams grow; calculate the per-user cost at your current and projected team size to avoid budget surprises.",
+  ],
+  faq: [
+    {
+      question: "Do I need separate tools for project management and note-taking?",
+      answer: "It depends on your workflow complexity. All-in-one platforms like Notion and ClickUp combine project management, documentation, and knowledge bases in a single tool. However, teams with complex project requirements may prefer a dedicated project manager (Asana, Linear) paired with a separate knowledge base (Notion, Confluence) for deeper functionality in each area.",
+    },
+    {
+      question: "How do AI productivity tools actually save time?",
+      answer: "AI productivity tools save time by automating routine tasks like meeting scheduling, email drafting, document summarization, and task prioritization. Tools like Reclaim.ai automatically block focus time on your calendar, while AI assistants can turn meeting recordings into action items. The actual time saved varies, but users typically report recovering 3-5 hours per week on administrative tasks.",
+    },
+    {
+      question: "What is the best productivity tool for a small team?",
+      answer: "For teams under 20 people, tools with generous free tiers and simple setup tend to work best. Notion offers free team wikis and project tracking, Slack provides free messaging with limited history, and Todoist offers robust task management for free. As teams grow, upgrading to paid tiers of these tools or switching to purpose-built solutions like Asana or Linear usually makes sense.",
+    },
+  ],
+};
+
 export const PRODUCTIVITY_TOOLS: ProductivityTool[] = [
   // ── PROJECT MANAGEMENT ───────────────────────────────────────────────────
   {

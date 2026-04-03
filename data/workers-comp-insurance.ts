@@ -26,6 +26,32 @@ export const WORKERS_COMP_CATEGORIES: Record<WorkersCompCategory, { label: strin
   "restaurant": { label: "Restaurant & Hospitality", emoji: "🍽️", description: "Coverage for restaurant workers, kitchen staff, and hospitality industry employees.", gradient: "from-red-600/30 to-rose-800/40" },
 };
 
+export const WORKERS_COMP_EDITORIAL = {
+  title: "How to Choose the Right Workers' Comp Insurance in 2026",
+  intro: `Workers' compensation insurance is legally required in nearly every state for businesses with employees, providing coverage for medical expenses, lost wages, and rehabilitation costs when workers are injured or become ill on the job. Beyond legal compliance, workers' comp protects business owners from potentially devastating lawsuits, since employees who receive workers' comp benefits generally cannot sue their employer for workplace injuries.\n\nPremium costs vary dramatically based on your industry, payroll size, claims history, and state regulations. High-risk industries like construction, manufacturing, and healthcare pay significantly higher rates than office-based businesses. Your Experience Modification Rate (EMR) -- a score based on your company's claims history compared to industry peers -- is the single biggest factor you can control. Companies with fewer claims earn EMR scores below 1.0, which directly reduces premiums.\n\nThe workers' comp market includes traditional insurers, state funds, Professional Employer Organizations (PEOs), and pay-as-you-go providers that base premiums on actual payroll rather than estimates. For small businesses, pay-as-you-go options from providers like Next Insurance or Hourly eliminate large upfront deposits and adjust premiums automatically as your payroll fluctuates, improving cash flow management significantly.`,
+  buyerGuide: [
+    "State compliance requirements -- Workers' comp rules vary by state, including coverage requirements, benefit levels, and whether you can use private insurers or must use the state fund. Verify that your chosen provider is licensed and compliant in every state where you have employees.",
+    "Industry classification accuracy -- Premiums are based on NCCI classification codes that correspond to job risk levels. Ensure your employees are classified correctly, as misclassification can result in overpaying premiums or compliance violations during audits.",
+    "Pay-as-you-go options -- Traditional workers' comp requires estimated annual premiums paid upfront or in installments, with year-end audits that can result in surprise additional charges. Pay-as-you-go providers bill based on actual payroll each pay period, eliminating deposit requirements and audit surprises.",
+    "Claims management quality -- Evaluate the insurer's claims process, including dedicated claims adjusters, return-to-work programs, and how quickly claims are processed. A provider with strong claims management can reduce both claim duration and future premium increases.",
+    "Safety and loss control resources -- The best insurers offer safety training, workplace assessments, and loss prevention resources that help reduce injuries and lower your EMR over time, creating a virtuous cycle of fewer claims and lower premiums.",
+  ],
+  faq: [
+    {
+      question: "Is workers' comp insurance required for small businesses?",
+      answer: "Requirements vary by state. Most states require workers' comp as soon as you hire your first employee, while some allow exemptions for businesses with fewer than 3 to 5 employees. Texas is the only state where workers' comp is truly optional for private employers, though going without carries significant legal liability risk.",
+    },
+    {
+      question: "How are workers' comp premiums calculated?",
+      answer: "Premiums are based on three main factors: your total payroll, the classification codes of your employees' job duties, and your Experience Modification Rate (EMR). The formula is approximately (payroll / 100) x classification rate x EMR. Reducing workplace injuries lowers your EMR, which directly reduces premiums over time.",
+    },
+    {
+      question: "What happens if an employee gets injured and I do not have workers' comp?",
+      answer: "Operating without required workers' comp is illegal in most states and carries severe penalties including fines of $500 to $100,000+, criminal charges in some states, and personal liability for all medical costs and lost wages. You may also lose the protection from employee lawsuits that workers' comp provides.",
+    },
+  ],
+};
+
 export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
   {
     slug: "the-hartford",
@@ -119,6 +145,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🔷",
     domain: "biberk.com",
+    pros: [
+      "Backed by Berkshire Hathaway's exceptional financial strength",
+      "Up to 20% savings by eliminating agent commissions through direct purchase",
+      "Simple online quoting and policy management in minutes",
+      "Straightforward policy language that is easy to understand",
+    ],
+    cons: [
+      "No agent support — must be comfortable buying insurance without professional guidance",
+      "Less personalized service for businesses with complex or unusual coverage needs",
+      "Not available in all states for all business types",
+    ],
+    useCases: [
+      "Small business owner comfortable buying insurance online who wants to save on agent fees",
+      "Startup looking for workers comp backed by Berkshire Hathaway's financial stability",
+      "Business wanting straightforward policy management through a simple online portal",
+    ],
   },
   {
     slug: "pie-insurance",
@@ -132,6 +174,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🥧",
     domain: "pieinsurance.com",
+    pros: [
+      "Technology-driven pricing often undercuts traditional carriers for construction and trades",
+      "Shops your risk across multiple insurance partners to find the best rate",
+      "Streamlined online application designed for quick quoting",
+      "Particularly competitive for industries traditionally facing high premiums",
+    ],
+    cons: [
+      "Acts as a marketplace — actual policy is from a partner carrier",
+      "Limited control over which carrier ultimately writes the policy",
+      "Customer service may involve both Pie and the underwriting carrier",
+    ],
+    useCases: [
+      "Construction contractor comparing workers comp rates across multiple carriers",
+      "Trades business wanting technology-driven pricing that may beat traditional quotes",
+      "Small business in a high-premium industry looking for a more competitive rate",
+    ],
   },
   {
     slug: "hiscox",
@@ -145,6 +203,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🔶",
     domain: "hiscox.com",
+    pros: [
+      "Competitive rates for low-risk professional services and technology companies",
+      "Workers comp bundled with professional liability and business insurance",
+      "Convenient one-stop shop for office-based businesses needing multiple coverages",
+      "Strong expertise in technology, creative, and consulting industries",
+    ],
+    cons: [
+      "Not suited for high-hazard industries like construction or manufacturing",
+      "Limited workers comp features compared to dedicated workers comp carriers",
+      "Claims handling is less specialized than carriers focused exclusively on workers comp",
+    ],
+    useCases: [
+      "Technology company bundling workers comp with professional liability at competitive rates",
+      "Creative agency or consulting firm wanting one insurer for all business coverage",
+      "Office-based business seeking low-risk workers comp with easy bundling options",
+    ],
   },
   {
     slug: "employers-holdings",
@@ -158,6 +232,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🏢",
     domain: "employers.com",
+    pros: [
+      "Exclusive focus on workers compensation for small businesses since 1909",
+      "Competitive rates for low-to-medium hazard industries",
+      "Over a century of specialized workers comp experience",
+      "Available through both independent agents and direct digital channels",
+    ],
+    cons: [
+      "Limited to low-to-medium hazard industries — not suitable for high-risk operations",
+      "Less well-known brand compared to The Hartford or Travelers",
+      "Geographic availability varies by state and business class",
+    ],
+    useCases: [
+      "Small business in a low-hazard industry wanting a dedicated workers comp specialist",
+      "Employer seeking competitive rates from a carrier with over a century of experience",
+      "Business preferring the flexibility to buy through an agent or directly online",
+    ],
   },
   {
     slug: "icw-group",
@@ -171,6 +261,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🌊",
     domain: "icwgroup.com",
+    pros: [
+      "Leading workers comp carrier in California and western states",
+      "Proactive safety consultants assigned to accounts to reduce claim frequency",
+      "Strong track record of reducing claims for policyholders over time",
+      "Deep expertise in construction, agriculture, and manufacturing",
+    ],
+    cons: [
+      "Regional focus means limited availability outside the western US",
+      "Safety program requirements may feel burdensome for very small businesses",
+      "Less suitable for low-risk office-based businesses where safety consulting adds less value",
+    ],
+    useCases: [
+      "California construction company wanting a carrier with strong local safety programs",
+      "Western US agricultural business seeking a regional carrier with industry expertise",
+      "Manufacturer wanting proactive loss prevention to reduce EMR and future premiums",
+    ],
   },
   {
     slug: "zenith-national",
@@ -184,6 +290,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🏔️",
     domain: "thezenith.com",
+    pros: [
+      "Deep expertise in high-hazard industries including construction, agriculture, and trucking",
+      "Backed by Zurich Financial Services for strong financial stability",
+      "Proactive claims management reduces claim duration and costs",
+      "Specialists who understand the nuances of high-risk industry operations",
+    ],
+    cons: [
+      "Focused on high-hazard industries — less competitive for low-risk businesses",
+      "Aggressive underwriting approach may not suit all employers",
+      "Limited geographic availability in some states",
+    ],
+    useCases: [
+      "Construction firm needing a carrier that specializes in high-hazard operations",
+      "Agricultural business wanting workers comp from a carrier that understands farm operations",
+      "Trucking company seeking specialized workers comp with proactive claims management",
+    ],
   },
   {
     slug: "applied-underwriters",
@@ -197,6 +319,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "📈",
     domain: "applieduw.com",
+    pros: [
+      "Unique EquityComp program lets employers share in underwriting profits from low claims",
+      "Performance-based model aligns insurer and employer incentives for safety",
+      "Backed by Berkshire Hathaway for exceptional financial stability",
+      "Can significantly reduce net workers comp costs for safety-conscious businesses",
+    ],
+    cons: [
+      "EquityComp program complexity requires careful evaluation before committing",
+      "Profit-sharing benefits only materialize if claims remain low",
+      "Not suitable for businesses with inconsistent or unpredictable claims history",
+    ],
+    useCases: [
+      "Safety-conscious employer wanting to share in underwriting profits when claims are low",
+      "Business with a strong safety record looking for a performance-based premium structure",
+      "Company wanting financial incentives aligned with maintaining a safe workplace",
+    ],
   },
   {
     slug: "compone-administrators",
@@ -210,6 +348,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "⚙️",
     domain: "compone.com",
+    pros: [
+      "Specialized TPA services give self-insured employers more control over workers comp costs",
+      "Claims administration expertise reduces claim duration and total costs",
+      "Medical cost containment programs help control healthcare spending",
+      "Return-to-work coordination gets injured employees back on the job faster",
+    ],
+    cons: [
+      "Only relevant for self-insured employers or group programs — not traditional insurance",
+      "Requires sufficient scale to justify self-insurance and TPA management",
+      "Self-insurance carries more financial risk than traditional workers comp policies",
+    ],
+    useCases: [
+      "Large employer wanting to self-insure and use a specialized TPA for claims management",
+      "Healthcare organization managing workers comp through a group self-insurance program",
+      "Company wanting more control over claims outcomes than traditional insurance provides",
+    ],
   },
   {
     slug: "cerity",
@@ -223,6 +377,22 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🌟",
     domain: "cerity.com",
+    pros: [
+      "Instant online quotes with same-day coverage available",
+      "Digital certificate management for instant proof of insurance",
+      "Backed by EMPLOYERS with established carrier financial strength",
+      "Modern tech platform makes policy management simple and fast",
+    ],
+    cons: [
+      "Best suited for low-risk small businesses with standard operations",
+      "Limited ability to handle complex or high-hazard business classifications",
+      "No agent support for businesses wanting personalized guidance",
+    ],
+    useCases: [
+      "Low-risk small business needing workers comp immediately with same-day coverage",
+      "Contractor wanting instant digital certificates for a job site compliance requirement",
+      "Small business owner preferring modern digital insurance management over traditional agents",
+    ],
   },
   {
     slug: "state-fund",
@@ -236,5 +406,21 @@ export const WORKERS_COMP_TOOLS: WorkersCompTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "statefundca.com",
+    pros: [
+      "Required to accept all eligible employers — insurer of last resort for high-risk businesses",
+      "Government-operated with transparent and regulated rate structures",
+      "Available to employers who have been declined by private market carriers",
+      "Safety and loss prevention resources often included for policyholders",
+    ],
+    cons: [
+      "Premiums are often higher than private market alternatives for standard risks",
+      "Government bureaucracy can mean slower claims processing and service",
+      "Less flexibility in policy terms and premium payment options",
+    ],
+    useCases: [
+      "High-risk business that has been declined by multiple private workers comp carriers",
+      "New construction company unable to obtain private market coverage due to no claims history",
+      "Employer needing workers comp coverage immediately when no private options are available",
+    ],
   },
 ];

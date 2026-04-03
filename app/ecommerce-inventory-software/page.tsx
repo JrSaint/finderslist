@@ -7,9 +7,13 @@ import {
   getEcommerceInventoryCategoryCount,
   filterEcommerceInventoryTools,
 } from "@/lib/ecommerce-inventory-software";
+import { ECOMMERCE_INVENTORY_EDITORIAL } from "@/data/ecommerce-inventory-software";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function EcommerceInventoryPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={ECOMMERCE_INVENTORY_EDITORIAL.title}
+            intro={ECOMMERCE_INVENTORY_EDITORIAL.intro}
+            buyerGuide={ECOMMERCE_INVENTORY_EDITORIAL.buyerGuide}
+            faq={ECOMMERCE_INVENTORY_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={ECOMMERCE_INVENTORY_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/ecommerce-inventory-software"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function EcommerceInventoryPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

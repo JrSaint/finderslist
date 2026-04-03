@@ -64,6 +64,32 @@ export const ATS_CATEGORIES: Record<
   },
 };
 
+export const ATS_EDITORIAL = {
+  title: "How to Choose the Right Applicant Tracking System in 2026",
+  intro: `An applicant tracking system (ATS) is the central hub for managing your hiring process — from posting jobs and sourcing candidates to screening resumes, scheduling interviews, and extending offers. If you're still managing hiring through email, spreadsheets, or sticky notes, an ATS will immediately save your recruiting team hours per week and help you avoid losing qualified candidates in the chaos.\n\nThe ATS market serves every scale of employer. Small businesses can start with affordable tools like Breezy HR or JazzHR for under $200/month, while mid-market and enterprise companies need platforms like Greenhouse, Lever, or iCIMS that handle complex workflows, compliance requirements, and high-volume recruiting. The right choice depends on your hiring volume, team size, and how structured your recruiting process needs to be.\n\nModern ATS platforms have evolved far beyond simple resume databases. Today's leading tools include built-in sourcing, AI-powered candidate matching, automated interview scheduling, structured scorecards, DEI analytics, and integrations with hundreds of HR tools. The best systems don't just track applicants — they actively help you hire better and faster.`,
+  buyerGuide: [
+    "Ease of use for recruiters and hiring managers — if hiring managers won't log in to review candidates and leave feedback, the system fails regardless of its features; prioritize intuitive interfaces.",
+    "Job board distribution — evaluate which free and paid job boards the ATS posts to automatically, and whether it supports your industry-specific boards and social channels.",
+    "Reporting and compliance — look for EEO/OFCCP compliance reporting, GDPR data handling, and analytics on time-to-hire, source effectiveness, and pipeline conversion rates.",
+    "Interview scheduling automation — tools that sync with calendars and let candidates self-schedule can eliminate the back-and-forth that slows down hiring and frustrates both recruiters and applicants.",
+    "Integration ecosystem — your ATS should connect seamlessly with your HRIS, background check provider, assessments, video interviewing tools, and communication platforms like Slack and email.",
+  ],
+  faq: [
+    {
+      question: "At what company size should I start using an ATS?",
+      answer: "Most companies benefit from an ATS once they're hiring more than 5-10 people per year. Below that, simple tools may suffice, but even small businesses gain from structured tracking, consistent candidate communication, and compliance documentation that an ATS provides.",
+    },
+    {
+      question: "Will an ATS reject qualified candidates automatically?",
+      answer: "Poorly configured ATS keyword filters can screen out good candidates, but modern systems use AI matching and scoring rather than rigid keyword gates. The key is proper configuration — use the tool to surface top candidates rather than auto-reject those who don't match every requirement.",
+    },
+    {
+      question: "How long does it take to implement an ATS?",
+      answer: "Simple ATS platforms can be set up in a day. Enterprise systems with custom workflows, integrations, and data migration typically take 4-12 weeks. Most vendors offer implementation support, and many provide dedicated onboarding specialists to configure the system for your process.",
+    },
+  ],
+};
+
 export const ATS_TOOLS: ATSTool[] = [
   {
     slug: "greenhouse",
@@ -258,6 +284,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/ashby.svg",
     domain: "ashbyhq.com",
+    pros: ["Best-in-class recruiting analytics with real-time pipeline insights", "Powerful multi-interviewer scheduling that handles complex coordination", "Modern, fast interface that recruiters and hiring managers enjoy using", "Built-in CRM for proactive talent pipeline management", "Competitive pricing relative to the feature depth offered"],
+    cons: ["Smaller integration ecosystem than Greenhouse or Lever", "Newer platform — still building out some features", "Less established brand may require internal buy-in at larger organizations", "Occasional rough edges as the product evolves quickly"],
+    useCases: ["Data-driven recruiting team wanting real-time analytics on pipeline velocity and source effectiveness", "Engineering-heavy company needing automated multi-panel interview scheduling", "Growing tech company seeking a modern ATS with built-in CRM at a competitive price"],
   },
   {
     slug: "recruitee",
@@ -282,6 +311,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/recruitee.svg",
     domain: "recruitee.com",
+    pros: ["Visual kanban pipeline gives instant candidate status visibility", "Built-in careers site builder with employer branding customization", "Collaborative evaluation tools drive hiring manager adoption", "CRM for talent pool management and future candidate nurturing", "Free trial allows full evaluation before committing"],
+    cons: ["Less advanced structured hiring methodology than Greenhouse", "Analytics depth trails behind Ashby and enterprise ATS platforms", "Smaller integration ecosystem than market leaders", "Sourcing capabilities are limited compared to platforms with AI matching"],
+    useCases: ["Growing company with 50-200 employees wanting collaborative hiring with employer branding", "Marketing team building a branded careers page that reflects company culture", "HR team needing a visual pipeline that hiring managers will actually use without training"],
   },
   {
     slug: "breezy-hr",
@@ -306,6 +338,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/breezy.svg",
     domain: "breezy.hr",
+    pros: ["Free tier available for basic recruiting — rare among ATS platforms", "Drag-and-drop pipeline management is intuitive and visual", "Automation triggers for stage progression, emails, and task assignments", "Posts to 50+ job boards from a single interface", "Quick setup — most teams are operational within a day"],
+    cons: ["Analytics and reporting are lightweight compared to premium ATS tools", "Candidate experience portal is basic and less customizable", "Structured hiring and interview scorecard features are limited", "Scaling beyond small teams may require upgrading to more capable platforms"],
+    useCases: ["Startup with 5-20 employees needing a free ATS to replace spreadsheet recruiting", "Small business automating candidate email sequences when they move between stages", "Team wanting a modern visual pipeline without the cost of Greenhouse or Lever"],
   },
   {
     slug: "smartrecruiters",
@@ -329,6 +364,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/smartrecruiters.svg",
     domain: "smartrecruiters.com",
+    pros: ["Marketplace of integrated recruiting tools for sourcing, assessment, and screening", "Multi-language careers sites support global hiring operations", "SmartAssistant AI helps match candidates and automate screening", "Internal mobility features fill roles from existing workforce first", "Enterprise-grade compliance for multinational organizations"],
+    cons: ["Enterprise pricing puts it out of reach for small businesses", "Implementation can be complex and time-consuming", "Some marketplace integrations work more smoothly than others", "Platform complexity exceeds what simpler recruiting operations need"],
+    useCases: ["Global enterprise needing multi-language career sites and compliance across countries", "Large company prioritizing internal mobility before external hiring", "Organization wanting a marketplace of integrated recruiting tools from one vendor"],
   },
   {
     slug: "jobvite",
@@ -352,6 +390,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/jobvite.svg",
     domain: "jobvite.com",
+    pros: ["Strong employee referral engine — one of the best in the category", "Broad suite covering recruiting marketing, ATS, video interviewing, and onboarding", "CRM and marketing capabilities for building employer brand", "Configurable pipelines with collaborative hiring tools", "Well-suited for mid-market organizations with diverse recruiting needs"],
+    cons: ["Acquired products mean inconsistent UX across modules", "Some modules feel more mature than others", "Implementation complexity reflects the platform's breadth", "Pricing is mid-market and above — not suited for small businesses"],
+    useCases: ["Company running a large employee referral program to reduce cost-per-hire", "Mid-market organization needing recruiting marketing alongside ATS functionality", "HR team wanting video interviewing and onboarding in the same platform as their ATS"],
   },
   {
     slug: "icims",
@@ -375,6 +416,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/icims.svg",
     domain: "icims.com",
+    pros: ["Handles massive candidate volumes with configurable enterprise workflows", "Strong compliance framework for regulated industries like healthcare and finance", "Comprehensive career site builder with personalization capabilities", "Robust integration ecosystem with enterprise HR systems", "Proven at scale with major enterprise deployments worldwide"],
+    cons: ["Expensive and complex — requires dedicated administrators", "Interface is functional but not as modern as newer competitors", "Implementation requires significant time and resources", "Overkill for organizations with moderate hiring volumes"],
+    useCases: ["Healthcare system hiring thousands of nurses and clinicians annually with strict compliance requirements", "Financial services firm needing audit trails and regulatory compliance in its hiring process", "Enterprise with 10,000+ employees and high-volume recruiting across multiple locations"],
   },
   {
     slug: "hirevue",
@@ -398,6 +442,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/hirevue.svg",
     domain: "hirevue.com",
+    pros: ["Science-backed structured interviews with validated assessment criteria", "On-demand video interviews screen large candidate pools efficiently", "Game-based assessments evaluate cognitive abilities without traditional testing bias", "Coding challenges built in for technical role evaluations", "Integrates with major ATS platforms for seamless workflow"],
+    cons: ["Enterprise pricing makes it inaccessible for small and mid-size companies", "Lingering perception issues from discontinued AI facial analysis controversy", "On-demand format can feel impersonal to candidates if not introduced well", "Setup and configuration require meaningful investment to get right"],
+    useCases: ["Fortune 500 company screening 50,000+ applicants annually with structured video interviews", "Campus recruiting team evaluating hundreds of candidates with standardized assessments", "Technical hiring team using coding challenges to pre-screen software engineering applicants"],
   },
   {
     slug: "spark-hire",
@@ -422,6 +469,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/sparkhire.svg",
     domain: "sparkhire.com",
+    pros: ["Accessible pricing makes video interviewing available to midsize companies", "One-way interviews let candidates record on their own schedule", "Collaborative rating tools enable team-based evaluation of recordings", "Straightforward interface that candidates find easy to navigate", "Integrates with most popular ATS platforms"],
+    cons: ["Analytics are basic compared to enterprise tools like HireVue", "One-way interview format can feel impersonal to some candidates", "Limited assessment capabilities beyond video interviewing", "Feature set is narrower than platforms that combine video with full ATS"],
+    useCases: ["Midsize company adding asynchronous video screening to reduce first-round interview time", "Recruiting team evaluating remote candidates across time zones with one-way video", "Hiring manager reviewing and rating candidate video responses collaboratively with their team"],
   },
   {
     slug: "vidcruiter",
@@ -445,6 +495,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/vidcruiter.svg",
     domain: "vidcruiter.com",
+    pros: ["Combines video interviewing with automated digital reference checking", "Structured interview tools with customizable rating criteria", "Proctoring capabilities for skills assessments and testing", "Automated scheduling reduces recruiter coordination overhead", "Mid-market pricing is more accessible than enterprise-only alternatives"],
+    cons: ["Interface could be more modern and polished", "Breadth of features creates a steeper learning curve", "Smaller brand recognition than HireVue or Spark Hire", "Some integrations require custom configuration"],
+    useCases: ["Organization wanting video interviewing and automated reference checking in one platform", "Company conducting proctored skills assessments for technical or certification-based roles", "HR team replacing manual reference phone calls with digital reference collection"],
   },
   {
     slug: "paradox",
@@ -468,6 +521,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/paradox.svg",
     domain: "paradox.ai",
+    pros: ["Conversational AI (Olivia) automates screening, scheduling, and FAQ responses", "Natural language interactions feel more engaging than traditional application forms", "Handles high-volume recruiting tasks without recruiter intervention", "Works across text, web chat, and messaging platforms", "Particularly effective for retail, hospitality, and healthcare hiring"],
+    cons: ["AI can struggle with complex or nuanced candidate questions", "Implementation requires careful configuration of conversation flows", "Enterprise pricing reflects the automation value — not suited for small employers", "Less effective for senior or specialized roles requiring human judgment"],
+    useCases: ["Retail chain automating initial candidate screening for 10,000+ seasonal hires", "Healthcare system using conversational AI to schedule nurse interviews 24/7", "Restaurant group reducing time-to-hire by automating candidate communication via text"],
   },
   {
     slug: "phenom",
@@ -491,6 +547,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/phenom.svg",
     domain: "phenom.com",
+    pros: ["AI-personalized career site experience tailored to each visitor", "Internal mobility features help fill roles from existing workforce", "Comprehensive talent CRM for candidate relationship management", "Employee referral and alumni engagement tools included", "Strong AI matching between candidates and relevant open roles"],
+    cons: ["Enterprise complexity, pricing, and implementation requirements", "AI capabilities require training data and tuning for optimal performance", "Some modules feel more mature than others", "Platform breadth can be overwhelming for smaller organizations"],
+    useCases: ["Enterprise building personalized career sites that adapt content based on visitor behavior", "Large company filling 30% of roles internally through talent marketplace features", "Global organization creating a unified talent experience across hiring, mobility, and alumni"],
   },
   {
     slug: "eightfold-ai",
@@ -514,6 +573,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/eightfold.svg",
     domain: "eightfold.ai",
+    pros: ["Deep learning analyzes billions of profiles for skills-based matching", "Talent Insights reveals workforce skill gaps and market availability", "Diversity-focused features reduce bias by focusing on skills over pedigree", "Career trajectory analysis predicts candidate potential beyond current experience", "Comprehensive workforce planning and internal mobility capabilities"],
+    cons: ["Enterprise pricing requires significant investment", "AI recommendations need substantial data integration for optimal performance", "Some organizations find AI suggestions require heavy human review", "Complex implementation with long deployment timelines"],
+    useCases: ["Enterprise using deep learning to identify candidates with transferable skills across industries", "HR team conducting skills gap analysis to plan workforce development initiatives", "Large organization reducing hiring bias with AI that evaluates potential over pedigree"],
   },
   {
     slug: "indeed-for-employers",
@@ -537,6 +599,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/indeed.svg",
     domain: "indeed.com",
+    pros: ["Largest job site in the world with unmatched inbound candidate volume", "Free job posting option makes it accessible for any business size", "Pay-per-application and pay-per-click models give spending control", "Massive candidate database for proactive resume searching", "Built-in basic ATS handles screening questions and communication"],
+    cons: ["Free postings generate high volumes of unqualified applicants", "Sponsored posting costs escalate quickly in competitive markets", "Built-in ATS is basic — most companies need a dedicated ATS alongside it", "Less effective for senior or highly specialized roles"],
+    useCases: ["Small business posting a free job listing to attract local candidates quickly", "Company using sponsored listings to fill high-volume hourly positions", "Recruiter searching Indeed's resume database to find passive candidates for open roles"],
   },
   {
     slug: "linkedin-recruiter",
@@ -560,6 +625,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/linkedin.svg",
     domain: "linkedin.com",
+    pros: ["Access to 900M+ professional profiles — largest professional network globally", "Advanced Boolean search with dozens of filters for precise candidate targeting", "InMail system provides direct outreach to passive candidates", "Pipeline management and analytics track sourcing effectiveness", "Essential tool for professional and white-collar recruiting"],
+    cons: ["Expensive per-seat licensing can run thousands per year", "InMail response rates have declined due to recruiter message saturation", "Less effective for blue-collar, hourly, or industries with low LinkedIn adoption", "Requires dedicated time investment to build effective outreach campaigns"],
+    useCases: ["Tech recruiter sourcing senior software engineers with specific skill sets", "Executive search firm targeting VP-level candidates with precise filter criteria", "Recruiting team running targeted InMail campaigns for hard-to-fill specialized roles"],
   },
   {
     slug: "ziprecruiter",
@@ -583,6 +651,9 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/ziprecruiter.svg",
     domain: "ziprecruiter.com",
+    pros: ["AI matching proactively invites qualified candidates to apply", "Distributes postings to 100+ job boards automatically", "Simple, fast interface well-suited for small business owners", "Both free and sponsored posting options available", "Invite-to-apply feature surfaces candidates who might not have found the listing"],
+    cons: ["Less effective for senior or highly specialized positions", "Basic built-in ATS means growing companies will need a dedicated system", "Sponsored post costs can escalate without careful budget management", "Candidate quality from broad distribution can be inconsistent"],
+    useCases: ["Small business distributing a job posting across 100+ boards with one click", "Hiring manager using AI-matched invite-to-apply to increase applicant quality", "Restaurant owner finding hourly staff quickly through broad job distribution and AI matching"],
   },
   {
     slug: "comeet",
@@ -606,5 +677,8 @@ export const ATS_TOOLS: ATSTool[] = [
     featured: false,
     logo: "/logos/comeet.svg",
     domain: "comeet.com",
+    pros: ["Excellent multi-interviewer scheduling handles complex panel coordination", "Structured evaluation framework ensures consistent candidate assessment", "Collaborative tools make team-based hiring smooth and organized", "More accessible pricing than Greenhouse or Lever for growing companies", "Focus on engineering hiring aligns well with technical recruiting needs"],
+    cons: ["Smaller integration ecosystem than major ATS platforms", "Candidate sourcing capabilities are basic without CRM or AI features", "Less brand recognition may require stakeholder education during selection", "Limited advanced analytics compared to data-focused competitors like Ashby"],
+    useCases: ["Engineering-heavy startup needing efficient multi-interviewer scheduling for technical panels", "Growing tech company with 100-500 employees wanting collaborative evaluation tools", "Team prioritizing scheduling efficiency and structured feedback for consistent hiring decisions"],
   },
 ];

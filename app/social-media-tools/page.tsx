@@ -8,9 +8,13 @@ import {
   filterSocialMediaTools,
   SOCIAL_MEDIA_ROLES,
 } from "@/lib/social-media-tools";
+import { SOCIAL_MEDIA_EDITORIAL } from "@/data/social-media-tools";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -97,6 +101,25 @@ export default async function SocialMediaToolsPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={SOCIAL_MEDIA_EDITORIAL.title}
+            intro={SOCIAL_MEDIA_EDITORIAL.intro}
+            buyerGuide={SOCIAL_MEDIA_EDITORIAL.buyerGuide}
+            faq={SOCIAL_MEDIA_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={SOCIAL_MEDIA_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/social-media-tools"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -153,9 +176,6 @@ export default async function SocialMediaToolsPage({ searchParams }: Props) {
                 {featured.map((tool) => (<ToolCard key={tool.slug} tool={tool as never} basePath="/social-media-tools" />))}
               </div>
             </section>
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

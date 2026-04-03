@@ -31,6 +31,32 @@ export const ESTATE_PLANNING_CATEGORIES: Record<EstatePlanningCategory, { label:
   "digital-estate": { label: "Digital Estate", emoji: "💻", description: "Manage digital assets, online accounts, and digital legacy planning.", gradient: "from-rose-600/30 to-red-800/40" },
 };
 
+export const ESTATE_PLANNING_EDITORIAL = {
+  title: "How to Choose the Right Estate Planning Service in 2026",
+  intro: `Estate planning ensures your assets are distributed according to your wishes, your family is protected, and your healthcare preferences are honored if you become incapacitated. Despite its importance, more than half of American adults do not have a will or any estate planning documents in place. Modern online estate planning services have made it dramatically more accessible and affordable to create legally valid wills, trusts, powers of attorney, and healthcare directives without the traditional cost of hiring an attorney.\n\nThe estate planning landscape ranges from DIY online platforms that guide you through document creation for under $200, to full-service estate planning attorneys who develop comprehensive plans for $1,500-$5,000 or more. Online platforms work well for straightforward situations -- a single-state family with standard asset distribution wishes. Complex estates involving business ownership, blended families, multi-state property, or significant wealth benefit from personalized attorney guidance.\n\nBeyond wills and trusts, a complete estate plan includes financial powers of attorney (authorizing someone to manage your finances if you cannot), healthcare directives (specifying your medical treatment preferences), and beneficiary designations on retirement accounts and life insurance. Digital estate planning -- managing online accounts, cryptocurrency, and digital assets after death -- has also become an important consideration as more of our lives exist online.`,
+  buyerGuide: [
+    "Assess the complexity of your estate -- online platforms are ideal for straightforward situations, but blended families, business ownership, multi-state property, or estates above the federal estate tax threshold benefit from attorney guidance.",
+    "Verify that documents are state-specific -- estate planning laws vary significantly by state, and a generic template may not comply with your state's requirements for witness signatures, notarization, or specific legal language.",
+    "Look for platforms that include ongoing updates -- laws change, and life events like marriage, divorce, births, and property purchases require document revisions, so choose a service that makes updates easy and affordable.",
+    "Ensure the service covers all essential documents -- a will alone is not a complete estate plan; you also need powers of attorney, healthcare directives, and potentially a living trust depending on your state and asset structure.",
+    "Check whether attorney review is included or available as an add-on -- even with online platforms, having an attorney review your completed documents provides an additional layer of assurance that everything is properly drafted.",
+  ],
+  faq: [
+    {
+      question: "Do I need a will or a trust?",
+      answer: "A will directs asset distribution and names guardians for minor children but must go through probate court. A revocable living trust avoids probate, provides privacy, and takes effect immediately if you become incapacitated. Trusts are particularly valuable in states with expensive or slow probate processes like California and New York, or if you own real estate in multiple states.",
+    },
+    {
+      question: "Are online wills and trusts legally valid?",
+      answer: "Yes, documents created through reputable online platforms are legally valid when properly signed and witnessed according to your state's requirements. Most states require two witnesses for wills, and some also require notarization. The platforms guide you through the execution process to ensure compliance with your state's specific formalities.",
+    },
+    {
+      question: "How often should I update my estate plan?",
+      answer: "Review your estate plan every 3-5 years or after any major life event including marriage, divorce, birth of a child, death of a beneficiary, significant changes in net worth, moving to a new state, or changes in tax law. Outdated documents can cause unintended consequences that are difficult or impossible to correct after death.",
+    },
+  ],
+};
+
 export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
   // ── WILLS & TRUSTS ──────────────────────────────────────────────────────
   {
@@ -167,6 +193,24 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: true,
     logo: "🕊️",
     domain: "freewill.com",
+    pros: [
+      "Completely free — no hidden fees or upsells whatsoever",
+      "Legally valid wills created in about 20 minutes",
+      "Option to include charitable bequests to participating nonprofit partners",
+      "Simple, clean interface accessible to anyone regardless of legal knowledge",
+      "Funded by nonprofit partnerships rather than user fees",
+    ],
+    cons: [
+      "Limited to basic wills — no living trusts or advanced estate planning",
+      "No attorney review or legal advice available",
+      "Charitable bequest prompts may feel pressure-like to some users",
+      "Document storage and updates are not included long-term",
+    ],
+    useCases: [
+      "Individual wanting a free, legally valid will without any financial commitment",
+      "Person creating a basic will while also leaving a charitable legacy",
+      "Anyone who has been putting off estate planning due to cost concerns",
+    ],
   },
   // ── POWER OF ATTORNEY ───────────────────────────────────────────────────
   {
@@ -181,6 +225,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "✅",
     domain: "willing.com",
+    pros: [
+      "Completely free will creation backed by MetLife",
+      "Streamlined process focused on essentials without overwhelming options",
+      "Covers beneficiary designation, guardianship, and asset distribution",
+      "Completes in minutes with a clean, simple interface",
+    ],
+    cons: [
+      "Very basic — lacks advanced estate planning features like trusts",
+      "No attorney review or legal consultation available",
+      "Limited document types beyond basic wills",
+      "MetLife backing may include insurance product suggestions",
+    ],
+    useCases: [
+      "Person needing the simplest possible free will for a straightforward estate",
+      "Young adult creating a basic will for the first time",
+      "Parent wanting to quickly designate guardianship for minor children",
+    ],
   },
   {
     slug: "tomorrow",
@@ -194,6 +255,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🌅",
     domain: "tomorrow.me",
+    pros: [
+      "Combines estate planning and life insurance in one mobile app",
+      "Free wills and guardianship documents for families",
+      "Mobile-first design lets parents complete everything from their phone",
+      "Addresses two major family financial gaps in a single session",
+    ],
+    cons: [
+      "Estate planning features are basic compared to dedicated platforms",
+      "Life insurance quoting may feel like a cross-sell to some users",
+      "Limited trust options and advanced estate planning features",
+      "Smaller company with less established track record",
+    ],
+    useCases: [
+      "New parent wanting to set up both a will and life insurance on their phone",
+      "Young family checking off estate planning and life insurance in one sitting",
+      "Budget-conscious parent needing free estate documents with optional insurance",
+    ],
   },
   {
     slug: "gentreo",
@@ -207,6 +285,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🔐",
     domain: "gentreo.com",
+    pros: [
+      "Encrypted digital vault securely stores and shares estate documents",
+      "Designated family members receive access when documents are needed",
+      "Creates wills, power of attorney, and healthcare proxy in one session",
+      "Focus on document accessibility during emergencies sets it apart",
+    ],
+    cons: [
+      "Less well-known than LegalZoom or Trust & Will",
+      "Annual subscription required for ongoing vault access",
+      "Estate planning features are basic compared to specialized platforms",
+      "No attorney review included in the base service",
+    ],
+    useCases: [
+      "Family wanting to securely store and share estate documents digitally",
+      "Individual ensuring their healthcare proxy and POA are accessible to agents in an emergency",
+      "Person creating estate documents with a focus on secure sharing with family members",
+    ],
   },
   // ── HEALTHCARE DIRECTIVES ───────────────────────────────────────────────
   {
@@ -221,6 +316,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🎓",
     domain: "estateguru.co",
+    pros: [
+      "Educational approach explains estate planning concepts before you make decisions",
+      "Guided process helps users understand probate, trusts, and beneficiary implications",
+      "Covers wills, trusts, healthcare directives, and beneficiary planning",
+      "Helps users make informed choices rather than just filling in templates",
+    ],
+    cons: [
+      "Smaller platform with less market presence than major competitors",
+      "Educational content can make the process longer than bare-bones alternatives",
+      "No attorney review or legal consultation included",
+      "Limited document storage and sharing features",
+    ],
+    useCases: [
+      "Person wanting to understand estate planning concepts before creating documents",
+      "Individual learning the difference between wills, trusts, and probate avoidance strategies",
+      "User who values education alongside document creation for informed decision-making",
+    ],
   },
   {
     slug: "do-your-own-will",
@@ -234,6 +346,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "✍️",
     domain: "doyourownwill.com",
+    pros: [
+      "Completely free state-specific will templates — no payment required",
+      "Step-by-step guidance through each section of the will",
+      "Explains witnessing and notarization requirements for each state",
+      "Print at home — no account creation necessary",
+    ],
+    cons: [
+      "Very basic templates with limited customization options",
+      "No digital storage, sharing, or ongoing update capabilities",
+      "No attorney review or legal advice available",
+      "Only covers basic wills — no trusts, POA, or healthcare directives",
+    ],
+    useCases: [
+      "Person wanting to create a free will immediately without any sign-up",
+      "Individual with a simple estate needing a basic, state-specific will template",
+      "Someone wanting to print a will at home to get basic protections in place quickly",
+    ],
   },
   // ── ESTATE ADMINISTRATION ───────────────────────────────────────────────
   {
@@ -248,6 +377,24 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🎂",
     domain: "joincake.com",
+    pros: [
+      "Comprehensive end-of-life planning beyond just legal documents",
+      "Covers advance directives, funeral wishes, and digital legacy in one platform",
+      "Completely free with no paid tier or upsells",
+      "Share plans with family members so they know your wishes",
+      "Treats estate planning as holistic life planning, not just paperwork",
+    ],
+    cons: [
+      "Does not create legally binding wills or trusts",
+      "More of a planning and documentation tool than a legal document generator",
+      "Less focused on estate documents than Trust & Will or LegalZoom",
+      "May need to be used alongside a separate will-creation service",
+    ],
+    useCases: [
+      "Individual documenting end-of-life wishes including medical care and funeral preferences",
+      "Family wanting to have organized conversations about estate and legacy planning",
+      "Person managing digital legacy plans for online accounts and digital assets",
+    ],
   },
   {
     slug: "everplans",
@@ -261,6 +408,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🗄️",
     domain: "everplans.com",
+    pros: [
+      "Digital vault organizes estate documents, insurance, accounts, and wishes",
+      "Deputy system grants trusted people access based on configurable triggers",
+      "Often available as an employee benefit through financial advisors and employers",
+      "Comprehensive organization beyond just legal documents",
+    ],
+    cons: [
+      "Does not create estate planning documents — organization and storage only",
+      "Individual pricing can be expensive compared to free alternatives",
+      "Requires manual entry of account information and document uploads",
+      "Value depends on keeping the vault updated as information changes",
+    ],
+    useCases: [
+      "Individual organizing all estate and financial information in one secure place",
+      "Employee accessing Everplans through their company's benefits program",
+      "Person setting up a digital vault so family members can find critical information",
+    ],
   },
   // ── DIGITAL ESTATE ──────────────────────────────────────────────────────
   {
@@ -275,6 +439,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🧵",
     domain: "meetfabric.com",
+    pros: [
+      "Free wills and affordable term life insurance in one mobile experience",
+      "Mobile-first design — complete everything on your phone",
+      "Integrated approach covers two critical family financial planning needs",
+      "Backed by Gerber Life with established insurance backing",
+    ],
+    cons: [
+      "Estate planning features are basic — wills only, no trusts",
+      "Life insurance component may feel like the primary sales pitch",
+      "Limited customization for complex estate situations",
+      "No attorney review or legal consultation available",
+    ],
+    useCases: [
+      "New parent setting up both a will and life insurance from their phone",
+      "Budget-conscious family getting free estate documents alongside insurance quotes",
+      "Parent wanting to designate guardianship and get term life coverage quickly",
+    ],
   },
   {
     slug: "netlaw",
@@ -288,6 +469,23 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "⚖️",
     domain: "netlaw.com",
+    pros: [
+      "Attorney-drafted documents rather than user-filled templates",
+      "Professional legal review before document delivery",
+      "State-specific compliance ensured by licensed attorneys",
+      "Covers wills, trusts, powers of attorney, and healthcare directives",
+    ],
+    cons: [
+      "More expensive than DIY template-based platforms",
+      "Less interactive — more of a document ordering service than a guided tool",
+      "Turnaround time depends on attorney availability",
+      "Less well-known than LegalZoom or Trust & Will",
+    ],
+    useCases: [
+      "Person wanting attorney-drafted estate documents without a traditional law firm visit",
+      "Individual seeking professional legal review at a lower cost than hiring a local attorney",
+      "Family wanting custom-drafted trusts with state-specific legal compliance guaranteed",
+    ],
   },
   {
     slug: "uslegalwills",
@@ -301,5 +499,22 @@ export const ESTATE_PLANNING_TOOLS: EstatePlanningTool[] = [
     featured: false,
     logo: "🇺🇸",
     domain: "uslegalwills.com",
+    pros: [
+      "One-time purchase includes lifetime updates to your documents",
+      "No subscription or recurring fees — transparent flat pricing",
+      "Covers wills, living wills, and power of attorney documents",
+      "Clean, guided process suitable for non-legal users",
+    ],
+    cons: [
+      "No trust creation available for those wanting probate avoidance",
+      "No attorney review or legal advice included",
+      "Smaller platform with less market recognition",
+      "Limited advanced estate planning features",
+    ],
+    useCases: [
+      "Person wanting to create a will once and update it for free as life changes",
+      "Budget-conscious individual seeking estate documents without recurring subscriptions",
+      "Individual wanting a simple will, living will, and POA at a one-time cost",
+    ],
   },
 ];

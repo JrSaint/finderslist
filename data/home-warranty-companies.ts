@@ -51,6 +51,32 @@ export const HOME_WARRANTY_CATEGORIES: Record<HomeWarrantyCategory, { label: str
   },
 };
 
+export const HOME_WARRANTY_EDITORIAL = {
+  title: "How to Choose the Right Home Warranty Company in 2026",
+  intro: `A home warranty is a service contract that covers the repair or replacement of major home systems and appliances when they break down from normal wear and tear. Unlike homeowners insurance, which covers damage from events like fires, storms, and theft, a home warranty covers mechanical failures of items like HVAC systems, water heaters, refrigerators, and plumbing that insurance does not touch. When a covered item breaks, you pay a service call fee (typically $75-125) and the warranty company dispatches a contractor to repair or replace it.\n\nHome warranties are especially valuable for homeowners with aging systems and appliances, first-time buyers unfamiliar with repair costs, and sellers looking to make their property more attractive to buyers. A single HVAC replacement can cost $5,000-10,000, making a $500-700/year warranty plan a reasonable hedge against unexpected expenses.\n\nThe home warranty industry has historically received mixed reviews, with complaints centered on claim denials, long wait times for service, and contractors dispatched by the warranty company being of variable quality. The best companies have improved significantly, offering faster response times, better contractor networks, and more transparent coverage terms. Reading the contract carefully before purchasing is essential to understanding exactly what is and is not covered.`,
+  buyerGuide: [
+    "Coverage clarity and exclusions — read the sample contract before buying. The best companies clearly list what is covered and what is excluded, including coverage caps per item and pre-existing condition policies.",
+    "Service call fee options — most companies let you choose your service fee, typically $75, $100, or $125 per visit. Lower fees mean higher annual premiums. Pick the balance that matches how often you expect to file claims.",
+    "Contractor network quality — check reviews specifically mentioning the quality and timeliness of dispatched contractors. A warranty is only as good as the repair technicians who show up at your door.",
+    "Claim approval rate and process — look for companies with high claim approval rates and a straightforward process for filing and tracking claims, ideally through an app or online portal rather than phone-only systems.",
+    "Coverage caps per item and per year — some companies cap payouts at $1,500 per item or $5,000 per year, which may not cover a full HVAC or water heater replacement. Higher caps or unlimited coverage provides better protection.",
+  ],
+  faq: [
+    {
+      question: "What is the difference between a home warranty and homeowners insurance?",
+      answer: "Homeowners insurance covers damage from external events like fires, storms, and theft. A home warranty covers the repair or replacement of home systems and appliances that break down from normal wear and tear. They complement each other — insurance protects against disasters, while a warranty protects against mechanical failures.",
+    },
+    {
+      question: "Are pre-existing conditions covered by home warranties?",
+      answer: "Most home warranty companies cover pre-existing conditions as long as the issue was not known at the time of purchase and the system was in proper working order. However, policies vary — some companies require a home inspection, and items with visible signs of neglect or improper maintenance are typically excluded.",
+    },
+    {
+      question: "Is a home warranty worth it for a newer home?",
+      answer: "Newer homes with appliances and systems still under manufacturer warranties may not need a home warranty immediately. However, once manufacturer warranties expire (typically after 1-5 years), a home warranty becomes more valuable. Some homeowners purchase warranties proactively to avoid coverage gaps.",
+    },
+  ],
+};
+
 export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
   {
     slug: "american-home-shield",
@@ -218,6 +244,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "🗽",
     domain: "libertyhomeguard.com",
+    pros: [
+      "24/7 customer support available via phone and online",
+      "Over 40 add-on coverage options for maximum customization",
+      "Large network of vetted service contractors nationwide",
+      "Responsive claims handling with quick contractor dispatch",
+    ],
+    cons: [
+      "Relatively newer company with less track record than industry veterans",
+      "Add-on costs can significantly increase total plan price",
+      "Some customers report coverage denials for certain claim types",
+    ],
+    useCases: [
+      "Homeowner wanting highly customizable warranty coverage with many add-ons",
+      "Customer who needs 24/7 support for filing claims at any hour",
+      "Property owner seeking comprehensive coverage beyond basic systems and appliances",
+    ],
   },
   {
     slug: "afc-home-club",
@@ -231,6 +273,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "📋",
     domain: "afchomeclub.com",
+    pros: [
+      "Transparent coverage terms with no confusing fine print",
+      "Well-defined coverage limits clearly stated in contracts",
+      "Multiple plan tiers for different coverage needs",
+      "Positive reviews for straightforward claims process",
+    ],
+    cons: [
+      "Smaller contractor network than the largest national providers",
+      "Coverage caps may be lower than premium competitors",
+      "Brand recognition is limited compared to American Home Shield or Choice",
+    ],
+    useCases: [
+      "Homeowner frustrated by unclear warranty terms wanting transparency",
+      "First-time warranty buyer seeking a straightforward plan with clear coverage",
+      "Real estate professional recommending a transparent warranty to buyers",
+    ],
   },
   {
     slug: "2-10-home-buyers-warranty",
@@ -244,6 +302,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "🏗️",
     domain: "2-10.com",
+    pros: [
+      "Leading provider of structural warranties for new home construction",
+      "Up to 10 years of coverage on major structural defects",
+      "Also offers home service plans for systems and appliances on existing homes",
+      "Trusted by builders nationwide for new construction protection",
+    ],
+    cons: [
+      "Structural warranty claims can be complex and slow to resolve",
+      "Home service plans for existing homes are less competitive than dedicated providers",
+      "Customer service reviews are mixed for the service plan products",
+    ],
+    useCases: [
+      "New home buyer wanting structural defect protection for up to 10 years",
+      "Home builder needing to offer structural warranties to buyers",
+      "Homeowner wanting both structural and systems/appliance coverage from one provider",
+    ],
   },
   {
     slug: "old-republic",
@@ -257,6 +331,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "orhp.com",
+    pros: [
+      "Well-established company with deep roots in the real estate industry",
+      "Pre-screened contractor network for reliable service quality",
+      "Strong relationships with real estate professionals nationwide",
+      "Solid systems coverage with clear plan documentation",
+    ],
+    cons: [
+      "Plan options are fewer compared to more customizable competitors",
+      "Regional availability may be limited in some areas",
+      "Online claims portal is less modern than newer competitors",
+    ],
+    useCases: [
+      "Home seller including a warranty to make their listing more attractive",
+      "Real estate agent recommending a trusted warranty company to clients",
+      "Homeowner wanting systems coverage from an established, reliable provider",
+    ],
   },
   {
     slug: "landmark-home-warranty",
@@ -270,6 +360,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "🏔️",
     domain: "landmarkhw.com",
+    pros: [
+      "Strong regional focus with contractors who understand western US home construction",
+      "Highly rated customer service with knowledgeable representatives",
+      "Comprehensive coverage plans for both systems and appliances",
+      "Local contractors familiar with climate-specific challenges like desert heat",
+    ],
+    cons: [
+      "Only available in select western US states",
+      "Cannot serve customers outside their operating territory",
+      "Pricing may not be as competitive as national budget providers",
+    ],
+    useCases: [
+      "Western US homeowner wanting a regionally focused warranty with local contractors",
+      "Arizona or Utah homeowner needing HVAC coverage from climate-aware technicians",
+      "Real estate professional in western states recommending a trusted local provider",
+    ],
   },
   {
     slug: "serviceplus",
@@ -283,6 +389,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "➕",
     domain: "serviceplus.com",
+    pros: [
+      "Budget-friendly plans among the lowest-priced in the industry",
+      "Simple online claims portal for easy service requests",
+      "Competitive service call fees keep per-visit costs low",
+      "Covers essential appliances that break most frequently",
+    ],
+    cons: [
+      "Coverage limits are lower than premium warranty providers",
+      "Contractor network quality can be inconsistent",
+      "Customer service reviews are mixed with some reporting slow responses",
+    ],
+    useCases: [
+      "Budget-conscious homeowner wanting basic appliance warranty protection",
+      "Landlord seeking affordable coverage for rental property appliances",
+      "First-time homeowner wanting a low-cost safety net for appliance failures",
+    ],
   },
   {
     slug: "home-warranty-of-america",
@@ -296,6 +418,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "🇺🇸",
     domain: "hwahomewarranty.com",
+    pros: [
+      "Strong coverage for air conditioning systems and kitchen appliances",
+      "Flexible plan tiers from standard to premium coverage levels",
+      "Add-on options let you enhance coverage for specific items",
+      "Claims can be submitted online or by phone",
+    ],
+    cons: [
+      "Per-item coverage caps may be restrictive on expensive repairs",
+      "Contractor dispatch times can be longer in less populated areas",
+      "Premium tier pricing approaches that of more established competitors",
+    ],
+    useCases: [
+      "Homeowner in a hot climate prioritizing AC system warranty coverage",
+      "Kitchen-focused homeowner wanting comprehensive appliance protection",
+      "Customer seeking flexible coverage they can customize with add-ons",
+    ],
   },
   {
     slug: "total-home-protection",
@@ -309,6 +447,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "🏡",
     domain: "totalhomeprotection.com",
+    pros: [
+      "No limit on the number of claims you can file per year",
+      "Competitive service call fees keep per-visit costs manageable",
+      "Covers both systems and appliances in comprehensive plans",
+      "Responsive contractor dispatch for common repair needs",
+    ],
+    cons: [
+      "Per-item payout caps can limit coverage on expensive replacements",
+      "Newer company with less industry track record than established providers",
+      "Some customer reviews report challenges with claims for complex repairs",
+    ],
+    useCases: [
+      "Homeowner with older appliances who expects to file multiple claims per year",
+      "Landlord with multiple rental units needing unlimited claim capacity",
+      "Budget-conscious homeowner wanting predictable repair costs without claim limits",
+    ],
   },
   {
     slug: "americas-preferred",
@@ -322,6 +476,22 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "⭐",
     domain: "aphw.com",
+    pros: [
+      "Emphasis on customer education about coverage and maintenance best practices",
+      "Clear plan documentation with proactive communication about exclusions",
+      "Allows you to choose your own contractor in some cases",
+      "Strong customer satisfaction from transparent business practices",
+    ],
+    cons: [
+      "Systems-focused coverage may not cover all appliances without add-ons",
+      "Smaller company with limited nationwide contractor network",
+      "Plan pricing may be higher than budget competitors for similar coverage",
+    ],
+    useCases: [
+      "Homeowner who values understanding exactly what their warranty covers",
+      "Customer who has been burned by hidden exclusions at other warranty companies",
+      "Homeowner wanting the option to use their own trusted repair technician",
+    ],
   },
   {
     slug: "complete-home-warranty",
@@ -335,5 +505,21 @@ export const HOME_WARRANTY_TOOLS: HomeWarrantyTool[] = [
     featured: false,
     logo: "💯",
     domain: "completehomewarranty.com",
+    pros: [
+      "Aims for the most comprehensive coverage possible in a single plan",
+      "Premium add-ons available for pools, septic systems, and well pumps",
+      "Designed for homeowners who want maximum protection against repair costs",
+      "Covers items that many competitors exclude from standard plans",
+    ],
+    cons: [
+      "All-inclusive coverage comes at a higher premium price point",
+      "Smaller company with fewer customer reviews for reference",
+      "Contractor network may be limited in certain regions",
+    ],
+    useCases: [
+      "Homeowner with a pool and septic system wanting everything under one warranty",
+      "Property owner who wants the most comprehensive coverage available",
+      "Homeowner tired of discovering exclusions and wanting all-inclusive protection",
+    ],
   },
 ];

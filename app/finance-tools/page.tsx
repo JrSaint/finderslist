@@ -8,9 +8,13 @@ import {
   filterFinanceTools,
   FINANCE_ROLES,
 } from "@/lib/finance-tools";
+import { FINANCE_EDITORIAL } from "@/data/finance-tools";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -113,6 +117,25 @@ export default async function FinanceToolsPage({ searchParams }: Props) {
         </section>
 
         {/* Search / filter results */}
+        {!isFiltering && (
+          <EditorialSection
+            title={FINANCE_EDITORIAL.title}
+            intro={FINANCE_EDITORIAL.intro}
+            buyerGuide={FINANCE_EDITORIAL.buyerGuide}
+            faq={FINANCE_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={FINANCE_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/finance-tools"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -191,11 +214,6 @@ export default async function FinanceToolsPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             {/* All Tools */}
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">

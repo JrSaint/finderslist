@@ -59,6 +59,32 @@ export const ELEARNING_CATEGORIES: Record<
   },
 };
 
+export const ELEARNING_EDITORIAL = {
+  title: "How to Choose the Right E-Learning Tool in 2026",
+  intro: `E-learning tools power online education for course creators, corporate training teams, schools, and universities. The market has matured significantly, with platforms serving every model from self-paced video courses to live cohort-based programs and enterprise employee onboarding. Whether you are an independent instructor building your first course or an L&D team training thousands of employees, the right platform determines your reach, engagement, and learning outcomes.\n\nThe e-learning space divides into distinct categories. Learning management systems (LMS) like Thinkific and Teachable host and deliver courses with enrollment tracking and completion certificates. Course creation tools focus on content authoring with interactive elements, quizzes, and multimedia. Cohort-based platforms support live instruction with community features. Employee training platforms handle onboarding, compliance training, and skills development at enterprise scale.\n\nThe most important factor in choosing an e-learning tool is matching the platform to your teaching model and audience. A self-paced course for individual consumers needs strong marketing and sales features. A corporate training program needs SCORM compliance, reporting dashboards, and SSO integration. A community-driven cohort course needs live video, discussion forums, and peer interaction tools. No single platform excels at all three, so clarity about your model is the first step.`,
+  buyerGuide: [
+    "Define your teaching model first -- self-paced, cohort-based, or blended learning -- since platforms are optimized for specific models and switching later means migrating content and students.",
+    "Evaluate the built-in marketing and sales tools if you are selling courses directly to consumers -- landing pages, email marketing, upsells, and affiliate programs are essential for course revenue.",
+    "Check content authoring flexibility -- the best platforms support video, text, quizzes, assignments, downloads, and interactive elements without requiring separate authoring tools.",
+    "For corporate training, verify SCORM and xAPI compliance, SSO integration, and reporting capabilities that satisfy your compliance and audit requirements.",
+    "Compare pricing models carefully -- some platforms charge a flat monthly fee, others take a percentage of course sales, and some charge per active learner, which dramatically changes cost at scale.",
+  ],
+  faq: [
+    {
+      question: "Should I sell courses on a marketplace like Udemy or host on my own platform?",
+      answer: "Marketplaces provide built-in traffic and discovery but take a significant revenue share (37-75% on Udemy) and give you limited control over pricing and student relationships. Your own platform on Teachable or Thinkific gives you full control and higher margins but requires you to drive your own traffic. Many successful creators use marketplaces for visibility and their own platform for premium offerings.",
+    },
+    {
+      question: "What is the difference between an LMS and a course creation platform?",
+      answer: "An LMS focuses on hosting, delivering, and tracking learning content with features like enrollment management, progress tracking, and certifications. A course creation platform adds tools for building the content itself, marketing the courses, processing payments, and managing student communities. Many modern platforms blur this line by offering both capabilities.",
+    },
+    {
+      question: "How much does it cost to launch an online course?",
+      answer: "Platform costs range from free (with revenue sharing) to $99-$499 per month for professional plans. Content creation costs depend on production quality -- a screen-recorded course can be created for under $500, while professionally produced video courses with animations may cost $5,000-$20,000. The biggest investment is usually your time creating the curriculum.",
+    },
+  ],
+};
+
 export const ELEARNING_TOOLS: ElearningTool[] = [
   {
     slug: "teachable",

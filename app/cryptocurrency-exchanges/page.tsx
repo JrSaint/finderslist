@@ -7,9 +7,13 @@ import {
   getCryptoExchangeCategoryCount,
   filterCryptoExchangeTools,
 } from "@/lib/cryptocurrency-exchanges";
+import { CRYPTO_EXCHANGE_EDITORIAL } from "@/data/cryptocurrency-exchanges";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function CryptoExchangePage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={CRYPTO_EXCHANGE_EDITORIAL.title}
+            intro={CRYPTO_EXCHANGE_EDITORIAL.intro}
+            buyerGuide={CRYPTO_EXCHANGE_EDITORIAL.buyerGuide}
+            faq={CRYPTO_EXCHANGE_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={CRYPTO_EXCHANGE_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/cryptocurrency-exchanges"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function CryptoExchangePage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

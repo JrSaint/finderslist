@@ -51,6 +51,32 @@ export const ONLINE_DEGREE_CATEGORIES: Record<OnlineDegreeCategory, { label: str
   },
 };
 
+export const ONLINE_DEGREE_EDITORIAL = {
+  title: "How to Choose the Right Online Degree Program in 2026",
+  intro: `Online degree programs have transformed higher education, making it possible to earn accredited bachelor's, master's, and doctoral degrees from respected universities without relocating or giving up a full-time job. The quality gap between online and on-campus programs has narrowed dramatically, with many top-ranked institutions now offering identical curricula and faculty for their online students. For working professionals, parents, and career changers, online degrees provide a flexible path to credential advancement.\n\nAccreditation is the single most important factor when evaluating online programs. Regional accreditation from bodies recognized by the U.S. Department of Education ensures your degree will be respected by employers and accepted for transfer or graduate school admission. Programmatic accreditation matters for specific fields -- AACSB for business schools, ABET for engineering, and CCNE for nursing, for example.\n\nCosts for online degrees vary enormously, from under $10,000 for competency-based programs at institutions like WGU to over $100,000 for elite MBA programs. Financial aid, employer tuition reimbursement, and transfer credits can all reduce your out-of-pocket cost. Calculate the total cost of attendance including fees, textbooks, and technology requirements, and weigh it against the expected salary increase in your field.`,
+  buyerGuide: [
+    "Accreditation status -- verify the institution holds regional accreditation and any relevant programmatic accreditation for your field; degrees from nationally accredited or unaccredited schools may not transfer or be valued by employers.",
+    "Flexibility and format -- some programs are fully asynchronous with self-paced modules, while others require live sessions at set times; choose the format that fits your work schedule and learning style.",
+    "Total cost and financial aid -- compare full program costs including tuition, fees, and materials; investigate whether the school accepts employer tuition reimbursement, offers institutional scholarships, or qualifies for federal financial aid.",
+    "Career outcomes and employer recognition -- research graduation rates, job placement statistics, and whether major employers in your industry specifically recruit from or recognize the program.",
+    "Transfer credit and prior learning assessment -- if you have existing college credits, professional certifications, or significant work experience, choose programs that offer generous transfer policies or competency-based credit to reduce time and cost.",
+  ],
+  faq: [
+    {
+      question: "Are online degrees respected by employers?",
+      answer: "Online degrees from regionally accredited institutions are broadly accepted by employers, especially as remote work has normalized digital credentials. Most diplomas do not distinguish between online and on-campus completion. What matters most to employers is the reputation of the institution, the relevance of your degree to the role, and your demonstrated skills and experience.",
+    },
+    {
+      question: "How long does it take to complete an online degree?",
+      answer: "A bachelor's degree typically takes 4 years full-time or 2-3 years with transfer credits and accelerated pacing. Master's programs generally take 1-2 years. Competency-based programs like WGU allow you to move faster if you already have knowledge in the subject area, with some students completing degrees in 12-18 months.",
+    },
+    {
+      question: "Can I get financial aid for online degree programs?",
+      answer: "Yes, students enrolled in accredited online programs are eligible for federal financial aid including Pell Grants, Stafford Loans, and GI Bill benefits. Many universities also offer institutional scholarships and payment plans for online students. Employer tuition reimbursement programs frequently cover online degrees as well.",
+    },
+  ],
+};
+
 export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
   {
     slug: "southern-new-hampshire-university",
@@ -216,6 +242,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "⛪",
     domain: "liberty.edu",
+    pros: [
+      "Over 450 online programs providing one of the broadest selections available",
+      "Strong military-friendly benefits and support services for veterans",
+      "Faith-based curriculum appeals to students seeking values-integrated education",
+      "Career placement assistance and networking through a large alumni base",
+    ],
+    cons: [
+      "Faith-based curriculum may not suit students seeking secular education",
+      "Academic reputation varies by program and is debated among employers",
+      "Some programs have lower graduation rates than peer institutions",
+      "Tuition is higher than many public university online programs",
+    ],
+    useCases: [
+      "Christian student seeking a faith-integrated online bachelor's or master's degree",
+      "Military veteran using GI Bill benefits at a military-friendly institution",
+      "Working adult wanting a flexible online program with strong community values",
+    ],
   },
   {
     slug: "penn-state-world-campus",
@@ -229,6 +272,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🦁",
     domain: "worldcampus.psu.edu",
+    pros: [
+      "Same Penn State degree as on-campus graduates with no online distinction",
+      "Access to Penn State's massive alumni network and career services",
+      "Over 175 programs spanning business, engineering, education, and IT",
+      "Strong research university reputation recognized by employers nationwide",
+    ],
+    cons: [
+      "Tuition is significantly higher than many online-focused institutions",
+      "Some programs require synchronous sessions that limit scheduling flexibility",
+      "Admission standards can be competitive for popular graduate programs",
+      "Financial aid may be more limited for online students than on-campus peers",
+    ],
+    useCases: [
+      "Working professional earning a Penn State MBA without relocating",
+      "Engineer seeking a master's in systems engineering from a respected research university",
+      "Student wanting to leverage the Penn State alumni network for career advancement",
+    ],
   },
   {
     slug: "oregon-state-ecampus",
@@ -242,6 +302,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🌲",
     domain: "ecampus.oregonstate.edu",
+    pros: [
+      "Consistently ranked among the top online program providers nationally",
+      "Strong STEM and science programs not commonly available online",
+      "Same Oregon State University degree as on-campus students",
+      "Dedicated online student support services and academic advising",
+    ],
+    cons: [
+      "Out-of-state tuition applies and can be considerably higher",
+      "Some STEM programs require lab components that complicate fully online completion",
+      "Course availability can be limited for certain specializations",
+      "Less financial aid availability compared to on-campus enrollment",
+    ],
+    useCases: [
+      "Student pursuing an online computer science degree from a respected public university",
+      "Working professional completing a bachelor's in natural sciences or forestry online",
+      "Student seeking a nationally ranked online program with strong STEM offerings",
+    ],
   },
   {
     slug: "university-of-florida-online",
@@ -255,6 +332,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🐊",
     domain: "ufonline.ufl.edu",
+    pros: [
+      "Top-5 ranked public university providing exceptional academic reputation",
+      "Same faculty and curriculum as on-campus Gator students",
+      "Competitive tuition rates especially for Florida residents",
+      "Access to UF career services and the extensive Gator alumni network",
+    ],
+    cons: [
+      "Limited program selection compared to the full on-campus catalog",
+      "Admission is competitive and not guaranteed for all applicants",
+      "Out-of-state tuition is significantly higher than in-state rates",
+      "Some courses may have limited sections or waitlists",
+    ],
+    useCases: [
+      "Florida resident earning an affordable bachelor's degree from a top-5 public university",
+      "Working adult completing an undergraduate degree started at another institution",
+      "Student seeking a highly respected online degree for graduate school applications",
+    ],
   },
   {
     slug: "georgia-tech-omscs",
@@ -268,6 +362,24 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🐝",
     domain: "omscs.gatech.edu",
+    pros: [
+      "Total program cost under $10,000 for a world-class computer science master's",
+      "Same rigorous curriculum and faculty as the on-campus Georgia Tech MSCS",
+      "Specializations in AI, machine learning, computing systems, and interactive intelligence",
+      "Massive peer community with thousands of students for study groups and networking",
+      "No distinction on diploma between online and on-campus degree",
+    ],
+    cons: [
+      "Highly demanding coursework requires strong time management alongside a full-time job",
+      "Limited direct interaction with professors due to large cohort sizes",
+      "Admission requires a strong undergraduate CS background or equivalent experience",
+      "Course registration can be competitive with popular classes filling quickly",
+    ],
+    useCases: [
+      "Software engineer earning a master's in AI and machine learning for under $10,000",
+      "Career changer with a CS background seeking a prestigious graduate credential",
+      "Working professional upskilling in computing systems while maintaining full-time employment",
+    ],
   },
   {
     slug: "coursera-degrees",
@@ -281,6 +393,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "📘",
     domain: "coursera.org",
+    pros: [
+      "Access to degrees from globally recognized universities at reduced tuition rates",
+      "Familiar Coursera platform with proven online learning infrastructure",
+      "Flexible pacing allows students to balance work and study effectively",
+      "Some programs allow sampling courses before committing to the full degree",
+    ],
+    cons: [
+      "Degree selection is still limited compared to applying directly to universities",
+      "Employer recognition of Coursera-delivered degrees varies by industry",
+      "Peer interaction and networking opportunities are more limited than on-campus programs",
+      "Support services are provided by the university partner, not Coursera, creating inconsistency",
+    ],
+    useCases: [
+      "Professional pursuing a University of Illinois master's in data science via Coursera",
+      "International student earning a University of London bachelor's at affordable rates",
+      "Learner sampling graduate courses before committing to a full degree program",
+    ],
   },
   {
     slug: "edx-micromasters",
@@ -294,6 +423,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🔬",
     domain: "edx.org",
+    pros: [
+      "Graduate-level courses from top universities like MIT, Harvard, and Columbia",
+      "Credits can count toward a full master's degree at participating institutions",
+      "Modular format lets professionals build skills incrementally over time",
+      "More affordable than enrolling directly in a full graduate program upfront",
+    ],
+    cons: [
+      "Not all MicroMasters credits transfer to full degree programs at every university",
+      "Program completion does not guarantee admission to the associated master's degree",
+      "Individual course fees can add up across a multi-course MicroMasters sequence",
+      "Limited interaction with faculty compared to enrolled graduate students",
+    ],
+    useCases: [
+      "Professional completing an MIT MicroMasters in Supply Chain Management to boost career prospects",
+      "Student earning graduate credits that transfer toward a full master's program",
+      "Learner testing graduate-level coursework before committing to a full degree investment",
+    ],
   },
   {
     slug: "capella-university",
@@ -307,6 +453,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "⭐",
     domain: "capella.edu",
+    pros: [
+      "FlexPath self-paced format allows fast completion for experienced professionals",
+      "Strong doctoral programs in nursing, psychology, and education",
+      "No set class times provide maximum scheduling flexibility",
+      "Regionally accredited by the Higher Learning Commission",
+    ],
+    cons: [
+      "FlexPath requires exceptional self-discipline and time management",
+      "Tuition is higher than some competitors for comparable programs",
+      "Brand recognition is lower than traditional universities with some employers",
+      "Limited campus experience and in-person networking opportunities",
+    ],
+    useCases: [
+      "Nurse practitioner pursuing a DNP while working full-time using the FlexPath format",
+      "Psychologist earning a doctoral degree on a flexible schedule",
+      "Healthcare professional accelerating degree completion through prior knowledge",
+    ],
   },
   {
     slug: "walden-university",
@@ -320,6 +483,23 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🌱",
     domain: "waldenu.edu",
+    pros: [
+      "Over 50 years of experience in distance and online education",
+      "Strong programs in nursing, public health, psychology, and education",
+      "Social change mission attracts purpose-driven students and faculty",
+      "Multiple start dates and flexible scheduling for working professionals",
+    ],
+    cons: [
+      "Tuition costs are higher than many public university online programs",
+      "Doctoral program completion times can extend beyond initial estimates",
+      "Employer perception varies and some may prefer traditional university credentials",
+      "Class sizes in popular programs can be large",
+    ],
+    useCases: [
+      "Nurse pursuing a BSN-to-DNP program while working full-time in a hospital",
+      "Public health professional earning an MPH to advance into leadership roles",
+      "Educator completing a doctoral degree focused on social change and equity",
+    ],
   },
   {
     slug: "illinois-imba",
@@ -333,5 +513,22 @@ export const ONLINE_DEGREE_TOOLS: OnlineDegreeTool[] = [
     featured: false,
     logo: "🔶",
     domain: "onlinemba.illinois.edu",
+    pros: [
+      "Fraction of the cost of traditional top-ranked MBA programs",
+      "Fully accredited MBA from AACSB-accredited Gies College of Business",
+      "Live global classroom sessions create real-time peer collaboration",
+      "Delivered on Coursera allowing flexible pacing alongside career commitments",
+    ],
+    cons: [
+      "Less brand prestige than top-10 MBA programs from Wharton, Booth, or Kellogg",
+      "Large cohort sizes can limit individualized faculty interaction",
+      "Networking opportunities are more limited than on-campus MBA programs",
+      "Team project coordination across time zones can be challenging",
+    ],
+    useCases: [
+      "Mid-career professional earning an affordable MBA from a Big Ten business school",
+      "International student accessing a US-accredited MBA through Coursera's platform",
+      "Manager seeking to build business fundamentals without leaving a full-time position",
+    ],
   },
 ];

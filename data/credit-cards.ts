@@ -26,6 +26,32 @@ export const CREDIT_CARD_CATEGORIES: Record<CreditCardCategory, { label: string;
   "student": { label: "Student Cards", emoji: "🎓", description: "Starter cards designed for college students building credit for the first time.", gradient: "from-teal-600/30 to-cyan-800/40" },
 };
 
+export const CREDIT_CARD_EDITORIAL = {
+  title: "How to Choose the Right Credit Card in 2026",
+  intro: `Credit cards are one of the most powerful financial tools available when used responsibly. The right card can earn you hundreds or even thousands of dollars in rewards annually, provide valuable purchase protections, and help build a strong credit history. With so many options on the market, choosing a card that aligns with your spending habits and financial goals is essential.\n\nThe credit card landscape in 2026 continues to evolve, with issuers competing aggressively on sign-up bonuses, earning rates, and premium perks. Travel rewards cards offer flexible points redeemable with airline and hotel partners, cash back cards return a percentage of every purchase, and balance transfer cards provide breathing room to pay down existing debt. Business cards add expense tracking and employee card management to the mix.\n\nBefore applying, assess your monthly spending patterns, whether you carry a balance, and what type of rewards you actually use. A card with a high annual fee only makes sense if the rewards and benefits outweigh the cost. If you carry a balance month to month, a low-APR or balance transfer card will save you far more than any rewards program.`,
+  buyerGuide: [
+    "Match the card to your top spending categories -- if you spend heavily on dining and groceries, a card earning 3-4x in those categories will outperform a flat-rate cash back card over the year.",
+    "Calculate the net value after annual fees -- subtract the annual fee from the realistic rewards you will earn based on your actual spending, not aspirational spending.",
+    "Evaluate the sign-up bonus requirements -- ensure you can meet the minimum spending threshold within the required timeframe without overspending.",
+    "Check foreign transaction fees if you travel internationally -- many travel cards waive these fees, but cash back and student cards often charge 3%.",
+    "Consider the redemption flexibility -- points that transfer to multiple airline and hotel partners are worth more than points locked into a single program or statement credits.",
+  ],
+  faq: [
+    {
+      question: "Does applying for a new credit card hurt my credit score?",
+      answer: "Each application triggers a hard inquiry that may lower your score by 5-10 points temporarily. However, the new account also increases your total available credit, which can improve your utilization ratio and help your score recover within a few months.",
+    },
+    {
+      question: "Is it worth paying an annual fee for a credit card?",
+      answer: "It depends on your spending volume and how you use the perks. If a card charges a $95 annual fee but delivers $300 or more in rewards, travel credits, and protections you actually use, the fee pays for itself several times over.",
+    },
+    {
+      question: "How many credit cards should I have?",
+      answer: "There is no single right number, but most rewards optimizers carry 2-4 cards that cover their main spending categories. Having multiple cards also increases your total credit limit, which helps your utilization ratio, as long as you pay all balances in full each month.",
+    },
+  ],
+};
+
 export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
   {
     slug: "chase-sapphire-preferred",
@@ -119,6 +145,23 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🔷",
     domain: "chase.com",
+    pros: [
+      "No annual fee with solid 1.5% base earning rate on everything",
+      "Bonus categories: 5x travel through Chase, 3x dining and drugstores",
+      "Points pool with Chase Sapphire cards for higher redemption value",
+      "Generous sign-up bonus for a no-fee card",
+      "0% intro APR on purchases for 15 months",
+    ],
+    cons: [
+      "1.5% base rate is lower than 2% flat-rate competitors",
+      "Points are worth less without pairing with a Sapphire card",
+      "3% foreign transaction fee limits international use",
+    ],
+    useCases: [
+      "Everyday spending companion paired with Chase Sapphire for maximum value",
+      "Cardholder wanting bonus dining and drugstore categories without an annual fee",
+      "New Chase user building an Ultimate Rewards points balance over time",
+    ],
   },
   {
     slug: "amex-platinum",
@@ -132,6 +175,24 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "⚪",
     domain: "americanexpress.com",
+    pros: [
+      "Centurion Lounge and Priority Pass airport lounge access worldwide",
+      "Up to $200 airline fee credit and $200 Uber Cash annually",
+      "5x points on flights booked directly with airlines or through Amex Travel",
+      "Extensive portfolio of statement credits can offset much of the $695 fee",
+      "Premium hotel status with Marriott Gold and Hilton Gold",
+    ],
+    cons: [
+      "$695 annual fee is the highest among mainstream consumer cards",
+      "Must actively use multiple credits to justify the fee",
+      "Only 1x on most non-travel and non-dining purchases",
+      "Centurion Lounges increasingly crowded due to card popularity",
+    ],
+    useCases: [
+      "Frequent flyer who values airport lounge access on every trip",
+      "High-spending traveler who can maximize the extensive credits portfolio",
+      "Business traveler wanting premium hotel status and travel protections",
+    ],
   },
   {
     slug: "capital-one-quicksilver",
@@ -145,6 +206,22 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "⚡",
     domain: "capitalone.com",
+    pros: [
+      "Simple 1.5% unlimited cash back with no categories to track",
+      "No annual fee and no foreign transaction fees",
+      "One-time cash bonus for new cardholders after meeting spending threshold",
+      "Cash rewards never expire and are easy to redeem",
+    ],
+    cons: [
+      "1.5% earning rate is below the best 2% flat-rate cards",
+      "No bonus categories for higher earning on specific spending",
+      "Cash back only — no travel transfer partners available",
+    ],
+    useCases: [
+      "Everyday spender wanting simple, no-category cash back without a fee",
+      "International traveler needing a no-foreign-transaction-fee backup card",
+      "Someone seeking a low-maintenance card that earns reliably on everything",
+    ],
   },
   {
     slug: "wells-fargo-active-cash",
@@ -158,6 +235,23 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🟥",
     domain: "wellsfargo.com",
+    pros: [
+      "Flat 2% cash rewards on all purchases with no annual fee",
+      "Generous sign-up bonus — uncommon for flat-rate no-fee cards",
+      "Cell phone protection when you pay your bill with the card",
+      "0% intro APR on both purchases and balance transfers",
+      "Simple rewards with no category activation or caps",
+    ],
+    cons: [
+      "3% foreign transaction fee limits international use",
+      "Rewards must be redeemed as cash — no travel transfer partners",
+      "Wells Fargo's customer service reputation has been mixed",
+    ],
+    useCases: [
+      "Everyday spender wanting 2% back on everything with a sign-up bonus",
+      "Cardholder looking for built-in cell phone protection at no extra cost",
+      "Someone consolidating debt with a 0% balance transfer and strong ongoing rewards",
+    ],
   },
   {
     slug: "us-bank-altitude",
@@ -171,6 +265,23 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🏔️",
     domain: "usbank.com",
+    pros: [
+      "4x points on dining with no annual fee — rare combination",
+      "2x on grocery stores, streaming, and gas covers common spending",
+      "Long 0% intro APR period on purchases",
+      "No annual fee keeps cost at zero regardless of spending volume",
+    ],
+    cons: [
+      "4x dining earning rate caps after a certain spending threshold",
+      "U.S. Bank rewards ecosystem is less flexible than Chase or Amex",
+      "Limited travel-related perks and protections",
+      "Smaller sign-up bonus compared to competing no-fee cards",
+    ],
+    useCases: [
+      "Frequent diner wanting 4x rewards without paying an annual fee",
+      "Household managing grocery, gas, and streaming expenses on one card",
+      "New cardholder seeking a strong rewards card with 0% intro APR",
+    ],
   },
   {
     slug: "bofa-customized-cash",
@@ -184,6 +295,23 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🏦",
     domain: "bankofamerica.com",
+    pros: [
+      "Choose your own 3% cash back category (gas, online shopping, dining, etc.)",
+      "Preferred Rewards members earn 25-75% bonus on all cash back",
+      "2% at grocery stores and wholesale clubs covers common household spending",
+      "No annual fee with strong earning potential for BofA customers",
+    ],
+    cons: [
+      "3% and 2% categories cap at $2,500 in combined quarterly spending",
+      "Maximum value requires significant Bank of America banking relationship",
+      "1% base rate on non-bonus spending is below flat-rate competitors",
+      "Can only change your 3% category once per month",
+    ],
+    useCases: [
+      "Bank of America customer maximizing rewards through Preferred Rewards tier",
+      "Spender wanting to customize their top cash back category to match habits",
+      "Household pairing this card with another for comprehensive category coverage",
+    ],
   },
   {
     slug: "apple-card",
@@ -197,6 +325,24 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🍎",
     domain: "apple.com",
+    pros: [
+      "3% Daily Cash on Apple purchases and select partners (Uber, Walgreens, etc.)",
+      "2% on all Apple Pay purchases — rewards almost everywhere contactless is accepted",
+      "No annual fee, no foreign transaction fees, no late fees",
+      "Daily Cash is deposited daily to Apple Cash for immediate use",
+      "Clean spending insights and privacy-focused design in Apple Wallet",
+    ],
+    cons: [
+      "Only 1% on physical card swipes — most value requires Apple Pay",
+      "No travel perks, purchase protection, or extended warranty benefits",
+      "Cannot be used outside the Apple ecosystem for management",
+      "2% rate requires Apple Pay acceptance, which is not universal",
+    ],
+    useCases: [
+      "Apple ecosystem user buying hardware, apps, and services regularly",
+      "Contactless-first spender using Apple Pay for the majority of purchases",
+      "Minimalist wanting a no-fee card with clean spend tracking in Apple Wallet",
+    ],
   },
   {
     slug: "chase-ink-business",
@@ -210,6 +356,24 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🖊️",
     domain: "chase.com",
+    pros: [
+      "3x points on travel, shipping, internet, cable, phone, and advertising",
+      "1:1 point transfers to Chase airline and hotel partners",
+      "Large sign-up bonus — one of the best among business cards",
+      "$150,000 annual spending cap on 3x categories is generous",
+      "Cell phone protection when you pay your monthly bill with the card",
+    ],
+    cons: [
+      "$95 annual fee adds up if you do not maximize bonus categories",
+      "Only 1x on non-bonus spending — pair with Freedom Unlimited for better coverage",
+      "Requires a business or sole proprietorship to apply",
+      "No 0% intro APR period available",
+    ],
+    useCases: [
+      "Small business owner spending heavily on advertising, shipping, and telecom",
+      "Entrepreneur wanting to earn transferable travel points on business expenses",
+      "Business owner building a Chase trifecta with Freedom and Sapphire cards",
+    ],
   },
   {
     slug: "amex-blue-business-plus",
@@ -223,6 +387,23 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🔵",
     domain: "americanexpress.com",
+    pros: [
+      "2x Membership Rewards on first $50,000 in purchases per year — no categories",
+      "No annual fee for a card earning transferable points",
+      "Pairs perfectly with premium Amex cards to maximize Membership Rewards",
+      "Expanded buying power allows spending above your credit limit when needed",
+    ],
+    cons: [
+      "2x earning rate caps at $50,000 per year, then drops to 1x",
+      "No sign-up bonus for new cardholders",
+      "Requires a business or sole proprietorship to apply",
+      "No purchase protections or extended warranty benefits",
+    ],
+    useCases: [
+      "Business owner wanting no-fee earning of transferable Membership Rewards",
+      "Amex cardholder using this as an everyday 2x companion to a premium card",
+      "Freelancer earning points on all business expenses under $50,000 per year",
+    ],
   },
   {
     slug: "brex-card",
@@ -236,5 +417,23 @@ export const CREDIT_CARD_TOOLS: CreditCardTool[] = [
     featured: false,
     logo: "🚀",
     domain: "brex.com",
+    pros: [
+      "No personal guarantee required — does not affect founders' personal credit",
+      "Built-in expense management with receipt matching and policy controls",
+      "Rewards tailored to startup spending: rideshare, SaaS, travel, restaurants",
+      "Integrates with QuickBooks, Xero, NetSuite, and other accounting tools",
+      "Higher credit limits based on company cash balance, not personal credit",
+    ],
+    cons: [
+      "Requires a business bank account and minimum cash balance for approval",
+      "Now charges fees for some features that were previously free",
+      "Primarily designed for venture-backed startups — less suited for sole proprietors",
+      "Rewards rates have decreased since the platform shifted to paid tiers",
+    ],
+    useCases: [
+      "Venture-backed startup needing corporate cards without personal guarantees",
+      "Growing company wanting integrated expense management with their credit card",
+      "Finance team consolidating employee spending with policy controls and auto-categorization",
+    ],
   },
 ];

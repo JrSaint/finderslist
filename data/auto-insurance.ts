@@ -26,6 +26,32 @@ export const AUTO_INSURANCE_CATEGORIES: Record<AutoInsuranceCategory, { label: s
   "specialty": { label: "Specialty & Classic", emoji: "🏎️", description: "Coverage for classic cars, high-performance vehicles, and non-standard drivers.", gradient: "from-yellow-600/30 to-amber-800/40" },
 };
 
+export const AUTO_INSURANCE_EDITORIAL = {
+  title: "How to Choose the Right Auto Insurance in 2026",
+  intro: `Auto insurance is legally required in 49 states (New Hampshire is the exception), but minimum coverage requirements vary dramatically — and minimum coverage is rarely enough. A serious accident can result in six- or seven-figure medical and property damage claims that blow past state minimums, leaving you personally liable for the difference. Understanding your coverage options and choosing the right insurer matters more than most drivers realize.\n\nThe auto insurance market is dominated by a handful of major carriers — State Farm, GEICO, Progressive, Allstate, and USAA — but smaller regional insurers and InsurTech companies like Lemonade and Root often offer competitive rates for specific demographics. Your premium depends on your driving record, age, location, vehicle, credit score (in most states), and coverage levels. Getting quotes from at least 3-5 insurers is the single most effective way to save money.\n\nUsage-based insurance (UBI) programs that track your driving via a mobile app or plug-in device have become mainstream, and safe, low-mileage drivers can save 10-40% with these programs. Meanwhile, bundling auto with home or renters insurance typically saves 5-25%. Don't just compare premiums — evaluate claims satisfaction ratings, financial strength, and the quality of the mobile app you'll use to manage your policy.`,
+  buyerGuide: [
+    "Coverage limits above state minimums — financial advisors typically recommend at least 100/300/100 ($100K per person, $300K per accident bodily injury, $100K property damage) rather than state-mandated minimums that may be as low as 25/50/25.",
+    "Claims handling reputation — read J.D. Power claims satisfaction ratings and consumer reviews; the cheapest insurer is worthless if they fight every claim or take months to pay out.",
+    "Discount availability — ask about bundling, safe driver, good student, military, defensive driving course, low-mileage, and loyalty discounts, as stacking multiple discounts can reduce premiums 20-40%.",
+    "Deductible strategy — raising your collision and comprehensive deductibles from $500 to $1,000 can save 15-30% on premiums; just make sure you can afford the higher out-of-pocket cost if you file a claim.",
+    "Financial strength ratings — check AM Best ratings to ensure your insurer can actually pay claims; a company rated A or higher has strong financial stability.",
+  ],
+  faq: [
+    {
+      question: "How much auto insurance do I actually need?",
+      answer: "At minimum, carry enough liability to protect your assets — if you own a home and have savings, state minimums won't protect you in a lawsuit. Most financial advisors recommend 100/300/100 liability limits plus an umbrella policy for additional protection beyond that.",
+    },
+    {
+      question: "Is usage-based insurance worth it?",
+      answer: "If you drive under 10,000 miles per year and have safe driving habits (no hard braking, no late-night driving), usage-based programs from Progressive, Allstate, or Root can save 10-40%. High-mileage or aggressive drivers may see little savings or even premium increases.",
+    },
+    {
+      question: "When should I drop comprehensive and collision coverage?",
+      answer: "A common rule of thumb is to drop these coverages when your car's value falls below $3,000-5,000, or when the annual premium for these coverages exceeds 10% of the car's value. Keep them if you can't afford to replace your vehicle out of pocket.",
+    },
+  ],
+};
+
 export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
   {
     slug: "geico",
@@ -119,6 +145,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "🗽",
     domain: "libertymutual.com",
+    pros: ["New car replacement coverage pays for a brand-new vehicle if yours is totaled within a year", "Better car replacement provides a model one year newer with fewer miles", "Highly customizable policies with many optional coverage add-ons", "Both agent-based and direct channels for shopping flexibility", "Strong bundling discounts with home and renters insurance"],
+    cons: ["Base rates tend to be higher than average in many markets", "Discount structure is less competitive than GEICO or Progressive", "Online experience is less streamlined than digital-first insurers", "Some unique coverages come at additional cost"],
+    useCases: ["New car buyer wanting replacement coverage that provides a brand-new vehicle if totaled", "Driver seeking highly customizable auto policy with optional add-on coverages", "Family looking to bundle auto and home insurance for maximum discount savings"],
   },
   {
     slug: "nationwide",
@@ -132,6 +161,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "nationwide.com",
+    pros: ["Vanishing deductible reduces your deductible $100 each year with no accidents or violations", "Broad coverage options through both independent agents and direct channels", "Strong bundling discounts with home, life, and pet insurance", "Accident forgiveness available on qualifying policies", "Good financial strength ratings for claims-paying reliability"],
+    cons: ["Rates are not always the most competitive in every state", "Independent agent model means experience varies by agent quality", "Online quoting can be less convenient than direct-to-consumer competitors", "Some features and discounts are only available in certain states"],
+    useCases: ["Safe driver wanting a deductible that decreases every claim-free year", "Family bundling auto with home and life insurance through one independent agent", "Driver wanting accident forgiveness alongside the vanishing deductible benefit"],
   },
   {
     slug: "farmers-insurance",
@@ -145,6 +177,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "🌾",
     domain: "farmers.com",
+    pros: ["Large exclusive agent network provides personalized local service", "Signal telematics program rewards safe driving with premium discounts", "Wide variety of coverage endorsements for customized protection", "Rideshare coverage available for Uber and Lyft drivers", "Claims process includes a dedicated claims representative"],
+    cons: ["Rates tend to be above average compared to direct-to-consumer competitors", "Online self-service options are more limited than digital-first insurers", "Discount availability varies significantly by state", "Some customers report slow claims processing for complex cases"],
+    useCases: ["Driver who values a dedicated local agent for policy questions and claims help", "Rideshare driver needing specialized coverage for Uber or Lyft driving", "Safe driver looking to save with the Signal telematics driving program"],
   },
   {
     slug: "erie-insurance",
@@ -158,6 +193,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "🏔️",
     domain: "erieinsurance.com",
+    pros: ["Consistently top-rated for customer satisfaction in its operating region", "Rates are among the most competitive in the 12 states it serves", "Generous coverage options and deductible flexibility", "Claims handling is widely praised for speed and fairness", "Rate lock feature prevents premium increases between renewals"],
+    cons: ["Only available in 12 states and Washington DC — limited geographic reach", "Not available nationwide — you must live in the service area", "Smaller agent network compared to national carriers", "Online tools and mobile app are less advanced than digital-first competitors"],
+    useCases: ["Driver in the eastern US wanting top-rated customer service at competitive rates", "Family in Erie's service area looking for excellent claims handling reputation", "Policyholder wanting rate lock protection against premium increases mid-term"],
   },
   {
     slug: "root-insurance",
@@ -171,6 +209,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "📲",
     domain: "joinroot.com",
+    pros: ["Pricing based primarily on driving behavior — not demographics", "Smartphone-based telematics requires no plug-in device", "App-first experience with easy quoting and policy management", "Safe drivers can see significant savings over traditional insurers", "Test drive period lets you see your rate before committing"],
+    cons: ["Not available in all states — geographic availability is limited", "Poor driving habits during the test period can result in higher rates", "Newer company with less claims-handling track record", "Limited coverage options compared to established full-line carriers"],
+    useCases: ["Safe driver wanting insurance priced on actual behavior rather than age or zip code", "Young driver with a clean record seeking an alternative to high traditional premiums", "Tech-savvy user preferring a fully mobile insurance experience without agents"],
   },
   {
     slug: "metromile",
@@ -184,6 +225,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "📏",
     domain: "metromile.com",
+    pros: ["True pay-per-mile pricing is extremely affordable for low-mileage drivers", "Low base rate plus per-mile charge provides transparent cost structure", "Now backed by Lemonade's technology infrastructure", "Streamlined digital experience for quoting and policy management", "No penalty for occasional long trips — just pay for the miles driven"],
+    cons: ["Plug-in device required for mileage tracking", "High-mileage drivers will pay more than traditional policies", "Limited availability — not offered in all states", "Fewer coverage options and endorsements than full-line carriers"],
+    useCases: ["Remote worker driving under 5,000 miles per year wanting minimal insurance costs", "City dweller using public transit primarily but keeping a car for occasional use", "Retiree with a seldom-driven vehicle seeking usage-aligned insurance pricing"],
   },
   {
     slug: "travelers",
@@ -197,6 +241,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "☂️",
     domain: "travelers.com",
+    pros: ["One of the most financially stable insurers with over 160 years of history", "IntelliDrive telematics program offers personalized safe-driving discounts", "Strong bundling discounts through independent agent network", "Excellent coverage options for new and certified pre-owned vehicles", "Nationwide network of independent agents provides local expertise"],
+    cons: ["Must go through independent agents — no direct-to-consumer option", "Rates are not always the most competitive in every market", "Online self-service capabilities lag behind digital-first insurers", "Telematics enrollment process requires agent coordination"],
+    useCases: ["Driver wanting an insurer with rock-solid financial stability for reliable claims payment", "Customer preferring to work with a local independent agent for personalized service", "Safe driver enrolling in IntelliDrive to earn behavior-based premium discounts"],
   },
   {
     slug: "american-family",
@@ -210,6 +257,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "🏠",
     domain: "amfam.com",
+    pros: ["Competitive rates in Midwest and western states", "KnowYourDrive telematics program rewards safe driving habits", "Strong bundling discounts with home, life, and umbrella policies", "Dedicated agent network with community-focused service", "Solid financial strength ratings from AM Best"],
+    cons: ["Limited geographic availability — primarily Midwest and western states", "Not available nationwide like State Farm or GEICO", "Online quoting and digital tools are less advanced than national competitors", "Fewer coverage add-ons compared to full-line national carriers"],
+    useCases: ["Midwest driver looking for competitive auto rates with a local agent", "Family in American Family's service area wanting to bundle auto and home insurance", "Safe driver using KnowYourDrive telematics to earn personalized discounts"],
   },
   {
     slug: "the-hartford",
@@ -223,6 +273,9 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "🦌",
     domain: "thehartford.com",
+    pros: ["Exclusive AARP partnership with tailored coverage for drivers 50+", "Lifetime renewability guarantee — policy cannot be non-renewed due to age", "12-month rate lock protects against mid-term premium increases", "Unique recovering alcoholism discount shows supportive approach", "New car replacement coverage available within first 15 months"],
+    cons: ["Only available through AARP — requires membership", "Rates may not be competitive for younger drivers", "Limited availability for drivers under 50", "Must go through AARP — no direct purchasing option"],
+    useCases: ["Retired AARP member seeking auto insurance tailored to mature driver needs", "Driver over 50 wanting guaranteed lifetime renewability regardless of age", "Mature driver looking for specialized discounts and benefits not available from general insurers"],
   },
   {
     slug: "chubb",
@@ -236,5 +289,8 @@ export const AUTO_INSURANCE_TOOLS: AutoInsuranceTool[] = [
     featured: false,
     logo: "💎",
     domain: "chubb.com",
+    pros: ["Agreed value coverage pays the full agreed amount — no depreciation disputes", "Original manufacturer parts guaranteed for repairs", "White-glove claims service with dedicated claims specialists", "Coverage for collections, exotics, and high-value vehicles", "Worldwide coverage for international driving and shipping"],
+    cons: ["Premium pricing — significantly more expensive than standard auto insurers", "Minimum asset or income thresholds may be required for eligibility", "Not cost-effective for standard vehicles or typical drivers", "Must work through independent agents — no direct consumer channel"],
+    useCases: ["Luxury car owner wanting agreed value coverage for a $200K+ vehicle", "Classic car collector insuring a garage of rare vehicles with specialty coverage", "High-net-worth individual needing white-glove claims service and OEM parts guarantees"],
   },
 ];

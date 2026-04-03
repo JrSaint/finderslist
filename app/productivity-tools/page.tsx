@@ -8,9 +8,13 @@ import {
   filterProductivityTools,
   PRODUCTIVITY_ROLES,
 } from "@/lib/productivity-tools";
+import { PRODUCTIVITY_EDITORIAL } from "@/data/productivity-tools";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -113,6 +117,25 @@ export default async function ProductivityToolsPage({ searchParams }: Props) {
         </section>
 
         {/* Search / filter results */}
+        {!isFiltering && (
+          <EditorialSection
+            title={PRODUCTIVITY_EDITORIAL.title}
+            intro={PRODUCTIVITY_EDITORIAL.intro}
+            buyerGuide={PRODUCTIVITY_EDITORIAL.buyerGuide}
+            faq={PRODUCTIVITY_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={PRODUCTIVITY_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/productivity-tools"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -191,11 +214,6 @@ export default async function ProductivityToolsPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             {/* All Tools */}
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">

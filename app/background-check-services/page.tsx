@@ -7,9 +7,13 @@ import {
   getBackgroundCheckCategoryCount,
   filterBackgroundCheckTools,
 } from "@/lib/background-check-services";
+import { BACKGROUND_CHECK_EDITORIAL } from "@/data/background-check-services";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function BackgroundCheckServicesPage({ searchParams }: Prop
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={BACKGROUND_CHECK_EDITORIAL.title}
+            intro={BACKGROUND_CHECK_EDITORIAL.intro}
+            buyerGuide={BACKGROUND_CHECK_EDITORIAL.buyerGuide}
+            faq={BACKGROUND_CHECK_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={BACKGROUND_CHECK_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/background-check-services"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function BackgroundCheckServicesPage({ searchParams }: Prop
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

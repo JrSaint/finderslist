@@ -51,6 +51,32 @@ export const HOTEL_BOOKING_CATEGORIES: Record<HotelBookingCategory, { label: str
   },
 };
 
+export const HOTEL_BOOKING_EDITORIAL = {
+  title: "How to Choose the Right Hotel Booking Platform in 2026",
+  intro: `Hotel booking platforms aggregate millions of properties worldwide, letting travelers compare prices, read reviews, and book everything from budget hostels to luxury resorts in minutes. The major platforms differ in their price competitiveness, loyalty programs, cancellation flexibility, and the types of accommodations they specialize in — some focus on traditional hotels while others excel at vacation rentals and unique stays.\n\nFor frequent travelers, loyalty programs can deliver outsized value through free nights, room upgrades, and elite status perks. Booking directly with hotel chains like Marriott or Hilton often yields the best loyalty rewards and price-match guarantees, while third-party aggregators like Booking.com and Expedia may surface lower prices from independent properties and bundle deals combining flights and hotels.\n\nThe rise of alternative accommodations has expanded the market significantly. Platforms now offer apartments, homes, treehouses, and boutique properties alongside traditional hotel rooms. Business travelers need corporate booking tools with policy compliance and centralized billing, while leisure travelers often prioritize flexible cancellation, guest reviews, and price comparison features.`,
+  buyerGuide: [
+    "Price comparison across platforms — hotel prices vary across booking sites for the same room and dates. Use a meta-search engine or check multiple platforms before booking, and always compare the total price including taxes and fees.",
+    "Cancellation and modification policies — flexible cancellation is essential for travel plans that may change. Look for free cancellation options and understand the deadlines. Pay-later options give you flexibility to rebook if you find a better deal.",
+    "Loyalty program value — if you travel frequently, committing to one hotel chain's loyalty program can earn you free nights, upgrades, and late checkout. Calculate the rewards value against any price premium versus third-party booking.",
+    "Review quality and recency — prioritize platforms with verified guest reviews and filter for recent stays. A hotel's quality can change significantly after management changes, renovations, or a few years of wear.",
+    "Hidden fees and resort charges — watch for destination fees, resort fees, and parking charges that are not included in the advertised nightly rate. The best platforms show total price upfront including all mandatory fees.",
+  ],
+  faq: [
+    {
+      question: "Is it cheaper to book directly with a hotel or through a third-party platform?",
+      answer: "It depends. Major hotel chains often offer best-rate guarantees and loyalty points when you book directly, making their price effectively lower. However, third-party platforms sometimes negotiate exclusive discounts, especially for independent hotels. Checking both and factoring in loyalty rewards gives you the true best price.",
+    },
+    {
+      question: "Are vacation rental platforms like Airbnb cheaper than hotels?",
+      answer: "Vacation rentals can be cheaper for longer stays, group travel, or when you need kitchen facilities. However, after adding cleaning fees, service fees, and occupancy taxes, short stays of one to two nights are often cheaper at a hotel. Compare total costs including all fees before assuming a rental is the better deal.",
+    },
+    {
+      question: "How far in advance should I book a hotel for the best price?",
+      answer: "For most destinations, booking 3-6 weeks in advance typically yields the best combination of availability and pricing. Booking too early locks you in before prices drop, and waiting too late risks sellouts and surge pricing. For peak travel periods like holidays and major events, booking 2-3 months ahead is advisable.",
+    },
+  ],
+};
+
 export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
   {
     slug: "booking-com",
@@ -217,6 +243,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🔎",
     domain: "trivago.com",
+    pros: [
+      "Aggregates rates from over 400 booking sites for comprehensive comparison",
+      "Hotel-focused interface makes it easy to compare the same room across providers",
+      "Clean search experience with useful filtering options",
+      "Available in many countries with localized pricing",
+    ],
+    cons: [
+      "Redirects to third-party sites to complete bookings",
+      "Displayed prices may not include all taxes and fees",
+      "No direct customer support for bookings made through linked sites",
+    ],
+    useCases: [
+      "Traveler wanting to find the absolute lowest rate for a specific hotel",
+      "Comparison shopper who checks multiple platforms before booking",
+      "International traveler looking for localized pricing in their currency",
+    ],
   },
   {
     slug: "priceline",
@@ -230,6 +272,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "💲",
     domain: "priceline.com",
+    pros: [
+      "Express Deals offer steep discounts on hotel rooms with some mystery",
+      "Deep last-minute savings for flexible travelers",
+      "VIP rewards program provides automatic discounts and upgrades",
+      "Bundle deals combine hotel, flight, and car for additional savings",
+    ],
+    cons: [
+      "Express Deal bookings are non-refundable once confirmed",
+      "You do not know the exact hotel name until after booking Express Deals",
+      "Regular (non-deal) prices are not always the lowest available",
+    ],
+    useCases: [
+      "Flexible traveler willing to accept hotel uncertainty for steep discounts",
+      "Last-minute booker looking for same-day or next-day hotel deals",
+      "Budget traveler who prioritizes price over choosing the exact property",
+    ],
   },
   {
     slug: "hopper",
@@ -243,6 +301,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🐰",
     domain: "hopper.com",
+    pros: [
+      "AI-powered price predictions advise whether to book now or wait",
+      "Price freeze feature locks in a rate for a small fee while you decide",
+      "Push notifications alert you when prices drop for watched trips",
+      "Mobile-first design with an intuitive and engaging app experience",
+    ],
+    cons: [
+      "Mobile-only — no desktop website for booking",
+      "Price freeze fees are non-refundable even if you do not book",
+      "Customer support is app-based which can feel limited for complex issues",
+    ],
+    useCases: [
+      "Flexible traveler who can wait for optimal pricing based on AI predictions",
+      "Planner who wants to freeze a hotel price while finalizing travel dates",
+      "Mobile-first user who prefers booking and managing travel from their phone",
+    ],
   },
   {
     slug: "hoteltonight",
@@ -256,6 +330,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🌙",
     domain: "hoteltonight.com",
+    pros: [
+      "Deeply discounted rates on unsold hotel inventory for same-day stays",
+      "Curated selection of quality hotels rather than overwhelming quantity",
+      "Simple three-tap booking process for fast last-minute reservations",
+      "Daily Drops feature highlights the best deals each day",
+    ],
+    cons: [
+      "Limited to last-minute and short-notice bookings only",
+      "Cannot book far in advance for trip planning purposes",
+      "Inventory varies by city and may be limited in smaller markets",
+    ],
+    useCases: [
+      "Spontaneous traveler needing a hotel room tonight at a steep discount",
+      "Business traveler whose plans changed unexpectedly and needs quick booking",
+      "Weekend road tripper looking for same-day deals in the next destination",
+    ],
   },
   {
     slug: "marriott-bonvoy",
@@ -269,6 +359,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🏨",
     domain: "marriott.com",
+    pros: [
+      "Over 30 brands from budget to ultra-luxury with 8,000+ properties worldwide",
+      "Bonvoy loyalty program offers elite status with upgrades and late checkout",
+      "Best rate guarantee when booking directly through Marriott",
+      "Points can be transferred to 40+ airline partners for flights",
+    ],
+    cons: [
+      "Dynamic pricing on award nights means point costs vary significantly",
+      "Elite status requires a high number of nights to achieve and maintain",
+      "Massive brand portfolio can make it confusing to choose the right brand",
+    ],
+    useCases: [
+      "Frequent business traveler accumulating nights toward elite status perks",
+      "Points enthusiast earning and redeeming across Marriott's global portfolio",
+      "Luxury traveler booking at Ritz-Carlton, St. Regis, or W Hotels through Bonvoy",
+    ],
   },
   {
     slug: "hilton-honors",
@@ -282,6 +388,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🔑",
     domain: "hilton.com",
+    pros: [
+      "No blackout dates on reward stays across all 7,000+ properties",
+      "Digital Key lets you bypass the front desk and unlock your room with your phone",
+      "Points never expire as long as you have account activity",
+      "Flexible points and cash combinations for redemptions",
+    ],
+    cons: [
+      "Elite status thresholds require significant travel frequency",
+      "Some Hilton brands feel inconsistent in quality across locations",
+      "Resort fees at certain properties add costs not reflected in the base rate",
+    ],
+    useCases: [
+      "Road warrior wanting a loyalty program with no blackout dates for award nights",
+      "Tech-savvy traveler who prefers Digital Key check-in from their phone",
+      "Frequent traveler wanting points flexibility with cash-and-points options",
+    ],
   },
   {
     slug: "ihg-hotels",
@@ -295,6 +417,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🌟",
     domain: "ihg.com",
+    pros: [
+      "Diverse portfolio from budget Holiday Inn to luxury InterContinental brands",
+      "Competitive reward redemption rates often better value than competitors",
+      "Nearly 6,000 properties in over 100 countries for global coverage",
+      "Fourth night free reward for elite members on award stays",
+    ],
+    cons: [
+      "Loyalty program perks are less generous at lower elite tiers",
+      "Inconsistent property quality across the wide range of brands",
+      "App and digital experience trail Hilton and Marriott in some features",
+    ],
+    useCases: [
+      "Budget-conscious business traveler frequently staying at Holiday Inn properties",
+      "Points-focused traveler taking advantage of competitive redemption rates",
+      "Global traveler needing consistent brand options across 100+ countries",
+    ],
   },
   {
     slug: "hyatt",
@@ -308,6 +446,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "hyatt.com",
+    pros: [
+      "World of Hyatt consistently rated as the best hotel loyalty program for value",
+      "High-value point redemptions with lower point requirements than competitors",
+      "Globalist elite status includes suite upgrades and club lounge access",
+      "Premium hospitality experience with consistently high service standards",
+    ],
+    cons: [
+      "Smaller global footprint than Marriott or Hilton with fewer property options",
+      "Limited budget brand options compared to IHG or Marriott portfolios",
+      "Top elite status requires 60 qualifying nights per year",
+    ],
+    useCases: [
+      "Loyalty maximizer seeking the highest value per point in hotel rewards",
+      "Luxury traveler wanting consistent premium service and suite upgrades",
+      "Business traveler who can concentrate stays at Hyatt for elite benefits",
+    ],
   },
   {
     slug: "agoda",
@@ -321,6 +475,22 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🔴",
     domain: "agoda.com",
+    pros: [
+      "Often the cheapest platform for hotels in Asia-Pacific destinations",
+      "Flash deals and insider pricing provide additional savings",
+      "Strong inventory in Southeast Asia, Japan, and other Asian markets",
+      "Part of Booking Holdings with access to a massive global inventory",
+    ],
+    cons: [
+      "Customer service can be difficult to reach for issue resolution",
+      "Pricing display can be confusing with taxes and fees added late",
+      "Less well-known and trusted outside of Asia-Pacific markets",
+    ],
+    useCases: [
+      "Traveler booking hotels in Thailand, Japan, or other Asian destinations",
+      "Budget traveler hunting for flash deals and insider member pricing",
+      "Expat in Asia needing a reliable platform for frequent regional travel",
+    ],
   },
   {
     slug: "trip-com",
@@ -334,5 +504,21 @@ export const HOTEL_BOOKING_TOOLS: HotelBookingTool[] = [
     featured: false,
     logo: "🌏",
     domain: "trip.com",
+    pros: [
+      "Dominant platform for travel within China and across Asia",
+      "Competitive pricing on hotels, flights, and train tickets in Asian markets",
+      "Comprehensive one-stop platform covering all travel booking needs",
+      "Growing rapidly in global markets with expanding inventory",
+    ],
+    cons: [
+      "Western market presence and inventory are still developing",
+      "Customer support quality varies for non-Asian bookings",
+      "App and website UX can feel cluttered compared to Western competitors",
+    ],
+    useCases: [
+      "Traveler booking hotels and trains within China",
+      "Business traveler needing Asian hotel options that Western platforms underserve",
+      "Asia-based traveler wanting competitive pricing on regional flights and hotels",
+    ],
   },
 ];

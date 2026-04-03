@@ -86,7 +86,14 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">Our Editorial Standards</h2>
-          <p>We hold ourselves to strict editorial standards:</p>
+          <p>
+            We hold ourselves to strict editorial standards. For a detailed look at how we
+            research, evaluate, and review every tool and service, read our{" "}
+            <Link href="/methodology" className="text-violet-400 hover:text-violet-300 underline">
+              full methodology
+            </Link>
+            .
+          </p>
           <ul className="list-disc pl-6 space-y-2 text-slate-400 mt-3">
             <li>All content is original — we never copy or scrape from other websites.</li>
             <li>

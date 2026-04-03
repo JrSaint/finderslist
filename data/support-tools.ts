@@ -59,6 +59,32 @@ export const SUPPORT_CATEGORIES: Record<
   },
 };
 
+export const SUPPORT_EDITORIAL = {
+  title: "How to Choose the Right Customer Support Tools in 2026",
+  intro: `Customer support tools help businesses manage, track, and resolve customer inquiries across email, chat, phone, social media, and self-service channels. In 2026, customer expectations are higher than ever -- 75% of consumers expect a response within 5 minutes on live chat, and a single bad support experience can drive a customer to a competitor permanently. The right support stack turns your support team from a cost center into a retention and revenue driver.\n\nThe support tool landscape spans several categories: help desk and ticketing systems that organize incoming requests, live chat and messaging platforms for real-time conversations, knowledge base builders for self-service, customer success platforms for proactive account management, and feedback tools for capturing the voice of the customer. Most growing businesses start with a help desk and knowledge base, then add live chat and customer success tools as their team and customer base scale.\n\nAI has fundamentally transformed customer support in 2026. Modern platforms offer AI-powered ticket routing, suggested responses, automated resolution for common questions, and sentiment analysis to prioritize urgent issues. However, the best support organizations use AI to augment human agents rather than replace them, handling routine inquiries automatically while routing complex or emotional issues to experienced team members who can provide genuine empathy and creative problem-solving.`,
+  buyerGuide: [
+    "Channel coverage -- Evaluate which channels your customers actually use (email, chat, phone, social, SMS) and ensure the platform provides native support for each without requiring separate tools or clunky integrations.",
+    "AI and automation capabilities -- Look for smart ticket routing, AI-suggested responses, automated workflows, and chatbot builders that can resolve common questions without human intervention while maintaining a quality customer experience.",
+    "Self-service tools -- A strong knowledge base with search, AI-suggested articles, and embeddable widgets can deflect 30 to 50 percent of tickets. Check whether the platform includes a knowledge base or requires a separate product.",
+    "Reporting and SLA management -- The best platforms track response times, resolution times, CSAT scores, and SLA compliance in real time. Look for customizable dashboards and the ability to set alerts when SLAs are at risk of being breached.",
+    "Scalability and pricing model -- Support tools typically charge per agent seat. Estimate your costs at 2x and 5x your current team size to avoid sticker shock as you grow, and check whether light agent or viewer seats are available for non-support staff.",
+  ],
+  faq: [
+    {
+      question: "What is the difference between a help desk and a CRM?",
+      answer: "A help desk focuses on managing and resolving individual support tickets and conversations, while a CRM tracks the entire customer relationship including sales pipeline, account history, and revenue. Many teams use both -- the CRM for sales and account management, and the help desk for day-to-day support operations.",
+    },
+    {
+      question: "How important is a knowledge base for reducing support volume?",
+      answer: "Extremely important. Companies with well-maintained knowledge bases typically see 20% to 40% of customers finding answers on their own before submitting a ticket. This reduces agent workload, speeds up resolution for remaining tickets, and improves customer satisfaction since many people prefer self-service.",
+    },
+    {
+      question: "Should I use a standalone live chat tool or the chat built into my help desk?",
+      answer: "For most teams, the live chat built into platforms like Zendesk, Intercom, or Freshdesk is sufficient and provides a unified view of all customer interactions. Standalone chat tools like Drift or Olark make sense only if your primary use case is sales-focused website chat rather than support.",
+    },
+  ],
+};
+
 export const SUPPORT_TOOLS: SupportTool[] = [
   {
     slug: "zendesk",

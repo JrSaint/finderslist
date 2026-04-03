@@ -26,6 +26,32 @@ export const PAYROLL_CATEGORIES: Record<PayrollCategory, { label: string; emoji:
   "time-attendance": { label: "Time & Attendance", emoji: "⏰", description: "Systems for tracking employee work hours, shifts, and attendance.", gradient: "from-teal-600/30 to-emerald-800/40" },
 };
 
+export const PAYROLL_EDITORIAL = {
+  title: "How to Choose the Right Payroll Software in 2026",
+  intro: `Payroll software automates the process of calculating employee wages, withholding taxes, filing tax returns, and distributing payments. Getting payroll wrong carries serious consequences -- late or incorrect tax filings trigger IRS penalties, and paycheck errors erode employee trust fast. The right platform handles all of this automatically while giving you visibility into labor costs and compliance status.\n\nThe payroll landscape ranges from lightweight tools designed for small businesses with a handful of employees to enterprise platforms managing thousands of workers across multiple countries. Many modern payroll platforms have expanded into full HR suites, bundling benefits administration, time tracking, hiring, and compliance into a single system. This bundling can simplify operations, but make sure the payroll engine itself is robust before being swayed by extra features.\n\nFor companies with international teams or remote workers in multiple states, multi-jurisdiction tax compliance is a critical capability. Each state has different withholding rules, filing deadlines, and registration requirements. Employer of Record (EOR) services have also emerged as a popular option for companies hiring internationally without establishing local entities.`,
+  buyerGuide: [
+    "Tax filing accuracy and guarantees -- choose a provider that calculates, files, and remits federal, state, and local payroll taxes automatically and offers a penalty-free guarantee if they make an error.",
+    "Multi-state and international support -- if you have employees in multiple states or countries, verify the platform handles registration, withholding, and filing in every jurisdiction where you have workers.",
+    "Benefits and HR integration -- evaluate whether the platform integrates with or includes health insurance, 401(k), workers' comp, and PTO management to avoid juggling multiple disconnected systems.",
+    "Employee self-service portal -- a good self-service portal lets employees access pay stubs, W-2s, update direct deposit info, and manage benefits enrollment without creating extra work for your HR team.",
+    "Pricing transparency -- payroll pricing models vary widely; understand whether you pay per employee per month, per payroll run, or a flat fee, and watch for hidden charges like tax filing fees, year-end form fees, or setup costs.",
+  ],
+  faq: [
+    {
+      question: "How much does payroll software cost for a small business?",
+      answer: "Most payroll platforms charge a base fee of $20-$50 per month plus $4-$12 per employee per month. For a company with 10 employees, expect to pay $60-$170 per month. Some providers like Wave offer free basic payroll in certain states, while full-service options with benefits and HR tools can run $100+ per month at the base level.",
+    },
+    {
+      question: "What happens if payroll software makes a tax filing error?",
+      answer: "Reputable payroll providers offer tax penalty guarantees, meaning they will cover any penalties and interest resulting from their filing errors. However, you remain legally responsible as the employer, so verify the provider's guarantee terms in writing. Always review payroll reports before each run to catch input errors on your end.",
+    },
+    {
+      question: "Can I switch payroll providers mid-year?",
+      answer: "Yes, but timing matters. The cleanest time to switch is at the start of a new quarter to simplify tax reporting. Your new provider will need year-to-date payroll data, tax filings, and employee information from your current system. Most providers handle the migration process, but allow 2-4 weeks for setup and testing before your first live payroll run.",
+    },
+  ],
+};
+
 export const PAYROLL_TOOLS: PayrollTool[] = [
   {
     slug: "gusto",
@@ -140,6 +166,24 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🔷",
     domain: "paychex.com",
+    pros: [
+      "Scalable platform serving businesses from 1 to 1,000+ employees",
+      "Decades of compliance expertise and tax filing accuracy",
+      "Dedicated payroll specialists assigned for ongoing support",
+      "Strong mobile app for payroll management on the go",
+      "Optional PEO services through Paychex HR for bundled benefits",
+    ],
+    cons: [
+      "Quote-based pricing makes it difficult to compare costs upfront",
+      "Interface is functional but less modern than Gusto or Rippling",
+      "Add-on features can significantly increase the total cost",
+      "Customer support quality varies by assigned specialist",
+    ],
+    useCases: [
+      "Mid-market company with 50-500 employees needing scalable payroll and HR",
+      "Business wanting a dedicated payroll specialist for hands-on compliance support",
+      "Company seeking optional PEO services alongside standalone payroll processing",
+    ],
   },
   {
     slug: "paycom",
@@ -153,6 +197,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🟩",
     domain: "paycom.com",
+    pros: [
+      "Beti self-service tool lets employees manage their own payroll data reducing errors",
+      "Single-database architecture eliminates data sync issues between modules",
+      "Comprehensive HCM covering the full employee lifecycle in one platform",
+      "Strong talent management and performance review capabilities",
+    ],
+    cons: [
+      "Best suited for 50+ employee companies and may be overkill for small businesses",
+      "Pricing is not published and requires a sales consultation",
+      "Implementation can be lengthy for companies with complex payroll needs",
+      "Heavily sales-driven engagement process can feel aggressive",
+    ],
+    useCases: [
+      "Mid-market company wanting employees to self-manage payroll verification through Beti",
+      "Organization needing a single-database HCM without third-party integrations",
+      "Business with 100-5,000 employees seeking unified payroll and talent management",
+    ],
   },
   {
     slug: "oyster-hr",
@@ -167,6 +228,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🦪",
     domain: "oysterhr.com",
+    pros: [
+      "Strong focus on employee experience with localized benefits and cultural support",
+      "EOR services in 180+ countries with a growing global footprint",
+      "Professional development stipends and Oyster Academy add unique value",
+      "Emphasis on distributed team culture and employee well-being",
+    ],
+    cons: [
+      "EOR pricing can be higher than competitors for basic service tiers",
+      "Contractor management features are less mature than Deel",
+      "Fewer countries with owned entities compared to Remote.com",
+      "Platform can feel slower and less polished than leading competitors",
+    ],
+    useCases: [
+      "Remote-first company hiring employees in emerging markets with localized benefits",
+      "Business prioritizing employee experience and professional development for global hires",
+      "Distributed team wanting EOR services with a focus on company culture tools",
+    ],
   },
   {
     slug: "multiplier",
@@ -181,6 +259,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "✖️",
     domain: "usemultiplier.com",
+    pros: [
+      "Strong presence in Asian and Middle Eastern markets often underserved by competitors",
+      "Competitive EOR pricing with transparent rate structures",
+      "Multi-currency contractor payments with automated invoicing",
+      "Country-specific employment contracts generated automatically",
+    ],
+    cons: [
+      "Newer platform with less proven track record than Deel or Remote",
+      "Customer support responsiveness varies by region and time zone",
+      "Benefits packages are more limited in some countries",
+      "Platform feature depth is still catching up to market leaders",
+    ],
+    useCases: [
+      "Company hiring employees in Southeast Asia or the Middle East through EOR services",
+      "Business needing multi-currency contractor payments across 150+ countries",
+      "Startup comparing EOR providers and seeking competitive pricing for Asian markets",
+    ],
   },
   {
     slug: "quickbooks-payroll",
@@ -194,6 +289,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "📗",
     domain: "quickbooks.intuit.com",
+    pros: [
+      "Seamless integration with QuickBooks Online eliminates manual accounting data entry",
+      "Automatic payroll tax calculation and filing included in all paid tiers",
+      "Same-day or next-day direct deposit depending on plan tier",
+      "Familiar Intuit interface for businesses already using QuickBooks",
+    ],
+    cons: [
+      "Full-service payroll add-on significantly increases QuickBooks subscription cost",
+      "Payroll features are less comprehensive than dedicated platforms like Gusto",
+      "Customer support for payroll issues can be slow during tax season",
+      "Limited HR and benefits features compared to all-in-one payroll platforms",
+    ],
+    useCases: [
+      "Small business already using QuickBooks Online wanting payroll that syncs automatically",
+      "Freelancer or solopreneur paying one or two employees with minimal complexity",
+      "Accountant managing payroll for multiple clients through QuickBooks Accountant",
+    ],
   },
   {
     slug: "onpay",
@@ -208,6 +320,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "💵",
     domain: "onpay.com",
+    pros: [
+      "Single transparent pricing tier with all features included — no upsells",
+      "Unlimited pay runs at no additional cost",
+      "Multi-state payroll support included in the base price",
+      "Basic HR tools, onboarding, and PTO tracking bundled in",
+    ],
+    cons: [
+      "Limited advanced HR features compared to platforms like Gusto or Rippling",
+      "No international payroll or contractor payment capabilities",
+      "Reporting options are functional but less customizable than enterprise tools",
+      "Brand awareness is lower making it harder to evaluate through peer reviews",
+    ],
+    useCases: [
+      "Small business wanting straightforward payroll with no pricing tiers to navigate",
+      "Company with employees in multiple states needing multi-state filing included",
+      "Business owner wanting unlimited pay runs without worrying about per-run charges",
+    ],
   },
   {
     slug: "wave-payroll",
@@ -221,6 +350,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🌊",
     domain: "waveapps.com",
+    pros: [
+      "Pairs with Wave's free accounting and invoicing software for a unified solution",
+      "Affordable pricing at $40/month base plus $6 per employee",
+      "Full-service tax filing available in 14 states",
+      "Direct deposit and year-end reporting included",
+    ],
+    cons: [
+      "Full-service tax filing only available in 14 states — others require self-service",
+      "Payroll features are basic compared to Gusto or ADP",
+      "Limited HR and benefits capabilities beyond basic payroll",
+      "Customer support options are more limited than larger payroll providers",
+    ],
+    useCases: [
+      "Freelancer or very small business already using Wave for free accounting and invoicing",
+      "Sole proprietor with 1-3 employees needing the most affordable payroll add-on",
+      "Business in a tax-service state wanting full-service payroll integrated with Wave accounting",
+    ],
   },
   {
     slug: "homebase",
@@ -234,6 +380,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🏠",
     domain: "joinhomebase.com",
+    pros: [
+      "Free plan covers scheduling and time tracking for one location",
+      "Payroll syncs directly with timesheets eliminating manual data entry",
+      "Purpose-built for hourly workforces in restaurants, retail, and services",
+      "Combines scheduling, time clock, hiring, and payroll in one platform",
+    ],
+    cons: [
+      "Payroll is a paid add-on on top of the base subscription",
+      "Less suited for salaried or office-based workforces",
+      "Advanced features require upgrading from the free plan",
+      "Reporting and analytics are basic compared to dedicated payroll platforms",
+    ],
+    useCases: [
+      "Restaurant using free scheduling and adding payroll that auto-syncs with timesheets",
+      "Retail store managing hourly employee shifts and time tracking with integrated payroll",
+      "Small service business needing hiring, scheduling, and payroll in one affordable tool",
+    ],
   },
   {
     slug: "deputy",
@@ -247,6 +410,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "⭐",
     domain: "deputy.com",
+    pros: [
+      "AI-powered auto-scheduling optimizes shifts based on availability and demand forecasts",
+      "Geofencing and facial recognition ensure accurate attendance tracking",
+      "Integrates with 50+ payroll and POS systems for seamless data flow",
+      "Used by 300,000+ workplaces globally with proven scalability",
+    ],
+    cons: [
+      "Not a payroll processor itself — requires integration with a separate payroll platform",
+      "Advanced features like demand forecasting require higher-tier plans",
+      "Learning curve for managers setting up AI scheduling rules",
+      "Per-user pricing can add up for businesses with large part-time staffs",
+    ],
+    useCases: [
+      "Hospitality business using AI auto-scheduling to optimize shift coverage and labor costs",
+      "Healthcare facility tracking employee attendance with geofencing at multiple locations",
+      "Retail chain integrating Deputy's timesheets directly with their existing payroll provider",
+    ],
   },
   {
     slug: "when-i-work",
@@ -260,6 +440,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "📅",
     domain: "wheniwork.com",
+    pros: [
+      "Intuitive drag-and-drop scheduling that managers can learn in minutes",
+      "Employee shift swapping and time-off requests handled through the mobile app",
+      "Multi-location support for businesses with several sites",
+      "Integrates with major payroll providers for seamless timesheet export",
+    ],
+    cons: [
+      "Does not include built-in payroll processing — requires a separate provider",
+      "Free plan has been discontinued and all tiers are now paid",
+      "Limited advanced features like demand forecasting or AI scheduling",
+      "Reporting is functional but lacks depth for larger organizations",
+    ],
+    useCases: [
+      "Restaurant manager creating weekly shift schedules with drag-and-drop simplicity",
+      "Retail business enabling employees to swap shifts and request time off via mobile",
+      "Multi-location business managing schedules across several stores in one dashboard",
+    ],
   },
   {
     slug: "connecteam",
@@ -273,6 +470,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "📱",
     domain: "connecteam.com",
+    pros: [
+      "Purpose-built for deskless and frontline workers with mobile-first design",
+      "Free plan supports up to 10 users with full feature access",
+      "GPS time tracking ensures field employees clock in from correct locations",
+      "All-in-one platform combines time tracking, scheduling, communication, and training",
+    ],
+    cons: [
+      "Does not include built-in payroll processing — timesheets must be exported",
+      "Feature richness can make initial setup and configuration complex",
+      "Scaling beyond 10 users requires paid plans that can add up",
+      "Some features are basic compared to specialized tools in each category",
+    ],
+    useCases: [
+      "Cleaning company tracking field workers' time and locations with GPS clock-in",
+      "Construction team managing schedules, tasks, and safety training in one mobile app",
+      "Logistics company communicating with drivers and tracking deliveries through Connecteam",
+    ],
   },
   {
     slug: "paylocity",
@@ -286,6 +500,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🟦",
     domain: "paylocity.com",
+    pros: [
+      "Modern interface with employee experience features like Community social feed",
+      "On-demand pay option lets employees access earned wages before payday",
+      "Robust analytics and reporting for workforce insights and labor cost analysis",
+      "Comprehensive HCM covering payroll, benefits, talent, and workforce management",
+    ],
+    cons: [
+      "Pricing is not transparent and requires a sales consultation",
+      "Best suited for mid-market companies — may be overbuilt for very small businesses",
+      "Implementation timeline can be lengthy for complex configurations",
+      "Some modules feel less mature than the core payroll engine",
+    ],
+    useCases: [
+      "Mid-market company wanting a modern HCM with employee engagement features",
+      "Business offering on-demand pay as an employee retention and recruitment benefit",
+      "HR team needing advanced workforce analytics to optimize labor costs and scheduling",
+    ],
   },
   {
     slug: "paycor",
@@ -299,6 +530,23 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🔶",
     domain: "paycor.com",
+    pros: [
+      "Industry-specific solutions for healthcare, manufacturing, and food & beverage",
+      "AutoRun feature enables hands-free payroll processing once configured",
+      "Predictive analytics help anticipate workforce trends and turnover risks",
+      "Built-in learning management system for employee training and development",
+    ],
+    cons: [
+      "Pricing is quote-based and can be higher than some competitors",
+      "Platform complexity can be overwhelming for smaller organizations",
+      "Customer support quality has received mixed reviews",
+      "Implementation requires significant time investment for full configuration",
+    ],
+    useCases: [
+      "Healthcare organization needing industry-specific payroll and compliance tools",
+      "Manufacturing company using AutoRun for hands-free recurring payroll processing",
+      "Mid-market business leveraging predictive analytics to reduce employee turnover",
+    ],
   },
   {
     slug: "bambee",
@@ -312,5 +560,22 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
     featured: false,
     logo: "🐝",
     domain: "bambee.com",
+    pros: [
+      "Dedicated human HR Manager provides expert guidance rather than just software",
+      "HR audits, handbook creation, and compliance reviews included in the service",
+      "Payroll processing and tax filing bundled with HR management",
+      "Affordable entry point starting at $99/month for very small businesses",
+    ],
+    cons: [
+      "HR Manager service model may not scale well for companies over 100 employees",
+      "Payroll features are more basic than dedicated payroll platforms like Gusto",
+      "Limited self-service technology compared to software-first competitors",
+      "Add-on fees can increase the total cost beyond the base subscription",
+    ],
+    useCases: [
+      "Small business owner wanting a human HR expert to handle compliance and employee issues",
+      "Company with 5-50 employees needing an employee handbook and HR audit",
+      "Business without an in-house HR team seeking outsourced HR management alongside payroll",
+    ],
   },
 ];

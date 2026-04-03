@@ -26,6 +26,32 @@ export const BACKGROUND_CHECK_CATEGORIES: Record<BackgroundCheckCategory, { labe
   "identity": { label: "Identity Verification", emoji: "🪪", description: "Tools for verifying identity documents and detecting fraud in high-stakes onboarding flows.", gradient: "from-sky-600/30 to-blue-800/40" },
 };
 
+export const BACKGROUND_CHECK_EDITORIAL = {
+  title: "How to Choose the Right Background Check Service in 2026",
+  intro: `Background check services verify a person's criminal history, employment history, education, credit record, and identity — critical information for employers making hiring decisions, landlords screening tenants, and individuals checking their own records. A bad hire or problematic tenant can cost thousands of dollars and create significant legal liability, making thorough screening a worthwhile investment.\n\nThe market ranges from instant consumer-grade people search tools to enterprise employment screening platforms with FCRA-compliant workflows, ATS integrations, and adjudication tools. The distinction matters legally: if you're using a background check for employment or housing decisions, you must use an FCRA-compliant service and follow specific disclosure, consent, and adverse action procedures. Consumer people-search sites are not compliant for these purposes.\n\nTurnaround time varies dramatically. Instant database searches return results in minutes but may miss records from jurisdictions that don't report to national databases. County-level court searches are more thorough but can take 3-7 business days. The best services offer tiered packages that let you balance speed, thoroughness, and cost based on the role or situation.`,
+  buyerGuide: [
+    "FCRA compliance — if using checks for employment or housing decisions, the service must be FCRA-compliant with proper disclosure forms, consent workflows, and adverse action letter support.",
+    "Database coverage and accuracy — evaluate which criminal databases, court systems, and verification sources the service accesses; national database searches alone miss records from many jurisdictions.",
+    "Turnaround time — instant results come from database scans, while county court searches take days; choose based on your hiring speed requirements and accuracy needs.",
+    "ATS and HRIS integration — for companies hiring at volume, direct integration with your applicant tracking system eliminates manual data entry and streamlines the candidate experience.",
+    "Candidate experience — modern platforms provide candidate portals where applicants can track status, submit information, and dispute inaccuracies, which reduces friction and improves your employer brand.",
+  ],
+  faq: [
+    {
+      question: "How long does a background check take?",
+      answer: "Instant database searches return results in minutes. Standard employment background checks typically take 2-5 business days. Checks requiring county court searches, international verification, or education confirmation can take 1-2 weeks. Most services offer expedited options for time-sensitive hiring.",
+    },
+    {
+      question: "What is FCRA compliance and why does it matter?",
+      answer: "The Fair Credit Reporting Act (FCRA) regulates how background information can be collected and used for employment, housing, and credit decisions. Non-compliant screening exposes you to lawsuits — penalties can reach $1,000 per violation plus attorney fees. Always use an FCRA-compliant service for hiring and tenant screening.",
+    },
+    {
+      question: "Can I run a background check on myself?",
+      answer: "Yes, and it's a good idea before job searching. Several services offer self-background checks that show what employers will see. This lets you identify and correct errors before they cost you a job opportunity. Self-checks don't require FCRA procedures since you're checking your own record.",
+    },
+  ],
+};
+
 export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
   {
     slug: "checkr",
@@ -119,6 +145,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🔎",
     domain: "intellicorp.net",
+    pros: ["PBSA-accredited with built-in FCRA compliance tools", "ADP integration enables seamless payroll and HR workflow connection", "Flexible, customizable screening packages for different role types", "Competitive pricing for mid-sized organizations", "User-friendly platform accessible to non-specialist HR staff"],
+    cons: ["Less known than Checkr or Sterling — smaller brand presence", "International screening capabilities are limited", "Turnaround times vary for county-level criminal searches", "Advanced API integrations are less developed than Checkr"],
+    useCases: ["Staffing agency running high-volume background checks with ADP-integrated workflow", "HR department building custom screening packages for different job classifications", "Mid-size company needing FCRA-compliant checks at competitive per-screening pricing"],
   },
   {
     slug: "national-background-check",
@@ -132,6 +161,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "📋",
     domain: "nationalbackgroundcheck.com",
+    pros: ["No long-term contracts or minimum order requirements", "Affordable per-check pricing suited for low-volume screening", "Instant database searches return results within minutes", "Simple ordering process without complex platform setup", "Includes SSN trace and sex offender registry checks"],
+    cons: ["Instant database searches can miss records from non-reporting jurisdictions", "Court-verified searches take significantly longer", "Less suitable for high-volume or enterprise hiring needs", "Limited candidate portal and modern digital experience"],
+    useCases: ["Small business owner running an occasional background check on a new hire", "Independent landlord screening a prospective tenant without a subscription", "Nonprofit conducting basic criminal checks on volunteers at low cost"],
   },
   {
     slug: "beenverified",
@@ -145,6 +177,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🔍",
     domain: "beenverified.com",
+    pros: ["Comprehensive aggregation of public records from multiple data sources", "Criminal records, social media, property records, and contact info in one search", "Monthly subscription provides unlimited searches during the billing period", "User-friendly interface accessible to non-professionals", "Self-background check option shows what others can find about you"],
+    cons: ["NOT FCRA-compliant — cannot be used for employment or housing decisions", "Data accuracy varies and may include outdated information", "Subscription auto-renewal can be difficult to cancel", "Some users report incomplete or inaccurate records"],
+    useCases: ["Individual running a self-background check before starting a job search", "Person verifying contact information for a long-lost family member", "User checking publicly available records on a new acquaintance or business contact"],
   },
   {
     slug: "truthfinder",
@@ -158,6 +193,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🕵️",
     domain: "truthfinder.com",
+    pros: ["Dark web monitoring alerts when personal info appears in breaches", "Comprehensive reports including criminal history, social media, and contact details", "Address history tracking useful for verifying someone's background", "Self-monitoring features help you understand your own digital footprint", "User-friendly search interface with detailed report formatting"],
+    cons: ["NOT FCRA-compliant — strictly for personal use, not employment decisions", "Subscription pricing can feel expensive for occasional users", "Report accuracy varies by jurisdiction and data availability", "Aggressive upselling during the signup process"],
+    useCases: ["Person monitoring their own information on the dark web for breach alerts", "Individual researching a new neighbor or community member using public records", "User checking their own background report before applying for jobs"],
   },
   {
     slug: "intelius",
@@ -171,6 +209,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "📞",
     domain: "intelius.com",
+    pros: ["One of the most established people search platforms with decades of data", "Reverse phone lookup feature is particularly comprehensive", "Both one-time report and subscription options available", "Address history and relative connections aid in locating people", "Large public records database compiled over many years"],
+    cons: ["NOT FCRA-compliant — personal use only", "One-time reports can be expensive compared to subscription plans", "Data may include outdated or inaccurate information", "Cancellation process for subscriptions has drawn complaints"],
+    useCases: ["Person using reverse phone lookup to identify an unknown caller", "Individual trying to reconnect with a relative using address and contact history", "User purchasing a one-time background report on someone before a meeting"],
   },
   {
     slug: "shareable-for-hires",
@@ -184,6 +225,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🤝",
     domain: "shareable.net",
+    pros: ["Powered by TransUnion — reliable and well-known data source", "Candidate-pays model eliminates cost burden on the employer", "No minimum order requirements or long-term contracts", "Transparent per-check pricing with no hidden fees", "Fast results for basic criminal and SSN verification checks"],
+    cons: ["Limited check types compared to full-service employment screening providers", "Candidate-pays model may deter applicants for lower-wage positions", "No ATS integrations for automated workflows", "Less suitable for companies hiring at scale"],
+    useCases: ["Small business hiring an office manager and needing a one-time criminal and credit check", "Startup with no HR infrastructure wanting candidates to initiate their own screening", "Seasonal employer running quick background checks without committing to a platform"],
   },
   {
     slug: "first-advantage",
@@ -197,6 +241,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🏦",
     domain: "fadv.com",
+    pros: ["Publicly traded with enterprise-grade global screening infrastructure", "Comprehensive service portfolio covering criminal, drug, identity, and international checks", "Strong in regulated industries including finance and healthcare", "Dedicated account management for Fortune 500 clients", "Identity verification capabilities for high-security onboarding"],
+    cons: ["Enterprise pricing is not transparent — requires sales engagement", "Implementation is complex for large-scale deployments", "Not suited for small businesses or low-volume screening", "Some users report the platform UI is less intuitive than newer competitors"],
+    useCases: ["Fortune 500 company needing a single global screening vendor across 50+ countries", "Financial institution running comprehensive checks with regulated-industry compliance", "Enterprise HR team needing identity verification integrated into the screening workflow"],
   },
   {
     slug: "rentprep",
@@ -210,6 +257,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🏡",
     domain: "rentprep.com",
+    pros: ["Human-verified reports reduce errors compared to automated-only services", "Purpose-built for landlords with tenant-specific screening packages", "Credit, criminal, and eviction history in one report", "Per-screening pricing with no subscription required", "Income verification helps confirm tenant ability to pay rent"],
+    cons: ["Human verification adds time — reports are not instant", "Fewer features than platforms that combine screening with property management", "No integration with property management software", "Limited to US screening — no international checks"],
+    useCases: ["Independent landlord screening a prospective tenant with full credit and criminal check", "Property manager verifying income and eviction history before signing a lease", "Small-scale investor wanting human-reviewed reports to minimize false positives"],
   },
   {
     slug: "tenantcloud-background-check",
@@ -223,6 +273,9 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "☁️",
     domain: "tenantcloud.com",
+    pros: ["Screening integrated directly into full property management platform", "TransUnion-powered credit reports and criminal checks", "Results connect directly to tenant profiles and lease documents", "Eliminates need for separate screening service subscriptions", "Free tier available for landlords managing a small number of units"],
+    cons: ["Screening features are part of broader platform — may be too much for simple needs", "Credit report access requires tenant consent through the platform", "Less specialized than dedicated screening services like RentPrep", "Advanced property management features require paid plans"],
+    useCases: ["Landlord managing 5 rental units who wants screening built into lease management", "Property manager reviewing TransUnion credit reports alongside tenant applications", "Small landlord using the free tier to screen tenants and manage leases in one place"],
   },
   {
     slug: "certn",
@@ -236,5 +289,8 @@ export const BACKGROUND_CHECK_TOOLS: BackgroundCheckTool[] = [
     featured: false,
     logo: "🤖",
     domain: "certn.co",
+    pros: ["AI and automation deliver screening results faster than many competitors", "Strong international coverage for cross-border hiring", "Candidate-first design makes the screening experience transparent and simple", "Continuous monitoring option for ongoing workforce risk management", "Serves both SMB and enterprise clients with flexible plans"],
+    cons: ["Newer entrant — less established track record than Sterling or HireRight", "Pricing requires a sales conversation for enterprise volumes", "Some regional databases may have coverage gaps", "Advanced integrations may require technical setup support"],
+    useCases: ["International company hiring across US, UK, and Australia with one screening vendor", "HR team wanting AI-powered fast results without sacrificing thoroughness", "Organization implementing continuous criminal monitoring for existing employees"],
   },
 ];

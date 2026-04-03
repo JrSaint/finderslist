@@ -51,6 +51,32 @@ export const SOLAR_PANEL_CATEGORIES: Record<SolarPanelCategory, { label: string;
   },
 };
 
+export const SOLAR_PANEL_EDITORIAL = {
+  title: "How to Choose the Right Solar Panel Company in 2026",
+  intro: `Going solar is one of the largest home improvement investments most homeowners will make, often ranging from $15,000 to $35,000 before incentives. The federal Investment Tax Credit (ITC) still offers a 30% tax credit through 2032, making 2026 an excellent time to install. But the company you choose matters as much as the panels themselves -- installation quality, warranty coverage, and financing terms vary dramatically between providers.\n\nThe solar industry includes national installers who handle everything in-house, local contractors who may offer more personalized service and competitive pricing, and marketplace platforms that let you compare multiple quotes side by side. Each model has tradeoffs: national companies provide consistency and robust warranties, while local installers often deliver lower prices and faster timelines. Marketplace platforms like EnergySage give you leverage by letting installers compete for your business.\n\nBefore signing any contract, get at least three quotes, verify the installer is NABCEP-certified, and carefully review the warranty terms. Panel warranties typically cover 25 years of production, but workmanship warranties from the installer can range from just 5 to 25 years. Also pay close attention to whether you are buying, leasing, or entering a power purchase agreement, as each option has very different financial implications for your home value and long-term savings.`,
+  buyerGuide: [
+    "Installer certification -- Look for NABCEP-certified installers, which is the gold standard for solar professionals and ensures proper training in system design, installation, and safety.",
+    "Warranty structure -- Evaluate both the panel manufacturer warranty (typically 25 years) and the installer workmanship warranty separately, as a great panel means little if the roof penetrations leak.",
+    "Financing options -- Compare cash purchase, solar loans, leases, and PPAs carefully, since only purchases and loans let you claim the federal tax credit and increase your home value.",
+    "Equipment quality -- Tier 1 panel manufacturers like REC, Panasonic, and Qcells offer better degradation rates and long-term reliability than budget brands, even if upfront costs are slightly higher.",
+    "System monitoring -- The best installers provide app-based monitoring so you can track daily production, spot issues early, and verify your system is performing as promised in the proposal.",
+  ],
+  faq: [
+    {
+      question: "How long does a typical residential solar installation take?",
+      answer: "From signed contract to system activation, expect 2 to 4 months. The physical installation takes only 1 to 3 days, but permitting, utility interconnection approvals, and scheduling account for most of the timeline.",
+    },
+    {
+      question: "Should I buy solar panels or lease them?",
+      answer: "Buying (either with cash or a solar loan) is almost always the better financial decision. You get the 30% federal tax credit, increase your home value, and own a system that produces free electricity for 25+ years. Leases and PPAs offer zero upfront costs but deliver significantly lower lifetime savings.",
+    },
+    {
+      question: "Do solar panels work during power outages?",
+      answer: "Standard grid-tied solar systems shut down during outages for safety reasons. To keep power during blackouts, you need a battery storage system like the Tesla Powerwall or Enphase IQ Battery paired with your solar array.",
+    },
+  ],
+};
+
 export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
   {
     slug: "sunpower",
@@ -217,6 +243,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🗽",
     domain: "freedomsolarpower.com",
+    pros: [
+      "Carries premium panel brands like SunPower for maximum efficiency and quality",
+      "One of the highest-rated solar companies in Texas with strong customer reviews",
+      "Battery storage options available for backup power capability",
+      "Expanding service area beyond Texas to serve additional states",
+    ],
+    cons: [
+      "Premium panel selection means higher upfront costs than budget installers",
+      "Service area is still limited compared to national solar companies",
+      "Wait times for installation can be longer due to high demand",
+      "Pricing is not available online and requires a consultation",
+    ],
+    useCases: [
+      "Texas homeowner wanting premium SunPower panels installed by a top-rated company",
+      "Customer prioritizing installation quality and premium equipment over lowest price",
+      "Homeowner adding battery storage alongside a new solar panel system",
+    ],
   },
   {
     slug: "palmetto",
@@ -230,6 +273,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🌴",
     domain: "palmetto.com",
+    pros: [
+      "Tech-driven online platform for transparent system design and progress tracking",
+      "Energy monitoring app shows real-time solar production and savings",
+      "Partners with vetted local installers combining national platform with local expertise",
+      "Streamlined customer experience from design through installation and monitoring",
+    ],
+    cons: [
+      "Does not perform installation directly — relies on local installer partners",
+      "Installation quality depends on the specific local partner assigned",
+      "Pricing may include a platform premium over going directly to a local installer",
+      "Company has faced some operational challenges and customer service complaints",
+    ],
+    useCases: [
+      "Tech-savvy homeowner wanting a transparent online solar design and monitoring experience",
+      "Customer who wants a national platform but prefers local installer expertise",
+      "Homeowner wanting app-based energy monitoring alongside their solar installation",
+    ],
   },
   {
     slug: "energysage",
@@ -243,6 +303,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "📊",
     domain: "energysage.com",
+    pros: [
+      "Compare multiple quotes from pre-screened local installers side by side for free",
+      "Transparent pricing data helps homeowners negotiate better deals",
+      "Extensive educational resources help buyers make informed decisions",
+      "Installer reviews and ratings provide real customer feedback",
+    ],
+    cons: [
+      "Does not install solar — acts as a marketplace connecting buyers with installers",
+      "Quote quality depends on which installers participate in your area",
+      "Some homeowners report receiving sales calls after requesting quotes",
+      "Not all top-rated local installers participate in the EnergySage marketplace",
+    ],
+    useCases: [
+      "Homeowner comparing three or more solar quotes side-by-side before choosing an installer",
+      "First-time solar buyer using educational resources to understand options and pricing",
+      "Cost-conscious customer wanting to leverage competitive quotes for the best deal",
+    ],
   },
   {
     slug: "momentum-solar",
@@ -256,6 +333,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🔆",
     domain: "momentumsolar.com",
+    pros: [
+      "Multiple financing options including lease, loan, and PPA for flexibility",
+      "Handles full permitting, installation, and system monitoring",
+      "Strong focus on customer education throughout the solar buying process",
+      "Full-service approach minimizes homeowner involvement in logistics",
+    ],
+    cons: [
+      "Service area primarily limited to East Coast states",
+      "Customer reviews are mixed with some reporting high-pressure sales tactics",
+      "Lease and PPA terms may not be as favorable as purchasing options",
+      "Equipment brand selection may be more limited than independent installers",
+    ],
+    useCases: [
+      "East Coast homeowner wanting solar with flexible financing including lease options",
+      "Customer who prefers a full-service installation with minimal personal involvement",
+      "First-time solar buyer who values education about the process and financing options",
+    ],
   },
   {
     slug: "trinity-solar",
@@ -269,6 +363,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "☘️",
     domain: "trinity-solar.com",
+    pros: [
+      "Family-owned with over 100,000 completed installations demonstrating scale and experience",
+      "Strong presence in the Northeast with expanding Southeast coverage",
+      "Multiple financing structures including loan, lease, and PPA options",
+      "Established company with a long track record in the solar industry",
+    ],
+    cons: [
+      "Service area concentrated in the Northeast and Southeast only",
+      "Some customers report aggressive sales approaches during consultations",
+      "Installation timelines can be lengthy due to high demand in coverage areas",
+      "Equipment options may be more limited than smaller custom installers",
+    ],
+    useCases: [
+      "Northeast homeowner wanting a large established solar installer with financing options",
+      "Family preferring a family-owned company over national corporate solar brands",
+      "Customer in the Northeast or Southeast seeking a proven installer with 100K+ installations",
+    ],
   },
   {
     slug: "adt-solar",
@@ -282,6 +393,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🛡️",
     domain: "adtsolar.com",
+    pros: [
+      "Backed by the well-known and trusted ADT brand for consumer confidence",
+      "Battery storage options available alongside solar panel installation",
+      "Purchase and financing options provide flexibility for different budgets",
+      "Strong customer service infrastructure leveraged from ADT's existing operations",
+    ],
+    cons: [
+      "Rebranding from Sunpro has caused some market confusion",
+      "Pricing can be higher than independent local installers",
+      "Brand recognition in solar is still developing compared to Sunrun or Tesla",
+      "Equipment selection may be more limited than specialized solar companies",
+    ],
+    useCases: [
+      "ADT security customer wanting to add solar from a trusted familiar brand",
+      "Homeowner seeking solar with battery backup from a nationally recognized company",
+      "Customer who values brand trust and established customer service infrastructure",
+    ],
   },
   {
     slug: "sunlux",
@@ -295,6 +423,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🌞",
     domain: "sunluxsolar.com",
+    pros: [
+      "Boutique installer focused on premium quality and installation craftsmanship",
+      "High-efficiency panels optimized for each home's unique roof configuration",
+      "Personalized system design maximizes energy production per square foot",
+      "Strong customer reviews highlighting attention to detail and workmanship",
+    ],
+    cons: [
+      "Service area limited to Southern California only",
+      "Boutique pricing may be higher than larger volume-based installers",
+      "Smaller company with limited capacity compared to national installers",
+      "Less brand recognition outside the Southern California market",
+    ],
+    useCases: [
+      "Southern California homeowner wanting a premium boutique solar installation experience",
+      "Customer with a complex roof layout needing personalized system design optimization",
+      "Homeowner who values craftsmanship and quality over finding the lowest possible price",
+    ],
   },
   {
     slug: "elevation-solar",
@@ -308,6 +453,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "⛰️",
     domain: "elevationsolar.com",
+    pros: [
+      "Deep expertise in Arizona utility rate structures for maximized solar savings",
+      "Battery storage focus helps customers optimize time-of-use rate arbitrage",
+      "Specialized knowledge of desert climate conditions for system design",
+      "Strong local reputation in the Arizona solar market",
+    ],
+    cons: [
+      "Service area limited to Arizona and surrounding states",
+      "Smaller company with less capacity than national solar installers",
+      "Pricing is not transparent online and requires a consultation",
+      "Limited brand recognition outside the Southwest region",
+    ],
+    useCases: [
+      "Arizona homeowner wanting solar optimized for high utility rates and desert conditions",
+      "Customer adding battery storage to take advantage of time-of-use rate structures",
+      "Resident in the Phoenix metro area seeking a local solar specialist with strong reviews",
+    ],
   },
   {
     slug: "harvest-solar",
@@ -321,6 +483,23 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🌾",
     domain: "harvestsolar.com",
+    pros: [
+      "Community solar model makes solar accessible to renters and those who cannot install panels",
+      "Strong presence in the Midwest serving an underserved solar market",
+      "Multiple subscribers can benefit from a single solar farm installation",
+      "No rooftop installation required — subscribers save through virtual net metering",
+    ],
+    cons: [
+      "Savings from community solar are typically less than owning your own rooftop system",
+      "Subscription terms and savings vary by state regulations and utility structures",
+      "Limited service area focused primarily on the Midwest",
+      "Less control over your energy production compared to owning panels directly",
+    ],
+    useCases: [
+      "Renter wanting to benefit from solar energy without installing panels on their home",
+      "Homeowner with a shaded or unsuitable roof subscribing to a local solar garden",
+      "Midwest resident wanting solar savings in a region underserved by rooftop installers",
+    ],
   },
   {
     slug: "project-solar",
@@ -334,5 +513,22 @@ export const SOLAR_PANEL_TOOLS: SolarPanelTool[] = [
     featured: false,
     logo: "🔧",
     domain: "projectsolar.io",
+    pros: [
+      "Wholesale-level pricing on solar equipment delivers significant cost savings",
+      "DIY option lets handy homeowners install themselves for maximum savings",
+      "Engineering support and permitting assistance included with kit purchases",
+      "Optional professional installation available for customers who want help",
+    ],
+    cons: [
+      "DIY installation requires significant technical skill and comfort working on rooftops",
+      "Warranty coverage may be limited for self-installed systems",
+      "Not available in all states due to permitting and interconnection requirements",
+      "Support for DIY installers can be limited compared to full-service companies",
+    ],
+    useCases: [
+      "Handy homeowner installing their own solar system to save thousands on labor costs",
+      "Cost-conscious buyer wanting wholesale equipment pricing with optional professional install",
+      "DIY enthusiast comfortable with electrical work seeking engineering support and permits",
+    ],
   },
 ];

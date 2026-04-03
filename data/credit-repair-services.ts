@@ -26,6 +26,32 @@ export const CREDIT_REPAIR_CATEGORIES: Record<CreditRepairCategory, { label: str
   "counseling": { label: "Credit Counseling", emoji: "🤝", description: "Nonprofit and professional counseling services providing debt management plans and personalized financial guidance.", gradient: "from-yellow-600/30 to-amber-800/40" },
 };
 
+export const CREDIT_REPAIR_EDITORIAL = {
+  title: "How to Choose the Right Credit Repair Service in 2026",
+  intro: `A poor credit score can cost you tens of thousands of dollars over a lifetime through higher interest rates on mortgages, auto loans, and credit cards. Credit repair services work on your behalf to dispute inaccurate, outdated, or unverifiable items on your credit reports with the three major bureaus -- Equifax, Experian, and TransUnion. While you have the legal right to dispute errors yourself under the Fair Credit Reporting Act, professional services bring experience, efficiency, and knowledge of consumer protection law that can accelerate the process.\n\nNot all negative items can be removed. Accurate information, even if unfavorable, is legally permitted to remain on your credit report for up to seven years (ten years for bankruptcies). Reputable credit repair companies are transparent about this and focus on items that are genuinely inaccurate or unverifiable. Be wary of any company that guarantees a specific score increase or promises to remove all negative items regardless of accuracy.\n\nBefore hiring a credit repair service, pull your free credit reports from AnnualCreditReport.com and review them for errors yourself. Common disputable items include accounts that do not belong to you, incorrect balances or payment histories, duplicate entries, and debts that have passed the reporting time limit.`,
+  buyerGuide: [
+    "Verify the company charges no upfront fees -- the Credit Repair Organizations Act prohibits credit repair companies from collecting payment before services are rendered.",
+    "Look for a clear dispute process -- the company should explain exactly how they identify, challenge, and follow up on negative items with the credit bureaus.",
+    "Check for accreditation with the AFCC (American Fair Credit Council) or a strong BBB rating, which indicates adherence to industry standards and ethical practices.",
+    "Understand the pricing structure -- most services charge $79-$149 per month and require 3-6 months of enrollment, so calculate the total expected cost before committing.",
+    "Confirm you receive regular progress reports showing which items were disputed, the bureau responses, and any score changes during the program.",
+  ],
+  faq: [
+    {
+      question: "How long does credit repair take to show results?",
+      answer: "Most clients begin seeing items removed within 30-45 days after the first round of disputes, since credit bureaus are required to investigate within 30 days. However, a full credit repair program typically runs 3-6 months depending on the number of negative items.",
+    },
+    {
+      question: "Can credit repair services remove accurate negative items?",
+      answer: "No. Accurate negative information is legally permitted to remain on your report for the applicable time period. Reputable services focus on items that are inaccurate, unverifiable, or outdated. Any company guaranteeing removal of all negative items regardless of accuracy is likely not operating ethically.",
+    },
+    {
+      question: "Is it better to repair my credit myself or hire a service?",
+      answer: "DIY credit repair is free and effective if you have a small number of clear errors. Professional services add value when you have numerous disputed items across multiple bureaus, when creditor responses require legal knowledge to navigate, or when you simply do not have the time to manage the process yourself.",
+    },
+  ],
+};
+
 export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
   {
     slug: "lexington-law",
@@ -119,6 +145,22 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🎯",
     domain: "ovationcredit.com",
+    pros: [
+      "Backed by LendingTree — access to a broader financial services ecosystem",
+      "Personalized dispute strategies tailored to each client's credit profile",
+      "Add-on services including identity protection and score tracker",
+      "Two service plans offer flexibility based on budget and needs",
+    ],
+    cons: [
+      "Monthly fees plus first-work fee can make it more expensive than flat-rate competitors",
+      "Dispute volume may be lower than more aggressive services",
+      "Identity protection features require additional paid add-ons",
+    ],
+    useCases: [
+      "Consumer wanting credit repair from a company backed by a major financial brand",
+      "Individual seeking personalized dispute strategies rather than template-based approaches",
+      "Person interested in bundling credit repair with identity protection services",
+    ],
   },
   {
     slug: "myfico",
@@ -132,6 +174,24 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "📊",
     domain: "myfico.com",
+    pros: [
+      "The only source for official FICO scores from all three bureaus",
+      "Shows the exact scores lenders see when evaluating your applications",
+      "Score simulator lets you model how actions affect your FICO score",
+      "Comprehensive credit reports with detailed account information",
+      "Identity monitoring alerts for potential fraud",
+    ],
+    cons: [
+      "Premium pricing — significantly more expensive than free alternatives like Credit Karma",
+      "Uses FICO scores while some free tools use VantageScore, causing confusion",
+      "No credit repair or dispute services — monitoring only",
+      "Monthly subscription model with no free tier",
+    ],
+    useCases: [
+      "Consumer preparing for a mortgage and wanting to see exact lender-facing FICO scores",
+      "Individual wanting to simulate how paying off debt or opening new accounts affects their score",
+      "Credit-conscious person wanting authoritative three-bureau monitoring from the FICO source",
+    ],
   },
   {
     slug: "identityiq",
@@ -145,6 +205,24 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🔐",
     domain: "identityiq.com",
+    pros: [
+      "Comprehensive identity protection with dark web and SSN monitoring",
+      "Up to $1 million in identity theft insurance coverage",
+      "Three-bureau credit monitoring with score tracking",
+      "Bank account takeover alerts catch unauthorized access quickly",
+      "Affordable pricing compared to standalone identity protection services",
+    ],
+    cons: [
+      "Uses VantageScore rather than FICO scores for credit monitoring",
+      "Cancellation process has been reported as difficult by some users",
+      "Free trial period auto-enrolls in paid subscription",
+      "Not a credit repair service — monitoring and protection only",
+    ],
+    useCases: [
+      "Consumer wanting identity theft protection bundled with credit monitoring",
+      "Individual who has been a victim of a data breach and needs ongoing surveillance",
+      "Person seeking dark web monitoring for their Social Security number and accounts",
+    ],
   },
   {
     slug: "credit-karma",
@@ -158,6 +236,24 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🍀",
     domain: "creditkarma.com",
+    pros: [
+      "Completely free credit monitoring — no paid tier required",
+      "VantageScore updates from TransUnion and Equifax weekly",
+      "Personalized financial product recommendations based on your profile",
+      "Credit factor breakdowns help you understand what affects your score",
+      "Tax filing, savings accounts, and financial tools in one free platform",
+    ],
+    cons: [
+      "Uses VantageScore, not FICO — scores may differ from what lenders see",
+      "Revenue model is based on recommending financial products (ads)",
+      "Only two bureaus monitored (TransUnion and Equifax, not Experian)",
+      "Not a credit repair service — no dispute tools or professional help",
+    ],
+    useCases: [
+      "Anyone wanting free ongoing credit monitoring without paying a subscription",
+      "Person exploring credit card or loan options matched to their credit profile",
+      "Individual tracking credit score trends and understanding what factors matter",
+    ],
   },
   {
     slug: "experian-boost",
@@ -171,6 +267,24 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "⬆️",
     domain: "experian.com",
+    pros: [
+      "Completely free — no subscription or hidden fees",
+      "Instant FICO score improvement by adding positive payment history",
+      "Adds utility, phone, and streaming payments to your Experian file",
+      "Especially effective for thin credit files with limited history",
+      "Simple setup that connects to your bank account in minutes",
+    ],
+    cons: [
+      "Only affects your Experian credit report — not TransUnion or Equifax",
+      "Score boost varies — some users see significant gains, others minimal",
+      "Requires linking your bank account which raises privacy concerns for some",
+      "Only helps if you have consistent on-time payments to add",
+    ],
+    useCases: [
+      "Young adult with a thin credit file looking for a quick, free score boost",
+      "Person rebuilding credit who pays utilities and streaming on time every month",
+      "Consumer wanting to improve their Experian FICO score before a loan application",
+    ],
   },
   {
     slug: "transunion",
@@ -184,6 +298,23 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🔵",
     domain: "transunion.com",
+    pros: [
+      "Direct access to your official TransUnion credit report",
+      "File disputes directly with the bureau without third-party middlemen",
+      "Credit monitoring alerts for changes to your TransUnion file",
+      "Free credit report available annually through AnnualCreditReport.com",
+    ],
+    cons: [
+      "Only covers TransUnion — separate subscriptions needed for other bureaus",
+      "Paid monitoring plans are more expensive than third-party alternatives",
+      "Dispute process can be slow with limited follow-up communication",
+      "Interface is functional but not as user-friendly as Credit Karma",
+    ],
+    useCases: [
+      "Consumer filing a dispute directly with TransUnion for an inaccuracy",
+      "Individual wanting official TransUnion credit monitoring and alerts",
+      "Person reviewing their TransUnion report before a major credit application",
+    ],
   },
   {
     slug: "equifax",
@@ -197,6 +328,23 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🔴",
     domain: "equifax.com",
+    pros: [
+      "Direct access to your official Equifax credit report and score",
+      "Credit lock feature lets you instantly lock and unlock your Equifax file",
+      "Dispute inaccuracies directly with the bureau for faster resolution",
+      "Dark web monitoring included with premium plans",
+    ],
+    cons: [
+      "Major 2017 data breach damaged consumer trust significantly",
+      "Paid plans are expensive compared to free monitoring alternatives",
+      "Only covers Equifax — no visibility into TransUnion or Experian",
+      "Customer service has mixed reviews for responsiveness",
+    ],
+    useCases: [
+      "Consumer disputing an inaccurate account directly with Equifax",
+      "Individual wanting to lock their Equifax credit file to prevent unauthorized inquiries",
+      "Person monitoring their Equifax report for changes after a data breach",
+    ],
   },
   {
     slug: "self-financial",
@@ -210,6 +358,24 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🌱",
     domain: "self.inc",
+    pros: [
+      "Builds credit history through installment payments reported to all three bureaus",
+      "Saved principal returned at end of loan term — forced savings mechanism",
+      "No hard credit pull required to open an account",
+      "Helps establish credit mix which is a FICO scoring factor",
+      "Low monthly payments starting at $25 make it accessible",
+    ],
+    cons: [
+      "Interest charges mean you receive less than you pay in total",
+      "Credit improvement takes time — full term is typically 12-24 months",
+      "Not a substitute for actual credit repair of existing negative items",
+      "Secured credit card add-on requires separate application",
+    ],
+    useCases: [
+      "Person with no credit history building a score from scratch",
+      "Individual rebuilding credit who wants installment loan diversity on their report",
+      "Young adult establishing credit while simultaneously building savings",
+    ],
   },
   {
     slug: "credit-strong",
@@ -223,6 +389,24 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "💪",
     domain: "creditstrong.com",
+    pros: [
+      "Multiple product tiers with different payment amounts and term lengths",
+      "Reports to all three major credit bureaus monthly",
+      "Backed by Austin Capital Bank — a real FDIC-insured institution",
+      "Helps diversify credit mix with an installment account",
+      "Savings component returns funds at end of term",
+    ],
+    cons: [
+      "Interest and fees reduce the net savings returned",
+      "Requires consistent monthly payments — missed payments hurt credit",
+      "Not useful if you already have installment loans on your report",
+      "Results take several months of on-time payments to materialize",
+    ],
+    useCases: [
+      "Consumer wanting to add installment credit diversity to a revolving-only credit profile",
+      "Individual with no credit history establishing a foundation for future loans",
+      "Person rebuilding credit after bankruptcy who needs positive payment history",
+    ],
   },
   {
     slug: "nfcc-counseling",
@@ -236,5 +420,23 @@ export const CREDIT_REPAIR_TOOLS: CreditRepairTool[] = [
     featured: false,
     logo: "🤝",
     domain: "nfcc.org",
+    pros: [
+      "Free or very low-cost counseling from certified nonprofit counselors",
+      "Debt management plans can consolidate payments and reduce interest rates",
+      "HUD-approved housing counseling for homebuyers and those facing foreclosure",
+      "Bankruptcy pre-filing counseling as required by federal law",
+      "No profit motive — counselors work in the consumer's best interest",
+    ],
+    cons: [
+      "Debt management plans may require closing credit cards temporarily",
+      "Counseling alone does not remove negative items from credit reports",
+      "Wait times for appointments can be long at high-demand agencies",
+      "Not all member agencies provide the same quality of service",
+    ],
+    useCases: [
+      "Consumer overwhelmed by debt seeking a structured repayment plan",
+      "First-time homebuyer needing HUD-approved counseling for an FHA loan",
+      "Individual considering bankruptcy who needs mandatory pre-filing credit counseling",
+    ],
   },
 ];

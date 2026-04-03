@@ -26,6 +26,32 @@ export const CAR_ACCIDENT_LAWYER_CATEGORIES: Record<CarAccidentLawyerCategory, {
   "uninsured-motorist": { label: "Uninsured Motorist Claims", emoji: "🛡️", description: "Attorneys focused on claims against uninsured and underinsured motorists, helping victims recover compensation through their own UM/UIM policies when at-fault drivers lack adequate coverage.", gradient: "from-emerald-600/30 to-teal-800/40" },
 };
 
+export const CAR_ACCIDENT_LAWYER_EDITORIAL = {
+  title: "How to Choose the Right Car Accident Lawyer in 2026",
+  intro: `Car accidents are the most common cause of personal injury claims in the United States, with over 6 million crashes occurring annually. When an accident results in significant injuries, medical bills, lost wages, or disputed liability, hiring an experienced car accident attorney can dramatically increase the compensation you receive. Studies consistently show that represented claimants recover 3-4 times more on average than those who negotiate directly with insurance companies.\n\nMost car accident attorneys work on a contingency fee basis, meaning you pay nothing upfront and the attorney takes a percentage (typically 33% of the settlement or 40% if the case goes to trial) only if they win your case. This makes legal representation accessible regardless of your financial situation. The attorney covers investigation costs, expert witness fees, and litigation expenses during the case.\n\nNot every fender bender needs a lawyer. If your accident resulted in minor property damage with no injuries, you can handle the insurance claim yourself. But if you've suffered injuries requiring medical treatment, if liability is disputed, if the other driver was uninsured, or if the insurance company's offer doesn't cover your actual damages, consulting an attorney (most offer free consultations) is strongly recommended.`,
+  buyerGuide: [
+    "Trial experience, not just settlements — most cases settle, but insurers pay more when they know the attorney is willing and able to take the case to trial; ask about the attorney's courtroom track record.",
+    "Contingency fee transparency — get the fee percentage in writing, and understand what costs are deducted from your settlement in addition to the contingency fee (medical lien negotiation, court costs, expert fees).",
+    "Resources and case volume — a firm that can advance investigation costs, hire accident reconstructionists, and retain medical experts has leverage against large insurers; ask about their capacity for your type of case.",
+    "Communication style — you should be able to reach your attorney or a dedicated case manager when you have questions; ask how often they provide case updates and what their typical response time is.",
+    "Local expertise — car accident law varies by state (fault vs. no-fault, statute of limitations, damage caps); choose an attorney licensed and experienced in the state where your accident occurred.",
+  ],
+  faq: [
+    {
+      question: "How much does a car accident lawyer cost?",
+      answer: "Most car accident lawyers work on contingency — you pay nothing unless they recover money for you. The standard contingency fee is 33% of the settlement before trial or 40% if the case goes to trial. There are typically no upfront retainers or hourly fees. The attorney advances all costs during the case.",
+    },
+    {
+      question: "How long do I have to file a car accident claim?",
+      answer: "Statutes of limitations vary by state, ranging from 1 to 6 years for personal injury claims (2-3 years is most common). However, evidence deteriorates quickly — witness memories fade, surveillance footage gets overwritten, and medical records become harder to connect to the accident. Consulting an attorney soon after the accident produces the best outcomes.",
+    },
+    {
+      question: "Should I accept the insurance company's first settlement offer?",
+      answer: "Almost never. Initial offers from insurance companies are typically far below the actual value of your claim. Insurers count on claimants accepting quick settlements before they understand the full extent of their injuries and damages. An attorney can evaluate whether an offer is fair and negotiate for appropriate compensation.",
+    },
+  ],
+};
+
 export const CAR_ACCIDENT_LAWYER_TOOLS: CarAccidentLawyerTool[] = [
   {
     slug: "morgan-and-morgan",
