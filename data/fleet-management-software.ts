@@ -51,6 +51,32 @@ export const FLEET_MANAGEMENT_CATEGORIES: Record<FleetManagementCategory, { labe
   },
 };
 
+export const FLEET_MANAGEMENT_EDITORIAL = {
+  title: "How to Choose the Right Fleet Management Software in 2026",
+  intro: `Fleet management software gives transportation companies, delivery services, and any business operating vehicles the tools to track, maintain, and optimize their fleets. These platforms combine GPS tracking, driver behavior monitoring, maintenance scheduling, fuel management, and regulatory compliance into a single system that reduces costs and improves operational efficiency.\n\nThe stakes are high in fleet operations — fuel alone can account for 30-40% of total fleet costs, and a single compliance violation can result in thousands of dollars in fines or a vehicle being placed out of service. Modern fleet management platforms use telematics data from onboard devices to provide real-time visibility into every vehicle, alert managers to unsafe driving behavior, and predict maintenance needs before breakdowns occur.\n\nWhether you operate five service vans or five thousand tractor-trailers, the right software should match your fleet size, vehicle types, and regulatory requirements. Smaller fleets may need basic GPS tracking and maintenance reminders, while large commercial fleets require ELD compliance, IFTA reporting, and integration with dispatch and routing systems.`,
+  buyerGuide: [
+    "Hardware compatibility and installation requirements — some platforms require proprietary OBD-II devices or dash cameras, while others work with existing telematics hardware. Factor in per-vehicle hardware costs when comparing pricing.",
+    "DOT and ELD compliance features — if you operate commercial vehicles, ensure the platform provides FMCSA-compliant electronic logging, hours-of-service tracking, and DVIR capabilities to avoid costly violations.",
+    "Maintenance scheduling and alerts — predictive maintenance based on engine diagnostics and mileage thresholds prevents breakdowns that cost far more than scheduled service.",
+    "Fuel tracking and optimization — look for platforms that monitor fuel consumption per vehicle, detect fuel theft or waste, and provide idling reports to reduce your largest variable cost.",
+    "Scalability and per-vehicle pricing — fleet management pricing is typically per vehicle per month, so calculate your total cost at current fleet size and projected growth to avoid budget surprises.",
+  ],
+  faq: [
+    {
+      question: "Do I need fleet management software for a small fleet of under 10 vehicles?",
+      answer: "Yes, even small fleets benefit significantly from GPS tracking, maintenance scheduling, and driver behavior monitoring. A single prevented breakdown or avoided accident can pay for years of software costs. Many platforms offer affordable plans starting at $15-25 per vehicle per month.",
+    },
+    {
+      question: "What is the difference between fleet management software and a simple GPS tracker?",
+      answer: "A GPS tracker only shows vehicle location. Fleet management software builds on that foundation with driver scorecards, maintenance management, fuel analytics, compliance tools, route optimization, and reporting dashboards that help you actually reduce costs and improve operations.",
+    },
+    {
+      question: "How long does it take to implement fleet management software across a fleet?",
+      answer: "Basic GPS tracking can be deployed in days with plug-and-play OBD-II devices. Full-featured implementations with ELD compliance, maintenance integration, and driver training typically take 2-4 weeks depending on fleet size and the complexity of your existing processes.",
+    },
+  ],
+};
+
 export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
   {
     slug: "samsara",
@@ -217,6 +243,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "📌",
     domain: "gpstrackit.com",
+    pros: [
+      "No long-term contracts with flexible month-to-month pricing",
+      "Wide range of hardware options for vehicles, trailers, and assets",
+      "Live map with real-time vehicle positions and trip replay",
+      "Comprehensive geofencing with entry and exit alerts",
+    ],
+    cons: [
+      "User interface feels dated compared to newer competitors",
+      "Customer support response times can be inconsistent",
+      "Mobile app functionality is more limited than desktop platform",
+    ],
+    useCases: [
+      "Small fleet wanting GPS tracking without contract commitments",
+      "Companies needing to track both vehicles and unpowered assets like trailers",
+      "Field service businesses monitoring technician routes and stop times",
+    ],
   },
   {
     slug: "clearpath-gps",
@@ -230,6 +272,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "🛤️",
     domain: "clearpathgps.com",
+    pros: [
+      "Transparent per-vehicle pricing with no hidden fees",
+      "Highly responsive customer support praised in reviews",
+      "Clean, intuitive interface that requires minimal training",
+      "Tracks vehicles, trailers, and equipment from one dashboard",
+    ],
+    cons: [
+      "Lacks advanced features like AI dashcams or ELD compliance",
+      "Reporting capabilities are basic compared to enterprise platforms",
+      "No built-in route optimization or dispatching tools",
+    ],
+    useCases: [
+      "Small business owner wanting simple, reliable GPS tracking",
+      "Landscaping or HVAC company tracking service vehicles and equipment",
+      "Growing fleet needing an easy-to-learn platform with honest pricing",
+    ],
   },
   {
     slug: "fleetio",
@@ -243,6 +301,23 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: true,
     logo: "🔩",
     domain: "fleetio.com",
+    pros: [
+      "No proprietary hardware required — integrates with existing telematics",
+      "Excellent maintenance scheduling with automated service reminders",
+      "Fuel card integrations consolidate fuel spending data automatically",
+      "Clean modern interface with strong mobile app for field technicians",
+      "Flexible API connects to over 50 telematics and fuel card providers",
+    ],
+    cons: [
+      "Does not include its own GPS tracking hardware",
+      "Advanced analytics require higher-tier subscription plans",
+      "Work order workflows can be complex to configure initially",
+    ],
+    useCases: [
+      "Fleet manager centralizing maintenance records across multiple telematics providers",
+      "Company wanting to track vehicle lifecycle costs from acquisition to disposal",
+      "Operations team integrating fuel card data with maintenance scheduling",
+    ],
   },
   {
     slug: "whip-around",
@@ -256,6 +331,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "🔍",
     domain: "whiparound.com",
+    pros: [
+      "Mobile-first design makes driver inspections fast and intuitive",
+      "Photo evidence on inspections creates audit-ready documentation",
+      "Real-time defect notifications enable immediate repair scheduling",
+      "Customizable inspection templates for different vehicle types",
+    ],
+    cons: [
+      "Focused on inspections — not a full fleet management platform",
+      "Requires driver adoption of mobile app for maximum value",
+      "Reporting is adequate but less powerful than dedicated analytics tools",
+    ],
+    useCases: [
+      "Trucking company digitizing DVIR processes to replace paper forms",
+      "Fleet safety manager tracking inspection compliance across drivers",
+      "Maintenance shop prioritizing repairs based on real-time defect reports",
+    ],
   },
   {
     slug: "dossier",
@@ -269,6 +360,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "📁",
     domain: "dossiersystems.com",
+    pros: [
+      "Deep lifecycle cost analysis tracks total cost of ownership per vehicle",
+      "Robust parts inventory management with automated reorder points",
+      "Warranty tracking prevents paying for repairs covered under warranty",
+      "Designed for large, complex fleet operations with thousands of assets",
+    ],
+    cons: [
+      "Enterprise-focused pricing is prohibitive for smaller fleets",
+      "Interface is functional but not as modern as newer cloud platforms",
+      "Implementation and onboarding timeline is longer than simpler tools",
+    ],
+    useCases: [
+      "Government fleet operation managing maintenance for thousands of vehicles",
+      "Utility company tracking lifecycle costs across diverse equipment types",
+      "Enterprise fleet comparing total ownership costs to inform replacement decisions",
+    ],
   },
   {
     slug: "teletrac-navman",
@@ -282,6 +389,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "🧭",
     domain: "teletracnavman.com",
+    pros: [
+      "Modular platform lets you add features as fleet needs grow",
+      "Strong compliance and safety tools for regulated industries",
+      "Serves diverse sectors including transport, construction, and government",
+      "Real-time fleet analytics with customizable dashboards",
+    ],
+    cons: [
+      "Modular pricing can make total cost difficult to predict upfront",
+      "User interface has a steeper learning curve than simpler competitors",
+      "North American support can lag behind Australian headquarters operations",
+    ],
+    useCases: [
+      "Construction company tracking mixed fleets of trucks and heavy equipment",
+      "Transport operator needing modular features that scale with business growth",
+      "Government fleet requiring compliance reporting and driver safety analytics",
+    ],
   },
   {
     slug: "lytx",
@@ -295,6 +418,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "📹",
     domain: "lytx.com",
+    pros: [
+      "Industry-leading AI video analytics trained on billions of miles of driving data",
+      "Highly accurate detection of distracted driving and risky behavior",
+      "Proven to significantly reduce collision rates and insurance costs",
+      "Comprehensive driver coaching tools with video-based evidence",
+    ],
+    cons: [
+      "Focused primarily on video safety — less comprehensive for other fleet needs",
+      "Camera hardware and installation add significant upfront costs",
+      "Privacy concerns from some drivers about continuous video monitoring",
+    ],
+    useCases: [
+      "Trucking fleet reducing accident rates and lowering insurance premiums",
+      "Bus or transit company monitoring driver behavior for passenger safety",
+      "Fleet safety director building a video-based coaching program for drivers",
+    ],
   },
   {
     slug: "omnitracs",
@@ -308,6 +447,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "🛣️",
     domain: "omnitracs.com",
+    pros: [
+      "Decades of domain expertise specifically in trucking and logistics",
+      "Comprehensive routing and dispatch optimization for long-haul operations",
+      "Strong compliance tools built for FMCSA and DOT requirements",
+      "Backed by Solera with continued investment in platform development",
+    ],
+    cons: [
+      "Legacy platform can feel outdated compared to modern cloud-native solutions",
+      "Integration with non-trucking systems can be challenging",
+      "Pricing and contract terms may be complex for smaller carriers",
+    ],
+    useCases: [
+      "Long-haul trucking carrier managing compliance and routing nationwide",
+      "Last-mile delivery operation optimizing driver routes and stops",
+      "Large logistics company consolidating fleet operations on an established platform",
+    ],
   },
   {
     slug: "platform-science",
@@ -321,6 +476,22 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "🔬",
     domain: "platformscience.com",
+    pros: [
+      "Single hardware device runs multiple fleet apps from different vendors",
+      "Open marketplace approach eliminates need for redundant dashboard devices",
+      "Reduces cab clutter by consolidating disparate fleet management tools",
+      "Growing ecosystem of partner applications and integrations",
+    ],
+    cons: [
+      "Requires fleet-level commitment to the platform for full value",
+      "Relatively newer entrant with a smaller customer base than incumbents",
+      "App marketplace selection is still expanding compared to mature ecosystems",
+    ],
+    useCases: [
+      "Large carrier consolidating multiple cab-mounted devices into one platform",
+      "Fleet operator wanting flexibility to choose best-of-breed apps on shared hardware",
+      "Technology-forward trucking company standardizing on an open vehicle platform",
+    ],
   },
   {
     slug: "trimble",
@@ -334,5 +505,21 @@ export const FLEET_MANAGEMENT_TOOLS: FleetManagementTool[] = [
     featured: false,
     logo: "🔺",
     domain: "trimble.com",
+    pros: [
+      "Broad suite covering tracking, routing, ELD, and full TMS capabilities",
+      "Deep domain expertise in trucking and logistics built over decades",
+      "Scalable from owner-operators to the largest carriers in the country",
+      "Strong route planning and optimization algorithms",
+    ],
+    cons: [
+      "Product portfolio is sprawling and can be confusing to navigate",
+      "Pricing varies by module which makes total cost hard to estimate",
+      "Some legacy products feel dated alongside newer competitors",
+    ],
+    useCases: [
+      "Mid-size carrier needing integrated ELD compliance and route optimization",
+      "Owner-operator looking for an established platform that grows with their business",
+      "Logistics company wanting end-to-end transportation management alongside fleet tracking",
+    ],
   },
 ];

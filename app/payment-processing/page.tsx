@@ -7,9 +7,13 @@ import {
   getPaymentProcessingCategoryCount,
   filterPaymentProcessingTools,
 } from "@/lib/payment-processing";
+import { PAYMENT_PROCESSING_EDITORIAL } from "@/data/payment-processing";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function PaymentProcessingPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={PAYMENT_PROCESSING_EDITORIAL.title}
+            intro={PAYMENT_PROCESSING_EDITORIAL.intro}
+            buyerGuide={PAYMENT_PROCESSING_EDITORIAL.buyerGuide}
+            faq={PAYMENT_PROCESSING_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={PAYMENT_PROCESSING_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/payment-processing"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function PaymentProcessingPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

@@ -7,9 +7,13 @@ import {
   getVirtualDataRoomCategoryCount,
   filterVirtualDataRoomTools,
 } from "@/lib/virtual-data-rooms";
+import { VIRTUAL_DATA_ROOM_EDITORIAL } from "@/data/virtual-data-rooms";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function VirtualDataRoomsPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={VIRTUAL_DATA_ROOM_EDITORIAL.title}
+            intro={VIRTUAL_DATA_ROOM_EDITORIAL.intro}
+            buyerGuide={VIRTUAL_DATA_ROOM_EDITORIAL.buyerGuide}
+            faq={VIRTUAL_DATA_ROOM_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={VIRTUAL_DATA_ROOM_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/virtual-data-rooms"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function VirtualDataRoomsPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

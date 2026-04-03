@@ -31,6 +31,32 @@ export const TAX_PREP_CATEGORIES: Record<TaxPrepCategory, { label: string; emoji
   "state-specific": { label: "State-Specific", emoji: "🗺️", description: "Filing tools optimized for state returns and multi-state tax situations.", gradient: "from-rose-600/30 to-red-800/40" },
 };
 
+export const TAX_PREP_EDITORIAL = {
+  title: "How to Choose the Right Tax Preparation Software in 2026",
+  intro: `Tax preparation software guides individuals and businesses through the process of filing federal and state income tax returns, identifying deductions and credits, and electronically submitting returns to the IRS. For the 2025 tax year (filed in 2026), most taxpayers with straightforward W-2 income can file for free, while those with investments, rental income, self-employment, or itemized deductions will need a paid tier.\n\nThe market is dominated by a few major players -- TurboTax, H&R Block, TaxAct, and FreeTaxUSA -- but they differ significantly in pricing, user experience, and how aggressively they upsell. TurboTax offers the most polished interface but charges the highest prices, while FreeTaxUSA provides comparable accuracy at a fraction of the cost. If your tax situation involves business income, rental properties, or complex investments, the differences in how each platform handles these scenarios become more important than the base price.\n\nFor taxpayers who want professional help without visiting an office, most major platforms now offer CPA-assisted options where a licensed tax professional reviews your return, answers questions, and can even prepare the entire return remotely. These hybrid services typically cost $100 to $300 more than DIY filing but less than a traditional CPA engagement, making them a strong middle ground for people with moderately complex situations.`,
+  buyerGuide: [
+    "Tax situation complexity -- Simple W-2 filers can use almost any free option. Self-employed individuals, investors, and landlords should choose platforms with strong Schedule C, D, and E support plus business deduction guidance.",
+    "True total cost -- Compare the all-in price including federal filing, state filing (often $30 to $60 extra per state), and any add-ons. Some platforms advertise low base prices but charge more for features like live chat support or audit protection.",
+    "Accuracy guarantees -- All major platforms guarantee calculation accuracy and will cover IRS penalties if their software makes an error. Verify the specific terms of this guarantee, including maximum coverage amounts.",
+    "Import capabilities -- The best software imports W-2s, 1099s, and prior-year returns automatically, saving significant time. Check whether the platform supports photo capture of tax documents and direct imports from brokerages and employers.",
+    "Audit support -- Basic audit support provides guidance if you receive an IRS notice. Premium audit defense includes a tax professional who represents you before the IRS. Understand which level is included and what costs extra.",
+  ],
+  faq: [
+    {
+      question: "Can I really file my taxes for free?",
+      answer: "Yes, if your income is below a certain threshold, you can use IRS Free File through participating software partners at no cost for federal returns. Additionally, platforms like FreeTaxUSA and Cash App Taxes offer free federal filing for all income levels, though state returns may cost extra.",
+    },
+    {
+      question: "Is TurboTax worth the higher price?",
+      answer: "TurboTax offers the most user-friendly interface and the broadest coverage of complex tax situations, which justifies the premium for some filers. However, for straightforward returns, competitors like FreeTaxUSA or TaxAct deliver equivalent accuracy at significantly lower prices.",
+    },
+    {
+      question: "When should I hire a CPA instead of using software?",
+      answer: "Consider a CPA if you have a complex business with employees, significant investment income across multiple entities, multi-state filing obligations, or if you are going through a major life event like selling a business or receiving an inheritance. The CPA-assisted tiers in tax software work well for moderately complex situations.",
+    },
+  ],
+};
+
 export const TAX_PREP_TOOLS: TaxPrepTool[] = [
   // ── DIY FILING ──────────────────────────────────────────────────────────
   {
@@ -165,6 +191,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "💲",
     domain: "cash.app",
+    pros: [
+      "Completely free federal and state filing with no upsells or hidden tiers",
+      "Integrates with Cash App for fast refund deposit",
+      "Supports most common tax situations including itemized deductions",
+      "Clean, simple interface within the Cash App ecosystem",
+    ],
+    cons: [
+      "Does not support all complex tax forms like Schedule C for self-employment",
+      "Requires a Cash App account to use the tax filing features",
+      "Limited customer support compared to paid alternatives",
+    ],
+    useCases: [
+      "Cash App user wanting to file federal and state returns at zero cost",
+      "Simple W-2 filer looking for truly free tax filing with state included",
+      "Budget-conscious taxpayer who does not need self-employment or complex investment filing",
+    ],
   },
   // ── PROFESSIONAL ASSISTED ───────────────────────────────────────────────
   {
@@ -179,6 +221,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "⚔️",
     domain: "taxslayer.com",
+    pros: [
+      "Classic tier covers all federal forms at a price well below TurboTax",
+      "Self-employed tier includes expense tracking and dedicated support line",
+      "Free filing for active military members",
+      "Live chat with tax professionals available on Premium tier",
+    ],
+    cons: [
+      "Interface is more utilitarian and less guided than premium competitors",
+      "Free tier is limited to very simple returns",
+      "Less extensive import capabilities than TurboTax or H&R Block",
+    ],
+    useCases: [
+      "Self-employed taxpayer wanting affordable filing with expense tracking tools",
+      "Active military member looking for free tax filing support",
+      "Cost-conscious filer who is comfortable navigating tax forms with minimal hand-holding",
+    ],
   },
   {
     slug: "jackson-hewitt",
@@ -192,6 +250,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "🟧",
     domain: "jacksonhewitt.com",
+    pros: [
+      "Convenient Walmart locations with evening and weekend availability",
+      "Walk-in appointments make tax filing accessible on your schedule",
+      "No-interest refund advance loans available for early filers",
+      "Online filing option available for those who prefer DIY",
+    ],
+    cons: [
+      "In-person preparation costs significantly more than online software",
+      "Quality varies by location since many offices are independently operated",
+      "Online filing experience is less polished than major digital-first competitors",
+    ],
+    useCases: [
+      "Taxpayer who wants in-person help at a Walmart location convenient to their routine",
+      "Filer needing evening or weekend appointments that traditional CPA offices do not offer",
+      "Person wanting a refund advance loan to access money before the IRS processes their return",
+    ],
   },
   {
     slug: "liberty-tax",
@@ -205,6 +279,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "🗽",
     domain: "libertytax.com",
+    pros: [
+      "Both in-office and virtual preparation options provide flexibility",
+      "Bilingual support available at many locations for non-English speakers",
+      "Franchise model serves communities underserved by larger chains",
+      "Personalized attention from local tax professionals",
+    ],
+    cons: [
+      "In-person preparation fees are higher than DIY software",
+      "Quality varies by franchise location and individual preparer",
+      "Fewer locations than H&R Block or Jackson Hewitt in many markets",
+    ],
+    useCases: [
+      "Taxpayer in a community underserved by larger tax prep chains",
+      "Non-English speaker needing bilingual tax preparation assistance",
+      "Person wanting the option to switch between in-office and virtual preparation",
+    ],
   },
   {
     slug: "taxfyle",
@@ -218,6 +308,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: true,
     logo: "👔",
     domain: "taxfyle.com",
+    pros: [
+      "Matched with a licensed CPA who prepares your return from uploaded documents",
+      "Lower cost than hiring a traditional CPA firm directly",
+      "No appointment scheduling — upload documents and let the CPA work asynchronously",
+      "All preparers are licensed CPAs or tax professionals vetted by Taxfyle",
+    ],
+    cons: [
+      "Less personal than an ongoing relationship with a dedicated CPA",
+      "Turnaround time depends on CPA availability and complexity of return",
+      "Limited ability to choose a specific preparer for specialized tax situations",
+    ],
+    useCases: [
+      "Taxpayer who wants CPA-quality preparation without the cost of a full CPA engagement",
+      "Person with a moderately complex return who does not want to file using DIY software",
+      "Filer who prefers uploading documents on their own time rather than scheduling office visits",
+    ],
   },
   // ── BUSINESS TAX ────────────────────────────────────────────────────────
   {
@@ -232,6 +338,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "🔟",
     domain: "1040.com",
+    pros: [
+      "One flat fee regardless of return complexity — no surprise upgrades",
+      "All tax forms and schedules included at no additional cost",
+      "Backed by Drake Software, a trusted name among professional tax preparers",
+      "Transparent pricing from the start eliminates mid-filing price pressure",
+    ],
+    cons: [
+      "Interface is functional but not as modern as TurboTax or H&R Block",
+      "Less brand recognition among consumers compared to major competitors",
+      "Limited live support options compared to larger platforms",
+    ],
+    useCases: [
+      "Taxpayer frustrated by upsells who wants one flat price for everything",
+      "Filer with a moderately complex return wanting all forms included without tier upgrades",
+      "Person who values Drake Software's professional-grade accuracy in a consumer product",
+    ],
   },
   {
     slug: "olt",
@@ -245,6 +367,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "🌐",
     domain: "olt.com",
+    pros: [
+      "Free federal filing for qualifying filers through IRS Free File partnership",
+      "Supports a wide range of tax forms and schedules",
+      "Affordable paid options for filers above the income threshold",
+      "No-frills approach keeps costs low without marketing overhead",
+    ],
+    cons: [
+      "Interface is dated and less intuitive than modern competitors",
+      "Very limited guidance and hand-holding during the filing process",
+      "Minimal customer support resources available",
+    ],
+    useCases: [
+      "Income-eligible taxpayer wanting free federal filing through IRS Free File",
+      "Budget-conscious filer looking for the lowest-cost option for a straightforward return",
+      "Person comfortable navigating tax forms independently without step-by-step guidance",
+    ],
   },
   // ── TAX PLANNING ────────────────────────────────────────────────────────
   {
@@ -259,6 +397,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "🧠",
     domain: "esmarttax.com",
+    pros: [
+      "Step-by-step guided preparation simplifies the filing process",
+      "Backed by Liberty Tax's professional network for escalating complex questions",
+      "Clean online interface for straightforward tax situations",
+      "Option to hand off to a Liberty Tax professional if needed",
+    ],
+    cons: [
+      "Smaller user base means fewer reviews and community resources",
+      "Feature set is more limited than major competitors",
+      "State filing may cost extra depending on the plan",
+    ],
+    useCases: [
+      "Taxpayer wanting guided online filing with professional backup if questions arise",
+      "Liberty Tax customer who prefers filing online but wants access to their professional network",
+      "Filer with a straightforward return looking for a clean, guided filing experience",
+    ],
   },
   {
     slug: "fileyourtaxes",
@@ -272,6 +426,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "📁",
     domain: "fileyourtaxes.com",
+    pros: [
+      "Simple, no-frills approach for filers with common tax situations",
+      "Supports W-2 income, basic deductions, and standard credits",
+      "Straightforward filing without complex features that add confusion",
+      "Affordable pricing for basic returns",
+    ],
+    cons: [
+      "Not suitable for complex returns with self-employment or investment income",
+      "Very limited features compared to major tax software platforms",
+      "Minimal customer support options",
+    ],
+    useCases: [
+      "Taxpayer with a simple W-2 return and standard deduction who wants fast filing",
+      "Filer who does not need advanced features and prefers simplicity over options",
+      "Person looking for a basic online filing tool for a straightforward annual return",
+    ],
   },
   // ── STATE-SPECIFIC ──────────────────────────────────────────────────────
   {
@@ -286,6 +456,22 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "⚡",
     domain: "eztaxreturn.com",
+    pros: [
+      "Streamlined interface completes basic returns in under 30 minutes",
+      "Only asks necessary questions to minimize filing time",
+      "Supports W-2 income, unemployment, and retirement distributions",
+      "Simple and fast for filers who know their situation is straightforward",
+    ],
+    cons: [
+      "Not suitable for self-employed filers or complex investment situations",
+      "Limited form support compared to full-featured tax software",
+      "Fewer deduction-finding features than TurboTax or H&R Block",
+    ],
+    useCases: [
+      "Employee with a simple W-2 who wants to file a return as fast as possible",
+      "Retiree with straightforward pension and Social Security income",
+      "Person who filed a simple return last year and wants the quickest path to completion",
+    ],
   },
   {
     slug: "irs-free-file",
@@ -299,5 +485,21 @@ export const TAX_PREP_TOOLS: TaxPrepTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "irs.gov",
+    pros: [
+      "Completely free federal filing through IRS-approved commercial partners",
+      "Available to taxpayers below the income threshold with guided software",
+      "Free File Fillable Forms available to any taxpayer regardless of income",
+      "Official IRS program ensures legitimacy and data security",
+    ],
+    cons: [
+      "Income threshold limits access to guided software for higher earners",
+      "Free File Fillable Forms require knowledge of tax forms — no guidance provided",
+      "State filing may not be included depending on the partner software used",
+    ],
+    useCases: [
+      "Low-to-moderate income taxpayer wanting free guided federal filing from IRS partners",
+      "Tax-savvy filer who can complete forms manually and wants free electronic filing at any income level",
+      "Person checking eligibility for free filing before paying for commercial software",
+    ],
   },
 ];

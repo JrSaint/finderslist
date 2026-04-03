@@ -26,6 +26,32 @@ export const CLOUD_STORAGE_CATEGORIES: Record<CloudStorageCategory, { label: str
   "developer": { label: "Developer Storage", emoji: "⚙️", description: "Object storage and cloud infrastructure designed for developers, applications, and programmatic access via APIs.", gradient: "from-yellow-600/30 to-amber-800/40" },
 };
 
+export const CLOUD_STORAGE_EDITORIAL = {
+  title: "How to Choose the Right Cloud Storage Provider in 2026",
+  intro: `Cloud storage services let you store, sync, and share files across devices and with other people through the internet. From personal photo backups to enterprise document management, cloud storage has become the default way people and organizations manage digital files. The market leaders -- Google Drive, Dropbox, OneDrive, and iCloud -- each have distinct strengths tied to their parent ecosystems, while specialized providers like Backblaze and Wasabi cater to specific use cases like backup and developer storage.\n\nFor personal use, the key decision often comes down to which ecosystem you already live in. Apple users get 5GB free with iCloud, Google Workspace users get 15GB with Google Drive, and Microsoft 365 subscribers get 1TB of OneDrive storage included. For most individuals, the cloud storage bundled with their existing subscriptions is sufficient, making a standalone purchase unnecessary.\n\nBusiness cloud storage introduces additional requirements: admin controls, user management, audit logs, compliance certifications, and advanced sharing permissions. Platforms like Google Workspace, Microsoft 365, and Dropbox Business provide these features alongside productivity tools. For organizations handling sensitive data, verify that the provider meets your industry's compliance requirements (HIPAA, SOC 2, FedRAMP) and offers features like customer-managed encryption keys and data residency controls.`,
+  buyerGuide: [
+    "Ecosystem integration -- Cloud storage works best when it integrates seamlessly with your existing tools. Google Drive pairs naturally with Google Workspace, OneDrive with Microsoft 365, and iCloud with Apple devices. Fighting your ecosystem leads to sync issues and friction.",
+    "Storage capacity and pricing -- Compare the actual cost per terabyte across providers, including any bundled services. Some providers include productivity software, email, or VPN services that may offset a higher per-GB price.",
+    "Sync reliability and speed -- Test how quickly files sync across devices and how the service handles conflicts when the same file is edited simultaneously. Dropbox has historically led in sync reliability, but competitors have narrowed the gap significantly.",
+    "Sharing and collaboration -- Evaluate how easy it is to share files and folders with both internal team members and external collaborators. Check whether recipients need accounts, whether you can set expiration dates on shared links, and whether real-time co-editing is supported.",
+    "Security and compliance -- For business use, verify SOC 2, HIPAA, or industry-specific certifications. Check whether the provider offers zero-knowledge encryption, customer-managed keys, and data residency options if you handle regulated or sensitive data.",
+  ],
+  faq: [
+    {
+      question: "How much free cloud storage can I get?",
+      answer: "Google Drive offers 15GB free (shared with Gmail and Photos), OneDrive provides 5GB free, iCloud offers 5GB free, and Dropbox gives 2GB free. By combining these free tiers, you can access over 25GB of cloud storage at no cost, though managing files across multiple services adds complexity.",
+    },
+    {
+      question: "Is cloud storage safe for sensitive documents?",
+      answer: "Major providers encrypt data in transit and at rest, and maintain SOC 2 and other security certifications. For highly sensitive documents, look for providers offering zero-knowledge encryption (where even the provider cannot read your files) or use client-side encryption tools like Cryptomator before uploading.",
+    },
+    {
+      question: "What is the difference between cloud storage and cloud backup?",
+      answer: "Cloud storage syncs selected files and folders across devices for access and collaboration. Cloud backup automatically copies your entire hard drive or selected data for disaster recovery, typically including versioning to restore files from any point in time. Most people need both: cloud storage for daily work and cloud backup for comprehensive data protection.",
+    },
+  ],
+};
+
 export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
   {
     slug: "google-drive",
@@ -119,6 +145,23 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🌤️",
     domain: "pcloud.com",
+    pros: [
+      "Lifetime subscription plans eliminate recurring monthly fees",
+      "Up to 10 GB free storage with bonus for completing account setup",
+      "Swiss-based hosting under strong European privacy laws",
+      "Optional pCloud Crypto add-on for zero-knowledge encryption",
+      "Built-in media player streams audio and video directly from cloud",
+    ],
+    cons: [
+      "Zero-knowledge encryption requires a separate paid add-on",
+      "Lifetime plans have a high upfront cost ($199-$399)",
+      "Collaboration features are limited compared to Google Drive or Dropbox",
+    ],
+    useCases: [
+      "Individual wanting to pay once for cloud storage instead of monthly subscriptions",
+      "Privacy-conscious user storing sensitive files with client-side encryption",
+      "Media collector streaming music and videos directly from cloud storage",
+    ],
   },
   {
     slug: "sync-com",
@@ -132,6 +175,23 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🔐",
     domain: "sync.com",
+    pros: [
+      "Zero-knowledge encryption on all files by default — no add-on needed",
+      "Canadian hosting under strong privacy regulations",
+      "Competitive pricing with 2 TB plans at low monthly cost",
+      "Clean, simple interface that non-technical users can navigate",
+      "Secure file sharing with password protection and expiry dates",
+    ],
+    cons: [
+      "Sync speeds are slower than Dropbox and Google Drive",
+      "No built-in document editing or collaboration tools",
+      "Desktop app lacks advanced features like selective sync on free plan",
+    ],
+    useCases: [
+      "Privacy-first user wanting zero-knowledge encryption without configuration",
+      "Lawyer or accountant sharing sensitive client documents securely",
+      "Individual replacing Dropbox with a more privacy-focused alternative",
+    ],
   },
   {
     slug: "backblaze-b2",
@@ -145,6 +205,23 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🔥",
     domain: "backblaze.com",
+    pros: [
+      "Pricing is roughly 1/4 the cost of AWS S3 per GB stored",
+      "S3-compatible API makes migration from AWS straightforward",
+      "Free egress to Cloudflare, Fastly, and other CDN partners",
+      "No minimum storage requirements or hidden fees",
+      "Simple, transparent pricing without complex tiering",
+    ],
+    cons: [
+      "Smaller ecosystem and fewer regions than AWS or Google Cloud",
+      "No built-in CDN — requires partnering with a separate CDN provider",
+      "Less granular access controls compared to AWS IAM policies",
+    ],
+    useCases: [
+      "Developer storing application media and assets at minimal cost",
+      "Business backing up large datasets to affordable S3-compatible storage",
+      "Media company serving video content via Backblaze + Cloudflare CDN",
+    ],
   },
   {
     slug: "wasabi",
@@ -158,6 +235,24 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🟢",
     domain: "wasabi.com",
+    pros: [
+      "No egress fees and no API request charges — truly predictable billing",
+      "Hot storage performance at cold storage prices",
+      "S3-compatible API for easy migration from AWS",
+      "Multiple global data center regions for data residency compliance",
+      "Flat per-TB pricing simplifies budgeting for large datasets",
+    ],
+    cons: [
+      "90-day minimum storage duration policy on all data",
+      "No free tier — paid from the first byte",
+      "Limited ecosystem and tooling compared to AWS or Google Cloud",
+      "No built-in compute or analytics services alongside storage",
+    ],
+    useCases: [
+      "Organization needing affordable hot storage for frequently accessed large files",
+      "NAS backup target replacing local tape with cloud at predictable cost",
+      "Surveillance or media company storing terabytes of video without egress fees",
+    ],
   },
   {
     slug: "idrive",
@@ -171,6 +266,23 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "💾",
     domain: "idrive.com",
+    pros: [
+      "Backs up unlimited devices (PCs, Macs, phones, servers) under one account",
+      "IDrive Express ships a physical drive for fast initial backup and restore",
+      "Continuous backup option protects files as they change",
+      "Supports both file-level and full system image backups",
+      "Affordable pricing — often under $80/year for 5 TB",
+    ],
+    cons: [
+      "Upload speeds can be slow for initial large backups without Express",
+      "Interface feels cluttered and outdated compared to modern apps",
+      "Restoring individual files from web interface is cumbersome",
+    ],
+    useCases: [
+      "Family backing up all household devices with a single affordable plan",
+      "Small business protecting PCs, Macs, and servers with continuous backup",
+      "User needing physical drive shipping for initial multi-terabyte backup",
+    ],
   },
   {
     slug: "mega",
@@ -184,6 +296,24 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🔴",
     domain: "mega.io",
+    pros: [
+      "20 GB of free encrypted storage — most generous free tier available",
+      "End-to-end encryption on all files by default",
+      "Built-in secure chat and video calling features",
+      "No file size limits on paid plans for large uploads",
+      "Cross-platform apps for Windows, macOS, Linux, iOS, and Android",
+    ],
+    cons: [
+      "Free storage can be reduced over time if activity bonuses expire",
+      "Slower sync speeds compared to Google Drive and Dropbox",
+      "Brand reputation still affected by association with Megaupload history",
+      "Limited third-party integrations and no productivity suite",
+    ],
+    useCases: [
+      "User wanting maximum free encrypted storage without paying",
+      "Privacy-focused individual sharing large files with end-to-end encryption",
+      "Content creator uploading large video files securely",
+    ],
   },
   {
     slug: "tresorit",
@@ -197,6 +327,24 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🛡️",
     domain: "tresorit.com",
+    pros: [
+      "Zero-knowledge end-to-end encryption with no compromise on security",
+      "GDPR, HIPAA, and Swiss FADP compliant for regulated industries",
+      "Granular sharing controls with watermarking and access logging",
+      "Swiss-engineered with data centers in Switzerland and EU",
+      "Secure link sharing with password, expiry, and download limits",
+    ],
+    cons: [
+      "Significantly more expensive than mainstream alternatives",
+      "No free plan — only a 14-day trial available",
+      "Storage limits are lower than competitors at comparable price points",
+      "No built-in document editing — relies on local apps",
+    ],
+    useCases: [
+      "Law firm sharing confidential case files with clients under strict security",
+      "Healthcare organization storing patient data with HIPAA compliance",
+      "Financial services team needing auditable, encrypted file sharing",
+    ],
   },
   {
     slug: "nextcloud",
@@ -210,6 +358,24 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🔵",
     domain: "nextcloud.com",
+    pros: [
+      "Fully open-source with complete data sovereignty on your own servers",
+      "Built-in collaboration: office docs, calendar, contacts, video calls",
+      "No per-user licensing fees — unlimited users on self-hosted installs",
+      "Extensive app ecosystem with 300+ community and official plugins",
+      "GDPR-friendly with full control over data location and retention",
+    ],
+    cons: [
+      "Requires server administration knowledge to set up and maintain",
+      "Performance depends entirely on your hosting infrastructure",
+      "Mobile and desktop sync clients are less polished than Dropbox or Google",
+      "No built-in CDN or edge caching for distributed teams",
+    ],
+    useCases: [
+      "Organization requiring full data sovereignty with on-premise hosting",
+      "Government or education institution needing GDPR-compliant collaboration",
+      "Tech team self-hosting file sync, calendar, and video calls on one platform",
+    ],
   },
   {
     slug: "amazon-s3",
@@ -223,6 +389,24 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🪣",
     domain: "aws.amazon.com",
+    pros: [
+      "Virtually unlimited scalability with 99.999999999% (11 nines) durability",
+      "Multiple storage classes (Standard, Infrequent Access, Glacier) optimize costs",
+      "Deep integration with the entire AWS ecosystem of 200+ services",
+      "Industry-standard API that most tools and libraries support natively",
+      "Fine-grained IAM policies, bucket policies, and encryption options",
+    ],
+    cons: [
+      "Complex pricing with charges for storage, requests, and egress separately",
+      "Egress fees can be expensive for data-heavy applications",
+      "Steep learning curve for IAM, bucket policies, and access management",
+      "Overkill for simple file storage needs without application integration",
+    ],
+    useCases: [
+      "SaaS application storing user-generated content at global scale",
+      "Data engineering team building a data lake on AWS infrastructure",
+      "Enterprise archiving compliance data using S3 Glacier for cold storage",
+    ],
   },
   {
     slug: "icedrive",
@@ -236,5 +420,23 @@ export const CLOUD_STORAGE_TOOLS: CloudStorageTool[] = [
     featured: false,
     logo: "🧊",
     domain: "icedrive.net",
+    pros: [
+      "10 GB free storage with a sleek, modern interface",
+      "Virtual drive mounts cloud storage as a local disk without syncing",
+      "Twofish zero-knowledge encryption available for sensitive files",
+      "Lifetime plans available at competitive one-time prices",
+      "Clean, minimalist design that is easy for non-technical users",
+    ],
+    cons: [
+      "Encryption feature requires a paid add-on, not included by default",
+      "Smaller company with less proven track record than major providers",
+      "Limited third-party integrations and no collaboration features",
+      "Linux client is web-based only with no native desktop app",
+    ],
+    useCases: [
+      "User wanting modern cloud storage with virtual drive functionality",
+      "Individual looking for a lifetime storage plan without recurring fees",
+      "Privacy-conscious user seeking zero-knowledge encryption on a budget",
+    ],
   },
 ];

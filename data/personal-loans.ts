@@ -26,6 +26,32 @@ export const PERSONAL_LOAN_CATEGORIES: Record<PersonalLoanCategory, { label: str
   "peer-to-peer": { label: "Peer-to-Peer Lending", emoji: "🤝", description: "Borrow directly from individual investors through online platforms.", gradient: "from-purple-600/30 to-violet-800/40" },
 };
 
+export const PERSONAL_LOAN_EDITORIAL = {
+  title: "How to Choose the Right Personal Loan in 2026",
+  intro: `Personal loans provide a lump sum of money that you repay in fixed monthly installments over a set term, typically 2-7 years. They can be used for virtually any purpose -- debt consolidation, home improvements, medical expenses, or major purchases -- and because most are unsecured, you do not need to put up collateral like your home or car. For borrowers with good credit, personal loans often offer significantly lower interest rates than credit cards.\n\nInterest rates on personal loans in 2026 range from about 6% for excellent-credit borrowers to 36% for those with poor credit. The rate you qualify for depends primarily on your credit score, debt-to-income ratio, income, and employment history. Many lenders offer pre-qualification with a soft credit pull that lets you check your rate without affecting your credit score, so it is easy to shop around.\n\nBeyond the interest rate, pay close attention to fees. Origination fees (typically 1-8% of the loan amount, deducted from your disbursement), late payment fees, and prepayment penalties can significantly increase the cost of borrowing. The best personal loan lenders charge no origination fees and no prepayment penalties, allowing you to pay off the loan early and save on interest.`,
+  buyerGuide: [
+    "APR and total cost of borrowing -- compare the annual percentage rate, which includes both the interest rate and origination fee, to get a true apples-to-apples comparison between lenders offering different fee structures.",
+    "Origination fees and prepayment penalties -- some lenders charge 1-8% origination fees deducted from your loan proceeds; others charge zero fees; confirm there is no penalty for paying off the loan early.",
+    "Loan amounts and term flexibility -- ensure the lender offers the amount you need (some cap at $35,000, others go up to $100,000) and a repayment term that produces an affordable monthly payment without stretching the loan unnecessarily long.",
+    "Funding speed -- if you need money quickly for an emergency or time-sensitive expense, prioritize lenders that offer same-day or next-day funding after approval rather than those with week-long disbursement timelines.",
+    "Credit score requirements and pre-qualification -- check the minimum credit score and whether the lender offers soft-pull pre-qualification so you can compare rates without hurting your credit score.",
+  ],
+  faq: [
+    {
+      question: "What credit score do I need for a personal loan?",
+      answer: "Most mainstream lenders require a minimum credit score of 580-660 for approval, though the best rates go to borrowers with scores above 720. Some online lenders and credit unions work with borrowers in the 500-580 range but at significantly higher interest rates. Pre-qualifying with multiple lenders lets you see your actual rate offers without impacting your score.",
+    },
+    {
+      question: "Is it better to get a personal loan or use a credit card?",
+      answer: "Personal loans typically offer lower interest rates than credit cards (averaging 6-15% for good credit versus 20-28% for credit cards) and fixed repayment schedules that ensure you pay off the debt by a specific date. Credit cards offer more flexibility and rewards but can trap you in minimum payments. For debt consolidation or large planned expenses, a personal loan is usually the better choice.",
+    },
+    {
+      question: "How does a personal loan affect my credit score?",
+      answer: "Applying for a personal loan triggers a hard credit inquiry that may temporarily lower your score by a few points. However, taking out a personal loan can actually improve your credit over time by diversifying your credit mix and lowering your credit utilization ratio if you use it to pay off credit card balances. Consistent on-time payments build positive credit history.",
+    },
+  ],
+};
+
 export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
   {
     slug: "sofi-personal-loans",
@@ -119,6 +145,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🏪",
     domain: "lendingclub.com",
+    pros: [
+      "Joint applications available to potentially qualify for better rates or higher amounts",
+      "Now operates as a full-service bank providing more competitive rates",
+      "Loan amounts starting as low as $1,000 for smaller borrowing needs",
+      "Direct creditor payment option for debt consolidation simplifies payoff",
+    ],
+    cons: [
+      "Origination fees of 3-8% reduce the amount you actually receive",
+      "Maximum loan capped at $40,000 which limits larger borrowing needs",
+      "Funding can take several business days after approval",
+      "Higher APRs for borrowers with lower credit scores compared to bank alternatives",
+    ],
+    useCases: [
+      "Couple applying jointly to qualify for a better personal loan rate than either could get alone",
+      "Borrower consolidating credit card debt with direct creditor payment feature",
+      "Individual needing a small personal loan under $5,000 for an unexpected expense",
+    ],
   },
   {
     slug: "upstart",
@@ -132,6 +175,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🤖",
     domain: "upstart.com",
+    pros: [
+      "AI-based underwriting considers education and employment, not just credit scores",
+      "Accessible to younger borrowers and those with thin credit histories",
+      "Fast online application with quick funding for approved applicants",
+      "Pre-qualification available with no impact on credit score",
+    ],
+    cons: [
+      "Origination fees of up to 12% are among the highest in the industry",
+      "Maximum loan of $50,000 limits larger borrowing needs",
+      "Interest rates can be very high for applicants with poor credit profiles",
+      "AI-driven decisions can feel opaque with limited explanation for denials",
+    ],
+    useCases: [
+      "Recent college graduate with limited credit history seeking a personal loan based on earning potential",
+      "Young professional using education credentials to qualify for better rates than credit score alone allows",
+      "Borrower needing quick emergency funding with a streamlined online application",
+    ],
   },
   {
     slug: "best-egg",
@@ -145,6 +205,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🥚",
     domain: "bestegg.com",
+    pros: [
+      "Fast funding with disbursement as soon as the next business day",
+      "Accessible credit requirements broaden eligibility beyond prime borrowers",
+      "Streamlined online application process with quick decisions",
+      "Loan amounts from $2,000 to $50,000 covering a wide range of needs",
+    ],
+    cons: [
+      "Origination fees of 0.99-8.99% reduce the net loan proceeds",
+      "Interest rates can be high for borrowers with lower credit scores",
+      "No co-signer or joint application option to strengthen eligibility",
+      "Limited repayment term options compared to some competitors",
+    ],
+    useCases: [
+      "Borrower needing emergency funds fast with next-day disbursement",
+      "Individual with average credit seeking a personal loan without perfect credit requirements",
+      "Homeowner financing urgent repairs who cannot wait for a home equity process",
+    ],
   },
   {
     slug: "payoff",
@@ -158,6 +235,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "😊",
     domain: "happymoney.com",
+    pros: [
+      "Exclusively focused on credit card debt payoff creating a streamlined experience",
+      "Direct payment to credit card issuers eliminates the temptation to spend loan proceeds",
+      "Competitive rates for borrowers with good credit seeking debt consolidation",
+      "Financial wellness tools support long-term debt-free habits",
+    ],
+    cons: [
+      "Only available for credit card debt payoff — cannot use for other purposes",
+      "Minimum loan of $5,000 may exceed some borrowers' credit card balances",
+      "Origination fees reduce the net amount applied to debt payoff",
+      "Not available in all states",
+    ],
+    useCases: [
+      "Borrower wanting to consolidate multiple credit card balances into one lower-rate payment",
+      "Individual seeking a structured payoff plan with direct creditor payments to avoid spending temptation",
+      "Credit card holder wanting to reduce interest costs while building better financial habits",
+    ],
   },
   {
     slug: "avant",
@@ -171,6 +265,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🟢",
     domain: "avant.com",
+    pros: [
+      "Accessible to borrowers with fair to average credit scores (580+)",
+      "Next-day funding available for many approved borrowers",
+      "Straightforward online application with quick approval decisions",
+      "Flexible loan amounts starting at $2,000 for smaller needs",
+    ],
+    cons: [
+      "Interest rates are significantly higher than prime-credit lenders",
+      "Administration fee deducted from loan proceeds reduces net disbursement",
+      "Maximum loan of $35,000 is lower than many competitors",
+      "Late payment fees apply after a short grace period",
+    ],
+    useCases: [
+      "Borrower with a 600 credit score needing a personal loan that premium lenders would decline",
+      "Individual facing an emergency expense who needs fast access to funds",
+      "Person working to rebuild credit who needs a lender accepting fair credit scores",
+    ],
   },
   {
     slug: "upgrade",
@@ -184,6 +295,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "⬆️",
     domain: "upgrade.com",
+    pros: [
+      "Both personal loans and lines of credit available for maximum flexibility",
+      "Wide credit range accepted including fair and average credit scores",
+      "Additional financial tools including checking account and credit monitoring",
+      "Pre-qualification with soft credit pull lets you check rates risk-free",
+    ],
+    cons: [
+      "Origination fees of 1.85-9.99% reduce the net loan proceeds",
+      "Interest rates extend higher than bank-based competitors for lower scores",
+      "Minimum income and other requirements may exclude some applicants",
+      "Funding timeline is 1-4 business days, not same-day",
+    ],
+    useCases: [
+      "Borrower wanting a personal line of credit for ongoing flexible access to funds",
+      "Individual with fair credit seeking a lender that also provides credit monitoring tools",
+      "Person consolidating debt while building financial health with Upgrade's bundled tools",
+    ],
   },
   {
     slug: "happy-money",
@@ -197,6 +325,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🌈",
     domain: "happymoney.com",
+    pros: [
+      "Psychology-driven approach helps borrowers build lasting financial habits",
+      "Focus on member financial wellness beyond just providing the loan",
+      "Direct payment to credit card issuers for clean debt consolidation",
+      "Competitive rates for credit card payoff loans specifically",
+    ],
+    cons: [
+      "Limited to credit card debt payoff with no general-purpose loan option",
+      "Minimum loan of $5,000 excludes smaller balance consolidation",
+      "Not available in all states limiting geographic access",
+      "Origination fees apply and reduce the amount sent to creditors",
+    ],
+    useCases: [
+      "Borrower seeking not just a loan but behavioral tools to avoid future credit card debt",
+      "Person with multiple credit cards wanting one consolidated payment with lower interest",
+      "Individual motivated by financial wellness coaching alongside debt payoff",
+    ],
   },
   {
     slug: "penfed-personal-loans",
@@ -210,6 +355,24 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "penfed.org",
+    pros: [
+      "No origination fees and no prepayment penalties on any loan",
+      "Competitive credit union rates often better than online lenders",
+      "Membership is open to virtually anyone willing to join",
+      "Loan amounts from as low as $600 for small borrowing needs",
+      "Strong reputation as one of the largest and most respected credit unions",
+    ],
+    cons: [
+      "Best rates require excellent credit and membership history",
+      "Funding can take longer than online-only lenders",
+      "Online experience is functional but less modern than fintech competitors",
+      "Customer service quality can vary by channel",
+    ],
+    useCases: [
+      "Credit union member wanting no-fee personal loan rates",
+      "Borrower seeking a small personal loan under $5,000 that many lenders will not offer",
+      "Individual who prefers a member-owned credit union over for-profit lenders",
+    ],
   },
   {
     slug: "laurel-road-personal",
@@ -223,6 +386,23 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🌿",
     domain: "laurelroad.com",
+    pros: [
+      "Specialized rates and terms for healthcare professionals including doctors and nurses",
+      "Backed by KeyBank providing financial stability and trust",
+      "Competitive rates for high-income borrowers with strong credit",
+      "Streamlined application process for qualifying healthcare workers",
+    ],
+    cons: [
+      "Best rates and terms limited to healthcare professionals",
+      "Not competitive for general borrowers without healthcare credentials",
+      "Minimum loan amounts may be higher than some competitors",
+      "Geographic and eligibility restrictions apply to some products",
+    ],
+    useCases: [
+      "Physician financing medical office equipment or relocation expenses",
+      "Nurse consolidating student loan and credit card debt with healthcare-specific rates",
+      "Dentist funding practice improvements with a specialized personal loan",
+    ],
   },
   {
     slug: "freedomplus",
@@ -236,5 +416,22 @@ export const PERSONAL_LOAN_TOOLS: PersonalLoanTool[] = [
     featured: false,
     logo: "🗽",
     domain: "freedomplus.com",
+    pros: [
+      "Considers retirement savings, home equity, and overall financial picture beyond credit scores",
+      "Borrowers with moderate credit may qualify for better rates through holistic underwriting",
+      "Joint applications available to improve eligibility and terms",
+      "Direct creditor payment option for debt consolidation loans",
+    ],
+    cons: [
+      "Origination fees of 1.99-6.99% reduce net loan proceeds",
+      "Minimum loan of $7,500 excludes smaller borrowing needs",
+      "Interest rates can still be high for borrowers without significant assets",
+      "Funding timeline is 2-5 business days, not same-day",
+    ],
+    useCases: [
+      "Borrower with moderate credit but strong retirement savings seeking better loan terms",
+      "Homeowner leveraging home equity consideration to get a lower unsecured loan rate",
+      "Couple applying jointly for debt consolidation with holistic financial assessment",
+    ],
   },
 ];

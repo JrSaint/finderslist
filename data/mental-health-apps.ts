@@ -31,6 +31,32 @@ export const MENTAL_HEALTH_CATEGORIES: Record<MentalHealthCategory, { label: str
   "crisis-support": { label: "Crisis Support", emoji: "🆘", description: "Immediate access to crisis counselors and mental health support during emergencies.", gradient: "from-red-600/30 to-rose-800/40" },
 };
 
+export const MENTAL_HEALTH_EDITORIAL = {
+  title: "How to Choose the Right Mental Health App in 2026",
+  intro: `Mental health apps provide accessible, affordable tools for managing anxiety, depression, stress, and other psychological concerns from the privacy of your phone. They range from full therapy platforms connecting you with licensed clinicians to self-guided programs built around cognitive behavioral therapy, meditation, and mood tracking. For the millions of people who face long wait times, high costs, or stigma barriers to traditional therapy, these apps can be a lifeline.\n\nThe mental health app market has matured significantly, and the best platforms now offer evidence-based approaches validated by clinical research. Some apps are FDA-cleared as digital therapeutics, while others serve as supplements to in-person treatment. The key is matching the right tool to your specific needs -- someone dealing with acute anxiety may benefit most from a CBT-based program, while someone focused on daily wellness might prefer a meditation and mindfulness app.\n\nWhen evaluating mental health apps, privacy deserves special attention. These platforms handle deeply sensitive personal data, so look for apps with transparent privacy policies, HIPAA compliance (for therapy platforms), and a clear commitment not to sell your data to third parties.`,
+  buyerGuide: [
+    "Clinical evidence and approach -- prioritize apps backed by peer-reviewed research or based on proven modalities like CBT, DBT, or mindfulness-based stress reduction rather than vague wellness claims.",
+    "Therapist access vs. self-guided -- decide whether you need live sessions with a licensed professional or a self-paced program with exercises and journaling, as costs and commitment differ dramatically.",
+    "Privacy and data handling -- verify the app is HIPAA-compliant (if offering therapy), read the privacy policy carefully, and confirm your data is encrypted and never sold to advertisers or data brokers.",
+    "Crisis support features -- good mental health apps include safety planning tools, crisis hotline integration, and clear guidance for when self-help is not enough and professional intervention is needed.",
+    "Insurance and cost structure -- some therapy apps accept insurance or offer sliding-scale pricing, while self-guided apps typically charge $10-$20/month; compare total costs including session frequency.",
+  ],
+  faq: [
+    {
+      question: "Can a mental health app replace in-person therapy?",
+      answer: "For mild to moderate anxiety and depression, research shows that app-based therapy can be comparably effective to in-person sessions, especially platforms offering live video with licensed therapists. However, for severe mental illness, complex trauma, or crisis situations, in-person or intensive treatment is generally recommended. Many people use apps to supplement traditional therapy rather than replace it entirely.",
+    },
+    {
+      question: "Are mental health apps covered by insurance?",
+      answer: "Some therapy platforms like Talkspace and BetterHelp accept major insurance plans, and coverage has expanded significantly since 2020. Self-guided wellness apps are typically not covered by insurance but may be reimbursable through HSA/FSA accounts. Check with your specific insurer, as coverage varies by plan and state.",
+    },
+    {
+      question: "How do I know if a mental health app is legitimate?",
+      answer: "Look for apps that employ licensed therapists (if offering therapy), cite published clinical studies, follow HIPAA guidelines, and have transparent privacy policies. Avoid apps making grandiose cure claims or those that lack any clinical oversight. Professional endorsements from organizations like the APA or NAMI can also signal credibility.",
+    },
+  ],
+};
+
 export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
   // ── THERAPY & COUNSELING ────────────────────────────────────────────────
   {
@@ -168,6 +194,23 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "🤖",
     domain: "woebothealth.com",
+    pros: [
+      "Completely free with no premium tier or hidden costs",
+      "Available 24/7 for immediate CBT-based support without appointments",
+      "Developed by Stanford psychologists with clinical research backing",
+      "Daily check-ins build consistent mental health habits",
+      "Conversational format feels less intimidating than formal therapy",
+    ],
+    cons: [
+      "AI chatbot cannot replace the nuance of a human therapist",
+      "Limited to CBT techniques and may not suit all therapeutic needs",
+      "Responses can feel repetitive after extended use",
+    ],
+    useCases: [
+      "Practice CBT thought-reframing exercises between scheduled therapy sessions",
+      "Get immediate support for negative thought spirals at 2 AM when therapists are unavailable",
+      "Use daily mood check-ins to identify recurring anxiety triggers over time",
+    ],
   },
   {
     slug: "wysa",
@@ -181,6 +224,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "🐧",
     domain: "wysa.com",
+    pros: [
+      "Free AI companion covers CBT, DBT, meditation, and breathing exercises",
+      "Optional human therapist access within the same platform for escalation",
+      "Evidence-based techniques validated through clinical research partnerships",
+      "Friendly penguin interface reduces stigma and encourages engagement",
+    ],
+    cons: [
+      "Human therapist sessions require a separate paid subscription",
+      "AI responses can feel generic for complex emotional situations",
+      "Limited language support compared to larger therapy platforms",
+    ],
+    useCases: [
+      "Start with free AI-guided CBT exercises and upgrade to a human therapist when needed",
+      "Use guided breathing exercises to manage acute anxiety during stressful workdays",
+      "Track mood patterns over weeks to share insights with an in-person therapist",
+    ],
   },
   // ── MOOD TRACKING ───────────────────────────────────────────────────────
   {
@@ -195,6 +254,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "🌿",
     domain: "sanvello.com",
+    pros: [
+      "Clinically validated and covered by many health insurance plans",
+      "Combines CBT tools, mood tracking, and peer support communities",
+      "Guided journeys provide structured self-help programs for specific conditions",
+      "Free tier offers meaningful functionality without requiring payment",
+    ],
+    cons: [
+      "Insurance coverage varies and is not available in all states",
+      "Peer community moderation quality can be inconsistent",
+      "App updates have occasionally disrupted user progress and data",
+    ],
+    useCases: [
+      "Use insurance-covered CBT exercises as an affordable supplement to traditional therapy",
+      "Join peer support communities to connect with others managing similar anxiety challenges",
+      "Complete a guided journey for workplace stress during a high-pressure project",
+    ],
   },
   {
     slug: "happify",
@@ -208,6 +283,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "😊",
     domain: "happify.com",
+    pros: [
+      "Science-based activities grounded in positive psychology and CBT research",
+      "Gamified exercises make mental health practice engaging and habit-forming",
+      "Guided tracks tailored to specific life situations like work stress or relationships",
+      "Short interactive activities fit easily into a busy daily schedule",
+    ],
+    cons: [
+      "Premium subscription required for full access to tracks and features",
+      "Gamification style may feel trivializing for users with serious mental health concerns",
+      "Content depth is limited compared to dedicated therapy platforms",
+    ],
+    useCases: [
+      "Build daily resilience through short positive psychology exercises during lunch breaks",
+      "Follow the work stress track during a demanding career transition",
+      "Use gratitude and savoring activities to counteract persistent negative thinking patterns",
+    ],
   },
   {
     slug: "mindshift",
@@ -221,6 +312,23 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "🔄",
     domain: "anxietycanada.com",
+    pros: [
+      "Completely free and ad-free with no premium tier or upsells",
+      "Developed by Anxiety Canada with strong clinical credibility",
+      "Includes thought journals, coping cards, and exposure hierarchy tools",
+      "Specifically designed for anxiety disorders rather than general wellness",
+      "Evidence-based CBT strategies validated by mental health professionals",
+    ],
+    cons: [
+      "Focused exclusively on anxiety and may not address depression or other conditions",
+      "Interface design is functional but less polished than commercial apps",
+      "No therapist access or community support features built in",
+    ],
+    useCases: [
+      "Build an exposure hierarchy to gradually face social anxiety triggers",
+      "Use thought journals to challenge catastrophic thinking before important presentations",
+      "Create coping cards for specific anxiety-inducing situations like flying or crowded spaces",
+    ],
   },
   {
     slug: "moodpath",
@@ -234,6 +342,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "📋",
     domain: "minddoc.com",
+    pros: [
+      "Generates clinical-grade screening reports shareable with healthcare providers",
+      "Daily assessments build a comprehensive picture of emotional health over time",
+      "Psychoeducation courses teach users about their conditions and coping strategies",
+      "Bridges the gap between self-help and professional treatment effectively",
+    ],
+    cons: [
+      "Premium subscription needed for full access to courses and audio content",
+      "Screening reports require a two-week assessment period before generation",
+      "App rebranding from Moodpath to MindDoc has caused some user confusion",
+    ],
+    useCases: [
+      "Complete a two-week assessment to generate a depression screening report for your doctor",
+      "Use daily emotional check-ins to monitor mood changes after starting new medication",
+      "Share assessment data with a therapist to make intake sessions more productive",
+    ],
   },
   {
     slug: "daylio",
@@ -247,6 +371,23 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "📅",
     domain: "daylio.net",
+    pros: [
+      "Tap-to-track interface makes daily mood logging take only seconds",
+      "Reveals correlations between activities and emotional states over time",
+      "No writing required, lowering the barrier to consistent journaling",
+      "Statistics and calendar views provide clear visual mood pattern insights",
+      "Highly customizable mood categories and activity icons",
+    ],
+    cons: [
+      "Premium subscription required for advanced statistics and data export",
+      "Simplicity means it lacks therapeutic guidance or coping tools",
+      "Activity-mood correlations are observational and not clinically validated",
+    ],
+    useCases: [
+      "Log daily moods and activities to discover which habits correlate with better mental health",
+      "Track emotional patterns across months to identify seasonal depression triggers",
+      "Share mood data visualizations with a therapist to guide treatment conversations",
+    ],
   },
   // ── SUBSTANCE RECOVERY ──────────────────────────────────────────────────
   {
@@ -261,6 +402,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "💪",
     domain: "iamsober.com",
+    pros: [
+      "Daily pledge feature reinforces commitment to sobriety each morning",
+      "Tracks money saved from avoided substance purchases as tangible motivation",
+      "Milestone celebrations provide positive reinforcement at key recovery markers",
+      "Supportive community connects users with others on similar recovery journeys",
+    ],
+    cons: [
+      "Premium subscription needed for advanced features and detailed statistics",
+      "Community interactions are not moderated by licensed professionals",
+      "Limited therapeutic content beyond tracking and motivational features",
+    ],
+    useCases: [
+      "Take a daily sobriety pledge each morning to reinforce recovery commitment",
+      "Track the financial savings from quitting alcohol to stay motivated during early recovery",
+      "Celebrate milestone achievements and share progress with the recovery community",
+    ],
   },
   {
     slug: "recovery-dharma",
@@ -274,6 +431,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "☸️",
     domain: "recoverydharma.org",
+    pros: [
+      "Completely free with no paid tiers or membership fees",
+      "Secular and non-theistic approach appeals to those uncomfortable with 12-step programs",
+      "Buddhist-inspired meditation practices support both recovery and general well-being",
+      "Free online meetings make participation accessible from anywhere",
+    ],
+    cons: [
+      "Peer-led meetings lack licensed professional oversight or clinical guidance",
+      "Meeting availability varies significantly by geographic region for in-person attendance",
+      "Less structured program than traditional 12-step approaches may not suit everyone",
+    ],
+    useCases: [
+      "Attend free online recovery meetings as an alternative to AA for non-religious individuals",
+      "Use Buddhist meditation practices to manage cravings and build mindfulness in recovery",
+      "Supplement professional addiction treatment with community peer support between sessions",
+    ],
   },
   // ── CRISIS SUPPORT ──────────────────────────────────────────────────────
   {
@@ -288,6 +461,23 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "🆘",
     domain: "crisistextline.org",
+    pros: [
+      "Completely free 24/7 crisis support with no eligibility requirements",
+      "Text-based format is accessible for people who cannot make phone calls",
+      "Trained crisis counselors provide immediate real-time support",
+      "Lower barrier to reaching out compared to calling a crisis hotline",
+      "Confidential and discreet communication via standard text messaging",
+    ],
+    cons: [
+      "Wait times for a counselor can be significant during high-demand periods",
+      "Text-based communication limits emotional nuance compared to voice calls",
+      "Volunteer counselors are trained but not licensed mental health professionals",
+    ],
+    useCases: [
+      "Text 741741 during a panic attack when speaking on the phone feels impossible",
+      "Reach out discreetly for crisis support while in an unsafe home environment",
+      "Get immediate de-escalation support during acute suicidal ideation",
+    ],
   },
   {
     slug: "7-cups",
@@ -301,5 +491,22 @@ export const MENTAL_HEALTH_TOOLS: MentalHealthTool[] = [
     featured: false,
     logo: "☕",
     domain: "7cups.com",
+    pros: [
+      "Free anonymous chat support from trained volunteer listeners available 24/7",
+      "Low barrier entry point for people not ready for formal therapy",
+      "Community forums and self-help guides complement one-on-one support",
+      "Affordable online therapy option available for users who want professional help",
+    ],
+    cons: [
+      "Volunteer listener quality and training varies significantly",
+      "Anonymous nature means no continuity of care between conversations",
+      "Professional therapy through the platform is limited compared to dedicated providers",
+      "Wait times for a listener can be long during peak hours",
+    ],
+    useCases: [
+      "Talk anonymously to a trained listener when processing grief and not ready for therapy",
+      "Join community chat rooms focused on specific issues like social anxiety or PTSD",
+      "Use self-help guides to develop coping strategies while waiting for a therapy appointment",
+    ],
   },
 ];

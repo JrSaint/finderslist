@@ -8,9 +8,13 @@ import {
   filterNoCodeTools,
   NO_CODE_ROLES,
 } from "@/lib/no-code-tools";
+import { NO_CODE_EDITORIAL } from "@/data/no-code-tools";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -97,6 +101,25 @@ export default async function NoCodeToolsPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={NO_CODE_EDITORIAL.title}
+            intro={NO_CODE_EDITORIAL.intro}
+            buyerGuide={NO_CODE_EDITORIAL.buyerGuide}
+            faq={NO_CODE_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={NO_CODE_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/no-code-tools"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -153,9 +176,6 @@ export default async function NoCodeToolsPage({ searchParams }: Props) {
                 {featured.map((tool) => (<ToolCard key={tool.slug} tool={tool as never} basePath="/no-code-tools" />))}
               </div>
             </section>
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

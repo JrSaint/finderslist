@@ -47,6 +47,7 @@ export default function Footer() {
               <Link href="/ai-tools" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">AI Tools</Link>
               <Link href="/ai-tools/submit" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Submit a Tool</Link>
               <Link href="/about" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">About Us</Link>
+              <Link href="/methodology" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Our Methodology</Link>
               <Link href="/contact" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Contact Us</Link>
               <Link href="/privacy" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Privacy Policy</Link>
               <Link href="/terms" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Terms of Service</Link>

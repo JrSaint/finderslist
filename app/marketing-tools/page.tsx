@@ -7,9 +7,13 @@ import {
   getMarketingCategoryCount,
   filterMarketingTools,
 } from "@/lib/marketing-tools";
+import { MARKETING_EDITORIAL } from "@/data/marketing-tools";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import MarketingFilterBar from "@/components/MarketingFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -102,6 +106,25 @@ export default async function MarketingToolsPage({ searchParams }: Props) {
         </section>
 
         {/* Search / filter results */}
+        {!isFiltering && (
+          <EditorialSection
+            title={MARKETING_EDITORIAL.title}
+            intro={MARKETING_EDITORIAL.intro}
+            buyerGuide={MARKETING_EDITORIAL.buyerGuide}
+            faq={MARKETING_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={MARKETING_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/marketing-tools"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -180,11 +203,6 @@ export default async function MarketingToolsPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             {/* All Tools */}
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">

@@ -7,9 +7,13 @@ import {
   getPersonalLoanCategoryCount,
   filterPersonalLoanTools,
 } from "@/lib/personal-loans";
+import { PERSONAL_LOAN_EDITORIAL } from "@/data/personal-loans";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function PersonalLoanPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={PERSONAL_LOAN_EDITORIAL.title}
+            intro={PERSONAL_LOAN_EDITORIAL.intro}
+            buyerGuide={PERSONAL_LOAN_EDITORIAL.buyerGuide}
+            faq={PERSONAL_LOAN_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={PERSONAL_LOAN_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/personal-loans"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function PersonalLoanPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

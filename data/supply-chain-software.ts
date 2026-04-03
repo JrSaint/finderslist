@@ -51,6 +51,32 @@ export const SUPPLY_CHAIN_CATEGORIES: Record<SupplyChainCategory, { label: strin
   },
 };
 
+export const SUPPLY_CHAIN_EDITORIAL = {
+  title: "How to Choose the Right Supply Chain Software in 2026",
+  intro: `Supply chain software encompasses a broad range of platforms covering procurement, demand planning, logistics management, supplier relationships, and end-to-end visibility. After years of disruptions from the pandemic, geopolitical tensions, and climate events, companies are investing heavily in supply chain technology to build resilience and reduce dependency on single sources. The global supply chain software market is projected to exceed $30 billion by 2027.\n\nModern supply chain platforms increasingly rely on AI and machine learning for demand forecasting, anomaly detection, and autonomous decision-making. Cloud-native architectures have replaced legacy on-premise systems, enabling real-time collaboration across suppliers, manufacturers, logistics providers, and customers. The shift from reactive to predictive supply chain management means companies can identify disruptions before they happen and reroute shipments or adjust procurement automatically.\n\nChoosing the right supply chain software depends heavily on your specific pain points. A manufacturer struggling with inventory optimization needs demand planning tools, while a retailer managing hundreds of suppliers needs a procurement platform with strong supplier management. Most enterprises end up with a suite of best-of-breed tools connected through integration platforms, though all-in-one solutions from vendors like SAP, Oracle, and Kinaxis are gaining ground for companies wanting a unified approach.`,
+  buyerGuide: [
+    "Scope alignment -- Supply chain software ranges from narrow point solutions to broad platforms. Identify your primary pain point, whether procurement, logistics, forecasting, or visibility, and choose a tool that excels in that area rather than settling for a mediocre all-in-one.",
+    "ERP integration -- Your supply chain tools must integrate seamlessly with your ERP system. Check for native connectors with SAP, Oracle, NetSuite, or Microsoft Dynamics, as custom integrations can cost hundreds of thousands of dollars.",
+    "AI and forecasting capabilities -- The best platforms use machine learning for demand sensing, supplier risk scoring, and autonomous replenishment. Evaluate the accuracy of forecasting algorithms with your own data during proof-of-concept trials.",
+    "Multi-tier visibility -- Modern supply chains have multiple tiers of suppliers. Look for platforms that provide visibility beyond your direct suppliers into sub-tier components and raw material sources for true risk management.",
+    "Scalability and global support -- If you operate internationally, verify the platform handles multi-currency transactions, multi-language interfaces, regional compliance requirements, and global logistics carrier integrations.",
+  ],
+  faq: [
+    {
+      question: "What is the difference between supply chain management and ERP software?",
+      answer: "ERP software manages core business processes like finance, HR, and manufacturing across the organization. Supply chain management software specifically focuses on the flow of goods, information, and money between suppliers, manufacturers, and customers. Most enterprises use both, with SCM tools providing deeper functionality than the supply chain modules within their ERP.",
+    },
+    {
+      question: "How long does a typical supply chain software implementation take?",
+      answer: "Implementation timelines vary dramatically by scope. A focused procurement or visibility tool can go live in 3 to 6 months. A comprehensive supply chain planning suite with ERP integration typically takes 9 to 18 months. Phased rollouts by region or function are the most common approach for large enterprises.",
+    },
+    {
+      question: "Is supply chain visibility software worth the investment for mid-market companies?",
+      answer: "Yes, especially after recent supply chain disruptions exposed how vulnerable companies are without real-time visibility. Even mid-market companies benefit from tracking shipments, monitoring supplier performance, and receiving early alerts about potential delays, since a single stockout can cost far more than the annual platform subscription.",
+    },
+  ],
+};
+
 export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
   {
     slug: "sap-ariba",
@@ -215,6 +241,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🔮",
     domain: "o9solutions.com",
+    pros: [
+      "Enterprise Knowledge Graph enables unprecedented speed in scenario planning",
+      "Unified data model connects demand, supply, and revenue planning",
+      "Next-generation AI capabilities for forecasting and decision-making",
+      "Handles complex global supply chain planning at enterprise scale",
+    ],
+    cons: [
+      "Premium pricing targeted at large enterprises",
+      "Requires significant data preparation and integration effort",
+      "Newer player compared to established planning vendors like Kinaxis or SAP",
+    ],
+    useCases: [
+      "Large enterprise unifying demand, supply, and financial planning on a single platform",
+      "Company wanting AI-driven scenario planning for complex global supply chains",
+      "Organization replacing legacy planning systems with a next-generation platform",
+    ],
   },
   {
     slug: "e2open",
@@ -228,6 +270,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🌎",
     domain: "e2open.com",
+    pros: [
+      "Connected platform orchestrates planning and execution across trading partners",
+      "Strong channel management and demand sensing capabilities",
+      "Serves complex global supply chains with multi-tier visibility",
+      "Transportation management integrated with broader supply chain workflows",
+    ],
+    cons: [
+      "Multiple acquisitions have created some product overlap and integration complexity",
+      "Enterprise pricing and implementation effort required",
+      "User interface can feel inconsistent across different modules",
+    ],
+    useCases: [
+      "Brand company managing complex channel distribution and demand sensing",
+      "Global manufacturer needing connected planning and logistics across trading partners",
+      "Enterprise orchestrating supply chain execution across multiple regions and partners",
+    ],
   },
   {
     slug: "llamasoft",
@@ -241,6 +299,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🦙",
     domain: "coupa.com",
+    pros: [
+      "Specialized in supply chain network design and optimization modeling",
+      "Models costs, service levels, risks, and sustainability impacts simultaneously",
+      "Powerful scenario analysis for evaluating network design alternatives",
+      "Now integrated with Coupa's broader spend management platform",
+    ],
+    cons: [
+      "Requires significant data preparation for accurate network modeling",
+      "Specialized tool with a steep learning curve for new users",
+      "Premium pricing for advanced optimization capabilities",
+    ],
+    useCases: [
+      "Company redesigning its distribution network to optimize for cost and service levels",
+      "Supply chain team evaluating the impact of adding or closing warehouse locations",
+      "Organization modeling sustainability impacts of supply chain network changes",
+    ],
   },
   {
     slug: "fourkites",
@@ -254,6 +328,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🪁",
     domain: "fourkites.com",
+    pros: [
+      "Real-time multimodal tracking across road, rail, ocean, and air",
+      "Predictive ETAs help logistics teams plan receiving and staffing",
+      "Dynamic exception management alerts teams to delays before they escalate",
+      "Shared visibility platform connects shippers, carriers, and brokers",
+    ],
+    cons: [
+      "Pricing is oriented toward mid-to-large shippers with significant volume",
+      "Carrier adoption and data quality vary by region and mode",
+      "Integration with legacy TMS systems can require middleware",
+    ],
+    useCases: [
+      "Shipper wanting real-time visibility into in-transit inventory across carriers",
+      "Logistics team reducing detention and demurrage costs with predictive ETAs",
+      "Supply chain manager identifying shipment exceptions before they impact production schedules",
+    ],
   },
   {
     slug: "project44",
@@ -267,6 +357,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "📡",
     domain: "project44.com",
+    pros: [
+      "One of the largest carrier networks in the logistics visibility industry",
+      "Deep data analytics and reporting for supply chain performance",
+      "Automated tracking reduces manual shipment monitoring effort",
+      "Strong multimodal coverage including ocean, air, rail, and parcel",
+    ],
+    cons: [
+      "Enterprise pricing model not suited for small shippers",
+      "Some carrier connections provide less granular tracking data than others",
+      "Implementation timeline can extend for complex multi-carrier setups",
+    ],
+    useCases: [
+      "Enterprise shipper needing automated visibility across a large carrier network",
+      "Logistics team monitoring ocean freight with predictive arrival forecasting",
+      "Supply chain organization analyzing carrier performance data to optimize routing",
+    ],
   },
   {
     slug: "flexport",
@@ -280,6 +386,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🚢",
     domain: "flexport.com",
+    pros: [
+      "Technology-first approach brings transparency to traditionally opaque freight processes",
+      "Real-time shipment tracking with supply chain analytics dashboard",
+      "Full-service freight forwarding combined with customs brokerage",
+      "Strong user experience compared to legacy freight forwarders",
+    ],
+    cons: [
+      "Pricing can be higher than traditional freight forwarders for standard shipments",
+      "Service quality can vary during periods of rapid company growth",
+      "Less established relationships in some trade lanes compared to legacy forwarders",
+    ],
+    useCases: [
+      "DTC brand wanting transparent, tech-enabled international freight forwarding",
+      "Importer needing integrated customs brokerage with real-time shipment visibility",
+      "Company replacing a legacy freight forwarder with a data-driven alternative",
+    ],
   },
   {
     slug: "jaggaer",
@@ -293,6 +415,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🐆",
     domain: "jaggaer.com",
+    pros: [
+      "Comprehensive procurement suite covering sourcing, contracts, and spend analytics",
+      "AI-powered autonomous commerce capabilities automate routine procurement decisions",
+      "Strong supplier collaboration and management features",
+      "Deep expertise in direct and indirect procurement processes",
+    ],
+    cons: [
+      "Complex platform with a steep learning curve for new users",
+      "Enterprise pricing model requires significant budget commitment",
+      "Implementation timelines are long due to the depth of configuration needed",
+    ],
+    useCases: [
+      "Enterprise automating procurement decisions with AI-driven commerce",
+      "Manufacturing company managing direct material sourcing and supplier collaboration",
+      "Large organization consolidating spend analytics across all procurement categories",
+    ],
   },
   {
     slug: "gep",
@@ -306,6 +444,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "💚",
     domain: "gep.com",
+    pros: [
+      "Cloud-native, AI-powered platform with modern architecture",
+      "Unifies sourcing, contract management, and procure-to-pay workflows",
+      "Combines software with managed procurement services for full transformation",
+      "Strong savings tracking and procurement analytics",
+    ],
+    cons: [
+      "Primarily serves large enterprises with corresponding pricing",
+      "Managed services model may not suit companies wanting full in-house control",
+      "Newer in the market compared to SAP Ariba and Coupa",
+    ],
+    useCases: [
+      "Enterprise combining procurement software and managed services for transformation",
+      "Procurement team tracking savings across sourcing and contract management",
+      "Organization wanting AI-powered procurement automation on a cloud-native platform",
+    ],
   },
   {
     slug: "ivalua",
@@ -319,6 +473,22 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "🟢",
     domain: "ivalua.com",
+    pros: [
+      "Highly configurable platform adapts to unique procurement processes",
+      "Covers direct, indirect, and services procurement on a single platform",
+      "Strong supplier management with performance tracking and risk scoring",
+      "Flexible enough to digitize complex spend categories",
+    ],
+    cons: [
+      "Configurability comes with a steeper implementation timeline",
+      "Enterprise pricing makes it less accessible for mid-market companies",
+      "Smaller ecosystem of third-party integrations than SAP Ariba",
+    ],
+    useCases: [
+      "Enterprise needing a highly configurable source-to-pay platform",
+      "Company managing direct materials procurement alongside indirect spend",
+      "Organization wanting to digitize services procurement and SOW-based spending",
+    ],
   },
   {
     slug: "riskmethods",
@@ -332,5 +502,21 @@ export const SUPPLY_CHAIN_TOOLS: SupplyChainTool[] = [
     featured: false,
     logo: "⚠️",
     domain: "riskmethods.net",
+    pros: [
+      "AI continuously scans global data sources for supply chain risks in real time",
+      "Early warning alerts for financial distress, natural disasters, and geopolitical events",
+      "Covers multi-tier supplier risks beyond direct supplier relationships",
+      "Now part of Sphera with expanded ESG and sustainability risk coverage",
+    ],
+    cons: [
+      "Risk monitoring subscription adds cost on top of existing procurement platforms",
+      "Accuracy of risk alerts depends on the quality of available external data",
+      "Requires supplier data onboarding effort for comprehensive coverage",
+    ],
+    useCases: [
+      "Procurement team wanting early warning of supplier financial distress",
+      "Global manufacturer monitoring geopolitical and natural disaster risks across supply base",
+      "Company building a proactive supply chain risk management program",
+    ],
   },
 ];

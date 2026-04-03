@@ -26,6 +26,32 @@ export const BUSINESS_LOAN_CATEGORIES: Record<BusinessLoanCategory, { label: str
   "invoice-financing": { label: "Invoice Financing", emoji: "🧾", description: "Advance funding against outstanding invoices to improve cash flow without waiting for customer payments.", gradient: "from-yellow-600/30 to-amber-800/40" },
 };
 
+export const BUSINESS_LOAN_EDITORIAL = {
+  title: "How to Choose the Right Business Loan in 2026",
+  intro: `Business loans provide the capital companies need to grow — whether that means hiring staff, purchasing equipment, expanding to new locations, or managing cash flow gaps between invoices and payments. The right financing can accelerate growth, while the wrong loan structure can saddle your business with payments that strangle cash flow.\n\nThe landscape includes traditional bank loans (lowest rates but hardest to qualify for), SBA loans (government-backed with favorable terms but slow approval), online lenders (fast funding with higher rates), and specialized options like equipment financing and invoice factoring. Your credit score, time in business, annual revenue, and how quickly you need funds will largely determine which options are available to you.\n\nInterest rates in 2026 vary widely: SBA 7(a) loans range from 10-14% APR, traditional bank term loans from 7-12%, and online lenders from 10-50%+ depending on risk factors. Always compare the total cost of capital (not just APR) across lenders, including origination fees, prepayment penalties, and factor rates that some online lenders use instead of APR to obscure true costs.`,
+  buyerGuide: [
+    "Total cost of capital, not just interest rate — factor in origination fees (1-5%), prepayment penalties, and whether the lender quotes APR or factor rates; a 1.3 factor rate on a 12-month loan translates to roughly 55% APR.",
+    "Funding speed vs. cost tradeoff — bank and SBA loans take 2-12 weeks but offer the best rates; online lenders fund in 1-3 days but charge significantly more for that speed.",
+    "Qualification requirements — know your personal credit score, business revenue, time in business, and existing debt before applying; applying for loans you won't qualify for wastes time and generates hard credit inquiries.",
+    "Repayment structure — match your repayment schedule to your cash flow pattern; daily or weekly ACH debits from online lenders can be burdensome, while monthly payments aligned with your revenue cycle are more manageable.",
+    "Collateral and personal guarantee requirements — understand what you're putting on the line; most business loans require a personal guarantee, and some require specific collateral like equipment or real estate.",
+  ],
+  faq: [
+    {
+      question: "What credit score do I need for a business loan?",
+      answer: "SBA and traditional bank loans typically require personal credit scores of 680+. Online lenders may approve scores as low as 500-600 but at significantly higher rates. The best rates go to borrowers with 720+ scores, 2+ years in business, and strong annual revenue.",
+    },
+    {
+      question: "How long does it take to get a business loan?",
+      answer: "Online lenders like Bluevine and OnDeck can approve and fund within 1-3 business days. Traditional bank loans take 2-4 weeks. SBA loans are the slowest at 4-12 weeks from application to funding due to government paperwork requirements. Plan your capital needs well in advance when possible.",
+    },
+    {
+      question: "Should I choose a term loan or a line of credit?",
+      answer: "Term loans are best for one-time investments with a clear cost (equipment, expansion, acquisition). Lines of credit are better for ongoing cash flow management, seasonal fluctuations, and situations where you need flexible access to capital over time. Many businesses benefit from having both.",
+    },
+  ],
+};
+
 export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
   {
     slug: "bluevine",
@@ -119,6 +145,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🏦",
     domain: "smartbizloans.com",
+    pros: ["Simplifies the notoriously complex SBA 7(a) application process", "Loan amounts up to $5 million with terms up to 25 years for real estate", "Lower interest rates than most online lenders due to SBA backing", "Dedicated support guides borrowers through SBA paperwork requirements", "Pre-qualification check does not impact credit score"],
+    cons: ["SBA loans still take 4-8 weeks even with the streamlined process", "Strict eligibility requirements including credit score minimums", "Origination fees and SBA guarantee fees add to total loan cost", "Not suited for businesses needing capital urgently"],
+    useCases: ["Main Street business applying for an SBA 7(a) loan without hiring a loan broker", "Restaurant owner financing a real estate purchase with a 25-year SBA loan", "Established business refinancing high-cost debt into a lower-rate SBA term loan"],
   },
   {
     slug: "credibly",
@@ -132,6 +161,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "💡",
     domain: "credibly.com",
+    pros: ["Funding available in as little as 24 hours for urgent needs", "Flexible qualification criteria — approves businesses banks may decline", "Multiple products including working capital loans, MCAs, and credit lines", "Dedicated account representatives provide personalized guidance", "Serves a wide range of industries and business types"],
+    cons: ["Higher rates than traditional bank financing due to speed and flexibility", "Merchant cash advance factor rates can translate to high effective APRs", "Daily or weekly ACH repayments can strain cash flow", "Shorter repayment terms than SBA or bank term loans"],
+    useCases: ["Business needing emergency working capital within 24 hours after equipment failure", "Company with lower credit scores seeking financing that traditional banks denied", "Seasonal business using a merchant cash advance to stock up before peak season"],
   },
   {
     slug: "national-funding",
@@ -145,6 +177,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🏗️",
     domain: "nationalfunding.com",
+    pros: ["Equipment financing with flexible terms for various asset types", "Works with a broad range of industries and credit profiles", "Fast approval process — decisions often within one business day", "Accessible to businesses denied by traditional banks", "Loans from $5,000 to $500,000 cover diverse needs"],
+    cons: ["Interest rates are higher than traditional bank equipment loans", "Early payoff terms may not reduce total interest significantly", "Not the cheapest option for businesses with strong credit", "Customer reviews mention aggressive sales follow-up after applying"],
+    useCases: ["Construction company financing a new excavator with equipment-specific lending terms", "Restaurant purchasing commercial kitchen equipment with flexible repayment", "Business with imperfect credit needing equipment financing that traditional banks won't provide"],
   },
   {
     slug: "rapid-finance",
@@ -158,6 +193,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "⚡",
     domain: "rapidfinance.com",
+    pros: ["Same-day funding available for qualifying borrowers", "High approval rates even for businesses with challenged credit", "Multiple financing products including MCAs and bridge loans", "Simple online application with fast decisions", "Designed for businesses facing immediate financial challenges"],
+    cons: ["Factor rates translate to very high effective APRs", "Short repayment terms increase the cost of borrowing", "Daily ACH repayments can strain cash flow for tight-margin businesses", "Not suited for long-term financing or capital investments"],
+    useCases: ["Business needing same-day bridge financing to cover an unexpected expense", "Company with limited options getting fast capital through a merchant cash advance", "Seasonal business accessing quick working capital before a revenue uptick"],
   },
   {
     slug: "fundbox",
@@ -171,6 +209,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🤖",
     domain: "fundbox.com",
+    pros: ["AI-powered decisions provide near-instant credit approvals", "Integrates with accounting software for real-time eligibility assessment", "Lines of credit up to $150,000 with flexible draw schedules", "No prepayment penalties — pay off early to save on fees", "Straightforward weekly repayment structure"],
+    cons: ["Credit limits are lower than some competitors ($150,000 max)", "Weekly repayment draws can be more frequent than monthly alternatives", "Requires linking business bank accounts for ongoing monitoring", "Interest rates can be higher than traditional lines of credit"],
+    useCases: ["Freelancer connecting QuickBooks to get instant credit line approval for cash flow gaps", "Small business drawing funds weekly to cover payroll between client payments", "E-commerce seller accessing working capital quickly during inventory restocking cycles"],
   },
   {
     slug: "bluevine-line-of-credit",
@@ -184,6 +225,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🧾",
     domain: "bluevine.com",
+    pros: ["Advance up to 90% of invoice value without waiting for customer payments", "Eliminates cash flow gaps caused by slow-paying B2B clients", "No debt incurred — factoring is based on receivables, not borrowing", "Non-recourse options available for qualifying invoices", "Integrates with Bluevine's broader small business financial platform"],
+    cons: ["Factoring fees reduce the total revenue collected on each invoice", "Only available for B2B businesses with invoiced receivables", "Customer creditworthiness affects factoring eligibility and rates", "May signal financial weakness to clients if they learn invoices are factored"],
+    useCases: ["B2B service company factoring $50K in outstanding invoices to meet payroll this week", "Staffing agency converting 60-day receivables into same-day cash flow", "Wholesaler using invoice factoring to fund inventory purchases between customer payments"],
   },
   {
     slug: "sba-gov",
@@ -197,6 +241,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🇺🇸",
     domain: "sba.gov",
+    pros: ["Official authoritative resource for all SBA loan programs", "Free tools to assess loan eligibility and find approved lenders", "Local SBA offices and SCORE mentors provide free guidance", "Covers 7(a), 504, microloan, and disaster loan programs", "Connects businesses with SBA-approved lenders in their area"],
+    cons: ["Does not directly fund loans — connects to approved lenders only", "Government website can be difficult to navigate", "Information can be dense and bureaucratic for first-time borrowers", "No direct application submission — redirects to third-party lenders"],
+    useCases: ["First-time borrower researching which SBA loan program fits their needs", "Small business owner finding an SBA-approved lender in their state", "Entrepreneur using free SCORE mentoring to prepare a strong loan application"],
   },
   {
     slug: "biz2credit",
@@ -210,6 +257,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🔗",
     domain: "biz2credit.com",
+    pros: ["Access to 1,200+ lenders providing diverse financing options", "Data analytics match businesses with the most suitable lenders", "Covers SBA loans, term loans, credit lines, and commercial real estate", "Free to submit applications — no cost to the borrower for matching", "Experienced platform having facilitated billions in small business funding"],
+    cons: ["Not a direct lender — approval depends entirely on matched lenders", "Application may be shared with multiple lenders simultaneously", "Some matched lenders charge higher rates for riskier profiles", "Customer service experience varies based on which lender you're matched with"],
+    useCases: ["Business owner exploring commercial real estate financing options across multiple lenders", "Company wanting to compare SBA loan offers from several approved lenders at once", "Entrepreneur with unique financing needs benefiting from data-driven lender matching"],
   },
   {
     slug: "headway-capital",
@@ -223,6 +273,9 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "📈",
     domain: "headwaycapital.com",
+    pros: ["No fees on unused credit — only pay for what you draw", "Online application with quick decision turnaround", "Lines of credit from $5,000 to $100,000 for flexible working capital", "Transparent fee structure without hidden charges", "Designed for growing small businesses needing revolving access to capital"],
+    cons: ["Credit limits max at $100,000 — lower than some competitors", "Interest rates are higher than traditional bank credit lines", "Repayment terms tend to be shorter than bank products", "Less brand recognition than larger online lending platforms"],
+    useCases: ["Small business maintaining a revolving credit line for unpredictable expenses", "Service company drawing funds only when needed to cover client project costs", "Growing business wanting flexible access to capital without paying for unused credit"],
   },
   {
     slug: "liberis",
@@ -236,5 +289,8 @@ export const BUSINESS_LOAN_TOOLS: BusinessLoanTool[] = [
     featured: false,
     logo: "🌊",
     domain: "liberis.com",
+    pros: ["Repayments automatically decrease during slow revenue periods", "No fixed monthly payments — tied to a percentage of daily revenue", "Reduces financial stress for seasonal or variable-revenue businesses", "Fast approval with funding based on revenue data, not just credit score", "No personal guarantee required on most products"],
+    cons: ["Total cost can be higher than traditional term loans", "Revenue-based model means strong months lead to larger repayments", "Less predictable total repayment timeline than fixed-term loans", "Not available in all markets or for all business types"],
+    useCases: ["Seasonal retail business wanting repayments that drop during off-peak months", "Restaurant with variable weekly revenue needing flexible working capital", "E-commerce seller financing inventory with repayments tied to actual sales volume"],
   },
 ];

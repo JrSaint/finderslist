@@ -26,6 +26,32 @@ export const GOLD_IRA_CATEGORIES: Record<GoldIRACategory, { label: string; emoji
   "rollover": { label: "IRA Rollover", emoji: "🔄", description: "Specialists in rolling over existing 401(k) or IRA accounts into precious metals IRAs.", gradient: "from-emerald-600/30 to-green-800/40" },
 };
 
+export const GOLD_IRA_EDITORIAL = {
+  title: "How to Choose the Right Gold IRA Company in 2026",
+  intro: `A Gold IRA allows you to hold physical precious metals — gold, silver, platinum, or palladium — inside a tax-advantaged retirement account. Unlike standard IRAs that hold stocks, bonds, and mutual funds, a Gold IRA requires a self-directed custodian, an IRS-approved depository for storage, and a precious metals dealer to source the actual metals. Choosing the right company to facilitate this process is critical because fees, metal selection, and customer service vary dramatically across providers.\n\nInvestors typically turn to Gold IRAs for portfolio diversification and as a hedge against inflation, currency devaluation, or stock market volatility. The process usually involves rolling over funds from an existing 401(k) or traditional IRA into a new self-directed IRA, then purchasing IRS-approved bullion or coins that are stored in a secure depository on your behalf.\n\nThe Gold IRA industry has attracted both highly reputable firms and less scrupulous operators, so due diligence is essential. Look for companies with strong Better Business Bureau ratings, transparent fee structures, and no high-pressure sales tactics. The best companies educate you before asking for a commitment and provide clear documentation of all costs involved.`,
+  buyerGuide: [
+    "Fee transparency — understand the full cost structure including setup fees, annual custodian fees, storage fees, and any buy/sell spreads on metals. Reputable companies publish their fee schedules openly.",
+    "Minimum investment requirements — minimums range from $5,000 to $50,000 or more. Choose a company whose minimum aligns with your available retirement funds and investment goals.",
+    "Buyback programs — the best companies guarantee to repurchase your metals at competitive market rates, giving you liquidity when you need to take distributions or rebalance your portfolio.",
+    "Custodian and depository partnerships — verify that the company works with IRS-approved custodians and insured depositories. Your metals should be stored in segregated (not commingled) storage whenever possible.",
+    "Educational resources and sales approach — top-rated firms offer free educational materials, consultations with precious metals specialists, and no-pressure sales environments. Avoid any company that uses scare tactics or rush deadlines.",
+  ],
+  faq: [
+    {
+      question: "What types of gold and silver can I hold in a Gold IRA?",
+      answer: "The IRS requires precious metals in an IRA to meet specific fineness standards: gold must be 99.5% pure, silver 99.9%, platinum 99.95%, and palladium 99.95%. Common eligible products include American Eagle coins, Canadian Maple Leafs, and various bars from approved refiners. Collectible or numismatic coins generally do not qualify.",
+    },
+    {
+      question: "How do I fund a Gold IRA without triggering taxes?",
+      answer: "The most common method is a direct rollover from an existing 401(k) or traditional IRA, which transfers funds directly between custodians without you taking possession of the money. This avoids any tax liability or early withdrawal penalties. Your Gold IRA company should handle the rollover paperwork for you.",
+    },
+    {
+      question: "Are Gold IRAs a good investment for everyone?",
+      answer: "Gold IRAs are best suited as one component of a diversified retirement strategy, typically representing 5-15% of total retirement assets. They are not ideal as your sole retirement investment because precious metals do not generate dividends or interest. Consult a financial advisor to determine the right allocation for your situation.",
+    },
+  ],
+};
+
 export const GOLD_IRA_TOOLS: GoldIRATool[] = [
   {
     slug: "augusta-precious-metals",
@@ -119,6 +145,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "⭐",
     domain: "advantagegold.com",
+    pros: [
+      "Highest possible rating from the Business Consumer Alliance",
+      "No-pressure sales approach with emphasis on investor education",
+      "Dedicated account representatives provide personalized guidance",
+      "Strong five-star customer reviews across major review platforms",
+    ],
+    cons: [
+      "Smaller company with less brand recognition than industry leaders",
+      "Minimum investment requirement may exclude budget-conscious investors",
+      "Limited online self-service tools for account management",
+    ],
+    useCases: [
+      "First-time Gold IRA investor wanting thorough education before committing",
+      "Retiree who values a pressure-free experience with personal attention",
+      "Investor prioritizing high customer satisfaction ratings over brand size",
+    ],
   },
   {
     slug: "patriot-gold-group",
@@ -132,6 +174,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "🦅",
     domain: "patriotgoldgroup.com",
+    pros: [
+      "Direct-to-investor model eliminates dealer markup fees",
+      "Veteran-founded company with a commitment to transparency and integrity",
+      "Dedicated account executives guide you through the entire rollover process",
+      "Competitive pricing due to no middleman dealer fees",
+    ],
+    cons: [
+      "Smaller product selection compared to larger Gold IRA companies",
+      "Less extensive educational content than Augusta or Birch Gold",
+      "Limited online reviews compared to more established competitors",
+    ],
+    useCases: [
+      "Cost-conscious investor wanting to avoid dealer fees on precious metals",
+      "Veteran or military family preferring a veteran-owned business",
+      "401(k) holder looking for a streamlined rollover with transparent pricing",
+    ],
   },
   {
     slug: "oxford-gold-group",
@@ -145,6 +203,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "📚",
     domain: "oxfordgoldgroup.com",
+    pros: [
+      "Personalized service with dedicated precious metals specialists",
+      "Diverse selection of IRS-approved gold, silver, platinum, and palladium",
+      "Strong educational resources to help investors understand the market",
+      "Works with reputable custodians for compliant account management",
+    ],
+    cons: [
+      "Fee structure requires a phone consultation to fully understand",
+      "Smaller scale operation compared to Augusta or Goldco",
+      "Website provides limited pricing transparency",
+    ],
+    useCases: [
+      "Investor wanting a self-directed IRA with diverse precious metals options",
+      "Retirement saver seeking personalized guidance from metals specialists",
+      "Long-term investor focused on wealth preservation through physical metals",
+    ],
   },
   {
     slug: "lear-capital",
@@ -158,6 +232,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "🏆",
     domain: "learcapital.com",
+    pros: [
+      "Over 25 years in business with more than $3 billion in transactions",
+      "Price Advantage Guarantee ensures competitive metal pricing",
+      "Strong buyback program for liquidity when taking distributions",
+      "Full range of gold, silver, platinum, and palladium products available",
+    ],
+    cons: [
+      "Has faced some regulatory scrutiny and customer complaints in the past",
+      "Minimum investment requirements apply",
+      "Some customers report aggressive sales follow-up calls",
+    ],
+    useCases: [
+      "Experienced investor wanting a long-established precious metals dealer",
+      "Retiree seeking competitive pricing backed by a price guarantee",
+      "Investor wanting access to a full range of precious metals in one IRA",
+    ],
   },
   {
     slug: "rosland-capital",
@@ -171,6 +261,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "🌍",
     domain: "roslandcapital.com",
+    pros: [
+      "International presence with offices in multiple countries",
+      "Offers both IRA services and direct physical metal purchases",
+      "Wide selection of gold and silver coins and bars",
+      "Established brand with significant media presence and endorsements",
+    ],
+    cons: [
+      "Pricing is not always the most competitive among Gold IRA companies",
+      "Some online reviews cite communication delays",
+      "Fee transparency could be improved on the website",
+    ],
+    useCases: [
+      "Investor wanting the option to buy physical metals outside of an IRA",
+      "International-minded investor preferring a globally recognized dealer",
+      "Collector interested in purchasing gold and silver coins alongside IRA metals",
+    ],
   },
   {
     slug: "orion-metal-exchange",
@@ -184,6 +290,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "🔵",
     domain: "orionmetalexchange.com",
+    pros: [
+      "Transparent low-cost fee structure with no hidden charges",
+      "Strictly no-pressure sales approach respected by customers",
+      "Wide range of IRS-approved metals including platinum and palladium",
+      "Access to multiple reputable storage facilities nationwide",
+    ],
+    cons: [
+      "Smaller company with fewer reviews than major competitors",
+      "Less extensive educational resources and market analysis content",
+      "Brand recognition is lower than industry leaders like Augusta or Goldco",
+    ],
+    useCases: [
+      "Budget-conscious investor seeking the lowest possible fees on a Gold IRA",
+      "Investor wanting platinum or palladium alongside gold in their IRA",
+      "Person who dislikes high-pressure sales and wants a relaxed buying experience",
+    ],
   },
   {
     slug: "rc-bullion",
@@ -197,6 +319,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "🪙",
     domain: "rcbullion.com",
+    pros: [
+      "Boutique service with personalized attention for each client",
+      "Competitive pricing on gold and silver bullion products",
+      "Focus on long-term client relationships rather than one-time sales",
+      "Straightforward IRA setup process with hands-on guidance",
+    ],
+    cons: [
+      "Very small company with limited online presence and reviews",
+      "Product selection is narrower than larger dealers",
+      "Lacks the extensive educational content of major competitors",
+    ],
+    useCases: [
+      "Investor preferring a boutique dealer with personal service over a large company",
+      "Silver IRA investor wanting competitive bullion pricing",
+      "Client seeking a long-term precious metals advisor relationship",
+    ],
   },
   {
     slug: "regal-assets",
@@ -210,6 +348,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "₿",
     domain: "regalassets.com",
+    pros: [
+      "Unique ability to hold both precious metals and cryptocurrency in one IRA",
+      "Appeals to investors seeking modern alternative asset diversification",
+      "Streamlined account setup for both crypto and metals IRAs",
+      "Flat annual fee structure simplifies cost planning",
+    ],
+    cons: [
+      "Cryptocurrency IRAs carry additional volatility risk",
+      "Has faced some regulatory and legal issues in recent years",
+      "Dual-asset approach may be unnecessarily complex for metals-only investors",
+    ],
+    useCases: [
+      "Tech-savvy investor wanting both Bitcoin and gold in a single retirement account",
+      "Diversification-focused retiree combining traditional metals with digital assets",
+      "Younger investor interested in alternative assets beyond stocks and bonds",
+    ],
   },
   {
     slug: "jm-bullion",
@@ -223,6 +377,22 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "📦",
     domain: "jmbullion.com",
+    pros: [
+      "One of the largest and most trusted online bullion dealers in the US",
+      "Free shipping on qualifying orders reduces total purchase cost",
+      "Massive selection of coins, bars, and rounds across all metals",
+      "Transparent real-time pricing updated throughout the trading day",
+    ],
+    cons: [
+      "Gold IRA services are facilitated through third-party custodian partnerships",
+      "IRA-specific guidance is less comprehensive than dedicated IRA companies",
+      "Not primarily an IRA company — better known for direct bullion sales",
+    ],
+    useCases: [
+      "Bullion buyer wanting to purchase physical metals with free shipping",
+      "Investor who prefers an online marketplace experience for selecting metals",
+      "Silver collector building a portfolio of coins and bars at competitive prices",
+    ],
   },
   {
     slug: "apmex",
@@ -236,5 +406,21 @@ export const GOLD_IRA_TOOLS: GoldIRATool[] = [
     featured: false,
     logo: "🏪",
     domain: "apmex.com",
+    pros: [
+      "Largest online precious metals retailer with the widest product selection",
+      "Over 20 years of experience and strong industry reputation",
+      "myIRA platform provides a dedicated Gold IRA experience",
+      "Detailed product descriptions and historical pricing data available",
+    ],
+    cons: [
+      "Premiums on some products can be higher than discount dealers",
+      "IRA services are secondary to the core retail bullion business",
+      "Shipping costs apply on smaller orders",
+    ],
+    useCases: [
+      "Collector seeking the widest possible selection of coins and bars",
+      "Investor using the myIRA platform to set up a precious metals retirement account",
+      "Experienced metals buyer comparing prices across the largest online marketplace",
+    ],
   },
 ];

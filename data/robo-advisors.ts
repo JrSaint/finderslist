@@ -26,6 +26,32 @@ export const ROBO_ADVISOR_CATEGORIES: Record<RoboAdvisorCategory, { label: strin
   "hybrid": { label: "Hybrid Advisory", emoji: "🤝", description: "Combining automated investing with access to human financial advisors.", gradient: "from-orange-600/30 to-amber-800/40" },
 };
 
+export const ROBO_ADVISOR_EDITORIAL = {
+  title: "How to Choose the Right Robo-Advisor in 2026",
+  intro: `Robo-advisors use algorithms to build, manage, and rebalance diversified investment portfolios with minimal human intervention. They have democratized professional-grade portfolio management by offering services that previously required $500,000+ minimums and 1% annual fees from traditional wealth managers -- now available to anyone with as little as $1 and fees as low as 0.25% per year. For investors who want a hands-off, evidence-based approach to building wealth, robo-advisors are a compelling option.\n\nMost robo-advisors construct portfolios using low-cost ETFs allocated across asset classes based on your risk tolerance, time horizon, and financial goals. They automatically rebalance when your portfolio drifts from its target allocation and, in taxable accounts, employ tax-loss harvesting to reduce your tax bill. Some platforms now offer direct indexing for larger accounts, which can provide even greater tax efficiency by holding individual stocks instead of ETFs.\n\nThe robo-advisor landscape has evolved beyond pure automation. Hybrid advisory services combine algorithmic portfolio management with access to human financial advisors for complex planning questions like retirement withdrawal strategies, estate planning, and tax optimization. If your financial situation is straightforward, a pure robo-advisor may be sufficient, but hybrid options add value as your wealth and planning needs grow.`,
+  buyerGuide: [
+    "Management fee and total cost -- compare the advisory fee (typically 0.25-0.50% annually) plus the expense ratios of underlying ETFs (0.03-0.15%); even small fee differences compound significantly over decades of investing.",
+    "Tax optimization features -- for taxable accounts, prioritize platforms offering daily tax-loss harvesting, asset location across account types, and direct indexing (available at higher balances) to maximize after-tax returns.",
+    "Account types and goal planning -- verify the platform supports the account types you need (taxable, Traditional IRA, Roth IRA, SEP IRA, 401k rollover, 529) and offers goal-based planning tools for retirement, college savings, and major purchases.",
+    "Human advisor access -- determine whether you want a pure robo experience or hybrid access to certified financial planners for complex questions; hybrid services typically charge 0.30-0.50% versus 0.25% for pure robo.",
+    "Minimum investment and cash management -- some platforms have no minimum while others require $500-$100,000; also evaluate whether the platform offers high-yield cash management accounts as part of the ecosystem.",
+  ],
+  faq: [
+    {
+      question: "Are robo-advisors good for retirement investing?",
+      answer: "Robo-advisors are excellent for retirement investing. They automatically adjust your asset allocation to become more conservative as you approach retirement, rebalance to maintain your target mix, and optimize for taxes in taxable accounts. For straightforward retirement planning, a robo-advisor provides institutional-quality management at a fraction of the cost of a traditional financial advisor.",
+    },
+    {
+      question: "How much money do I need to start with a robo-advisor?",
+      answer: "Many robo-advisors have no minimum investment at all. Wealthfront requires $500 to start, Betterment has no minimum, and Schwab Intelligent Portfolios requires $5,000. The amount you need depends on the platform, but the low barriers mean you can start investing with very little and grow your portfolio over time through regular contributions.",
+    },
+    {
+      question: "Should I use a robo-advisor or manage my own investments?",
+      answer: "If you are comfortable selecting your own ETFs, rebalancing regularly, and implementing tax-loss harvesting, self-managing can save you the 0.25% advisory fee. However, most investors benefit from the discipline a robo-advisor enforces -- automatic rebalancing, systematic tax harvesting, and elimination of emotional trading decisions. The behavioral benefits often outweigh the small fee, particularly during market downturns.",
+    },
+  ],
+};
+
 export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
   {
     slug: "wealthfront",
@@ -119,6 +145,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🟣",
     domain: "sofi.com",
+    pros: [
+      "Zero management fees with no advisory charges whatsoever",
+      "Complimentary access to certified financial planners included",
+      "No account minimum to begin investing",
+      "Automatic rebalancing keeps portfolio aligned with target allocation",
+    ],
+    cons: [
+      "Limited tax optimization features compared to Wealthfront or Betterment",
+      "Fewer portfolio customization options than competitors",
+      "Investment options are limited to SoFi-selected ETFs",
+      "Less sophisticated financial planning tools than dedicated platforms",
+    ],
+    useCases: [
+      "Beginning investor wanting free automated portfolio management to start building wealth",
+      "SoFi member consolidating banking, lending, and investing in one ecosystem",
+      "Cost-sensitive investor wanting complimentary CFP access without paying advisory fees",
+    ],
   },
   {
     slug: "ellevest",
@@ -132,6 +175,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "👩",
     domain: "ellevest.com",
+    pros: [
+      "Investment algorithms account for gender-specific financial factors like pay gaps and career breaks",
+      "Access to financial planners and career coaching included in membership",
+      "Impact investing portfolios align investments with social values",
+      "Educational content specifically addresses women's financial planning needs",
+    ],
+    cons: [
+      "Monthly membership fee model ($12+) can cost more than percentage-based competitors at lower balances",
+      "Smaller platform with fewer investment options than major robo-advisors",
+      "Limited tax optimization features compared to Wealthfront",
+      "Brand positioning may limit appeal to those who prefer gender-neutral platforms",
+    ],
+    useCases: [
+      "Woman planning for retirement with algorithms that account for longer life expectancy and pay gaps",
+      "Professional seeking career coaching alongside automated investment management",
+      "Investor wanting ESG and impact portfolios aligned with social values",
+    ],
   },
   {
     slug: "acorns-invest",
@@ -145,6 +205,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🌰",
     domain: "acorns.com",
+    pros: [
+      "Round-up feature makes investing automatic and effortless from everyday purchases",
+      "Multiple account types including personal, retirement, and custodial for children",
+      "Low monthly subscription fee accessible to beginning investors",
+      "Found Money rewards program earns bonus investments from partner brands",
+    ],
+    cons: [
+      "Monthly fee of $3-$5 is expensive relative to very small account balances",
+      "Limited portfolio customization — only five preset portfolio options",
+      "Round-up amounts are small and may not build meaningful wealth quickly",
+      "No tax-loss harvesting or advanced tax optimization features",
+    ],
+    useCases: [
+      "College student or young professional starting to invest with spare change from daily purchases",
+      "Parent opening a custodial investment account for a child's future",
+      "Beginner investor wanting a completely automatic hands-off investing experience",
+    ],
   },
   {
     slug: "m1-finance-robo",
@@ -158,6 +235,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🥧",
     domain: "m1.com",
+    pros: [
+      "Unique pie-based portfolio building allows custom allocation of stocks and ETFs",
+      "No management fees for basic investing tier",
+      "Automatic rebalancing and dynamic contributions maintain target allocations",
+      "Combines robo-advisor automation with self-directed investment flexibility",
+    ],
+    cons: [
+      "Single daily trading window limits intraday flexibility",
+      "No tax-loss harvesting feature available on any tier",
+      "M1 Plus premium tier at $125/year required for additional features",
+      "Learning curve for building and managing custom pie portfolios",
+    ],
+    useCases: [
+      "DIY investor wanting automated rebalancing for a custom portfolio they design",
+      "Investor creating a pie portfolio of dividend stocks with automatic reinvestment",
+      "Person wanting the flexibility of self-directed investing with robo-advisor automation",
+    ],
   },
   {
     slug: "wealthsimple",
@@ -171,6 +265,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🍁",
     domain: "wealthsimple.com",
+    pros: [
+      "Strong socially responsible investing options for values-aligned portfolios",
+      "Simple and clean interface designed for investing beginners",
+      "Leading robo-advisor in Canada with strong regulatory compliance",
+      "Premium tier at $100K+ includes lower fees and priority support",
+    ],
+    cons: [
+      "Management fees of 0.40-0.50% are higher than US competitors like Wealthfront",
+      "Tax-loss harvesting is less sophisticated than US-focused platforms",
+      "Limited availability and feature set outside of Canada",
+      "Fewer investment options and account types than larger US robo-advisors",
+    ],
+    useCases: [
+      "Canadian investor wanting automated portfolio management with SRI options",
+      "Beginner investor attracted to the clean simple interface for first-time investing",
+      "Socially conscious investor wanting ESG-aligned portfolios managed automatically",
+    ],
   },
   {
     slug: "personal-capital",
@@ -184,6 +295,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🏦",
     domain: "empower.com",
+    pros: [
+      "Free financial tools including retirement planner, net worth tracker, and investment checkup",
+      "Premium advisory combines automated investing with dedicated human advisors",
+      "Comprehensive financial dashboard aggregates all accounts in one view",
+      "Tax optimization strategies including tax-loss harvesting at the premium tier",
+    ],
+    cons: [
+      "Premium advisory requires $100,000 minimum and charges 0.49-0.89% annually",
+      "Advisory fees are higher than pure robo-advisors for similar automated features",
+      "Free tools are the main draw — the paid service is expensive for what it offers",
+      "Cash drag from uninvested cash balances can reduce returns",
+    ],
+    useCases: [
+      "Investor using the free tools to track net worth and check retirement readiness",
+      "High-net-worth individual wanting human advisor access alongside automated investing",
+      "Person consolidating a view of all financial accounts in one comprehensive dashboard",
+    ],
   },
   {
     slug: "ally-invest-robo",
@@ -197,6 +325,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "💜",
     domain: "ally.com",
+    pros: [
+      "No advisory fees on either the cash-enhanced or market-focused portfolio",
+      "Seamless integration with Ally savings, checking, and other banking products",
+      "Two portfolio options let investors choose between cash buffer and full market exposure",
+      "Low $100 minimum to start investing",
+    ],
+    cons: [
+      "Cash-enhanced portfolio holds 30% in cash which significantly drags long-term returns",
+      "No tax-loss harvesting feature available on either portfolio option",
+      "Limited portfolio customization — only preset allocations available",
+      "Fewer investment options and tools than Wealthfront or Betterment",
+    ],
+    useCases: [
+      "Ally Bank customer wanting to add automated investing alongside existing accounts",
+      "Conservative investor comfortable with a 30% cash allocation for stability",
+      "Fee-sensitive investor wanting zero advisory fees with full market exposure option",
+    ],
   },
   {
     slug: "marcus-invest",
@@ -210,6 +355,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🏦",
     domain: "marcus.com",
+    pros: [
+      "Goldman Sachs institutional investment expertise accessible to everyday investors",
+      "Smart beta portfolio option aims to outperform standard index approaches",
+      "ESG portfolio available for socially responsible investing",
+      "Competitive 0.25% advisory fee with $1,000 minimum investment",
+    ],
+    cons: [
+      "Newer platform with less proven track record than established robo-advisors",
+      "No tax-loss harvesting feature currently available",
+      "Limited account types compared to Betterment or Wealthfront",
+      "Financial planning tools are less developed than dedicated platforms",
+    ],
+    useCases: [
+      "Investor wanting Goldman Sachs investment expertise through an accessible robo-advisor",
+      "Person interested in smart beta strategies for potentially enhanced returns",
+      "Marcus banking customer wanting to add automated investing to their Goldman Sachs relationship",
+    ],
   },
   {
     slug: "jp-morgan-automated",
@@ -223,6 +385,23 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "chase.com",
+    pros: [
+      "Backed by JPMorgan Chase's extensive investment research and strategies",
+      "Goal-based portfolio construction aligns investments with specific objectives",
+      "Low $500 minimum makes it accessible to beginning investors",
+      "Integrates seamlessly with Chase banking accounts and credit cards",
+    ],
+    cons: [
+      "0.35% advisory fee is higher than Wealthfront or Vanguard Digital Advisor",
+      "No tax-loss harvesting feature available",
+      "Limited to JPMorgan and selected third-party ETFs",
+      "Fewer features and tools compared to standalone robo-advisory platforms",
+    ],
+    useCases: [
+      "Chase banking customer wanting automated investing integrated with their bank",
+      "Beginning investor with $500 seeking a trusted brand for first-time automated investing",
+      "Goal-oriented saver wanting separate portfolios for retirement and short-term objectives",
+    ],
   },
   {
     slug: "titan",
@@ -236,5 +415,22 @@ export const ROBO_ADVISOR_TOOLS: RoboAdvisorTool[] = [
     featured: false,
     logo: "⚡",
     domain: "titan.com",
+    pros: [
+      "Active management with hedge fund-inspired strategies not available from other robo-advisors",
+      "Multiple strategy portfolios including growth, value, crypto, and real estate",
+      "Transparent communication about portfolio decisions and investment thesis",
+      "Potential for outperformance versus passive index approaches",
+    ],
+    cons: [
+      "Higher fee structure than passive robo-advisors at 1% annual advisory fee",
+      "Active management historically underperforms passive indexing over long periods",
+      "Concentrated portfolios carry higher risk than diversified index approaches",
+      "Newer platform with limited long-term track record to evaluate",
+    ],
+    useCases: [
+      "Investor seeking active management at a lower cost than traditional hedge funds",
+      "Person wanting hedge fund-style strategies accessible through a mobile app",
+      "Investor comfortable with concentrated portfolios who believes in active stock selection",
+    ],
   },
 ];

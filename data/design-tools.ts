@@ -31,6 +31,32 @@ export const DESIGN_CATEGORIES: Record<DesignCategory, { label: string; emoji: s
   "asset-management": { label: "Asset Management", emoji: "📁", description: "Manage, organize, and share brand assets and design system components.", gradient: "from-fuchsia-600/30 to-violet-800/40" },
 };
 
+export const DESIGN_EDITORIAL = {
+  title: "How to Choose the Right Design Tool in 2026",
+  intro: `Design tools are the foundation of every digital product, brand identity, and marketing campaign. Whether you are a UI/UX designer building app interfaces, a graphic designer creating brand assets, or a motion designer producing animated content, the tool you choose shapes your workflow, collaboration capabilities, and output quality. The design tool landscape has consolidated significantly, with a few dominant platforms defining industry standards while specialized tools serve niche workflows.\n\nThe most important shift in design tooling has been the move to browser-based, real-time collaboration. Figma pioneered this approach and it has become the expectation -- designers, developers, and stakeholders working simultaneously in the same file. This eliminates version conflicts, reduces handoff friction, and keeps everyone aligned on the latest designs. Tools that require desktop-only workflows or manual file sharing are increasingly being replaced.\n\nBeyond UI design, the broader ecosystem includes graphic design tools for marketing and branding, prototyping platforms for creating interactive demos, motion design software for animations and video, and asset management systems for organizing design libraries at scale. Many teams use multiple tools across these categories, so integration between them matters as much as individual feature sets.`,
+  buyerGuide: [
+    "Prioritize real-time collaboration -- any tool that requires manual file syncing or version management creates friction that slows the entire team down.",
+    "Evaluate the developer handoff experience -- the best design tools provide engineers with ready-to-use CSS, spacing values, and asset exports without requiring separate handoff tools.",
+    "Check the component and design system capabilities -- reusable components with properties and variants are essential for maintaining consistency across large products.",
+    "Consider the plugin and template ecosystem -- a vibrant community of plugins, UI kits, and templates accelerates common tasks and extends the tool's capabilities.",
+    "Assess pricing at your team's scale -- per-editor pricing models can become expensive for large teams, so compare the cost of editors versus free viewer seats across platforms.",
+  ],
+  faq: [
+    {
+      question: "Is Figma the only design tool teams should consider?",
+      answer: "Figma is the industry standard for UI/UX design and the default choice for most product teams. However, tools like Adobe Illustrator remain superior for complex vector illustration, After Effects dominates motion design, and Canva serves non-designers who need quick marketing materials. The best tool depends on your specific use case.",
+    },
+    {
+      question: "Do I need separate tools for design and prototyping?",
+      answer: "Most modern design tools like Figma include built-in prototyping for basic interactions and screen flows. Dedicated prototyping tools like ProtoPie or Principle are only necessary if you need advanced micro-interactions, sensor-based prototypes, or high-fidelity animations that go beyond click-through demos.",
+    },
+    {
+      question: "How should a design team organize its asset library?",
+      answer: "Start with a single source of truth for your design system, hosted in your primary design tool with well-named components, consistent naming conventions, and version history. Use a digital asset management platform only when your library grows beyond what your design tool can handle, or when non-design teams need access to brand assets.",
+    },
+  ],
+};
+
 export const DESIGN_TOOLS: DesignTool[] = [
   // ── UI/UX DESIGN ──────────────────────────────────────────────────────────
   {

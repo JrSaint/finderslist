@@ -26,6 +26,32 @@ export const BANKRUPTCY_LAWYER_CATEGORIES: Record<BankruptcyLawyerCategory, { la
   "asset-protection": { label: "Asset Protection & Exemptions", emoji: "🛡️", description: "Lawyers focused on protecting client assets during bankruptcy proceedings, maximizing state and federal exemptions, and shielding homes, retirement accounts, and personal property from creditors.", gradient: "from-rose-600/30 to-red-800/40" },
 };
 
+export const BANKRUPTCY_LAWYER_EDITORIAL = {
+  title: "How to Choose the Right Bankruptcy Lawyer in 2026",
+  intro: `Filing for bankruptcy is a major legal and financial decision that can eliminate crushing debt and provide a genuine fresh start — but only if done correctly. The wrong chapter filing, missed exemptions, or procedural errors can result in asset loss, case dismissal, or denial of discharge. A qualified bankruptcy attorney navigates these complexities and typically saves clients far more than their fees cost.\n\nThe two most common consumer filings are Chapter 7 (liquidation, which eliminates most unsecured debt in 3-4 months) and Chapter 13 (reorganization, which creates a 3-5 year repayment plan that protects assets like homes and vehicles). Which chapter is right depends on your income, assets, debt types, and financial goals. A means test determines Chapter 7 eligibility, and an experienced attorney can advise whether you qualify and which option produces the best outcome.\n\nAttorney fees for bankruptcy range from $1,000-2,000 for straightforward Chapter 7 cases to $3,000-6,000+ for Chapter 13 filings. Many attorneys offer free consultations and payment plans. Some nonprofit organizations and legal aid societies provide free or reduced-cost bankruptcy assistance for qualifying individuals. The filing itself costs $338 for Chapter 7 and $313 for Chapter 13 in court fees.`,
+  buyerGuide: [
+    "Bankruptcy specialization — choose an attorney who focuses primarily on bankruptcy law rather than a general practitioner who occasionally handles filings; the Bankruptcy Code is complex and changes frequently.",
+    "Local court experience — bankruptcy procedures and exemption laws vary by state and even by district; an attorney who regularly practices in your local bankruptcy court knows the trustees, judges, and local rules.",
+    "Transparent fee structure — get total costs in writing upfront, including filing fees, credit counseling course fees, and any additional charges for complications like adversary proceedings or motions.",
+    "Chapter 7 vs. Chapter 13 guidance — a good attorney will run the means test, analyze your assets and exemptions, and honestly advise which chapter (or non-bankruptcy alternative) serves your situation best.",
+    "Post-filing support — your attorney should handle trustee meetings, creditor objections, and any issues that arise during the case, not just prepare the initial paperwork and disappear.",
+  ],
+  faq: [
+    {
+      question: "Will I lose my home and car if I file for bankruptcy?",
+      answer: "Not necessarily. Every state has exemptions that protect certain assets including home equity, vehicle equity, retirement accounts, and personal property. Chapter 13 specifically allows you to keep all assets while repaying debts over time. An attorney can tell you exactly what's protected under your state's exemption laws.",
+    },
+    {
+      question: "How long does bankruptcy stay on my credit report?",
+      answer: "Chapter 7 bankruptcy remains on your credit report for 10 years from the filing date, and Chapter 13 for 7 years. However, many people see their credit scores begin recovering within 1-2 years after discharge, especially since the debt-to-income ratio improves dramatically once debts are eliminated.",
+    },
+    {
+      question: "Can I file for bankruptcy without a lawyer?",
+      answer: "You can file pro se (without an attorney), and tools like Upsolve help with straightforward Chapter 7 cases. However, mistakes in bankruptcy filings can have serious consequences including loss of assets or case dismissal. If you have a home, significant assets, or complex debt, hiring an attorney is strongly recommended.",
+    },
+  ],
+};
+
 export const BANKRUPTCY_LAWYER_TOOLS: BankruptcyLawyerTool[] = [
   {
     slug: "upsolve",

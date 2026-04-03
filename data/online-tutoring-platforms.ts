@@ -31,6 +31,32 @@ export const ONLINE_TUTORING_CATEGORIES: Record<OnlineTutoringCategory, { label:
   "stem": { label: "STEM", emoji: "🔬", description: "Math, science, engineering, and technology tutoring from subject matter experts.", gradient: "from-red-600/30 to-rose-800/40" },
 };
 
+export const ONLINE_TUTORING_EDITORIAL = {
+  title: "How to Choose the Right Online Tutoring Platform in 2026",
+  intro: `Online tutoring platforms connect students with expert tutors for one-on-one or small-group instruction across academic subjects, test preparation, languages, and professional skills. The shift to virtual learning has made geography irrelevant -- a student in rural Montana can now work with a top-rated SAT tutor from New York or a native Spanish speaker from Madrid. For K-12 students, college applicants, and adult learners alike, the right tutoring platform can dramatically accelerate progress.\n\nPlatforms differ significantly in their models. Marketplace platforms like Wyzant let you browse tutor profiles and choose based on reviews, qualifications, and price. Matching services like Varsity Tutors assign you a vetted tutor based on your needs. On-demand platforms provide instant help for homework questions. And subscription services offer unlimited access to tutoring sessions for a flat monthly fee.\n\nThe effectiveness of online tutoring depends heavily on tutor quality, technology, and the student-tutor match. Look for platforms that vet tutors rigorously, offer interactive whiteboards and screen sharing for collaborative problem solving, and make it easy to switch tutors if the fit is not right.`,
+  buyerGuide: [
+    "Tutor vetting and qualifications -- understand how the platform screens tutors, including whether it verifies academic credentials, requires background checks, and evaluates teaching ability through mock sessions or assessments.",
+    "Subject and level coverage -- confirm the platform offers tutoring in your specific subject and level, whether that is elementary math, AP Chemistry, GRE prep, or professional certifications.",
+    "Pricing model transparency -- compare per-session rates, subscription packages, and minimum commitments; marketplace platforms may offer lower per-hour rates while matching services often charge a premium for curation.",
+    "Technology and learning tools -- look for interactive whiteboards, screen sharing, session recording, and progress tracking features that make virtual sessions as effective as in-person instruction.",
+    "Flexibility and cancellation policies -- evaluate how easily you can reschedule sessions, switch tutors, or cancel your plan without penalty, especially if you are unsure about the time commitment.",
+  ],
+  faq: [
+    {
+      question: "Is online tutoring as effective as in-person tutoring?",
+      answer: "Research shows that one-on-one online tutoring produces learning gains comparable to in-person instruction, particularly when sessions use interactive tools like shared whiteboards and screen sharing. The key advantages of online tutoring are broader tutor selection, scheduling flexibility, and the ability to record sessions for later review.",
+    },
+    {
+      question: "How much does online tutoring cost?",
+      answer: "Costs vary widely by platform, subject, and tutor qualifications. Marketplace tutors typically charge $25-$80 per hour for academic subjects and $50-$150+ for specialized test prep. Subscription services may offer unlimited sessions for $100-$300 per month. Some platforms offer package discounts for purchasing multiple sessions upfront.",
+    },
+    {
+      question: "How do I find the right tutor for my child?",
+      answer: "Start by identifying the specific subject areas and learning challenges. Read tutor reviews from other parents, look for tutors with teaching experience (not just subject knowledge), and take advantage of free trial sessions or consultations that most platforms offer. If the first tutor is not a good fit, do not hesitate to switch -- the student-tutor relationship matters enormously.",
+    },
+  ],
+};
+
 export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
   // ── K-12 ACADEMIC ───────────────────────────────────────────────────────
   {
@@ -168,6 +194,24 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: true,
     logo: "🌿",
     domain: "khanacademy.org",
+    pros: [
+      "Completely free with no premium tier, ads, or paywalls",
+      "Official SAT prep partnership with College Board provides authoritative test preparation",
+      "Mastery-based learning system adapts to student pace and progress",
+      "Comprehensive K-12 coverage in math, science, computing, and humanities",
+      "Teacher and parent dashboards track student progress and identify gaps",
+    ],
+    cons: [
+      "Self-directed format lacks live human tutoring interaction",
+      "Video-based instruction may not suit all learning styles",
+      "Advanced and niche topics have less depth than specialized platforms",
+      "No personalized feedback beyond automated exercise grading",
+    ],
+    useCases: [
+      "High school student using the official SAT prep course to prepare for free",
+      "Middle schooler filling math knowledge gaps with the mastery-based learning system",
+      "Parent monitoring a child's progress through the Khan Academy dashboard",
+    ],
   },
   // ── TEST PREP ───────────────────────────────────────────────────────────
   {
@@ -182,6 +226,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🌐",
     domain: "preply.com",
+    pros: [
+      "Access to tutors from around the world including native speakers at affordable rates",
+      "Trial lesson system lets students test compatibility before committing",
+      "Flexible scheduling across all time zones for global accessibility",
+      "Wide range of languages available beyond just the most common ones",
+    ],
+    cons: [
+      "Tutor quality varies significantly across the marketplace",
+      "Platform commission increases tutor pricing compared to direct hiring",
+      "Academic tutoring offerings are less developed than language instruction",
+      "No standardized curriculum means learning structure depends on individual tutors",
+    ],
+    useCases: [
+      "Adult learner practicing conversational French with a native speaker from Paris",
+      "Business professional preparing for a presentation in Mandarin with a specialized tutor",
+      "Student trying a trial lesson to find the right Spanish tutor before committing",
+    ],
   },
   {
     slug: "tutorme",
@@ -195,6 +256,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "⚡",
     domain: "tutorme.com",
+    pros: [
+      "Ultra-fast connection time with a tutor typically under 30 seconds",
+      "Virtual classroom includes video, audio, screen sharing, and collaborative whiteboard",
+      "Covers over 300 subjects from elementary school through graduate level",
+      "Often available free through college and university partnerships",
+    ],
+    cons: [
+      "Individual pricing is expensive without institutional access",
+      "Cannot select a specific tutor or build an ongoing relationship",
+      "Session quality depends on which tutor is available at the moment",
+      "Less suited for long-term structured learning plans",
+    ],
+    useCases: [
+      "College student checking if their university provides free TutorMe access for last-minute help",
+      "Student needing immediate help understanding a calculus concept before tomorrow's exam",
+      "Learner using the whiteboard tool for collaborative problem-solving in physics",
+    ],
   },
   {
     slug: "skooli",
@@ -208,6 +286,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🏫",
     domain: "skooli.com",
+    pros: [
+      "All tutors are required to hold valid teaching certifications",
+      "Purpose-built virtual classroom with video, chat, whiteboard, and file sharing",
+      "Pay-per-session model with no subscription required",
+      "Strong quality baseline ensured by credential verification",
+    ],
+    cons: [
+      "Smaller tutor pool limits subject and availability options",
+      "Hourly rates can be higher than marketplace platforms with uncertified tutors",
+      "Platform has less brand recognition than larger competitors",
+      "Limited advanced features compared to more established tutoring platforms",
+    ],
+    useCases: [
+      "Parent wanting guaranteed certified teachers for their child's online tutoring",
+      "Student needing help in a specific subject from a credentialed expert",
+      "Family preferring pay-per-session flexibility over subscription commitments",
+    ],
   },
   // ── LANGUAGE ────────────────────────────────────────────────────────────
   {
@@ -222,6 +317,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🔄",
     domain: "revolutionprep.com",
+    pros: [
+      "Full-time employed tutors ensure consistent quality and training standards",
+      "Score improvement guarantees for standardized test preparation",
+      "Dedicated tutoring coordinators manage the entire learning process",
+      "Both private and small group options available for different budgets",
+    ],
+    cons: [
+      "Premium pricing significantly higher than marketplace tutoring platforms",
+      "Score guarantee terms have specific conditions that may not apply to all students",
+      "Less flexibility in tutor selection compared to marketplace models",
+      "Primarily focused on test prep with fewer academic subject options",
+    ],
+    useCases: [
+      "High school junior enrolling in a comprehensive SAT prep program with score guarantee",
+      "Student wanting a managed tutoring experience with a coordinator handling scheduling",
+      "Family preferring full-time professional tutors over freelance marketplace options",
+    ],
   },
   // ── PROFESSIONAL SKILLS ─────────────────────────────────────────────────
   {
@@ -236,6 +348,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🎯",
     domain: "itutor.com",
+    pros: [
+      "Smart matching algorithm pairs students with optimal tutors based on multiple factors",
+      "Flexible scheduling accommodates busy professionals and students",
+      "Covers both academic and professional subjects for diverse learning needs",
+      "Personalized learning plans adapt to individual student goals",
+    ],
+    cons: [
+      "Smaller platform with fewer tutor options than major competitors",
+      "Pricing transparency is limited until after the matching process",
+      "Platform features are less robust than established tutoring marketplaces",
+      "Limited reviews and ratings available for tutor evaluation",
+    ],
+    useCases: [
+      "Working professional seeking a tutor matched to specific career development goals",
+      "Student wanting algorithm-driven tutor matching rather than manual browsing",
+      "Learner with irregular availability needing maximum scheduling flexibility",
+    ],
   },
   // ── STEM ────────────────────────────────────────────────────────────────
   {
@@ -250,6 +379,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🔢",
     domain: "mathway.com",
+    pros: [
+      "Instant solutions for math problems from basic arithmetic through advanced calculus",
+      "Photo capture feature lets students snap a picture of handwritten problems",
+      "Step-by-step solution explanations help students understand the process",
+      "Available 24/7 as an always-on math help resource",
+    ],
+    cons: [
+      "Premium subscription required to view step-by-step solution explanations",
+      "AI solver cannot explain concepts or provide personalized instruction like a human tutor",
+      "Risk of students using it as a shortcut rather than a learning tool",
+      "Limited to math subjects and cannot help with other academic areas",
+    ],
+    useCases: [
+      "Student checking work on algebra homework and understanding solution steps",
+      "College student photographing a calculus problem for instant step-by-step guidance",
+      "Parent helping a child with math homework beyond their own knowledge level",
+    ],
   },
   {
     slug: "brainly",
@@ -263,6 +409,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🧠",
     domain: "brainly.com",
+    pros: [
+      "Massive community of 350 million+ users provides answers to nearly any homework question",
+      "Expert verification adds a quality layer to community-generated answers",
+      "Free tier provides access to many answers and community features",
+      "Covers all subjects from STEM to humanities and languages",
+    ],
+    cons: [
+      "Answer quality varies significantly between community and expert-verified responses",
+      "Premium subscription required for unlimited access to expert answers",
+      "Peer answers may contain errors that students could unknowingly rely on",
+      "Not a substitute for understanding concepts — focused on answer delivery",
+    ],
+    useCases: [
+      "Student searching for help on a specific history question while doing homework",
+      "Learner comparing multiple community answers to understand different problem-solving approaches",
+      "Student using expert-verified answers to check their own work before submitting assignments",
+    ],
   },
   {
     slug: "kumon",
@@ -276,6 +439,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "📐",
     domain: "kumon.com",
+    pros: [
+      "Proven mastery-based methodology used by millions of students worldwide",
+      "Daily practice builds strong foundational skills and study habits",
+      "Self-pacing allows advanced students to work beyond their grade level",
+      "Both in-center and online learning options available",
+    ],
+    cons: [
+      "Worksheet-based approach can feel repetitive and may not engage all learners",
+      "Monthly fees are comparable to private tutoring but without one-on-one instruction",
+      "Limited to math and reading with no coverage of other academic subjects",
+      "Rigid methodology does not adapt to individual learning styles",
+    ],
+    useCases: [
+      "Elementary student building strong math foundations through daily structured practice",
+      "Advanced child working ahead of grade level in math using the self-paced program",
+      "Parent enrolling a child in Kumon's online program for consistent reading practice at home",
+    ],
   },
   {
     slug: "sylvan-learning",
@@ -289,6 +469,23 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🌳",
     domain: "sylvanlearning.com",
+    pros: [
+      "Personalized learning plans created using proprietary diagnostic assessments",
+      "Both in-person learning centers and online tutoring options available",
+      "Comprehensive subject coverage including STEM programs and coding",
+      "Adaptive technology adjusts difficulty based on student performance",
+    ],
+    cons: [
+      "Premium pricing is significantly higher than online-only tutoring platforms",
+      "Learning center quality and tutor expertise can vary by franchise location",
+      "Long-term program commitments may be required for certain learning plans",
+      "Online tutoring experience is less engaging than the in-center programs",
+    ],
+    useCases: [
+      "Parent enrolling a child in a structured after-school tutoring program at a local center",
+      "Student needing a personalized learning plan to address specific academic weaknesses",
+      "Family combining in-center sessions with online tutoring for a blended approach",
+    ],
   },
   {
     slug: "club-z",
@@ -302,5 +499,22 @@ export const ONLINE_TUTORING_TOOLS: OnlineTutoringTool[] = [
     featured: false,
     logo: "🏠",
     domain: "clubztutoring.com",
+    pros: [
+      "In-home tutoring option provides a comfortable learning environment",
+      "Local tutor matching ensures geographical compatibility for in-person sessions",
+      "Covers K-12 academics, test prep, and college admissions counseling",
+      "Franchise model provides personalized local management and oversight",
+    ],
+    cons: [
+      "In-home tutoring pricing is higher than purely online alternatives",
+      "Franchise quality and tutor availability vary significantly by location",
+      "Online tutoring capabilities are less developed than dedicated digital platforms",
+      "Limited availability in rural or less populated areas",
+    ],
+    useCases: [
+      "Family wanting a local tutor to come to their home for weekly math sessions",
+      "High school student needing both SAT prep and college admissions counseling",
+      "Parent seeking a locally managed tutoring service with personalized attention",
+    ],
   },
 ];

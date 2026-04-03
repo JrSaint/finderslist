@@ -26,6 +26,32 @@ export const LIFE_INSURANCE_CATEGORIES: Record<LifeInsuranceCategory, { label: s
   "group-life": { label: "Group Life Insurance", emoji: "👥", description: "Employer-sponsored coverage often provided as a workplace benefit.", gradient: "from-orange-600/30 to-amber-800/40" },
 };
 
+export const LIFE_INSURANCE_EDITORIAL = {
+  title: "How to Choose the Right Life Insurance in 2026",
+  intro: `Life insurance provides a financial safety net for your family, paying a death benefit to your beneficiaries that can replace lost income, pay off a mortgage, fund children's education, or cover end-of-life expenses. The two main categories — term life and permanent life — serve fundamentally different purposes, and understanding which type fits your situation is the most important decision in the buying process.\n\nTerm life insurance covers you for a specific period (typically 10, 20, or 30 years) and is the most affordable option for most families. A healthy 30-year-old can typically get $500,000 in 20-year term coverage for $20-30 per month. Permanent policies like whole life and universal life provide lifelong coverage with a cash value component that grows over time, but at premiums five to ten times higher than comparable term coverage.\n\nThe digital transformation of life insurance has made the buying process dramatically faster and easier. Several companies now offer fully online applications with instant decisions and no medical exam required for many applicants. Algorithmic underwriting analyzes health data and prescription records to provide coverage in minutes rather than the weeks it traditionally took. This convenience has made it easier than ever to close the life insurance gap that leaves millions of families underprotected.`,
+  buyerGuide: [
+    "Coverage amount calculation — a common guideline is 10-15 times your annual income, but you should factor in specific obligations like mortgage balance, childcare costs, education funding, and outstanding debts. Online calculators from most insurers can help you determine the right amount.",
+    "Term length matching — align your term length with your longest financial obligation. If your youngest child is 5, a 20-year term covers them through college. If you just took a 30-year mortgage, a 30-year term ensures the house is paid off regardless of what happens.",
+    "Financial strength of the insurer — life insurance is a long-term promise. Check the carrier's AM Best rating (A or higher is ideal) to ensure they will be financially able to pay claims decades from now.",
+    "Medical exam requirements — no-exam policies offer convenience and speed but may cost 10-20% more than medically underwritten policies. If you are young and healthy, taking a medical exam typically results in lower premiums that save thousands over the life of the policy.",
+    "Conversion options on term policies — many term policies include the option to convert to permanent coverage without a new medical exam. This is valuable if your health declines during the term period and you later need lifelong coverage.",
+  ],
+  faq: [
+    {
+      question: "How much life insurance do I actually need?",
+      answer: "Calculate your family's financial needs if you were not there: annual living expenses multiplied by the years until your youngest child is independent, plus mortgage payoff, outstanding debts, and education costs. Subtract existing savings and any employer-provided life insurance. The remaining gap is your target coverage amount.",
+    },
+    {
+      question: "Is term or whole life insurance better?",
+      answer: "Term life is better for most people because it provides maximum coverage at the lowest cost during the years your family depends on your income. Whole life makes sense for estate planning purposes, guaranteed insurability regardless of future health, or as a forced savings vehicle for high earners who have maxed out other tax-advantaged accounts.",
+    },
+    {
+      question: "Can I get life insurance if I have a pre-existing health condition?",
+      answer: "Yes, though premiums will be higher. Many insurers specialize in covering people with conditions like diabetes, heart disease, or a history of cancer. Guaranteed issue policies accept everyone regardless of health but have lower coverage limits and higher costs. Working with an independent broker who shops multiple carriers is the best approach for applicants with health concerns.",
+    },
+  ],
+};
+
 export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
   {
     slug: "haven-life",
@@ -119,6 +145,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "northwesternmutual.com",
+    pros: [
+      "Over 165 years of consecutive dividend payments to policyholders",
+      "Whole life policies build guaranteed cash value over time",
+      "Large network of financial advisors for personalized planning",
+      "Among the highest financial strength ratings from all major agencies",
+    ],
+    cons: [
+      "Whole life premiums are significantly higher than term coverage",
+      "Must work through a financial advisor — no direct online purchasing",
+      "Cash value growth in early years is slow due to upfront costs",
+    ],
+    useCases: [
+      "High earner seeking permanent life insurance with cash value accumulation",
+      "Estate planner wanting guaranteed death benefit that never expires",
+      "Individual wanting comprehensive financial planning alongside insurance",
+    ],
   },
   {
     slug: "new-york-life",
@@ -132,6 +174,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🗽",
     domain: "newyorklife.com",
+    pros: [
+      "Largest mutual life insurer in the US with over 170 years of dividends",
+      "Full range of products from term to whole to universal life",
+      "Mutual company structure means profits benefit policyholders, not shareholders",
+      "Exceptional financial strength ratings across all major agencies",
+    ],
+    cons: [
+      "Permanent life premiums are expensive compared to term alternatives",
+      "Sales process through agents can feel pressure-oriented",
+      "Online self-service tools are limited compared to digital-first insurers",
+    ],
+    useCases: [
+      "Family wanting permanent life insurance from the largest mutual insurer",
+      "Wealth builder using whole life as a tax-advantaged savings vehicle",
+      "Policyholder wanting long-term dividend income from a mutual company",
+    ],
   },
   {
     slug: "massmutual",
@@ -145,6 +203,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🔵",
     domain: "massmutual.com",
+    pros: [
+      "Excellent financial strength ratings and long dividend payment history",
+      "Comprehensive product lineup covering term, whole, universal, and variable life",
+      "Mutual company structure aligns company interests with policyholders",
+      "Backs Haven Life for those wanting a digital term life option",
+    ],
+    cons: [
+      "Whole life and permanent policies carry high premium costs",
+      "Agent-based sales process with limited direct online purchasing",
+      "Product complexity can be overwhelming without advisor guidance",
+    ],
+    useCases: [
+      "Family wanting highly rated permanent coverage with dividend potential",
+      "Individual seeking comprehensive life insurance with multiple product options",
+      "Investor using whole life cash value as part of a diversified financial strategy",
+    ],
   },
   {
     slug: "prudential",
@@ -158,6 +232,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🪨",
     domain: "prudential.com",
+    pros: [
+      "Wide range of products from simple term to complex variable universal life",
+      "Global financial services company with strong claims-paying ability",
+      "Multiple channels for purchasing including online, agents, and workplace",
+      "Strong universal and variable life options for investment-oriented buyers",
+    ],
+    cons: [
+      "Product complexity can make choosing the right policy challenging",
+      "Variable life products carry investment risk alongside insurance costs",
+      "Customer service experiences vary across different product lines",
+    ],
+    useCases: [
+      "Investor wanting universal life with an investment component",
+      "Employee supplementing workplace group life with individual coverage",
+      "Individual needing flexible permanent coverage with adjustable premiums",
+    ],
   },
   {
     slug: "metlife",
@@ -171,6 +261,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🏢",
     domain: "metlife.com",
+    pros: [
+      "Leading provider of group life insurance through employer benefit programs",
+      "Global presence serving millions of customers in multiple countries",
+      "Convenient workplace enrollment makes getting coverage effortless",
+      "Individual term and permanent policies also available",
+    ],
+    cons: [
+      "Group life coverage amounts are often limited to 1-2x annual salary",
+      "Individual policy pricing is not always the most competitive",
+      "Customer service can be impersonal given the massive scale of operations",
+    ],
+    useCases: [
+      "Employee enrolling in employer-sponsored group life insurance",
+      "Worker supplementing basic group coverage with additional individual policy",
+      "Employer looking for a major carrier to provide group life benefits",
+    ],
   },
   {
     slug: "state-farm-life",
@@ -184,6 +290,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🔴",
     domain: "statefarm.com",
+    pros: [
+      "Massive network of local agents for in-person life insurance guidance",
+      "Easy bundling with State Farm auto and home insurance for discounts",
+      "Strong financial stability ratings ensure long-term reliability",
+      "Competitive pricing on term life for healthy applicants",
+    ],
+    cons: [
+      "Must work through a local agent — limited direct online purchasing",
+      "Product innovation trails digital-first competitors like Ladder and Haven",
+      "Permanent life products are less specialized than mutual insurer offerings",
+    ],
+    useCases: [
+      "State Farm customer bundling life insurance with existing auto and home",
+      "Individual wanting face-to-face guidance from a local agent",
+      "Family seeking affordable term life from a financially stable insurer",
+    ],
   },
   {
     slug: "transamerica",
@@ -197,6 +319,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🔺",
     domain: "transamerica.com",
+    pros: [
+      "Competitive pricing on term life insurance across age ranges",
+      "Flexible permanent life options including indexed universal life",
+      "Wide range of term lengths and coverage amounts available",
+      "Living benefits riders allow early access to funds for terminal illness",
+    ],
+    cons: [
+      "Customer service reviews are mixed compared to top-rated carriers",
+      "Financial strength ratings are slightly lower than top-tier mutual insurers",
+      "Online tools and digital experience are less polished than newer competitors",
+    ],
+    useCases: [
+      "Budget-conscious shopper seeking the most affordable term life rates",
+      "Individual interested in indexed universal life with growth potential",
+      "Person wanting living benefits that provide access to funds if terminally ill",
+    ],
   },
   {
     slug: "guardian-life",
@@ -210,6 +348,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🛡️",
     domain: "guardianlife.com",
+    pros: [
+      "Mutual company structure returns value to policyholders through dividends",
+      "Strong disability income insurance alongside life coverage",
+      "Comprehensive employee benefit packages for employers",
+      "Excellent financial strength ratings from major agencies",
+    ],
+    cons: [
+      "Individual life insurance requires working through an advisor",
+      "Less consumer brand recognition than larger competitors",
+      "Online purchasing and self-service tools are limited",
+    ],
+    useCases: [
+      "Employer seeking comprehensive life and disability benefits for employees",
+      "Individual wanting both life insurance and disability income protection",
+      "Policyholder who values mutual company dividends and financial stability",
+    ],
   },
   {
     slug: "pacific-life",
@@ -223,6 +377,22 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🐋",
     domain: "pacificlife.com",
+    pros: [
+      "Specialized expertise in indexed universal life insurance products",
+      "Cash value growth tied to market index performance with downside protection",
+      "Strong annuity products complement life insurance for retirement planning",
+      "Established insurer with over 150 years of financial stability",
+    ],
+    cons: [
+      "Indexed products are complex and require careful understanding",
+      "Caps and participation rates limit upside potential on index-linked growth",
+      "Must work through financial advisors — no direct consumer purchasing",
+    ],
+    useCases: [
+      "Investor wanting life insurance with market-linked cash value growth",
+      "Retirement planner combining indexed universal life with annuity products",
+      "Individual seeking downside protection while participating in market gains",
+    ],
   },
   {
     slug: "lincoln-financial",
@@ -236,5 +406,21 @@ export const LIFE_INSURANCE_TOOLS: LifeInsuranceTool[] = [
     featured: false,
     logo: "🎩",
     domain: "lincolnfinancial.com",
+    pros: [
+      "Strong universal and variable life product lineup for sophisticated buyers",
+      "Flexible coverage options with investment components for wealth accumulation",
+      "Living benefits riders available on many policies",
+      "Solid financial ratings and long operating history",
+    ],
+    cons: [
+      "Variable life products carry market risk that can reduce cash value",
+      "Product complexity requires guidance from a financial professional",
+      "Not the most competitive option for simple term life coverage",
+    ],
+    useCases: [
+      "Sophisticated investor wanting life insurance with investment flexibility",
+      "Individual seeking variable universal life for wealth accumulation",
+      "Financial planner building custom insurance solutions for affluent clients",
+    ],
   },
 ];

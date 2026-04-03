@@ -26,6 +26,32 @@ export const DIVORCE_LAWYER_CATEGORIES: Record<DivorceLawyerCategory, { label: s
   "mediation-collaborative": { label: "Mediation & Collaborative Divorce", emoji: "⚖️", description: "Professionals trained in alternative dispute resolution methods including divorce mediation, collaborative law, and negotiation-based approaches that avoid courtroom litigation.", gradient: "from-violet-600/30 to-purple-800/40" },
 };
 
+export const DIVORCE_LAWYER_EDITORIAL = {
+  title: "How to Choose the Right Divorce Lawyer in 2026",
+  intro: `Divorce is one of the most consequential legal and financial events most people will experience, affecting custody arrangements, property division, retirement accounts, business interests, and long-term financial security. The right divorce attorney protects your interests while helping you navigate an emotionally charged process as efficiently as possible. Choosing the wrong attorney, or representing yourself in a complex divorce, can result in outcomes that affect you and your children for decades.\n\nDivorce proceedings range from simple uncontested divorces that can be handled with minimal legal involvement to complex contested cases involving high-value assets, business valuations, custody disputes, and allegations of domestic violence. The approach you need determines the type of attorney you should hire: collaborative divorce lawyers work cooperatively with both parties, mediators facilitate compromise, and litigators fight aggressively in court. Many attorneys offer multiple approaches and can recommend the most appropriate strategy for your situation.\n\nCost is a legitimate concern, as divorce attorney fees typically range from $250 to $500+ per hour, with total costs varying from $5,000 for an uncontested divorce to $50,000 or more for a contested case. During initial consultations, which are often free or low-cost, ask about the attorney's billing practices, estimated total cost range, retainer requirements, and whether they offer flat-fee options for uncontested divorces.`,
+  buyerGuide: [
+    "Specialization in family law -- Choose an attorney who focuses primarily on family law and divorce rather than a general practitioner. Complex issues like asset division, business valuation, and custody require specialized knowledge that general attorneys may lack.",
+    "Approach alignment -- Some attorneys are aggressive litigators while others favor negotiation and collaboration. Choose an attorney whose approach matches your goals. If you want an amicable resolution, a collaborative lawyer is better than a combative one, and vice versa.",
+    "Local court experience -- Family law is highly jurisdiction-specific, and local judges have individual preferences and tendencies. An attorney who regularly practices in your county courthouse knows the local rules, judges, and opposing counsel, which provides a meaningful advantage.",
+    "Communication and responsiveness -- Divorce is stressful, and poor attorney communication makes it worse. During consultations, assess how quickly they respond, how clearly they explain complex issues, and whether they seem genuinely interested in your case versus just selling their services.",
+    "Fee transparency -- Request a detailed written fee agreement covering hourly rates, retainer amounts, paralegal rates, costs for court filings and expert witnesses, and billing increment policies. Understand whether unused retainer funds are refundable.",
+  ],
+  faq: [
+    {
+      question: "How long does a divorce typically take?",
+      answer: "Uncontested divorces where both parties agree on major terms can be finalized in 2 to 4 months in most states. Contested divorces involving custody disputes, complex asset division, or business valuation typically take 9 to 18 months, and highly contentious cases can extend to 2+ years.",
+    },
+    {
+      question: "Do I need a divorce lawyer if we agree on everything?",
+      answer: "Even in amicable divorces, each party should have their own attorney review the settlement agreement before signing. An attorney can identify issues you may have overlooked, ensure the agreement is enforceable, and verify that the terms are fair. Many attorneys offer flat-fee document review for uncontested cases.",
+    },
+    {
+      question: "What is the difference between divorce mediation and collaborative divorce?",
+      answer: "In mediation, a neutral third-party mediator helps both spouses negotiate a settlement, but each party may also have their own attorney advising them. In collaborative divorce, each party has a collaboratively trained attorney, and all parties commit to reaching an agreement without going to court. If collaboration fails, both attorneys must withdraw and the parties start over with new counsel.",
+    },
+  ],
+};
+
 export const DIVORCE_LAWYER_TOOLS: DivorceLawyerTool[] = [
   {
     slug: "avvo-family-law",

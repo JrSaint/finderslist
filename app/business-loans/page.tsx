@@ -7,9 +7,13 @@ import {
   getBusinessLoanCategoryCount,
   filterBusinessLoanTools,
 } from "@/lib/business-loans";
+import { BUSINESS_LOAN_EDITORIAL } from "@/data/business-loans";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function BusinessLoansPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={BUSINESS_LOAN_EDITORIAL.title}
+            intro={BUSINESS_LOAN_EDITORIAL.intro}
+            buyerGuide={BUSINESS_LOAN_EDITORIAL.buyerGuide}
+            faq={BUSINESS_LOAN_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={BUSINESS_LOAN_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/business-loans"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function BusinessLoansPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

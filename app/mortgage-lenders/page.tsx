@@ -7,9 +7,13 @@ import {
   getMortgageLenderCategoryCount,
   filterMortgageLenderTools,
 } from "@/lib/mortgage-lenders";
+import { MORTGAGE_LENDER_EDITORIAL } from "@/data/mortgage-lenders";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function MortgageLendersPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={MORTGAGE_LENDER_EDITORIAL.title}
+            intro={MORTGAGE_LENDER_EDITORIAL.intro}
+            buyerGuide={MORTGAGE_LENDER_EDITORIAL.buyerGuide}
+            faq={MORTGAGE_LENDER_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={MORTGAGE_LENDER_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/mortgage-lenders"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function MortgageLendersPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

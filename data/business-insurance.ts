@@ -31,6 +31,32 @@ export const BUSINESS_INSURANCE_CATEGORIES: Record<BusinessInsuranceCategory, { 
   "cyber-insurance": { label: "Cyber Insurance", emoji: "🔒", description: "Protect against data breaches, ransomware, and cyber liability costs.", gradient: "from-rose-600/30 to-red-800/40" },
 };
 
+export const BUSINESS_INSURANCE_EDITORIAL = {
+  title: "How to Choose the Right Business Insurance in 2026",
+  intro: `Business insurance protects your company from financial losses caused by lawsuits, property damage, employee injuries, cyber attacks, and other risks that can bankrupt an uninsured business overnight. A single slip-and-fall lawsuit or data breach can cost hundreds of thousands of dollars — far more than years of insurance premiums. For most businesses, the question isn't whether to buy coverage but which types and how much.\n\nThe core policies most businesses need include general liability (covers third-party injury and property damage claims), professional liability/E&O (covers claims of negligence or mistakes in your services), and workers' compensation (legally required in most states if you have employees). Many small businesses save by bundling these into a Business Owner's Policy (BOP), which combines general liability with commercial property coverage at a discount.\n\nPricing depends on your industry, revenue, employee count, location, and claims history. A low-risk consulting firm might pay $500-1,500/year for general liability, while a construction company might pay $5,000-20,000+. Online insurers like Next Insurance and Hiscox have streamlined the quoting process — you can often get coverage in under 10 minutes — but complex businesses with unique risks may benefit from working with a broker who can shop multiple carriers.`,
+  buyerGuide: [
+    "Coverage gaps analysis — identify your biggest financial risks first (lawsuits, property loss, employee injuries, cyber incidents), then match policies to those specific threats rather than buying generic packages.",
+    "Industry-specific expertise — choose insurers or brokers who understand your industry's unique risks; a tech company's needs differ vastly from a restaurant's or contractor's.",
+    "Claims process quality — read reviews specifically about claims handling, not just sales experience; an insurer that's easy to buy from but fights every claim isn't worth the savings.",
+    "Certificate of insurance (COI) speed — if clients or landlords require proof of insurance, evaluate how quickly the insurer can issue COIs; some provide instant digital certificates while others take days.",
+    "Bundling discounts — Business Owner's Policies (BOPs) and multi-policy bundles typically save 10-25% compared to buying each coverage separately; ask about all available bundle options.",
+  ],
+  faq: [
+    {
+      question: "What insurance does a small business actually need?",
+      answer: "At minimum, most small businesses need general liability insurance. If you have employees, workers' compensation is legally required in most states. Professional service businesses need E&O/professional liability. If you rent office space, your landlord likely requires commercial property coverage. Cyber insurance is increasingly essential for any business handling customer data.",
+    },
+    {
+      question: "How much does business insurance cost?",
+      answer: "General liability typically costs $30-100/month for small businesses. Workers' comp ranges from $50-300+/month depending on payroll and industry risk. A BOP (general liability + property) averages $50-150/month. Cyber insurance starts around $50/month. Total costs vary widely based on industry, revenue, and risk factors.",
+    },
+    {
+      question: "What is the difference between general liability and professional liability?",
+      answer: "General liability covers physical incidents — someone slipping in your office, your product damaging property, or advertising injury claims. Professional liability (also called E&O) covers claims that your professional services or advice caused a client financial harm through errors, omissions, or negligence.",
+    },
+  ],
+};
+
 export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
   // ── GENERAL LIABILITY ───────────────────────────────────────────────────
   {
@@ -136,6 +162,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🅿️",
     domain: "progressivecommercial.com",
+    pros: ["Strong commercial auto coverage for businesses relying on vehicles", "Fast online quoting process for most business types", "Multi-policy discounts for existing Progressive personal policyholders", "Wide range of commercial vehicle types covered including trucks and vans", "Competitive rates for fleet and commercial auto insurance"],
+    cons: ["Commercial general liability is less comprehensive than specialist carriers", "Agent network is smaller than State Farm or Hartford for business insurance", "Complex business risks may require additional specialist coverage", "Online quoting limited for some industry types"],
+    useCases: ["Delivery company insuring a fleet of commercial vehicles at competitive rates", "Small business owner bundling personal and commercial auto with Progressive", "Contractor needing fast online commercial auto insurance for work trucks"],
   },
   {
     slug: "state-farm-business",
@@ -149,6 +178,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🔴",
     domain: "statefarm.com",
+    pros: ["Massive local agent network provides personalized face-to-face service", "Full portfolio of commercial coverage types available", "Strong financial stability ratings ensure reliable claims payment", "Bundle commercial with personal policies for significant savings", "Agents provide industry-specific guidance and risk assessment"],
+    cons: ["Rates may be higher than online-first competitors for simple policies", "Quoting requires visiting or calling a local agent", "Less suited for niche or high-risk industries", "Digital self-service tools lag behind tech-forward insurers"],
+    useCases: ["Local retail business wanting a dedicated agent for ongoing policy management", "Business owner bundling commercial property and auto with personal insurance at State Farm", "Entrepreneur preferring face-to-face insurance consultation over online-only platforms"],
   },
   // ── PROFESSIONAL LIABILITY ──────────────────────────────────────────────
   {
@@ -193,6 +225,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: true,
     logo: "🧵",
     domain: "thimble.com",
+    pros: ["On-demand coverage by the hour, day, week, or month — pay only when you need it", "Instant certificates of insurance available via mobile app", "Ideal for freelancers and gig workers with variable schedules", "No long-term commitment or annual premium required", "General liability and professional liability available on-demand"],
+    cons: ["Per-event pricing can be more expensive than annual policies for regular work", "Coverage options are limited to general and professional liability", "Not suited for businesses needing continuous year-round coverage", "Claims history may affect future on-demand pricing"],
+    useCases: ["Freelance photographer buying liability coverage for a single weekend event", "Contractor adding coverage for a specific project lasting two weeks", "Gig worker purchasing hourly insurance before a client engagement"],
   },
   {
     slug: "coverwallet",
@@ -206,6 +241,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "👝",
     domain: "coverwallet.com",
+    pros: ["AI-driven recommendations analyze your business and suggest appropriate coverage", "Quotes from multiple carriers allow comparison shopping", "Centralized dashboard manages all policies and renewal tracking", "Backed by Aon — one of the world's largest insurance brokerages", "Educational tools help first-time buyers understand coverage needs"],
+    cons: ["Not a direct insurer — claims handled by underlying carriers", "AI recommendations may not capture highly specialized business risks", "Quote availability varies by industry and location", "Customer support quality depends on the partnered carrier"],
+    useCases: ["First-time business owner using AI to understand which coverage types they need", "Company comparing multiple carrier quotes side-by-side for the best rate", "Business managing multiple policies from different carriers in one centralized dashboard"],
   },
   // ── WORKERS' COMPENSATION ───────────────────────────────────────────────
   {
@@ -220,6 +258,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🥧",
     domain: "pieinsurance.com",
+    pros: ["Specialist focus on workers' comp means deep understanding of classification codes", "Three-minute online application with same-day policy binding", "Pay-as-you-go billing tied to actual payroll eliminates large upfront deposits", "Data-driven pricing often results in lower rates than traditional carriers", "No audit surprises — premiums adjust with real payroll data"],
+    cons: ["Only offers workers' compensation — no other business insurance types", "Not available in all states", "Less suited for large enterprises with complex workers' comp needs", "Limited agent support compared to traditional carriers"],
+    useCases: ["Small business buying workers' comp for the first time with a quick online application", "Restaurant owner wanting pay-as-you-go workers' comp that adjusts to seasonal staffing", "Contractor needing same-day workers' comp policy to meet a project requirement"],
   },
   {
     slug: "biberk",
@@ -233,6 +274,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🅱️",
     domain: "biberk.com",
+    pros: ["Backed by Berkshire Hathaway — exceptional financial stability", "Direct-to-business model eliminates broker fees and commissions", "Competitive pricing across workers' comp, GL, BOP, and commercial auto", "Entirely online process from quote to purchase to certificate", "Multiple coverage types available from one trusted carrier"],
+    cons: ["No broker or agent to provide personalized guidance", "Complex or high-risk businesses may need more customized coverage", "Less well-known brand despite Berkshire Hathaway backing", "Phone support availability can be limited during peak hours"],
+    useCases: ["Small business owner buying a BOP directly online without broker fees", "Cost-conscious business wanting Berkshire Hathaway-backed insurance at direct prices", "Company purchasing multiple coverage types from one financially stable carrier"],
   },
   {
     slug: "nationwide-business",
@@ -246,6 +290,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🏠",
     domain: "nationwide.com",
+    pros: ["Fortune 100 company with exceptional financial strength", "Comprehensive commercial insurance portfolio across all major coverage types", "Local agents provide industry-specific guidance and claims support", "Cyber insurance offering addresses growing digital threats", "Strong claims-handling infrastructure for complex commercial losses"],
+    cons: ["Not the most price-competitive for simple small business needs", "Local agent model means experience varies by individual agent", "Online self-service is less developed than digital-first insurers", "Enterprise-oriented — may be more than micro-businesses need"],
+    useCases: ["Mid-size company needing comprehensive commercial coverage from a Fortune 100 carrier", "Business requiring cyber insurance alongside traditional property and liability coverage", "Organization wanting local agent expertise for complex commercial insurance decisions"],
   },
   // ── COMMERCIAL PROPERTY ─────────────────────────────────────────────────
   {
@@ -260,6 +307,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "☂️",
     domain: "travelers.com",
+    pros: ["One of the largest commercial property and casualty insurers in the US", "Industry-leading risk management resources and loss prevention tools", "Business interruption coverage protects revenue during covered events", "Handles complex commercial risks including large property portfolios", "Strong financial ratings from all major rating agencies"],
+    cons: ["Enterprise-focused — small businesses may find it excessive", "Requires working through independent agents for quoting and purchasing", "Pricing is not the most competitive for straightforward small business policies", "Complex policy structures can be difficult to understand without agent guidance"],
+    useCases: ["Manufacturing company insuring equipment, inventory, and business interruption risk", "Commercial real estate firm protecting a portfolio of properties with one carrier", "Large business needing risk management resources alongside comprehensive coverage"],
   },
   {
     slug: "embroker",
@@ -273,6 +323,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🚀",
     domain: "embroker.com",
+    pros: ["Purpose-built for startups and tech companies with relevant coverage types", "D&O, E&O, cyber liability, and EPLI designed for startup lifecycle", "Digital-first platform with fast quotes and streamlined policy management", "Understands venture-backed company needs from seed to IPO", "No traditional broker required — entirely online experience"],
+    cons: ["Less suited for non-tech traditional businesses", "Pricing may not be competitive for simple small business needs", "Limited physical asset coverage compared to traditional commercial carriers", "Smaller carrier network than established insurance brokerages"],
+    useCases: ["Series B startup purchasing D&O insurance before a funding round", "Tech company bundling E&O and cyber liability for comprehensive professional coverage", "Venture-backed business needing EPLI as it scales past 50 employees"],
   },
   // ── CYBER INSURANCE ─────────────────────────────────────────────────────
   {
@@ -287,6 +340,9 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🔗",
     domain: "apintego.com",
+    pros: ["Pay-as-you-go workers' comp ties premiums to actual payroll data", "Integrates with Gusto and Square for automatic payroll-based billing", "Eliminates large upfront deposits required by traditional workers' comp", "No surprise audit adjustments — premiums adjust in real time", "Marketplace model provides quotes from multiple carriers"],
+    cons: ["Best suited for businesses already using Gusto or Square payroll", "Insurance options may be limited in some states", "Not a direct insurer — experience depends on the underlying carrier", "Less suited for businesses with complex payroll structures"],
+    useCases: ["Gusto customer adding pay-as-you-go workers' comp that syncs with payroll automatically", "Small business eliminating the large annual workers' comp deposit with per-payroll billing", "Growing company wanting workers' comp premiums that adjust automatically with headcount changes"],
   },
   {
     slug: "bold-penguin",
@@ -300,5 +356,8 @@ export const BUSINESS_INSURANCE_TOOLS: BusinessInsuranceTool[] = [
     featured: false,
     logo: "🐧",
     domain: "boldpenguin.com",
+    pros: ["Streamlines commercial insurance distribution for faster quoting", "Connects agents with multiple carriers through a single exchange", "Reduces time from application to quote for commercial policies", "Technology platform improves efficiency across the insurance value chain", "Small businesses benefit indirectly through more competitive agent quotes"],
+    cons: ["Not a direct-to-business platform — works through agents and brokers", "Small business owners cannot purchase policies directly", "Exchange availability depends on participating agents in your area", "Technology benefits are behind the scenes — not visible to end customers"],
+    useCases: ["Insurance agent using the exchange to quickly quote commercial policies from multiple carriers", "Broker seeking faster turnaround on commercial insurance applications for clients", "Small business owner benefiting from their agent's access to more competitive carrier options"],
   },
 ];

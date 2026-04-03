@@ -26,6 +26,32 @@ export const MARKETING_AUTOMATION_CATEGORIES: Record<MarketingAutomationCategory
   "sms-marketing": { label: "SMS Marketing", emoji: "💬", description: "Platforms built around text message campaigns, transactional SMS, and mobile-first customer communication.", gradient: "from-yellow-600/30 to-amber-800/40" },
 };
 
+export const MARKETING_AUTOMATION_EDITORIAL = {
+  title: "How to Choose the Right Marketing Automation Software in 2026",
+  intro: `Marketing automation software handles repetitive marketing tasks at scale: sending email sequences based on user behavior, scoring and routing leads, managing multi-channel campaigns, segmenting audiences, and tracking attribution across touchpoints. For B2B companies, marketing automation is the engine that converts website visitors into qualified leads and nurtures them until they are ready for sales. For B2C and ecommerce businesses, it drives personalized customer journeys that increase lifetime value.\n\nThe market ranges from all-in-one platforms like HubSpot and Marketo that manage the entire marketing funnel to specialized tools focused on email automation (Mailchimp, ActiveCampaign), SMS marketing (Attentive, Postscript), or social automation (Hootsuite, Sprout Social). All-in-one platforms offer the advantage of unified data and reporting but tend to be more expensive and less flexible in any single area than best-of-breed alternatives.\n\nThe biggest implementation mistake is buying a platform more powerful than your team can operate. Enterprise tools like Marketo, Pardot, and Eloqua offer tremendous capability but require dedicated marketing operations staff to configure and maintain. Small and mid-market teams are usually better served by platforms like HubSpot, ActiveCampaign, or Mailchimp that provide strong automation with a gentler learning curve and less administrative overhead.`,
+  buyerGuide: [
+    "Team capability match -- Choose a platform your team can actually operate. Enterprise tools require dedicated marketing operations specialists, while mid-market tools like HubSpot and ActiveCampaign are manageable for generalist marketing teams.",
+    "Lead scoring and routing -- For B2B, evaluate how the platform scores leads based on demographic fit and behavioral signals, and how qualified leads are routed to sales reps. The quality of lead scoring directly impacts sales team productivity.",
+    "CRM integration depth -- Your marketing automation must sync bidirectionally with your CRM. Check whether the integration passes lead scores, activity history, and campaign attribution to sales reps, and whether CRM actions can trigger marketing workflows.",
+    "Multi-channel orchestration -- Modern buyers interact across email, web, social, SMS, and ads. Evaluate whether the platform can orchestrate journeys across all your active channels or only handles email with basic integrations for other channels.",
+    "Reporting and attribution -- Marketing teams need to prove ROI. Check for multi-touch attribution models, campaign performance dashboards, revenue attribution reporting, and the ability to connect marketing activities to closed revenue in your CRM.",
+  ],
+  faq: [
+    {
+      question: "What is the difference between email marketing and marketing automation?",
+      answer: "Email marketing tools send broadcasts and simple automated sequences. Marketing automation platforms add behavioral triggers, lead scoring, multi-channel orchestration, CRM integration, and sophisticated segmentation based on website activity, form submissions, and engagement patterns. Marketing automation is the broader category that includes email as one channel.",
+    },
+    {
+      question: "When should a company invest in marketing automation?",
+      answer: "Most B2B companies benefit from marketing automation once they have a steady flow of inbound leads (50+ per month) and a sales team that needs qualified leads rather than raw contacts. For B2C and ecommerce, automation becomes valuable once you have an email list of 1,000+ and enough transaction data to create meaningful segments.",
+    },
+    {
+      question: "Is HubSpot or Marketo better for B2B marketing?",
+      answer: "HubSpot is better for small to mid-market B2B teams that want an all-in-one platform with a user-friendly interface and built-in CRM. Marketo (now Adobe Marketo Engage) is better for enterprise B2B with complex lead lifecycles, multiple business units, and dedicated marketing operations staff who can manage the platform's extensive configuration options.",
+    },
+  ],
+};
+
 export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
   {
     slug: "hubspot-marketing-hub",
@@ -119,6 +145,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "☁️",
     domain: "salesforce.com",
+    pros: ["Native Salesforce CRM integration provides seamless data flow between marketing and sales", "Strong lead scoring and grading aligned with Salesforce opportunity management", "ROI reporting connects marketing campaigns directly to closed-won revenue", "B2B engagement programs with multi-step nurture and scoring workflows"], cons: ["Best value only within the Salesforce ecosystem — less compelling standalone", "User interface is functional but not intuitive compared to HubSpot or ActiveCampaign", "Enterprise pricing with high minimums excludes most small businesses", "Rebranding from Pardot to Account Engagement has created naming confusion"], useCases: ["Salesforce-centric B2B organization wanting native marketing automation", "Enterprise marketing team needing tight CRM alignment for lead scoring", "Sales and marketing team wanting shared revenue attribution reporting"],
   },
   {
     slug: "brevo",
@@ -132,6 +159,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "🔷",
     domain: "brevo.com",
+    pros: ["Extremely affordable with pay-by-email-volume pricing instead of per-contact", "Bundles email, SMS, WhatsApp, live chat, and CRM in one platform", "Transactional email API handles order confirmations and password resets", "Free plan includes 300 emails per day with basic automation"], cons: ["Automation workflows are simpler than ActiveCampaign or HubSpot", "CRM features are basic compared to dedicated CRM platforms", "Email template designs are functional but not as polished as Mailchimp", "Deliverability rates have been inconsistent according to some users"], useCases: ["Small business wanting multi-channel marketing at the lowest possible cost", "E-commerce store needing both marketing and transactional email from one platform", "Business with a large contact list but moderate sending frequency"],
   },
   {
     slug: "drip",
@@ -145,6 +173,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "💧",
     domain: "drip.com",
+    pros: ["Purpose-built for e-commerce with deep Shopify and WooCommerce integrations", "Visual workflow builder is intuitive and powerful for multi-step campaigns", "Revenue attribution shows exactly how much each automation earns", "Behavioral segmentation based on browsing and purchase activity"], cons: ["Not suited for B2B or non-e-commerce use cases", "Pricing scales with contacts and can become expensive for large lists", "Fewer template options than general-purpose email platforms", "SMS marketing is not natively built in like Klaviyo"], useCases: ["DTC brand wanting automated post-purchase and win-back email sequences", "Shopify store owner tracking revenue attribution per email automation", "E-commerce marketer building complex behavioral segments for personalization"],
   },
   {
     slug: "customer-io",
@@ -158,6 +187,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "📨",
     domain: "customer.io",
+    pros: ["Event-driven architecture triggers messages based on real-time user behavior", "Supports email, push notifications, SMS, and in-app messaging channels", "Liquid templating provides extremely flexible message personalization", "API-first design integrates easily with custom tech stacks"], cons: ["Requires developer resources for initial setup and event tracking configuration", "Not designed for marketers who want a no-code, drag-and-drop experience", "Pricing is based on profile count which can get expensive at scale", "Less out-of-the-box e-commerce functionality than Klaviyo or Drip"], useCases: ["SaaS company triggering onboarding emails based on in-app user actions", "Mobile app team sending push notifications based on real-time engagement events", "Product-led growth company building event-driven lifecycle campaigns"],
   },
   {
     slug: "omnisend",
@@ -171,6 +201,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "🟡",
     domain: "omnisend.com",
+    pros: ["Unified email, SMS, and push notification workflows in a single platform", "Pre-built automation templates for e-commerce deploy in one click", "One-click Shopify integration with automatic product feed syncing", "Free plan includes 250 contacts and basic email and SMS features"], cons: ["Less sophisticated than Klaviyo for advanced e-commerce segmentation", "SMS pricing varies by country and can add up for international audiences", "Reporting is adequate but less granular than enterprise alternatives", "Limited use case outside of e-commerce"], useCases: ["E-commerce store wanting to add SMS alongside existing email campaigns", "Shopify seller deploying pre-built abandoned cart and welcome automations", "Online retailer combining email, SMS, and push in unified customer journeys"],
   },
   {
     slug: "getresponse",
@@ -184,6 +215,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "🔶",
     domain: "getresponse.com",
+    pros: ["Unique built-in webinar hosting that competitors require separate tools for", "Conversion funnel builder creates complete sales funnels end-to-end", "Affordable pricing with a free plan for up to 500 contacts", "Broad feature set spanning email, landing pages, webinars, and automation"], cons: ["Individual features lack depth compared to specialized alternatives", "Email deliverability has received mixed reviews from some users", "Automation workflow builder is less powerful than ActiveCampaign", "Webinar feature has participant limits on lower-tier plans"], useCases: ["Coach or course creator running webinar-based marketing funnels", "Small business wanting email, landing pages, and webinars in one tool", "Entrepreneur building conversion funnels without coding or multiple subscriptions"],
   },
   {
     slug: "convertkit",
@@ -197,6 +229,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "✉️",
     domain: "convertkit.com",
+    pros: ["Tag-based subscriber management is more flexible than list-based systems", "Visual automation builder designed for creators without technical backgrounds", "Built-in commerce features for selling digital products and subscriptions", "Free plan supports up to 10,000 subscribers with basic features"], cons: ["Email template designs are intentionally simple — limited visual customization", "Reporting and analytics are basic compared to data-driven platforms", "Not suited for e-commerce or B2B marketing with complex segmentation needs", "Automation capabilities are simpler than ActiveCampaign or HubSpot"], useCases: ["Blogger building an email list and selling digital products to subscribers", "Podcaster wanting simple automation to nurture listeners into paying customers", "Course creator managing subscriber tags and selling access through email sequences"],
   },
   {
     slug: "moosend",
@@ -210,6 +243,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "🐄",
     domain: "moosend.com",
+    pros: ["Very affordable pricing that undercuts most competitors significantly", "Advanced personalization including weather-based and product recommendations", "Conditional automation workflows rival more expensive platforms", "Clean interface with a gentle learning curve for new users"], cons: ["Smaller template library than Mailchimp or ActiveCampaign", "Integration ecosystem is more limited than major platforms", "Brand recognition is low which may concern some enterprise buyers", "Reporting depth is adequate but not industry-leading"], useCases: ["Startup wanting sophisticated automation at the lowest possible price", "E-commerce brand using product recommendations in automated email flows", "Small business that needs conditional workflows without enterprise pricing"],
   },
   {
     slug: "autopilot-ortto",
@@ -223,6 +257,7 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "🧭",
     domain: "ortto.com",
+    pros: ["Visual canvas-style journey builder makes complex automations easy to understand", "Built-in customer data platform unifies data from multiple sources", "Multi-channel journey orchestration across email, SMS, and in-app messaging", "Good analytics and reporting tied to journey performance"], cons: ["Less established brand than HubSpot, ActiveCampaign, or Mailchimp", "Integration ecosystem is smaller than market leaders", "Pricing can be higher than expected for the feature set", "Some features are still maturing after the rebrand from Autopilot"], useCases: ["Marketing team wanting to visualize and orchestrate complex customer journeys", "Company needing a built-in CDP to unify data alongside marketing automation", "Team sending coordinated campaigns across email, SMS, and in-app channels"],
   },
   {
     slug: "iterable",
@@ -236,5 +271,6 @@ export const MARKETING_AUTOMATION_TOOLS: MarketingAutomationTool[] = [
     featured: false,
     logo: "🔄",
     domain: "iterable.com",
+    pros: ["Enterprise-scale cross-channel orchestration across email, SMS, push, in-app, and web", "AI-powered send-time optimization and channel preference mapping", "Flexible data architecture handles complex customer profiles and events", "Trusted by high-volume brands in media, delivery, and fintech"], cons: ["Enterprise pricing excludes most small and mid-market companies", "Requires technical resources for setup and ongoing data management", "Sales-driven buying process with no public pricing or free trial", "Overkill for businesses with simple email-only marketing needs"], useCases: ["High-volume consumer brand sending millions of personalized messages monthly", "Fintech company orchestrating lifecycle campaigns across mobile and web channels", "Media company using AI to optimize send times and channel selection at scale"],
   },
 ];

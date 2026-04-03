@@ -26,6 +26,32 @@ export const ERP_CATEGORIES: Record<ERPCategory, { label: string; emoji: string;
   "industry-specific": { label: "Industry-Specific ERP", emoji: "🎯", description: "Specialized ERP systems built for the unique workflows of specific verticals and industries.", gradient: "from-orange-600/30 to-amber-800/40" },
 };
 
+export const ERP_EDITORIAL = {
+  title: "How to Choose the Right ERP Software in 2026",
+  intro: `Enterprise Resource Planning (ERP) software integrates an organization's core business functions -- finance, supply chain, manufacturing, HR, procurement, and sales -- into a single system of record. A well-implemented ERP eliminates data silos, automates manual processes, and provides the real-time visibility executives need to make informed decisions. It is often the most consequential and expensive technology investment a company makes.\n\nThe ERP market in 2026 is divided between cloud-native platforms designed for speed and accessibility, and traditional on-premises systems offering maximum customization and control. Cloud ERPs like Oracle NetSuite and Acumatica deploy in weeks and update automatically, making them popular with fast-growing mid-market companies. Enterprise systems like SAP S/4HANA and Oracle Cloud serve large organizations with complex, global operations. Industry-specific ERPs address the unique workflows of manufacturing, distribution, construction, and other verticals.\n\nERP implementation is where most projects succeed or fail. The software selection typically takes 2-4 months, but the implementation -- data migration, process redesign, user training, and integration with existing systems -- takes 6-18 months and often costs more than the software itself. Organizations that invest in change management and executive sponsorship achieve significantly better outcomes than those that treat ERP as a purely technical project.`,
+  buyerGuide: [
+    "Start with your must-have industry requirements -- manufacturing needs production planning and shop floor control, distribution needs warehouse management, and professional services needs project accounting and resource planning.",
+    "Evaluate total cost of ownership over 5 years including licensing, implementation consulting, data migration, customization, training, and ongoing support -- cloud ERPs have lower upfront costs but ongoing subscription fees.",
+    "Assess the implementation partner as carefully as the software -- the consulting firm handling your deployment has more impact on success than the specific ERP product you choose.",
+    "Prioritize user experience and mobile access -- ERPs with intuitive interfaces achieve higher adoption rates, and mobile access is essential for field workers, warehouse staff, and traveling executives.",
+    "Plan your integration architecture upfront -- your ERP needs to connect with CRM, ecommerce, banking, and specialized tools, and API quality varies dramatically between platforms.",
+  ],
+  faq: [
+    {
+      question: "When does a growing company need an ERP?",
+      answer: "Companies typically outgrow QuickBooks and disconnected spreadsheets when they reach $5-$20 million in revenue, have more than 25 employees, or operate across multiple locations or entities. Signs you need an ERP include month-end close taking more than 10 days, frequent inventory discrepancies, and inability to get real-time financial visibility.",
+    },
+    {
+      question: "How long does an ERP implementation take?",
+      answer: "Cloud ERP implementations for small businesses take 2-4 months. Mid-market deployments with moderate customization take 4-9 months. Enterprise implementations with complex requirements, multiple entities, and custom integrations typically take 12-24 months. Phased rollouts that go live by module can reduce risk and deliver value earlier.",
+    },
+    {
+      question: "Should we choose a cloud ERP or on-premises ERP?",
+      answer: "Cloud ERP is the right choice for most organizations in 2026 due to lower upfront costs, faster deployment, automatic updates, and reduced IT burden. On-premises ERP may still make sense for organizations with strict data sovereignty requirements, highly customized processes, or existing infrastructure investments they want to leverage.",
+    },
+  ],
+};
+
 export const ERP_TOOLS: ERPTool[] = [
   {
     slug: "sap-s4hana",
@@ -119,6 +145,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "⚙️",
     domain: "epicor.com",
+    pros: [
+      "Deep manufacturing functionality: MRP, production scheduling, quality management",
+      "Industry-specific out-of-the-box for manufacturing, distribution, and retail",
+      "Kinetic cloud platform modernizes the user experience with responsive design",
+      "Less customization required than generic ERPs for manufacturing workflows",
+      "Strong mid-market focus with appropriate pricing and implementation scope",
+    ],
+    cons: [
+      "Less suitable for service-based or non-manufacturing businesses",
+      "Cloud migration from on-premise Epicor versions can be complex",
+      "Smaller partner ecosystem than SAP or Microsoft",
+      "Reporting and analytics are less advanced than newer cloud-native ERPs",
+    ],
+    useCases: [
+      "Discrete manufacturer needing MRP, shop floor control, and production scheduling",
+      "Distribution company managing warehouse operations and demand planning",
+      "Mid-market manufacturer replacing legacy ERP with cloud-native Kinetic platform",
+    ],
   },
   {
     slug: "infor-cloudsuite",
@@ -132,6 +176,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "☁️",
     domain: "infor.com",
+    pros: [
+      "Pre-configured industry templates reduce implementation time significantly",
+      "Built on AWS infrastructure for scalability and global availability",
+      "Coleman AI platform provides intelligent automation and analytics",
+      "Strong in healthcare, manufacturing, distribution, and hospitality verticals",
+      "Last-mile industry functionality reduces need for custom development",
+    ],
+    cons: [
+      "Multiple product lines can be confusing to navigate",
+      "Implementation requires Infor-certified consultants for complex deployments",
+      "Licensing and pricing are not transparent — requires sales consultation",
+      "Smaller partner ecosystem than SAP or Oracle",
+    ],
+    useCases: [
+      "Healthcare organization needing industry-specific ERP with compliance capabilities",
+      "Hospitality company managing multi-property operations on a single platform",
+      "Manufacturer wanting pre-built industry best practices to accelerate deployment",
+    ],
   },
   {
     slug: "odoo",
@@ -145,6 +207,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🟣",
     domain: "odoo.com",
+    pros: [
+      "Open-source Community Edition is completely free with no licensing fees",
+      "Modular design — start with a few apps and expand as needed",
+      "Covers CRM, accounting, inventory, manufacturing, HR, and e-commerce",
+      "Modern UI that is more intuitive than legacy ERP systems",
+      "Large global community with thousands of community-built modules",
+    ],
+    cons: [
+      "Enterprise features and cloud hosting require paid subscriptions",
+      "Customization beyond standard modules requires Python development skills",
+      "Community modules vary widely in quality and maintenance",
+      "Implementation for complex scenarios still requires professional consulting",
+    ],
+    useCases: [
+      "SMB wanting a free, open-source ERP to replace disconnected spreadsheets",
+      "Growing company starting with CRM and accounting, then adding inventory and manufacturing",
+      "Budget-conscious organization seeking an affordable alternative to NetSuite or SAP",
+    ],
   },
   {
     slug: "erpnext",
@@ -158,6 +238,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🌐",
     domain: "erpnext.com",
+    pros: [
+      "Fully open-source with zero licensing costs for self-hosted deployments",
+      "Comprehensive modules: accounting, inventory, manufacturing, HR, project management",
+      "Frappe Cloud offers affordable managed hosting if you prefer not to self-host",
+      "Active community contributing features and translations",
+      "Simple, modern interface that is easier to learn than legacy ERPs",
+    ],
+    cons: [
+      "Self-hosted deployments require Linux server administration skills",
+      "Fewer enterprise-grade features than NetSuite or SAP",
+      "Limited local partner ecosystem for implementation support",
+      "Customizations require Python/JavaScript knowledge on the Frappe framework",
+    ],
+    useCases: [
+      "Nonprofit or educational institution needing comprehensive ERP at minimal cost",
+      "Small manufacturer in a developing market wanting free manufacturing ERP",
+      "Startup wanting to self-host a full-featured ERP without licensing fees",
+    ],
   },
   {
     slug: "syspro",
@@ -171,6 +269,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🔩",
     domain: "syspro.com",
+    pros: [
+      "Deep manufacturing and distribution functionality out of the box",
+      "Strong lot and serial number traceability for regulated industries",
+      "Cloud, on-premises, and hybrid deployment flexibility",
+      "Focused on mid-market — appropriately scoped and priced",
+      "Good compliance support for food, pharma, and electronics industries",
+    ],
+    cons: [
+      "Smaller partner and integration ecosystem than SAP or Microsoft",
+      "Limited HR and payroll features — requires third-party integrations",
+      "User interface is functional but not as modern as cloud-native competitors",
+      "Reporting tools are less flexible than competitors with embedded BI",
+    ],
+    useCases: [
+      "Food and beverage manufacturer needing lot traceability and compliance",
+      "Electronics manufacturer tracking serial numbers through production and distribution",
+      "Mid-market distributor managing multi-warehouse inventory with demand planning",
+    ],
   },
   {
     slug: "workday",
@@ -184,6 +300,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🌅",
     domain: "workday.com",
+    pros: [
+      "Best-in-class HCM (Human Capital Management) integrated with financial management",
+      "Modern, intuitive user interface with high employee adoption rates",
+      "Continuous innovation model delivers new features without disruptive upgrades",
+      "Powerful analytics and machine learning for workforce and financial planning",
+      "True cloud architecture with no on-premise option — always current",
+    ],
+    cons: [
+      "Very expensive — primarily serves large enterprises with significant budgets",
+      "Weaker in supply chain, manufacturing, and operational modules",
+      "Limited customization compared to SAP or Oracle for complex processes",
+      "Implementation timelines are long (9-18 months) for large deployments",
+    ],
+    useCases: [
+      "Large enterprise unifying HR, payroll, and financial management on one platform",
+      "Organization prioritizing employee experience and modern workforce planning",
+      "Services-heavy company needing strong financial and people analytics together",
+    ],
   },
   {
     slug: "ifs-cloud",
@@ -197,6 +331,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🔧",
     domain: "ifs.com",
+    pros: [
+      "Industry-leading enterprise asset management and field service capabilities",
+      "Strong in asset-intensive industries: aerospace, energy, utilities, construction",
+      "Composable architecture — deploy only the modules you need",
+      "Moment of Service philosophy optimizes for customer-facing outcomes",
+      "Recognized by Gartner as a leader for EAM and FSM",
+    ],
+    cons: [
+      "Less well-known than SAP or Oracle in general enterprise ERP market",
+      "Limited applicability outside asset-intensive and service industries",
+      "Implementation requires IFS-certified partners for complex deployments",
+      "Financial management features are less deep than Sage Intacct or Workday",
+    ],
+    useCases: [
+      "Aerospace and defense company managing complex asset lifecycles",
+      "Energy or utilities company needing integrated EAM and field service",
+      "Construction firm managing projects, assets, and service delivery in one system",
+    ],
   },
   {
     slug: "qad-adaptive-erp",
@@ -210,6 +362,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🚗",
     domain: "qad.com",
+    pros: [
+      "Pre-configured for automotive, life sciences, consumer products, and food/beverage",
+      "Adaptive UX makes the platform accessible for plant floor and operations staff",
+      "Cloud-native architecture on AWS with strong global availability",
+      "Industry best practices reduce implementation time vs. generic ERPs",
+      "Strong supply chain planning and demand management capabilities",
+    ],
+    cons: [
+      "Narrow industry focus limits applicability outside manufacturing verticals",
+      "Smaller market presence and partner ecosystem than SAP or Oracle",
+      "Financial management depth is less than finance-first platforms",
+      "Pricing requires sales engagement — not publicly available",
+    ],
+    useCases: [
+      "Automotive supplier managing complex supply chain and production schedules",
+      "Life sciences manufacturer needing FDA compliance and lot traceability",
+      "Global manufacturer standardizing operations across multiple plants and regions",
+    ],
   },
   {
     slug: "plex-smart-manufacturing",
@@ -223,6 +393,24 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🏗️",
     domain: "plex.com",
+    pros: [
+      "Direct connectivity to shop floor equipment for real-time production data",
+      "Live OEE tracking and genealogy/traceability for quality management",
+      "Cloud-native — purpose-built for manufacturing from the ground up",
+      "Now backed by Rockwell Automation with industrial IoT integration",
+      "Strong in automotive, aerospace, food and beverage manufacturing",
+    ],
+    cons: [
+      "Financial management features are less comprehensive than broader ERPs",
+      "Primarily focused on discrete and process manufacturing — limited for other verticals",
+      "Rockwell Automation acquisition raises questions about future product direction",
+      "Implementation requires manufacturing process mapping and shop floor integration",
+    ],
+    useCases: [
+      "Discrete manufacturer wanting real-time shop floor visibility and OEE tracking",
+      "Automotive parts supplier needing genealogy tracking for quality compliance",
+      "Food manufacturer managing batch tracking, allergen control, and FSMA compliance",
+    ],
   },
   {
     slug: "genius-erp",
@@ -236,5 +424,23 @@ export const ERP_TOOLS: ERPTool[] = [
     featured: false,
     logo: "🛠️",
     domain: "geniuserp.com",
+    pros: [
+      "Purpose-built for engineer-to-order and make-to-order manufacturing",
+      "Strong estimating and quoting tools for custom jobs",
+      "Project-based costing tracks profitability per job in real time",
+      "Engineering change management handles design revisions smoothly",
+      "Shop floor scheduling optimized for job shop environments",
+    ],
+    cons: [
+      "Narrow focus — not suitable for make-to-stock or non-manufacturing businesses",
+      "Smaller vendor with limited geographic presence outside North America",
+      "Fewer third-party integrations than broader ERP platforms",
+      "Financial management depth is lighter than full-featured ERPs",
+    ],
+    useCases: [
+      "Custom fabrication shop managing complex job costing and estimating",
+      "Engineer-to-order manufacturer tracking BOMs through design revisions",
+      "Contract manufacturer needing project-based costing and shop floor scheduling",
+    ],
   },
 ];

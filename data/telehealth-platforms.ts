@@ -31,6 +31,32 @@ export const TELEHEALTH_CATEGORIES: Record<TelehealthCategory, { label: string; 
   "chronic-care": { label: "Chronic Care", emoji: "💊", description: "Ongoing management for chronic conditions like diabetes, hypertension, and thyroid disorders.", gradient: "from-amber-600/30 to-orange-800/40" },
 };
 
+export const TELEHEALTH_EDITORIAL = {
+  title: "How to Choose the Right Telehealth Platform in 2026",
+  intro: `Telehealth platforms connect patients with licensed healthcare providers through video visits, phone calls, and asynchronous messaging for everything from urgent care and primary care to mental health, dermatology, and chronic condition management. Since the pandemic accelerated adoption, telehealth has become a permanent fixture of healthcare delivery, with most major insurance plans now covering virtual visits at the same rate as in-person appointments.\n\nThe telehealth landscape includes general platforms offering broad primary and urgent care (like Teladoc and MDLIVE), specialists focused on mental health (BetterHelp, Cerebral), and niche platforms for specific conditions like weight management, hormone therapy, or dermatology. Pricing models vary from per-visit fees ($50 to $100 without insurance) to monthly memberships ($15 to $100) that include a set number of visits and messaging access.\n\nWhen choosing a telehealth platform, the most important factors are provider availability in your state, insurance acceptance, and whether the platform treats your specific condition. Telehealth works exceptionally well for mental health, medication management, skin conditions, cold and flu symptoms, and chronic disease monitoring. It is less suitable for conditions requiring physical examination, lab work, or imaging, though many platforms now integrate with local labs and pharmacies to bridge these gaps.`,
+  buyerGuide: [
+    "Insurance and pricing -- Check whether the platform accepts your specific insurance plan, as coverage varies by state and insurer. Some platforms offer membership models that can be more affordable than copays for frequent users without insurance.",
+    "Provider licensing by state -- Telehealth providers must be licensed in your state. Verify that the platform has providers available in your location, especially if you live in a rural area or a state with fewer participating doctors.",
+    "Specialty coverage -- General platforms handle common conditions well, but if you need ongoing mental health care, dermatology, or chronic disease management, a specialized platform often provides better outcomes and continuity of care.",
+    "Wait times and availability -- Some platforms offer on-demand visits within minutes while others require scheduling appointments days in advance. If you need quick urgent care access, prioritize platforms advertising same-day or on-demand availability.",
+    "Prescription capabilities -- Most telehealth platforms can prescribe common medications and send them to your local pharmacy. However, controlled substances have stricter telehealth prescribing rules that vary by state, so verify this if relevant to your needs.",
+  ],
+  faq: [
+    {
+      question: "Does insurance cover telehealth visits?",
+      answer: "Most major insurance plans, including Medicare, now cover telehealth visits for a wide range of conditions, often at the same copay as in-person visits. However, coverage varies by plan and state. Contact your insurer or check the telehealth platform's insurance verification tool before your first visit.",
+    },
+    {
+      question: "Can telehealth doctors prescribe medications?",
+      answer: "Yes, telehealth providers can prescribe most medications including antibiotics, blood pressure drugs, antidepressants, and skin treatments. Prescriptions for controlled substances like stimulants or anxiety medications have additional restrictions that vary by state and may require an in-person evaluation first.",
+    },
+    {
+      question: "Is telehealth appropriate for mental health treatment?",
+      answer: "Telehealth is one of the most effective applications for mental health care. Research consistently shows that therapy and psychiatric medication management delivered via video are as effective as in-person treatment for most conditions including depression, anxiety, PTSD, and ADHD.",
+    },
+  ],
+};
+
 export const TELEHEALTH_TOOLS: TelehealthTool[] = [
   // ── PRIMARY CARE ────────────────────────────────────────────────────────
   {
@@ -165,6 +191,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "🍎",
     domain: "plushcare.com",
+    pros: [
+      "Physicians from top-50 medical schools provide high-quality care",
+      "Focus on ongoing doctor-patient relationships rather than one-off visits",
+      "Handles prescriptions, lab orders, referrals, and preventive care",
+      "Choose and keep the same primary care doctor across visits",
+    ],
+    cons: [
+      "Membership model requires monthly fee even during months without visits",
+      "Not designed for urgent care — visits require scheduling in advance",
+      "Higher cost than on-demand platforms for occasional use",
+    ],
+    useCases: [
+      "Patient wanting a virtual primary care relationship with a top-quality physician",
+      "Person needing ongoing prescription management and regular check-ups remotely",
+      "Health-conscious individual seeking preventive care through scheduled video appointments",
+    ],
   },
   // ── MENTAL HEALTH ───────────────────────────────────────────────────────
   {
@@ -179,6 +221,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: true,
     logo: "🧠",
     domain: "cerebral.com",
+    pros: [
+      "Subscription includes prescriber visits, medication delivery, and optional therapy",
+      "Works with most major insurance plans to reduce out-of-pocket costs",
+      "Handles prior authorizations for medications on your behalf",
+      "Focus on anxiety, depression, and insomnia — the most common mental health conditions",
+    ],
+    cons: [
+      "Past regulatory scrutiny around prescribing practices has affected reputation",
+      "Cancellation process has drawn complaints from some subscribers",
+      "Not suitable for severe mental health conditions requiring in-person care",
+    ],
+    useCases: [
+      "Person with anxiety or depression wanting online psychiatry with medication management",
+      "Patient needing medications delivered to their door with prescriber oversight",
+      "Individual wanting to combine therapy and psychiatry in one subscription platform",
+    ],
   },
   {
     slug: "talkspace",
@@ -192,6 +250,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "💬",
     domain: "talkspace.com",
+    pros: [
+      "Multiple communication modes including text, audio, and video sessions",
+      "Messaging-based therapy allows asynchronous communication between sessions",
+      "Insurance accepted from many major carriers to reduce costs",
+      "Both ongoing subscription and single-session options available",
+    ],
+    cons: [
+      "Therapist quality can vary — switching therapists may be necessary",
+      "Text-based therapy may feel impersonal compared to face-to-face sessions",
+      "Without insurance, subscription costs can be significant monthly",
+    ],
+    useCases: [
+      "Person who prefers text-based therapy for processing thoughts between live sessions",
+      "Patient with insurance wanting online therapy covered by their plan",
+      "Individual seeking flexible therapy that fits around a busy schedule",
+    ],
   },
   {
     slug: "betterhelp",
@@ -205,6 +279,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "💚",
     domain: "betterhelp.com",
+    pros: [
+      "Largest online therapy platform with the widest selection of therapists",
+      "Matching algorithm pairs clients with therapists based on preferences and issues",
+      "Weekly live sessions plus unlimited messaging included in subscription",
+      "Financial aid available for qualifying users to reduce costs",
+    ],
+    cons: [
+      "Does not accept insurance — all payments are out-of-pocket",
+      "Therapists are contractors, which can affect long-term availability",
+      "Monthly cost of $65-$100+ may be prohibitive without insurance reimbursement",
+    ],
+    useCases: [
+      "Person seeking therapy for the first time who wants easy matching with a licensed therapist",
+      "Individual who benefits from unlimited messaging between live sessions",
+      "User needing financial aid to make therapy affordable on a limited budget",
+    ],
   },
   // ── URGENT CARE ─────────────────────────────────────────────────────────
   {
@@ -219,6 +309,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "🟡",
     domain: "sesamecare.com",
+    pros: [
+      "Transparent upfront pricing starting as low as $26 for telehealth visits",
+      "No insurance required — pay directly for exactly the care you need",
+      "Covers primary care, dental, mental health, and specialist visits",
+      "Ideal for uninsured or underinsured patients seeking affordable care",
+    ],
+    cons: [
+      "Prices are out-of-pocket and cannot be submitted to insurance for reimbursement on most plans",
+      "Provider availability varies by location and specialty",
+      "No continuity-of-care model — each visit may be with a different provider",
+    ],
+    useCases: [
+      "Uninsured person needing an affordable telehealth visit without insurance hassles",
+      "Patient wanting to see a specialist at a transparent, pre-set price",
+      "Person with a high-deductible plan seeking cheaper direct-pay care for routine issues",
+    ],
   },
   {
     slug: "k-health",
@@ -232,6 +338,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "🤖",
     domain: "khealth.com",
+    pros: [
+      "AI symptom checker compares against billions of clinical data points before physician consultation",
+      "Affordable per-visit pricing and subscription plans available",
+      "AI triage helps determine urgency and appropriate care level",
+      "Board-certified physicians available for virtual consultations",
+    ],
+    cons: [
+      "AI triage may feel impersonal for patients preferring direct human interaction",
+      "Not suitable for complex or chronic conditions requiring ongoing management",
+      "Limited specialist access compared to full-service telehealth platforms",
+    ],
+    useCases: [
+      "Person with symptoms wanting an AI-powered initial assessment before seeing a doctor",
+      "Patient seeking affordable primary care without insurance",
+      "Tech-savvy user who wants data-driven health insights alongside physician consultations",
+    ],
   },
   {
     slug: "98point6",
@@ -245,6 +367,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "🌡️",
     domain: "98point6.com",
+    pros: [
+      "Text-first approach makes visits completable during a work break",
+      "AI gathers symptoms and history before connecting with a physician",
+      "Efficient consultations for straightforward medical concerns",
+      "Popular as an employer benefit with low per-visit cost",
+    ],
+    cons: [
+      "Text-based format may not suit patients who prefer face-to-face video",
+      "Not appropriate for conditions requiring visual examination",
+      "Primarily available as an employer benefit rather than direct consumer purchase",
+    ],
+    useCases: [
+      "Employee using an employer-provided benefit for a quick text-based medical consultation",
+      "Person wanting efficient care for a UTI, cold, or skin rash via text chat",
+      "Busy professional who needs a doctor consultation during a short break",
+    ],
   },
   // ── SPECIALIST ──────────────────────────────────────────────────────────
   {
@@ -259,6 +397,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "💊",
     domain: "forhims.com",
+    pros: [
+      "Discreet consultations for sensitive health topics like hair loss and sexual health",
+      "Prescription medication delivered directly to your door in plain packaging",
+      "Separate platforms for men (Hims) and women (Hers) with gender-specific offerings",
+      "Affordable subscription pricing for ongoing treatment plans",
+    ],
+    cons: [
+      "Focused on specific consumer health categories rather than comprehensive primary care",
+      "Does not accept insurance — all payments are out-of-pocket",
+      "Consultation quality varies since providers are seeing many patients daily",
+    ],
+    useCases: [
+      "Person seeking discreet treatment for hair loss or sexual health concerns",
+      "Patient wanting prescription skin care delivered monthly with provider oversight",
+      "Individual looking for affordable online access to mental health medication",
+    ],
   },
   {
     slug: "ro",
@@ -272,6 +426,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "🏥",
     domain: "ro.co",
+    pros: [
+      "Vertically integrated model handles consultation through medication manufacturing and delivery",
+      "In-home diagnostic testing available for lab work without visiting a clinic",
+      "Covers weight management, men's health, women's health, and smoking cessation",
+      "Pharmacy delivery ensures medication arrives conveniently at home",
+    ],
+    cons: [
+      "Does not accept insurance for most services",
+      "Focused on specific health categories rather than comprehensive care",
+      "Pricing can be higher than generic medication alternatives at a local pharmacy",
+    ],
+    useCases: [
+      "Person wanting end-to-end care from consultation to medication delivery for weight management",
+      "Patient who prefers at-home diagnostic testing over visiting a lab or clinic",
+      "Individual seeking a comprehensive telehealth experience for men's or women's health needs",
+    ],
   },
   // ── CHRONIC CARE ────────────────────────────────────────────────────────
   {
@@ -286,6 +456,22 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "🍋",
     domain: "lemonaidhealth.com",
+    pros: [
+      "Fast consultation process often results in a prescription within hours",
+      "Streamlined for specific conditions like UTIs, cold sores, and birth control",
+      "Medications can be delivered directly or sent to a local pharmacy",
+      "Affordable per-visit pricing without subscription commitments",
+    ],
+    cons: [
+      "Limited to specific treatable conditions — not a general primary care platform",
+      "Consultation is typically a brief questionnaire reviewed by a doctor, not a full visit",
+      "Does not accept insurance for most services",
+    ],
+    useCases: [
+      "Person with a UTI wanting fast prescription access without an office visit",
+      "Patient needing a birth control prescription renewed conveniently online",
+      "Individual with a cold sore seeking quick antiviral medication delivery",
+    ],
   },
   {
     slug: "healthtap",
@@ -299,5 +485,21 @@ export const TELEHEALTH_TOOLS: TelehealthTool[] = [
     featured: false,
     logo: "❤️",
     domain: "healthtap.com",
+    pros: [
+      "Unlimited virtual visits through affordable monthly membership",
+      "24/7 access to board-certified doctors with no per-visit fees",
+      "Membership model is especially cost-effective for frequent users",
+      "Ideal for people without insurance or with high-deductible plans",
+    ],
+    cons: [
+      "Monthly membership fee applies even during months without visits",
+      "Provider continuity may be limited with rotating doctor pool",
+      "Not suitable for conditions requiring in-person examination or specialist care",
+    ],
+    useCases: [
+      "Uninsured person needing regular medical access at a predictable monthly cost",
+      "Person with a high-deductible plan who wants unlimited visits without copay worries",
+      "Individual with recurring minor health issues who benefits from frequent doctor access",
+    ],
   },
 ];

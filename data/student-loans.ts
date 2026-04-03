@@ -26,6 +26,32 @@ export const STUDENT_LOAN_CATEGORIES: Record<StudentLoanCategory, { label: strin
   "income-driven": { label: "Income-Driven Repayment", emoji: "📊", description: "Federal repayment plans that cap monthly payments based on your income and family size.", gradient: "from-teal-600/30 to-cyan-800/40" },
 };
 
+export const STUDENT_LOAN_EDITORIAL = {
+  title: "How to Choose the Right Student Loan in 2026",
+  intro: `Student loans are the primary way most Americans finance higher education, with total outstanding student debt exceeding $1.7 trillion. Understanding the difference between federal and private loans, and choosing the right repayment strategy, can save borrowers tens of thousands of dollars over the life of their loans. The landscape has changed significantly in recent years with new income-driven repayment plans and evolving forgiveness programs.\n\nFederal student loans should always be your first option. They offer fixed interest rates, income-driven repayment plans, deferment and forbearance protections, and access to loan forgiveness programs that private lenders simply cannot match. Only after exhausting federal aid should you consider private student loans, which may offer lower rates for borrowers with excellent credit but lack the safety nets that make federal loans so valuable.\n\nFor current borrowers, refinancing can be a powerful tool if you have strong credit and stable income, potentially saving thousands by securing a lower interest rate. However, refinancing federal loans into private loans means permanently giving up access to income-driven repayment, Public Service Loan Forgiveness, and federal forbearance protections -- a tradeoff that is rarely worth it unless you are certain you will never need those benefits.`,
+  buyerGuide: [
+    "Federal first -- Always exhaust federal loan options through FAFSA before considering private loans, since federal loans offer income-driven repayment, forgiveness programs, and hardship protections that private lenders cannot match.",
+    "Interest rate type -- Federal loans have fixed rates set annually by Congress, while private loans may offer fixed or variable rates. Variable rates start lower but can increase significantly over a 10 to 20 year repayment period.",
+    "Repayment flexibility -- Look for lenders offering multiple repayment plans, grace periods after graduation, and hardship forbearance options in case your financial situation changes unexpectedly.",
+    "Cosigner release -- If you need a cosigner for a private loan, check whether the lender offers cosigner release after a certain number of on-time payments, typically 24 to 48 consecutive months.",
+    "Refinancing terms -- When refinancing, compare both the interest rate and the loan term. A lower rate with a longer term might reduce monthly payments but cost more in total interest over the life of the loan.",
+  ],
+  faq: [
+    {
+      question: "What is the difference between subsidized and unsubsidized federal loans?",
+      answer: "Subsidized loans are available to undergraduates with demonstrated financial need, and the government pays the interest while you are in school. Unsubsidized loans are available regardless of need, but interest accrues from the day the loan is disbursed, increasing your total balance.",
+    },
+    {
+      question: "Should I refinance my federal student loans?",
+      answer: "Only refinance federal loans if you have a high income, strong credit, and are certain you will never need federal protections like income-driven repayment or Public Service Loan Forgiveness. Once you refinance into a private loan, you permanently lose access to all federal borrower benefits.",
+    },
+    {
+      question: "How does Public Service Loan Forgiveness work?",
+      answer: "PSLF forgives the remaining balance on federal Direct Loans after you make 120 qualifying monthly payments while working full-time for an eligible employer such as a government agency or nonprofit. You must be on an income-driven repayment plan, and only payments made after October 2007 count.",
+    },
+  ],
+};
+
 export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
   {
     slug: "federal-student-aid",
@@ -119,6 +145,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🔶",
     domain: "discover.com",
+    pros: [
+      "Unique 1% cash back reward on loan amount for students with a 3.0+ GPA",
+      "No origination fees or application fees",
+      "Multiple repayment options including deferred and interest-only",
+      "Covers undergraduate, graduate, and professional degree programs",
+    ],
+    cons: [
+      "Cash back reward is only disbursed after graduation, not during school",
+      "Private loans lack federal protections like income-driven repayment",
+      "Variable rates can increase substantially over the loan term",
+    ],
+    useCases: [
+      "High-achieving student wanting to earn cash back on their student loan balance",
+      "Family comparing private loan options with no-fee structures",
+      "Graduate student needing supplemental funding beyond federal aid",
+    ],
   },
   {
     slug: "citizens-bank-student",
@@ -132,6 +174,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🏦",
     domain: "citizensbank.com",
+    pros: [
+      "Multi-year approval covers up to 10 years of schooling without reapplying",
+      "Loyalty rate discount for existing Citizens Bank customers",
+      "Both private student loans and refinancing available from one lender",
+      "Competitive rates for borrowers with strong credit profiles",
+    ],
+    cons: [
+      "Best rates require an existing banking relationship with Citizens Bank",
+      "Co-signer may be required for students without established credit",
+      "Private loans do not include federal borrower protections",
+    ],
+    useCases: [
+      "Current Citizens Bank customer wanting a loyalty discount on student loans",
+      "Student in a long degree program who wants multi-year approval convenience",
+      "Borrower looking to consolidate student loans and banking with one institution",
+    ],
   },
   {
     slug: "commonbond",
@@ -145,6 +203,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🤝",
     domain: "commonbond.co",
+    pros: [
+      "Social mission funds a child's education for every loan funded through Pencils of Promise",
+      "Unique hybrid rate option starts variable and converts to fixed mid-term",
+      "Competitive fixed and variable rate options for qualified borrowers",
+      "No application or origination fees",
+    ],
+    cons: [
+      "Requires strong credit and income for the best rates",
+      "Refinancing federal loans eliminates access to federal protections",
+      "Smaller lender with less widespread brand recognition",
+    ],
+    useCases: [
+      "Borrower who values socially conscious lending and wants their loan to fund education abroad",
+      "Refinancer interested in a hybrid rate that provides variable savings with fixed-rate security later",
+      "Graduate with strong income seeking competitive refinancing from a mission-driven lender",
+    ],
   },
   {
     slug: "ascent-student-loans",
@@ -158,6 +232,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "📈",
     domain: "ascentstudentloans.com",
+    pros: [
+      "Non-co-signed loan option available for juniors and seniors with strong academics",
+      "One of the few lenders offering loans based on academic performance rather than credit alone",
+      "Competitive rates for co-signed loans with creditworthy co-signers",
+      "1% cash back graduation reward for on-time payments",
+    ],
+    cons: [
+      "Non-co-signed option is only available to upperclassmen at qualifying schools",
+      "Interest rates on non-co-signed loans tend to be higher",
+      "Private loans lack federal income-driven repayment and forgiveness options",
+    ],
+    useCases: [
+      "Independent student without a co-signer who has strong grades and is close to graduation",
+      "Upperclassman at an eligible school who cannot find a co-signer for a traditional private loan",
+      "Student wanting a lender that rewards academic performance with loan access",
+    ],
   },
   {
     slug: "mpower-financing",
@@ -171,6 +261,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🌍",
     domain: "mpowerfinancing.com",
+    pros: [
+      "No co-signer or collateral required for international and DACA students",
+      "Uses future earning potential rather than US credit history for approval",
+      "Available at top US and Canadian universities",
+      "Fixed interest rates provide predictable monthly payments",
+    ],
+    cons: [
+      "Only available to students at approved partner universities",
+      "Loan amounts may not cover the full cost of attendance",
+      "Interest rates are higher than loans available to borrowers with established US credit",
+    ],
+    useCases: [
+      "International student studying in the US who has no US-based co-signer",
+      "DACA recipient attending a partner university who cannot access federal student aid",
+      "Graduate student from abroad seeking funding without collateral requirements",
+    ],
   },
   {
     slug: "splash-financial",
@@ -184,6 +290,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "💦",
     domain: "splashfinancial.com",
+    pros: [
+      "Compare offers from multiple lenders with a single application",
+      "Particularly strong partnerships for healthcare professional refinancing",
+      "Free to use with no obligation to accept any offer",
+      "Soft credit pull for initial rate comparison does not affect credit score",
+    ],
+    cons: [
+      "Not a direct lender — rates and terms are set by partner institutions",
+      "Fewer lender options compared to larger marketplaces like Credible",
+      "Refinancing federal loans means losing income-driven repayment and forgiveness",
+    ],
+    useCases: [
+      "Healthcare professional with high student debt wanting specialized refinancing options",
+      "Borrower who wants to compare rates from multiple lenders without multiple credit pulls",
+      "Graduate wanting to quickly see the best available refinancing rate across partners",
+    ],
   },
   {
     slug: "laurel-road-student",
@@ -197,6 +319,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🌿",
     domain: "laurelroad.com",
+    pros: [
+      "Specialized rates and terms designed for healthcare professionals",
+      "Understands the unique financial trajectory of doctors, dentists, and nurses",
+      "No application or origination fees",
+      "Backed by KeyBank with strong financial stability",
+    ],
+    cons: [
+      "Best rates are limited to healthcare and certain professional fields",
+      "Refinancing federal loans forfeits income-driven repayment and PSLF eligibility",
+      "Minimum loan amounts may exclude smaller balances",
+    ],
+    useCases: [
+      "Medical resident with high loan balances wanting a lender that understands their career trajectory",
+      "Dentist or pharmacist seeking specialized refinancing terms for professional school debt",
+      "Nurse wanting lower rates from a lender focused on healthcare workers",
+    ],
   },
   {
     slug: "penfed-student",
@@ -210,6 +348,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "penfed.org",
+    pros: [
+      "Credit union rates are often lower than traditional bank offerings",
+      "No application fees, origination fees, or prepayment penalties",
+      "Refinancing amounts up to $300,000 for high-balance borrowers",
+      "Open membership means anyone can join PenFed to access rates",
+    ],
+    cons: [
+      "Requires PenFed Credit Union membership to apply",
+      "Minimum refinancing amount of $7,500 may exclude small balances",
+      "Refinancing federal loans means permanently losing federal protections",
+    ],
+    useCases: [
+      "Borrower with a large loan balance wanting competitive credit union refinancing rates",
+      "Person willing to join a credit union to access lower student loan rates",
+      "Professional with excellent credit seeking a no-fee refinancing option",
+    ],
   },
   {
     slug: "elfi",
@@ -223,6 +377,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "🎓",
     domain: "elfi.com",
+    pros: [
+      "Personal loan advisors provide guided support throughout the refinancing process",
+      "Backed by SouthEast Bank with established banking institution credibility",
+      "Simple online application with fast pre-qualification",
+      "Competitive rates for both undergraduate and graduate loan refinancing",
+    ],
+    cons: [
+      "Smaller lender with fewer customer reviews than major competitors",
+      "Limited to refinancing — does not offer new student loans for current students",
+      "Refinancing federal loans eliminates income-driven repayment and forgiveness",
+    ],
+    useCases: [
+      "Borrower who wants personalized guidance from a loan advisor during refinancing",
+      "Graduate wanting to refinance with a bank-backed lender rather than a fintech startup",
+      "Refinancer seeking competitive rates from a lesser-known lender that may offer better terms",
+    ],
   },
   {
     slug: "credible",
@@ -236,5 +406,22 @@ export const STUDENT_LOAN_TOOLS: StudentLoanTool[] = [
     featured: false,
     logo: "✅",
     domain: "credible.com",
+    pros: [
+      "Compare personalized rates from up to 10 lenders with a single soft credit pull",
+      "No impact on credit score during the comparison process",
+      "Transparent side-by-side rate comparisons make evaluation easy",
+      "Free to use with no obligation to accept any offer",
+      "Covers both new student loans and refinancing products",
+    ],
+    cons: [
+      "Not a direct lender — acts as a marketplace connecting borrowers with lenders",
+      "Final rates may differ from initial estimates after full application",
+      "Not all lenders on the platform are available in every state",
+    ],
+    useCases: [
+      "Borrower wanting to comparison-shop refinancing rates without multiple hard credit pulls",
+      "Student seeking the best private loan rate across multiple lenders simultaneously",
+      "Person who wants transparent rate comparisons before committing to a single lender",
+    ],
   },
 ];

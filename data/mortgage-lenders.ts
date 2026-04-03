@@ -26,6 +26,32 @@ export const MORTGAGE_LENDER_CATEGORIES: Record<MortgageLenderCategory, { label:
   "refinance": { label: "Refinance", emoji: "🔄", description: "Replace your existing mortgage with a new loan at a lower rate or better terms to reduce monthly payments.", gradient: "from-orange-600/30 to-amber-800/40" },
 };
 
+export const MORTGAGE_LENDER_EDITORIAL = {
+  title: "How to Choose the Right Mortgage Lender in 2026",
+  intro: `Choosing a mortgage lender is one of the most consequential financial decisions you will make. The difference between lenders can add up to tens of thousands of dollars over the life of a loan in interest, fees, and closing costs. With options ranging from online-only lenders offering streamlined digital experiences to traditional banks and credit unions with in-person service, understanding what to compare is essential.\n\nMortgage rates in 2026 continue to fluctuate based on Federal Reserve policy, inflation data, and housing market conditions. Beyond the interest rate itself, borrowers should compare annual percentage rates (APR), which factor in origination fees, discount points, and other costs to give a truer picture of what you will actually pay. Pre-approval from multiple lenders within a 45-day window counts as a single credit inquiry, so shopping around has virtually no downside.\n\nThe type of loan you need also shapes which lender is best. FHA loans have different lender requirements than conventional or VA loans, and jumbo loans require specialized underwriting. Some lenders excel at speed and convenience while others offer more competitive rates for complex financial profiles like self-employment income or investment property purchases.`,
+  buyerGuide: [
+    "Compare APR, not just interest rate -- the annual percentage rate includes origination fees, points, and other costs, giving you a more accurate picture of total borrowing cost than the headline rate alone.",
+    "Evaluate loan program breadth -- the best lenders offer conventional, FHA, VA, USDA, and jumbo options so you can be matched to the program that saves you the most rather than being shoehorned into limited offerings.",
+    "Assess closing speed and digital experience -- if you are in a competitive housing market, a lender that can close in 21 days with a smooth online process gives you a meaningful advantage over one that takes 45-60 days.",
+    "Understand fee transparency -- request a detailed Loan Estimate from each lender and compare origination charges, third-party fees, and lender credits line by line; some lenders advertise low rates but make it up in higher fees.",
+    "Check customer service and communication -- read reviews focused on responsiveness during the underwriting and closing process, since poor communication from your lender can delay or even derail a home purchase.",
+  ],
+  faq: [
+    {
+      question: "How many mortgage lenders should I get quotes from?",
+      answer: "Research consistently shows that comparing at least three to five lenders yields significant savings. A study by Freddie Mac found that borrowers who got five quotes saved an average of $3,000 over the life of their loan compared to those who only got one. All inquiries within a 45-day window count as a single hit on your credit score.",
+    },
+    {
+      question: "What is the difference between a mortgage lender and a mortgage broker?",
+      answer: "A mortgage lender funds your loan directly using its own capital or a warehouse line of credit. A mortgage broker shops your application across multiple lenders to find the best deal but does not fund the loan itself. Brokers can offer more variety but may charge a broker fee, while direct lenders sometimes offer exclusive rate discounts.",
+    },
+    {
+      question: "Should I choose an online lender or a local bank for my mortgage?",
+      answer: "Online lenders typically offer faster processing, lower overhead costs that can translate to better rates, and 24/7 digital access. Local banks and credit unions may offer relationship discounts, portfolio lending for unique situations, and face-to-face support. The best choice depends on whether you prioritize speed and cost savings or personalized guidance.",
+    },
+  ],
+};
+
 export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
   {
     slug: "rocket-mortgage",
@@ -119,6 +145,24 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "⚓",
     domain: "navyfederal.org",
+    pros: [
+      "HomeBuyers Choice mortgage requires no PMI, saving hundreds per month",
+      "Consistently top-rated for member satisfaction among mortgage lenders",
+      "Competitive rates that often beat traditional banks and online lenders",
+      "Dedicated mortgage specialists who understand military family needs",
+      "Credit union structure means profits benefit members rather than shareholders",
+    ],
+    cons: [
+      "Membership limited to military, veterans, DoD personnel, and their families",
+      "Branch locations are concentrated near military installations",
+      "Online experience is functional but less polished than dedicated digital lenders",
+      "Processing times can be slower during high-volume periods",
+    ],
+    useCases: [
+      "Active-duty service member buying a first home with zero down using the HomeBuyers Choice program",
+      "Military family seeking a conventional loan without PMI to reduce monthly payments",
+      "Veteran comparing Navy Federal VA loan rates against dedicated VA lenders",
+    ],
   },
   {
     slug: "veterans-united",
@@ -132,6 +176,24 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "🎖️",
     domain: "veteransunited.com",
+    pros: [
+      "Largest VA purchase lender in the US with deep VA loan expertise",
+      "Free credit consulting helps veterans improve scores before applying",
+      "Dedicated VA loan specialists guide borrowers through the entire process",
+      "Educational resources help military borrowers maximize their VA benefits",
+      "Consistently earns the highest customer satisfaction scores in VA lending",
+    ],
+    cons: [
+      "Exclusively focused on VA loans with limited conventional or jumbo options",
+      "Not available to non-military borrowers seeking other loan types",
+      "Rates may not always be the lowest compared to credit unions like Navy Federal",
+      "Heavy reliance on phone-based communication rather than digital self-service",
+    ],
+    useCases: [
+      "First-time veteran homebuyer needing guidance on how to use VA loan benefits",
+      "Veteran with a lower credit score using the free credit consulting program before applying",
+      "Active-duty military member purchasing a home near a new duty station with zero down payment",
+    ],
   },
   {
     slug: "new-american-funding",
@@ -145,6 +207,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "🌎",
     domain: "newamericanfunding.com",
+    pros: [
+      "Strong commitment to expanding homeownership in underserved communities",
+      "Bilingual loan officers and culturally sensitive service across markets",
+      "Wide product range including FHA, VA, USDA, and non-QM options",
+      "iBuy Cash Offer program helps buyers compete in competitive markets",
+      "Flexible underwriting for borrowers with non-traditional income sources",
+    ],
+    cons: [
+      "Rates can be higher than online-only lenders with lower overhead",
+      "iBuy Cash Offer availability varies by market and property type",
+      "Processing speed can lag behind fully digital competitors",
+    ],
+    useCases: [
+      "First-time homebuyer in an underserved community seeking FHA loan guidance in Spanish",
+      "Self-employed borrower needing flexible underwriting through non-QM loan programs",
+      "Buyer using the iBuy Cash Offer to compete against all-cash investors in a hot market",
+    ],
   },
   {
     slug: "caliber-home-loans",
@@ -158,6 +237,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "📐",
     domain: "caliberhomeloans.com",
+    pros: [
+      "Expansive product lineup including non-QM and investment property loans",
+      "Deep expertise in specialty lending for complex borrower scenarios",
+      "Large network of loan consultants available for personalized guidance",
+      "Strong jumbo loan capabilities for high-value property purchases",
+    ],
+    cons: [
+      "Customer service reviews are mixed across different regions",
+      "Digital application experience is less refined than tech-forward competitors",
+      "Origination fees can be above average for standard loan products",
+      "Company ownership changes have caused some operational disruptions",
+    ],
+    useCases: [
+      "Real estate investor seeking financing for a rental property through non-QM programs",
+      "High-net-worth buyer needing a jumbo loan with specialized underwriting",
+      "Self-employed borrower with bank statement income needing alternative documentation loans",
+    ],
   },
   {
     slug: "pennymac",
@@ -171,6 +267,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "💰",
     domain: "pennymac.com",
+    pros: [
+      "Competitive rates bolstered by scale as one of the largest US lenders",
+      "Transparent online pricing tools show rates without requiring personal information",
+      "Strong loan servicing track record means your loan likely stays with PennyMac",
+      "Wide range of loan products covering conventional, FHA, VA, USDA, and jumbo",
+    ],
+    cons: [
+      "Limited in-person support with no physical branch locations",
+      "Customer service quality has drawn mixed reviews for responsiveness",
+      "Loan origination process is less streamlined than tech-native competitors",
+      "Pre-approval process may require more documentation upfront than some lenders",
+    ],
+    useCases: [
+      "Rate-sensitive borrower comparing online quotes across multiple lenders",
+      "Homeowner seeking to refinance with a lender that will likely service the loan long-term",
+      "First-time buyer wanting to compare FHA and conventional rates side-by-side online",
+    ],
   },
   {
     slug: "amerisave",
@@ -184,6 +297,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "💵",
     domain: "amerisave.com",
+    pros: [
+      "Real-time rate quotes available online for easy comparison shopping",
+      "Licensed in 49 states providing broad geographic availability",
+      "Competitive pricing across conventional, FHA, VA, and refinance products",
+      "Mostly digital application process reduces paperwork and speeds approval",
+    ],
+    cons: [
+      "Customer service is primarily phone-based which can mean long hold times",
+      "No physical branch locations for in-person consultations",
+      "Online experience is functional but not as polished as top digital lenders",
+      "Limited educational resources for first-time homebuyers",
+    ],
+    useCases: [
+      "Borrower shopping rates across multiple lenders using AmeriSave's real-time online quotes",
+      "Homeowner seeking to refinance from an FHA to a conventional loan at a lower rate",
+      "Rate-conscious buyer in a less competitive market where closing speed is not the top priority",
+    ],
   },
   {
     slug: "crosscountry-mortgage",
@@ -197,6 +327,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "🔀",
     domain: "crosscountrymortgage.com",
+    pros: [
+      "Comprehensive product range including renovation, non-QM, and government loans",
+      "Fast processing times compared to many traditional lenders",
+      "Strong customer service reputation with high satisfaction ratings",
+      "Growing national presence with experienced licensed loan officers",
+    ],
+    cons: [
+      "Rates may not be the most competitive for straightforward conventional loans",
+      "Digital tools lag behind tech-native online lenders",
+      "Loan officer experience varies across the rapidly growing network",
+      "Less brand recognition than established national lenders",
+    ],
+    useCases: [
+      "Buyer purchasing a fixer-upper who needs an FHA 203(k) renovation loan",
+      "Borrower with non-traditional income seeking flexible non-QM options",
+      "First-time homebuyer needing personalized guidance through the FHA loan process",
+    ],
   },
   {
     slug: "fairway-independent",
@@ -210,6 +357,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "⚖️",
     domain: "fairwaymc.com",
+    pros: [
+      "Consistently recognized for exceptional customer service and employee satisfaction",
+      "Nationwide network of loan officers known for personalized community-focused service",
+      "Broad product offering including conventional, FHA, VA, USDA, and reverse mortgages",
+      "Strong reputation for fast and reliable closings",
+      "Community involvement and charitable initiatives set the company apart culturally",
+    ],
+    cons: [
+      "Rates may be slightly higher than discount online lenders",
+      "Digital tools and online experience are less advanced than tech-first competitors",
+      "Service quality depends heavily on the individual loan officer assigned",
+    ],
+    useCases: [
+      "Borrower who values a personal relationship with a dedicated local loan officer",
+      "Senior homeowner exploring reverse mortgage options with a trusted lender",
+      "First-time buyer needing patient guidance through USDA or FHA loan programs",
+    ],
   },
   {
     slug: "movement-mortgage",
@@ -223,6 +387,23 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "💚",
     domain: "movement.com",
+    pros: [
+      "Mission-driven model donates significant profits to community development",
+      "6-7-1 closing promise delivers industry-leading speed from underwriting to funding",
+      "Strong loan officer network with genuine community involvement focus",
+      "Full range of government and conventional loan products available",
+    ],
+    cons: [
+      "Rates are not always the most competitive due to the mission-driven cost structure",
+      "Digital tools and online self-service lag behind technology-first lenders",
+      "Availability and loan officer quality can vary by region",
+      "Less name recognition than established national lenders",
+    ],
+    useCases: [
+      "Socially conscious buyer who wants their mortgage to support affordable housing initiatives",
+      "Borrower in a competitive market who needs a lender that can close in under two weeks",
+      "First-time homebuyer seeking an FHA loan with a community-focused lender",
+    ],
   },
   {
     slug: "guild-mortgage",
@@ -236,5 +417,22 @@ export const MORTGAGE_LENDER_TOOLS: MortgageLenderTool[] = [
     featured: false,
     logo: "🏰",
     domain: "guildmortgage.com",
+    pros: [
+      "Over 60 years of mortgage industry experience and stability",
+      "Deep expertise in government-backed loans including FHA, VA, and USDA",
+      "Strong first-time homebuyer programs with down payment assistance options",
+      "Personalized service focused on helping buyers navigate complex loan programs",
+      "Reliable loan processing with experienced underwriting teams",
+    ],
+    cons: [
+      "Rates can be higher than discount online lenders for standard products",
+      "Digital tools and online experience are less advanced than newer competitors",
+      "Geographic coverage is stronger in western states than the East Coast",
+    ],
+    useCases: [
+      "First-time buyer needing down payment assistance and guidance through government loan programs",
+      "Rural homebuyer exploring USDA loan eligibility with an experienced lender",
+      "Buyer with limited savings looking for an FHA loan with the lowest possible down payment",
+    ],
   },
 ];

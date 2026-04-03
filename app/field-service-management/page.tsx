@@ -7,9 +7,13 @@ import {
   getFieldServiceCategoryCount,
   filterFieldServiceTools,
 } from "@/lib/field-service-management";
+import { FIELD_SERVICE_EDITORIAL } from "@/data/field-service-management";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function FieldServicePage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={FIELD_SERVICE_EDITORIAL.title}
+            intro={FIELD_SERVICE_EDITORIAL.intro}
+            buyerGuide={FIELD_SERVICE_EDITORIAL.buyerGuide}
+            faq={FIELD_SERVICE_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={FIELD_SERVICE_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/field-service-management"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function FieldServicePage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

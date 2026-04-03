@@ -51,6 +51,32 @@ export const TRAVEL_INSURANCE_CATEGORIES: Record<TravelInsuranceCategory, { labe
   },
 };
 
+export const TRAVEL_INSURANCE_EDITORIAL = {
+  title: "How to Choose the Right Travel Insurance in 2026",
+  intro: `Travel insurance protects against financial losses from trip cancellations, medical emergencies abroad, lost luggage, travel delays, and emergency evacuations. With international trip costs frequently running $3,000 to $10,000 or more per person, a comprehensive travel insurance policy typically costs just 4% to 8% of the trip price and can save you from catastrophic out-of-pocket expenses, especially for medical emergencies in countries without universal healthcare.\n\nThe travel insurance market includes comprehensive plans that bundle multiple coverages, specialty plans focused on specific risks like adventure sports or medical evacuation, and annual multi-trip plans for frequent travelers. The most important coverage for most travelers is emergency medical and evacuation insurance, since a hospital stay abroad can cost tens of thousands of dollars and a medical evacuation can exceed $100,000 -- costs that domestic health insurance typically does not cover.\n\nWhen comparing plans, pay close attention to coverage limits, exclusions, and the difference between primary and secondary coverage. Primary medical coverage pays first regardless of your domestic health insurance, while secondary coverage only kicks in after your regular insurance has paid. For trip cancellation, understand exactly which reasons are covered, as standard policies cover illness, injury, and death but typically exclude changing your mind or schedule conflicts unless you purchase a Cancel for Any Reason upgrade.`,
+  buyerGuide: [
+    "Emergency medical coverage limits -- Look for at least $100,000 in emergency medical coverage for international trips, and verify that the policy includes emergency medical evacuation with limits of $250,000 or more. Medical costs abroad can escalate rapidly.",
+    "Trip cancellation reasons covered -- Standard policies cover cancellation due to illness, injury, severe weather, and airline bankruptcy. If you want flexibility to cancel for any reason, you will need a CFAR (Cancel for Any Reason) add-on, which typically reimburses 50% to 75% of costs.",
+    "Pre-existing condition coverage -- Many policies exclude pre-existing medical conditions unless you purchase within 14 to 21 days of your initial trip deposit. If you have ongoing health conditions, buy early and verify the pre-existing condition waiver terms.",
+    "Primary vs. secondary medical coverage -- Primary coverage pays first without requiring you to file with your domestic insurer. Secondary coverage acts as backup after your regular insurance pays. Primary is significantly more convenient for international travelers.",
+    "Adventure sports and activities -- Standard policies often exclude activities like skiing, scuba diving, or bungee jumping. If your trip involves adventure sports, verify that your specific activities are covered or purchase an adventure sports rider.",
+  ],
+  faq: [
+    {
+      question: "Is travel insurance worth it for domestic trips?",
+      answer: "For domestic trips, the value depends mainly on non-refundable costs. If you have significant prepaid expenses like resort stays, event tickets, or cruise deposits, trip cancellation coverage can be worthwhile. Medical coverage is less critical domestically since your regular health insurance typically applies.",
+    },
+    {
+      question: "When should I buy travel insurance?",
+      answer: "Buy travel insurance as soon as you make your first non-refundable trip payment. This maximizes your cancellation coverage window and is often required to qualify for pre-existing condition waivers and Cancel for Any Reason benefits, which typically must be purchased within 14 to 21 days of your initial deposit.",
+    },
+    {
+      question: "Does my credit card travel insurance provide enough coverage?",
+      answer: "Credit card travel insurance is a helpful supplement but usually insufficient as your only coverage. Most cards provide limited trip delay and baggage coverage but lack emergency medical coverage, medical evacuation, and comprehensive trip cancellation. Always review your card benefits and fill gaps with a standalone policy.",
+    },
+  ],
+};
+
 export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
   {
     slug: "world-nomads",
@@ -216,6 +242,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🦵",
     domain: "tinleg.com",
+    pros: [
+      "Compare plans from multiple insurance providers side by side",
+      "Clear comparisons of coverage limits, pricing, and benefits",
+      "Simplifies the buying process for first-time travel insurance shoppers",
+      "Free to use with no obligation to purchase",
+    ],
+    cons: [
+      "Acts as a marketplace — not an insurance provider itself",
+      "Plan selection may be limited compared to buying directly from providers",
+      "Less detailed policy information than going directly to the insurer's website",
+    ],
+    useCases: [
+      "First-time travel insurance buyer wanting to compare plans easily",
+      "Traveler looking for the best price across multiple providers for a specific trip",
+      "Person who wants to understand coverage differences before committing to a plan",
+    ],
   },
   {
     slug: "faye",
@@ -229,6 +271,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "📱",
     domain: "withfaye.com",
+    pros: [
+      "Modern mobile app with sleek design and real-time travel alerts",
+      "Instant claims processing through the app for faster reimbursement",
+      "Whole-trip coverage model simplifies understanding what is covered",
+      "Tech-forward approach appeals to younger, mobile-first travelers",
+    ],
+    cons: [
+      "Newer company with less industry track record than established insurers",
+      "Coverage limits may be lower than premium legacy providers",
+      "App-first experience may not suit travelers who prefer phone-based support",
+    ],
+    useCases: [
+      "Tech-savvy traveler wanting a modern app-first insurance experience",
+      "Person who values instant claims processing over traditional mail-in claims",
+      "Traveler wanting real-time alerts about delays and disruptions during their trip",
+    ],
   },
   {
     slug: "battleface",
@@ -242,6 +300,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "⚔️",
     domain: "battleface.com",
+    pros: [
+      "Covers high-risk destinations and conflict zones that other insurers decline",
+      "Specialized for adventurous itineraries and remote travel",
+      "Coverage available for extreme destinations and high-altitude trips",
+      "Fills a critical gap for travelers visiting non-standard locations",
+    ],
+    cons: [
+      "Premiums are significantly higher due to the high-risk nature of covered destinations",
+      "Claims in conflict zones can be complicated to process",
+      "Less suitable for standard leisure travel where mainstream insurers are cheaper",
+    ],
+    useCases: [
+      "Journalist or NGO worker traveling to conflict zones needing medical and evacuation coverage",
+      "Adventurer visiting remote regions where standard travel insurance does not apply",
+      "Traveler heading to high-altitude destinations requiring specialized coverage",
+    ],
   },
   {
     slug: "img-global",
@@ -255,6 +329,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🌐",
     domain: "imglobal.com",
+    pros: [
+      "Flexible plan options for travelers, expats, and international students",
+      "Both short-term travel medical and long-term international health coverage available",
+      "Well-established reputation in the international insurance market",
+      "Plans available for individuals and groups traveling abroad",
+    ],
+    cons: [
+      "Trip cancellation coverage is secondary to the medical focus",
+      "Some plans have deductibles that increase out-of-pocket costs",
+      "Claims reimbursement can take several weeks to process",
+    ],
+    useCases: [
+      "International student needing health insurance while studying abroad",
+      "Expat wanting comprehensive long-term medical coverage outside their home country",
+      "Frequent international traveler seeking flexible medical coverage for multiple trips",
+    ],
   },
   {
     slug: "geoblue",
@@ -268,6 +358,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "💙",
     domain: "geobluetravelinsurance.com",
+    pros: [
+      "Backed by Blue Cross Blue Shield with access to a curated global provider network",
+      "Direct-pay network eliminates need to pay out of pocket and file for reimbursement",
+      "Premium coverage with high medical limits for international travelers",
+      "Provider network makes finding quality healthcare abroad much easier",
+    ],
+    cons: [
+      "Premium pricing reflects the higher-end coverage and direct-pay model",
+      "Trip cancellation and baggage coverage are not the primary focus",
+      "Availability of direct-pay providers varies by country and region",
+    ],
+    useCases: [
+      "Business traveler wanting direct-pay access to quality healthcare worldwide",
+      "Expat seeking premium international health insurance backed by Blue Cross",
+      "Traveler who wants to avoid the hassle of paying upfront and filing reimbursement claims",
+    ],
   },
   {
     slug: "hth-worldwide",
@@ -281,6 +387,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🩺",
     domain: "hthworldwide.com",
+    pros: [
+      "Proprietary provider network gives travelers direct access to vetted physicians worldwide",
+      "Direct billing eliminates upfront payment hassles at network providers",
+      "Partnership with GeoBlue expands access to premium global healthcare",
+      "Strong focus on travel medical insurance with comprehensive coverage options",
+    ],
+    cons: [
+      "Provider network coverage varies by country — less dense in remote areas",
+      "Trip cancellation and baggage protection are not the primary offerings",
+      "Website and plan comparison tools could be more user-friendly",
+    ],
+    useCases: [
+      "Traveler wanting pre-arranged access to vetted doctors in their destination country",
+      "Person who prefers direct billing at network hospitals over reimbursement-based plans",
+      "International traveler seeking medical insurance with a known provider network",
+    ],
   },
   {
     slug: "generali-global-assistance",
@@ -294,6 +416,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🦁",
     domain: "generalitravelinsurance.com",
+    pros: [
+      "Backed by one of the largest insurance groups in the world",
+      "Annual multi-trip plans available for frequent travelers at competitive rates",
+      "Identity theft protection included as a unique bonus on some plans",
+      "User-friendly online experience for quotes and policy management",
+    ],
+    cons: [
+      "Less well-known in the US market compared to Allianz or Travel Guard",
+      "Adventure sports coverage may require additional riders",
+      "Customer support availability can be limited outside business hours",
+    ],
+    useCases: [
+      "Frequent business traveler wanting an annual multi-trip policy at a competitive price",
+      "Traveler wanting identity theft protection bundled with trip insurance",
+      "Person seeking comprehensive coverage from a financially strong global insurer",
+    ],
   },
   {
     slug: "travel-insured",
@@ -307,6 +445,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🏅",
     domain: "travelinsured.com",
+    pros: [
+      "Strong cancel for any reason (CFAR) benefits on select plans",
+      "Multiple industry awards for customer satisfaction",
+      "Comprehensive trip protection with competitive medical coverage limits",
+      "Highly rated claims processing with responsive customer service",
+    ],
+    cons: [
+      "CFAR add-on increases premiums substantially",
+      "Must purchase CFAR within a short window after initial trip deposit",
+      "Less brand recognition than Allianz or AIG Travel Guard",
+    ],
+    useCases: [
+      "Traveler who wants the flexibility to cancel for any reason and receive partial reimbursement",
+      "Person booking an expensive trip who wants award-winning customer service",
+      "Traveler who prioritizes strong CFAR benefits over the lowest premium price",
+    ],
   },
   {
     slug: "berkshire-hathaway-travel",
@@ -320,6 +474,22 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "bhtp.com",
+    pros: [
+      "Backed by Berkshire Hathaway's exceptional financial strength and reputation",
+      "ExactCare plan offers generous coverage limits across all categories",
+      "Unique AirCare benefit provides automatic compensation for flight delays",
+      "Strong claims-paying ability backed by one of the world's most trusted companies",
+    ],
+    cons: [
+      "Premium pricing reflects the higher coverage limits and brand backing",
+      "Fewer plan tiers means less flexibility for budget-conscious travelers",
+      "AirCare benefit has specific qualifying criteria that may not cover all delays",
+    ],
+    useCases: [
+      "Traveler wanting the financial security of a Berkshire Hathaway-backed policy",
+      "Frequent flyer who values automatic flight delay compensation through AirCare",
+      "Person booking a premium trip who wants generous coverage limits from a trusted insurer",
+    ],
   },
   {
     slug: "safetywing",
@@ -333,5 +503,21 @@ export const TRAVEL_INSURANCE_TOOLS: TravelInsuranceTool[] = [
     featured: false,
     logo: "🪂",
     domain: "safetywing.com",
+    pros: [
+      "Subscription model with automatic 28-day renewal — no long-term commitment",
+      "Can be purchased while already abroad, unlike most traditional travel insurance",
+      "Affordable monthly rates starting well below traditional annual plans",
+      "Designed specifically for digital nomads and remote workers",
+    ],
+    cons: [
+      "Trip cancellation coverage is not included — focused on medical only",
+      "Coverage limits are lower than premium travel insurance plans",
+      "US-based coverage is limited to short return visits, not full domestic coverage",
+    ],
+    useCases: [
+      "Digital nomad wanting ongoing medical coverage that renews automatically each month",
+      "Remote worker who is already abroad and needs to purchase coverage immediately",
+      "Long-term traveler seeking affordable subscription-based medical insurance without contracts",
+    ],
   },
 ];

@@ -7,9 +7,13 @@ import {
   getAddictionTreatmentCenterCategoryCount,
   filterAddictionTreatmentCenterTools,
 } from "@/lib/addiction-treatment-centers";
+import { ADDICTION_TREATMENT_EDITORIAL } from "@/data/addiction-treatment-centers";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function AddictionTreatmentCentersPage({ searchParams }: Pr
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={ADDICTION_TREATMENT_EDITORIAL.title}
+            intro={ADDICTION_TREATMENT_EDITORIAL.intro}
+            buyerGuide={ADDICTION_TREATMENT_EDITORIAL.buyerGuide}
+            faq={ADDICTION_TREATMENT_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={ADDICTION_TREATMENT_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/addiction-treatment-centers"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function AddictionTreatmentCentersPage({ searchParams }: Pr
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

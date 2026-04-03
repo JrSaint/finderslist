@@ -26,6 +26,32 @@ export const IDENTITY_THEFT_PROTECTION_CATEGORIES: Record<IdentityTheftProtectio
   "digital-security": { label: "Digital Security & Privacy", emoji: "🔒", description: "Tools focused on online privacy, VPN protection, password management, and digital footprint monitoring.", gradient: "from-cyan-600/30 to-teal-800/40" },
 };
 
+export const IDENTITY_THEFT_PROTECTION_EDITORIAL = {
+  title: "How to Choose the Right Identity Theft Protection in 2026",
+  intro: `Identity theft protection services monitor your personal information across credit bureaus, the dark web, public records, and financial accounts to detect unauthorized use of your identity. When suspicious activity is found, these services alert you immediately and provide dedicated restoration specialists who help you recover if your identity is compromised. With data breaches exposing billions of records annually, proactive monitoring has shifted from a luxury to a practical necessity for most consumers.\n\nThe scope of protection varies significantly across providers. Basic services may only monitor one credit bureau and send alerts for score changes, while comprehensive plans monitor all three bureaus in real time, scan dark web forums for your Social Security number and email addresses, track changes to public records, and include device security tools like VPNs and antivirus software. Most plans also include identity theft insurance covering stolen funds reimbursement and legal fees.\n\nChoosing the right service depends on your risk level and the breadth of protection you need. If your Social Security number has been exposed in a data breach, comprehensive monitoring with restoration support is essential. Families with children should look for plans that include child identity monitoring, as children's clean credit files are increasingly targeted by identity thieves.`,
+  buyerGuide: [
+    "Number of credit bureaus monitored — three-bureau monitoring from Equifax, Experian, and TransUnion provides complete visibility. Single-bureau monitoring misses activity reported to the other two bureaus, leaving significant blind spots.",
+    "Dark web and data breach monitoring — the best services continuously scan dark web marketplaces and forums for your personal data, alerting you when your information appears in new data breaches or is being sold online.",
+    "Identity theft insurance coverage — compare the maximum reimbursement amount, what expenses are covered (stolen funds, legal fees, lost wages), and whether coverage extends to all family members on the plan.",
+    "Restoration support quality — when identity theft occurs, having a dedicated U.S.-based restoration specialist who handles the recovery process on your behalf is far more valuable than a phone number to a call center.",
+    "Bundled security tools — many services now include VPNs, password managers, antivirus software, and safe browsing tools. If you would otherwise pay separately for these, a bundled plan can offer significant value.",
+  ],
+  faq: [
+    {
+      question: "Can identity theft protection actually prevent identity theft?",
+      answer: "These services cannot prevent identity theft from occurring, but they detect it much faster than you would on your own — often within hours rather than the weeks or months it typically takes victims to discover the theft. Early detection dramatically limits the damage and simplifies recovery.",
+    },
+    {
+      question: "Is credit monitoring the same as identity theft protection?",
+      answer: "No. Credit monitoring only tracks changes to your credit reports. Identity theft protection is much broader, monitoring the dark web, public records, financial accounts, social media, and other sources where your stolen data might surface. Credit monitoring is one component of comprehensive identity protection, but it is not sufficient on its own.",
+    },
+    {
+      question: "Do I need identity theft protection if I already have a credit freeze?",
+      answer: "A credit freeze prevents new accounts from being opened in your name, which is an excellent first step. However, identity thieves can still file fraudulent tax returns, use your medical insurance, commit crimes under your identity, or access existing accounts. Identity theft protection monitors these additional vectors that a credit freeze does not cover.",
+    },
+  ],
+};
+
 export const IDENTITY_THEFT_PROTECTION_TOOLS: IdentityTheftProtectionTool[] = [
   {
     slug: "lifelock-by-norton",

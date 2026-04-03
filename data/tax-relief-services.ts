@@ -26,6 +26,32 @@ export const TAX_RELIEF_CATEGORIES: Record<TaxReliefCategory, { label: string; e
   "back-taxes": { label: "Back Tax Filing", emoji: "📂", description: "Services specializing in filing unfiled tax returns and resolving back tax obligations with the IRS and state agencies.", gradient: "from-purple-600/30 to-violet-800/40" },
 };
 
+export const TAX_RELIEF_EDITORIAL = {
+  title: "How to Choose the Right Tax Relief Service in 2026",
+  intro: `Tax relief services help individuals and businesses resolve outstanding tax debts with the IRS or state tax agencies. If you owe back taxes, have unfiled returns, are facing wage garnishments, or have received an IRS notice, a tax relief company can negotiate on your behalf to reduce your total liability, set up affordable payment plans, or settle your debt for less than the full amount through an Offer in Compromise.\n\nThe tax relief industry has a mixed reputation due to companies that overpromise and underdeliver. Many firms advertise dramatic debt reductions but charge high upfront fees with no guarantee of results. Legitimate tax relief companies employ enrolled agents, CPAs, and tax attorneys who understand IRS procedures and can navigate complex resolution options. The best firms provide a realistic assessment of your options during a free consultation before charging any fees.\n\nBefore hiring a tax relief company, understand that the IRS itself offers payment plans and hardship programs that you can apply for directly at no cost. Tax relief services add value primarily in complex situations: large balances over $10,000, multiple years of unfiled returns, business tax debts, or when you are already in collections. For simpler cases, a single consultation with a tax professional may be all you need.`,
+  buyerGuide: [
+    "Professional credentials -- Verify the firm employs licensed tax attorneys, CPAs, or IRS enrolled agents who can legally represent you before the IRS. Avoid companies staffed primarily by salespeople who outsource the actual tax work.",
+    "Fee structure transparency -- Reputable firms provide a clear, written fee agreement before work begins. Be wary of companies that charge large investigation fees before telling you the total cost, or that guarantee specific outcomes before reviewing your case.",
+    "Free consultation quality -- Use the initial free consultation to assess whether the company understands your specific situation. Good firms will explain realistic outcomes, estimated timelines, and total costs during this call rather than making vague promises.",
+    "Resolution options offered -- The best firms handle the full range of IRS resolution options including installment agreements, Offers in Compromise, Currently Not Collectible status, penalty abatement, and innocent spouse relief. Avoid one-size-fits-all approaches.",
+    "Refund policy -- Ask whether the company offers any money-back guarantee if they cannot deliver the agreed-upon services. Some firms offer partial refunds if a case does not proceed as planned, while others offer no refunds at all.",
+  ],
+  faq: [
+    {
+      question: "What is an Offer in Compromise and will I qualify?",
+      answer: "An Offer in Compromise lets you settle your tax debt for less than the full amount owed. The IRS accepts only about 30% to 40% of applications, and eligibility depends on your income, expenses, asset equity, and ability to pay. Beware of companies that guarantee OIC acceptance, as no one can guarantee the IRS will approve your offer.",
+    },
+    {
+      question: "How much do tax relief services typically cost?",
+      answer: "Fees vary widely based on the complexity of your case. Simple installment agreement negotiations may cost $1,500 to $3,000, while complex Offer in Compromise cases can run $3,500 to $7,500 or more. Always get the total estimated cost in writing before signing any agreement.",
+    },
+    {
+      question: "Can I negotiate with the IRS myself instead of hiring a tax relief company?",
+      answer: "Yes, the IRS offers payment plans and hardship options that you can apply for directly through IRS.gov or by calling. For straightforward cases with smaller balances, self-representation works well. Professional help becomes more valuable for large debts, audit disputes, or when you have unfiled returns across multiple years.",
+    },
+  ],
+};
+
 export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
   {
     slug: "optima-tax-relief",
@@ -135,6 +161,22 @@ export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
     featured: false,
     logo: "🎯",
     domain: "precisiontaxrelief.com",
+    pros: [
+      "Boutique approach with smaller client base ensures personalized attention",
+      "Dedicated case manager assigned to every client with regular status updates",
+      "Handles the full range of IRS resolution options including OIC and CNC",
+      "High client satisfaction ratings due to quality-over-quantity focus",
+    ],
+    cons: [
+      "Smaller firm means fewer resources during peak tax season",
+      "Less brand recognition than industry leaders like Optima or Community Tax",
+      "May have longer onboarding wait times due to limited capacity",
+    ],
+    useCases: [
+      "Taxpayer who values dedicated personal attention over a high-volume firm",
+      "Client wanting regular case updates and direct access to their case manager",
+      "Individual seeking boutique-quality service for IRS lien or levy resolution",
+    ],
   },
   {
     slug: "tax-hardship-center",
@@ -148,6 +190,22 @@ export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
     featured: false,
     logo: "💙",
     domain: "taxhardshipcenter.com",
+    pros: [
+      "Specializes in hardship-based resolution options most firms overlook",
+      "Deep expertise in Currently Not Collectible status qualification",
+      "Evaluates each client's financial situation to find the most protective option",
+      "Free consultation to assess eligibility for hardship programs",
+    ],
+    cons: [
+      "Narrower focus means fewer options if hardship programs do not apply",
+      "Smaller firm with less brand recognition than larger competitors",
+      "Not ideal for taxpayers who can afford to pay through installment agreements",
+    ],
+    useCases: [
+      "Taxpayer experiencing genuine financial hardship who cannot afford any monthly payment",
+      "Person on fixed income wanting to qualify for Currently Not Collectible status",
+      "Individual whose financial situation has changed dramatically and needs IRS relief",
+    ],
   },
   {
     slug: "irs-fresh-start",
@@ -177,6 +235,22 @@ export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
     featured: false,
     logo: "📊",
     domain: "taxact.com",
+    pros: [
+      "Affordable option for filing back taxes and amending prior returns",
+      "Covers unfiled returns which is often the first step in any resolution process",
+      "Tools and resources for understanding IRS notices",
+      "Prior-year return filing available at reasonable prices",
+    ],
+    cons: [
+      "Not a full-service tax resolution firm — cannot negotiate with the IRS on your behalf",
+      "Limited to tax preparation and filing, not debt settlement or collection defense",
+      "No professional representation for audits or appeals",
+    ],
+    useCases: [
+      "Taxpayer needing to file multiple years of unfiled returns as a first step toward compliance",
+      "Person who received an IRS notice and needs to amend a prior year return",
+      "Individual wanting an affordable way to get current on back tax filings before hiring a resolution firm",
+    ],
   },
   {
     slug: "jackson-hewitt",
@@ -190,6 +264,22 @@ export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
     featured: false,
     logo: "🟢",
     domain: "jacksonhewitt.com",
+    pros: [
+      "Thousands of locations including convenient Walmart in-store offices",
+      "In-person help for filing back taxes across multiple years",
+      "Assistance with IRS notice responses and audit support",
+      "Accessible for taxpayers who prefer face-to-face help over phone-based services",
+    ],
+    cons: [
+      "Tax resolution is not the core business — less specialized than dedicated firms",
+      "Quality varies by individual location and preparer experience",
+      "More expensive for resolution services compared to DIY approaches",
+    ],
+    useCases: [
+      "Taxpayer with unfiled returns who wants in-person help at a convenient location",
+      "Person who received an IRS notice and wants a local professional to review it",
+      "Individual needing multiple years of back tax returns prepared before seeking resolution",
+    ],
   },
   {
     slug: "taxpayer-advocate-service",
@@ -235,6 +325,22 @@ export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
     featured: false,
     logo: "📚",
     domain: "taxreliefcenter.org",
+    pros: [
+      "Free educational content covering all major IRS resolution programs",
+      "Connects taxpayers with pre-screened tax relief professionals in their area",
+      "Comprehensive guides on OIC, installment agreements, and CNC status",
+      "Helps taxpayers understand their options before spending money on a firm",
+    ],
+    cons: [
+      "Not a direct service provider — primarily an educational and matching platform",
+      "Quality of matched professionals may vary by location",
+      "Revenue from referral partnerships may influence which firms are recommended",
+    ],
+    useCases: [
+      "Taxpayer researching IRS resolution options before hiring a professional",
+      "Person wanting to understand whether they qualify for an Offer in Compromise",
+      "Individual seeking a pre-screened tax relief professional in their area",
+    ],
   },
   {
     slug: "rush-tax-resolution",
@@ -248,5 +354,21 @@ export const TAX_RELIEF_TOOLS: TaxReliefTool[] = [
     featured: false,
     logo: "⚡",
     domain: "rushtaxresolution.com",
+    pros: [
+      "Attorney-led firm providing aggressive IRS negotiation and legal representation",
+      "Specializes in urgent situations like active levies, liens, and wage garnishments",
+      "Can represent clients in Tax Court for disputed assessments",
+      "Attorney-client privilege protects all communications from IRS disclosure",
+    ],
+    cons: [
+      "Attorney-led services command higher fees than enrolled agent firms",
+      "Aggressive approach may not be necessary for straightforward resolution cases",
+      "Smaller firm with limited capacity during peak periods",
+    ],
+    useCases: [
+      "Taxpayer facing active IRS enforcement actions who needs urgent attorney representation",
+      "Individual who wants to challenge an IRS assessment in Tax Court",
+      "Person under criminal tax investigation needing attorney-client privilege protection",
+    ],
   },
 ];

@@ -26,6 +26,32 @@ export const MESOTHELIOMA_LAWYER_CATEGORIES: Record<MesotheliomaLawyerCategory, 
   "wrongful-death": { label: "Wrongful Death Mesothelioma", emoji: "🕊️", description: "Lawyers representing families who have lost loved ones to mesothelioma, pursuing wrongful death lawsuits and asbestos trust fund claims on behalf of surviving family members.", gradient: "from-purple-600/30 to-violet-800/40" },
 };
 
+export const MESOTHELIOMA_LAWYER_EDITORIAL = {
+  title: "How to Choose the Right Mesothelioma Lawyer in 2026",
+  intro: `Mesothelioma is an aggressive cancer caused almost exclusively by asbestos exposure, and pursuing legal compensation requires attorneys with deep expertise in asbestos litigation. The right mesothelioma lawyer can help victims and their families recover significant compensation through personal injury lawsuits, wrongful death claims, and asbestos bankruptcy trust fund filings. Because mesothelioma cases involve decades-old exposure histories and complex corporate liability chains, specialized experience matters enormously.\n\nTop mesothelioma law firms maintain proprietary databases tracking which companies used asbestos, at which job sites, and during which time periods. This research capability is often what makes or breaks a case, since victims must prove where and when their exposure occurred. Most reputable firms work on a contingency fee basis, meaning you pay nothing upfront and the firm only collects if they win compensation on your behalf.\n\nTime is a critical factor in mesothelioma cases. Every state has a statute of limitations that restricts how long after diagnosis you can file a claim, and asbestos trust funds have their own filing deadlines. Additionally, the aggressive nature of the disease means that building a case quickly is important both legally and personally.`,
+  buyerGuide: [
+    "Asbestos litigation track record -- choose a firm with decades of mesothelioma-specific experience and a proven history of substantial verdicts and settlements, not a general practice firm handling occasional asbestos cases.",
+    "Exposure research capabilities -- the best firms maintain extensive databases of asbestos-containing products, manufacturers, and job sites that can identify liable parties even when exposure occurred 30-50 years ago.",
+    "Multi-source compensation strategy -- look for attorneys who pursue all available compensation channels simultaneously, including personal injury lawsuits, trust fund claims, VA benefits for veterans, and workers' compensation.",
+    "Contingency fee structure -- reputable mesothelioma firms work on contingency with no upfront costs; understand the percentage they charge and whether litigation expenses are deducted before or after the fee calculation.",
+    "Nationwide filing capability -- since exposure may have occurred in a different state than where you now live, choose a firm licensed to file in multiple jurisdictions or with established co-counsel relationships nationwide.",
+  ],
+  faq: [
+    {
+      question: "How much compensation can mesothelioma victims receive?",
+      answer: "Compensation varies widely based on factors like exposure history, number of liable defendants, and case type. Lawsuit settlements typically range from $1 million to $2.4 million, while trial verdicts can be significantly higher. Asbestos trust fund payouts are separate and can add additional compensation. Veterans may also qualify for VA disability benefits.",
+    },
+    {
+      question: "What is the statute of limitations for mesothelioma claims?",
+      answer: "Statutes of limitations vary by state and typically range from one to six years from the date of diagnosis or discovery of the disease. For wrongful death claims, the clock usually starts from the date of death. Because these deadlines are strict and missing them means losing your right to sue, contacting a lawyer promptly after diagnosis is essential.",
+    },
+    {
+      question: "Can family members file a claim after a mesothelioma patient passes away?",
+      answer: "Yes. Surviving family members can file a wrongful death lawsuit to recover compensation for medical expenses, lost income, funeral costs, and loss of companionship. If the patient had already filed a personal injury claim, it can typically continue as part of the estate. Each state has specific rules about who qualifies to file and the applicable deadlines.",
+    },
+  ],
+};
+
 export const MESOTHELIOMA_LAWYER_TOOLS: MesotheliomaLawyerTool[] = [
   {
     slug: "simmons-hanly-conroy",

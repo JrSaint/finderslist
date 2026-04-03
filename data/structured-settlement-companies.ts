@@ -26,6 +26,32 @@ export const STRUCTURED_SETTLEMENT_CATEGORIES: Record<StructuredSettlementCatego
   "consultation": { label: "Free Consultation", emoji: "🗣️", description: "Get a free quote and expert guidance before deciding to sell your payments.", gradient: "from-indigo-600/30 to-violet-800/40" },
 };
 
+export const STRUCTURED_SETTLEMENT_EDITORIAL = {
+  title: "How to Choose the Right Structured Settlement Company in 2026",
+  intro: `A structured settlement provides guaranteed periodic payments, typically from a personal injury lawsuit or insurance claim, spread over years or decades. While these payments offer financial security, life circumstances change -- medical emergencies, home purchases, or debt consolidation may create an urgent need for a lump sum. Structured settlement companies purchase some or all of your future payments in exchange for immediate cash.\n\nThe tradeoff is significant: you will receive substantially less than the total future value of your payments. Discount rates (the company's fee) typically range from 9% to 18%, meaning you might receive $60,000 to $80,000 for payments worth $100,000 over time. Every transaction requires court approval under state structured settlement protection acts, which exist to ensure the sale is in your best interest. A judge must approve the transfer before any money changes hands.\n\nBefore selling, exhaust other options like personal loans or lines of credit, which may be cheaper. If selling is the right choice, get quotes from at least three companies, compare discount rates carefully, and never feel pressured to accept the first offer. A reputable company will provide a free quote with no obligation and clearly explain all fees before you commit.`,
+  buyerGuide: [
+    "Discount rate transparency -- The discount rate is the single biggest factor in how much cash you receive. Get written quotes showing the exact rate and total cost, and compare across at least three companies.",
+    "Court approval process -- Every structured settlement sale requires a judge's approval. Choose a company that handles all legal paperwork and court filings at no additional cost to you.",
+    "Partial vs. full sale options -- The best companies offer flexible options including selling only a portion of your payments, which lets you access cash now while preserving some future income.",
+    "No upfront fees -- Reputable companies never charge upfront fees or application costs. All costs should be deducted from the final payout, and the total should be clearly disclosed before you sign.",
+    "Funding timeline -- Court approval typically takes 45 to 90 days depending on the state. Ask each company about realistic timelines and whether they offer any advance funding options while the court process is pending.",
+  ],
+  faq: [
+    {
+      question: "How much less will I receive compared to my total future payments?",
+      answer: "Typically you will receive 60% to 85% of the total future value of the payments you sell, depending on the discount rate, payment schedule, and current interest rates. Payments further in the future are discounted more heavily than near-term ones.",
+    },
+    {
+      question: "Can I sell only part of my structured settlement?",
+      answer: "Yes, most companies allow partial sales where you sell a specific dollar amount or time period of payments while keeping the rest. This is often the smartest approach since it gives you immediate cash while preserving long-term financial security.",
+    },
+    {
+      question: "Is selling a structured settlement taxable?",
+      answer: "In most cases, if your original settlement payments were tax-free (such as from a personal injury case), the lump sum you receive from selling will also be tax-free. However, tax situations vary, so consult a tax professional before completing any transaction.",
+    },
+  ],
+};
+
 export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
   {
     slug: "jg-wentworth",
@@ -119,6 +145,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "➡️",
     domain: "rightwayfunding.com",
+    pros: [
+      "No-pressure sales approach gives sellers time to make informed decisions",
+      "Educational resources help sellers understand the full cost of selling",
+      "Free quotes with no obligation and no upfront fees",
+      "Handles all court paperwork and filings on behalf of the seller",
+    ],
+    cons: [
+      "Smaller company with limited brand recognition nationally",
+      "Fewer customer reviews available compared to larger competitors",
+      "Processing timelines vary based on state court availability",
+    ],
+    useCases: [
+      "First-time seller who wants educational guidance before deciding to sell",
+      "Annuity holder looking for a low-pressure experience when exploring options",
+      "Person comparing multiple companies and wanting transparent information upfront",
+    ],
   },
   {
     slug: "stone-street-capital",
@@ -132,6 +174,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "🏛️",
     domain: "stonestreetcapital.com",
+    pros: [
+      "Decades of experience in the structured settlement purchasing industry",
+      "Competitive lump sum offers backed by established financial backing",
+      "Handles all court approval paperwork at no additional cost",
+      "Available to sellers in most US states",
+    ],
+    cons: [
+      "Less public information about specific discount rates and fee structure",
+      "Smaller marketing presence means fewer independent reviews",
+      "Court approval timelines depend on state-specific scheduling",
+    ],
+    useCases: [
+      "Settlement holder wanting an experienced buyer for a large lump sum transaction",
+      "Seller comparing offers from established companies to find the best rate",
+      "Annuity recipient needing a company familiar with their state court process",
+    ],
   },
   {
     slug: "liberty-settlement-funding",
@@ -145,6 +203,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "🗽",
     domain: "libertysettlementfunding.com",
+    pros: [
+      "Offers both pre-settlement legal funding and structured settlement purchasing",
+      "Fast processing times compared to many traditional settlement buyers",
+      "Flexible funding terms tailored to individual financial situations",
+      "Free consultation to evaluate eligibility and options",
+    ],
+    cons: [
+      "Pre-settlement funding rates can be high due to case outcome risk",
+      "Smaller company with limited national brand recognition",
+      "Not all case types qualify for pre-settlement funding",
+    ],
+    useCases: [
+      "Plaintiff awaiting a settlement who needs immediate cash before the case resolves",
+      "Structured settlement holder wanting a company that also handles legal funding",
+      "Person needing fast access to funds with flexible repayment terms",
+    ],
   },
   {
     slug: "annuity-org",
@@ -158,6 +232,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "📚",
     domain: "annuity.org",
+    pros: [
+      "Completely free educational resource with no obligation to sell",
+      "Detailed guides and calculator tools help sellers understand their options",
+      "Connects users with vetted buying companies for competitive quotes",
+      "Comprehensive FAQ and explainer content written by financial experts",
+    ],
+    cons: [
+      "Not a direct buyer — acts as an intermediary connecting sellers with companies",
+      "Revenue from referral partnerships may influence which companies are featured",
+      "Cannot provide personalized financial or legal advice",
+    ],
+    useCases: [
+      "Settlement holder researching the selling process before contacting any company",
+      "Person wanting to use calculator tools to estimate how much cash they might receive",
+      "Consumer seeking educational content to understand discount rates and court approval",
+    ],
   },
   {
     slug: "strategic-capital",
@@ -171,6 +261,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "♟️",
     domain: "strategiccapital.com",
+    pros: [
+      "Boutique approach provides highly personalized service and attention",
+      "Works closely with client's financial advisors to structure optimal transactions",
+      "Competitive quotes tailored to specific financial goals",
+      "Flexible partial sale options for clients who want to keep some payments",
+    ],
+    cons: [
+      "Smaller team may mean longer response times during peak periods",
+      "Limited brand recognition compared to industry leaders",
+      "Not all payment schedules may qualify for purchase",
+    ],
+    useCases: [
+      "Settlement holder with a financial advisor who wants collaborative transaction planning",
+      "Client seeking a partial sale customized around specific financial goals",
+      "Seller who values personalized attention over high-volume processing",
+    ],
   },
   {
     slug: "cbc-settlement-funding",
@@ -184,6 +290,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "📊",
     domain: "cbcfunding.com",
+    pros: [
+      "Transparent rate disclosure shows exact discount rate and net funding amount",
+      "Fast offer turnaround so sellers can compare quotes quickly",
+      "Free quotes with clear explanations of all costs involved",
+      "Nationwide service available in most US states",
+    ],
+    cons: [
+      "Smaller operation with fewer resources than the largest buyers",
+      "Limited online reviews make it harder to evaluate customer experience",
+      "Court approval timelines remain subject to state scheduling",
+    ],
+    useCases: [
+      "Seller who prioritizes transparent pricing with no hidden costs",
+      "Annuity holder wanting a fast quote to compare against other offers",
+      "Consumer who wants clear written documentation of the discount rate before committing",
+    ],
   },
   {
     slug: "drb-financial",
@@ -197,6 +319,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "💎",
     domain: "drbfinancial.com",
+    pros: [
+      "Specializes in large and complex transactions that smaller buyers cannot handle",
+      "Experienced with multi-million dollar annuities and lottery winnings",
+      "Works with financial advisors to optimize complex deal structures",
+      "Handles unique payment schedules that standard buyers may decline",
+    ],
+    cons: [
+      "Not the best fit for smaller or straightforward settlement sales",
+      "Fewer consumer-focused resources compared to mass-market competitors",
+      "Limited availability for standard-sized transactions",
+    ],
+    useCases: [
+      "Holder of a multi-million dollar annuity needing a buyer experienced with large transactions",
+      "Lottery winner looking to sell a complex payment stream for a lump sum",
+      "Seller with an unusual payment schedule requiring specialized structuring expertise",
+    ],
   },
   {
     slug: "novation-capital",
@@ -210,6 +348,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "🔄",
     domain: "novationcapital.com",
+    pros: [
+      "Digitized process with online applications and electronic document signing",
+      "Real-time status updates keep sellers informed throughout court approval",
+      "Modern platform reduces paperwork compared to traditional settlement buyers",
+      "Streamlined experience from application to funding",
+    ],
+    cons: [
+      "Newer digital approach may lack the track record of long-established firms",
+      "Less personal interaction for sellers who prefer phone-based communication",
+      "Court approval timelines still depend on state processes regardless of digital tools",
+    ],
+    useCases: [
+      "Tech-savvy seller who prefers an online-first experience over phone calls and paperwork",
+      "Settlement holder wanting real-time visibility into the status of their transaction",
+      "Person who values e-signature convenience over traditional paper-based processes",
+    ],
   },
   {
     slug: "genex-capital",
@@ -223,6 +377,22 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "⚡",
     domain: "genexcapital.com",
+    pros: [
+      "Competitive purchase offers with both full and partial sale options",
+      "Efficient court approval processing minimizes delays",
+      "Free quotes with no upfront fees or obligations",
+      "Available to sellers in most US states",
+    ],
+    cons: [
+      "Less well-known than the largest structured settlement buyers",
+      "Limited publicly available information about specific discount rate ranges",
+      "Funding speed depends on state court scheduling",
+    ],
+    useCases: [
+      "Seller seeking competitive quotes from a mid-sized settlement buyer",
+      "Annuity holder wanting the option to sell only part of their payment stream",
+      "Consumer comparing offers from multiple companies to get the best deal",
+    ],
   },
   {
     slug: "sell-my-annuity",
@@ -236,5 +406,21 @@ export const STRUCTURED_SETTLEMENT_TOOLS: StructuredSettlementTool[] = [
     featured: false,
     logo: "🔍",
     domain: "sellmyannuity.org",
+    pros: [
+      "Connects sellers with multiple buyers simultaneously for competitive bidding",
+      "Free quote comparison service saves time shopping across companies individually",
+      "Educational resources help sellers understand the selling process",
+      "Guidance through the court approval process included",
+    ],
+    cons: [
+      "Not a direct buyer — relies on partner companies to make offers",
+      "Quality of connected buyers may vary",
+      "Personal information is shared with multiple companies when requesting quotes",
+    ],
+    useCases: [
+      "Seller who wants to compare offers from multiple buyers without contacting each one individually",
+      "First-time seller who wants educational resources alongside competitive quotes",
+      "Annuity holder looking for the best possible offer through a marketplace approach",
+    ],
   },
 ];

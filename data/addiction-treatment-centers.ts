@@ -26,6 +26,32 @@ export const ADDICTION_TREATMENT_CATEGORIES: Record<AddictionTreatmentCategory, 
   "telehealth-addiction": { label: "Telehealth Addiction Services", emoji: "💻", description: "Online addiction treatment platforms offering virtual therapy, medication-assisted treatment (MAT), and digital recovery support from home.", gradient: "from-cyan-600/30 to-sky-800/40" },
 };
 
+export const ADDICTION_TREATMENT_EDITORIAL = {
+  title: "How to Choose the Right Addiction Treatment Center in 2026",
+  intro: `Finding the right addiction treatment center is one of the most important decisions a person or family can make. The quality of care varies enormously between facilities, and the wrong fit can mean the difference between lasting recovery and costly relapse. Treatment centers range from medically supervised detox programs to long-term residential facilities, outpatient programs, and newer telehealth-based options.\n\nThe level of care you need depends on the substance involved, the severity of dependence, co-occurring mental health conditions, and your personal circumstances. Someone with severe alcohol or benzodiazepine dependence typically needs medical detox before any other treatment, while someone with a milder substance use disorder may succeed with intensive outpatient programming that allows them to continue working.\n\nCost is a major factor — residential treatment can run $10,000 to $80,000+ per month, though many facilities accept insurance and offer sliding-scale fees. The Affordable Care Act requires most health plans to cover substance abuse treatment, but coverage levels and in-network options vary widely. Always verify insurance acceptance directly with the facility before committing.`,
+  buyerGuide: [
+    "Accreditation and licensing — look for Joint Commission (JCAHO) or CARF accreditation, state licensing, and staff credentials including licensed counselors, psychiatrists, and medical doctors on site.",
+    "Evidence-based treatment methods — effective programs use proven approaches like cognitive behavioral therapy (CBT), medication-assisted treatment (MAT), motivational interviewing, and trauma-informed care rather than relying solely on one philosophy.",
+    "Continuum of care — the best facilities offer or coordinate detox, residential, partial hospitalization, intensive outpatient, and aftercare planning so you don't fall through the cracks between treatment levels.",
+    "Co-occurring disorder treatment — over half of people with substance use disorders also have mental health conditions like depression, anxiety, or PTSD, and integrated dual-diagnosis treatment produces significantly better outcomes.",
+    "Aftercare and alumni support — recovery doesn't end at discharge; look for programs that provide structured aftercare planning, alumni groups, sober living referrals, and ongoing support for at least 12 months post-treatment.",
+  ],
+  faq: [
+    {
+      question: "How long does addiction treatment typically last?",
+      answer: "Medical detox usually takes 5-10 days, residential treatment programs commonly run 28-90 days, and outpatient programs can last 3-12 months. Research consistently shows that longer treatment durations correlate with better long-term outcomes, and most clinicians recommend at least 90 days of some form of structured care.",
+    },
+    {
+      question: "Does insurance cover addiction treatment?",
+      answer: "Under the Mental Health Parity and Addiction Equity Act and the ACA, most health insurance plans must cover substance abuse treatment at the same level as other medical conditions. Coverage specifics vary by plan — call your insurer and the treatment facility to verify what's covered before admission.",
+    },
+    {
+      question: "What is the difference between inpatient and outpatient treatment?",
+      answer: "Inpatient (residential) treatment means living at the facility full-time with 24/7 support and structured programming. Outpatient treatment allows you to live at home and attend scheduled sessions several times per week. Inpatient is generally recommended for severe addictions, while outpatient works well for milder cases or as a step-down after residential care.",
+    },
+  ],
+};
+
 export const ADDICTION_TREATMENT_TOOLS: AddictionTreatmentTool[] = [
   {
     slug: "hazelden-betty-ford",

@@ -8,9 +8,13 @@ import {
   filterElearningTools,
   ELEARNING_ROLES,
 } from "@/lib/elearning-tools";
+import { ELEARNING_EDITORIAL } from "@/data/elearning-tools";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -97,6 +101,25 @@ export default async function ElearningToolsPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={ELEARNING_EDITORIAL.title}
+            intro={ELEARNING_EDITORIAL.intro}
+            buyerGuide={ELEARNING_EDITORIAL.buyerGuide}
+            faq={ELEARNING_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={ELEARNING_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/elearning-tools"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -153,9 +176,6 @@ export default async function ElearningToolsPage({ searchParams }: Props) {
                 {featured.map((tool) => (<ToolCard key={tool.slug} tool={tool as never} basePath="/elearning-tools" />))}
               </div>
             </section>
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

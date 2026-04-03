@@ -26,6 +26,32 @@ export const INVESTMENT_PLATFORM_CATEGORIES: Record<InvestmentPlatformCategory, 
   "retirement": { label: "Retirement Accounts", emoji: "🏖️", description: "IRA, 401(k) rollover, and retirement-focused investment platforms.", gradient: "from-teal-600/30 to-cyan-800/40" },
 };
 
+export const INVESTMENT_PLATFORM_EDITORIAL = {
+  title: "How to Choose the Right Investment Platform in 2026",
+  intro: `Investment platforms give individuals access to stocks, ETFs, bonds, mutual funds, cryptocurrency, and alternative assets through online brokerages and automated portfolio management services. The elimination of trading commissions by major brokerages has leveled the playing field, making the differentiators now about research quality, account types, ease of use, and the depth of investment options available.\n\nThe choice between a self-directed brokerage and a robo-advisor reflects how hands-on you want to be with your investments. Self-directed platforms like Fidelity and Schwab give you full control to pick individual stocks and build custom portfolios, backed by research tools and educational resources. Robo-advisors like Betterment and Wealthfront build diversified portfolios automatically based on your goals and risk tolerance, handling rebalancing and tax-loss harvesting with no effort on your part.\n\nBeyond stocks and bonds, investors now have access to cryptocurrency exchanges, real estate crowdfunding platforms, and alternative investment marketplaces through the same types of intuitive digital interfaces. Retirement accounts including IRAs, Roth IRAs, and 401(k) rollovers are available on most major platforms with specific tax advantages that can significantly impact your long-term wealth accumulation.`,
+  buyerGuide: [
+    "Fee structure — compare expense ratios on funds, advisory fees for managed accounts, options contract fees, and any account maintenance charges. Even small fee differences compound significantly over decades of investing.",
+    "Account types available — ensure the platform supports the specific account types you need, whether that is taxable brokerage, traditional IRA, Roth IRA, SEP IRA, 401(k) rollover, 529 plans, or custodial accounts for minors.",
+    "Research and educational resources — for self-directed investors, the quality of stock screeners, analyst reports, charting tools, and educational content directly impacts your ability to make informed investment decisions.",
+    "Tax optimization features — robo-advisors that offer tax-loss harvesting, asset location across taxable and tax-advantaged accounts, and direct indexing can add meaningful after-tax returns over time.",
+    "Fractional shares and low minimums — platforms offering fractional shares let you build a diversified portfolio with small amounts. This is especially valuable for new investors who want to own shares of high-priced stocks without needing thousands of dollars upfront.",
+  ],
+  faq: [
+    {
+      question: "Should I use a robo-advisor or manage my own investments?",
+      answer: "If you prefer a hands-off approach and want professional portfolio management without high advisory fees, a robo-advisor is an excellent choice. If you enjoy researching stocks, want to pick individual investments, and have the discipline to avoid emotional trading, a self-directed brokerage gives you more control. Many investors use both — a robo-advisor for core retirement savings and a brokerage for individual stock picks.",
+    },
+    {
+      question: "Are investment apps like Robinhood safe for my money?",
+      answer: "Major investment platforms are regulated by the SEC and FINRA, and accounts are protected by SIPC insurance up to $500,000 in securities and $250,000 in cash. This means your assets are protected if the brokerage fails. However, SIPC does not protect against investment losses from market declines.",
+    },
+    {
+      question: "What is the minimum amount needed to start investing?",
+      answer: "Many platforms now have no minimum investment requirement, and fractional shares let you start with as little as $1. Robo-advisors typically require $0-500 to open an account. The most important thing is to start early and invest consistently — even small regular contributions compound significantly over time.",
+    },
+  ],
+};
+
 export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
   {
     slug: "fidelity",
@@ -119,6 +145,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🟩",
     domain: "tdameritrade.com",
+    pros: [
+      "thinkorswim is one of the most powerful trading platforms available",
+      "Advanced charting, technical analysis, and options analytics tools",
+      "Paper trading feature lets you practice strategies with fake money",
+      "Zero-commission trades on stocks, ETFs, and options",
+    ],
+    cons: [
+      "Being fully merged into Charles Schwab — standalone access is ending",
+      "thinkorswim has a steep learning curve for new traders",
+      "Account migration to Schwab may cause temporary disruption",
+    ],
+    useCases: [
+      "Active trader relying on thinkorswim for advanced technical analysis",
+      "Options trader needing sophisticated strategy analysis tools",
+      "Investor transitioning to Schwab who wants to continue using thinkorswim",
+    ],
   },
   {
     slug: "wealthfront",
@@ -132,6 +174,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🤖",
     domain: "wealthfront.com",
+    pros: [
+      "Daily tax-loss harvesting can add meaningful after-tax returns",
+      "Automated financial planning tool maps out your financial life",
+      "High-yield cash account with competitive interest rates",
+      "Direct indexing available for accounts over $100,000",
+    ],
+    cons: [
+      "0.25% annual advisory fee applies to all managed accounts",
+      "No human financial advisors available for guidance",
+      "Limited ability to customize individual portfolio holdings",
+    ],
+    useCases: [
+      "Hands-off investor wanting automated tax-optimized portfolio management",
+      "High earner benefiting from daily tax-loss harvesting across taxable accounts",
+      "Young professional wanting a financial plan and automated investing in one place",
+    ],
   },
   {
     slug: "betterment",
@@ -145,6 +203,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "📊",
     domain: "betterment.com",
+    pros: [
+      "Pioneer robo-advisor with a proven track record of automated investing",
+      "Goal-based approach helps organize investments by specific financial goals",
+      "Tax-loss harvesting and tax-coordinated portfolios optimize after-tax returns",
+      "Option to access human financial advisors on premium plan",
+    ],
+    cons: [
+      "0.25% annual fee on digital plan, 0.65% on premium with advisor access",
+      "Limited control over individual fund selections within portfolios",
+      "No individual stock or ETF trading available",
+    ],
+    useCases: [
+      "Investor wanting to set up goal-specific portfolios like retirement and house fund",
+      "Beginner who prefers a completely automated investment experience",
+      "Individual wanting occasional access to a human financial advisor alongside automation",
+    ],
   },
   {
     slug: "interactive-brokers",
@@ -158,6 +232,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🌐",
     domain: "interactivebrokers.com",
+    pros: [
+      "Access to 150+ markets in 33 countries from a single account",
+      "Lowest margin rates in the industry for leveraged trading",
+      "Supports stocks, options, futures, forex, bonds, and funds",
+      "Professional-grade Trader Workstation for complex strategies",
+    ],
+    cons: [
+      "Trader Workstation has one of the steepest learning curves in the industry",
+      "Interface is designed for professionals and can overwhelm casual investors",
+      "Customer service is less hand-holding than retail-focused brokerages",
+    ],
+    useCases: [
+      "Professional trader needing global market access across asset classes",
+      "Investor wanting the lowest possible margin rates for leveraged strategies",
+      "International trader needing a single platform for markets in 33 countries",
+    ],
   },
   {
     slug: "m1-finance",
@@ -171,6 +261,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🥧",
     domain: "m1.com",
+    pros: [
+      "Unique pie-based portfolio building combines automation with customization",
+      "Automatic rebalancing invests new deposits according to target allocations",
+      "No advisory fees on the basic plan — automated investing is free",
+      "Fractional shares allow precise allocation percentages",
+    ],
+    cons: [
+      "Only one trading window per day on the free plan limits flexibility",
+      "M1 Plus subscription required for additional trading windows and perks",
+      "Tax-loss harvesting is not automated like Wealthfront or Betterment",
+    ],
+    useCases: [
+      "DIY investor wanting automated rebalancing with custom portfolio control",
+      "Long-term investor building a diversified portfolio with specific allocations",
+      "Cost-conscious investor wanting robo-advisor-like automation without fees",
+    ],
   },
   {
     slug: "webull",
@@ -184,6 +290,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🐂",
     domain: "webull.com",
+    pros: [
+      "Advanced charting and technical analysis tools at no cost",
+      "Extended trading hours from 4am to 8pm for pre-market and after-hours",
+      "Commission-free trading on stocks, ETFs, options, and crypto",
+      "Paper trading feature for practicing without risking real money",
+    ],
+    cons: [
+      "No mutual fund or bond trading available on the platform",
+      "Customer support is less accessible than established brokerages",
+      "Retirement account options are more limited than full-service platforms",
+    ],
+    useCases: [
+      "Data-driven trader wanting advanced charting without paying for a platform",
+      "Early bird or night owl trader taking advantage of extended trading hours",
+      "Intermediate investor stepping up from Robinhood to more analytical tools",
+    ],
   },
   {
     slug: "acorns",
@@ -197,6 +319,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🌰",
     domain: "acorns.com",
+    pros: [
+      "Round-up feature makes investing effortless from everyday purchases",
+      "Found Money rewards from partner brands add bonus investments",
+      "Includes checking account and retirement account options",
+      "Excellent entry point for people who find investing intimidating",
+    ],
+    cons: [
+      "Monthly fee of $3-12 is a high percentage on small account balances",
+      "Limited portfolio customization — only five preset allocations",
+      "Not suitable for active trading or individual stock picking",
+    ],
+    useCases: [
+      "Beginner investor wanting to start with spare change from purchases",
+      "Young adult building an investment habit without thinking about it",
+      "Non-investor who finds traditional platforms overwhelming",
+    ],
   },
   {
     slug: "public-com",
@@ -210,6 +348,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "👥",
     domain: "public.com",
+    pros: [
+      "Social features let you follow other investors and share insights",
+      "Access to alternative assets like fine art and collectibles alongside stocks",
+      "Treasury bonds available for conservative fixed-income investing",
+      "No payment for order flow — Public routes orders to exchanges directly",
+    ],
+    cons: [
+      "Social features may encourage herd mentality in investment decisions",
+      "Research tools are less comprehensive than full-service brokerages",
+      "Alternative asset investments are illiquid and carry unique risks",
+    ],
+    useCases: [
+      "Social investor who learns from following other traders' portfolios",
+      "Investor interested in diversifying into alternative assets like art",
+      "Values-driven investor preferring a platform that does not sell order flow",
+    ],
   },
   {
     slug: "fundrise",
@@ -223,6 +377,22 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🏠",
     domain: "fundrise.com",
+    pros: [
+      "Real estate investing accessible with as little as $10 minimum investment",
+      "Diversified exposure to commercial and residential properties across the US",
+      "Quarterly dividends provide passive income from real estate returns",
+      "No accredited investor requirement — open to everyone",
+    ],
+    cons: [
+      "Investments are illiquid with limited ability to withdraw early",
+      "Returns are not guaranteed and depend on real estate market conditions",
+      "Management fees of about 1% reduce overall returns",
+    ],
+    useCases: [
+      "Individual wanting real estate exposure without buying physical property",
+      "Passive income seeker looking for quarterly dividend distributions",
+      "Portfolio diversifier adding real estate alongside stocks and bonds",
+    ],
   },
   {
     slug: "coinbase-invest",
@@ -236,5 +406,21 @@ export const INVESTMENT_PLATFORM_TOOLS: InvestmentPlatformTool[] = [
     featured: false,
     logo: "🪙",
     domain: "coinbase.com",
+    pros: [
+      "Largest and most trusted crypto exchange in the US with publicly traded status",
+      "Over 200 cryptocurrencies available for trading",
+      "Institutional-grade security and regulatory compliance",
+      "Simple interface makes buying crypto accessible for beginners",
+    ],
+    cons: [
+      "Trading fees are higher than competing crypto exchanges",
+      "Advanced features require using Coinbase Advanced Trade separately",
+      "Customer support can be slow during high-volume market periods",
+    ],
+    useCases: [
+      "Crypto beginner buying Bitcoin or Ethereum for the first time",
+      "Investor wanting a regulated, publicly traded exchange for security confidence",
+      "Long-term crypto holder seeking a trusted platform for secure storage",
+    ],
   },
 ];

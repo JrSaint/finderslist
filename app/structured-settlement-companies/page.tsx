@@ -7,9 +7,13 @@ import {
   getStructuredSettlementCategoryCount,
   filterStructuredSettlementTools,
 } from "@/lib/structured-settlement-companies";
+import { STRUCTURED_SETTLEMENT_EDITORIAL } from "@/data/structured-settlement-companies";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function StructuredSettlementCompaniesPage({ searchParams }
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={STRUCTURED_SETTLEMENT_EDITORIAL.title}
+            intro={STRUCTURED_SETTLEMENT_EDITORIAL.intro}
+            buyerGuide={STRUCTURED_SETTLEMENT_EDITORIAL.buyerGuide}
+            faq={STRUCTURED_SETTLEMENT_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={STRUCTURED_SETTLEMENT_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/structured-settlement-companies"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function StructuredSettlementCompaniesPage({ searchParams }
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

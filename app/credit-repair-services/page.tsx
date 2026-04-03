@@ -7,9 +7,13 @@ import {
   getCreditRepairCategoryCount,
   filterCreditRepairTools,
 } from "@/lib/credit-repair-services";
+import { CREDIT_REPAIR_EDITORIAL } from "@/data/credit-repair-services";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function CreditRepairServicesPage({ searchParams }: Props) 
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={CREDIT_REPAIR_EDITORIAL.title}
+            intro={CREDIT_REPAIR_EDITORIAL.intro}
+            buyerGuide={CREDIT_REPAIR_EDITORIAL.buyerGuide}
+            faq={CREDIT_REPAIR_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={CREDIT_REPAIR_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/credit-repair-services"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,11 +184,6 @@ export default async function CreditRepairServicesPage({ searchParams }: Props) 
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
-
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">
                 <div>

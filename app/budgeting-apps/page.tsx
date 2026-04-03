@@ -7,9 +7,13 @@ import {
   getBudgetingAppCategoryCount,
   filterBudgetingAppTools,
 } from "@/lib/budgeting-apps";
+import { BUDGETING_APP_EDITORIAL } from "@/data/budgeting-apps";
 import ToolCard from "@/components/ToolCard";
 import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
+import EditorialSection from "@/components/EditorialSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import MethodologyBadge from "@/components/MethodologyBadge";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -94,6 +98,25 @@ export default async function BudgetingAppPage({ searchParams }: Props) {
           </Suspense>
         </section>
 
+        {!isFiltering && (
+          <EditorialSection
+            title={BUDGETING_APP_EDITORIAL.title}
+            intro={BUDGETING_APP_EDITORIAL.intro}
+            buyerGuide={BUDGETING_APP_EDITORIAL.buyerGuide}
+            faq={BUDGETING_APP_EDITORIAL.faq}
+          />
+        )}
+
+        {!isFiltering && (
+          <ComparisonTable
+            tools={featured as never[]}
+            categories={BUDGETING_APP_CATEGORIES as Record<string, { label: string; emoji: string }>}
+            basePath="/budgeting-apps"
+          />
+        )}
+
+        {!isFiltering && <MethodologyBadge />}
+
         {isFiltering ? (
           <section className="mt-10 mb-16">
             <div className="flex items-center justify-between mb-5">
@@ -161,10 +184,6 @@ export default async function BudgetingAppPage({ searchParams }: Props) {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12">
-              <AdBanner format="rectangle" className="h-64 w-full max-w-lg mx-auto" />
-            </div>
 
             <section className="mt-12 mb-16">
               <div className="flex items-center justify-between mb-5">

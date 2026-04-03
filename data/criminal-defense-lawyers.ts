@@ -26,6 +26,32 @@ export const CRIMINAL_DEFENSE_LAWYER_CATEGORIES: Record<CriminalDefenseLawyerCat
   "juvenile-defense": { label: "Juvenile & Misdemeanor Defense", emoji: "🛡️", description: "Attorneys representing minors in juvenile court and adults facing misdemeanor charges, DUI expungement, record sealing, and first-offense diversion programs.", gradient: "from-violet-600/30 to-purple-800/40" },
 };
 
+export const CRIMINAL_DEFENSE_LAWYER_EDITORIAL = {
+  title: "How to Choose the Right Criminal Defense Lawyer in 2026",
+  intro: `Facing criminal charges is one of the most stressful experiences a person can go through. The outcome of your case can affect your freedom, employment, housing, and family for years or even permanently. A skilled criminal defense attorney understands the nuances of criminal law, knows how to negotiate with prosecutors, and can identify weaknesses in the prosecution's case that may lead to reduced charges or dismissal.\n\nCriminal defense encompasses a wide range of practice areas, from misdemeanors and first-time offenses to serious felonies like drug trafficking, violent crimes, and federal charges. The right attorney for your case depends on the specific charges you face, the jurisdiction, and whether your case will be tried in state or federal court. Federal cases in particular require attorneys with specific experience navigating federal sentencing guidelines and the DOJ's prosecution process.\n\nTime is critical in criminal defense. Evidence can be lost, witnesses can become unavailable, and certain legal motions must be filed within strict deadlines. If you or a loved one has been arrested or charged, consulting with a criminal defense attorney as early as possible gives you the best chance at a favorable outcome.`,
+  buyerGuide: [
+    "Prioritize attorneys with specific experience in your charge type -- a lawyer who regularly handles drug cases will have different expertise than one focused on white-collar fraud or violent crime defense.",
+    "Ask about their trial experience and win rate -- many cases are resolved through plea negotiations, but you want an attorney who is genuinely prepared to go to trial if necessary.",
+    "Verify their standing with the state bar and check for any disciplinary actions, malpractice claims, or peer endorsements from other defense attorneys.",
+    "Understand the fee structure upfront -- criminal defense attorneys typically charge flat fees for misdemeanors and hourly rates for felonies, with retainers ranging from $2,500 to $25,000 or more depending on case complexity.",
+    "Evaluate their communication style -- you need an attorney who explains the process clearly, responds to your calls and emails promptly, and keeps you informed about developments in your case.",
+  ],
+  faq: [
+    {
+      question: "Should I hire a private attorney or use a public defender?",
+      answer: "Public defenders are qualified attorneys, but they often carry extremely heavy caseloads of 100 or more active cases. A private attorney can dedicate significantly more time to investigating your case, filing motions, and negotiating with prosecutors. For serious charges where your freedom is at stake, the additional investment in private counsel is usually worthwhile.",
+    },
+    {
+      question: "What is the difference between a misdemeanor and a felony?",
+      answer: "Misdemeanors are less serious offenses typically punishable by up to one year in county jail and fines. Felonies carry penalties exceeding one year in state or federal prison. The distinction matters because felony convictions result in more severe collateral consequences including loss of voting rights, firearm restrictions, and greater difficulty finding employment.",
+    },
+    {
+      question: "Can a criminal defense lawyer get my charges dropped?",
+      answer: "It depends on the circumstances. Attorneys can file motions to suppress illegally obtained evidence, challenge probable cause for the arrest, negotiate with prosecutors for reduced or dismissed charges, or present mitigating factors. No ethical attorney can guarantee a specific outcome, but experienced counsel significantly improves your chances.",
+    },
+  ],
+};
+
 export const CRIMINAL_DEFENSE_LAWYER_TOOLS: CriminalDefenseLawyerTool[] = [
   {
     slug: "justia-criminal-law",

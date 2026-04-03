@@ -26,6 +26,32 @@ export const DEBT_RELIEF_CATEGORIES: Record<DebtReliefCategory, { label: string;
   "student-debt": { label: "Student Debt Relief", emoji: "🎓", description: "Specialized programs for managing, consolidating, and reducing student loan debt.", gradient: "from-orange-600/30 to-red-800/40" },
 };
 
+export const DEBT_RELIEF_EDITORIAL = {
+  title: "How to Choose the Right Debt Relief Service in 2026",
+  intro: `Debt relief services help consumers overwhelmed by unsecured debt -- credit cards, medical bills, personal loans -- find a path to financial stability. The right approach depends on your total debt load, income, and financial goals. Options range from credit counseling and debt management plans to debt settlement negotiations and, in severe cases, bankruptcy assistance. Each carries different implications for your credit score, tax liability, and timeline to becoming debt-free.\n\nDebt settlement, the most common commercial service, involves negotiating with creditors to accept less than the full balance owed. Settlement companies typically reduce total debt by 30-50%, but the process takes 2-4 years and will negatively impact your credit score during enrollment. Credit counseling, often provided by nonprofit organizations, focuses on creating a structured debt management plan with reduced interest rates and a single monthly payment. This approach is less damaging to credit but requires paying the full principal.\n\nBefore enrolling in any program, understand the total cost including monthly fees, settlement fees (typically 15-25% of enrolled debt), and potential tax liability on forgiven amounts. The IRS considers forgiven debt over $600 as taxable income. Legitimate companies never charge upfront fees before delivering results and will clearly explain the risks alongside the benefits.`,
+  buyerGuide: [
+    "Determine which type of debt relief fits your situation -- settlement works best for $10,000 or more in unsecured debt, while credit counseling is better for smaller amounts or when you want to protect your credit score.",
+    "Verify the company is accredited by the AFCC (American Fair Credit Council) or NFCC (National Foundation for Credit Counseling), which require members to follow ethical standards and transparent practices.",
+    "Confirm the fee structure is performance-based -- reputable debt settlement companies only charge after successfully negotiating a settlement, never before services are rendered.",
+    "Ask about the expected timeline and total cost -- factor in monthly program fees, settlement percentages, and potential tax liability on forgiven debt amounts exceeding $600.",
+    "Check consumer reviews on the BBB, Trustpilot, and Google, paying attention to patterns in complaints about communication, billing, or failed settlements.",
+  ],
+  faq: [
+    {
+      question: "Will debt relief ruin my credit score?",
+      answer: "Debt settlement typically causes a significant drop in your credit score because you stop making payments to creditors during the negotiation period. Credit counseling through a debt management plan has less impact since you continue making payments. In both cases, most consumers see their scores recover within 12-24 months after completing the program.",
+    },
+    {
+      question: "How much debt do I need to qualify for debt settlement?",
+      answer: "Most debt settlement companies require a minimum of $7,500 to $10,000 in unsecured debt to enroll. Below that threshold, the fees may not justify the savings. For smaller amounts, credit counseling or a balance transfer card with a 0% APR introductory period is often more cost-effective.",
+    },
+    {
+      question: "Is debt settlement better than filing for bankruptcy?",
+      answer: "Debt settlement is less damaging to your credit than bankruptcy and avoids the legal proceedings, but it takes longer and may cost more in total fees. Bankruptcy (Chapter 7) can discharge most unsecured debts quickly but remains on your credit report for 10 years. A consultation with both a debt settlement company and a bankruptcy attorney can help you compare options for your specific situation.",
+    },
+  ],
+};
+
 export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
   {
     slug: "national-debt-relief",
@@ -119,6 +145,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "💙",
     domain: "incharge.org",
+    pros: [
+      "Non-profit organization with low fees and consumer-first mission",
+      "Debt management plans reduce interest rates and consolidate payments",
+      "Free financial counseling and budgeting education resources",
+      "NFCC member agency with certified counselors",
+      "Less credit score damage than debt settlement programs",
+    ],
+    cons: [
+      "Debt management plans require paying the full principal owed",
+      "DMP enrollment may require closing credit card accounts",
+      "Process takes 3-5 years to complete the full plan",
+      "Not helpful for debts beyond unsecured credit cards and personal loans",
+    ],
+    useCases: [
+      "Consumer wanting structured debt repayment with reduced interest rates",
+      "Individual needing free financial counseling to build a realistic budget",
+      "Person preferring a non-profit approach over commercial debt settlement",
+    ],
   },
   {
     slug: "greenpath-financial",
@@ -132,6 +176,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "🌿",
     domain: "greenpath.com",
+    pros: [
+      "Comprehensive services: debt management, housing, student loan, and bankruptcy counseling",
+      "Available in all 50 states with both phone and online counseling",
+      "NFCC member with HUD-approved housing counseling",
+      "Free initial financial assessment and counseling session",
+      "Strong educational resources for long-term financial wellness",
+    ],
+    cons: [
+      "Debt management plan fees vary by state and situation",
+      "Counseling sessions may have wait times during peak demand",
+      "Cannot remove negative items from credit reports",
+      "DMP requires closing enrolled credit accounts",
+    ],
+    useCases: [
+      "Homeowner facing foreclosure needing HUD-approved housing counseling",
+      "Consumer with student loan debt seeking guidance on repayment options",
+      "Individual wanting comprehensive financial counseling across debt, housing, and budgeting",
+    ],
   },
   {
     slug: "money-management-international",
@@ -145,6 +207,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "💰",
     domain: "moneymanagement.org",
+    pros: [
+      "Largest non-profit credit counseling agency in the US with national reach",
+      "Council on Accreditation certified for quality standards",
+      "Free or low-cost counseling sessions for qualifying consumers",
+      "Comprehensive services including DMP, bankruptcy, and housing counseling",
+      "Decades of experience with strong creditor relationships for DMP interest reductions",
+    ],
+    cons: [
+      "Debt management plans take 3-5 years to complete",
+      "Not a debt settlement service — full principal must be repaid",
+      "Some clients report long hold times for phone-based counseling",
+      "DMP requires closing enrolled credit card accounts",
+    ],
+    useCases: [
+      "Consumer wanting the largest, most established non-profit counseling agency",
+      "Individual requiring bankruptcy pre-filing counseling as mandated by federal law",
+      "Person seeking a debt management plan with reduced interest rates from creditors",
+    ],
   },
   {
     slug: "consolidated-credit",
@@ -158,6 +238,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "🔗",
     domain: "consolidatedcredit.org",
+    pros: [
+      "Over 30 years of experience as a non-profit credit counseling organization",
+      "Free budgeting tools and extensive financial education library",
+      "One-on-one counseling sessions with certified credit counselors",
+      "Debt management plans consolidate payments with lower interest rates",
+      "Bilingual services available in English and Spanish",
+    ],
+    cons: [
+      "Debt management plan monthly fees apply though they are modest",
+      "Full debt repayment required — no reduction of principal balance",
+      "Limited to unsecured debts like credit cards and personal loans",
+      "Results take 3-5 years to achieve full debt payoff",
+    ],
+    useCases: [
+      "Spanish-speaking consumer needing bilingual credit counseling",
+      "Individual wanting structured debt repayment with educational support",
+      "Consumer with credit card debt seeking non-profit guidance before considering settlement",
+    ],
   },
   {
     slug: "curadebt",
@@ -171,6 +269,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "⚖️",
     domain: "curadebt.com",
+    pros: [
+      "Handles both consumer debt settlement and IRS/state tax debt relief",
+      "Over 20 years of experience in debt negotiation",
+      "Free consultation to evaluate your specific debt situation",
+      "Performance-based fees — no payment until settlements are reached",
+      "Unique dual-service model for consumers with both credit card and tax debt",
+    ],
+    cons: [
+      "Tax debt relief outcomes depend heavily on individual IRS circumstances",
+      "Smaller company with less brand recognition than National Debt Relief",
+      "Settlement process timelines are similar to industry average of 2-4 years",
+      "Credit score impact during enrollment is significant",
+    ],
+    useCases: [
+      "Consumer dealing with both credit card debt and IRS tax obligations",
+      "Individual needing specialized tax debt negotiation alongside consumer debt settlement",
+      "Person seeking a company that addresses multiple debt types in one program",
+    ],
   },
   {
     slug: "achieve",
@@ -184,6 +300,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "🚀",
     domain: "achieve.com",
+    pros: [
+      "Full-service platform combining debt settlement, consolidation loans, and financial tools",
+      "Backed by years of experience as Freedom Financial Network",
+      "Personal loans for debt consolidation available as an alternative to settlement",
+      "Financial wellness resources help consumers beyond just debt relief",
+      "Multiple debt relief pathways matched to individual situations",
+    ],
+    cons: [
+      "Rebranding may cause confusion with consumers familiar with Freedom Financial",
+      "Consolidation loan approval depends on credit score and income",
+      "Settlement program carries the same credit score risks as other providers",
+      "Loan interest rates vary based on creditworthiness",
+    ],
+    useCases: [
+      "Consumer wanting to compare debt settlement vs. consolidation loan options in one place",
+      "Individual whose credit score qualifies for a lower-rate consolidation loan",
+      "Person seeking comprehensive financial wellness tools alongside debt relief",
+    ],
   },
   {
     slug: "debtblue",
@@ -197,6 +331,23 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "💙",
     domain: "debtblue.com",
+    pros: [
+      "Competitive fee structure — often lower than industry averages",
+      "Strong customer satisfaction ratings and positive reviews",
+      "Clear, straightforward communication throughout the program",
+      "Performance-based fees with no upfront charges",
+    ],
+    cons: [
+      "Newer company with less track record than established competitors",
+      "Smaller team may mean longer response times during peak periods",
+      "Limited geographic availability compared to national providers",
+      "Standard credit score impact during settlement enrollment",
+    ],
+    useCases: [
+      "Cost-conscious consumer prioritizing lower settlement fees",
+      "Individual wanting a smaller, more attentive debt settlement experience",
+      "Person with $10,000+ in credit card debt seeking competitive fee negotiations",
+    ],
   },
   {
     slug: "americor",
@@ -210,6 +361,24 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "📱",
     domain: "americor.com",
+    pros: [
+      "Proprietary mobile app provides real-time program tracking and updates",
+      "Faster-than-average settlement timelines reported by clients",
+      "Technology-driven process reduces manual friction and errors",
+      "User-friendly digital experience appeals to tech-savvy consumers",
+      "Free consultation with transparent program projections",
+    ],
+    cons: [
+      "Relatively newer company compared to 20+ year industry veterans",
+      "App-centric approach may not suit consumers who prefer phone-based service",
+      "Standard credit score impact during the settlement process",
+      "Performance fees apply upon each successful settlement",
+    ],
+    useCases: [
+      "Tech-savvy consumer wanting a mobile-first debt settlement experience",
+      "Individual preferring digital tools over phone-based case management",
+      "Person seeking faster settlement timelines through technology-optimized processes",
+    ],
   },
   {
     slug: "century-support-services",
@@ -223,6 +392,23 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "💯",
     domain: "centurysupportservices.com",
+    pros: [
+      "High settlement success rates with competitive performance-based fees",
+      "Dedicated account representatives for personalized support",
+      "Focused exclusively on debt settlement — deep specialization",
+      "Strong creditor negotiation skills built from years of experience",
+    ],
+    cons: [
+      "Lower brand recognition compared to National Debt Relief or Freedom",
+      "Limited online tools and digital experience compared to fintech competitors",
+      "Standard 2-4 year program timeline",
+      "Credit score impact during enrollment is unavoidable",
+    ],
+    useCases: [
+      "Consumer wanting high settlement success rates with dedicated personal support",
+      "Individual preferring a specialized debt settlement company over a general financial platform",
+      "Person with multiple unsecured debts seeking experienced creditor negotiation",
+    ],
   },
   {
     slug: "turbodebt",
@@ -236,5 +422,23 @@ export const DEBT_RELIEF_TOOLS: DebtReliefTool[] = [
     featured: false,
     logo: "⚡",
     domain: "turbodebt.com",
+    pros: [
+      "Free marketplace that matches consumers with vetted debt relief providers",
+      "Compares multiple settlement programs to find the best fit",
+      "No cost to the consumer for the matching service itself",
+      "Fast-growing platform with strong consumer reviews",
+      "Eliminates the need to research and contact multiple providers individually",
+    ],
+    cons: [
+      "Acts as a lead generator — your information is shared with partner companies",
+      "Quality of matched providers may vary",
+      "Less control over which specific company handles your debt",
+      "Settlement fees from the matched provider still apply",
+    ],
+    useCases: [
+      "Consumer wanting to compare multiple debt relief options without contacting each separately",
+      "Individual unsure which type of debt relief is right for their situation",
+      "Person seeking a fast, free way to connect with pre-vetted settlement companies",
+    ],
   },
 ];
