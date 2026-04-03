@@ -79,7 +79,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
-            <span className="text-2xl">🔍</span>
+            <img src="/FindersListLogo.png" alt="FindersList" width={28} height={28} className="rounded-md" />
             <span className="text-xl font-bold tracking-tight">
               <span className="text-white">Finders</span>
               <span className="text-violet-400">List</span>
