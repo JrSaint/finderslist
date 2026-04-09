@@ -3,7 +3,7 @@ import { CATEGORIES, getAllCategories } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "Submit an AI Tool",
-  description: "Submit your AI tool to RogueMapper to get discovered by thousands of users.",
+  description: "Submit your AI tool to FindersList to get discovered by thousands of users.",
 };
 
 export default function SubmitPage() {
@@ -13,7 +13,7 @@ export default function SubmitPage() {
     <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-14">
       <div className="text-center mb-10">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-sm text-violet-300">
-          🗺️ Get Listed on RogueMapper
+          📋 Get Listed on FindersList
         </div>
         <h1 className="text-3xl font-bold text-white mb-3">Submit an AI Tool</h1>
         <p className="text-slate-400">
@@ -31,8 +31,8 @@ export default function SubmitPage() {
             <p className="text-sm text-slate-400">
               Featured tools appear at the top of the homepage and category pages, highlighted with a badge.
               Email us at{" "}
-              <a href="mailto:hello@roguemapper.com" className="text-violet-400 hover:text-violet-300 underline">
-                hello@roguemapper.com
+              <a href="mailto:hello@finderslist.com" className="text-violet-400 hover:text-violet-300 underline">
+                hello@finderslist.com
               </a>{" "}
               to discuss featured placement.
             </p>
@@ -148,7 +148,7 @@ export default function SubmitPage() {
           <p className="text-xs text-slate-600 mt-1">We&apos;ll notify you when your tool goes live.</p>
         </div>
 
-        <input type="hidden" name="_subject" value="New Tool Submission — RogueMapper" />
+        <input type="hidden" name="_subject" value="New Tool Submission — FindersList" />
 
         <button
           type="submit"

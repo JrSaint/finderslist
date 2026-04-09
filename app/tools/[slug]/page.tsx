@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${tool.name} — AI Tool`,
     description: tool.tagline,
     openGraph: {
-      title: `${tool.name} | RogueMapper`,
+      title: `${tool.name} | FindersList`,
       description: tool.tagline,
     },
   };
