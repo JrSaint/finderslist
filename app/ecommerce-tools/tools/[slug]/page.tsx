@@ -76,8 +76,7 @@ export default async function EcommerceToolPage({ params }: Props) {
     operatingSystem: "Web",
     offers: {
       "@type": "Offer",
-      price: tool.pricing === "free" ? "0" : undefined,
-      priceCurrency: "USD",
+      ...(tool.pricing === "free" ? { price: "0", priceCurrency: "USD" } : {}),
       availability: "https://schema.org/OnlineOnly",
     },
     keywords: tool.tags.join(", "),

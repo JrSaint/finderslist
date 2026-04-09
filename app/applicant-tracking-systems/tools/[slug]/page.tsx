@@ -55,7 +55,7 @@ export default async function ATSToolPage({ params }: Props) {
     url: tool.url,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    offers: { "@type": "Offer", price: tool.pricing === "free" ? "0" : undefined, priceCurrency: "USD", availability: "https://schema.org/OnlineOnly" },
+    offers: { "@type": "Offer", ...(tool.pricing === "free" ? { price: "0", priceCurrency: "USD" } : {}), availability: "https://schema.org/OnlineOnly" },
     keywords: tool.tags.join(", "),
     author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
   };
