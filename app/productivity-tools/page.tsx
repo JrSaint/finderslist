@@ -85,7 +85,7 @@ export default async function ProductivityToolsPage({ searchParams }: Props) {
             The most comprehensive directory of productivity software. Compare project management tools, note-taking apps, time trackers, automation platforms, and more — all in one place.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/productivity-tools" />
+            <SearchBar large basePath="/productivity-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

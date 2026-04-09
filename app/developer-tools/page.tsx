@@ -72,7 +72,7 @@ export default async function DeveloperToolsPage({ searchParams }: Props) {
             The most comprehensive directory of developer tools and DevOps platforms. Compare Vercel, GitHub, DigitalOcean, Datadog, Sentry, Supabase, and 30+ more.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/developer-tools" />
+            <SearchBar large basePath="/developer-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

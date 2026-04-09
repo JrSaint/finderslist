@@ -85,7 +85,7 @@ export default async function EcommerceToolsPage({ searchParams }: Props) {
             The most comprehensive directory of e-commerce software. Compare store builders, print-on-demand platforms, shipping solutions, inventory tools, and more — all in one place.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/ecommerce-tools" />
+            <SearchBar large basePath="/ecommerce-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

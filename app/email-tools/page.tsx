@@ -72,7 +72,7 @@ export default async function EmailToolsPage({ searchParams }: Props) {
             The most comprehensive directory of email marketing tools. Compare Klaviyo, Mailchimp, ConvertKit, ActiveCampaign, Brevo, and 30+ more with honest reviews.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/email-tools" />
+            <SearchBar large basePath="/email-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

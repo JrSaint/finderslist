@@ -72,7 +72,7 @@ export default async function AnalyticsToolsPage({ searchParams }: Props) {
             The most comprehensive directory of analytics and business intelligence tools. Compare Mixpanel, Amplitude, Tableau, Hotjar, Plausible, Looker, and 30+ more.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/analytics-tools" />
+            <SearchBar large basePath="/analytics-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

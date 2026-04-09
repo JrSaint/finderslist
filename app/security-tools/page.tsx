@@ -72,7 +72,7 @@ export default async function SecurityToolsPage({ searchParams }: Props) {
             The most comprehensive directory of cybersecurity and privacy tools. Compare VPNs, password managers, endpoint security, identity management, and compliance platforms.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/security-tools" />
+            <SearchBar large basePath="/security-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

@@ -68,7 +68,7 @@ export default async function DebtReliefServicesPage({ searchParams }: Props) {
             The most comprehensive directory of debt relief services. Compare top providers with honest reviews, fees, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/debt-relief-services" />
+            <SearchBar large basePath="/debt-relief-services" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

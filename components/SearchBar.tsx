@@ -1,26 +1,67 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { searchTools, CATEGORIES } from "@/lib/tools";
 import Link from "next/link";
 
-export default function SearchBar({ large = false, basePath = "/ai-tools" }: { large?: boolean; basePath?: string }) {
+interface SearchableTool {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  logo: string;
+  category: string;
+  tags: string[];
+}
+
+interface SearchBarProps {
+  large?: boolean;
+  basePath?: string;
+  tools?: SearchableTool[];
+}
+
+function filterTools(tools: SearchableTool[], query: string): SearchableTool[] {
+  const q = query.toLowerCase();
+  return tools.filter(
+    (t) =>
+      t.name.toLowerCase().includes(q) ||
+      t.tagline.toLowerCase().includes(q) ||
+      t.description.toLowerCase().includes(q) ||
+      t.tags.some((tag) => tag.toLowerCase().includes(q))
+  );
+}
+
+export default function SearchBar({ large = false, basePath = "/ai-tools", tools }: SearchBarProps) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<ReturnType<typeof searchTools>>([]);
+  const [results, setResults] = useState<SearchableTool[]>([]);
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const ref = useRef<HTMLDivElement>(null);
 
+  // Memoize category lookup for display
+  const categoryMap = useMemo(() => {
+    if (!tools) return null;
+    const map: Record<string, { emoji: string }> = {};
+    for (const t of tools) {
+      if (!map[t.category]) map[t.category] = { emoji: "🔧" };
+    }
+    return map;
+  }, [tools]);
+
   useEffect(() => {
     if (query.trim().length > 1) {
-      setResults(searchTools(query).slice(0, 6));
+      if (tools) {
+        setResults(filterTools(tools, query).slice(0, 6));
+      } else {
+        setResults(searchTools(query).slice(0, 6) as SearchableTool[]);
+      }
       setOpen(true);
     } else {
       setResults([]);
       setOpen(false);
     }
-  }, [query]);
+  }, [query, tools]);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -31,6 +72,15 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
+
+  // Derive placeholder from basePath
+  const dirName = basePath.replace(/^\//, "").replace(/-/g, " ");
+  const placeholder = dirName ? `Search ${dirName}...` : "Search tools...";
+
+  function getCategoryEmoji(category: string): string {
+    if (categoryMap) return categoryMap[category]?.emoji ?? "🔧";
+    return CATEGORIES[category as keyof typeof CATEGORIES]?.emoji ?? "🔧";
+  }
 
   return (
     <div ref={ref} className="relative w-full">
@@ -43,28 +93,7 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
           aria-label="Search tools"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={
-            basePath.includes("marketing") ? "Search marketing tools..." :
-            basePath.includes("finance") ? "Search finance tools..." :
-            basePath.includes("ecommerce") ? "Search e-commerce tools..." :
-            basePath.includes("productivity") ? "Search productivity tools..." :
-            basePath.includes("hr") ? "Search HR tools..." :
-            basePath.includes("crm") ? "Search CRM & sales tools..." :
-            basePath.includes("security") ? "Search security tools..." :
-            basePath.includes("website-builders") ? "Search website builders..." :
-            basePath.includes("creator") ? "Search creator tools..." :
-            basePath.includes("developer") ? "Search developer tools..." :
-            basePath.includes("design") ? "Search design tools..." :
-            basePath.includes("support") ? "Search support tools..." :
-            basePath.includes("elearning") ? "Search e-learning tools..." :
-            basePath.includes("analytics") ? "Search analytics tools..." :
-            basePath.includes("legal") ? "Search legal tools..." :
-            basePath.includes("hosting") ? "Search hosting tools..." :
-            basePath.includes("social-media") ? "Search social media tools..." :
-            basePath.includes("email") ? "Search email tools..." :
-            basePath.includes("no-code") ? "Search no-code tools..." :
-            "Search AI tools..."
-          }
+          placeholder={placeholder}
           className={`flex-1 bg-transparent text-white placeholder-slate-500 outline-none ${large ? "text-lg" : "text-sm"}`}
           onKeyDown={(e) => {
             if (e.key === "Enter" && query.trim()) {
@@ -96,7 +125,7 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
                 <p className="text-sm font-medium text-white truncate">{tool.name}</p>
                 <p className="text-xs text-slate-500 truncate">{tool.tagline}</p>
               </div>
-              <span className="text-xs text-slate-600">{CATEGORIES[tool.category].emoji}</span>
+              <span className="text-xs text-slate-600">{getCategoryEmoji(tool.category)}</span>
             </Link>
           ))}
         </div>

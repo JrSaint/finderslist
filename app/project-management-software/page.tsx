@@ -68,7 +68,7 @@ export default async function ProjectManagementPage({ searchParams }: Props) {
             The most comprehensive directory of project management software. Compare top tools with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/project-management-software" />
+            <SearchBar large basePath="/project-management-software" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

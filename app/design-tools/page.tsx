@@ -72,7 +72,7 @@ export default async function DesignToolsPage({ searchParams }: Props) {
             The most comprehensive directory of design and creative tools. Compare Figma, Canva, Adobe CC, Sketch, Framer, Miro, and 30+ more with honest reviews.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/design-tools" />
+            <SearchBar large basePath="/design-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

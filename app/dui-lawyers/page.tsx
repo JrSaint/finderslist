@@ -68,7 +68,7 @@ export default async function DUILawyersPage({ searchParams }: Props) {
             The most comprehensive directory of DUI and DWI defense attorneys. Compare top firms for first offense, felony DUI, underage DUI, commercial CDL defense, and proven case dismissal strategies.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/dui-lawyers" />
+            <SearchBar large basePath="/dui-lawyers" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

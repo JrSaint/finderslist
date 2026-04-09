@@ -68,7 +68,7 @@ export default async function RealEstatePage({ searchParams }: Props) {
             The most comprehensive directory of real estate software. Compare top tools with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/real-estate-software" />
+            <SearchBar large basePath="/real-estate-software" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

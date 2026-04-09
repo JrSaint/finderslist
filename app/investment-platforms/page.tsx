@@ -68,7 +68,7 @@ export default async function InvestmentPlatformPage({ searchParams }: Props) {
             The most comprehensive directory of investment platforms. Compare top tools with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/investment-platforms" />
+            <SearchBar large basePath="/investment-platforms" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

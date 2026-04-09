@@ -72,7 +72,7 @@ export default async function NoCodeToolsPage({ searchParams }: Props) {
             The most comprehensive directory of no-code and low-code tools. Compare Bubble, Airtable, Zapier, Make, Retool, Glide, and 30+ more with honest reviews.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/no-code-tools" />
+            <SearchBar large basePath="/no-code-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

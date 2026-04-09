@@ -72,7 +72,7 @@ export default async function SocialMediaToolsPage({ searchParams }: Props) {
             The most comprehensive directory of social media management tools. Compare Hootsuite, Buffer, Sprout Social, Later, and 30+ more with honest reviews.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/social-media-tools" />
+            <SearchBar large basePath="/social-media-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[
