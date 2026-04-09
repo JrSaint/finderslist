@@ -58,6 +58,17 @@ export default async function BankruptcyLawyerToolPage({ params }: Props) {
     author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "Bankruptcy Lawyers", item: "https://finderslist.com/bankruptcy-lawyers" },
+      { "@type": "ListItem", position: 3, name: category.label, item: `https://finderslist.com/bankruptcy-lawyers/category/${tool.category}` },
+      { "@type": "ListItem", position: 4, name: tool.name },
+    ],
+  };
+
   const pricingDetail = {
     free: "Free consultation — most bankruptcy firms work on flat fees or offer free initial evaluations.",
     freemium: "Free initial resources with optional paid services.",
@@ -67,6 +78,7 @@ export default async function BankruptcyLawyerToolPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
         <span>/</span>

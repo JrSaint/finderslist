@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!tool) return {};
   const category = CATEGORIES[tool.category];
   return {
-    title: `${tool.name} Review (2025) — Pricing, Pros & Cons`,
-    description: `${tool.tagline}. Honest review of ${tool.name}: pros, cons, pricing, and real-world use cases. Is it worth it in 2025?`,
-    keywords: [tool.name, ...tool.tags, category.label, "AI tool review", "AI tools 2025"],
+    title: `${tool.name} Review (2026) — Pricing, Pros & Cons`,
+    description: `${tool.tagline}. Honest review of ${tool.name}: pros, cons, pricing, and real-world use cases. Is it worth it in 2026?`,
+    keywords: [tool.name, ...tool.tags, category.label, "AI tool review", "AI tools 2026"],
     openGraph: {
-      title: `${tool.name} Review 2025 | FindersList`,
+      title: `${tool.name} Review 2026 | FindersList`,
       description: `${tool.tagline}. See honest pros, cons, pricing, and use cases.`,
     },
     alternates: {
@@ -76,6 +76,17 @@ export default async function ToolPage({ params }: Props) {
     },
     keywords: tool.tags.join(", "),
     author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "AI Tools", item: "https://finderslist.com/ai-tools" },
+      { "@type": "ListItem", position: 3, name: category.label, item: `https://finderslist.com/ai-tools/category/${tool.category}` },
+      { "@type": "ListItem", position: 4, name: tool.name },
+    ],
   };
 
   const pricingDetail = {
