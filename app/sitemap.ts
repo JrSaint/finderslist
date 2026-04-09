@@ -153,7 +153,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     { url: `${BASE_URL}/about`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/methodology`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/contact`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/submit`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE_URL}/privacy`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE_URL}/terms`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.4 },
   ];
