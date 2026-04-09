@@ -1449,8 +1449,33 @@ export default function HubPage() {
     timeTracking: timeTrackingCount,
   };
 
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "FindersList",
+    url: "https://finderslist.com",
+    logo: "https://finderslist.com/FindersListLogo.png",
+    description: "FindersList hosts 100+ curated directories helping people find the best tools, software, and services with honest reviews and pricing transparency.",
+    sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "FindersList",
+    url: "https://finderslist.com",
+    description: "Curated directories for tools and services across 100+ categories.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://finderslist.com/ai-tools?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,40,200,0.15),transparent)] pointer-events-none" />

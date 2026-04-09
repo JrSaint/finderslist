@@ -40,6 +40,7 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
         </svg>
         <input
           type="text"
+          aria-label="Search tools"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={
@@ -73,7 +74,7 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
           }}
         />
         {query && (
-          <button onClick={() => { setQuery(""); setOpen(false); }} className="text-slate-500 hover:text-slate-300">
+          <button aria-label="Clear search" onClick={() => { setQuery(""); setOpen(false); }} className="text-slate-500 hover:text-slate-300">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -82,7 +83,7 @@ export default function SearchBar({ large = false, basePath = "/ai-tools" }: { l
       </div>
 
       {open && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 rounded-xl border border-white/10 bg-slate-900 shadow-2xl z-50 overflow-hidden">
+        <div role="listbox" aria-label="Search results" className="absolute top-full left-0 right-0 mt-2 rounded-xl border border-white/10 bg-slate-900 shadow-2xl z-50 overflow-hidden">
           {results.map((tool) => (
             <Link
               key={tool.slug}
