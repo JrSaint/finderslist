@@ -85,7 +85,7 @@ export default async function CRMToolsPage({ searchParams }: Props) {
             The most comprehensive directory of CRM and sales software. Compare CRM platforms, sales engagement tools, prospecting databases, conversation intelligence, proposal software, and pipeline forecasting — all in one place.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/crm-tools" />
+            <SearchBar large basePath="/crm-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

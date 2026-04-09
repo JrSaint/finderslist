@@ -68,7 +68,7 @@ export default async function CriminalDefenseLawyersPage({ searchParams }: Props
             The most comprehensive directory of criminal defense attorneys and legal resources. Compare top firms for drug crimes, violent offenses, white-collar defense, federal cases, and juvenile defense.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/criminal-defense-lawyers" />
+            <SearchBar large basePath="/criminal-defense-lawyers" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

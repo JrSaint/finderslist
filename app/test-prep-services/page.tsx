@@ -68,7 +68,7 @@ export default async function TestPrepPage({ searchParams }: Props) {
             The most comprehensive directory of test prep services. Compare top tools with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/test-prep-services" />
+            <SearchBar large basePath="/test-prep-services" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

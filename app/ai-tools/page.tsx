@@ -67,7 +67,7 @@ export default async function AIToolsPage({ searchParams }: Props) {
             The most comprehensive directory of AI tools. Discover, compare, and find exactly the right AI for any task.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large />
+            <SearchBar large tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

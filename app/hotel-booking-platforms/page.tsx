@@ -68,7 +68,7 @@ export default async function HotelBookingPage({ searchParams }: Props) {
             The most comprehensive directory of hotel booking platforms. Compare top tools with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/hotel-booking-platforms" />
+            <SearchBar large basePath="/hotel-booking-platforms" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

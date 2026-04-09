@@ -68,7 +68,7 @@ export default async function GoldIRACompaniesPage({ searchParams }: Props) {
             The most comprehensive directory of Gold IRA companies. Compare top providers with honest reviews, fees, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/gold-ira-companies" />
+            <SearchBar large basePath="/gold-ira-companies" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

@@ -85,7 +85,7 @@ export default async function FinanceToolsPage({ searchParams }: Props) {
             The most comprehensive directory of finance and accounting software. Compare accounting platforms, invoicing tools, payroll systems, expense trackers, and more — all in one place.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/finance-tools" />
+            <SearchBar large basePath="/finance-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

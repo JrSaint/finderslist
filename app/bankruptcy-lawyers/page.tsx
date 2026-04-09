@@ -68,7 +68,7 @@ export default async function BankruptcyLawyersPage({ searchParams }: Props) {
             The most comprehensive directory of bankruptcy attorneys and debt relief resources. Compare top firms for Chapter 7, Chapter 13, business bankruptcy, and debt negotiation alternatives.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/bankruptcy-lawyers" />
+            <SearchBar large basePath="/bankruptcy-lawyers" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

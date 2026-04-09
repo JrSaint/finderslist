@@ -68,7 +68,7 @@ export default async function MedicalBillingSoftwarePage({ searchParams }: Props
             The most comprehensive directory of medical billing software. Compare top solutions with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/medical-billing-software" />
+            <SearchBar large basePath="/medical-billing-software" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

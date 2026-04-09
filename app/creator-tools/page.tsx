@@ -72,7 +72,7 @@ export default async function CreatorToolsPage({ searchParams }: Props) {
             The most comprehensive directory of video, podcast, and creator tools. Compare Descript, Riverside.fm, Loom, Buzzsprout, Synthesia, and 30+ more.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/creator-tools" />
+            <SearchBar large basePath="/creator-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

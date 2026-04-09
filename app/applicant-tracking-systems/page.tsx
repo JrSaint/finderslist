@@ -68,7 +68,7 @@ export default async function ATSPage({ searchParams }: Props) {
             The most comprehensive directory of applicant tracking systems. Compare top tools with honest reviews, pricing, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/applicant-tracking-systems" />
+            <SearchBar large basePath="/applicant-tracking-systems" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

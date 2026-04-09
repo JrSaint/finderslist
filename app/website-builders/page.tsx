@@ -72,7 +72,7 @@ export default async function WebsiteBuilderToolsPage({ searchParams }: Props) {
             The most comprehensive directory of website builders and CMS platforms. Compare Webflow, WordPress, Contentful, Unbounce, Ghost, and 30+ more with honest reviews.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/website-builders" />
+            <SearchBar large basePath="/website-builders" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

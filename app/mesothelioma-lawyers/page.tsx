@@ -68,7 +68,7 @@ export default async function MesotheliomaLawyersPage({ searchParams }: Props) {
             The most comprehensive directory of mesothelioma and asbestos law firms. Compare top attorneys with honest profiles, specialties, and billions recovered for asbestos victims.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/mesothelioma-lawyers" />
+            <SearchBar large basePath="/mesothelioma-lawyers" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

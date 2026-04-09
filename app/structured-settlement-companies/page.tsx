@@ -68,7 +68,7 @@ export default async function StructuredSettlementCompaniesPage({ searchParams }
             The most comprehensive directory of structured settlement buyers. Compare top companies with honest reviews, payout estimates, and real-world use cases.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/structured-settlement-companies" />
+            <SearchBar large basePath="/structured-settlement-companies" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

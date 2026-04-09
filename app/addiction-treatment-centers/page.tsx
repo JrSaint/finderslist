@@ -68,7 +68,7 @@ export default async function AddictionTreatmentCentersPage({ searchParams }: Pr
             The most comprehensive directory of addiction treatment centers and rehab programs. Compare top facilities with honest profiles, specialties, and treatment approaches.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/addiction-treatment-centers" />
+            <SearchBar large basePath="/addiction-treatment-centers" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

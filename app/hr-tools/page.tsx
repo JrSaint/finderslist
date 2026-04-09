@@ -85,7 +85,7 @@ export default async function HRToolsPage({ searchParams }: Props) {
             The most comprehensive directory of HR software. Compare applicant tracking systems, HRIS platforms, payroll tools, performance management software, and more — all in one place.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/hr-tools" />
+            <SearchBar large basePath="/hr-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

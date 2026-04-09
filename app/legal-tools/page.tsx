@@ -72,7 +72,7 @@ export default async function LegalToolsPage({ searchParams }: Props) {
             The most comprehensive directory of legal tech and contract management tools. Compare Clio, DocuSign, Ironclad, Westlaw, and 30+ more with honest reviews.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/legal-tools" />
+            <SearchBar large basePath="/legal-tools" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

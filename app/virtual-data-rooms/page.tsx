@@ -68,7 +68,7 @@ export default async function VirtualDataRoomsPage({ searchParams }: Props) {
             The most comprehensive directory of virtual data room providers. Compare top platforms for M&A, fundraising, IPOs, and secure document sharing.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/virtual-data-rooms" />
+            <SearchBar large basePath="/virtual-data-rooms" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[

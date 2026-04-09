@@ -68,7 +68,7 @@ export default async function PersonalInjuryLawyersPage({ searchParams }: Props)
             The most comprehensive directory of personal injury law firms. Compare top attorneys with honest profiles, specialties, and real-world case results.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar large basePath="/personal-injury-lawyers" />
+            <SearchBar large basePath="/personal-injury-lawyers" tools={allTools as never[]} />
           </div>
           <div className="flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
             {[
