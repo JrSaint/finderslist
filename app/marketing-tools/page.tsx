@@ -14,6 +14,7 @@ import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
 import MethodologyBadge from "@/components/MethodologyBadge";
+import RelatedDirectories from "@/components/RelatedDirectories";
 import MarketingFilterBar from "@/components/MarketingFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -220,7 +221,10 @@ export default async function MarketingToolsPage({ searchParams }: Props) {
             </section>
           </>
         )}
+
+        <RelatedDirectories currentSlug="marketing-tools" />
       </div>
     </div>
   );
 }
+

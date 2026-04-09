@@ -7,6 +7,7 @@ import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
 import MethodologyBadge from "@/components/MethodologyBadge";
+import RelatedDirectories from "@/components/RelatedDirectories";
 import FilterBar from "@/components/FilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -24,10 +25,10 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     };
   }
   return {
-    title: "Best AI Tools Directory (2025) — 100+ Tools Reviewed",
+    title: "Best AI Tools Directory (2026) — 100+ Tools Reviewed",
     description:
       "Discover the best AI tools for writing, coding, image generation, video, productivity, and more. Browse 100+ curated AI tools with honest pros, cons, and pricing.",
-    keywords: ["AI tools", "best AI tools 2025", "AI tools directory", "AI software list"],
+    keywords: ["AI tools", "best AI tools 2026", "AI tools directory", "AI software list"],
     alternates: {
       canonical: "https://finderslist.com/ai-tools",
     },
@@ -202,7 +203,10 @@ export default async function AIToolsPage({ searchParams }: Props) {
             </section>
           </>
         )}
+
+        <RelatedDirectories currentSlug="ai-tools" />
       </div>
     </div>
   );
 }
+

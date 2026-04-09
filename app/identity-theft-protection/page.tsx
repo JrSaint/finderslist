@@ -14,6 +14,7 @@ import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
 import MethodologyBadge from "@/components/MethodologyBadge";
+import RelatedDirectories from "@/components/RelatedDirectories";
 import GenericFilterBar from "@/components/GenericFilterBar";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -200,7 +201,10 @@ export default async function IdentityTheftProtectionPage({ searchParams }: Prop
             </section>
           </>
         )}
+
+        <RelatedDirectories currentSlug="identity-theft-protection" />
       </div>
     </div>
   );
 }
+
