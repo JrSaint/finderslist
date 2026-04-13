@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/data/blog";
 
 const BASE_URL = "https://finderslist.com";
 
@@ -158,7 +159,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/submit`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE_URL}/privacy`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE_URL}/terms`, lastModified: DATE_STATIC_PAGES, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${BASE_URL}/blog`, lastModified: DATE_DIRECTORIES, changeFrequency: "weekly", priority: 0.8 },
   ];
+
+  // Add blog post pages
+  for (const post of BLOG_POSTS) {
+    entries.push({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+  }
 
   // Add category index pages and tool/category pages dynamically
   for (const cat of CATEGORIES) {

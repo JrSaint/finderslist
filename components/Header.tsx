@@ -163,6 +163,12 @@ export default function Header() {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
+              href="/blog"
+              className="text-sm text-slate-400 hover:text-white transition-colors px-2.5 py-2"
+            >
+              Blog
+            </Link>
+            <Link
               href="/ai-tools/submit"
               className="rounded-lg bg-violet-600 hover:bg-violet-500 px-4 py-2 text-sm font-medium text-white transition-colors whitespace-nowrap"
             >
