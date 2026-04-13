@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BLOG_POSTS } from "@/data/blog";
 import { getAllTools, getAllCategories } from "@/lib/tools";
 import { getAllMarketingTools } from "@/lib/marketing-tools";
 import { getAllFinanceTools } from "@/lib/finance-tools";
@@ -1585,6 +1586,31 @@ export default function HubPage() {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      {/* From the Blog */}
+      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 border-t border-white/8">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-xl font-semibold text-white">From the Blog</h2>
+          <Link href="/blog" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">View all articles →</Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {BLOG_POSTS.filter((p) => p.featured).slice(0, 3).concat(BLOG_POSTS.filter((p) => !p.featured).slice(0, 3 - Math.min(BLOG_POSTS.filter((p) => p.featured).length, 3))).slice(0, 3).map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group rounded-xl border border-white/8 bg-slate-900/30 hover:bg-slate-800/40 hover:border-violet-500/25 transition-all p-5"
+            >
+              <span className="text-xs bg-slate-800 text-slate-400 border border-white/10 rounded-full px-2.5 py-0.5">
+                {post.category}
+              </span>
+              <h3 className="text-sm font-semibold text-white group-hover:text-violet-300 transition-colors mt-3 mb-2 leading-tight">
+                {post.title}
+              </h3>
+              <p className="text-xs text-slate-500 line-clamp-2">{post.description}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

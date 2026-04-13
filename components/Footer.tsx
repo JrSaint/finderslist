@@ -44,6 +44,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-slate-300 mb-3">Site</h3>
             <div className="space-y-1">
               <Link href="/" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Home</Link>
+              <Link href="/blog" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Blog</Link>
               <Link href="/ai-tools" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">AI Tools</Link>
               <Link href="/ai-tools/submit" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Submit a Tool</Link>
               <Link href="/about" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">About Us</Link>
