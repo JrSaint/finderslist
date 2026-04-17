@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
-    const ghToken = process.env.GITHUB_SUBMISSIONS_TOKEN;
+    const ghToken = process.env.GH_SUBMISSIONS_TOKEN;
     if (!ghToken) {
       // Fallback: log submission in console and return success
       // (won't auto-vet, but you'll see it in Vercel logs)
