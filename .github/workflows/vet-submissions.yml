@@ -1,0 +1,54 @@
+name: Vet Tool Submission
+
+# Triggers:
+#  1. Immediately when an issue is labeled "tool-submission"
+#  2. Daily at 9am UTC as a safety net for any open unprocessed submissions
+on:
+  issues:
+    types: [labeled]
+  schedule:
+    - cron: "0 9 * * *"
+
+jobs:
+  vet:
+    # Only run when: (a) a relevant label was applied, or (b) cron fired
+    if: |
+      github.event_name == 'schedule' ||
+      (github.event_name == 'issues' && github.event.label.name == 'tool-submission')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Use a PAT so the pushed commit triggers Vercel deploy
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install Anthropic SDK (not in package.json to avoid bundle bloat)
+        run: npm install @anthropic-ai/sdk node-fetch --no-save
+
+      - name: Configure git for auto-commits
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
+      - name: Vet and process submissions
+        run: node scripts/vet-submission.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          # For issue-triggered runs, pass the specific issue number
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
