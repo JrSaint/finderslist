@@ -146,4 +146,33 @@ export const AI_VIDEO_TOOLS: AIVideoTool[] = [
   { slug: "veed", name: "VEED.IO", tagline: "Browser-based video editor with powerful AI subtitle and editing tools", description: "VEED.IO is an online video editor focused on simplicity and AI-powered features. Its auto-subtitle generator supports 100+ languages with high accuracy. Additional AI features include eye contact correction, background noise removal, and AI avatars. Popular with social media creators and marketers.", category: "ai-editing", tags: ["veed", "subtitles", "online editor", "social media", "noise removal", "eye contact"], url: "https://www.veed.io", pricing: "freemium", featured: false, logo: "🎥", domain: "veed.io", pros: ["Auto-subtitles in 100+ languages with industry-leading accuracy", "AI eye contact correction fixes gaze direction in recordings", "Background noise removal dramatically improves audio quality", "Simple browser-based interface requires zero editing experience", "Export directly in formats optimized for each social platform"], cons: ["Free tier exports include VEED watermark", "Processing can be slow for longer or high-resolution videos", "Advanced editing features are less capable than desktop software", "Storage limits on lower-tier plans can be restrictive"], useCases: ["Social media creator adding branded subtitles to video content in multiple languages", "Remote worker using eye contact correction to look polished in recorded presentations", "Podcaster cleaning up audio with AI noise removal before publishing video clips"] },
   { slug: "tella", name: "Tella", tagline: "Beautiful screen recordings with AI editing and automatic polish", description: "Tella creates polished screen recordings with AI-powered editing. It automatically adds zoom effects, transitions, and backgrounds to raw recordings. The result looks professionally produced without any manual editing. Great for product demos, tutorials, and investor updates.", category: "screen-recording", tags: ["tella", "screen recording", "auto-editing", "demos", "tutorials", "polish"], url: "https://www.tella.tv", pricing: "freemium", featured: false, logo: "📺", domain: "tella.tv", pros: ["AI automatically adds professional zoom effects, transitions, and backgrounds", "Recordings look studio-quality without manual post-production", "Clean, minimal interface optimized for quick recording and sharing", "Custom backgrounds and layouts for branded presentations", "Free tier available for basic recording and sharing"], cons: ["Less control over editing compared to manual video editors", "Auto-editing AI may not always match your intended emphasis points", "Limited export options compared to full editing platforms", "Not suitable for long-form video production"], useCases: ["Product manager recording polished feature demos for stakeholders", "Startup founder creating investor update videos with professional presentation", "Course creator making screen recording tutorials that look studio-produced"] },
   { slug: "pika", name: "Pika", tagline: "Creative AI video generation with stunning visual effects and editing", description: "Pika creates and edits videos using generative AI with a focus on creative expression. Features include text-to-video, image-to-video, video extension, and unique effects like object modification within existing videos. Known for high visual quality and an active creative community.", category: "text-to-video", tags: ["pika", "generative video", "creative ai", "text to video", "visual effects", "image to video"], url: "https://pika.art", pricing: "freemium", featured: false, logo: "⚡", domain: "pika.art", pros: ["Stunning visual quality with strong artistic style consistency", "Unique in-video object modification and effects editing", "Image-to-video brings still images to life with natural motion", "Video extension can lengthen clips beyond the initial generation", "Active creative community sharing prompts and techniques"], cons: ["Generated clips are short — typically a few seconds", "Less suited for structured business content than creative work", "Free credits are limited and premium plans are needed for regular use", "Precise control over generated content is difficult with text prompts alone"], useCases: ["Creative director generating concept videos for ad campaign pitches", "Artist bringing illustrations to life with AI-powered image-to-video animation", "Social media creator making eye-catching short-form AI art videos"] },
+  {
+    slug: "adwave",
+    name: "Adwave",
+    tagline: "AI-powered TV ad creation and distribution for small businesses starting at $50",
+    description: "Adwave is an AI-powered platform that enables small and medium-sized businesses to create professional TV commercials without production crews or agencies. The platform generates high-quality ads from basic business information and distributes them across 100+ premium networks including NBC, Hulu, ESPN, and Discovery. Ideal for growing brands looking to access television advertising without six-figure budgets.",
+    category: "text-to-video",
+    tags: ["tv-advertising","ai-video-creation","small-business","streaming-ads","commercial-production"],
+    url: "https://adwave.com/",
+    pricing: "paid",
+    featured: false,
+    logo: "📺",
+    domain: "adwave.com",
+    pros: [
+          "Creates TV-ready commercials without production crews or agencies",
+          "Access to 100+ premium networks including NBC, Hulu, and ESPN",
+          "Low entry point starting at $50 for ad campaigns",
+          "Fast turnaround with AI-generated video content"
+    ],
+    cons: [
+          "Limited creative control compared to traditional production",
+          "Paid-only platform with no free tier",
+          "Best suited for straightforward business advertisements"
+    ],
+    useCases: [
+          "Local businesses running their first TV advertising campaigns",
+          "SMBs wanting to reach streaming audiences on premium networks",
+          "Growing brands testing television advertising without major budget commitment"
+    ],
+  },
 ];
