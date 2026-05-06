@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blog";
 
-const BASE_URL = "https://finderslist.com";
+const BASE_URL = "https://www.finderslist.com";
 
 // Static dates — prevents every build from marking all pages as "freshly modified"
 // which wastes Google crawl budget. Update these when content actually changes.

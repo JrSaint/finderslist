@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import Script from "next/script";
 
 const ADSENSE_CLIENT = "ca-pub-5534047032969220";
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
   description:
     "FindersList hosts 100+ curated directories for AI tools, business software, finance, insurance, legal services, health, education, and more. Honest reviews, pricing transparency, and real-world use cases.",
   keywords: ["FindersList", "curated directories", "software reviews", "tool comparison", "best tools 2026"],
-  metadataBase: new URL("https://finderslist.com"),
+  metadataBase: new URL("https://www.finderslist.com"),
   openGraph: {
     type: "website",
     siteName: "FindersList",
-    url: "https://finderslist.com",
+    url: "https://www.finderslist.com",
     title: "FindersList — Curated Directories for Tools & Services",
     description: "100+ curated directories with honest reviews, pricing transparency, and side-by-side comparisons. Find the right tools for your needs.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "FindersList — Curated Directories" }],
@@ -51,6 +52,21 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieConsent />
+        {/* Google Consent Mode v2 — default to denied until user opts in */}
+        <Script id="google-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500,
+            });
+          `}
+        </Script>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VT07FGVXN2"
