@@ -35,8 +35,8 @@ jobs:
       - name: Install project dependencies
         run: npm ci
 
-      - name: Install Anthropic SDK (not in package.json to avoid bundle bloat)
-        run: npm install @anthropic-ai/sdk node-fetch --no-save
+      - name: Install Anthropic SDK + nodemailer (not in package.json to avoid bundle bloat)
+        run: npm install @anthropic-ai/sdk node-fetch nodemailer --no-save
 
       - name: Configure git for auto-commits
         run: |
@@ -47,7 +47,8 @@ jobs:
         run: node scripts/vet-submission.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
           # For issue-triggered runs, pass the specific issue number

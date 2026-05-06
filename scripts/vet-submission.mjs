@@ -25,15 +25,17 @@ const ROOT = join(__dirname, "..");
 // ─── Config ────────────────────────────────────────────────────────────────
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const REPO = process.env.REPO || "JrSaint/finderslist"; // owner/repo
 const SPECIFIC_ISSUE = process.env.ISSUE_NUMBER
   ? parseInt(process.env.ISSUE_NUMBER, 10)
   : null;
 
-const FROM_EMAIL = "FindersList <submissions@finderslist.com>";
-const SITE_URL = "https://finderslist.com";
+// Gmail SMTP requires the From address to match the authenticated account.
+const FROM_EMAIL = GMAIL_USER ? `FindersList <${GMAIL_USER}>` : "FindersList";
+const SITE_URL = "https://www.finderslist.com";
 
 // All directories with their data file names and human-readable labels
 const DIRECTORIES = [
@@ -389,26 +391,33 @@ function commitAndPush(entry, directory) {
   console.log("✅ Committed and pushed — Vercel will auto-deploy");
 }
 
-// ─── Email via Resend ────────────────────────────────────────────────────────
+// ─── Email via Gmail SMTP ────────────────────────────────────────────────────
+
+let _transporter = null;
+async function getTransporter() {
+  if (_transporter) return _transporter;
+  if (!GMAIL_USER || !GMAIL_APP_PASSWORD) return null;
+  const nodemailer = (await import("nodemailer")).default;
+  _transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
+  });
+  return _transporter;
+}
 
 async function sendEmail({ to, subject, html }) {
-  if (!RESEND_API_KEY) {
-    console.warn("⚠️  RESEND_API_KEY not set — skipping email");
+  const transporter = await getTransporter();
+  if (!transporter) {
+    console.warn("⚠️  GMAIL_USER / GMAIL_APP_PASSWORD not set — skipping email");
     return;
   }
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
-  });
-  if (!res.ok) {
-    const t = await res.text();
-    console.warn(`⚠️  Resend error: ${res.status} ${t}`);
-  } else {
+  try {
+    await transporter.sendMail({ from: FROM_EMAIL, to, subject, html });
     console.log(`📧 Email sent to ${to}`);
+  } catch (err) {
+    console.warn(`⚠️  Gmail SMTP error: ${err.message}`);
   }
 }
 
