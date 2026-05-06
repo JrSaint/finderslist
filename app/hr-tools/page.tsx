@@ -62,8 +62,40 @@ export default async function HRToolsPage({ searchParams }: Props) {
     ? filterHRTools({ query: q, pricing, role })
     : allTools;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "HR & Recruiting Tools", item: "https://www.finderslist.com/hr-tools" },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "HR & Recruiting Tools",
+    description: "Discover the best HR software for recruiting, payroll, performance management, onboarding, and learning. Compare Greenhouse, BambooHR, Gusto, Rippling, Lattice, and 30+ more with honest reviews and pricing.",
+    numberOfItems: allTools.length,
+    itemListElement: allTools.slice(0, 10).map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      url: `https://www.finderslist.com/hr-tools/tools/${tool.slug}`,
+      description: tool.tagline,
+    })),
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />

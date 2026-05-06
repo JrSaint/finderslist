@@ -62,8 +62,40 @@ export default async function CRMToolsPage({ searchParams }: Props) {
     ? filterCRMTools({ query: q, pricing, role })
     : allTools;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "CRM & Sales Tools", item: "https://www.finderslist.com/crm-tools" },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "CRM & Sales Tools",
+    description: "Discover the best CRM and sales tools for sales teams, SDRs, and revenue operations. Compare HubSpot, Salesforce, Pipedrive, Apollo.io, Gong, PandaDoc, and 30+ more with honest reviews, pricing, and real-world use cases.",
+    numberOfItems: allTools.length,
+    itemListElement: allTools.slice(0, 10).map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      url: `https://www.finderslist.com/crm-tools/tools/${tool.slug}`,
+      description: tool.tagline,
+    })),
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />

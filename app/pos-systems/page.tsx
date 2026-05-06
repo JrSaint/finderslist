@@ -48,8 +48,40 @@ export default async function POSSystemPage({ searchParams }: Props) {
     ? filterPOSSystemTools({ query: q, pricing, role })
     : allTools;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "POS Systems", item: "https://www.finderslist.com/pos-systems" },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "POS Systems",
+    description: "Compare the best POS systems for retail, restaurants, and service businesses. Reviews of Square, Toast, Clover, Shopify POS, and more.",
+    numberOfItems: allTools.length,
+    itemListElement: allTools.slice(0, 10).map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      url: `https://www.finderslist.com/pos-systems/tools/${tool.slug}`,
+      description: tool.tagline,
+    })),
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />

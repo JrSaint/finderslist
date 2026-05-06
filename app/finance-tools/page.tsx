@@ -62,8 +62,40 @@ export default async function FinanceToolsPage({ searchParams }: Props) {
     ? filterFinanceTools({ query: q, pricing, role })
     : allTools;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "Finance & Accounting Tools", item: "https://www.finderslist.com/finance-tools" },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Finance & Accounting Tools",
+    description: "Discover the best finance and accounting tools for small businesses, freelancers, and startups. Compare QuickBooks, Xero, Wave, FreshBooks, Gusto, and 30+ more with honest reviews, pricing, and real-world use cases.",
+    numberOfItems: allTools.length,
+    itemListElement: allTools.slice(0, 10).map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      url: `https://www.finderslist.com/finance-tools/tools/${tool.slug}`,
+      description: tool.tagline,
+    })),
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(245,158,11,0.2),transparent)] pointer-events-none" />

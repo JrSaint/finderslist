@@ -52,8 +52,40 @@ export default async function DeveloperToolsPage({ searchParams }: Props) {
     ? filterDeveloperTools({ query: q, pricing, role })
     : allTools;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "Developer Tools & DevOps", item: "https://www.finderslist.com/developer-tools" },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Developer Tools & DevOps",
+    description: "The most comprehensive directory of developer tools and DevOps platforms. Compare Vercel, GitHub, DigitalOcean, Datadog, Sentry, Supabase, and 30+ more.",
+    numberOfItems: allTools.length,
+    itemListElement: allTools.slice(0, 10).map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      url: `https://www.finderslist.com/developer-tools/tools/${tool.slug}`,
+      description: tool.tagline,
+    })),
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,197,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent" />
