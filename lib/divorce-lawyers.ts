@@ -32,26 +32,8 @@ export function getDivorceLawyerCategoryCount(category: DivorceLawyerCategory): 
   return DIVORCE_LAWYER_TOOLS.filter((t) => t.category === category).length;
 }
 
-export function filterDivorceLawyerTools(filters: { query?: string; pricing?: string; role?: string }): DivorceLawyerTool[] {
-  let results = DIVORCE_LAWYER_TOOLS;
-  if (filters.query) {
-    const q = filters.query.toLowerCase();
-    results = results.filter(
-      (t) =>
-        t.name.toLowerCase().includes(q) ||
-        t.tagline.toLowerCase().includes(q) ||
-        t.description.toLowerCase().includes(q) ||
-        t.tags.some((tag) => tag.toLowerCase().includes(q))
-    );
-  }
-  if (filters.pricing) {
-    results = results.filter((t) => t.pricing === filters.pricing);
-  }
-  return results;
-}
-
 export const DIVORCE_LAWYER_PRICING_LABELS: Record<DivorceLawyerTool["pricing"], string> = {
-  free: "Free Consultation",
+  free: "Free",
   freemium: "Freemium",
   paid: "Paid",
 };
@@ -65,3 +47,32 @@ export const DIVORCE_LAWYER_PRICING_COLORS: Record<DivorceLawyerTool["pricing"],
 export const DIVORCE_LAWYER_ROLES = {} as const;
 
 export type DivorceLawyerRoleKey = keyof typeof DIVORCE_LAWYER_ROLES;
+
+export function filterDivorceLawyerTools({
+  query,
+  pricing,
+  role,
+}: {
+  query?: string;
+  pricing?: string;
+  role?: string;
+}): DivorceLawyerTool[] {
+  let tools = DIVORCE_LAWYER_TOOLS;
+
+  if (query && query.trim().length > 0) {
+    const q = query.toLowerCase();
+    tools = tools.filter(
+      (t) =>
+        t.name.toLowerCase().includes(q) ||
+        t.tagline.toLowerCase().includes(q) ||
+        t.description.toLowerCase().includes(q) ||
+        t.tags.some((tag) => tag.toLowerCase().includes(q))
+    );
+  }
+
+  if (pricing && ["free", "freemium", "paid"].includes(pricing)) {
+    tools = tools.filter((t) => t.pricing === pricing);
+  }
+
+  return tools;
+}

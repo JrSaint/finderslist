@@ -136,6 +136,14 @@ const DIRECTORIES = [
   { path: "ai-coding-assistants", dataFile: "data/ai-coding-assistants.ts", label: "AI Coding Assistants" },
   { path: "ai-video-generators", dataFile: "data/ai-video-generators.ts", label: "AI Video Generators" },
   { path: "addiction-treatment-centers", dataFile: "data/addiction-treatment-centers.ts", label: "Addiction Treatment Centers" },
+  { path: "antivirus-software", dataFile: "data/antivirus-software.ts", label: "Antivirus Software" },
+  { path: "call-center-software", dataFile: "data/call-center-software.ts", label: "Call Center Software" },
+  { path: "cloud-storage-providers", dataFile: "data/cloud-storage-providers.ts", label: "Cloud Storage Providers" },
+  { path: "divorce-lawyers", dataFile: "data/divorce-lawyers.ts", label: "Divorce Lawyers" },
+  { path: "live-chat-software", dataFile: "data/live-chat-software.ts", label: "Live Chat Software" },
+  { path: "marketing-automation-software", dataFile: "data/marketing-automation-software.ts", label: "Marketing Automation Software" },
+  { path: "seo-tools", dataFile: "data/seo-tools.ts", label: "SEO Tools" },
+  { path: "video-conferencing-software", dataFile: "data/video-conferencing-software.ts", label: "Video Conferencing Software" },
 ];
 
 // ─── GitHub helpers ─────────────────────────────────────────────────────────

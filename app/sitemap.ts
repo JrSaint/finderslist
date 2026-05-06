@@ -111,6 +111,15 @@ const CATEGORIES = [
   { path: "subscription-billing-platforms", libName: "subscription-billing-platforms" },
   { path: "time-tracking-software", libName: "time-tracking-software" },
   { path: "virtual-data-rooms", libName: "virtual-data-rooms" },
+  // Orphan directory backfill
+  { path: "antivirus-software", libName: "antivirus-software" },
+  { path: "call-center-software", libName: "call-center-software" },
+  { path: "cloud-storage-providers", libName: "cloud-storage-providers" },
+  { path: "divorce-lawyers", libName: "divorce-lawyers" },
+  { path: "live-chat-software", libName: "live-chat-software" },
+  { path: "marketing-automation-software", libName: "marketing-automation-software" },
+  { path: "seo-tools", libName: "seo-tools" },
+  { path: "video-conferencing-software", libName: "video-conferencing-software" },
 ];
 
 function camelCase(str: string): string {
