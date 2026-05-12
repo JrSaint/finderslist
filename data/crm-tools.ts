@@ -1089,4 +1089,33 @@ export const CRM_TOOLS: CRMTool[] = [
       "A sales team uses Revenue.io's live assistant to surface competitive battlecards when prospects mention competitor names during calls",
     ],
   },
+  {
+    slug: "companiesdata-cloud",
+    name: "CompaniesData.cloud",
+    tagline: "Free B2B company data samples for CRM enrichment and validation",
+    description: "CompaniesData.cloud provides downloadable B2B company database samples organized by country, enabling sales, marketing, and research teams to evaluate data quality before committing to full datasets. The platform allows users to inspect field structures, Excel formatting, and CRM compatibility to ensure seamless integration with existing workflows.",
+    category: "data-enrichment",
+    tags: ["b2b-data","crm-enrichment","lead-data","company-database","data-samples"],
+    url: "https://companiesdata.cloud/free-demo/",
+    pricing: "freemium",
+    featured: false,
+    logo: "🏢",
+    domain: "companiesdata.cloud",
+    pros: [
+          "Free sample data to evaluate before purchasing",
+          "Country-specific datasets for targeted prospecting",
+          "Excel-compatible format for easy CRM imports",
+          "Allows validation of data quality and field coverage upfront"
+    ],
+    cons: [
+          "Full datasets require paid access",
+          "Limited to company data without contact-level enrichment details in demos",
+          "Requires manual download and import process"
+    ],
+    useCases: [
+          "Evaluating B2B data provider quality before bulk purchase",
+          "Testing CRM import workflows with real sample data",
+          "Validating country coverage for international sales campaigns"
+    ],
+  },
 ];
