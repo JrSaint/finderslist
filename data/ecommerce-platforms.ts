@@ -443,4 +443,33 @@ export const ECOMMERCE_PLATFORM_TOOLS: EcommercePlatformTool[] = [
       "Merchant needing straightforward ecommerce without complex feature overload",
     ],
   },
+  {
+    slug: "webmakerr",
+    name: "Webmakerr",
+    tagline: "All-in-one commerce platform with storefront, CRM, support, and AI calling",
+    description: "Webmakerr is a comprehensive commerce platform designed for small businesses and agencies to build online storefronts with integrated sales and support tools. The platform combines website building with lead management, CRM, AI-powered calling for lead qualification, support inbox, help center, and checkout capabilities. It supports both physical and digital product sales with features like custom domains, customer accounts, and order management.",
+    category: "ecommerce-platforms",
+    tags: ["ecommerce","storefront-builder","crm","ai-calling","small-business"],
+    url: "https://webmakerr.com/",
+    pricing: "paid",
+    featured: false,
+    logo: "🛒",
+    domain: "webmakerr.com",
+    pros: [
+          "Unified platform combining storefront, CRM, and support tools",
+          "AI calling feature for qualifying warm leads automatically",
+          "Free custom domain included with launch",
+          "Affordable $1 for 7-day trial to get started"
+    ],
+    cons: [
+          "Less established compared to major e-commerce platforms",
+          "May have learning curve with multiple integrated features",
+          "Limited third-party integrations compared to WooCommerce or Shopify"
+    ],
+    useCases: [
+          "Local shops launching their first online sales operation",
+          "Agencies building and managing client storefronts",
+          "Small businesses needing combined sales and customer support tools"
+    ],
+  },
 ];
