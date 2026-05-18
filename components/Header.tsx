@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import GlobalSearchBar from "@/components/GlobalSearchBar";
 import { CATEGORIES, getAllCategories } from "@/lib/tools";
 import { MARKETING_CATEGORIES, getAllMarketingCategories } from "@/lib/marketing-tools";
 import { FINANCE_CATEGORIES, getAllFinanceCategories } from "@/lib/finance-tools";
@@ -162,6 +163,9 @@ export default function Header() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden xl:block w-64">
+              <GlobalSearchBar />
+            </div>
             <Link
               href="/blog"
               className="text-sm text-slate-400 hover:text-white transition-colors px-2.5 py-2"
@@ -169,7 +173,7 @@ export default function Header() {
               Blog
             </Link>
             <Link
-              href="/ai-tools/submit"
+              href="/submit"
               className="rounded-lg bg-violet-600 hover:bg-violet-500 px-4 py-2 text-sm font-medium text-white transition-colors whitespace-nowrap"
             >
               + Submit a Tool
@@ -196,6 +200,9 @@ export default function Header() {
         {/* Mobile menu */}
         {menuOpen && (
           <div className="lg:hidden border-t border-white/10 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+            <div className="px-2 pb-3">
+              <GlobalSearchBar />
+            </div>
             {PRIMARY_NAV.map((item) => {
               const cats = getPrimaryCategories(item.key);
               return (
@@ -238,7 +245,7 @@ export default function Header() {
             </div>
             <div className="pt-2 border-t border-white/5 mt-2">
               <Link
-                href="/ai-tools/submit"
+                href="/submit"
                 className="block px-2 py-2 text-sm text-slate-400 hover:text-white"
                 onClick={() => setMenuOpen(false)}
               >
