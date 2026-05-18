@@ -713,6 +713,38 @@ export const CREATOR_TOOLS: CreatorTool[] = [
       "An independent broadcaster saves $50/month by replacing StreamYard with VDO.Ninja + OBS",
     ],
   },
+  {
+    slug: "screenlock",
+    name: "ScreenLock",
+    tagline: "Lock your input, not your screen — a native macOS menu bar utility for streamers, presenters, and parents",
+    description: "ScreenLock is a lightweight native macOS menu bar app that locks keyboard, mouse clicks, mouse movement, scrolling, and trackpad gestures independently — without blacking out your screen. Activate it with a custom hotkey (default ⌃⌥⌘L), unlock with a 4-8 digit PIN, and optionally auto-unlock after 15, 30, 60, or 120 minutes. It's built natively (no Electron), runs without a Dock icon, and does zero data collection or network calls. The primary use cases are streamers keeping their OBS scene visible during long broadcasts, presenters preventing accidental clicks during demos and Q&A, parents handing a Mac to a child for video watching, kiosk and demo operators locking down input, and anyone wanting to clean their keyboard or stop a curious pet from interfering. Pricing is a $9.99 one-time purchase covering every Mac you own, with a 14-day refund window and free v1 updates. Requires macOS 12 Monterey or later (Apple Silicon and Intel both supported) and the standard Accessibility permission used by all input-interception tools on macOS.",
+    category: "live-streaming",
+    tags: ["macOS", "input lock", "keyboard lock", "menu bar app", "streaming utility", "kiosk", "presenter tool", "native app"],
+    url: "https://screenlock.app",
+    pricing: "paid",
+    featured: false,
+    logo: "🔒",
+    domain: "screenlock.app",
+    pros: [
+      "Independently locks keyboard, mouse clicks, movement, scrolling, and gestures — the screen stays visible",
+      "Native macOS app (no Electron) with a tiny footprint and no Dock icon",
+      "$9.99 one-time purchase covers every Mac you own — no subscription",
+      "Zero data collection or network activity; PIN is invisible while typing",
+      "Auto-unlock timer (15/30/60/120 min) and configurable hotkey",
+    ],
+    cons: [
+      "macOS only — no Windows or Linux versions planned",
+      "Requires granting Accessibility permission, which some users are uncomfortable with",
+      "Single-purpose utility — not part of a broader streaming toolkit",
+      "Pricing isn't free, so casual one-off users may prefer a free alternative",
+    ],
+    useCases: [
+      "A Twitch streamer locks input so an on-screen OBS dashboard stays visible without accidental clicks during a 6-hour broadcast",
+      "A parent hands their MacBook to a child for a movie and locks the keyboard and trackpad to prevent accidental window switches",
+      "A presenter locks the trackpad during a live demo so a stray gesture doesn't swipe between desktops mid-pitch",
+      "A kiosk operator locks input on a customer-facing Mac so visitors can't tamper with the running app",
+    ],
+  },
   // ── CREATOR PLATFORMS ─────────────────────────────────────────────────────
   {
     slug: "kajabi",
