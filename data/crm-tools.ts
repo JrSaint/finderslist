@@ -1094,7 +1094,7 @@ export const CRM_TOOLS: CRMTool[] = [
     name: "CompaniesData.cloud",
     tagline: "Free B2B company data samples for CRM enrichment and validation",
     description: "CompaniesData.cloud provides downloadable B2B company database samples organized by country, enabling sales, marketing, and research teams to evaluate data quality before committing to full datasets. The platform allows users to inspect field structures, Excel formatting, and CRM compatibility to ensure seamless integration with existing workflows.",
-    category: "data-enrichment",
+    category: "prospecting",
     tags: ["b2b-data","crm-enrichment","lead-data","company-database","data-samples"],
     url: "https://companiesdata.cloud/free-demo/",
     pricing: "freemium",
