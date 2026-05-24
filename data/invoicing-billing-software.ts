@@ -59,4 +59,33 @@ export const INVOICING_TOOLS: InvoicingTool[] = [
   { slug: "and-co", name: "AND.CO", tagline: "Free invoicing and contracts from the Fiverr family", description: "AND.CO (by Fiverr) provides free invoicing, contracts, time tracking, expense tracking, and proposals for freelancers. It's completely free with no hidden fees. The catch: it's designed primarily for Fiverr sellers, though anyone can use it. Limited in advanced features but hard to beat on price (free).", category: "invoicing-software", tags: ["free invoicing", "freelancer", "fiverr", "contracts", "proposals", "time tracking"], url: "https://www.and.co", affiliateUrl: "https://www.and.co", pricing: "freemium", featured: false, logo: "🟡", domain: "and.co", pros: ["Completely free with no hidden fees or plan limits", "Includes invoicing, contracts, time tracking, and expense management", "Simple interface designed for freelancers and gig workers", "Backed by Fiverr with continued platform development"], cons: ["Feature depth is limited compared to paid competitors like FreshBooks", "Designed primarily for Fiverr sellers though anyone can use it", "Customer support resources are minimal for a free product"], useCases: ["Fiverr seller wanting integrated invoicing alongside their gig platform", "Freelancer needing basic free invoicing with contracts and time tracking", "Side hustler wanting a no-cost tool to send professional invoices"] },
   { slug: "sage-50cloud", name: "Sage 50cloud", tagline: "Desktop accounting with cloud access for established small businesses", description: "Sage 50cloud (formerly Peachtree) is a desktop-first accounting platform with cloud connectivity. It provides invoicing, purchasing, inventory, job costing, and payroll capabilities. The desktop foundation means strong performance for large data sets. Best for established businesses that prefer desktop software with cloud backup and remote access.", category: "accounting-invoicing", tags: ["desktop accounting", "invoicing", "inventory", "job costing", "sage", "established business"], url: "https://www.sage.com/en-us/products/sage-50cloud/", pricing: "paid", featured: false, logo: "🟩", domain: "sage.com", pros: ["Desktop-first performance handles large data sets efficiently", "Comprehensive features including invoicing, inventory, and job costing", "Cloud connectivity provides remote access to desktop-based data", "Established product with decades of development and industry trust"], cons: ["Desktop software feels dated compared to cloud-native competitors", "Requires local installation and Windows operating system", "Higher price point than modern cloud accounting alternatives"], useCases: ["Established small business preferring desktop accounting with cloud backup", "Construction or services firm needing job costing alongside invoicing", "Business with large transaction volumes wanting desktop performance"] },
   { slug: "quickbooks-invoicing", name: "QuickBooks Invoicing", tagline: "Professional invoicing built into America's most popular accounting software", description: "QuickBooks Online includes powerful invoicing with customizable templates, automatic payment reminders, online payment acceptance, recurring invoices, and progress invoicing. Invoices sync directly with your accounting books for automatic reconciliation. The invoice tracker shows which invoices are viewed, paid, and overdue in real time.", category: "accounting-invoicing", tags: ["invoicing", "quickbooks", "accounting", "payment reminders", "recurring", "small business"], url: "https://quickbooks.intuit.com", pricing: "paid", featured: false, logo: "📗", domain: "quickbooks.intuit.com", pros: ["Invoices sync directly with accounting books for automatic reconciliation", "Invoice tracker shows real-time status — viewed, paid, or overdue", "Customizable templates with your logo and branding", "Progress invoicing and recurring invoice automation included"], cons: ["QuickBooks subscription required — invoicing is not standalone", "Monthly pricing can be expensive for businesses only needing invoicing", "Occasional bugs and interface changes with frequent updates"], useCases: ["QuickBooks user wanting invoicing that automatically reconciles with books", "Small business needing professional invoices tied to full accounting", "Service provider sending progress invoices for long-term projects"] },
+  {
+    slug: "number-lingo",
+    name: "Number-Lingo",
+    tagline: "Free invoice generator with amount-in-words conversion and PDF tools",
+    description: "Number-Lingo is a free web-based toolkit combining a professional invoice generator, PDF utilities, and number-to-words converter. The invoice generator supports 14+ languages and 16 currencies with automatic amount-in-words conversion, logo uploads, and tax calculations. Ideal for freelancers and small businesses needing quick, no-signup invoicing with multilingual document support.",
+    category: "invoicing-software",
+    tags: ["free-invoicing","multi-language","pdf-tools","number-converter","no-signup"],
+    url: "https://number-lingo.com/",
+    pricing: "free",
+    featured: false,
+    logo: "🔢",
+    domain: "number-lingo.com",
+    pros: [
+          "Completely free with no account required",
+          "Supports 14+ languages and 16 currencies",
+          "Automatic amount-in-words conversion on invoices",
+          "Includes bonus PDF tools (merge, split, compress, OCR)"
+    ],
+    cons: [
+          "No recurring invoice automation features",
+          "Limited to browser-based workflow without cloud storage",
+          "No payment processing or client management capabilities"
+    ],
+    useCases: [
+          "Freelancers creating quick professional invoices in multiple languages",
+          "International businesses needing invoices with amount spelled out in words",
+          "Small businesses requiring basic PDF manipulation alongside invoicing"
+    ],
+  },
 ];
