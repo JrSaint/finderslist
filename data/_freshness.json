@@ -1,1 +1,15 @@
-{}
+{
+  "security-tools": "2026-06-05",
+  "security-tools/tools/crowdstrike": "2026-06-05",
+  "security-tools/tools/cyberghost-vpn": "2026-06-05",
+  "security-tools/tools/dashlane": "2026-06-05",
+  "security-tools/tools/expressvpn": "2026-06-05",
+  "security-tools/tools/keeper": "2026-06-05",
+  "security-tools/tools/lastpass": "2026-06-05",
+  "security-tools/tools/nordvpn": "2026-06-05",
+  "security-tools/tools/private-internet-access": "2026-06-05",
+  "security-tools/tools/proton-pass": "2026-06-05",
+  "security-tools/tools/protonvpn": "2026-06-05",
+  "security-tools/tools/surfshark": "2026-06-05",
+  "security-tools/tools/twingate": "2026-06-05"
+}
