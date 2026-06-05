@@ -1,8 +1,23 @@
 # FindersList — Automated Maintenance System
 
-Recurring optimization & updating for the directory. Two pipelines keep ~1,900
-listings across 108 directories accurate, fresh, and SEO-optimized, then
-auto-deploy via Vercel.
+Recurring optimization & updating for the directory. Keeps ~1,900 listings across
+108 directories accurate, fresh, and SEO-optimized, then auto-deploys via Vercel.
+
+## How it runs (subscription mode — no API credits)
+The recurring refresh runs on your **Claude subscription** via a local scheduled
+task, **not** the Anthropic API:
+- **`finderslist-maintenance`** — a daily Claude Code scheduled task
+  (`~/.claude/scheduled-tasks/`). Each run picks the ~4 oldest-reviewed directories,
+  uses **web search** to verify them, writes a decision JSON, and applies it with
+  `refresh-listings.mjs --decision <file>` (which still enforces the tsc gate,
+  change caps, field preservation, freshness, and audit logs). ~4 dirs/day → full
+  site about every month. Requires Claude Code Desktop to be open (Mac Mini is
+  always-on); if closed when due, it runs on next launch.
+- The GitHub Actions **monthly cron is DISABLED** (it used API credits). The
+  workflow remains for manual, API-billed runs via "Run workflow". The weekly
+  **integrity audit** uses no AI, so it still runs free in Actions.
+- Scripts support `--decision <file>` (apply agent-produced listing changes) and
+  `--post-file <file>` (publish an agent-written blog post) with no API key.
 
 ## Components
 
