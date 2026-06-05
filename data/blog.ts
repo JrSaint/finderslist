@@ -2730,4 +2730,19 @@ Choosing the right Marketplace plan requires more than 15 minutes. Set aside an 
 
 The Marketplace is imperfect, but with informed decision-making, you can find coverage that genuinely protects your health and your finances. The people who get burned are the ones who treat plan selection as a five-minute chore instead of the consequential financial decision it actually is.`
   },
+  {
+    slug: "the-ai-coding-assistant-shake-up-ownership-and-pricing-in-2026-2026-06",
+    title: "The AI Coding Assistant Shake-Up: Ownership and Pricing in 2026",
+    description: "Windsurf was split between Google and Cognition in 72 hours, while Copilot and Cursor settled into clear free-and-paid tiers. Here is what changed.",
+    category: "AI Coding Assistants",
+    author: "FindersList Editorial Team",
+    publishedAt: "2026-06-05",
+    updatedAt: "2026-06-05",
+    readingTime: "5 min read",
+    featured: false,
+    relatedDirectory: "ai-coding-assistants",
+    monthTag: "2026-06",
+    heroTools: [{"slug":"github-copilot","name":"GitHub Copilot","domain":"github.com","logo":"🐙"},{"slug":"cursor","name":"Cursor","domain":"cursor.com","logo":"🖱️"},{"slug":"claude-code","name":"Claude Code","domain":"anthropic.com","logo":"🟤"},{"slug":"tabnine","name":"Tabnine","domain":"tabnine.com","logo":"⚙️"},{"slug":"codeium-windsurf","name":"Windsurf (Codeium)","domain":"codeium.com","logo":"🌊"}],
+    content: "AI coding tools moved faster than almost any software category in 2025, and the dust is finally settling. If you picked a tool a year ago, two things are worth a fresh look: who owns it now, and what it actually costs.\n\n## Windsurf got split apart in 72 hours\n\nThe wildest story belongs to Windsurf (formerly Codeium). OpenAI reportedly agreed to buy it for $3 billion in early 2025, then the deal collapsed. Within days, Google paid roughly $2.4B to hire Windsurf-s founders and license its technology, and Cognition, the company behind the Devin coding agent, acquired the remaining product, brand, and team for about $250M.\n\nFor users, the practical takeaway is reassuring: the Windsurf editor is still actively developed under Cognition, with its Cascade agent, multi-file edits, and broad model support intact. But it is now part of a different company than the one you may have signed up with.\n\n## Copilot and Cursor settled into clear tiers\n\nThe pricing picture is clearer than it was. GitHub Copilot now offers a genuine free tier (2,000 completions a month) with Pro at $10/month, and in mid-2026 it shifted to usage-based AI credits. Cursor keeps a free Hobby plan with Pro at $20/month, bundling unlimited tab completions and a pool of frontier-model usage.\n\nThe gap between them is less about price and more about workflow: Copilot leans into broad IDE and ecosystem integration, while Cursor is a purpose-built AI editor for people who want the agent at the center.\n\n## What this means if you are choosing today\n\n- Confirm ownership and roadmap, not just features. A tool acquired mid-cycle can shift direction quickly.\n\n- Treat the free tiers as real evaluation paths. Copilot, Cursor, and others now let you test serious workflows without paying.\n\n- Watch billing models, not just headline prices. Usage-based credits can cost more or less than a flat fee depending on how heavily you lean on premium models.\n\nThe category is consolidating, but competition is still fierce, which keeps free tiers generous and pricing honest. Re-check your stack once a year, because in AI coding, a year is a long time.",
+  },
 ];
