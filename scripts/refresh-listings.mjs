@@ -59,6 +59,9 @@ const DIR_ROUTE = arg("dir");
 const DRY_RUN = !!arg("dry-run", false);
 const NO_WEB = !!arg("no-web", false);
 const LIMIT = arg("limit") ? parseInt(arg("limit"), 10) : Infinity;
+// Subscription mode: a Claude Code agent does the web research and writes the
+// decision JSON; this script just applies it safely (no API key needed).
+const DECISION_FILE = arg("decision");
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -360,10 +363,17 @@ async function main() {
   const categories = getCategories(src);
   console.log(`   Parsed ${parsed.blocks.length} listings, ${categories.length} categories.`);
 
-  if (!ANTHROPIC_API_KEY && !NO_WEB) throw new Error("ANTHROPIC_API_KEY required (or pass --no-web for a parse-only run)");
+  if (!ANTHROPIC_API_KEY && !NO_WEB && !DECISION_FILE) {
+    throw new Error("Provide --decision <file> (subscription mode), or set ANTHROPIC_API_KEY (API mode), or pass --no-web for a parse-only run");
+  }
 
   let decision = { updates: [], adds: [], removes: [] };
-  if (ANTHROPIC_API_KEY) {
+  if (DECISION_FILE) {
+    // Subscription mode: decisions were produced by a Claude Code agent via web
+    // search. We only apply them — same guardrails, no API call.
+    decision = JSON.parse(readFileSync(DECISION_FILE, "utf-8"));
+    console.log(`   Loaded decision from ${DECISION_FILE}: ${(decision.updates || []).length} updates, ${(decision.adds || []).length} adds, ${(decision.removes || []).length} removes.`);
+  } else if (ANTHROPIC_API_KEY) {
     const { default: Anthropic } = await import("@anthropic-ai/sdk");
     const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
     const targets = parsed.blocks.slice(0, LIMIT);

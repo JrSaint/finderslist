@@ -162,6 +162,35 @@ function appendPost(post) {
 // ─── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
+  // Subscription mode: a Claude Code agent wrote the post; we just publish it
+  // (append + tsc-gate + commit). No API call.
+  const postFile = arg("post-file");
+  if (postFile) {
+    const p = JSON.parse(readFileSync(postFile, "utf-8"));
+    const dir = MANIFEST.find((d) => d.route === p.relatedDirectory);
+    const date = new Date().toISOString().slice(0, 10);
+    const post = {
+      slug: slugify(`${p.title}-${MONTH}`),
+      title: p.title,
+      description: p.description,
+      category: p.category || (dir ? dir.displayName : "Guides"),
+      date,
+      readingTime: `${p.readingMinutes || 5} min read`,
+      featured: !!p.featured,
+      relatedDirectory: p.relatedDirectory || "",
+      heroTools: p.heroTools || (dir ? heroToolsFor(p.relatedDirectory) : []),
+      content: p.content,
+    };
+    if (!appendPost(post)) return;
+    try { execSync("npx tsc --noEmit", { cwd: ROOT, stdio: "pipe" }); }
+    catch { console.error("❌ tsc failed — reverting blog.ts"); execSync("git checkout -- data/blog.ts", { cwd: ROOT }); process.exit(1); }
+    execSync("git add data/blog.ts", { cwd: ROOT });
+    execSync(`git commit -m ${JSON.stringify(`Add blog post: ${p.title}`)}`, { cwd: ROOT, stdio: "pipe" });
+    try { execSync("git pull --rebase origin main && git push origin HEAD:main", { cwd: ROOT, stdio: "pipe" }); } catch {}
+    console.log(`✅ Published blog post: ${post.slug}`);
+    return;
+  }
+
   const ranked = changedDirsThisMonth().slice(0, LIMIT);
   if (!ranked.length) { console.log("No changed directories with audit logs this month — nothing to write."); return; }
   console.log(`📝 Generating ${ranked.length} post(s) for ${MONTH}: ${ranked.map((r) => r.route).join(", ")}`);

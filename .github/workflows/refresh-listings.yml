@@ -4,9 +4,13 @@ name: Refresh Listings (monthly sweep)
 # matrix job (parallel) so the whole site finishes well within Actions limits.
 # Small in-cap runs push to main (Vercel auto-deploys); over-cap runs open a PR.
 on:
-  schedule:
-    # 06:00 UTC on the 1st of every month
-    - cron: "0 6 1 * *"
+  # NOTE: the monthly cron is DISABLED — the recurring refresh now runs on your
+  # Claude subscription via the local scheduled task "finderslist-maintenance"
+  # (~/.claude/scheduled-tasks/), which uses no API credits. This workflow remains
+  # available for manual, API-billed runs (needs ANTHROPIC_API_KEY) via the
+  # Actions "Run workflow" button.
+  # schedule:
+  #   - cron: "0 6 1 * *"
   workflow_dispatch:
     inputs:
       dir:
