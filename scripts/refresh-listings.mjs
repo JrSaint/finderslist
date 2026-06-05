@@ -433,14 +433,18 @@ async function main() {
   }
 }
 
-// Parallel matrix jobs may push near-simultaneously; rebase + retry on contention.
-function pushToMainWithRetry(attempts = 6) {
+// Parallel matrix jobs may push near-simultaneously (they all touch
+// data/_freshness.json). Rebase + retry on contention, and always reset any
+// half-finished rebase before retrying so a conflict can't cascade.
+function pushToMainWithRetry(attempts = 8) {
   for (let n = 1; n <= attempts; n++) {
     try {
-      git("pull --rebase origin main");
+      git("fetch origin main");
+      git("rebase origin/main");
       git("push origin HEAD:main");
       return;
     } catch (e) {
+      try { git("rebase --abort"); } catch { /* no rebase in progress */ }
       if (n === attempts) throw e;
       const backoff = 1500 * n;
       console.warn(`   ↻ push contention (attempt ${n}/${attempts}) — retrying in ${backoff}ms`);
