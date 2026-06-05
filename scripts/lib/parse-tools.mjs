@@ -69,9 +69,11 @@ export function parseToolsFile(src) {
   return { exportName, arrayOpen, arrayClose, blocks };
 }
 
-/** Extract the category type-union slugs, e.g. "small-business" | "enterprise-erp". */
+/** Extract the category type-union slugs, e.g. "small-business" | "enterprise-erp".
+ *  Handles both `export type <X>Category =` and the bare `export type Category =`
+ *  used by the ai-tools data file (data/tools.ts). */
 export function getCategories(src) {
-  const m = src.match(/export type \w+Category\s*=\s*([^;]+);/);
+  const m = src.match(/export type \w*Category\s*=\s*([^;]+);/);
   if (!m) return [];
   return [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]);
 }

@@ -117,7 +117,8 @@ Today's date context: this runs monthly; assume "now" is the run date.
 Valid category slugs for this directory: ${categories.join(", ") || "(unknown — keep existing)"}.
 
 For EACH tool you are given, use web search to verify and decide what (if anything) to update:
-- Does the product still exist? Has it shut down, rebranded, or been acquired? → set "status".
+- Does the product still exist? Has it shut down, rebranded, or been acquired? → set "status"
+  to EXACTLY one of: "active", "rebranded", "acquired", "shutdown" (no other values).
 - Is the "pricing" tier (free/freemium/paid) still correct?
 - Are specific prices mentioned in the description still current? If you can confirm a current entry price,
   return "startingPrice" (e.g. "$30/mo", "$99/yr", "Free") and "priceCurrency" (e.g. "USD").
@@ -194,19 +195,32 @@ const UPDATABLE = new Set([
   "description", "tagline", "tags", "pros", "cons", "useCases",
   "name", "url", "domain",
 ]);
+const STATUS_ENUM = new Set(["active", "rebranded", "acquired", "shutdown"]);
+const PRICING_ENUM = new Set(["free", "freemium", "paid"]);
 
-function applyDecisions(src, parsed, decision, runDateISO) {
+// Drop any field whose value would violate a TS enum, so one hallucinated value
+// can't fail the whole directory's typecheck. Returns the safe field list.
+function validFields(fields, keys) {
+  return keys.filter((k) => {
+    if (k === "status") return STATUS_ENUM.has(fields[k]);
+    if (k === "pricing") return PRICING_ENUM.has(fields[k]);
+    return true;
+  });
+}
+
+function applyDecisions(src, parsed, decision, runDateISO, categories = []) {
   let out = src;
   const changelog = [];
   const freshnessKeys = [];
   const bySlug = Object.fromEntries(parsed.blocks.map((b) => [b.slug, b]));
+  const catSet = new Set(categories);
 
   // 1) Updates (field changes) — slug-anchored block replacement.
   for (const u of decision.updates || []) {
     const block = bySlug[u.slug];
     if (!block) continue;
     const fields = u.fields || {};
-    const realChanges = Object.keys(fields).filter((k) => UPDATABLE.has(k));
+    const realChanges = validFields(fields, Object.keys(fields).filter((k) => UPDATABLE.has(k)));
     if (!u.changed || realChanges.length === 0) continue;
 
     const merged = { ...block.obj };
@@ -241,9 +255,13 @@ function applyDecisions(src, parsed, decision, runDateISO) {
   for (const a of adds) {
     const slug = slugify(a.name);
     if (bySlug[slug]) continue; // dup guard
+    // Must place into a real category, or the file won't typecheck. Fall back to
+    // the first category if the model's choice isn't valid; skip if none exist.
+    const category = catSet.has(a.category) ? a.category : categories[0];
+    if (!category || !a.url) continue;
     const entry = {
       slug, name: a.name, tagline: a.tagline || "", description: a.description || a.tagline || "",
-      category: a.category, tags: a.tags || [], url: a.url, pricing: a.pricing || "paid",
+      category, tags: a.tags || [], url: a.url, pricing: PRICING_ENUM.has(a.pricing) ? a.pricing : "paid",
       featured: false, logo: a.logo || "🔗",
       domain: a.domain || safeHostname(a.url), status: "active", lastReviewed: runDateISO,
     };
@@ -368,7 +386,7 @@ async function main() {
     console.log("   [no-web] Skipping Claude — parse-only smoke test.");
   }
 
-  const { out, changelog, freshnessKeys } = applyDecisions(src, parsed, decision, runDateISO);
+  const { out, changelog, freshnessKeys } = applyDecisions(src, parsed, decision, runDateISO, categories);
 
   const nUpdates = changelog.filter((c) => c.kind === "update").length;
   const nRemoves = changelog.filter((c) => c.kind === "remove").length;
