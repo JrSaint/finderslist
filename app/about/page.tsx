@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About Us — FindersList",
   description:
     "Learn about FindersList — a curated directory platform helping people find the best tools, services, and providers across 100+ categories.",
-  alternates: { canonical: "https://finderslist.com/about" },
+  alternates: { canonical: "https://www.finderslist.com/about" },
 };
 
 export default function AboutPage() {

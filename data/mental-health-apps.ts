@@ -21,6 +21,10 @@ export interface MentalHealthTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const MENTAL_HEALTH_CATEGORIES: Record<MentalHealthCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

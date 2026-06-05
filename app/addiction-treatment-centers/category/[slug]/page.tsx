@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} (2026) — ${tools.length} Programs Compared`,
     description: `Discover the best ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top programs with honest profiles, treatment approaches, and real-world results.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "addiction treatment", category.label],
-    alternates: { canonical: `https://finderslist.com/addiction-treatment-centers/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/addiction-treatment-centers/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function AddictionTreatmentCategoryPage({ params }: Props) 
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/addiction-treatment-centers/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/addiction-treatment-centers/tools/${tool.slug}`,
     })),
   };
 

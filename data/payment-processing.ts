@@ -16,6 +16,10 @@ export interface PaymentProcessingTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const PAYMENT_PROCESSING_CATEGORIES: Record<PaymentProcessingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

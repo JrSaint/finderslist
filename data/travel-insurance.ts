@@ -16,6 +16,10 @@ export interface TravelInsuranceTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const TRAVEL_INSURANCE_CATEGORIES: Record<TravelInsuranceCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

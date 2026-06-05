@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top lenders with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "business loans", category.label],
-    alternates: { canonical: `https://finderslist.com/business-loans/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/business-loans/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function BusinessLoanCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/business-loans/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/business-loans/tools/${tool.slug}`,
     })),
   };
 

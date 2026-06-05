@@ -21,6 +21,10 @@ export interface BusinessInsuranceTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const BUSINESS_INSURANCE_CATEGORIES: Record<BusinessInsuranceCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

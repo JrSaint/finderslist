@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/mortgage-lenders" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/mortgage-lenders" } };
   }
   return {
     title: "Best Mortgage Lenders (2026) — 15+ Lenders Compared",
     description: "Compare the best mortgage lenders for home loans, rates, and terms. Reviews of Rocket Mortgage, LoanDepot, Better.com, United Wholesale Mortgage, and more.",
     keywords: ["mortgage lenders", "best mortgage rates 2026", "home loans", "mortgage comparison", "FHA loans", "VA loans", "refinance mortgage"],
-    alternates: { canonical: "https://finderslist.com/mortgage-lenders" },
+    alternates: { canonical: "https://www.finderslist.com/mortgage-lenders" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function MortgageLendersPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (MORTGAGE_LENDER_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function MortgageLendersPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />

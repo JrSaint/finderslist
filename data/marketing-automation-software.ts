@@ -16,6 +16,10 @@ export interface MarketingAutomationTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const MARKETING_AUTOMATION_CATEGORIES: Record<MarketingAutomationCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -27,7 +27,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/marketing-tools" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/marketing-tools" } };
   }
   return {
     title: "Best Marketing Tools Directory (2026) — 40+ Tools Reviewed",
@@ -41,7 +41,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       "social media tools",
       "marketing software directory",
     ],
-    alternates: { canonical: "https://finderslist.com/marketing-tools" },
+    alternates: { canonical: "https://www.finderslist.com/marketing-tools" },
   };
 }
 
@@ -80,6 +80,16 @@ export default async function MarketingToolsPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (MARKETING_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -90,6 +100,9 @@ export default async function MarketingToolsPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.2),transparent)] pointer-events-none" />

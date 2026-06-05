@@ -16,6 +16,10 @@ export interface CryptoExchangeTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const CRYPTO_EXCHANGE_CATEGORIES: Record<CryptoExchangeCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

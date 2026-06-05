@@ -2,6 +2,10 @@ export type InvoicingCategory = "invoicing-software" | "billing-platforms" | "pa
 
 export interface InvoicingTool {
   slug: string; name: string; tagline: string; description: string; category: InvoicingCategory; tags: string[]; url: string; affiliateUrl?: string; pricing: "free" | "freemium" | "paid"; featured: boolean; logo: string; domain?: string; pros?: string[]; cons?: string[]; useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const INVOICING_CATEGORIES: Record<InvoicingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

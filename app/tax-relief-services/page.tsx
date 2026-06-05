@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/tax-relief-services" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/tax-relief-services" } };
   }
   return {
     title: "Best Tax Relief Services (2026) — 15+ Companies Compared",
     description: "Compare the best tax relief companies for IRS debt negotiation, Offers in Compromise, penalty abatement, and back tax resolution.",
     keywords: ["tax relief", "best tax relief companies", "IRS tax debt help", "offer in compromise", "tax resolution services", "tax settlement"],
-    alternates: { canonical: "https://finderslist.com/tax-relief-services" },
+    alternates: { canonical: "https://www.finderslist.com/tax-relief-services" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function TaxReliefServicesPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (TAX_RELIEF_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function TaxReliefServicesPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(220,38,38,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />

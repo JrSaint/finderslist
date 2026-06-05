@@ -16,6 +16,10 @@ export interface POSSystemTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const POS_SYSTEM_CATEGORIES: Record<POSSystemCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

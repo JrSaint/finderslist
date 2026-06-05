@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/auto-insurance" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/auto-insurance" } };
   }
   return {
     title: "Best Auto Insurance Companies (2026) — 15+ Providers Compared",
     description: "Compare the best auto insurance companies for coverage, rates, and discounts. Reviews of GEICO, State Farm, Progressive, USAA, and more.",
     keywords: ["auto insurance","best car insurance 2026","cheap auto insurance","car insurance quotes","auto insurance comparison"],
-    alternates: { canonical: "https://finderslist.com/auto-insurance" },
+    alternates: { canonical: "https://www.finderslist.com/auto-insurance" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function AutoInsurancePage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (AUTO_INSURANCE_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function AutoInsurancePage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />

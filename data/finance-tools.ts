@@ -22,6 +22,10 @@ export interface FinanceTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const FINANCE_CATEGORIES: Record<FinanceCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/home-security-systems" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/home-security-systems" } };
   }
   return {
     title: "Best Home Security Systems (2026) — 15+ Systems Compared",
     description: "Compare the best home security systems with cameras, sensors, and monitoring. Reviews of Ring, SimpliSafe, ADT, Vivint, and more.",
     keywords: ["home security systems","best home security 2026","security cameras","home alarm systems","smart home security"],
-    alternates: { canonical: "https://finderslist.com/home-security-systems" },
+    alternates: { canonical: "https://www.finderslist.com/home-security-systems" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function HomeSecurityPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (HOME_SECURITY_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function HomeSecurityPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-500/30 to-transparent" />

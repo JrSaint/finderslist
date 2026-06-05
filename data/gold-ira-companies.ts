@@ -16,6 +16,10 @@ export interface GoldIRATool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const GOLD_IRA_CATEGORIES: Record<GoldIRACategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

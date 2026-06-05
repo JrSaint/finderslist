@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Blog — FindersList",
   description:
     "In-depth guides, comparisons, and expert advice to help you choose the right tools and services. Original research and analysis from the FindersList editorial team.",
-  alternates: { canonical: "https://finderslist.com/blog" },
+  alternates: { canonical: "https://www.finderslist.com/blog" },
 };
 
 export default function BlogPage() {

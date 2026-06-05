@@ -1,0 +1,37 @@
+name: Integrity Audit (weekly)
+
+# Cheap, deterministic weekly health check — no LLM, no data edits.
+# Flags dead links, duplicate slugs, invalid categories, missing fields.
+# Uploads a report artifact and emails a digest; fails the run on dead links.
+on:
+  schedule:
+    # 07:00 UTC every Monday
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+    inputs:
+      dir:
+        description: "Single directory route to check (blank = all)"
+        required: false
+        type: string
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install nodemailer --no-save
+      - name: Run integrity audit
+        run: node scripts/audit-integrity.mjs ${{ github.event.inputs.dir && format('--dir {0}', github.event.inputs.dir) || '' }}
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      - name: Upload integrity report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integrity-report
+          path: audit-logs/integrity-*.md
+          if-no-files-found: ignore

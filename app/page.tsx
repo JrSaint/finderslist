@@ -107,7 +107,7 @@ import { getAllTimeTrackingTools } from "@/lib/time-tracking-software";
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
   description: "FindersList hosts 70+ curated directories for AI tools, marketing, finance, insurance, health, education, real estate, and more. Find exactly what you're looking for.",
-  alternates: { canonical: "https://finderslist.com" },
+  alternates: { canonical: "https://www.finderslist.com" },
 };
 
 const directories = [
@@ -1454,8 +1454,8 @@ export default function HubPage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "FindersList",
-    url: "https://finderslist.com",
-    logo: "https://finderslist.com/FindersListLogo.png",
+    url: "https://www.finderslist.com",
+    logo: "https://www.finderslist.com/FindersListLogo.png",
     description: "FindersList hosts 100+ curated directories helping people find the best tools, software, and services with honest reviews and pricing transparency.",
     sameAs: [],
   };
@@ -1464,11 +1464,11 @@ export default function HubPage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "FindersList",
-    url: "https://finderslist.com",
+    url: "https://www.finderslist.com",
     description: "Curated directories for tools and services across 100+ categories.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://finderslist.com/ai-tools?q={search_term_string}",
+      target: "https://www.finderslist.com/ai-tools?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };

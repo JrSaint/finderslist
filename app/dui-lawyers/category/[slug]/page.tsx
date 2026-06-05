@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Attorneys (2026) — ${tools.length} Firms Compared`,
     description: `Discover the best ${category.label.toLowerCase()} attorneys in 2026. We've curated ${tools.length} top firms with honest profiles, specialties, and real-world case results.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "DUI lawyer", "DUI attorney", category.label],
-    alternates: { canonical: `https://finderslist.com/dui-lawyers/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/dui-lawyers/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function DUILawyerCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/dui-lawyers/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/dui-lawyers/tools/${tool.slug}`,
     })),
   };
 

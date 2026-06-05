@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Services (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} services in 2026. We've curated ${tools.length} top options with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} services`, `best ${category.label} 2026`, "identity theft protection", category.label],
-    alternates: { canonical: `https://finderslist.com/identity-theft-protection/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/identity-theft-protection/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function IdentityTheftProtectionCategoryPage({ params }: Pr
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/identity-theft-protection/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/identity-theft-protection/tools/${tool.slug}`,
     })),
   };
 

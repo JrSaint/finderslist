@@ -16,6 +16,10 @@ export interface MedicalBillingTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const MEDICAL_BILLING_CATEGORIES: Record<MedicalBillingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

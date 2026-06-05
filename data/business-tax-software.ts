@@ -2,6 +2,10 @@ export type BusinessTaxCategory = "business-filing" | "sales-tax" | "tax-plannin
 
 export interface BusinessTaxTool {
   slug: string; name: string; tagline: string; description: string; category: BusinessTaxCategory; tags: string[]; url: string; affiliateUrl?: string; pricing: "free" | "freemium" | "paid"; featured: boolean; logo: string; domain?: string; pros?: string[]; cons?: string[]; useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const BUSINESS_TAX_CATEGORIES: Record<BusinessTaxCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

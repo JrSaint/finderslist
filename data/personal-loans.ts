@@ -16,6 +16,10 @@ export interface PersonalLoanTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const PERSONAL_LOAN_CATEGORIES: Record<PersonalLoanCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -21,6 +21,10 @@ export interface OnlineTutoringTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const ONLINE_TUTORING_CATEGORIES: Record<OnlineTutoringCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/call-center-software" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/call-center-software" } };
   }
   return {
     title: "Best Call Center Software (2026) — Cloud Contact Center Platforms Compared",
     description: "Compare the best call center and contact center software in 2026. Reviews of cloud contact centers, predictive dialers, IVR, and workforce management platforms.",
     keywords: ["call center software","contact center platform","best call center software 2026","cloud contact center","predictive dialer"],
-    alternates: { canonical: "https://finderslist.com/call-center-software" },
+    alternates: { canonical: "https://www.finderslist.com/call-center-software" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function CallCenterPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (CALL_CENTER_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function CallCenterPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />

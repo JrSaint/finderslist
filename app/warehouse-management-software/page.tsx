@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/warehouse-management-software" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/warehouse-management-software" } };
   }
   return {
     title: "Best Warehouse Management Software (2026) — 15+ WMS Compared",
     description: "Compare the best warehouse management systems for inventory, picking, and shipping. Reviews of NetSuite WMS, ShipHero, Logiwa, and more.",
     keywords: ["warehouse management software","best wms 2026","warehouse management system","inventory management","fulfillment software"],
-    alternates: { canonical: "https://finderslist.com/warehouse-management-software" },
+    alternates: { canonical: "https://www.finderslist.com/warehouse-management-software" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function WarehouseManagementPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (WAREHOUSE_MANAGEMENT_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function WarehouseManagementPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-500/30 to-transparent" />

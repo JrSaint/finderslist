@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/cloud-storage-providers" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/cloud-storage-providers" } };
   }
   return {
     title: "Best Cloud Storage Providers (2026) — Personal, Business & Enterprise",
     description: "Compare the best cloud storage providers in 2026 for personal, business, and enterprise use. Reviews of Google Drive, Dropbox, OneDrive, Backblaze, and more.",
     keywords: ["cloud storage providers","best cloud storage 2026","online file storage","cloud backup","business cloud storage"],
-    alternates: { canonical: "https://finderslist.com/cloud-storage-providers" },
+    alternates: { canonical: "https://www.finderslist.com/cloud-storage-providers" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function CloudStoragePage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (CLOUD_STORAGE_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function CloudStoragePage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />

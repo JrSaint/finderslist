@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Our Review Methodology — FindersList",
   description:
     "Learn how FindersList researches, evaluates, and reviews tools and services across 100+ categories. Our transparent methodology ensures honest, unbiased recommendations.",
-  alternates: { canonical: "https://finderslist.com/methodology" },
+  alternates: { canonical: "https://www.finderslist.com/methodology" },
 };
 
 export default function MethodologyPage() {

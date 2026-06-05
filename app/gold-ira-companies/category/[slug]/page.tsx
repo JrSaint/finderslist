@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Companies (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} companies in 2026. We've curated ${tools.length} top providers with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} companies`, `best ${category.label} companies 2026`, "gold IRA", category.label],
-    alternates: { canonical: `https://finderslist.com/gold-ira-companies/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/gold-ira-companies/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function GoldIRACategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/gold-ira-companies/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/gold-ira-companies/tools/${tool.slug}`,
     })),
   };
 

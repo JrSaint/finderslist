@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/travel-insurance" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/travel-insurance" } };
   }
   return {
     title: "Best Travel Insurance Companies (2026) — 15+ Providers Compared",
     description: "Compare the best travel insurance companies for trip cancellation, medical coverage, and emergency evacuation. Reviews of Allianz, World Nomads, and more.",
     keywords: ["travel insurance","best travel insurance 2026","trip cancellation insurance","travel medical insurance","travel protection"],
-    alternates: { canonical: "https://finderslist.com/travel-insurance" },
+    alternates: { canonical: "https://www.finderslist.com/travel-insurance" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function TravelInsurancePage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (TRAVEL_INSURANCE_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function TravelInsurancePage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />

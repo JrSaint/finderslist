@@ -1,0 +1,78 @@
+name: Refresh Listings (monthly sweep)
+
+# Monthly auto-refresh of every directory's listings. Each directory is its own
+# matrix job (parallel) so the whole site finishes well within Actions limits.
+# Small in-cap runs push to main (Vercel auto-deploys); over-cap runs open a PR.
+on:
+  schedule:
+    # 06:00 UTC on the 1st of every month
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+    inputs:
+      dir:
+        description: "Single directory route to refresh (blank = all)"
+        required: false
+        type: string
+      dry_run:
+        description: "Dry run (no writes / commits)"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      routes: ${{ steps.set.outputs.routes }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set
+        run: |
+          if [ -n "${{ github.event.inputs.dir }}" ]; then
+            echo "routes=[\"${{ github.event.inputs.dir }}\"]" >> "$GITHUB_OUTPUT"
+          else
+            echo "routes=$(jq -c '[.[].route]' data/directories.json)" >> "$GITHUB_OUTPUT"
+          fi
+
+  refresh:
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        route: ${{ fromJson(needs.prepare.outputs.routes) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm install @anthropic-ai/sdk node-fetch nodemailer --no-save
+      - name: Configure git
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+      - name: Refresh ${{ matrix.route }}
+        run: node scripts/refresh-listings.mjs --dir ${{ matrix.route }} ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MODEL: ${{ vars.REFRESH_MODEL || 'claude-sonnet-4-6' }}
+          WEB_SEARCH_TOOL: ${{ vars.WEB_SEARCH_TOOL || 'web_search_20250305' }}
+      - name: Upload audit log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-${{ matrix.route }}
+          path: audit-logs/
+          if-no-files-found: ignore

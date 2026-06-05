@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Tools (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} tools in 2026. We've curated ${tools.length} top tools with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} tools`, `best ${category.label} tools 2026`, "ai video generators", category.label],
-    alternates: { canonical: `https://finderslist.com/ai-video-generators/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/ai-video-generators/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function AIVideoCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/ai-video-generators/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/ai-video-generators/tools/${tool.slug}`,
     })),
   };
 

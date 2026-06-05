@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `Discover the best ${category.label.toLowerCase()} AI tools in 2025. We've curated ${tools.length} top tools with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} AI tools`, `best ${category.label} tools`, `AI tools 2025`, category.label],
     alternates: {
-      canonical: `https://finderslist.com/ai-tools/category/${slug}`,
+      canonical: `https://www.finderslist.com/ai-tools/category/${slug}`,
     },
   };
 }
@@ -51,7 +51,7 @@ export default async function CategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/ai-tools/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/ai-tools/tools/${tool.slug}`,
     })),
   };
 

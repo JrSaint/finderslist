@@ -21,6 +21,10 @@ export interface SocialMediaTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const SOCIAL_MEDIA_CATEGORIES: Record<

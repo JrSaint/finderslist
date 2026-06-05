@@ -16,6 +16,10 @@ export interface AICodingTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const AI_CODING_CATEGORIES: Record<AICodingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

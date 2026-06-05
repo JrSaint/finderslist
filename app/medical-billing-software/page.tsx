@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/medical-billing-software" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/medical-billing-software" } };
   }
   return {
     title: "Best Medical Billing Software (2026) — 15+ Solutions Compared",
     description: "Compare the best medical billing software for practices, billing companies, and health systems. Reviews of Kareo, DrChrono, AdvancedMD, athenaCollector, and more.",
     keywords: ["medical billing software", "best medical billing software 2026", "practice management software", "medical billing solutions", "EHR billing"],
-    alternates: { canonical: "https://finderslist.com/medical-billing-software" },
+    alternates: { canonical: "https://www.finderslist.com/medical-billing-software" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function MedicalBillingSoftwarePage({ searchParams }: Props
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (MEDICAL_BILLING_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function MedicalBillingSoftwarePage({ searchParams }: Props
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />

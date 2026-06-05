@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/antivirus-software" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/antivirus-software" } };
   }
   return {
     title: "Best Antivirus Software (2026) — Endpoint & Home Protection Compared",
     description: "Compare the best antivirus software for home, business, and mobile in 2026. Independent reviews of Norton, Bitdefender, Malwarebytes, McAfee, and more.",
     keywords: ["antivirus software","best antivirus 2026","endpoint protection","internet security","malware removal"],
-    alternates: { canonical: "https://finderslist.com/antivirus-software" },
+    alternates: { canonical: "https://www.finderslist.com/antivirus-software" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function AntivirusPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (ANTIVIRUS_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function AntivirusPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />

@@ -16,6 +16,10 @@ export interface CreditRepairTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const CREDIT_REPAIR_CATEGORIES: Record<CreditRepairCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

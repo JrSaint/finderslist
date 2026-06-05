@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Contact Us — FindersList",
   description:
     "Get in touch with the FindersList team. Questions, feedback, tool submissions, and partnership inquiries welcome.",
-  alternates: { canonical: "https://finderslist.com/contact" },
+  alternates: { canonical: "https://www.finderslist.com/contact" },
 };
 
 export default function ContactPage() {

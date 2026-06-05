@@ -33,7 +33,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     title: "Best Car Accident Lawyers (2026) — 15+ Top Attorneys Compared | FindersList",
     description: "Compare the best car accident lawyers and auto injury attorneys in 2026. Find top-rated firms with free consultations, no-win-no-fee guarantees, and proven track records in car crash injury claims.",
     keywords: ["car accident lawyer","best car accident attorney","auto accident lawyer near me","car crash injury lawyer","car accident attorney 2026","auto injury attorney","car wreck lawyer","vehicle accident lawyer","car collision attorney","best auto accident lawyers"],
-    alternates: { canonical: "https://finderslist.com/car-accident-lawyers" },
+    alternates: { canonical: "https://www.finderslist.com/car-accident-lawyers" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function CarAccidentLawyerPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (CAR_ACCIDENT_LAWYER_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function CarAccidentLawyerPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />

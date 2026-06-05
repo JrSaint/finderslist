@@ -16,6 +16,10 @@ export interface BankruptcyLawyerTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const BANKRUPTCY_LAWYER_CATEGORIES: Record<BankruptcyLawyerCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

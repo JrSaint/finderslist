@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/ai-agent-platforms" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/ai-agent-platforms" } };
   }
   return {
     title: "Best AI Agent Platforms (2026) — 20+ Tools Reviewed",
     description: "Compare the best AI agent platforms for building autonomous agents and AI workflows. Reviews of LangChain, Make.com, CrewAI, and more.",
     keywords: ["ai agent platform","best ai agent tools 2026","autonomous ai agents","llm agent framework","ai workflow automation"],
-    alternates: { canonical: "https://finderslist.com/ai-agent-platforms" },
+    alternates: { canonical: "https://www.finderslist.com/ai-agent-platforms" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function AIAgentsPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (AI_AGENTS_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function AIAgentsPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />

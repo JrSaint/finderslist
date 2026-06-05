@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${tool.name} Review 2026 | FindersList`,
       description: `${tool.tagline}. See honest pros, cons, pricing, and use cases.`,
     },
-    alternates: { canonical: `https://finderslist.com/hr-tools/tools/${tool.slug}` },
+    alternates: { canonical: `https://www.finderslist.com/hr-tools/tools/${tool.slug}` },
   };
 }
 
@@ -72,6 +72,7 @@ export default async function HRToolPage({ params }: Props) {
     name: tool.name,
     description: tool.description,
     url: tool.url,
+    ...(tool.lastReviewed ? { dateModified: tool.lastReviewed } : {}),
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     offers: {
@@ -80,16 +81,16 @@ export default async function HRToolPage({ params }: Props) {
       availability: "https://schema.org/OnlineOnly",
     },
     keywords: tool.tags.join(", "),
-    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
+    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://www.finderslist.com/about" },
   };
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://finderslist.com" },
-      { "@type": "ListItem", position: 2, name: "HR Tools", item: "https://finderslist.com/hr-tools" },
-      { "@type": "ListItem", position: 3, name: category.label, item: `https://finderslist.com/hr-tools/category/${tool.category}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "HR Tools", item: "https://www.finderslist.com/hr-tools" },
+      { "@type": "ListItem", position: 3, name: category.label, item: `https://www.finderslist.com/hr-tools/category/${tool.category}` },
       { "@type": "ListItem", position: 4, name: tool.name },
     ],
   };

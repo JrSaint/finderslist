@@ -16,6 +16,10 @@ export interface SolarPanelTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const SOLAR_PANEL_CATEGORIES: Record<SolarPanelCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

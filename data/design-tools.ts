@@ -21,6 +21,10 @@ export interface DesignTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const DESIGN_CATEGORIES: Record<DesignCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

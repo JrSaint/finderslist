@@ -16,6 +16,10 @@ export interface CallCenterTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const CALL_CENTER_CATEGORIES: Record<CallCenterCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

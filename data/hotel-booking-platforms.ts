@@ -16,6 +16,10 @@ export interface HotelBookingTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const HOTEL_BOOKING_CATEGORIES: Record<HotelBookingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

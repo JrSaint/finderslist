@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Lenders (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} lenders in 2026. We've curated ${tools.length} top lenders with honest reviews, rate breakdowns, and real-world use cases.`,
     keywords: [`${category.label} lenders`, `best ${category.label} lenders 2026`, "mortgage lenders", category.label],
-    alternates: { canonical: `https://finderslist.com/mortgage-lenders/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/mortgage-lenders/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function MortgageLenderCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/mortgage-lenders/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/mortgage-lenders/tools/${tool.slug}`,
     })),
   };
 

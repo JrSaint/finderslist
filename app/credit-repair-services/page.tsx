@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/credit-repair-services" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/credit-repair-services" } };
   }
   return {
     title: "Best Credit Repair Services (2026) — 15+ Services Compared",
     description: "Compare the best credit repair services for dispute resolution, credit monitoring, identity protection, and credit building.",
     keywords: ["credit repair", "best credit repair services", "fix credit score", "dispute credit report", "credit monitoring", "identity protection"],
-    alternates: { canonical: "https://finderslist.com/credit-repair-services" },
+    alternates: { canonical: "https://www.finderslist.com/credit-repair-services" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function CreditRepairServicesPage({ searchParams }: Props) 
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (CREDIT_REPAIR_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function CreditRepairServicesPage({ searchParams }: Props) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(147,51,234,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />

@@ -30,7 +30,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       "Discover the best AI tools for writing, coding, image generation, video, productivity, and more. Browse 100+ curated AI tools with honest pros, cons, and pricing.",
     keywords: ["AI tools", "best AI tools 2026", "AI tools directory", "AI software list"],
     alternates: {
-      canonical: "https://finderslist.com/ai-tools",
+      canonical: "https://www.finderslist.com/ai-tools",
     },
   };
 }
@@ -68,6 +68,16 @@ export default async function AIToolsPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (AI_TOOLS_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -78,6 +88,9 @@ export default async function AIToolsPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,40,200,0.25),transparent)] pointer-events-none" />

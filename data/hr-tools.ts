@@ -22,6 +22,10 @@ export interface HRTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const HR_CATEGORIES: Record<HRCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

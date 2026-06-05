@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/ecommerce-platforms" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/ecommerce-platforms" } };
   }
   return {
     title: "Best E-Commerce Platforms (2026) — 20+ Platforms Reviewed",
     description: "Compare the best e-commerce platforms for online stores. Reviews of Shopify, BigCommerce, WooCommerce, Squarespace, and more.",
     keywords: ["ecommerce platform","best ecommerce platform 2026","online store builder","ecommerce software","headless commerce"],
-    alternates: { canonical: "https://finderslist.com/ecommerce-platforms" },
+    alternates: { canonical: "https://www.finderslist.com/ecommerce-platforms" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function EcommercePlatformPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (ECOMMERCE_PLATFORM_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function EcommercePlatformPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />

@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/seo-tools" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/seo-tools" } };
   }
   return {
     title: "Best SEO Tools (2026) — Keyword, Rank, Backlink & Technical SEO",
     description: "Compare the best SEO tools in 2026. Reviews of Ahrefs, Semrush, Moz, Screaming Frog, Surfer SEO, and more for keyword research, rank tracking, and audits.",
     keywords: ["seo tools","best seo tools 2026","keyword research tools","rank tracking software","backlink analysis"],
-    alternates: { canonical: "https://finderslist.com/seo-tools" },
+    alternates: { canonical: "https://www.finderslist.com/seo-tools" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function SeoToolPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (SEO_TOOL_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function SeoToolPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />

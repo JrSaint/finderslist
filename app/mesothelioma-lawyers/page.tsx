@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/mesothelioma-lawyers" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/mesothelioma-lawyers" } };
   }
   return {
     title: "Best Mesothelioma Lawyers (2026) — 15+ Asbestos Law Firms Compared",
     description: "Compare the best mesothelioma lawyers and asbestos law firms. Find top-rated attorneys for asbestos exposure claims, Navy veteran cases, wrongful death, and trust fund filings.",
     keywords: ["mesothelioma lawyer", "asbestos attorney", "mesothelioma law firm", "asbestos exposure lawyer", "mesothelioma lawsuit", "asbestos trust fund attorney", "best mesothelioma lawyers 2026"],
-    alternates: { canonical: "https://finderslist.com/mesothelioma-lawyers" },
+    alternates: { canonical: "https://www.finderslist.com/mesothelioma-lawyers" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function MesotheliomaLawyersPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (MESOTHELIOMA_LAWYER_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function MesotheliomaLawyersPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(180,83,9,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />

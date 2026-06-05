@@ -28,7 +28,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/ecommerce-tools" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/ecommerce-tools" } };
   }
   return {
     title: "Best E-commerce Tools Directory (2026) — 35+ Tools Reviewed",
@@ -43,7 +43,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       "online store builder",
       "ecommerce tools directory",
     ],
-    alternates: { canonical: "https://finderslist.com/ecommerce-tools" },
+    alternates: { canonical: "https://www.finderslist.com/ecommerce-tools" },
   };
 }
 
@@ -86,6 +86,16 @@ export default async function EcommerceToolsPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (ECOMMERCE_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -96,6 +106,9 @@ export default async function EcommerceToolsPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(59,130,246,0.2),transparent)] pointer-events-none" />

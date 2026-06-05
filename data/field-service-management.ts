@@ -16,6 +16,10 @@ export interface FieldServiceTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const FIELD_SERVICE_CATEGORIES: Record<FieldServiceCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

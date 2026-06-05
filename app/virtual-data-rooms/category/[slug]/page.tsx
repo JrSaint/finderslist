@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Virtual Data Rooms (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} virtual data rooms in 2026. We've curated ${tools.length} top options with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} data room`, `best ${category.label} VDR 2026`, "virtual data room", category.label],
-    alternates: { canonical: `https://finderslist.com/virtual-data-rooms/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/virtual-data-rooms/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function VirtualDataRoomCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/virtual-data-rooms/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/virtual-data-rooms/tools/${tool.slug}`,
     })),
   };
 

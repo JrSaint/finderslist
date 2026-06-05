@@ -2,6 +2,10 @@ export type ExpenseManagementCategory = "expense-tracking" | "corporate-cards" |
 
 export interface ExpenseManagementTool {
   slug: string; name: string; tagline: string; description: string; category: ExpenseManagementCategory; tags: string[]; url: string; affiliateUrl?: string; pricing: "free" | "freemium" | "paid"; featured: boolean; logo: string; domain?: string; pros?: string[]; cons?: string[]; useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const EXPENSE_MANAGEMENT_CATEGORIES: Record<ExpenseManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/life-insurance" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/life-insurance" } };
   }
   return {
     title: "Best Life Insurance Companies (2026) — 15+ Providers Reviewed",
     description: "Compare the best life insurance companies for term, whole, and universal life policies. Reviews of Haven Life, Bestow, Northwestern Mutual, and more.",
     keywords: ["life insurance","best life insurance 2026","term life insurance","whole life insurance","life insurance quotes"],
-    alternates: { canonical: "https://finderslist.com/life-insurance" },
+    alternates: { canonical: "https://www.finderslist.com/life-insurance" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function LifeInsurancePage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (LIFE_INSURANCE_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function LifeInsurancePage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />

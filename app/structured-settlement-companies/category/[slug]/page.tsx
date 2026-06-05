@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Structured Settlement Companies (2026) — ${tools.length} Options Compared`,
     description: `Discover the best structured settlement companies for ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top companies with honest reviews, payout estimates, and real-world use cases.`,
     keywords: [`${category.label} structured settlement`, `best ${category.label} companies 2026`, "structured settlement buyers", category.label],
-    alternates: { canonical: `https://finderslist.com/structured-settlement-companies/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/structured-settlement-companies/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function StructuredSettlementCategoryPage({ params }: Props
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/structured-settlement-companies/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/structured-settlement-companies/tools/${tool.slug}`,
     })),
   };
 

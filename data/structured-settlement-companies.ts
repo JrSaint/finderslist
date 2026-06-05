@@ -16,6 +16,10 @@ export interface StructuredSettlementTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const STRUCTURED_SETTLEMENT_CATEGORIES: Record<StructuredSettlementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

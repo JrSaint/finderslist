@@ -16,6 +16,10 @@ export interface AppointmentSchedulingTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const APPOINTMENT_SCHEDULING_CATEGORIES: Record<AppointmentSchedulingCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

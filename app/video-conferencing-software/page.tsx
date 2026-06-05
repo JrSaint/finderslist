@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/video-conferencing-software" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/video-conferencing-software" } };
   }
   return {
     title: "Best Video Conferencing Software (2026) — Meetings & Webinars Compared",
     description: "Compare the best video conferencing software in 2026. Reviews of Zoom, Microsoft Teams, Google Meet, Webex, Doxy.me, and more for meetings and webinars.",
     keywords: ["video conferencing software","best video conferencing 2026","online meeting platform","webinar software","telehealth video"],
-    alternates: { canonical: "https://finderslist.com/video-conferencing-software" },
+    alternates: { canonical: "https://www.finderslist.com/video-conferencing-software" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function VideoConferencingPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (VIDEO_CONFERENCING_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function VideoConferencingPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />

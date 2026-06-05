@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/applicant-tracking-systems" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/applicant-tracking-systems" } };
   }
   return {
     title: "Best Applicant Tracking Systems (2026) — 20+ ATS Reviewed",
     description: "Compare the best applicant tracking systems for hiring teams. Reviews of Greenhouse, Lever, Workable, JazzHR, and 15+ more ATS platforms.",
     keywords: ["applicant tracking system","best ats 2026","recruiting software","hiring software","talent acquisition platform"],
-    alternates: { canonical: "https://finderslist.com/applicant-tracking-systems" },
+    alternates: { canonical: "https://www.finderslist.com/applicant-tracking-systems" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function ATSPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (ATS_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function ATSPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />

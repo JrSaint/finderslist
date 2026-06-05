@@ -16,6 +16,10 @@ export interface WorkersCompTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const WORKERS_COMP_CATEGORIES: Record<WorkersCompCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

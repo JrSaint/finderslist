@@ -21,6 +21,10 @@ export interface BudgetingAppTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const BUDGETING_APP_CATEGORIES: Record<BudgetingAppCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

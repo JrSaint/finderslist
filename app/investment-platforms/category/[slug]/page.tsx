@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Tools (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} tools in 2026. We've curated ${tools.length} top tools with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} tools`, `best ${category.label} tools 2026`, "investment platforms", category.label],
-    alternates: { canonical: `https://finderslist.com/investment-platforms/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/investment-platforms/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function InvestmentPlatformCategoryPage({ params }: Props) 
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/investment-platforms/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/investment-platforms/tools/${tool.slug}`,
     })),
   };
 

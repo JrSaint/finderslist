@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/structured-settlement-companies" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/structured-settlement-companies" } };
   }
   return {
     title: "Best Structured Settlement Companies (2026) — 15+ Companies Compared",
     description: "Compare the best structured settlement companies for selling your payments. Reviews of JG Wentworth, Peachtree Financial, Fairfield Funding, and more.",
     keywords: ["structured settlement companies", "sell structured settlement 2026", "best structured settlement buyers", "structured settlement cash out", "annuity buyers"],
-    alternates: { canonical: "https://finderslist.com/structured-settlement-companies" },
+    alternates: { canonical: "https://www.finderslist.com/structured-settlement-companies" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function StructuredSettlementCompaniesPage({ searchParams }
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (STRUCTURED_SETTLEMENT_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function StructuredSettlementCompaniesPage({ searchParams }
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(217,70,239,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fuchsia-500/30 to-transparent" />

@@ -16,6 +16,10 @@ export interface WarehouseManagementTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const WAREHOUSE_MANAGEMENT_CATEGORIES: Record<WarehouseManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

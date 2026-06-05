@@ -16,6 +16,10 @@ export interface LiveChatTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const LIVE_CHAT_CATEGORIES: Record<LiveChatCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} options in 2026. We've curated ${tools.length} top listings with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "live chat software", category.label],
-    alternates: { canonical: `https://finderslist.com/live-chat-software/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/live-chat-software/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function LiveChatCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/live-chat-software/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/live-chat-software/tools/${tool.slug}`,
     })),
   };
 

@@ -16,6 +16,10 @@ export interface CarAccidentLawyerTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const CAR_ACCIDENT_LAWYER_CATEGORIES: Record<CarAccidentLawyerCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

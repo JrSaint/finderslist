@@ -16,6 +16,10 @@ export interface PersonalInjuryTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const PERSONAL_INJURY_CATEGORIES: Record<PersonalInjuryCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 79820)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(npm cache:*)",
+      "Bash(npm config:*)",
+      "Bash(sudo npm:*)",
+      "Bash(kill 88847)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/background-check-services/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/background-check-services/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/payment-processing/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/payment-processing/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/gold-ira-companies/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/gold-ira-companies/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/debt-relief-services/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/debt-relief-services/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/medical-billing-software/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/medical-billing-software/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/erp-software/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/erp-software/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/workers-comp-insurance/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/workers-comp-insurance/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/structured-settlement-companies/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/structured-settlement-companies/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/mortgage-lenders/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/mortgage-lenders/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/llc-formation-services/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/llc-formation-services/category/[slug]\")",
+      "Bash(npx next:*)",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/business-loans/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/business-loans/category/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/credit-repair-services/tools/[slug]\")",
+      "Bash(mkdir -p \"/Users/welbrdossantosjr/Desktop/Claude Projects iMac/finderslist/app/credit-repair-services/category/[slug]\")"
+    ]
+  }
+}

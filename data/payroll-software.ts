@@ -16,6 +16,10 @@ export interface PayrollTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const PAYROLL_CATEGORIES: Record<PayrollCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/dui-lawyers" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/dui-lawyers" } };
   }
   return {
     title: "Best DUI Lawyers (2026) — 15+ Attorneys & Resources Compared",
     description: "Compare the best DUI and DWI defense lawyers. Find top-rated attorneys for first offense, felony DUI, underage DUI, commercial CDL defense, and DUI case dismissal strategies.",
     keywords: ["DUI lawyer", "DUI attorney", "DWI defense lawyer", "drunk driving attorney", "DUI defense", "best DUI lawyers 2026", "DUI law firm"],
-    alternates: { canonical: "https://finderslist.com/dui-lawyers" },
+    alternates: { canonical: "https://www.finderslist.com/dui-lawyers" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function DUILawyersPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (DUI_LAWYER_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function DUILawyersPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(239,68,68,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />

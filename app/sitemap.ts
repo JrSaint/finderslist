@@ -1,126 +1,31 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blog";
+import { DIRECTORIES, SITE_HOST } from "@/lib/directories";
+import freshnessData from "@/data/_freshness.json";
 
-const BASE_URL = "https://www.finderslist.com";
+const BASE_URL = SITE_HOST;
 
-// Static dates — prevents every build from marking all pages as "freshly modified"
-// which wastes Google crawl budget. Update these when content actually changes.
+// Static fallback dates — prevents every build from marking all pages as "freshly
+// modified", which wastes Google crawl budget. Pages that the monthly refresh sweep
+// actually changes get a real per-path date via data/_freshness.json (below); pages
+// it didn't touch keep these static dates. Bump these only on a broad manual change.
 const DATE_STATIC_PAGES = new Date("2026-01-15");
 const DATE_DIRECTORIES = new Date("2026-03-30");
 const DATE_TOOLS = new Date("2026-03-30");
 
-// Map of all category routes to their lib import paths and function names
-const CATEGORIES = [
-  { path: "ai-tools", libName: "tools" },
-  { path: "marketing-tools", libName: "marketing-tools" },
-  { path: "finance-tools", libName: "finance-tools" },
-  { path: "ecommerce-tools", libName: "ecommerce-tools" },
-  { path: "productivity-tools", libName: "productivity-tools" },
-  { path: "hr-tools", libName: "hr-tools" },
-  { path: "crm-tools", libName: "crm-tools" },
-  { path: "security-tools", libName: "security-tools" },
-  { path: "website-builders", libName: "website-builders" },
-  { path: "creator-tools", libName: "creator-tools" },
-  { path: "developer-tools", libName: "developer-tools" },
-  { path: "design-tools", libName: "design-tools" },
-  { path: "support-tools", libName: "support-tools" },
-  { path: "elearning-tools", libName: "elearning-tools" },
-  { path: "analytics-tools", libName: "analytics-tools" },
-  { path: "legal-tools", libName: "legal-tools" },
-  { path: "hosting-tools", libName: "hosting-tools" },
-  { path: "social-media-tools", libName: "social-media-tools" },
-  { path: "email-tools", libName: "email-tools" },
-  { path: "no-code-tools", libName: "no-code-tools" },
-  // New categories
-  { path: "appointment-scheduling-software", libName: "appointment-scheduling-software" },
-  { path: "auto-insurance", libName: "auto-insurance" },
-  { path: "budgeting-apps", libName: "budgeting-apps" },
-  { path: "business-insurance", libName: "business-insurance" },
-  { path: "business-phone-systems", libName: "business-phone-systems" },
-  { path: "contract-management-software", libName: "contract-management-software" },
-  { path: "credit-cards", libName: "credit-cards" },
-  { path: "cryptocurrency-exchanges", libName: "cryptocurrency-exchanges" },
-  { path: "document-management-software", libName: "document-management-software" },
-  { path: "estate-planning-services", libName: "estate-planning-services" },
-  { path: "field-service-management", libName: "field-service-management" },
-  { path: "fitness-apps", libName: "fitness-apps" },
-  { path: "fleet-management-software", libName: "fleet-management-software" },
-  { path: "health-insurance", libName: "health-insurance" },
-  { path: "home-insurance", libName: "home-insurance" },
-  { path: "home-security-systems", libName: "home-security-systems" },
-  { path: "home-warranty-companies", libName: "home-warranty-companies" },
-  { path: "hotel-booking-platforms", libName: "hotel-booking-platforms" },
-  { path: "inventory-management-software", libName: "inventory-management-software" },
-  { path: "investment-platforms", libName: "investment-platforms" },
-  { path: "life-insurance", libName: "life-insurance" },
-  { path: "mental-health-apps", libName: "mental-health-apps" },
-  { path: "moving-companies", libName: "moving-companies" },
-  { path: "online-degree-programs", libName: "online-degree-programs" },
-  { path: "online-tutoring-platforms", libName: "online-tutoring-platforms" },
-  { path: "personal-loans", libName: "personal-loans" },
-  { path: "pest-control-services", libName: "pest-control-services" },
-  { path: "pos-systems", libName: "pos-systems" },
-  { path: "robo-advisors", libName: "robo-advisors" },
-  { path: "solar-panel-companies", libName: "solar-panel-companies" },
-  { path: "student-loans", libName: "student-loans" },
-  { path: "supply-chain-software", libName: "supply-chain-software" },
-  { path: "tax-preparation-software", libName: "tax-preparation-software" },
-  { path: "telehealth-platforms", libName: "telehealth-platforms" },
-  { path: "test-prep-services", libName: "test-prep-services" },
-  { path: "travel-insurance", libName: "travel-insurance" },
-  { path: "vacation-rental-platforms", libName: "vacation-rental-platforms" },
-  { path: "warehouse-management-software", libName: "warehouse-management-software" },
-  // High-CPC niche directories
-  { path: "mortgage-lenders", libName: "mortgage-lenders" },
-  { path: "llc-formation-services", libName: "llc-formation-services" },
-  { path: "background-check-services", libName: "background-check-services" },
-  { path: "payment-processing", libName: "payment-processing" },
-  { path: "gold-ira-companies", libName: "gold-ira-companies" },
-  { path: "debt-relief-services", libName: "debt-relief-services" },
-  { path: "medical-billing-software", libName: "medical-billing-software" },
-  { path: "erp-software", libName: "erp-software" },
-  { path: "workers-comp-insurance", libName: "workers-comp-insurance" },
-  { path: "structured-settlement-companies", libName: "structured-settlement-companies" },
-  { path: "business-loans", libName: "business-loans" },
-  { path: "credit-repair-services", libName: "credit-repair-services" },
-  { path: "tax-relief-services", libName: "tax-relief-services" },
-  { path: "identity-theft-protection", libName: "identity-theft-protection" },
-  { path: "personal-injury-lawyers", libName: "personal-injury-lawyers" },
-  { path: "mesothelioma-lawyers", libName: "mesothelioma-lawyers" },
-  { path: "bankruptcy-lawyers", libName: "bankruptcy-lawyers" },
-  { path: "dui-lawyers", libName: "dui-lawyers" },
-  { path: "accounting-software", libName: "accounting-software" },
-  { path: "addiction-treatment-centers", libName: "addiction-treatment-centers" },
-  { path: "ai-agent-platforms", libName: "ai-agent-platforms" },
-  { path: "ai-coding-assistants", libName: "ai-coding-assistants" },
-  { path: "ai-video-generators", libName: "ai-video-generators" },
-  { path: "applicant-tracking-systems", libName: "applicant-tracking-systems" },
-  { path: "business-password-managers", libName: "business-password-managers" },
-  { path: "business-tax-software", libName: "business-tax-software" },
-  { path: "business-vpn-software", libName: "business-vpn-software" },
-  { path: "ecommerce-inventory-software", libName: "ecommerce-inventory-software" },
-  { path: "ecommerce-platforms", libName: "ecommerce-platforms" },
-  { path: "endpoint-security-software", libName: "endpoint-security-software" },
-  { path: "expense-management-software", libName: "expense-management-software" },
-  { path: "hris-software", libName: "hris-software" },
-  { path: "invoicing-billing-software", libName: "invoicing-billing-software" },
-  { path: "mortgage-lending-software", libName: "mortgage-lending-software" },
-  { path: "payroll-software", libName: "payroll-software" },
-  { path: "project-management-software", libName: "project-management-software" },
-  { path: "real-estate-software", libName: "real-estate-software" },
-  { path: "subscription-billing-platforms", libName: "subscription-billing-platforms" },
-  { path: "time-tracking-software", libName: "time-tracking-software" },
-  { path: "virtual-data-rooms", libName: "virtual-data-rooms" },
-  // Orphan directory backfill
-  { path: "antivirus-software", libName: "antivirus-software" },
-  { path: "call-center-software", libName: "call-center-software" },
-  { path: "cloud-storage-providers", libName: "cloud-storage-providers" },
-  { path: "divorce-lawyers", libName: "divorce-lawyers" },
-  { path: "live-chat-software", libName: "live-chat-software" },
-  { path: "marketing-automation-software", libName: "marketing-automation-software" },
-  { path: "seo-tools", libName: "seo-tools" },
-  { path: "video-conferencing-software", libName: "video-conferencing-software" },
-];
+// Per-path real modification dates written by scripts/refresh-listings.mjs.
+// Keys: "<route>" (hub), "<route>/category/<cat>", "<route>/tools/<slug>".
+const FRESHNESS = freshnessData as Record<string, string>;
+
+function lastMod(key: string, fallback: Date): Date {
+  const iso = FRESHNESS[key];
+  return iso ? new Date(iso) : fallback;
+}
+
+// Directory routes come from the shared manifest (lib/directories.ts → data/directories.json),
+// the single source of truth. `path` is the URL segment; `libName` resolves the lib import
+// (note: "ai-tools" → lib/tools.ts).
+const CATEGORIES = DIRECTORIES.map((d) => ({ path: d.route, libName: d.libName }));
 
 function camelCase(str: string): string {
   return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
@@ -188,7 +93,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Index page
     entries.push({
       url: `${BASE_URL}/${cat.path}`,
-      lastModified: DATE_DIRECTORIES,
+      lastModified: lastMod(cat.path, DATE_DIRECTORIES),
       changeFrequency: "weekly",
       priority: 0.9,
     });
@@ -198,7 +103,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (const category of categories) {
         entries.push({
           url: `${BASE_URL}/${cat.path}/category/${category}`,
-          lastModified: DATE_DIRECTORIES,
+          lastModified: lastMod(`${cat.path}/category/${category}`, DATE_DIRECTORIES),
           changeFrequency: "weekly",
           priority: 0.8,
         });
@@ -210,7 +115,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (const tool of tools) {
         entries.push({
           url: `${BASE_URL}/${cat.path}/tools/${tool.slug}`,
-          lastModified: DATE_TOOLS,
+          lastModified: lastMod(`${cat.path}/tools/${tool.slug}`, DATE_TOOLS),
           changeFrequency: "monthly",
           priority: 0.8,
         });

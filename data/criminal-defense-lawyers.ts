@@ -16,6 +16,10 @@ export interface CriminalDefenseLawyerTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const CRIMINAL_DEFENSE_LAWYER_CATEGORIES: Record<CriminalDefenseLawyerCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

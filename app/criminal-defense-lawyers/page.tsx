@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/criminal-defense-lawyers" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/criminal-defense-lawyers" } };
   }
   return {
     title: "Best Criminal Defense Lawyers (2026) — 15+ Firms & Resources Compared",
     description: "Compare the best criminal defense lawyers and legal resources. Find top-rated attorneys for drug crimes, violent felonies, white-collar defense, federal cases, and juvenile defense.",
     keywords: ["criminal defense lawyer", "criminal defense attorney", "drug crime lawyer", "violent crime defense", "white collar criminal defense", "federal defense attorney", "best criminal defense lawyers 2026"],
-    alternates: { canonical: "https://finderslist.com/criminal-defense-lawyers" },
+    alternates: { canonical: "https://www.finderslist.com/criminal-defense-lawyers" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function CriminalDefenseLawyersPage({ searchParams }: Props
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (CRIMINAL_DEFENSE_LAWYER_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function CriminalDefenseLawyersPage({ searchParams }: Props
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(239,68,68,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />

@@ -28,12 +28,12 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/no-code-tools" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/no-code-tools" } };
   }
   return {
     title: "Best No-Code & Low-Code Tools Directory (2026) — 30+ Tools Reviewed",
     description: "The most comprehensive directory of no-code and low-code tools. Compare Bubble, Airtable, Zapier, Make, Retool, Glide, and 30+ more with honest reviews.",
-    alternates: { canonical: "https://finderslist.com/no-code-tools" },
+    alternates: { canonical: "https://www.finderslist.com/no-code-tools" },
   };
 }
 
@@ -76,6 +76,16 @@ export default async function NoCodeToolsPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (NO_CODE_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -86,6 +96,9 @@ export default async function NoCodeToolsPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,197,94,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent" />

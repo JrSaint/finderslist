@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} Workers Comp Insurance (2026) — ${tools.length} Options Compared`,
     description: `Discover the best workers compensation insurance for ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top providers with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} workers comp`, `best ${category.label} workers compensation 2026`, "workers comp insurance", category.label],
-    alternates: { canonical: `https://finderslist.com/workers-comp-insurance/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/workers-comp-insurance/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function WorkersCompCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/workers-comp-insurance/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/workers-comp-insurance/tools/${tool.slug}`,
     })),
   };
 

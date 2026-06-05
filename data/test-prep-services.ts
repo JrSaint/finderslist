@@ -16,6 +16,10 @@ export interface TestPrepTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const TEST_PREP_CATEGORIES: Record<TestPrepCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

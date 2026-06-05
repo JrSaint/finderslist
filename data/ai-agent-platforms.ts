@@ -16,6 +16,10 @@ export interface AIAgentsTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const AI_AGENTS_CATEGORIES: Record<AIAgentsCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

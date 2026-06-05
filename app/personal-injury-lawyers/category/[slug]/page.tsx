@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} (2026) — ${tools.length} Firms Compared`,
     description: `Discover the best ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top firms with honest profiles, specialties, and real-world case results.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "personal injury lawyer", category.label],
-    alternates: { canonical: `https://finderslist.com/personal-injury-lawyers/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/personal-injury-lawyers/category/${slug}` },
   };
 }
 
@@ -54,7 +54,7 @@ export default async function PersonalInjuryCategoryPage({ params }: Props) {
       position: i + 1,
       name: tool.name,
       description: tool.tagline,
-      url: `https://finderslist.com/personal-injury-lawyers/tools/${tool.slug}`,
+      url: `https://www.finderslist.com/personal-injury-lawyers/tools/${tool.slug}`,
     })),
   };
 

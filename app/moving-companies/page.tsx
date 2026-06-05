@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/moving-companies" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/moving-companies" } };
   }
   return {
     title: "Best Moving Companies (2026) — 15+ Movers Compared",
     description: "Compare the best moving companies for local, long-distance, and international moves. Reviews of United Van Lines, PODS, U-Haul, and more.",
     keywords: ["moving companies","best movers 2026","long distance movers","local moving companies","moving services"],
-    alternates: { canonical: "https://finderslist.com/moving-companies" },
+    alternates: { canonical: "https://www.finderslist.com/moving-companies" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function MovingCompanyPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (MOVING_COMPANY_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function MovingCompanyPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />

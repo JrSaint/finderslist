@@ -16,6 +16,10 @@ export interface FleetManagementTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const FLEET_MANAGEMENT_CATEGORIES: Record<FleetManagementCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

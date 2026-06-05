@@ -16,6 +16,10 @@ export interface DebtReliefTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const DEBT_RELIEF_CATEGORIES: Record<DebtReliefCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

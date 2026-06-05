@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: post.updatedAt,
       authors: [post.author],
     },
-    alternates: { canonical: `https://finderslist.com/blog/${post.slug}` },
+    alternates: { canonical: `https://www.finderslist.com/blog/${post.slug}` },
   };
 }
 
@@ -40,19 +40,19 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://finderslist.com/about" },
-    publisher: { "@type": "Organization", name: "FindersList", url: "https://finderslist.com", logo: { "@type": "ImageObject", url: "https://finderslist.com/FindersListLogo.png" } },
+    author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://www.finderslist.com/about" },
+    publisher: { "@type": "Organization", name: "FindersList", url: "https://www.finderslist.com", logo: { "@type": "ImageObject", url: "https://www.finderslist.com/FindersListLogo.png" } },
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://finderslist.com/blog/${post.slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.finderslist.com/blog/${post.slug}` },
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://finderslist.com" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://finderslist.com/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.finderslist.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.finderslist.com/blog" },
       { "@type": "ListItem", position: 3, name: post.title },
     ],
   };

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Best ${category.label} AI Tools (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} AI tools in 2026. ${tools.length} curated tools with honest reviews, pricing, and real-world use cases.`,
     keywords: [`${category.label} AI tools`, `best ${category.label} tools 2026`, "AI tools", category.label],
-    alternates: { canonical: `https://finderslist.com/ai-tools/category/${slug}` },
+    alternates: { canonical: `https://www.finderslist.com/ai-tools/category/${slug}` },
   };
 }
 

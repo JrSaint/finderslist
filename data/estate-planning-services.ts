@@ -21,6 +21,10 @@ export interface EstatePlanningTool {
   pros?: string[];
   cons?: string[];
   useCases?: string[];
+  lastReviewed?: string;
+  startingPrice?: string;
+  priceCurrency?: string;
+  status?: "active" | "rebranded" | "acquired" | "shutdown";
 }
 
 export const ESTATE_PLANNING_CATEGORIES: Record<EstatePlanningCategory, { label: string; emoji: string; description: string; gradient: string; guide?: string }> = {

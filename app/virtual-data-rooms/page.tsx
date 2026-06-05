@@ -27,13 +27,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const { q, pricing, role } = await searchParams;
   const isFiltering = !!(q || pricing || role);
   if (isFiltering) {
-    return { robots: { index: false, follow: false }, alternates: { canonical: "https://finderslist.com/virtual-data-rooms" } };
+    return { robots: { index: false, follow: false }, alternates: { canonical: "https://www.finderslist.com/virtual-data-rooms" } };
   }
   return {
     title: "Best Virtual Data Rooms (2026) — 15+ VDR Platforms Compared",
     description: "Compare the best virtual data room providers for M&A due diligence, fundraising, IPOs, legal compliance, and secure document sharing.",
     keywords: ["virtual data room", "best VDR", "M&A data room", "due diligence software", "secure document sharing", "deal room", "IPO data room"],
-    alternates: { canonical: "https://finderslist.com/virtual-data-rooms" },
+    alternates: { canonical: "https://www.finderslist.com/virtual-data-rooms" },
   };
 }
 
@@ -72,6 +72,16 @@ export default async function VirtualDataRoomsPage({ searchParams }: Props) {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (VIRTUAL_DATA_ROOM_EDITORIAL.faq || []).map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -82,6 +92,9 @@ export default async function VirtualDataRoomsPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {faqJsonLd.mainEntity.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(59,130,246,0.2),transparent)] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
