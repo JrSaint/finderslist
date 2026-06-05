@@ -1,1 +1,18 @@
-{}
+{
+  "website-builders": "2026-06-05",
+  "website-builders/tools/astro": "2026-06-05",
+  "website-builders/tools/carrd": "2026-06-05",
+  "website-builders/tools/duda": "2026-06-05",
+  "website-builders/tools/editor-x": "2026-06-05",
+  "website-builders/tools/framer": "2026-06-05",
+  "website-builders/tools/gatsby": "2026-06-05",
+  "website-builders/tools/ghost": "2026-06-05",
+  "website-builders/tools/leadpages": "2026-06-05",
+  "website-builders/tools/sanity": "2026-06-05",
+  "website-builders/tools/shopify": "2026-06-05",
+  "website-builders/tools/squarespace": "2026-06-05",
+  "website-builders/tools/webflow": "2026-06-05",
+  "website-builders/tools/wix": "2026-06-05",
+  "website-builders/tools/wordpress-com": "2026-06-05",
+  "website-builders/tools/wordpress-org": "2026-06-05"
+}
