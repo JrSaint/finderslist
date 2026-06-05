@@ -10,6 +10,16 @@ export interface BlogPost {
   featured: boolean;
   relatedDirectory: string;
   content: string;
+  /**
+   * Tool/brand visuals for the post hero + index card. Denormalized (name +
+   * domain + emoji) so blog pages never need to import every directory's data.
+   * Favicons render from the domain; logo emoji is the fallback.
+   */
+  heroTools?: { slug: string; name: string; domain?: string; logo: string }[];
+  /** Optional override hero image URL (used when heroTools is absent). */
+  image?: string;
+  /** Month this post summarizes, e.g. "2026-06" — set by the monthly generator. */
+  monthTag?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -24,6 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: "12 min read",
     featured: true,
     relatedDirectory: "budgeting-apps",
+    heroTools: [{"slug":"ynab","name":"YNAB","domain":"ynab.com","logo":"💰"},{"slug":"goodbudget","name":"Goodbudget","domain":"goodbudget.com","logo":"✉️"},{"slug":"monarch-money","name":"Monarch Money","domain":"monarchmoney.com","logo":"👑"},{"slug":"everydollar","name":"EveryDollar","domain":"ramseysolutions.com","logo":"💵"}],
     content: `Family budgeting is a fundamentally different challenge than personal budgeting. When you are managing finances for two or more people, you are dealing with multiple income streams, shared and individual spending categories, competing priorities, and the need for transparency without micromanagement. Most budgeting apps were originally designed for individuals and later bolted on multi-user features as an afterthought. That distinction matters, and it is what guided our evaluation.
 
 We spent three months testing over twenty budgeting apps with real family scenarios: dual-income households, single-parent families, families with teenagers learning about money, and households managing irregular income. Below, we break down what families actually need and which apps deliver.

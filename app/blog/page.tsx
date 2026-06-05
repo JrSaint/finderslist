@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "@/data/blog";
+import ToolVisualStrip from "@/components/ToolVisualStrip";
 
 export const metadata: Metadata = {
   title: "Blog — FindersList",
@@ -43,6 +44,11 @@ export default function BlogPage() {
                     {post.title}
                   </h3>
                   <p className="text-sm text-slate-400 leading-relaxed line-clamp-3">{post.description}</p>
+                  {post.heroTools && post.heroTools.length > 0 && (
+                    <div className="mt-4">
+                      <ToolVisualStrip tools={post.heroTools} variant="cluster" />
+                    </div>
+                  )}
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-xs text-slate-500">{post.author} · {post.publishedAt}</span>
                     <span className="text-xs text-violet-400 group-hover:translate-x-0.5 transition-transform">Read →</span>
@@ -76,7 +82,10 @@ export default function BlogPage() {
                   </h3>
                   <p className="text-sm text-slate-500 line-clamp-2">{post.description}</p>
                 </div>
-                <div className="hidden sm:flex flex-col items-end justify-center text-xs text-slate-600 shrink-0">
+                <div className="hidden sm:flex flex-col items-end justify-center gap-2 text-xs text-slate-600 shrink-0">
+                  {post.heroTools && post.heroTools.length > 0 && (
+                    <ToolVisualStrip tools={post.heroTools} variant="cluster" />
+                  )}
                   <span>{post.publishedAt}</span>
                 </div>
               </Link>

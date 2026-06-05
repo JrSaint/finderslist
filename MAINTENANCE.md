@@ -14,6 +14,8 @@ auto-deploy via Vercel.
 | `scripts/refresh-listings.mjs` | **Pipeline A engine.** Per-directory monthly sweep: Claude + web search re-verifies each listing (alive? pricing? prices? rebrand/shutdown?), refreshes stale fields, adds/removes/re-ranks, writes freshness + audit log, tsc-gates, commits. |
 | `scripts/audit-integrity.mjs` | **Weekly deterministic check** (no LLM): dead/redirected links, dup slugs, invalid categories, missing fields. Report + email; never edits data. |
 | `scripts/apply-seo-jsonld.mjs` | One-time idempotent codemod: FAQPage JSON-LD on hubs, `dateModified` on tool pages, www-canonical fix. |
+| `scripts/generate-blog-posts.mjs` | Runs after the monthly sweep: turns the month's audit logs into a few concise posts with tool/brand visuals (`heroTools`). Wired as the `blog` job in `refresh-listings.yml`. |
+| `components/ToolVisualStrip.tsx` | Renders blog tool/brand visuals (favicon hero strip + index-card cluster). |
 | `.github/workflows/refresh-listings.yml` | Monthly cron (1st, 06:00 UTC) — matrix fan-out, one job per directory, `max-parallel: 10`. Manual `workflow_dispatch` with `dir` + `dry_run` inputs. |
 | `.github/workflows/audit-integrity.yml` | Weekly cron (Mon 07:00 UTC). |
 | `.claude/routines/monthly-editorial-refresh.md` | **Pipeline B** prompt — scheduled Claude Code routine for competitive gap analysis + editorial freshness (register via `/schedule`). |

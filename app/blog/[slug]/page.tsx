@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "@/data/blog";
+import ToolVisualStrip from "@/components/ToolVisualStrip";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,6 +41,7 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.title,
     description: post.description,
+    ...(post.image ? { image: post.image } : {}),
     author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://www.finderslist.com/about" },
     publisher: { "@type": "Organization", name: "FindersList", url: "https://www.finderslist.com", logo: { "@type": "ImageObject", url: "https://www.finderslist.com/FindersListLogo.png" } },
     datePublished: post.publishedAt,
@@ -94,6 +96,10 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </div>
       </header>
+
+      {post.heroTools && post.heroTools.length > 0 && (
+        <ToolVisualStrip tools={post.heroTools} variant="hero" />
+      )}
 
       <article className="prose prose-invert prose-slate max-w-none">
         {sections.map((section, i) => {

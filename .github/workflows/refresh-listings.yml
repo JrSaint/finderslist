@@ -76,3 +76,33 @@ jobs:
           name: audit-${{ matrix.route }}
           path: audit-logs/
           if-no-files-found: ignore
+
+  # After all directories are refreshed, turn this month's audit logs into a few
+  # concise blog posts (with tool/brand visuals). Skipped on dry runs.
+  blog:
+    needs: refresh
+    if: ${{ github.event.inputs.dry_run != 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm install @anthropic-ai/sdk --no-save
+      - name: Configure git
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+      - name: Generate monthly blog posts
+        run: node scripts/generate-blog-posts.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: ${{ vars.REFRESH_MODEL || 'claude-sonnet-4-6' }}
+          WEB_SEARCH_TOOL: ${{ vars.WEB_SEARCH_TOOL || 'web_search_20250305' }}
+          BLOG_POSTS_PER_MONTH: ${{ vars.BLOG_POSTS_PER_MONTH || '3' }}
