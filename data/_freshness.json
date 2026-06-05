@@ -1,4 +1,8 @@
 {
+  "ai-coding-assistants": "2026-06-05",
+  "ai-coding-assistants/tools/codeium-windsurf": "2026-06-05",
+  "ai-coding-assistants/tools/cursor": "2026-06-05",
+  "ai-coding-assistants/tools/github-copilot": "2026-06-05",
   "budgeting-apps": "2026-06-05",
   "budgeting-apps/tools/mint": "2026-06-05",
   "budgeting-apps/tools/monarch-money": "2026-06-05",
