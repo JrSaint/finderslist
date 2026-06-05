@@ -1,4 +1,9 @@
 {
+  "budgeting-apps": "2026-06-05",
+  "budgeting-apps/tools/mint": "2026-06-05",
+  "budgeting-apps/tools/monarch-money": "2026-06-05",
+  "budgeting-apps/tools/mvelopes": "2026-06-05",
+  "budgeting-apps/tools/ynab": "2026-06-05",
   "security-tools": "2026-06-05",
   "security-tools/tools/crowdstrike": "2026-06-05",
   "security-tools/tools/cyberghost-vpn": "2026-06-05",
