@@ -1,13 +1,25 @@
 import Link from "next/link";
 import { CATEGORIES, getAllCategories } from "@/lib/tools";
 
+// High-value hubs surfaced site-wide for internal linking (audit follow-up).
+const POPULAR_DIRECTORIES = [
+  { href: "/ai-tools", label: "AI Tools" },
+  { href: "/accounting-software", label: "Accounting Software" },
+  { href: "/crm-tools", label: "CRM & Sales" },
+  { href: "/payroll-software", label: "Payroll Software" },
+  { href: "/personal-loans", label: "Personal Loans" },
+  { href: "/home-insurance", label: "Home Insurance" },
+  { href: "/project-management-software", label: "Project Management" },
+  { href: "/website-builders", label: "Website Builders" },
+];
+
 export default function Footer() {
   const categories = getAllCategories();
 
   return (
     <footer className="border-t border-white/10 bg-slate-950 mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
@@ -34,6 +46,22 @@ export default function Footer() {
                 >
                   <span>{CATEGORIES[cat].emoji}</span>
                   {CATEGORIES[cat].label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Popular Directories */}
+          <div>
+            <h3 className="text-sm font-semibold text-slate-300 mb-3">Popular Directories</h3>
+            <div className="space-y-1">
+              {POPULAR_DIRECTORIES.map((dir) => (
+                <Link
+                  key={dir.href}
+                  href={dir.href}
+                  className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1"
+                >
+                  {dir.label}
                 </Link>
               ))}
             </div>
