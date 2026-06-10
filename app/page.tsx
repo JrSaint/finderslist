@@ -1289,7 +1289,8 @@ export default async function HubPage() {
                     width={20}
                     height={20}
                     className="object-contain"
-                    loading="lazy"
+                    loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     referrerPolicy="no-referrer"
                   />
