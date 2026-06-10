@@ -36,7 +36,7 @@ export default function Footer() {
 
           {/* Categories */}
           <div className="md:col-span-2">
-            <h3 className="text-sm font-semibold text-slate-300 mb-3">Categories</h3>
+            <h3 className="text-sm font-semibold text-slate-300 mb-3">AI Tool Categories</h3>
             <div className="grid grid-cols-2 gap-1">
               {categories.map((cat) => (
                 <Link
@@ -44,7 +44,6 @@ export default function Footer() {
                   href={`/ai-tools/category/${cat}`}
                   className="text-sm text-slate-400 hover:text-slate-200 transition-colors py-1 flex items-center gap-1.5"
                 >
-                  <span>{CATEGORIES[cat].emoji}</span>
                   {CATEGORIES[cat].label}
                 </Link>
               ))}
@@ -73,7 +72,6 @@ export default function Footer() {
             <div className="space-y-1">
               <Link href="/" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Home</Link>
               <Link href="/blog" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Blog</Link>
-              <Link href="/ai-tools" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">AI Tools</Link>
               <Link href="/ai-tools/submit" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Submit a Tool</Link>
               <Link href="/about" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">About Us</Link>
               <Link href="/methodology" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Our Methodology</Link>

@@ -79,6 +79,8 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
     paid: "Paid treatment. Check the website for insurance acceptance and pricing details.",
   }[tool.pricing];
 
+  const pricingText = isDead ? "Discontinued — this product is no longer available." : pricingDetail;
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -119,7 +121,7 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
                   </Link>
                 </div>
                 <div className="hidden sm:flex flex-col gap-2 flex-shrink-0">
-                  <a href={isDead ? tool.url : visitUrl} target="_blank" rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} className="flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 px-5 py-2.5 font-semibold text-slate-900 transition-colors text-sm whitespace-nowrap">
+                  <a href={isDead ? tool.url : visitUrl} target="_blank" rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} aria-disabled={isDead || undefined} className={`flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 px-5 py-2.5 font-semibold text-slate-900 transition-colors text-sm whitespace-nowrap${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}>
                     {isDead ? "No longer available" : <>Visit {tool.name}</>}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   </a>
@@ -130,7 +132,7 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
           </div>
 
           <div className="sm:hidden mb-6">
-            <a href={isDead ? tool.url : visitUrl} target="_blank" rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3 font-semibold text-white transition-colors">
+            <a href={isDead ? tool.url : visitUrl} target="_blank" rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} aria-disabled={isDead || undefined} className={`flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3 font-semibold text-white transition-colors${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}>
               {isDead ? "No longer available" : <>Visit {tool.name}</>}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
@@ -195,7 +197,7 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Pricing</p>
-                  <p className="text-sm text-slate-300 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+                  <p className="text-sm text-slate-300 leading-relaxed">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
                 </div>
               </div>
             </div>
@@ -204,7 +206,7 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Cost</p>
               <p className="text-sm font-semibold text-white mb-1">{ADDICTION_TREATMENT_PRICING_LABELS[tool.pricing]}</p>
-              <p className="text-xs text-slate-500 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
             </div>
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Treatment Type</p>
@@ -238,13 +240,13 @@ export default async function AddictionTreatmentToolPage({ params }: Props) {
           <div className="sticky top-24 space-y-4">
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-sm font-medium text-white mb-3">Quick Access</p>
-              <a href={isDead ? tool.url : visitUrl} target="_blank" rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} className="block w-full rounded-lg bg-emerald-600 hover:bg-emerald-500 px-4 py-2.5 text-sm font-medium text-white transition-colors text-center">{isDead ? "No longer available" : <>Visit {tool.name}</>} →</a>
+              <a href={isDead ? tool.url : visitUrl} target="_blank" rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} aria-disabled={isDead || undefined} className={`block w-full rounded-lg bg-emerald-600 hover:bg-emerald-500 px-4 py-2.5 text-sm font-medium text-white transition-colors text-center${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}>{isDead ? "No longer available" : <>Visit {tool.name}</>} →</a>
               <p className="text-xs text-slate-600 mt-2 text-center">{ADDICTION_TREATMENT_PRICING_LABELS[tool.pricing]} · {category.label}</p>
             </div>
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-sm font-medium text-white mb-2">💰 Cost</p>
               <span className={`inline-flex text-xs border rounded-full px-2.5 py-1 mb-2 ${ADDICTION_TREATMENT_PRICING_COLORS[tool.pricing]}`}>{ADDICTION_TREATMENT_PRICING_LABELS[tool.pricing]}</span>
-              <p className="text-xs text-slate-500 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
             </div>
             {tool.pros && tool.pros.length > 0 && (
               <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">

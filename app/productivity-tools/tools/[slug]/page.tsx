@@ -104,6 +104,8 @@ export default async function ProductivityToolPage({ params }: Props) {
     paid: "Paid subscription required. Check the website for current pricing and free trials.",
   }[tool.pricing];
 
+  const pricingText = isDead ? "Discontinued — this product is no longer available." : pricingDetail;
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       <script
@@ -172,7 +174,7 @@ export default async function ProductivityToolPage({ params }: Props) {
                     href={isDead ? tool.url : visitUrl}
                     target="_blank"
                     rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
-                    className="flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 px-5 py-2.5 font-semibold text-slate-900 transition-colors text-sm whitespace-nowrap"
+                    aria-disabled={isDead || undefined} className={`flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 px-5 py-2.5 font-semibold text-slate-900 transition-colors text-sm whitespace-nowrap${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}
                   >
                     {isDead ? "No longer available" : <>Visit {tool.name}</>}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -193,7 +195,7 @@ export default async function ProductivityToolPage({ params }: Props) {
               href={isDead ? tool.url : visitUrl}
               target="_blank"
               rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
-              className="flex items-center justify-center gap-2 rounded-xl bg-teal-600 hover:bg-teal-500 px-6 py-3 font-semibold text-white transition-colors"
+              aria-disabled={isDead || undefined} className={`flex items-center justify-center gap-2 rounded-xl bg-teal-600 hover:bg-teal-500 px-6 py-3 font-semibold text-white transition-colors${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}
             >
               {isDead ? "No longer available" : <>Visit {tool.name}</>}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -307,7 +309,7 @@ export default async function ProductivityToolPage({ params }: Props) {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Pricing</p>
-                  <p className="text-sm text-slate-300 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+                  <p className="text-sm text-slate-300 leading-relaxed">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
                 </div>
               </div>
             </div>
@@ -316,7 +318,7 @@ export default async function ProductivityToolPage({ params }: Props) {
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Pricing Model</p>
               <p className="text-sm font-semibold text-white mb-1">{PRODUCTIVITY_PRICING_LABELS[tool.pricing]}</p>
-              <p className="text-xs text-slate-500 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
             </div>
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Category</p>
@@ -372,7 +374,7 @@ export default async function ProductivityToolPage({ params }: Props) {
                 href={isDead ? tool.url : visitUrl}
                 target="_blank"
                 rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
-                className="block w-full rounded-lg bg-teal-600 hover:bg-teal-500 px-4 py-2.5 text-sm font-medium text-white transition-colors text-center"
+                aria-disabled={isDead || undefined} className={`block w-full rounded-lg bg-teal-600 hover:bg-teal-500 px-4 py-2.5 text-sm font-medium text-white transition-colors text-center${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}
               >
                 {isDead ? "No longer available" : <>Open {tool.name} →</>}
               </a>
@@ -386,7 +388,7 @@ export default async function ProductivityToolPage({ params }: Props) {
               <span className={`inline-flex text-xs border rounded-full px-2.5 py-1 mb-2 ${PRODUCTIVITY_PRICING_COLORS[tool.pricing]}`}>
                 {PRODUCTIVITY_PRICING_LABELS[tool.pricing]}
               </span>
-              <p className="text-xs text-slate-500 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
             </div>
 
             {tool.pros && tool.pros.length > 0 && (

@@ -79,6 +79,8 @@ export default async function DUILawyerToolPage({ params }: Props) {
     paid: "Paid service. Check the website for current fee structures and consultation options.",
   }[tool.pricing];
 
+  const pricingText = isDead ? "Discontinued — this product is no longer available." : pricingDetail;
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -169,7 +171,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
 
           <div className="mb-8 p-5 rounded-xl border border-white/8 bg-slate-900/40">
             <h2 className="text-sm font-semibold text-white mb-2">Pricing</h2>
-            <p className="text-slate-400 text-sm">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
+            <p className="text-slate-400 text-sm">{isDead ? "" : tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingText}</p>
           </div>
         </div>
 
@@ -179,7 +181,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
               href={isDead ? tool.url : visitUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center py-3 px-4 rounded-lg bg-red-600 hover:bg-red-500 text-white font-medium text-sm transition-colors mb-4"
+              aria-disabled={isDead || undefined} className={`block w-full text-center py-3 px-4 rounded-lg bg-red-600 hover:bg-red-500 text-white font-medium text-sm transition-colors mb-4${isDead ? " opacity-50 grayscale pointer-events-none" : ""}`}
             >
               {isDead ? "No longer available" : <>Visit {tool.name}</>} →
             </a>

@@ -25,29 +25,29 @@ import { EMAIL_CATEGORIES, getAllEmailCategories } from "@/lib/email-tools";
 import { NO_CODE_CATEGORIES, getAllNoCodeCategories } from "@/lib/no-code-tools";
 
 const PRIMARY_NAV = [
-  { key: "ai", label: "🤖 AI Tools", href: "/ai-tools" },
-  { key: "marketing", label: "📈 Marketing", href: "/marketing-tools" },
-  { key: "finance", label: "💰 Finance", href: "/finance-tools" },
-  { key: "ecommerce", label: "🛍️ E-commerce", href: "/ecommerce-tools" },
-  { key: "productivity", label: "⚡ Productivity", href: "/productivity-tools" },
-  { key: "hr", label: "👥 HR", href: "/hr-tools" },
+  { key: "ai", label: "AI Tools", href: "/ai-tools" },
+  { key: "marketing", label: "Marketing", href: "/marketing-tools" },
+  { key: "finance", label: "Finance", href: "/finance-tools" },
+  { key: "ecommerce", label: "E-commerce", href: "/ecommerce-tools" },
+  { key: "productivity", label: "Productivity", href: "/productivity-tools" },
+  { key: "hr", label: "HR", href: "/hr-tools" },
 ] as const;
 
 const MORE_DIRECTORIES = [
-  { key: "crm", label: "🤝 CRM & Sales", href: "/crm-tools" },
-  { key: "security", label: "🔒 Security", href: "/security-tools" },
-  { key: "website-builders", label: "🌐 Website Builders", href: "/website-builders" },
-  { key: "creator", label: "🎬 Creator Tools", href: "/creator-tools" },
-  { key: "developer", label: "💻 Developer Tools", href: "/developer-tools" },
-  { key: "design", label: "🎨 Design Tools", href: "/design-tools" },
-  { key: "support", label: "🎧 Customer Support", href: "/support-tools" },
-  { key: "elearning", label: "🎓 eLearning", href: "/elearning-tools" },
-  { key: "analytics", label: "📊 Analytics", href: "/analytics-tools" },
-  { key: "legal", label: "⚖️ Legal Tools", href: "/legal-tools" },
-  { key: "hosting", label: "☁️ Hosting & Cloud", href: "/hosting-tools" },
-  { key: "social-media", label: "📱 Social Media", href: "/social-media-tools" },
-  { key: "email", label: "✉️ Email Marketing", href: "/email-tools" },
-  { key: "no-code", label: "🔧 No-Code Tools", href: "/no-code-tools" },
+  { key: "crm", label: "CRM & Sales", href: "/crm-tools" },
+  { key: "security", label: "Security", href: "/security-tools" },
+  { key: "website-builders", label: "Website Builders", href: "/website-builders" },
+  { key: "creator", label: "Creator Tools", href: "/creator-tools" },
+  { key: "developer", label: "Developer Tools", href: "/developer-tools" },
+  { key: "design", label: "Design Tools", href: "/design-tools" },
+  { key: "support", label: "Customer Support", href: "/support-tools" },
+  { key: "elearning", label: "eLearning", href: "/elearning-tools" },
+  { key: "analytics", label: "Analytics", href: "/analytics-tools" },
+  { key: "legal", label: "Legal Tools", href: "/legal-tools" },
+  { key: "hosting", label: "Hosting & Cloud", href: "/hosting-tools" },
+  { key: "social-media", label: "Social Media", href: "/social-media-tools" },
+  { key: "email", label: "Email Marketing", href: "/email-tools" },
+  { key: "no-code", label: "No-Code Tools", href: "/no-code-tools" },
 ] as const;
 
 type PrimaryNavKey = typeof PRIMARY_NAV[number]["key"];

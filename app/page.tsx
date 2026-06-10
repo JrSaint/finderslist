@@ -2,108 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import GlobalSearchBar from "@/components/GlobalSearchBar";
 import { BLOG_POSTS } from "@/data/blog";
-import { getAllTools, getAllCategories } from "@/lib/tools";
-import { getAllMarketingTools } from "@/lib/marketing-tools";
-import { getAllFinanceTools } from "@/lib/finance-tools";
-import { getAllEcommerceTools } from "@/lib/ecommerce-tools";
-import { getAllProductivityTools } from "@/lib/productivity-tools";
-import { getAllHRTools } from "@/lib/hr-tools";
-import { getAllCRMTools } from "@/lib/crm-tools";
-import { getAllSecurityTools } from "@/lib/security-tools";
-import { getAllWebsiteBuilderTools } from "@/lib/website-builders";
-import { getAllCreatorTools } from "@/lib/creator-tools";
-import { getAllDeveloperTools } from "@/lib/developer-tools";
-import { getAllDesignTools } from "@/lib/design-tools";
-import { getAllSupportTools } from "@/lib/support-tools";
-import { getAllElearningTools } from "@/lib/elearning-tools";
-import { getAllAnalyticsTools } from "@/lib/analytics-tools";
-import { getAllLegalTools } from "@/lib/legal-tools";
-import { getAllHostingTools } from "@/lib/hosting-tools";
-import { getAllSocialMediaTools } from "@/lib/social-media-tools";
-import { getAllEmailTools } from "@/lib/email-tools";
-import { getAllNoCodeTools } from "@/lib/no-code-tools";
-// New categories
-import { getAllAppointmentSchedulingTools } from "@/lib/appointment-scheduling-software";
-import { getAllAutoInsuranceTools } from "@/lib/auto-insurance";
-import { getAllBudgetingAppTools } from "@/lib/budgeting-apps";
-import { getAllBusinessInsuranceTools } from "@/lib/business-insurance";
-import { getAllBusinessPhoneTools } from "@/lib/business-phone-systems";
-import { getAllContractManagementTools } from "@/lib/contract-management-software";
-import { getAllCreditCardTools } from "@/lib/credit-cards";
-import { getAllCryptoExchangeTools } from "@/lib/cryptocurrency-exchanges";
-import { getAllDocumentManagementTools } from "@/lib/document-management-software";
-import { getAllEstatePlanningTools } from "@/lib/estate-planning-services";
-import { getAllFieldServiceTools } from "@/lib/field-service-management";
-import { getAllFitnessAppTools } from "@/lib/fitness-apps";
-import { getAllFleetManagementTools } from "@/lib/fleet-management-software";
-import { getAllHealthInsuranceTools } from "@/lib/health-insurance";
-import { getAllHomeInsuranceTools } from "@/lib/home-insurance";
-import { getAllHomeSecurityTools } from "@/lib/home-security-systems";
-import { getAllHomeWarrantyTools } from "@/lib/home-warranty-companies";
-import { getAllHotelBookingTools } from "@/lib/hotel-booking-platforms";
-import { getAllInventoryManagementTools } from "@/lib/inventory-management-software";
-import { getAllInvestmentPlatformTools } from "@/lib/investment-platforms";
-import { getAllLifeInsuranceTools } from "@/lib/life-insurance";
-import { getAllMentalHealthTools } from "@/lib/mental-health-apps";
-import { getAllMovingCompanyTools } from "@/lib/moving-companies";
-import { getAllOnlineDegreeTools } from "@/lib/online-degree-programs";
-import { getAllOnlineTutoringTools } from "@/lib/online-tutoring-platforms";
-import { getAllPersonalLoanTools } from "@/lib/personal-loans";
-import { getAllPestControlTools } from "@/lib/pest-control-services";
-import { getAllPOSSystemTools } from "@/lib/pos-systems";
-import { getAllRoboAdvisorTools } from "@/lib/robo-advisors";
-import { getAllSolarPanelTools } from "@/lib/solar-panel-companies";
-import { getAllStudentLoanTools } from "@/lib/student-loans";
-import { getAllSupplyChainTools } from "@/lib/supply-chain-software";
-import { getAllTaxPrepTools } from "@/lib/tax-preparation-software";
-import { getAllTelehealthTools } from "@/lib/telehealth-platforms";
-import { getAllTestPrepTools } from "@/lib/test-prep-services";
-import { getAllTravelInsuranceTools } from "@/lib/travel-insurance";
-import { getAllVacationRentalTools } from "@/lib/vacation-rental-platforms";
-import { getAllWarehouseManagementTools } from "@/lib/warehouse-management-software";
-// High-CPC niche directories
-import { getAllMortgageLenderTools } from "@/lib/mortgage-lenders";
-import { getAllLLCFormationTools } from "@/lib/llc-formation-services";
-import { getAllBackgroundCheckTools } from "@/lib/background-check-services";
-import { getAllPaymentProcessingTools } from "@/lib/payment-processing";
-import { getAllGoldIRATools } from "@/lib/gold-ira-companies";
-import { getAllDebtReliefTools } from "@/lib/debt-relief-services";
-import { getAllMedicalBillingTools } from "@/lib/medical-billing-software";
-import { getAllERPTools } from "@/lib/erp-software";
-import { getAllWorkersCompTools } from "@/lib/workers-comp-insurance";
-import { getAllStructuredSettlementTools } from "@/lib/structured-settlement-companies";
-import { getAllBusinessLoanTools } from "@/lib/business-loans";
-import { getAllCreditRepairTools } from "@/lib/credit-repair-services";
-import { getAllTaxReliefTools } from "@/lib/tax-relief-services";
-import { getAllVirtualDataRoomTools } from "@/lib/virtual-data-rooms";
-import { getAllIdentityTheftProtectionTools } from "@/lib/identity-theft-protection";
-import { getAllPersonalInjuryTools } from "@/lib/personal-injury-lawyers";
-import { getAllMesotheliomaLawyerTools } from "@/lib/mesothelioma-lawyers";
-import { getAllBankruptcyLawyerTools } from "@/lib/bankruptcy-lawyers";
-import { getAllDUILawyerTools } from "@/lib/dui-lawyers";
-import { getAllCriminalDefenseLawyerTools } from "@/lib/criminal-defense-lawyers";
-// Previously created directories missing from homepage
-import { getAllAccountingTools } from "@/lib/accounting-software";
-import { getAllAddictionTreatmentCenterTools } from "@/lib/addiction-treatment-centers";
-import { getAllAIAgentsTools } from "@/lib/ai-agent-platforms";
-import { getAllAICodingTools } from "@/lib/ai-coding-assistants";
-import { getAllAIVideoTools } from "@/lib/ai-video-generators";
-import { getAllATSTools } from "@/lib/applicant-tracking-systems";
-import { getAllPasswordManagerTools } from "@/lib/business-password-managers";
-import { getAllBusinessTaxTools } from "@/lib/business-tax-software";
-import { getAllBusinessVPNTools } from "@/lib/business-vpn-software";
-import { getAllEcommerceInventoryTools } from "@/lib/ecommerce-inventory-software";
-import { getAllEcommercePlatformTools } from "@/lib/ecommerce-platforms";
-import { getAllEndpointSecurityTools } from "@/lib/endpoint-security-software";
-import { getAllExpenseManagementTools } from "@/lib/expense-management-software";
-import { getAllHRISTools } from "@/lib/hris-software";
-import { getAllInvoicingTools } from "@/lib/invoicing-billing-software";
-import { getAllMortgageLendingTools } from "@/lib/mortgage-lending-software";
-import { getAllPayrollTools } from "@/lib/payroll-software";
-import { getAllProjectManagementTools } from "@/lib/project-management-software";
-import { getAllRealEstateTools } from "@/lib/real-estate-software";
-import { getAllSubscriptionBillingTools } from "@/lib/subscription-billing-platforms";
-import { getAllTimeTrackingTools } from "@/lib/time-tracking-software";
+import { getAllCategories } from "@/lib/tools";
+import { DIRECTORIES, extractTools } from "@/lib/directories";
 
 // Recognizable brands from our listings, shown as a favicon strip in the hero.
 const HERO_BRANDS = [
@@ -1216,252 +1116,113 @@ const directories = [
     badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
     countKey: "timeTracking" as const,
   },
+  {
+    slug: "seo-tools",
+    emoji: "🔎",
+    name: "SEO Tools",
+    description: "Keyword research, rank tracking, backlink analysis, and technical SEO platforms.",
+    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    border: "border-emerald-500/30 hover:border-emerald-400/50",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25",
+  },
+  {
+    slug: "marketing-automation-software",
+    emoji: "⚙️",
+    name: "Marketing Automation",
+    description: "Email journeys, lead scoring, and multi-channel campaign automation platforms.",
+    gradient: "from-fuchsia-500/20 via-pink-500/10 to-transparent",
+    border: "border-fuchsia-500/30 hover:border-fuchsia-400/50",
+    accentColor: "text-fuchsia-400",
+    badgeColor: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/25",
+  },
+  {
+    slug: "live-chat-software",
+    emoji: "💬",
+    name: "Live Chat Software",
+    description: "Website chat widgets, chatbots, and conversational support platforms.",
+    gradient: "from-sky-500/20 via-blue-500/10 to-transparent",
+    border: "border-sky-500/30 hover:border-sky-400/50",
+    accentColor: "text-sky-400",
+    badgeColor: "bg-sky-500/15 text-sky-300 border-sky-500/25",
+  },
+  {
+    slug: "call-center-software",
+    emoji: "📞",
+    name: "Call Center Software",
+    description: "Cloud contact centers, IVR systems, and call routing for support teams.",
+    gradient: "from-indigo-500/20 via-violet-500/10 to-transparent",
+    border: "border-indigo-500/30 hover:border-indigo-400/50",
+    accentColor: "text-indigo-400",
+    badgeColor: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25",
+  },
+  {
+    slug: "video-conferencing-software",
+    emoji: "🎥",
+    name: "Video Conferencing",
+    description: "Meetings, webinars, and team video platforms for remote collaboration.",
+    gradient: "from-cyan-500/20 via-sky-500/10 to-transparent",
+    border: "border-cyan-500/30 hover:border-cyan-400/50",
+    accentColor: "text-cyan-400",
+    badgeColor: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25",
+  },
+  {
+    slug: "cloud-storage-providers",
+    emoji: "☁️",
+    name: "Cloud Storage",
+    description: "File sync, sharing, and backup services for individuals and teams.",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    border: "border-blue-500/30 hover:border-blue-400/50",
+    accentColor: "text-blue-400",
+    badgeColor: "bg-blue-500/15 text-blue-300 border-blue-500/25",
+  },
+  {
+    slug: "antivirus-software",
+    emoji: "🛡️",
+    name: "Antivirus Software",
+    description: "Malware protection and endpoint security for personal and business devices.",
+    gradient: "from-red-500/20 via-rose-500/10 to-transparent",
+    border: "border-red-500/30 hover:border-red-400/50",
+    accentColor: "text-red-400",
+    badgeColor: "bg-red-500/15 text-red-300 border-red-500/25",
+  },
+  {
+    slug: "car-accident-lawyers",
+    emoji: "🚗",
+    name: "Car Accident Lawyers",
+    description: "Personal injury attorneys who handle car accident claims and settlements.",
+    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/50",
+    accentColor: "text-amber-400",
+    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/25",
+  },
+  {
+    slug: "divorce-lawyers",
+    emoji: "⚖️",
+    name: "Divorce Lawyers",
+    description: "Family law attorneys for divorce, custody, and support matters.",
+    gradient: "from-slate-500/20 via-gray-500/10 to-transparent",
+    border: "border-slate-500/30 hover:border-slate-400/50",
+    accentColor: "text-slate-400",
+    badgeColor: "bg-slate-500/15 text-slate-300 border-slate-500/25",
+  },
 ];
 
-export default function HubPage() {
-  const aiToolCount = getAllTools().length;
-  const marketingToolCount = getAllMarketingTools().length;
-  const financeToolCount = getAllFinanceTools().length;
-  const ecommerceToolCount = getAllEcommerceTools().length;
-  const productivityToolCount = getAllProductivityTools().length;
-  const hrToolCount = getAllHRTools().length;
-  const crmToolCount = getAllCRMTools().length;
-  const securityToolCount = getAllSecurityTools().length;
-  const websiteBuilderCount = getAllWebsiteBuilderTools().length;
-  const creatorToolCount = getAllCreatorTools().length;
-  const developerToolCount = getAllDeveloperTools().length;
-  const designToolCount = getAllDesignTools().length;
-  const supportToolCount = getAllSupportTools().length;
-  const elearningToolCount = getAllElearningTools().length;
-  const analyticsToolCount = getAllAnalyticsTools().length;
-  const legalToolCount = getAllLegalTools().length;
-  const hostingToolCount = getAllHostingTools().length;
-  const socialMediaToolCount = getAllSocialMediaTools().length;
-  const emailToolCount = getAllEmailTools().length;
-  const noCodeToolCount = getAllNoCodeTools().length;
-  // New category counts
-  const appointmentSchedulingCount = getAllAppointmentSchedulingTools().length;
-  const autoInsuranceCount = getAllAutoInsuranceTools().length;
-  const budgetingAppsCount = getAllBudgetingAppTools().length;
-  const businessInsuranceCount = getAllBusinessInsuranceTools().length;
-  const businessPhoneCount = getAllBusinessPhoneTools().length;
-  const contractManagementCount = getAllContractManagementTools().length;
-  const creditCardsCount = getAllCreditCardTools().length;
-  const cryptoExchangesCount = getAllCryptoExchangeTools().length;
-  const documentManagementCount = getAllDocumentManagementTools().length;
-  const estatePlanningCount = getAllEstatePlanningTools().length;
-  const fieldServiceCount = getAllFieldServiceTools().length;
-  const fitnessAppsCount = getAllFitnessAppTools().length;
-  const fleetManagementCount = getAllFleetManagementTools().length;
-  const healthInsuranceCount = getAllHealthInsuranceTools().length;
-  const homeInsuranceCount = getAllHomeInsuranceTools().length;
-  const homeSecurityCount = getAllHomeSecurityTools().length;
-  const homeWarrantyCount = getAllHomeWarrantyTools().length;
-  const hotelBookingCount = getAllHotelBookingTools().length;
-  const inventoryManagementCount = getAllInventoryManagementTools().length;
-  const investmentPlatformsCount = getAllInvestmentPlatformTools().length;
-  const lifeInsuranceCount = getAllLifeInsuranceTools().length;
-  const mentalHealthCount = getAllMentalHealthTools().length;
-  const movingCompaniesCount = getAllMovingCompanyTools().length;
-  const onlineDegreesCount = getAllOnlineDegreeTools().length;
-  const onlineTutoringCount = getAllOnlineTutoringTools().length;
-  const personalLoansCount = getAllPersonalLoanTools().length;
-  const pestControlCount = getAllPestControlTools().length;
-  const posSystemsCount = getAllPOSSystemTools().length;
-  const roboAdvisorsCount = getAllRoboAdvisorTools().length;
-  const solarPanelsCount = getAllSolarPanelTools().length;
-  const studentLoansCount = getAllStudentLoanTools().length;
-  const supplyChainCount = getAllSupplyChainTools().length;
-  const taxPrepCount = getAllTaxPrepTools().length;
-  const telehealthCount = getAllTelehealthTools().length;
-  const testPrepCount = getAllTestPrepTools().length;
-  const travelInsuranceCount = getAllTravelInsuranceTools().length;
-  const vacationRentalsCount = getAllVacationRentalTools().length;
-  const warehouseManagementCount = getAllWarehouseManagementTools().length;
-  // High-CPC niche counts
-  const mortgageLendersCount = getAllMortgageLenderTools().length;
-  const llcFormationCount = getAllLLCFormationTools().length;
-  const backgroundChecksCount = getAllBackgroundCheckTools().length;
-  const paymentProcessingCount = getAllPaymentProcessingTools().length;
-  const goldIRACount = getAllGoldIRATools().length;
-  const debtReliefCount = getAllDebtReliefTools().length;
-  const medicalBillingCount = getAllMedicalBillingTools().length;
-  const erpSoftwareCount = getAllERPTools().length;
-  const workersCompCount = getAllWorkersCompTools().length;
-  const structuredSettlementsCount = getAllStructuredSettlementTools().length;
-  const businessLoansCount = getAllBusinessLoanTools().length;
-  const creditRepairCount = getAllCreditRepairTools().length;
-  const taxReliefCount = getAllTaxReliefTools().length;
-  const virtualDataRoomsCount = getAllVirtualDataRoomTools().length;
-  const identityTheftProtectionCount = getAllIdentityTheftProtectionTools().length;
-  const personalInjuryCount = getAllPersonalInjuryTools().length;
-  const mesotheliomaLawyersCount = getAllMesotheliomaLawyerTools().length;
-  const bankruptcyLawyersCount = getAllBankruptcyLawyerTools().length;
-  const duiLawyersCount = getAllDUILawyerTools().length;
-  const criminalDefenseLawyersCount = getAllCriminalDefenseLawyerTools().length;
-  const accountingSoftwareCount = getAllAccountingTools().length;
-  const addictionTreatmentCount = getAllAddictionTreatmentCenterTools().length;
-  const aiAgentPlatformsCount = getAllAIAgentsTools().length;
-  const aiCodingAssistantsCount = getAllAICodingTools().length;
-  const aiVideoGeneratorsCount = getAllAIVideoTools().length;
-  const applicantTrackingCount = getAllATSTools().length;
-  const passwordManagersCount = getAllPasswordManagerTools().length;
-  const businessTaxSoftwareCount = getAllBusinessTaxTools().length;
-  const businessVPNCount = getAllBusinessVPNTools().length;
-  const ecommerceInventoryCount = getAllEcommerceInventoryTools().length;
-  const ecommercePlatformsCount = getAllEcommercePlatformTools().length;
-  const endpointSecurityCount = getAllEndpointSecurityTools().length;
-  const expenseManagementCount = getAllExpenseManagementTools().length;
-  const hrisSoftwareCount = getAllHRISTools().length;
-  const invoicingSoftwareCount = getAllInvoicingTools().length;
-  const mortgageSoftwareCount = getAllMortgageLendingTools().length;
-  const payrollSoftwareCount = getAllPayrollTools().length;
-  const projectManagementCount = getAllProjectManagementTools().length;
-  const realEstateSoftwareCount = getAllRealEstateTools().length;
-  const subscriptionBillingCount = getAllSubscriptionBillingTools().length;
-  const timeTrackingCount = getAllTimeTrackingTools().length;
-
-  const totalListings =
-    aiToolCount + marketingToolCount + financeToolCount + ecommerceToolCount +
-    productivityToolCount + hrToolCount + crmToolCount + securityToolCount +
-    websiteBuilderCount + creatorToolCount + developerToolCount + designToolCount +
-    supportToolCount + elearningToolCount + analyticsToolCount + legalToolCount +
-    hostingToolCount + socialMediaToolCount + emailToolCount + noCodeToolCount +
-    appointmentSchedulingCount + autoInsuranceCount + budgetingAppsCount +
-    businessInsuranceCount + businessPhoneCount + contractManagementCount +
-    creditCardsCount + cryptoExchangesCount + documentManagementCount +
-    estatePlanningCount + fieldServiceCount + fitnessAppsCount +
-    fleetManagementCount + healthInsuranceCount + homeInsuranceCount +
-    homeSecurityCount + homeWarrantyCount + hotelBookingCount +
-    inventoryManagementCount + investmentPlatformsCount + lifeInsuranceCount +
-    mentalHealthCount + movingCompaniesCount + onlineDegreesCount +
-    onlineTutoringCount + personalLoansCount + pestControlCount +
-    posSystemsCount + roboAdvisorsCount + solarPanelsCount +
-    studentLoansCount + supplyChainCount + taxPrepCount +
-    telehealthCount + testPrepCount + travelInsuranceCount +
-    vacationRentalsCount + warehouseManagementCount +
-    mortgageLendersCount + llcFormationCount + backgroundChecksCount +
-    paymentProcessingCount + goldIRACount + debtReliefCount +
-    medicalBillingCount + erpSoftwareCount + workersCompCount +
-    structuredSettlementsCount + businessLoansCount + creditRepairCount +
-    taxReliefCount +
-    virtualDataRoomsCount +
-    identityTheftProtectionCount +
-    personalInjuryCount + mesotheliomaLawyersCount +
-    bankruptcyLawyersCount + duiLawyersCount +
-    criminalDefenseLawyersCount +
-    accountingSoftwareCount + addictionTreatmentCount + aiAgentPlatformsCount +
-    aiCodingAssistantsCount + aiVideoGeneratorsCount + applicantTrackingCount +
-    passwordManagersCount + businessTaxSoftwareCount + businessVPNCount +
-    ecommerceInventoryCount + ecommercePlatformsCount + endpointSecurityCount +
-    expenseManagementCount + hrisSoftwareCount + invoicingSoftwareCount +
-    mortgageSoftwareCount + payrollSoftwareCount + projectManagementCount +
-    realEstateSoftwareCount + subscriptionBillingCount + timeTrackingCount;
-
+export default async function HubPage() {
+  // Counts come from the shared manifest + export scanner — every directory is
+  // counted automatically, with no per-directory imports to maintain.
+  const countMap: Record<string, number> = {};
+  for (const d of DIRECTORIES) {
+    try {
+      const lib = await import(`@/lib/${d.libName}`);
+      countMap[d.route] = extractTools(lib).length;
+    } catch {
+      countMap[d.route] = 0;
+    }
+  }
+  const totalListings = Object.values(countMap).reduce((a, b) => a + b, 0);
   const categoryCount = getAllCategories().length;
 
-  const countMap: Record<string, number> = {
-    ai: aiToolCount,
-    marketing: marketingToolCount,
-    finance: financeToolCount,
-    ecommerce: ecommerceToolCount,
-    productivity: productivityToolCount,
-    hr: hrToolCount,
-    crm: crmToolCount,
-    security: securityToolCount,
-    websiteBuilders: websiteBuilderCount,
-    creator: creatorToolCount,
-    developer: developerToolCount,
-    design: designToolCount,
-    support: supportToolCount,
-    elearning: elearningToolCount,
-    analytics: analyticsToolCount,
-    legal: legalToolCount,
-    hosting: hostingToolCount,
-    socialMedia: socialMediaToolCount,
-    email: emailToolCount,
-    noCode: noCodeToolCount,
-    appointmentScheduling: appointmentSchedulingCount,
-    autoInsurance: autoInsuranceCount,
-    budgetingApps: budgetingAppsCount,
-    businessInsurance: businessInsuranceCount,
-    businessPhone: businessPhoneCount,
-    contractManagement: contractManagementCount,
-    creditCards: creditCardsCount,
-    cryptoExchanges: cryptoExchangesCount,
-    documentManagement: documentManagementCount,
-    estatePlanning: estatePlanningCount,
-    fieldService: fieldServiceCount,
-    fitnessApps: fitnessAppsCount,
-    fleetManagement: fleetManagementCount,
-    healthInsurance: healthInsuranceCount,
-    homeInsurance: homeInsuranceCount,
-    homeSecurity: homeSecurityCount,
-    homeWarranty: homeWarrantyCount,
-    hotelBooking: hotelBookingCount,
-    inventoryManagement: inventoryManagementCount,
-    investmentPlatforms: investmentPlatformsCount,
-    lifeInsurance: lifeInsuranceCount,
-    mentalHealth: mentalHealthCount,
-    movingCompanies: movingCompaniesCount,
-    onlineDegrees: onlineDegreesCount,
-    onlineTutoring: onlineTutoringCount,
-    personalLoans: personalLoansCount,
-    pestControl: pestControlCount,
-    posSystems: posSystemsCount,
-    roboAdvisors: roboAdvisorsCount,
-    solarPanels: solarPanelsCount,
-    studentLoans: studentLoansCount,
-    supplyChain: supplyChainCount,
-    taxPrep: taxPrepCount,
-    telehealth: telehealthCount,
-    testPrep: testPrepCount,
-    travelInsurance: travelInsuranceCount,
-    vacationRentals: vacationRentalsCount,
-    warehouseManagement: warehouseManagementCount,
-    // High-CPC niches
-    mortgageLenders: mortgageLendersCount,
-    llcFormation: llcFormationCount,
-    backgroundChecks: backgroundChecksCount,
-    paymentProcessing: paymentProcessingCount,
-    goldIRA: goldIRACount,
-    debtRelief: debtReliefCount,
-    medicalBilling: medicalBillingCount,
-    erpSoftware: erpSoftwareCount,
-    workersComp: workersCompCount,
-    structuredSettlements: structuredSettlementsCount,
-    businessLoans: businessLoansCount,
-    creditRepair: creditRepairCount,
-    taxRelief: taxReliefCount,
-    virtualDataRooms: virtualDataRoomsCount,
-    identityTheftProtection: identityTheftProtectionCount,
-    personalInjury: personalInjuryCount,
-    mesotheliomaLawyers: mesotheliomaLawyersCount,
-    bankruptcyLawyers: bankruptcyLawyersCount,
-    duiLawyers: duiLawyersCount,
-    criminalDefenseLawyers: criminalDefenseLawyersCount,
-    accountingSoftware: accountingSoftwareCount,
-    addictionTreatment: addictionTreatmentCount,
-    aiAgentPlatforms: aiAgentPlatformsCount,
-    aiCodingAssistants: aiCodingAssistantsCount,
-    aiVideoGenerators: aiVideoGeneratorsCount,
-    applicantTracking: applicantTrackingCount,
-    passwordManagers: passwordManagersCount,
-    businessTaxSoftware: businessTaxSoftwareCount,
-    businessVPN: businessVPNCount,
-    ecommerceInventory: ecommerceInventoryCount,
-    ecommercePlatforms: ecommercePlatformsCount,
-    endpointSecurity: endpointSecurityCount,
-    expenseManagement: expenseManagementCount,
-    hrisSoftware: hrisSoftwareCount,
-    invoicingSoftware: invoicingSoftwareCount,
-    mortgageSoftware: mortgageSoftwareCount,
-    payrollSoftware: payrollSoftwareCount,
-    projectManagement: projectManagementCount,
-    realEstateSoftware: realEstateSoftwareCount,
-    subscriptionBilling: subscriptionBillingCount,
-    timeTracking: timeTrackingCount,
-  };
 
   const orgSchema = {
     "@context": "https://schema.org",
@@ -1545,7 +1306,7 @@ export default function HubPage() {
             {[
               { value: `${totalListings}+`, label: "Listings" },
               { value: `${categoryCount + 80}+`, label: "Categories" },
-              { value: `${directories.length}`, label: "Live Directories" },
+              { value: `${DIRECTORIES.length}`, label: "Live Directories" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl font-bold text-white">{stat.value}</div>
@@ -1600,7 +1361,7 @@ export default function HubPage() {
         <h2 className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-6">Browse Directories</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {directories.map((dir) => {
-            const listingCount = countMap[dir.countKey] ?? 0;
+            const listingCount = countMap[dir.slug] ?? 0;
             return (
               <Link
                 key={dir.slug}
