@@ -11,9 +11,12 @@
  *   - missing domain (favicon source)
  *
  * Writes audit-logs/integrity-<date>.md, prints a summary, emails a digest if
- * GMAIL creds are set, and exits non-zero when dead links are found (so the
- * GitHub Actions run is visibly flagged). It intentionally does NOT mutate data —
- * fixes are a human/PR decision.
+ * GMAIL creds are set, and surfaces findings via a GitHub step summary plus a
+ * ::warning:: annotation. It always exits 0 when it ran successfully — findings
+ * are the audit WORKING; a red run means the script itself crashed. Links are
+ * classified (dead vs bot-blocked vs unreachable vs cross-domain redirect) so
+ * 403/429 bot protection doesn't masquerade as dead links. It intentionally
+ * does NOT mutate data — fixes are a human/PR decision.
  *
  * Usage: node scripts/audit-integrity.mjs [--dir <route>] [--no-net]
  */
@@ -38,19 +41,45 @@ const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 const MANIFEST = JSON.parse(readFileSync(join(ROOT, "data/directories.json"), "utf-8"));
 
 // ─── HTTP liveness ─────────────────────────────────────────────────────────────
+// Classification matters more than raw status: most big sites (OpenAI, Canva,
+// BambooHR…) return 403/429 to non-browser clients, which is NOT a dead link.
+// Only 404/410 on a browser-headed GET counts as confirmed dead.
+
+const BROWSER_HEADERS = {
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+  Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "Accept-Language": "en-US,en;q=0.9",
+};
 
 async function checkUrl(url) {
-  if (!url) return { ok: true, skipped: true };
-  try {
-    let r = await fetch(url, { method: "HEAD", redirect: "follow", signal: AbortSignal.timeout(10000), headers: { "User-Agent": "Mozilla/5.0 FindersList-bot/1.0" } });
-    // Some servers reject HEAD — retry GET.
-    if (r.status === 405 || r.status === 403 || r.status === 501) {
-      r = await fetch(url, { method: "GET", redirect: "follow", signal: AbortSignal.timeout(12000), headers: { "User-Agent": "Mozilla/5.0 FindersList-bot/1.0" } });
-    }
-    return { ok: r.status < 400, status: r.status, redirected: r.redirected, finalUrl: r.url };
-  } catch (e) {
-    return { ok: false, status: 0, error: e.message };
+  if (!url) return { class: "ok", skipped: true };
+  const attempt = (method, timeout) =>
+    fetch(url, { method, redirect: "follow", signal: AbortSignal.timeout(timeout), headers: BROWSER_HEADERS });
+
+  let r = null, err = null;
+  try { r = await attempt("HEAD", 10000); } catch (e) { err = e; }
+  // Fall back to GET on any HEAD failure or 4xx/5xx — many servers mishandle HEAD.
+  if (!r || r.status >= 400) {
+    try { r = await attempt("GET", 12000); err = null; } catch (e) { err = e; }
   }
+  if (err) {
+    // One retry for transient network errors before calling it unreachable.
+    await new Promise((res) => setTimeout(res, 1500));
+    try { r = await attempt("GET", 12000); err = null; } catch (e) { err = e; }
+  }
+  if (err) return { class: "unreachable", error: err.message };
+
+  const s = r.status;
+  if (s === 404 || s === 410) return { class: "dead", status: s };
+  if (s === 401 || s === 403 || s === 405 || s === 429 || s === 503)
+    return { class: "blocked", status: s }; // bot protection / rate limit — site is alive
+  if (s >= 400) return { class: "http-error", status: s };
+  return { class: "ok", status: s, redirected: r.redirected, finalUrl: r.url };
+}
+
+/** Registrable domain (last two labels) — good enough to spot real rebrands. */
+function regDomain(host) {
+  try { return host.replace(/^www\./, "").split(".").slice(-2).join("."); } catch { return host; }
 }
 
 async function pool(items, fn, concurrency) {
@@ -117,8 +146,24 @@ async function main() {
     const results = await pool(linkTargets, (t) => checkUrl(t.url), CONCURRENCY);
     results.forEach((r, i) => {
       const t = linkTargets[i];
-      if (!r.ok) deadLinks.push({ ...t, status: r.status, error: r.error });
-      else if (r.redirected) allIssues.push({ dir: t.dir, slug: t.slug, type: "redirect", detail: `${t.kind} ${t.url} → ${r.finalUrl}` });
+      if (r.class === "dead") {
+        deadLinks.push({ ...t, status: r.status });
+      } else if (r.class === "unreachable") {
+        allIssues.push({ dir: t.dir, slug: t.slug, type: "unreachable", detail: `${t.kind} ${t.url} — ${r.error}` });
+      } else if (r.class === "http-error") {
+        allIssues.push({ dir: t.dir, slug: t.slug, type: "http-error", detail: `${t.kind} HTTP ${r.status} ${t.url}` });
+      } else if (r.class === "blocked") {
+        // Bot protection / rate limiting — the site is alive. Informational only.
+        allIssues.push({ dir: t.dir, slug: t.slug, type: "bot-blocked (info)", detail: `${t.kind} HTTP ${r.status} ${t.url}` });
+      } else if (r.redirected && r.finalUrl) {
+        // Only cross-domain redirects matter (possible rebrand/acquisition);
+        // www/https/path-level redirects are routine noise.
+        try {
+          if (regDomain(new URL(t.url).hostname) !== regDomain(new URL(r.finalUrl).hostname)) {
+            allIssues.push({ dir: t.dir, slug: t.slug, type: "redirect-crossdomain", detail: `${t.kind} ${t.url} → ${r.finalUrl}` });
+          }
+        } catch { /* unparseable URL — ignore */ }
+      }
     });
   }
 
@@ -143,13 +188,25 @@ async function main() {
   const reportFile = join(logDir, `integrity-${runDate}${ONLY_DIR ? "-" + ONLY_DIR : ""}.md`);
   writeFileSync(reportFile, report + "\n");
 
-  console.log(`\n📋 ${allIssues.length} static issues, ${deadLinks.length} dead links. Report: ${reportFile.replace(ROOT + "/", "")}`);
+  console.log(`\n📋 ${allIssues.length} findings, ${deadLinks.length} confirmed-dead links. Report: ${reportFile.replace(ROOT + "/", "")}`);
   for (const type of Object.keys(byType).sort()) console.log(`   ${type}: ${byType[type].length}`);
+
+  // Surface findings in the GitHub Actions UI without failing the run:
+  // a step summary table plus a ::warning:: annotation for confirmed-dead links.
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    const summary = [`### Integrity audit — ${runDate}`, "", "| Finding | Count |", "|---|---|",
+      ...Object.keys(byType).sort().map((t) => `| ${t} | ${byType[t].length} |`),
+      "", `Full report in the \`integrity-report\` artifact.`].join("\n");
+    writeFileSync(process.env.GITHUB_STEP_SUMMARY, summary + "\n", { flag: "a" });
+  }
+  if (deadLinks.length > 0) {
+    console.log(`::warning title=Integrity audit::${deadLinks.length} confirmed-dead link(s) (HTTP 404/410). See the integrity-report artifact.`);
+  }
 
   if (deadLinks.length && GMAIL_USER && GMAIL_APP_PASSWORD) await emailDigest(runDate, report);
 
-  // Flag the CI run if there are dead links (the most actionable problem).
-  if (deadLinks.length > 0) process.exit(2);
+  // Exit 0 on findings — a finding is the audit WORKING, not failing. Non-zero
+  // exits are reserved for genuine crashes so a red run always means "broken".
 }
 
 async function emailDigest(runDate, report) {

@@ -1,8 +1,11 @@
 name: Integrity Audit (weekly)
 
 # Cheap, deterministic weekly health check — no LLM, no data edits.
-# Flags dead links, duplicate slugs, invalid categories, missing fields.
-# Uploads a report artifact and emails a digest; fails the run on dead links.
+# Flags confirmed-dead links (404/410), cross-domain redirects (rebrands),
+# duplicate slugs, invalid categories, missing fields. Bot-blocked URLs
+# (403/429) are reported as info, not failures. Findings appear in the run's
+# step summary + a warning annotation + the report artifact (+ email digest).
+# The run only goes red if the script itself crashes.
 on:
   schedule:
     # 07:00 UTC every Monday

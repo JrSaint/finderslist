@@ -27,7 +27,7 @@ task, **not** the Anthropic API:
 | `lib/directories.ts` | Typed view of the manifest + `SITE_HOST`. |
 | `scripts/lib/parse-tools.mjs` | Shared TS-data parser/serializer (brace-scanner; verified on all 1,900 listings). |
 | `scripts/refresh-listings.mjs` | **Pipeline A engine.** Per-directory monthly sweep: Claude + web search re-verifies each listing (alive? pricing? prices? rebrand/shutdown?), refreshes stale fields, adds/removes/re-ranks, writes freshness + audit log, tsc-gates, commits. |
-| `scripts/audit-integrity.mjs` | **Weekly deterministic check** (no LLM): dead/redirected links, dup slugs, invalid categories, missing fields. Report + email; never edits data. |
+| `scripts/audit-integrity.mjs` | **Weekly deterministic check** (no LLM): confirmed-dead links (404/410), cross-domain redirects (rebrand signal), dup slugs, invalid categories, missing fields. Bot-blocked (403/429) URLs are info-only. Findings go to the run's step summary, a warning annotation, the artifact, and email; never edits data; red run = script crash only. |
 | `scripts/apply-seo-jsonld.mjs` | One-time idempotent codemod: FAQPage JSON-LD on hubs, `dateModified` on tool pages, www-canonical fix. |
 | `scripts/generate-blog-posts.mjs` | Runs after the monthly sweep: turns the month's audit logs into a few concise posts with tool/brand visuals (`heroTools`). Wired as the `blog` job in `refresh-listings.yml`. |
 | `components/ToolVisualStrip.tsx` | Renders blog tool/brand visuals (favicon hero strip + index-card cluster). |
