@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import GlobalSearchBar from "@/components/GlobalSearchBar";
 import { BLOG_POSTS } from "@/data/blog";
 import { getAllTools, getAllCategories } from "@/lib/tools";
 import { getAllMarketingTools } from "@/lib/marketing-tools";
@@ -103,6 +104,18 @@ import { getAllProjectManagementTools } from "@/lib/project-management-software"
 import { getAllRealEstateTools } from "@/lib/real-estate-software";
 import { getAllSubscriptionBillingTools } from "@/lib/subscription-billing-platforms";
 import { getAllTimeTrackingTools } from "@/lib/time-tracking-software";
+
+// Recognizable brands from our listings, shown as a favicon strip in the hero.
+const HERO_BRANDS = [
+  { name: "ChatGPT", domain: "chatgpt.com" },
+  { name: "QuickBooks", domain: "quickbooks.intuit.com" },
+  { name: "Canva", domain: "canva.com" },
+  { name: "Shopify", domain: "shopify.com" },
+  { name: "HubSpot", domain: "hubspot.com" },
+  { name: "Notion", domain: "notion.so" },
+  { name: "Figma", domain: "figma.com" },
+  { name: "Stripe", domain: "stripe.com" },
+];
 
 export const metadata: Metadata = {
   title: "FindersList — Curated Software Directories",
@@ -1491,9 +1504,41 @@ export default function HubPage() {
             <span className="text-white">Finders</span>
             <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">List</span>
           </h1>
-          <p className="text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
             Curated directories for the software tools that actually matter. Hand-picked, honestly reviewed, free to browse.
           </p>
+
+          {/* Hero search */}
+          <div className="max-w-xl mx-auto mb-8 text-left">
+            <GlobalSearchBar />
+          </div>
+
+          {/* Brand strip — recognizable tools we cover */}
+          <div className="flex items-center justify-center gap-3 mb-10 flex-wrap">
+            <div className="flex -space-x-2" aria-hidden>
+              {HERO_BRANDS.map((b) => (
+                <span
+                  key={b.domain}
+                  className="w-9 h-9 rounded-full bg-slate-800 border-2 border-slate-950 flex items-center justify-center overflow-hidden"
+                  title={b.name}
+                >
+                  <img
+                    src={`https://www.google.com/s2/favicons?domain=${b.domain}&sz=64`}
+                    alt={b.name}
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                  />
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400">
+              Home to QuickBooks, Canva, HubSpot &amp; {totalListings}+ more listings
+            </p>
+          </div>
 
           {/* Stats */}
           <div className="flex items-center justify-center gap-8 flex-wrap">
