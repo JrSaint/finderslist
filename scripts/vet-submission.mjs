@@ -13,7 +13,8 @@
  *  6. Comment on the issue and close it
  */
 
-import Anthropic from "@anthropic-ai/sdk";
+// @anthropic-ai/sdk is imported lazily (only in API mode), so the local
+// --decision subscription mode works without the SDK installed.
 import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -160,6 +161,7 @@ function getExistingSlugs(dataFilePath) {
 // ─── Claude API vetting ──────────────────────────────────────────────────────
 
 async function vetWithClaude(submission, directoryInfo, existingCategories, existingSlugs) {
+  const { default: Anthropic } = await import("@anthropic-ai/sdk");
   const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 
   // Attempt to fetch the tool's homepage for extra context
@@ -367,7 +369,9 @@ function rejectionEmail(toolName, reason) {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
-  if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY is required");
+  if (!ANTHROPIC_API_KEY && !DECISION_FILE) {
+    throw new Error("ANTHROPIC_API_KEY is required (or pass --decision <file> in subscription mode)");
+  }
   if (!GITHUB_TOKEN) throw new Error("GITHUB_TOKEN is required");
 
   console.log("🔍 Fetching open tool submissions...");
