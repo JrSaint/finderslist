@@ -1,5 +1,6 @@
 import Link from "next/link";
 import freshness from "@/data/_freshness.json";
+import { featuredPairs, pairSegment } from "@/lib/directories";
 
 interface ComparisonTool {
   slug: string;
@@ -145,6 +146,25 @@ export default function ComparisonTable({ tools, categories, basePath }: Compari
           </tbody>
         </table>
       </div>
+
+      {(() => {
+        const pairs = featuredPairs(tools).slice(0, 4);
+        if (pairs.length === 0) return null;
+        return (
+          <div className="mt-4 flex items-center gap-2 flex-wrap">
+            <span className="text-xs text-slate-500">Popular comparisons:</span>
+            {pairs.map(([a, b]) => (
+              <Link
+                key={pairSegment(a, b)}
+                href={`/compare${basePath}/${pairSegment(a, b)}`}
+                className="text-xs border border-white/10 hover:border-violet-500/30 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white rounded-full px-3 py-1 transition-all"
+              >
+                {a.name} vs {b.name}
+              </Link>
+            ))}
+          </div>
+        );
+      })()}
     </section>
   );
 }

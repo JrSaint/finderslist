@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blog";
-import { DIRECTORIES, SITE_HOST, extractTools, extractCategorySlugs } from "@/lib/directories";
+import { DIRECTORIES, SITE_HOST, extractTools, extractCategorySlugs, featuredPairs, pairSegment } from "@/lib/directories";
 import freshnessData from "@/data/_freshness.json";
 
 const BASE_URL = SITE_HOST;
@@ -111,6 +111,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           lastModified: lastMod(`${cat.path}/tools/${tool.slug}`, DATE_TOOLS),
           changeFrequency: "monthly",
           priority: 0.8,
+        });
+      }
+
+      // Featured head-to-head comparison pages
+      for (const [a, b] of featuredPairs(tools)) {
+        entries.push({
+          url: `${BASE_URL}/compare/${cat.path}/${pairSegment(a, b)}`,
+          lastModified: lastMod(cat.path, DATE_TOOLS),
+          changeFrequency: "monthly",
+          priority: 0.7,
         });
       }
     }

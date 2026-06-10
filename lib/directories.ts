@@ -67,6 +67,31 @@ export function extractTools<T extends { slug: string }>(lib: Record<string, unk
   return [];
 }
 
+/**
+ * Featured head-to-head pairs for a directory's compare pages
+ * (/compare/<route>/<a>-vs-<b>). Capped at the top 5 featured, alive tools so
+ * every generated page is an editorially meaningful matchup — never thin
+ * all-pairs spam. Pair order is the array (rank) order; URL slugs sort
+ * alphabetically for a single canonical URL per pair.
+ */
+export function featuredPairs<T extends { slug: string; featured?: boolean; status?: string }>(
+  tools: T[]
+): [T, T][] {
+  const feat = tools.filter((t) => t.featured && t.status !== "shutdown").slice(0, 5);
+  const pairs: [T, T][] = [];
+  for (let i = 0; i < feat.length; i++) {
+    for (let j = i + 1; j < feat.length; j++) {
+      pairs.push([feat[i], feat[j]]);
+    }
+  }
+  return pairs;
+}
+
+/** Canonical URL segment for a pair, alphabetical by slug. */
+export function pairSegment(a: { slug: string }, b: { slug: string }): string {
+  return [a.slug, b.slug].sort()[0] + "-vs-" + [a.slug, b.slug].sort()[1];
+}
+
 /** Category slugs for a directory lib module, scanned the same way. */
 export function extractCategorySlugs(lib: Record<string, unknown>): string[] {
   for (const [key, val] of Object.entries(lib)) {
