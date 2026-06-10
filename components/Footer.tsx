@@ -17,7 +17,7 @@ export default function Footer() {
                 <span className="text-violet-400">List</span>
               </span>
             </Link>
-            <p className="text-sm text-slate-500 leading-relaxed">
+            <p className="text-sm text-slate-400 leading-relaxed">
               Curated directories for everything you&apos;re looking for.
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function Footer() {
                 <Link
                   key={cat}
                   href={`/ai-tools/category/${cat}`}
-                  className="text-sm text-slate-500 hover:text-slate-300 transition-colors py-1 flex items-center gap-1.5"
+                  className="text-sm text-slate-400 hover:text-slate-200 transition-colors py-1 flex items-center gap-1.5"
                 >
                   <span>{CATEGORIES[cat].emoji}</span>
                   {CATEGORIES[cat].label}
@@ -43,15 +43,15 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-slate-300 mb-3">Site</h3>
             <div className="space-y-1">
-              <Link href="/" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Home</Link>
-              <Link href="/blog" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Blog</Link>
-              <Link href="/ai-tools" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">AI Tools</Link>
-              <Link href="/ai-tools/submit" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Submit a Tool</Link>
-              <Link href="/about" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">About Us</Link>
-              <Link href="/methodology" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Our Methodology</Link>
-              <Link href="/contact" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Contact Us</Link>
-              <Link href="/privacy" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Privacy Policy</Link>
-              <Link href="/terms" className="block text-sm text-slate-500 hover:text-slate-300 transition-colors py-1">Terms of Service</Link>
+              <Link href="/" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Home</Link>
+              <Link href="/blog" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Blog</Link>
+              <Link href="/ai-tools" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">AI Tools</Link>
+              <Link href="/ai-tools/submit" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Submit a Tool</Link>
+              <Link href="/about" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">About Us</Link>
+              <Link href="/methodology" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Our Methodology</Link>
+              <Link href="/contact" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Contact Us</Link>
+              <Link href="/privacy" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Privacy Policy</Link>
+              <Link href="/terms" className="block text-sm text-slate-400 hover:text-slate-200 transition-colors py-1">Terms of Service</Link>
             </div>
           </div>
         </div>

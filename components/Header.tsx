@@ -97,10 +97,19 @@ export default function Header() {
                   className="relative"
                   onMouseEnter={() => setActiveDropdown(item.key)}
                   onMouseLeave={() => setActiveDropdown(null)}
+                  onFocus={() => setActiveDropdown(item.key)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) setActiveDropdown(null);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setActiveDropdown(null);
+                  }}
                 >
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5"
+                    aria-haspopup="menu"
+                    aria-expanded={activeDropdown === item.key}
+                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:outline-none"
                   >
                     {item.label}
                     <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,8 +139,20 @@ export default function Header() {
               className="relative"
               onMouseEnter={() => setActiveDropdown("more")}
               onMouseLeave={() => setActiveDropdown(null)}
+              onFocus={() => setActiveDropdown("more")}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) setActiveDropdown(null);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") setActiveDropdown(null);
+              }}
             >
-              <button className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5">
+              <button
+                aria-haspopup="menu"
+                aria-expanded={activeDropdown === "more"}
+                onClick={() => setActiveDropdown(activeDropdown === "more" ? null : "more")}
+                className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:outline-none"
+              >
                 More
                 <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -207,7 +228,7 @@ export default function Header() {
               const cats = getPrimaryCategories(item.key);
               return (
                 <div key={item.key}>
-                  <p className="px-2 py-1 text-xs text-slate-600 uppercase tracking-wider mt-2">{item.label}</p>
+                  <p className="px-2 py-1 text-xs text-slate-400 uppercase tracking-wider mt-2">{item.label}</p>
                   <Link
                     href={item.href}
                     className="block px-2 py-2 text-sm text-slate-400 hover:text-white"
@@ -231,7 +252,7 @@ export default function Header() {
             })}
             {/* More directories in mobile */}
             <div>
-              <p className="px-2 py-1 text-xs text-slate-600 uppercase tracking-wider mt-2">More Directories</p>
+              <p className="px-2 py-1 text-xs text-slate-400 uppercase tracking-wider mt-2">More Directories</p>
               {MORE_DIRECTORIES.map((dir) => (
                 <Link
                   key={dir.key}

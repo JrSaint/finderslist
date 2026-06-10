@@ -37,3 +37,54 @@ export const SITE_HOST = "https://www.finderslist.com";
 export function getDirectoryByRoute(route: string): DirectoryEntry | undefined {
   return DIRECTORIES.find((d) => d.route === route);
 }
+
+/**
+ * Function names across the 108 lib files don't follow one consistent rule
+ * (getAllAccountingTools vs getAllERPTools vs getAllTools, etc.), so callers
+ * that import libs dynamically must NOT guess names — scan exports instead.
+ * Used by app/sitemap.ts and app/api/search-index/route.ts so they can't drift.
+ */
+export function extractTools<T extends { slug: string }>(lib: Record<string, unknown>): T[] {
+  // 1. Prefer a *_TOOLS / *TOOLS array export (most common pattern).
+  for (const [key, val] of Object.entries(lib)) {
+    if (key.endsWith("TOOLS") && Array.isArray(val) && val.length > 0 && typeof (val[0] as T)?.slug === "string") {
+      return val as T[];
+    }
+  }
+  // 2. Fall back to a getAll*Tools accessor.
+  for (const [key, val] of Object.entries(lib)) {
+    if (typeof val === "function" && key.startsWith("getAll") && key.endsWith("Tools")) {
+      try {
+        const result = (val as () => unknown)();
+        if (Array.isArray(result) && result.length > 0 && typeof (result[0] as T)?.slug === "string") {
+          return result as T[];
+        }
+      } catch {
+        // try next export
+      }
+    }
+  }
+  return [];
+}
+
+/** Category slugs for a directory lib module, scanned the same way. */
+export function extractCategorySlugs(lib: Record<string, unknown>): string[] {
+  for (const [key, val] of Object.entries(lib)) {
+    if (typeof val === "function" && key.startsWith("getAll") && key.endsWith("Categories")) {
+      try {
+        const result = (val as () => unknown)();
+        if (Array.isArray(result) && result.every((x) => typeof x === "string")) {
+          return result as string[];
+        }
+      } catch {
+        // try next export
+      }
+    }
+  }
+  for (const [key, val] of Object.entries(lib)) {
+    if (key.endsWith("_CATEGORIES") && val && typeof val === "object" && !Array.isArray(val)) {
+      return Object.keys(val);
+    }
+  }
+  return [];
+}

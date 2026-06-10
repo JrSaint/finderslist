@@ -10,6 +10,7 @@ import {
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
 import AuthorBadge from "@/components/AuthorBadge";
+import ToolStatusNotice from "@/components/ToolStatusNotice";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${tool.tagline}. Honest review of ${tool.name}: strengths, considerations, specialties, and real-world case focus.`,
     keywords: [tool.name, ...tool.tags, category.label],
     openGraph: {
+      images: ["/og-image.png"],
       title: `${tool.name} Review 2026 | FindersList`,
       description: `${tool.tagline}. See honest pros, cons, specialties, and case focus.`,
     },
@@ -46,6 +48,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
   const category = DUI_LAWYER_CATEGORIES[tool.category];
   const relatedTools = getDUILawyerToolsByCategory(tool.category).filter((t) => t.slug !== tool.slug).slice(0, 4);
   const visitUrl = tool.affiliateUrl || tool.url;
+  const isDead = tool.status === "shutdown";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -80,6 +83,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <ToolStatusNotice status={tool.status} name={tool.name} />
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
         <span>/</span>
@@ -117,7 +121,7 @@ export default async function DUILawyerToolPage({ params }: Props) {
             <p className="text-slate-400 leading-relaxed whitespace-pre-line">{tool.description}</p>
           </div>
 
-          <AuthorBadge />
+          <AuthorBadge lastReviewed={tool.lastReviewed} hasAffiliate={!!tool.affiliateUrl} />
 
           <AdBanner format="horizontal" className="mb-8 h-24 w-full" />
 
@@ -165,19 +169,19 @@ export default async function DUILawyerToolPage({ params }: Props) {
 
           <div className="mb-8 p-5 rounded-xl border border-white/8 bg-slate-900/40">
             <h2 className="text-sm font-semibold text-white mb-2">Pricing</h2>
-            <p className="text-slate-400 text-sm">{pricingDetail}</p>
+            <p className="text-slate-400 text-sm">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
           </div>
         </div>
 
         <div className="lg:w-80 flex-shrink-0 space-y-6">
           <div className="rounded-xl border border-white/10 bg-slate-900/60 p-5">
             <a
-              href={visitUrl}
+              href={isDead ? tool.url : visitUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center py-3 px-4 rounded-lg bg-red-600 hover:bg-red-500 text-white font-medium text-sm transition-colors mb-4"
             >
-              Visit {tool.name} →
+              {isDead ? "No longer available" : <>Visit {tool.name}</>} →
             </a>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">

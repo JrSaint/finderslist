@@ -140,7 +140,7 @@ export const BUDGETING_APP_TOOLS: BudgetingAppTool[] = [
     tags: ["free budgeting","expense tracking","bill tracking","credit score","automatic categorization","financial overview"],
     url: "https://mint.intuit.com",
     pricing: "free",
-    featured: true,
+    featured: false,
     logo: "🍃",
     domain: "mint.intuit.com",
     pros: ["Completely free with no premium tier required for core features","Automatic transaction categorization across all linked accounts","Built-in credit score monitoring and bill reminders","Clean dashboard shows full financial picture at a glance"],

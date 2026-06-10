@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blog";
-import { DIRECTORIES, SITE_HOST } from "@/lib/directories";
+import { DIRECTORIES, SITE_HOST, extractTools, extractCategorySlugs } from "@/lib/directories";
 import freshnessData from "@/data/_freshness.json";
 
 const BASE_URL = SITE_HOST;
@@ -27,29 +27,22 @@ function lastMod(key: string, fallback: Date): Date {
 // (note: "ai-tools" → lib/tools.ts).
 const CATEGORIES = DIRECTORIES.map((d) => ({ path: d.route, libName: d.libName }));
 
-function camelCase(str: string): string {
-  return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-}
-
 async function getAllCategoryData() {
-  const categoryData: Record<string, { tools: any[]; categories: string[] }> = {};
+  const categoryData: Record<string, { tools: { slug: string }[]; categories: string[] }> = {};
 
   for (const cat of CATEGORIES) {
     try {
       const lib = await import(`@/lib/${cat.libName}`);
-      const camelName = camelCase(cat.libName);
-      const toolsFn = lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1).replace(/s$/, "")}Tools`] ||
-        lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1)}Tools`];
-
-      const categoriesFn = lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1).replace(/s$/, "")}Categories`] ||
-        lib[`getAll${camelName.charAt(0).toUpperCase() + camelName.slice(1)}Categories`];
-
-      const tools = toolsFn?.() || [];
-      const categories = categoriesFn?.() || [];
-
+      // Scan exports instead of guessing accessor names — name-guessing silently
+      // dropped the tool/category URLs of 81 of 108 directories from the sitemap.
+      const tools = extractTools(lib);
+      const categories = extractCategorySlugs(lib);
+      if (tools.length === 0) {
+        console.warn(`[sitemap] zero tools extracted for ${cat.path} (lib/${cat.libName})`);
+      }
       categoryData[cat.path] = { tools, categories };
-    } catch (e) {
-      // Silently skip if import fails
+    } catch {
+      console.warn(`[sitemap] failed to import lib/${cat.libName} for ${cat.path}`);
       categoryData[cat.path] = { tools: [], categories: [] };
     }
   }

@@ -52,6 +52,7 @@ export default function GenericFilterBar({
 
   return (
     <div className="space-y-4">
+      {Object.keys(roles).length > 0 && (
       <div>
         <p className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2.5">Best For</p>
         <div className="flex flex-wrap gap-2">
@@ -74,6 +75,7 @@ export default function GenericFilterBar({
           })}
         </div>
       </div>
+      )}
 
       <div>
         <p className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2.5">Pricing</p>
@@ -101,23 +103,24 @@ export default function GenericFilterBar({
         </div>
       </div>
 
-      {hasFilters && (
-        <div className="flex items-center justify-between pt-1">
-          <p className="text-sm text-slate-400">
-            <span className="font-semibold text-white">{resultCount}</span>{" "}
-            tool{resultCount !== 1 ? "s" : ""} found
-          </p>
+      <div className="flex items-center justify-between pt-1">
+        <p className="text-sm text-slate-400">
+          <span className="font-semibold text-white">{resultCount}</span>{" "}
+          tool{resultCount !== 1 ? "s" : ""}
+          {hasFilters ? " found" : " listed"}
+        </p>
+        {hasFilters && (
           <button
             onClick={clearAll}
-            className="text-xs text-slate-500 hover:text-slate-300 transition-colors flex items-center gap-1"
+            className="text-xs text-slate-400 hover:text-slate-300 transition-colors flex items-center gap-1"
           >
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
             Clear filters
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

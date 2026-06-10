@@ -3,6 +3,7 @@ import { getToolBySlug, getAllTools, getToolsByCategory, CATEGORIES, PRICING_LAB
 import ToolCard from "@/components/ToolCard";
 import AdBanner from "@/components/AdBanner";
 import AuthorBadge from "@/components/AuthorBadge";
+import ToolStatusNotice from "@/components/ToolStatusNotice";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${tool.tagline}. Honest review of ${tool.name}: pros, cons, pricing, and real-world use cases. Is it worth it in 2026?`,
     keywords: [tool.name, ...tool.tags, category.label, "AI tool review", "AI tools 2026"],
     openGraph: {
+      images: ["/og-image.png"],
       title: `${tool.name} Review 2026 | FindersList`,
       description: `${tool.tagline}. See honest pros, cons, pricing, and use cases.`,
     },
@@ -58,6 +60,7 @@ export default async function ToolPage({ params }: Props) {
     .slice(0, 4);
 
   const visitUrl = tool.affiliateUrl || tool.url;
+  const isDead = tool.status === "shutdown";
   const bestForRoles = getBestForRoles(tool);
 
   const jsonLd = {
@@ -71,8 +74,8 @@ export default async function ToolPage({ params }: Props) {
     operatingSystem: "Web",
     offers: {
       "@type": "Offer",
-      ...(tool.pricing === "free" ? { price: "0", priceCurrency: "USD" } : {}),
-      availability: "https://schema.org/OnlineOnly",
+      ...(tool.startingPrice ? { price: tool.startingPrice.replace(/[^0-9.]/g, ""), priceCurrency: tool.priceCurrency || "USD" } : tool.pricing === "free" ? { price: "0", priceCurrency: "USD" } : {}),
+      availability: isDead ? "https://schema.org/Discontinued" : "https://schema.org/OnlineOnly",
     },
     keywords: tool.tags.join(", "),
     author: { "@type": "Organization", name: "FindersList Editorial Team", url: "https://www.finderslist.com/about" },
@@ -102,6 +105,7 @@ export default async function ToolPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Breadcrumb */}
+      <ToolStatusNotice status={tool.status} name={tool.name} />
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
         <span>/</span>
@@ -163,18 +167,18 @@ export default async function ToolPage({ params }: Props) {
                 {/* CTA on desktop */}
                 <div className="hidden sm:flex flex-col gap-2 flex-shrink-0">
                   <a
-                    href={visitUrl}
+                    href={isDead ? tool.url : visitUrl}
                     target="_blank"
-                    rel="noopener noreferrer nofollow"
+                    rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
                     className="flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 px-5 py-2.5 font-semibold text-slate-900 transition-colors text-sm whitespace-nowrap"
                   >
-                    Visit {tool.name}
+                    {isDead ? "No longer available" : <>Visit {tool.name}</>}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </a>
                   {tool.affiliateUrl && (
-                    <p className="text-xs text-white/30 text-center">* Affiliate link</p>
+                    <p className="text-xs text-white/60 text-center">* Affiliate link</p>
                   )}
                 </div>
               </div>
@@ -184,12 +188,12 @@ export default async function ToolPage({ params }: Props) {
           {/* Mobile CTA */}
           <div className="sm:hidden mb-6">
             <a
-              href={visitUrl}
+              href={isDead ? tool.url : visitUrl}
               target="_blank"
-              rel="noopener noreferrer nofollow"
+              rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
               className="flex items-center justify-center gap-2 rounded-xl bg-violet-600 hover:bg-violet-500 px-6 py-3 font-semibold text-white transition-colors"
             >
-              Visit {tool.name}
+              {isDead ? "No longer available" : <>Visit {tool.name}</>}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -202,7 +206,7 @@ export default async function ToolPage({ params }: Props) {
             <p className="text-slate-400 leading-relaxed">{tool.description}</p>
           </div>
 
-          <AuthorBadge />
+          <AuthorBadge lastReviewed={tool.lastReviewed} hasAffiliate={!!tool.affiliateUrl} />
 
           {/* Pros & Cons */}
           {(tool.pros || tool.cons) && (
@@ -301,7 +305,7 @@ export default async function ToolPage({ params }: Props) {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Pricing</p>
-                  <p className="text-sm text-slate-300 leading-relaxed">{pricingDetail}</p>
+                  <p className="text-sm text-slate-300 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
                 </div>
               </div>
             </div>
@@ -310,7 +314,7 @@ export default async function ToolPage({ params }: Props) {
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Pricing Model</p>
               <p className="text-sm font-semibold text-white mb-1">{PRICING_LABELS[tool.pricing]}</p>
-              <p className="text-xs text-slate-500 leading-relaxed">{pricingDetail}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
             </div>
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-xs text-slate-500 mb-1.5">Category</p>
@@ -364,12 +368,12 @@ export default async function ToolPage({ params }: Props) {
             <div className="rounded-xl border border-white/10 bg-slate-900/50 p-4">
               <p className="text-sm font-medium text-white mb-3">Quick Access</p>
               <a
-                href={visitUrl}
+                href={isDead ? tool.url : visitUrl}
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel={tool.affiliateUrl ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
                 className="block w-full rounded-lg bg-violet-600 hover:bg-violet-500 px-4 py-2.5 text-sm font-medium text-white transition-colors text-center"
               >
-                Open {tool.name} →
+                {isDead ? "No longer available" : <>Open {tool.name} →</>}
               </a>
               <p className="text-xs text-slate-600 mt-2 text-center">
                 {PRICING_LABELS[tool.pricing]} · {category.label}
@@ -382,7 +386,7 @@ export default async function ToolPage({ params }: Props) {
               <span className={`inline-flex text-xs border rounded-full px-2.5 py-1 mb-2 ${PRICING_COLORS[tool.pricing]}`}>
                 {PRICING_LABELS[tool.pricing]}
               </span>
-              <p className="text-xs text-slate-500 leading-relaxed">{pricingDetail}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{tool.startingPrice ? `From ${tool.startingPrice}. ` : ""}{pricingDetail}</p>
             </div>
 
             {/* Quick pros summary */}
