@@ -29,7 +29,23 @@ const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const REPO = process.env.REPO || "JrSaint/finderslist"; // owner/repo
-const SPECIFIC_ISSUE = process.env.ISSUE_NUMBER
+const MODEL = process.env.MODEL || "claude-sonnet-4-6";
+
+// Subscription mode: a Claude Code agent produced the vetting decision via web
+// search; this script just applies it (no API key / credits needed).
+//   node scripts/vet-submission.mjs --issue 42 --decision /tmp/vet-42.json [--dry-run]
+const ARGV = process.argv.slice(2);
+function arg(name) {
+  const i = ARGV.indexOf(`--${name}`);
+  if (i === -1) return undefined;
+  const next = ARGV[i + 1];
+  return next && !next.startsWith("--") ? next : true;
+}
+const DECISION_FILE = arg("decision");
+const DRY_RUN = !!arg("dry-run");
+const SPECIFIC_ISSUE = arg("issue")
+  ? parseInt(arg("issue"), 10)
+  : process.env.ISSUE_NUMBER
   ? parseInt(process.env.ISSUE_NUMBER, 10)
   : null;
 
@@ -227,7 +243,7 @@ If REJECTED, use this shape:
 }`;
 
   const message = await client.messages.create({
-    model: "claude-opus-4-5",
+    model: MODEL,
     max_tokens: 1500,
     messages: [{ role: "user", content: prompt }],
   });
@@ -389,20 +405,26 @@ async function main() {
       : [];
 
     let decision;
+    if (DECISION_FILE) {
+      // Subscription mode: decision JSON was produced by a Claude Code agent.
+      decision = JSON.parse(readFileSync(DECISION_FILE, "utf-8"));
+      console.log(`Loaded decision from ${DECISION_FILE}`);
+    } else if (!ANTHROPIC_API_KEY) {
+      console.warn(`No ANTHROPIC_API_KEY and no --decision file — leaving issue #${issue.number} open.`);
+      continue;
+    }
     try {
-      decision = await vetWithClaude(
+      if (!decision) decision = await vetWithClaude(
         submission,
         suggestedDir,
         existingCategories,
         existingSlugs
       );
     } catch (err) {
-      console.error("Claude API error:", err);
-      await commentAndClose(
-        issue.number,
-        "⚠️ Automated vetting failed due to an internal error. This submission will be reviewed manually.",
-        false
-      );
+      // Leave the issue OPEN so the daily cron and the local maintenance routine
+      // can retry — an API failure (e.g. exhausted credits) must never reject a
+      // legitimate submission.
+      console.error(`Claude API error — leaving issue #${issue.number} open for retry:`, err.message || err);
       continue;
     }
 
@@ -411,6 +433,10 @@ async function main() {
     );
 
     if (!decision.approved) {
+      if (DRY_RUN) {
+        console.log(`DRY RUN — would reject issue #${issue.number}: ${decision.reason}`);
+        continue;
+      }
       // Rejection flow
       if (submission.submitterEmail) {
         await sendEmail({
@@ -453,8 +479,19 @@ async function main() {
       continue;
     }
 
+    if (DRY_RUN) {
+      console.log(`DRY RUN — would add "${decision.entry?.name}" to ${decision.directory} and close issue #${issue.number} as ${decision.approved ? "approved" : "rejected"}.`);
+      continue;
+    }
     try {
       addToolToDataFile(dir.dataFile, decision.entry);
+      // Never push a red tree: typecheck the data edit, revert on failure.
+      try {
+        execSync("npx tsc --noEmit", { cwd: ROOT, stdio: "pipe" });
+      } catch (tscErr) {
+        execSync("git checkout -- data/", { cwd: ROOT });
+        throw new Error(`tsc failed after adding entry; edit reverted: ${(tscErr.stdout || "").toString().slice(0, 300)}`);
+      }
       commitAndPush(decision.entry, decision.directory);
     } catch (err) {
       console.error("File write/commit error:", err);

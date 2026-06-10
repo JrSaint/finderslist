@@ -18,6 +18,14 @@ task, **not** the Anthropic API:
   **integrity audit** uses no AI, so it still runs free in Actions.
 - Scripts support `--decision <file>` (apply agent-produced listing changes) and
   `--post-file <file>` (publish an agent-written blog post) with no API key.
+- **Tool submissions** are credit-free too: the daily routine vets open
+  `tool-submission` issues with web search and applies via
+  `vet-submission.mjs --issue <N> --decision /tmp/vet-<N>.json [--dry-run]`
+  (dup check, tsc gate + revert, commit/push, issue comment+close, email).
+  The GitHub Actions instant path still works when API credits exist; on API
+  failure it now **leaves the issue open** for the daily retry instead of
+  closing it as rejected. The submit form's directory dropdown reads the
+  shared manifest, so new directories appear automatically.
 
 ## Components
 
