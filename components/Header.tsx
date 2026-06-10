@@ -28,7 +28,7 @@ const PRIMARY_NAV = [
   { key: "ai", label: "AI Tools", href: "/ai-tools" },
   { key: "marketing", label: "Marketing", href: "/marketing-tools" },
   { key: "finance", label: "Finance", href: "/finance-tools" },
-  { key: "ecommerce", label: "E-commerce", href: "/ecommerce-tools" },
+  { key: "ecommerce", label: "E‑commerce", href: "/ecommerce-tools" },
   { key: "productivity", label: "Productivity", href: "/productivity-tools" },
   { key: "hr", label: "HR", href: "/hr-tools" },
 ] as const;
@@ -109,7 +109,7 @@ export default function Header() {
                     href={item.href}
                     aria-haspopup="menu"
                     aria-expanded={activeDropdown === item.key}
-                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:outline-none"
+                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:outline-none"
                   >
                     {item.label}
                     <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -151,7 +151,7 @@ export default function Header() {
                 aria-haspopup="menu"
                 aria-expanded={activeDropdown === "more"}
                 onClick={() => setActiveDropdown(activeDropdown === "more" ? null : "more")}
-                className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:outline-none"
+                className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 px-2.5 py-2 rounded-lg hover:bg-white/5 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:outline-none"
               >
                 More
                 <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">

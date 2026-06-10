@@ -46,7 +46,7 @@ function score(entry: IndexEntry, q: string): number {
   return 0;
 }
 
-export default function GlobalSearchBar() {
+export default function GlobalSearchBar({ className }: { className?: string } = {}) {
   const [index, setIndex] = useState<IndexEntry[]>(cachedIndex ?? []);
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -119,7 +119,7 @@ export default function GlobalSearchBar() {
   }
 
   return (
-    <div ref={ref} className="relative w-full max-w-xs xl:max-w-sm">
+    <div ref={ref} className={`relative w-full ${className ?? "max-w-xs xl:max-w-sm"}`}>
       <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-slate-800/80 backdrop-blur px-3 py-1.5 focus-within:border-violet-500/50 transition-colors">
         <svg className="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

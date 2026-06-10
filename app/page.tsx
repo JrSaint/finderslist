@@ -1271,7 +1271,7 @@ export default async function HubPage() {
 
           {/* Hero search */}
           <div className="max-w-xl mx-auto mb-8 text-left">
-            <GlobalSearchBar />
+            <GlobalSearchBar className="max-w-none" />
           </div>
 
           {/* Brand strip — recognizable tools we cover */}
