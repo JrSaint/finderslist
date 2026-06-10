@@ -6,6 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
+import CategoryAtAGlance from "@/components/CategoryAtAGlance";
 import MethodologyBadge from "@/components/MethodologyBadge";
 import RelatedDirectories from "@/components/RelatedDirectories";
 import FilterBar from "@/components/FilterBar";
@@ -150,11 +151,14 @@ export default async function AIToolsPage({ searchParams }: Props) {
         )}
 
         {!isFiltering && (
+          <>
+          <CategoryAtAGlance tools={allTools as never[]} basePath="/ai-tools" />
           <ComparisonTable
             tools={featured as never[]}
             categories={CATEGORIES as Record<string, { label: string; emoji: string }>}
             basePath="/ai-tools"
           />
+          </>
         )}
 
         {!isFiltering && <MethodologyBadge />}

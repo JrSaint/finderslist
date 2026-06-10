@@ -13,6 +13,7 @@ import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
+import CategoryAtAGlance from "@/components/CategoryAtAGlance";
 import MethodologyBadge from "@/components/MethodologyBadge";
 import RelatedDirectories from "@/components/RelatedDirectories";
 import GenericFilterBar from "@/components/GenericFilterBar";
@@ -154,11 +155,14 @@ export default async function EcommercePlatformPage({ searchParams }: Props) {
         )}
 
         {!isFiltering && (
+          <>
+          <CategoryAtAGlance tools={allTools as never[]} basePath="/ecommerce-platforms" />
           <ComparisonTable
             tools={featured as never[]}
             categories={ECOMMERCE_PLATFORM_CATEGORIES as Record<string, { label: string; emoji: string }>}
             basePath="/ecommerce-platforms"
           />
+          </>
         )}
 
         {!isFiltering && <MethodologyBadge />}

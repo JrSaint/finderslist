@@ -228,7 +228,7 @@ export default async function MarketingAutomationToolPage({ params }: Props) {
           {relatedTools.length > 0 && (
             <section>
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-semibold text-white">More {category.label}</h2>
+                <h2 className="text-base font-semibold text-white">{tool.name} Alternatives</h2>
                 <Link href={`/marketing-automation-software/category/${tool.category}`} className="text-xs text-fuchsia-400 hover:text-fuchsia-300 transition-colors">See all →</Link>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -13,6 +13,7 @@ import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
+import CategoryAtAGlance from "@/components/CategoryAtAGlance";
 import MethodologyBadge from "@/components/MethodologyBadge";
 import RelatedDirectories from "@/components/RelatedDirectories";
 import GenericFilterBar from "@/components/GenericFilterBar";
@@ -154,11 +155,14 @@ export default async function TelehealthPage({ searchParams }: Props) {
         )}
 
         {!isFiltering && (
+          <>
+          <CategoryAtAGlance tools={allTools as never[]} basePath="/telehealth-platforms" />
           <ComparisonTable
             tools={featured as never[]}
             categories={TELEHEALTH_CATEGORIES as Record<string, { label: string; emoji: string }>}
             basePath="/telehealth-platforms"
           />
+          </>
         )}
 
         {!isFiltering && <MethodologyBadge />}

@@ -13,6 +13,7 @@ import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
+import CategoryAtAGlance from "@/components/CategoryAtAGlance";
 import MethodologyBadge from "@/components/MethodologyBadge";
 import RelatedDirectories from "@/components/RelatedDirectories";
 import GenericFilterBar from "@/components/GenericFilterBar";
@@ -154,11 +155,14 @@ export default async function RoboAdvisorPage({ searchParams }: Props) {
         )}
 
         {!isFiltering && (
+          <>
+          <CategoryAtAGlance tools={allTools as never[]} basePath="/robo-advisors" />
           <ComparisonTable
             tools={featured as never[]}
             categories={ROBO_ADVISOR_CATEGORIES as Record<string, { label: string; emoji: string }>}
             basePath="/robo-advisors"
           />
+          </>
         )}
 
         {!isFiltering && <MethodologyBadge />}

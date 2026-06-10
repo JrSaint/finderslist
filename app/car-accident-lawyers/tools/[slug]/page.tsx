@@ -208,7 +208,7 @@ export default async function CarAccidentLawyerToolPage({ params }: Props) {
           {relatedTools.length > 0 && (
             <section>
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-semibold text-white">More {category.label} Tools</h2>
+                <h2 className="text-base font-semibold text-white">{tool.name} Alternatives</h2>
                 <Link href={`/car-accident-lawyers/category/${tool.category}`} className="text-xs text-red-400 hover:text-red-300 transition-colors">See all →</Link>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

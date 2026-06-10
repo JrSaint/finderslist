@@ -14,6 +14,7 @@ import SearchBar from "@/components/SearchBar";
 import AdBanner from "@/components/AdBanner";
 import EditorialSection from "@/components/EditorialSection";
 import ComparisonTable from "@/components/ComparisonTable";
+import CategoryAtAGlance from "@/components/CategoryAtAGlance";
 import MethodologyBadge from "@/components/MethodologyBadge";
 import RelatedDirectories from "@/components/RelatedDirectories";
 import GenericFilterBar from "@/components/GenericFilterBar";
@@ -173,11 +174,14 @@ export default async function CRMToolsPage({ searchParams }: Props) {
         )}
 
         {!isFiltering && (
+          <>
+          <CategoryAtAGlance tools={allTools as never[]} basePath="/crm-tools" />
           <ComparisonTable
             tools={featured as never[]}
             categories={CRM_CATEGORIES as Record<string, { label: string; emoji: string }>}
             basePath="/crm-tools"
           />
+          </>
         )}
 
         {!isFiltering && <MethodologyBadge />}

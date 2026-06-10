@@ -1,4 +1,5 @@
 import Link from "next/link";
+import freshness from "@/data/_freshness.json";
 
 interface ComparisonTool {
   slug: string;
@@ -40,6 +41,13 @@ const RANK_STYLES = [
 export default function ComparisonTable({ tools, categories, basePath }: ComparisonTableProps) {
   if (tools.length === 0) return null;
 
+  // Real per-directory review date from the refresh pipeline (Capterra-style
+  // "Last updated" trust signal). Falls back silently when not yet reviewed.
+  const updatedIso = (freshness as Record<string, string>)[basePath.replace(/^\//, "")];
+  const updatedLabel = updatedIso
+    ? new Date(updatedIso).toLocaleDateString("en-US", { month: "long", year: "numeric" })
+    : null;
+
   return (
     <section className="mt-14">
       <div className="flex items-center justify-between mb-5">
@@ -51,6 +59,7 @@ export default function ComparisonTable({ tools, categories, basePath }: Compari
               editors
             </Link>{" "}
             for features, value, and reputation — never for affiliate payouts
+            {updatedLabel && <span className="text-slate-500"> · Listings verified {updatedLabel}</span>}
           </p>
         </div>
       </div>
