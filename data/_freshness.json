@@ -84,5 +84,8 @@
   "security-tools/tools/proton-pass": "2026-06-05",
   "security-tools/tools/protonvpn": "2026-06-05",
   "security-tools/tools/surfshark": "2026-06-05",
-  "security-tools/tools/twingate": "2026-06-05"
+  "security-tools/tools/twingate": "2026-06-05",
+  "website-builders": "2026-06-13",
+  "website-builders/tools/editor-x": "2026-06-13",
+  "website-builders/tools/instapage": "2026-06-13"
 }
