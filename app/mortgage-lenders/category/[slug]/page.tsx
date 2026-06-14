@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getMortgageLenderToolsByCategory(slug as MortgageLenderCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Lenders (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} lenders in 2026. We've curated ${tools.length} top lenders with honest reviews, rate breakdowns, and real-world use cases.`,
     keywords: [`${category.label} lenders`, `best ${category.label} lenders 2026`, "mortgage lenders", category.label],

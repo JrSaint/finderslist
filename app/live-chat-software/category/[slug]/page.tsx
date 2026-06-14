@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getLiveChatToolsByCategory(slug as LiveChatCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} options in 2026. We've curated ${tools.length} top listings with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "live chat software", category.label],

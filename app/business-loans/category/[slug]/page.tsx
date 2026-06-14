@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getBusinessLoanToolsByCategory(slug as BusinessLoanCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top lenders with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "business loans", category.label],

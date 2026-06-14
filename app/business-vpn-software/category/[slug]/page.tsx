@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getBusinessVPNToolsByCategory(slug as BusinessVPNCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Tools (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} tools in 2026. We've curated ${tools.length} top tools with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} tools`, `best ${category.label} tools 2026`, "business vpn software", category.label],

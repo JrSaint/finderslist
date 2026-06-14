@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getStructuredSettlementToolsByCategory(slug as StructuredSettlementCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Structured Settlement Companies (2026) — ${tools.length} Options Compared`,
     description: `Discover the best structured settlement companies for ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top companies with honest reviews, payout estimates, and real-world use cases.`,
     keywords: [`${category.label} structured settlement`, `best ${category.label} companies 2026`, "structured settlement buyers", category.label],

@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getIdentityTheftProtectionToolsByCategory(slug as IdentityTheftProtectionCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Services (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} services in 2026. We've curated ${tools.length} top options with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} services`, `best ${category.label} 2026`, "identity theft protection", category.label],

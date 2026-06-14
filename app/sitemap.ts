@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blog";
-import { DIRECTORIES, SITE_HOST, extractTools, extractCategorySlugs, featuredPairs, pairSegment } from "@/lib/directories";
+import { DIRECTORIES, SITE_HOST, extractTools, extractCategorySlugs } from "@/lib/directories";
 import freshnessData from "@/data/_freshness.json";
 
 const BASE_URL = SITE_HOST;
@@ -91,19 +91,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     });
 
-    // Category pages
-    if (Array.isArray(categories)) {
-      for (const category of categories) {
-        entries.push({
-          url: `${BASE_URL}/${cat.path}/category/${category}`,
-          lastModified: lastMod(`${cat.path}/category/${category}`, DATE_DIRECTORIES),
-          changeFrequency: "weekly",
-          priority: 0.8,
-        });
-      }
-    }
-
-    // Tool pages
+    // Tool pages. NOTE: category pages (/category/*) and compare pages
+    // (/compare/*) are intentionally NOT listed — they're noindex while we
+    // concentrate Google's indexing budget on the highest-value pages (hubs +
+    // tool reviews) to recover from mass "Crawled - currently not indexed".
+    // `categories` is still used elsewhere; referenced here to avoid an unused var.
+    void categories;
     if (Array.isArray(tools)) {
       for (const tool of tools) {
         entries.push({
@@ -111,16 +104,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           lastModified: lastMod(`${cat.path}/tools/${tool.slug}`, DATE_TOOLS),
           changeFrequency: "monthly",
           priority: 0.8,
-        });
-      }
-
-      // Featured head-to-head comparison pages
-      for (const [a, b] of featuredPairs(tools)) {
-        entries.push({
-          url: `${BASE_URL}/compare/${cat.path}/${pairSegment(a, b)}`,
-          lastModified: lastMod(cat.path, DATE_TOOLS),
-          changeFrequency: "monthly",
-          priority: 0.7,
         });
       }
     }

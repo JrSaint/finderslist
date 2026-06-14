@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getVirtualDataRoomToolsByCategory(slug as VirtualDataRoomCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Virtual Data Rooms (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} virtual data rooms in 2026. We've curated ${tools.length} top options with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} data room`, `best ${category.label} VDR 2026`, "virtual data room", category.label],

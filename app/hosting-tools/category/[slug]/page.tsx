@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getHostingToolsByCategory(slug as HostingCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Tools (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} tools in 2026. ${tools.length} top tools with honest reviews, pricing, and real-world use cases.`,
     alternates: { canonical: `https://www.finderslist.com/hosting-tools/category/${slug}` },

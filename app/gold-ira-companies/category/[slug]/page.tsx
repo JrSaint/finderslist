@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getGoldIRAToolsByCategory(slug as GoldIRACategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Companies (2026) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} companies in 2026. We've curated ${tools.length} top providers with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} companies`, `best ${category.label} companies 2026`, "gold IRA", category.label],

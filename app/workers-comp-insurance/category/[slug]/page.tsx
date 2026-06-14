@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getWorkersCompToolsByCategory(slug as WorkersCompCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} Workers Comp Insurance (2026) — ${tools.length} Options Compared`,
     description: `Discover the best workers compensation insurance for ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top providers with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} workers comp`, `best ${category.label} workers compensation 2026`, "workers comp insurance", category.label],

@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getToolsByCategory(slug as Category);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} AI Tools (2025) — ${tools.length} Options Compared`,
     description: `Discover the best ${category.label.toLowerCase()} AI tools in 2025. We've curated ${tools.length} top tools with honest reviews, pricing breakdowns, and real-world use cases.`,
     keywords: [`${category.label} AI tools`, `best ${category.label} tools`, `AI tools 2025`, category.label],

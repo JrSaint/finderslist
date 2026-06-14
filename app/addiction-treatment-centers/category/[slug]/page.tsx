@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getAddictionTreatmentCenterToolsByCategory(slug as AddictionTreatmentCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} (2026) — ${tools.length} Programs Compared`,
     description: `Discover the best ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top programs with honest profiles, treatment approaches, and real-world results.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "addiction treatment", category.label],

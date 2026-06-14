@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return {};
   const tools = getPersonalInjuryToolsByCategory(slug as PersonalInjuryCategory);
   return {
+    robots: { index: false, follow: true },
     title: `Best ${category.label} (2026) — ${tools.length} Firms Compared`,
     description: `Discover the best ${category.label.toLowerCase()} in 2026. We've curated ${tools.length} top firms with honest profiles, specialties, and real-world case results.`,
     keywords: [`${category.label}`, `best ${category.label} 2026`, "personal injury lawyer", category.label],

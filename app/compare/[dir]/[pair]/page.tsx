@@ -93,6 +93,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${a.name} vs ${b.name} (2026) | FindersList`,
       description: `Side-by-side ${entry.displayName.toLowerCase()} comparison: pricing, pros, cons, and use cases.`,
     },
+    robots: { index: false, follow: true },
     alternates: { canonical: `${SITE_HOST}/compare/${dir}/${pair}` },
   };
 }
