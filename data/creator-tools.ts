@@ -63,38 +63,25 @@ export const CREATOR_EDITORIAL = {
 
 export const CREATOR_TOOLS: CreatorTool[] = [
   // ── VIDEO EDITING ──────────────────────────────────────────────────────────
-  {
+    {
     slug: "descript",
     name: "Descript",
     tagline: "The all-in-one video editor that lets you edit video by editing text",
     description: "Descript has reinvented video editing for creators who aren't professional video editors. The core innovation is transcription-based editing: Descript transcribes your video or podcast, and you edit the media by editing the text transcript — delete a word in the transcript, and that word disappears from the video. This alone saves hours on podcast and YouTube editing. Overdub lets you clone your voice and fix flubs by typing new words — the AI reads them in your voice. Filler word removal deletes every 'um' and 'uh' automatically. The Screen Recorder captures your screen and webcam simultaneously. Descript's remote recording feature (Squadcast integration) records guests in high quality locally, not compressed over the internet. The export quality is solid for most use cases, though it doesn't match Premiere Pro for color work. The collaborative editing features let multiple people work on the same project. Compared to CapCut (mobile-first, less pro), Premiere Pro (far more powerful but steep learning curve), and Final Cut (Mac only). Best for: podcasters who also do video, YouTube creators who value speed over perfection, and anyone who wants to skip traditional timeline editing.",
     category: "video-editing",
-    tags: ["video editing", "podcast editing", "transcription", "overdub", "screen recording"],
+    tags: ["video editing","podcast editing","transcription","overdub","screen recording"],
     url: "https://www.descript.com",
     affiliateUrl: "https://www.descript.com",
     pricing: "freemium",
     featured: true,
     logo: "🎬",
     domain: "descript.com",
-    pros: [
-      "Edit video by editing text transcript — revolutionary for podcast/interview content",
-      "Overdub voice cloning fixes audio mistakes without re-recording",
-      "Automatic filler word ('um', 'uh') removal saves hours of editing",
-      "Built-in screen recorder and remote recording for guests",
-      "Collaborative editing for teams working on the same project",
-    ],
-    cons: [
-      "Limited color grading compared to Premiere Pro or DaVinci Resolve",
-      "AI transcription errors in videos with heavy accents or background noise",
-      "Export quality adequate but not best-in-class for cinematic work",
-      "Learning curve for the unique text-based editing paradigm",
-    ],
-    useCases: [
-      "A podcaster edits a 60-minute episode in 30 minutes by deleting filler words and silences from the transcript",
-      "A YouTuber fixes a mispronounced word using Overdub without re-recording the entire segment",
-      "A SaaS company creates product demo videos using screen recording + auto-captions in one tool",
-      "A marketing team produces social media clips from a long interview by selecting sections of text",
-    ],
+    pros: ["Edit video by editing text transcript — revolutionary for podcast/interview content","Overdub voice cloning fixes audio mistakes without re-recording","Automatic filler word ('um', 'uh') removal saves hours of editing","Built-in screen recorder and remote recording for guests","Collaborative editing for teams working on the same project"],
+    cons: ["Limited color grading compared to Premiere Pro or DaVinci Resolve","AI transcription errors in videos with heavy accents or background noise","Export quality adequate but not best-in-class for cinematic work","Learning curve for the unique text-based editing paradigm"],
+    useCases: ["A podcaster edits a 60-minute episode in 30 minutes by deleting filler words and silences from the transcript","A YouTuber fixes a mispronounced word using Overdub without re-recording the entire segment","A SaaS company creates product demo videos using screen recording + auto-captions in one tool","A marketing team produces social media clips from a long interview by selecting sections of text"],
+    startingPrice: "$16/mo",
+    priceCurrency: "USD",
+    lastReviewed: "2026-06-14",
   },
   {
     slug: "capcut",
