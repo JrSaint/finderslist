@@ -100,6 +100,11 @@
   "security-tools/tools/protonvpn": "2026-06-05",
   "security-tools/tools/surfshark": "2026-06-05",
   "security-tools/tools/twingate": "2026-06-05",
+  "support-tools": "2026-06-15",
+  "support-tools/tools/delighted": "2026-06-15",
+  "support-tools/tools/document360": "2026-06-15",
+  "support-tools/tools/drift": "2026-06-15",
+  "support-tools/tools/help-scout": "2026-06-15",
   "website-builders": "2026-06-13",
   "website-builders/tools/editor-x": "2026-06-13",
   "website-builders/tools/instapage": "2026-06-13"
