@@ -1,4 +1,12 @@
 {
+  "accounting-software": "2026-06-19",
+  "accounting-software/tools/botkeeper": "2026-06-19",
+  "accounting-software/tools/brex": "2026-06-19",
+  "accounting-software/tools/digits": "2026-06-19",
+  "accounting-software/tools/divvy": "2026-06-19",
+  "accounting-software/tools/freshbooks": "2026-06-19",
+  "accounting-software/tools/pilot": "2026-06-19",
+  "accounting-software/tools/quickbooks-online": "2026-06-19",
   "ai-coding-assistants": "2026-06-05",
   "ai-coding-assistants/tools/codeium-windsurf": "2026-06-05",
   "ai-coding-assistants/tools/cursor": "2026-06-05",
