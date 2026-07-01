@@ -148,4 +148,33 @@ export const REAL_ESTATE_TOOLS: RealEstateTool[] = [
   { slug: "wise-agent", name: "Wise Agent", tagline: "Affordable all-in-one real estate CRM for agents and small teams", description: "Wise Agent is an affordable real estate CRM ($49/mo flat) with contact management, transaction tracking, email marketing, and landing pages. Known for excellent customer support and fair pricing, it's a favorite among solo agents and small teams.", category: "crm", tags: ["wise agent", "affordable crm", "real estate", "email marketing", "transaction tracking", "solo agent"], url: "https://wiseagent.com", pricing: "paid", featured: false, logo: "🦉", domain: "wiseagent.com", pros: ["Flat $49/month pricing covers all features with no per-user charges", "Excellent and responsive customer support consistently praised by users", "Includes contact management, transactions, email marketing, and landing pages", "Affordable for solo agents and small teams without enterprise budgets"], cons: ["Interface feels dated compared to modern real estate platforms", "Integration options are more limited than larger CRM platforms", "Advanced features like AI lead scoring are not available", "Marketing automation is less sophisticated than premium competitors"], useCases: ["Solo agent wanting an affordable all-in-one CRM with transaction tracking", "Small team needing email marketing and landing pages without a large budget", "Agent switching from spreadsheets who wants a simple CRM with great support"] },
   { slug: "reipro", name: "REIPro", tagline: "All-in-one real estate investment software for finding and analyzing deals", description: "REIPro helps real estate investors find motivated sellers, analyze deals, generate marketing campaigns, and manage leads. It includes comps analysis, direct mail marketing, and deal calculators. Designed for active investors and wholesalers.", category: "investor-tools", tags: ["reipro", "motivated sellers", "wholesaling", "deal analysis", "direct mail", "investor crm"], url: "https://reipro.io", pricing: "paid", featured: false, logo: "🏗️", domain: "reipro.io", pros: ["All-in-one investor tool covering lead finding, analysis, and marketing", "Built-in direct mail marketing to reach motivated sellers", "Comps analysis helps investors evaluate property values quickly", "Deal calculators for multiple investment strategies including wholesaling"], cons: ["Interface and user experience are less polished than modern SaaS tools", "Data accuracy for property information varies by market", "Learning curve for newer investors to understand all available features", "Pricing can add up when using direct mail and skip tracing features"], useCases: ["Real estate wholesaler finding and marketing to motivated sellers", "Investor running comps analysis and deal calculations on potential acquisitions", "Active investor managing a pipeline of leads from direct mail campaigns"] },
   { slug: "propertyware", name: "Propertyware", tagline: "Property management software for single-family rental portfolios", description: "Propertyware specializes in single-family rental management — a niche underserved by platforms focused on multifamily. It handles accounting, maintenance, online payments, owner portals, and marketing. Owned by RealPage, it integrates with the broader RealPage ecosystem.", category: "property-management", tags: ["propertyware", "single family", "rental management", "realpage", "owner portal", "accounting"], url: "https://www.propertyware.com", pricing: "paid", featured: false, logo: "🏡", domain: "propertyware.com", pros: ["Specialized in single-family rental management — a niche most competitors underserve", "Strong accounting and owner portal for investor communication", "Part of the RealPage ecosystem with access to broader property tech integrations", "Marketing tools help reduce vacancy through listing syndication"], cons: ["Less suited for multifamily or commercial property management", "Interface can feel complex with a steeper learning curve than simpler tools", "Pricing per unit can be expensive for smaller single-family portfolios", "RealPage ownership means potential for price increases and platform changes"], useCases: ["Single-family rental investor managing a scattered portfolio across multiple markets", "Property management company specializing in single-family home rentals", "Owner wanting a robust owner portal to share statements and performance data"] },
+  {
+    slug: "rentals369",
+    name: "Rentals369",
+    tagline: "All-in-one property management software for independent landlords and small teams.",
+    description: "Rentals369 is a cloud-based rental property management platform designed for independent landlords and small property management teams who need a single organized workspace. It covers the full landlord workflow including property and unit records, tenant and lease management, rent tracking, maintenance requests, notices, documents, and vendor coordination. Optional add-ons for QuickBooks sync and email integration make it a flexible choice for operators who want to scale without switching tools.",
+    category: "property-management",
+    tags: ["property-management","landlord-software","rent-tracking","lease-management","maintenance-requests"],
+    url: "https://www.rentals369.com/?utm_source=finderslist&utm_medium=directory&utm_campaign=directory_launch_2026_07&utm_content=submit-form",
+    pricing: "paid",
+    featured: false,
+    logo: "🏠",
+    domain: "rentals369.com",
+    pros: [
+          "Covers end-to-end landlord workflows in one connected workspace",
+          "Role-based access control suits small teams with multiple users",
+          "Optional QuickBooks and email sync add-ons extend functionality without bloat",
+          "Handles maintenance requests, vendor workflows, and notices alongside financials"
+    ],
+    cons: [
+          "Paid-only pricing may be a barrier for landlords with just one or two units",
+          "Add-on model means QuickBooks and email sync cost extra beyond the base plan",
+          "Newer product with less market presence than established competitors like Buildium or AppFolio"
+    ],
+    useCases: [
+          "Independent landlords tracking rent payments and lease expirations across multiple units",
+          "Small property management teams coordinating maintenance requests and vendor work orders",
+          "Landlords who need organized document storage and tenant communication records in one place"
+    ],
+  },
 ];
