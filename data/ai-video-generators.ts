@@ -185,4 +185,33 @@ export const AI_VIDEO_TOOLS: AIVideoTool[] = [
           "Growing brands testing television advertising without major budget commitment"
     ],
   },
+  {
+    slug: "zooop",
+    name: "ZOOOP",
+    tagline: "All-in-one AI creative hub for images, video, and audio on an infinite canvas.",
+    description: "ZOOOP is an AI-native creative platform that lets users generate images, video, and audio directly on an infinite canvas with real-time collaboration. It combines multi-modal AI generation with pro-grade editing tools, ready-made templates, and a unique creator economy where users earn credits by publishing their own content. Unlike subscription-based competitors, ZOOOP operates on a credit model with no monthly fee, no expiring credits, and a free shared credit pool for teams.",
+    category: "ai-editing",
+    tags: ["ai-video","ai-image","ai-audio","infinite-canvas","real-time-collaboration"],
+    url: "https://zooop.ai/",
+    pricing: "freemium",
+    featured: false,
+    logo: "🎨",
+    domain: "zooop.ai",
+    pros: [
+          "Multi-modal generation (images, video, and audio) in a single platform",
+          "Infinite canvas with real-time collaboration for teams",
+          "Credits never expire and no mandatory monthly subscription fee",
+          "Users can earn credits by publishing their own creations"
+    ],
+    cons: [
+          "Relatively new platform with a less established track record than competitors",
+          "Credit-based pricing may be harder to budget for high-volume users",
+          "Limited public documentation or third-party reviews available at launch"
+    ],
+    useCases: [
+          "Content creators producing short-form video, audio, and visual assets in one workflow",
+          "Remote creative teams collaborating in real time on an infinite canvas",
+          "Indie creators and solopreneurs who need flexible pay-as-you-go AI creative tools without monthly fees"
+    ],
+  },
 ];
