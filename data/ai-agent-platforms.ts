@@ -148,4 +148,33 @@ export const AI_AGENTS_TOOLS: AIAgentsTool[] = [
   { slug: "dify", name: "Dify", tagline: "Open-source platform for building LLM apps with visual orchestration", description: "Dify is an open-source LLMOps platform that lets teams build AI applications visually. It provides RAG pipeline configuration, agent orchestration, model management, and observability in a unified interface. Self-hostable with a generous cloud free tier, it's popular with teams wanting full control over their AI stack.", category: "workflow-builders", tags: ["dify", "open source", "llmops", "rag", "visual builder", "self-hosted"], url: "https://dify.ai", pricing: "freemium", featured: false, logo: "🔮", domain: "dify.ai", pros: ["Open-source and self-hostable for full data control", "Visual RAG pipeline builder with configurable retrieval strategies", "Supports multiple LLM providers from a single interface", "Built-in prompt engineering and model comparison tools", "Generous cloud free tier for prototyping and small projects"], cons: ["Visual builder can be limiting for highly custom agent logic", "Self-hosting requires Docker knowledge and infrastructure management", "Community is growing but smaller than LangChain or n8n", "Enterprise features and support still maturing"], useCases: ["Team building a customer-facing RAG chatbot with visual pipeline configuration", "Developer comparing responses across GPT-4, Claude, and open-source models", "Organization self-hosting an LLM application platform for data privacy compliance"] },
   { slug: "superagent", name: "SuperAgent", tagline: "Open-source framework for building production-ready AI assistants", description: "SuperAgent provides a cloud-based and self-hostable platform for creating AI assistants with built-in RAG, tool integration, and multi-model support. It features a REST API for easy integration, workflow orchestration, and support for multiple vector databases and LLM providers.", category: "autonomous-agents", tags: ["superagent", "open source", "ai assistant", "rag", "rest api", "multi-model"], url: "https://www.superagent.sh", pricing: "freemium", featured: false, logo: "🦸", domain: "superagent.sh", pros: ["REST API makes it easy to integrate agents into any application", "Supports multiple LLM providers and vector databases", "Self-hostable for organizations requiring data sovereignty", "Built-in RAG with document ingestion and retrieval", "Open-source with an active development community"], cons: ["Smaller community and fewer resources than LangChain or CrewAI", "Documentation is less comprehensive than mature frameworks", "Cloud platform features are still being built out", "Limited pre-built tool integrations compared to larger ecosystems"], useCases: ["Backend developer deploying an AI assistant via REST API into an existing app", "Team building a multi-model agent that falls back between providers", "Startup self-hosting an AI assistant for customer-facing interactions"] },
   { slug: "relevance-ai", name: "Relevance AI", tagline: "No-code platform for building and deploying AI agents for business teams", description: "Relevance AI lets business teams build AI agents without coding. It provides a visual builder for creating agents that can research, analyze data, generate content, and automate workflows. The platform includes pre-built agent templates, knowledge base integration, and team collaboration features.", category: "enterprise-ai", tags: ["relevance ai", "no-code", "business ai", "agent builder", "templates", "collaboration"], url: "https://relevanceai.com", pricing: "freemium", featured: false, logo: "🎯", domain: "relevanceai.com", pros: ["No-code builder lets non-technical business teams create AI agents", "Pre-built agent templates for common business workflows", "Knowledge base integration for grounded, accurate responses", "Team collaboration features with shared agent workspaces", "Free tier available for exploring and prototyping agents"], cons: ["Less customizable than code-based frameworks for complex logic", "Agent capabilities are bounded by the platform's available tools", "Smaller ecosystem than enterprise platforms like Salesforce Einstein", "Advanced multi-agent orchestration is limited"], useCases: ["Marketing team building an AI research agent that analyzes competitor websites", "Sales team deploying an agent that enriches leads with public data automatically", "Business analyst creating a no-code agent that generates weekly data reports"] },
+  {
+    slug: "llmgraph",
+    name: "LLMGraph",
+    tagline: "Visual drag-and-drop builder for RAG chatbots, support bots, and AI agents.",
+    description: "LLMGraph is a low-to-no-code visual workflow builder that lets users design LLM-powered pipelines on an intuitive drag-and-drop canvas — or describe them conversationally in chat. It enables developers and non-developers alike to transform documents and AI models into RAG chatbots, support bots, and autonomous agents, then deploy each workflow to a REST API or an embeddable chat widget in a single click. With tiered plans ranging from $40/month for solo builders to $2,000/month for enterprise teams, LLMGraph targets the full spectrum from side projects to production-scale AI applications.",
+    category: "workflow-builders",
+    tags: ["no-code","RAG","AI agents","chatbot","LLM"],
+    url: "https://llmgraph.ai",
+    pricing: "paid",
+    featured: false,
+    logo: "🔗",
+    domain: "llmgraph.ai",
+    pros: [
+          "Visual drag-and-drop canvas lowers the barrier for non-developers",
+          "One-click deployment to both REST API and embeddable chat widget",
+          "Supports RAG pipelines, support bots, and autonomous agent workflows",
+          "14-day free trial available on all plans"
+    ],
+    cons: [
+          "No permanent free tier — requires a paid plan after the trial",
+          "Enterprise plan at $2,000/month may be steep for small teams",
+          "Relatively new entrant in a competitive market with established alternatives"
+    ],
+    useCases: [
+          "Building RAG chatbots grounded in internal documents or knowledge bases",
+          "Deploying customer support bots with an embeddable chat widget",
+          "Prototyping and shipping AI agent workflows without writing backend code"
+    ],
+  },
 ];
