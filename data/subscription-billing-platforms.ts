@@ -148,4 +148,33 @@ export const SUBSCRIPTION_BILLING_TOOLS: SubscriptionBillingTool[] = [
   { slug: "stripe-revenue-recognition", name: "Stripe Revenue Recognition", tagline: "Automated ASC 606 revenue recognition built into Stripe", description: "Stripe Revenue Recognition automates ASC 606 / IFRS 15 compliant revenue recognition for companies using Stripe Billing. It automatically generates revenue waterfalls, deferred revenue schedules, and accounting journal entries based on your billing data.", category: "payment-infrastructure", tags: ["stripe", "revenue recognition", "asc 606", "accounting", "deferred revenue", "compliance"], url: "https://stripe.com/revenue-recognition", pricing: "paid", featured: false, logo: "💜", domain: "stripe.com", pros: ["Seamless integration with Stripe Billing for zero-setup revenue recognition", "Automatically generates ASC 606 / IFRS 15 compliant reports", "Revenue waterfalls and deferred revenue schedules update in real time", "Eliminates manual spreadsheet-based revenue recognition"], cons: ["Only works with Stripe Billing — not compatible with other billing platforms", "Advanced customization for complex revenue arrangements is limited", "Additional cost on top of Stripe Billing transaction fees"], useCases: ["Stripe Billing customer needing automated ASC 606 revenue recognition", "SaaS company preparing for audit with compliant deferred revenue reporting", "Finance team eliminating manual revenue waterfall spreadsheets"] },
   { slug: "fastspring", name: "FastSpring", tagline: "Full-service ecommerce platform for selling software and SaaS globally", description: "FastSpring is a merchant of record platform for software and SaaS companies selling globally. Like Paddle, it handles payments, tax, compliance, and subscription management. It's particularly popular with desktop software companies and game developers.", category: "payment-infrastructure", tags: ["fastspring", "merchant of record", "software sales", "global ecommerce", "tax compliance", "gaming"], url: "https://fastspring.com", pricing: "paid", featured: false, logo: "🚀", domain: "fastspring.com", pros: ["Merchant of record handles global tax, payments, and compliance", "Popular with desktop software and game developers", "Supports one-time purchases alongside subscriptions", "Handles localized pricing and currency conversion automatically"], cons: ["Less well-known than Paddle for SaaS-specific billing", "Checkout experience customization is more limited than Stripe", "Transaction fees are higher than non-MoR payment processors"], useCases: ["Desktop software company selling licenses globally without managing tax compliance", "Game developer wanting a merchant of record to handle international sales", "Software vendor needing both subscription and one-time purchase support"] },
   { slug: "cacheflow", name: "Cacheflow", tagline: "AI-powered CPQ and subscription billing for B2B SaaS sales", description: "Cacheflow combines CPQ with subscription billing and buyer financing in one platform. It automates proposal generation, contract creation, and payment collection. Unique financing options let buyers pay monthly while sellers get paid upfront.", category: "cpq-quoting", tags: ["cacheflow", "cpq", "buyer financing", "b2b sales", "proposals", "subscription billing"], url: "https://www.getcacheflow.com", pricing: "paid", featured: false, logo: "💰", domain: "getcacheflow.com", pros: ["Unique buyer financing lets customers pay monthly while sellers get paid upfront", "Combines CPQ, billing, and financing to shorten sales cycles", "Automates proposal generation and contract creation", "Reduces friction in B2B purchasing decisions"], cons: ["Financing model adds complexity to the billing relationship", "Newer platform with a smaller customer base", "Enterprise-focused pricing may not suit smaller businesses"], useCases: ["B2B SaaS company wanting to offer flexible payment terms without revenue risk", "Sales team looking to close deals faster by offering monthly billing to budget-constrained buyers", "Company wanting to eliminate manual proposal and contract creation from the sales process"] },
+  {
+    slug: "solidgate-billing",
+    name: "Solidgate Billing",
+    tagline: "Subscription billing platform with smart retry logic to grow recurring revenue",
+    description: "Solidgate Billing is a comprehensive subscription management platform that automates recurring payments, invoicing, and revenue recovery for digital businesses. Its smart retry logic is designed to lift first-retry conversion rates by up to 30%, reducing involuntary churn. Built as part of Solidgate's broader payments orchestration ecosystem, it integrates seamlessly with global payment infrastructure, alternative payment methods, and antifraud tools.",
+    category: "recurring-billing",
+    tags: ["subscription-billing","recurring-payments","revenue-recovery","invoicing","payment-orchestration"],
+    url: "https://solidgate.com/billing/",
+    pricing: "paid",
+    featured: false,
+    logo: "💳",
+    domain: "solidgate.com",
+    pros: [
+          "Smart retry logic boosts first-retry conversion rates by up to 30%",
+          "Integrated with Solidgate's full payment orchestration and antifraud suite",
+          "Supports global payment infrastructure and alternative payment methods",
+          "Includes tax management and chargeback representment tools"
+    ],
+    cons: [
+          "Pricing is not publicly listed, requiring a demo request",
+          "Best value realized within the broader Solidgate ecosystem, less ideal as a standalone tool",
+          "May be more complex than needed for very small or early-stage businesses"
+    ],
+    useCases: [
+          "SaaS companies managing tiered subscription plans and recurring invoicing",
+          "Digital product businesses seeking to reduce involuntary churn through automated payment retries",
+          "Global merchants needing subscription billing with multi-currency and alternative payment method support"
+    ],
+  },
 ];
