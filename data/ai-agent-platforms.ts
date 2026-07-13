@@ -177,4 +177,33 @@ export const AI_AGENTS_TOOLS: AIAgentsTool[] = [
           "Prototyping and shipping AI agent workflows without writing backend code"
     ],
   },
+  {
+    slug: "edgerecord",
+    name: "EdgeRecord",
+    tagline: "Tamper-evident proof records for AI agents and operational change.",
+    description: "EdgeRecord is an operational evidence platform that generates immutable, tamper-evident proof records for system changes, AI agent actions, vendor work, incidents, and recovery-critical updates. It produces human-readable receipts and structured evidence exports designed for operators, auditors, insurers, and successors who need defensible records of what changed and why. EdgeRecord is particularly well-suited for teams operating AI agents in regulated or high-stakes environments where accountability and audit trails are essential.",
+    category: "enterprise-ai",
+    tags: ["audit-trail","immutable-records","ai-governance","compliance","operational-evidence"],
+    url: "https://edgerecord.com/",
+    pricing: "paid",
+    featured: false,
+    logo: "🔏",
+    domain: "edgerecord.com",
+    pros: [
+          "Generates tamper-evident, immutable proof records for AI agent and system actions",
+          "Produces human-readable receipts alongside structured exports for diverse stakeholders",
+          "Covers a wide range of operational events including incidents, vendor work, and recovery actions",
+          "Purpose-built for auditability, making it valuable for compliance and insurance use cases"
+    ],
+    cons: [
+          "Paid-only pricing may be a barrier for smaller teams or individual developers",
+          "Relatively niche focus may not suit teams without formal audit or compliance requirements",
+          "Limited public documentation or integrations visible on the homepage"
+    ],
+    useCases: [
+          "Creating defensible audit logs of AI agent actions for regulatory compliance",
+          "Documenting operational changes and incident responses for insurer or auditor review",
+          "Maintaining tamper-evident records of vendor or third-party work on critical systems"
+    ],
+  },
 ];
