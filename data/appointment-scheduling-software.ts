@@ -377,4 +377,33 @@ export const APPOINTMENT_SCHEDULING_TOOLS: AppointmentSchedulingTool[] = [
     cons: ["Interface design feels dated compared to modern competitors", "Integration ecosystem is smaller than market leaders", "Advanced features like SMS reminders cost extra", "Less industry-specific customization than vertical platforms"],
     useCases: ["Government office scheduling public appointments with multi-language support", "Education center managing room and instructor scheduling for classes", "International service business accepting bookings across multiple time zones"],
   },
+  {
+    slug: "tuagendamedica",
+    name: "TuAgendaMédica",
+    tagline: "Spanish-language medical scheduling software built for clinics in Chile",
+    description: "TuAgendaMédica is a Chilean SaaS platform that centralizes appointment management for medical clinics and healthcare practices. It combines internal scheduling, public-facing online booking, patient records, and clinical notes in a single Spanish-language interface tailored to Chile's healthcare market. Clinics can get started with a 14-day free trial, with paid plans beginning at CLP 15,000 per month.",
+    category: "healthcare",
+    tags: ["medical scheduling","clinic management","patient booking","Spanish-language","Chile"],
+    url: "https://tuagendamedica.cl/",
+    pricing: "paid",
+    featured: false,
+    logo: "🏥",
+    domain: "tuagendamedica.cl",
+    pros: [
+          "Purpose-built for Chilean clinics with Spanish-language interface throughout",
+          "Combines internal scheduling and public online booking in one platform",
+          "Includes patient records and clinical notes alongside scheduling",
+          "Affordable entry price starting at CLP 15,000/month with a 14-day free trial"
+    ],
+    cons: [
+          "No integrated telemedicine functionality",
+          "No specialized dental charting tools",
+          "Limited to Spanish-speaking markets, primarily Chile"
+    ],
+    useCases: [
+          "Small to mid-sized medical clinics managing appointment calendars and patient flow",
+          "Healthcare practices offering online self-booking to reduce front-desk workload",
+          "Clinic administrators tracking patient records and generating operational reports"
+    ],
+  },
 ];
