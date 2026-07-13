@@ -1031,4 +1031,33 @@ export const CRM_TOOLS: CRMTool[] = [
           "Validating country coverage for international sales campaigns"
     ],
   },
+  {
+    slug: "leadping",
+    name: "Leadping",
+    tagline: "Fast, compliant SMS and phone follow-up for sales teams",
+    description: "Leadping is a sales communication platform built for teams that need reliable, high-speed lead follow-up via SMS and phone. It features a unified inbox for managing conversations, assignments, notes, and activity, paired with automation tools for consistent outreach cadences. Compliance-focused controls cover consent verification, opt-outs, suppression lists, message pacing, and carrier registration—making it well-suited for sales teams, agencies, and growing businesses that want efficient lead engagement without the overhead of a full CRM.",
+    category: "sales-engagement",
+    tags: ["sms-outreach","sales-communication","lead-follow-up","compliance","unified-inbox"],
+    url: "https://leadping.ai",
+    pricing: "paid",
+    featured: false,
+    logo: "📲",
+    domain: "leadping.ai",
+    pros: [
+          "Built-in compliance controls for consent, opt-outs, suppression, and carrier registration",
+          "Unified inbox keeps all SMS and phone conversations organized in one place",
+          "Automation supports consistent, scalable outreach without manual effort",
+          "Lightweight alternative to full CRMs for teams focused on lead communication"
+    ],
+    cons: [
+          "Paid-only pricing may be a barrier for very small teams or solo users",
+          "Focused on SMS and phone only—lacks email outreach capabilities",
+          "May require integration with an existing CRM for full sales pipeline management"
+    ],
+    useCases: [
+          "Sales teams needing fast, automated SMS follow-up after new lead submissions",
+          "Agencies managing outbound communication across multiple client accounts",
+          "Growing businesses seeking compliant, organized lead engagement without a complex CRM"
+    ],
+  },
 ];
