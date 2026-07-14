@@ -214,4 +214,33 @@ export const AI_VIDEO_TOOLS: AIVideoTool[] = [
           "Indie creators and solopreneurs who need flexible pay-as-you-go AI creative tools without monthly fees"
     ],
   },
+  {
+    slug: "image-to-ai",
+    name: "Image to AI",
+    tagline: "Turn images and text prompts into cinematic AI videos in minutes.",
+    description: "Image to AI is an AI-powered video creation platform that transforms static images and text prompts into polished, cinematic videos suited for ads, product launches, and social media content. Designed for creators, marketers, and brands, it streamlines the video production process without requiring editing expertise or expensive software. Its freemium model makes it accessible to individuals and teams looking to scale visual content output quickly.",
+    category: "text-to-video",
+    tags: ["ai video","image to video","text to video","video generation","content creation"],
+    url: "https://imagetoai.video/",
+    pricing: "freemium",
+    featured: false,
+    logo: "🎬",
+    domain: "imagetoai.video",
+    pros: [
+          "Converts static images into engaging videos with minimal effort",
+          "Supports text prompt input for guided AI video generation",
+          "Freemium tier allows users to try before committing",
+          "Suited for a wide range of use cases including ads and social posts"
+    ],
+    cons: [
+          "Free tier likely has output limitations or watermarks",
+          "Relatively new platform with a limited track record compared to established competitors",
+          "Advanced customization options may be restricted to paid plans"
+    ],
+    useCases: [
+          "Creating short-form social media videos from product images",
+          "Generating promotional video ads from still visuals and copy",
+          "Producing content for product launches without a video production team"
+    ],
+  },
 ];
