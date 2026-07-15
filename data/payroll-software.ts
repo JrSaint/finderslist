@@ -582,4 +582,33 @@ export const PAYROLL_TOOLS: PayrollTool[] = [
       "Business without an in-house HR team seeking outsourced HR management alongside payroll",
     ],
   },
+  {
+    slug: "paycheckdb-2026-calculator",
+    name: "PaycheckDB 2026 Calculator",
+    tagline: "Free 2026 take-home pay estimator for salary, hourly, and bonus paychecks",
+    description: "PaycheckDB is a free, browser-based paycheck calculator built for 2026 tax year planning, supporting salary, hourly, and bonus income types. It applies the 2026 IRS percentage method for federal withholding alongside state, FICA, and local tax estimates, with pay frequency controls and pre-tax deduction inputs. Designed for US workers and planners who want to model take-home pay assumptions before a tax professional review, results are clearly labeled by confidence level with a published methodology and sources page.",
+    category: "payroll-processing",
+    tags: ["paycheck calculator","take-home pay","tax estimator","payroll tax","2026 taxes"],
+    url: "https://paycheckdb-2026-calculator.vercel.app",
+    pricing: "free",
+    featured: false,
+    logo: "🧾",
+    domain: "paycheckdb-2026-calculator.vercel.app",
+    pros: [
+          "Uses 2026 IRS percentage method schedule for federal withholding accuracy",
+          "Covers salary, hourly, and bonus paycheck scenarios in one tool",
+          "Includes state, FICA, and local tax estimates with transparent methodology",
+          "Completely free with no account or sign-up required"
+    ],
+    cons: [
+          "Hosted on Vercel subdomain, raising questions about long-term availability",
+          "Results are estimates only and not a substitute for professional payroll software",
+          "State tax support levels vary and may not cover all jurisdictions equally"
+    ],
+    useCases: [
+          "Employees evaluating a new job offer who want to estimate 2026 net pay",
+          "Freelancers or contractors modeling take-home pay across different pay frequencies",
+          "HR professionals doing quick sanity checks on payroll scenarios before processing"
+    ],
+  },
 ];
