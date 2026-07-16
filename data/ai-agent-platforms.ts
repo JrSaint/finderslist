@@ -206,4 +206,33 @@ export const AI_AGENTS_TOOLS: AIAgentsTool[] = [
           "Maintaining tamper-evident records of vendor or third-party work on critical systems"
     ],
   },
+  {
+    slug: "artomation",
+    name: "Artomation",
+    tagline: "Agentic AI systems, intelligent workflows, and custom CRM/ERP/SaaS for businesses.",
+    description: "Artomation is a Hyderabad-based AI automation agency that engineers autonomous agentic AI systems, intelligent n8n-powered workflows, AI chatbots, and voice agents for businesses across India, the US, the UK, and the UAE. The agency builds bespoke CRM, ERP, and SaaS platforms—including its own Endoamatics HMS healthcare product—replacing off-the-shelf tools like Salesforce with tailored solutions. It serves SMEs and enterprises seeking end-to-end AI-driven business process automation, from WhatsApp chatbot deployments to full-scale autonomous execution layers.",
+    category: "enterprise-ai",
+    tags: ["agentic-ai","workflow-automation","custom-crm","erp-development","ai-chatbots"],
+    url: "https://www.artomation.in/",
+    pricing: "paid",
+    featured: false,
+    logo: "🤖",
+    domain: "artomation.in",
+    pros: [
+          "End-to-end custom development covering AI agents, CRM, ERP, and SaaS in one agency",
+          "Supports both Indian (INR-priced) and international markets including US, UK, and UAE",
+          "Leverages leading AI models (GPT-4, Claude) and automation platforms (n8n, RPA)",
+          "Offers a ready-made healthcare management product (Endoamatics HMS) alongside custom builds"
+    ],
+    cons: [
+          "Service-based agency model means longer delivery timelines compared to off-the-shelf software",
+          "Pricing starts at ₹50,000 and scales to ₹10 lakh+, which may be prohibitive for very small businesses",
+          "Founded in 2024, so limited long-term track record compared to established vendors"
+    ],
+    useCases: [
+          "Replacing Salesforce or HubSpot with a fully custom CRM tailored to business-specific pipelines",
+          "Deploying WhatsApp AI chatbots and voice agents to automate customer support and lead qualification",
+          "Building autonomous n8n workflow systems to streamline internal business processes and reporting"
+    ],
+  },
 ];
