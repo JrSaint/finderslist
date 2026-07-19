@@ -1006,4 +1006,17 @@ export const CREATOR_TOOLS: CreatorTool[] = [
       "A course creator builds a sales funnel that warms up subscribers before a course launch",
     ],
   },
+  {
+    slug: "encer",
+    name: "encer",
+    tagline: "Interactive link-in-bio pages for creator events and fan participation.",
+    description: "encer helps creators and fan organizers build one mobile page for updates, schedules, polls, messages, giveaways, and important links. It is designed around an event or audience action rather than a static list of buttons. The product is live in free beta, requires no card, and supports English, Korean, Japanese, and Chinese interfaces. Pro access is an invite-only manual beta; no Pro payment is collected.",
+    category: "creator-platforms",
+    tags: ["link in bio", "creator events", "fan participation", "polls", "giveaways"],
+    url: "https://encer.me/en",
+    pricing: "free",
+    featured: false,
+    logo: "🔗",
+    domain: "encer.me",
+  },
 ];
